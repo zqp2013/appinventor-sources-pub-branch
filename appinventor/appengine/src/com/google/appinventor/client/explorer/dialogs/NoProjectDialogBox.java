@@ -83,13 +83,13 @@ public class NoProjectDialogBox extends DialogBox {
   @UiHandler("goToTalk")
   void handleGoToTalk(ClickEvent e) {
     this.hide();
-    TemplateUploadWizard.openProjectFromTemplate("http://appinventor.mit.edu/yrtoolkit/yr/aiaFiles/talk_to_me/TalkToMe.asc", new NewTutorialProject());
+    TemplateUploadWizard.openProjectFromTemplate("hhttp://fun123.cn/reference/tutorials/yr/aiaFiles/talk_to_me/TalkToMe.asc", new NewTutorialProject());
   }
 
   @UiHandler("goToYR")
   void handleGoToYR(ClickEvent e) {
     this.hide();
-    TemplateUploadWizard.openProjectFromTemplate("http://appinventor.mit.edu/yrtoolkit/yr/aiaFiles/hello_bonjour/translate_tutorial.asc", new NewTutorialProject());
+    TemplateUploadWizard.openProjectFromTemplate("http://fun123.cn/reference/tutorials/yr/aiaFiles/hello_bonjour/translate_tutorial.asc", new NewTutorialProject());
   }
 
   @UiHandler("noDialogNewProject")
