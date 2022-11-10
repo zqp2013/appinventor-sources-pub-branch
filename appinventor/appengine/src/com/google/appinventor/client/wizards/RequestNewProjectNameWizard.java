@@ -138,7 +138,7 @@ public class RequestNewProjectNameWizard extends Wizard {
     TextValidators.ProjectNameStatus status = TextValidators
             .checkNewProjectName(filename, true);
     title = getErrorMessage(status, filename);
-    filename = filename.replace(" ", "_").replaceAll("[^a-zA-Z0-9_]", "");
+    filename = filename.replace(" ", "_").replaceAll("[^\u4e00-\u9fa5a-zA-Z0-9_]", "");
     suggestedName = getSuggestedName(filename);    
 
     switch (status) {

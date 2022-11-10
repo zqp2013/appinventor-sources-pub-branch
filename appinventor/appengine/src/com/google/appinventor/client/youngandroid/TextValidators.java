@@ -138,7 +138,7 @@ public final class TextValidators {
    *         otherwise
    */
   public static boolean isValidIdentifier(String text) {
-    return text.matches("^[a-zA-Z]\\w*$");
+    return text.matches("^[\u4e00-\u9fa5a-zA-Z]\\w*$");
   }
 
   /**
@@ -202,10 +202,10 @@ public final class TextValidators {
   public static String getErrorMessage(String filename){
     String errorMessage = "";
     String noWhitespace = "[\\S]+";
-    String firstCharacterLetter = "[A-Za-z].*";
+    String firstCharacterLetter = "[\u4e00-\u9fa5A-Za-z].*";
     String temp = filename.trim().replaceAll("( )+", " ").replace(" ","_");
     if (temp.length() > 0) {
-      if (!temp.matches("[A-Za-z][A-Za-z0-9_]*")) {
+      if (!temp.matches("[\u4e00-\u9fa5A-Za-z][\u4e00-\u9fa5A-Za-z0-9_]*")) {
         if (!temp.matches(firstCharacterLetter)) { 
           //Check to make sure that the first character is a letter
           errorMessage = MESSAGES.firstCharProjectNameError();
@@ -225,7 +225,7 @@ public final class TextValidators {
   public static String getWarningMessages(String filename) {
     String warningMessage = "";
     if (getErrorMessage(filename).length() == 0 && filename.trim().length() > 0) {
-      if (!filename.matches("[A-Za-z][A-Za-z0-9_]*")) {
+      if (!filename.matches("[\u4e00-\u9fa5A-Za-z][\u4e00-\u9fa5A-Za-z0-9_]*")) {
         // check to make sure if filename has no spaces
         String errorMessage = MESSAGES.whitespaceProjectNameError();
         filename = filename.trim().replaceAll("( )+", " ").replace(" ","_");
