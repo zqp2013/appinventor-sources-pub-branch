@@ -129,7 +129,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
 
   // host[:port] to use for connecting to the build server
   private static final Flag<String> buildServerHost =
-      Flag.createFlag("build.server.host", "localhost:9990");
+      Flag.createFlag("build.server.host", "build.fun123.cn:9990");
   // host[:port] to use for connecting to the second build server
   private static final Flag<String> buildServerHost2 =
       Flag.createFlag("build2.server.host", "");
@@ -138,7 +138,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
       Flag.createFlag("appengine.host", "");
   private static final boolean DEBUG = Flag.createFlag("appinventor.debugging", false).get();
 
-  private static final String galleryLocation = Flag.createFlag("gallery.location", "http://localhost:9001").get();
+  private static final String galleryLocation = Flag.createFlag("gallery.location", "http://gallery.fun123.cn:9001").get();
   private static final String galleryId = Flag.createFlag("gallery.id", "").get();
 
   public YoungAndroidProjectService(StorageIo storageIo) {
@@ -778,7 +778,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
       }
     } else {
       // TODO(user): Figure out how to make this more generic
-      return "localhost:8888";
+      return "fun123.cn";
     }
   }
 
