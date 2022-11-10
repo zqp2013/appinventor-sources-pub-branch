@@ -138,7 +138,7 @@ public final class TextValidators {
    *         otherwise
    */
   public static boolean isValidIdentifier(String text) {
-    return text.matches("^[\u4e00-\u9fa5a-zA-Z]\\w*$");
+    return text.matches("^[\u4e00-\u9fa5a-zA-Z]*$");
   }
 
   /**
