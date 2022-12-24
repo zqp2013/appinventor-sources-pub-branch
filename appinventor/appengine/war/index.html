@@ -27,7 +27,7 @@
   </head>
 
   <!-- ODE scripts -->
-  <body class="gwt-bodyRob">
+  <body class="gwt-bodyRob" onload="hide_loading();">
     <div class="floatingBox" style="display:none" id="unsupported">
       <h2> 您的浏览器可能不兼容！ </h2>
       要使用 Android 版 App Inventor 2，您必须使用兼容的浏览器。<br>
@@ -38,7 +38,7 @@
         <li> Firefox 23+ </li>
       </ul>
     </div>
-	<div id="loading" style="position:fixed;top:50%;left:50%;transform: translate(-50%,-50%);font-size: 2em;">App Inventor 2 加载中... 第一次加载可能会较慢，非常感谢您的耐心٩( 'ω' )و</div>
+	<div id="loading" style="position:fixed;top:50%;left:50%;transform: translate(-50%,-50%);font-size: 2em;">App Inventor 2 加载中... 第一次加载可能会较慢，感谢您的守候٩( 'ω' )و</div>
     <script type="text/javascript" src="static/closure-library/closure/goog/base.js"></script>
     <script type="text/javascript" src="ode/ode.nocache.js"></script>
     <script src="static/leaflet/leaflet.js"></script>
@@ -52,6 +52,9 @@
     <script>
       if (window.navigator.userAgent.indexOf("MSIE") != -1){
           document.getElementById("unsupported").style.display = 'block';
+      }
+      function hide_loading() {
+          document.getElementById("loading").style.display = 'none';
       }
     </script>
   </body>
