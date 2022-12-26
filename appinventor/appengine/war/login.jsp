@@ -38,9 +38,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <tr><td></td></td>
 <tr><td>${passwordLabel}</td><td><input type=password name=password value="" size="35"></td></tr>
 </table></center>
-<% if (locale != null && !locale.equals("")) {
+<% if (locale != null && !locale.equals("zh_CN")) {
    %>
-<!--<input type=hidden name=locale value="<%= locale %>">-->
+<input type=hidden name=locale value="<%= locale %>">
 <% }
    if (repo != null && !repo.equals("")) {
    %>
