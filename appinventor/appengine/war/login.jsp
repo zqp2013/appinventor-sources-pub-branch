@@ -40,7 +40,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 </table></center>
 <% if (locale != null && !locale.equals("")) {
    %>
-<input type=hidden name=locale value="<%= locale %>">
+<!--<input type=hidden name=locale value="<%= locale %>">-->
 <% }
    if (repo != null && !repo.equals("")) {
    %>
@@ -69,12 +69,11 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <center><p><a href="/login/sendlink"  style="text-decoration:none;">${passwordclickhereLabel}</a></p></center>
 <%    if (useGoogleLabel != null && useGoogleLabel.equals("true")) { %>
 <center><p><a href="<%= new UriBuilder("/login/google")
-                              .add("locale", locale)
                               .add("autoload", autoload)
                               .add("repo", repo)
                               .add("galleryId", galleryId)
                               .add("ng", newGalleryId)
-                              .add("redirect", redirect).build() %>" style="text-decoration:none;">Click Here to use your Google Account to login</a></p></center>
+                              .add("redirect", redirect).build() %>" style="text-decoration:none;">登陆测试账号</a></p></center>
 <%    } %>
 <footer>
 <center><a href="<%= new UriBuilder("/login")
@@ -83,12 +82,6 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
                            .add("autoload", autoload)
                            .add("galleryId", galleryId)
                            .add("redirect", redirect).build() %>"  style="text-decoration:none;" >中文</a>&nbsp;
-<a href="<%= new UriBuilder("/login")
-                           .add("locale", "pt")
-                           .add("repo", repo)
-                           .add("autoload", autoload)
-                           .add("galleryId", galleryId)
-                           .add("redirect", redirect).build() %>"  style="text-decoration:none;" >Português</a>&nbsp;
 <a href="<%= new UriBuilder("/login")
                    .add("locale", "en")
                    .add("repo", repo)
