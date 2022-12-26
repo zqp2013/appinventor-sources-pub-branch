@@ -31,7 +31,7 @@ public final class GeneralSettings extends Settings {
         EditableProperty.TYPE_INVISIBLE));
     addProperty(new EditableProperty(this, SettingsConstants.DISABLED_USER_URL, "",
         EditableProperty.TYPE_INVISIBLE));
-    addProperty(new EditableProperty(this, SettingsConstants.USER_LAST_LOCALE, "en",
+    addProperty(new EditableProperty(this, SettingsConstants.USER_LAST_LOCALE, "zh_CN",
         EditableProperty.TYPE_INVISIBLE));
     addProperty(new EditableProperty(this, SettingsConstants.USER_DYSLEXIC_FONT, "false",
         EditableProperty.TYPE_INVISIBLE));

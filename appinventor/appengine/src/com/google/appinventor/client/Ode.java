@@ -1499,7 +1499,7 @@ public class Ode implements EntryPoint {
   public static boolean handleUserLocale() {
     String locale = Window.Location.getParameter("locale");
     String lastUserLocale = userSettings.getSettings(SettingsConstants.USER_GENERAL_SETTINGS).getPropertyValue(SettingsConstants.USER_LAST_LOCALE);
-    if (!compareLocales(locale, lastUserLocale, "en")) {
+    if (!compareLocales(locale, lastUserLocale, "zh_CN")) {
       if (locale == null) {
         Window.Location.assign(Window.Location.createUrlBuilder().setParameter("locale", lastUserLocale).buildString());
         return false;

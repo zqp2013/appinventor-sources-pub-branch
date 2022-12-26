@@ -13,7 +13,7 @@
    String galleryId = StringEscapeUtils.escapeHtml4((String) request.getAttribute("galleryId"));
    String newGalleryId = StringEscapeUtils.escapeHtml4(request.getParameter("ng"));
    if (locale == null) {
-       locale = "en";
+       locale = "zh_CN";
    }
 
 %>
