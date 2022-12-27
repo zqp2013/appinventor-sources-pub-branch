@@ -92,6 +92,7 @@ public class UploadServlet extends OdeServlet {
       if (uploadKind.equals(ServerLayout.UPLOAD_PROJECT)) {
         uriComponents = uri.split("/", SPLIT_LIMIT_PROJECT_SOURCE);
         String projectName = uriComponents[PROJECT_TITLE_INDEX];
+		projectName = java.net.URLDecoder.decode(projectName, "UTF-8");
         InputStream uploadedStream;
         try {
           uploadedStream = getRequestStream(req, ServerLayout.UPLOAD_PROJECT_ARCHIVE_FORM_ELEMENT);

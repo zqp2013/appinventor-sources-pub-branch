@@ -138,7 +138,7 @@ public final class TextValidators {
    *         otherwise
    */
   public static boolean isValidIdentifier(String text) {
-    return text.matches("^[\u4e00-\u9fa5a-zA-Z]*$");
+    return text.matches("^[\u4e00-\u9fa5a-zA-Z0-9_]*$");
   }
 
   /**
@@ -202,7 +202,7 @@ public final class TextValidators {
   public static String getErrorMessage(String filename){
     String errorMessage = "";
     String noWhitespace = "[\\S]+";
-    String firstCharacterLetter = "[\u4e00-\u9fa5A-Za-z].*";
+    String firstCharacterLetter = "[\u4e00-\u9fa5A-Za-z0-9_].*";
     String temp = filename.trim().replaceAll("( )+", " ").replace(" ","_");
     if (temp.length() > 0) {
       if (!temp.matches("[\u4e00-\u9fa5A-Za-z][\u4e00-\u9fa5A-Za-z0-9_]*")) {
