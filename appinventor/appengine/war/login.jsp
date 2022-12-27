@@ -67,6 +67,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 </form>
 <p></p>
 <center><p><a href="/login/sendlink"  style="text-decoration:none;">${passwordclickhereLabel}</a></p></center>
+
+<!--
 <%    if (useGoogleLabel != null && useGoogleLabel.equals("true")) { %>
 <center><p><a href="<%= new UriBuilder("/login/google")
                               .add("autoload", autoload)
@@ -75,6 +77,19 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
                               .add("ng", newGalleryId)
                               .add("redirect", redirect).build() %>" style="text-decoration:none;">登陆测试账号</a></p></center>
 <%    } %>
+-->
+
+<center>
+<form method=POST action="/login">
+<input type=hidden name=email value="test@fun123.cn">
+<input type=hidden name=password value="000000">
+<input type=Submit value="登陆测试账号">
+</form>
+</center>
+<br/>
+<br/>
+
+
 <footer>
 <center><a href="<%= new UriBuilder("/login")
                            .add("locale", "zh_CN")
