@@ -5,6 +5,11 @@
 		"locale": "zh_cn",
 		"messagedocumentation" : "qqq"
 	},
+	"Blockly.Msg.UNDO": "撤销",
+	"Blockly.Msg.REDO": "重做",
+	"Blockly.Msg.CLEAN_UP": "清理代码块",
+	"Blockly.Msg.HIDE": "隐藏工作区控件",
+	"Blockly.Msg.SHOW": "显示工作区控件",
 	"Blockly.Msg.DUPLICATE_BLOCK": "复制代码块",
 	"Blockly.Msg.REMOVE_COMMENT": "删除注释",
 	"Blockly.Msg.ADD_COMMENT": "添加注释",
