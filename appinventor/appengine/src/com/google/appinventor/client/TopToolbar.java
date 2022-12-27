@@ -877,7 +877,7 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       final DialogBox db = new DialogBox(false, true);
-      db.setText("About The Companion");
+      db.setText("AI伴侣信息");
       db.setStyleName("ode-DialogBox");
       db.setHeight("200px");
       db.setWidth("400px");
@@ -894,11 +894,11 @@ public class TopToolbar extends Composite {
 
       VerticalPanel DialogBoxContents = new VerticalPanel();
       HTML message = new HTML(
-          "Companion Version " + BlocklyPanel.getCompVersion() + downloadinfo
+          "版本 " + BlocklyPanel.getCompVersion() + downloadinfo
       );
 
       SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
+      Button ok = new Button("关闭");
       ok.addClickListener(new ClickListener() {
         public void onClick(Widget sender) {
           db.hide();
