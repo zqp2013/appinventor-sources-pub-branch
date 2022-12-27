@@ -151,11 +151,11 @@
     <property name="firebase.secret" value="" />
     <property name="firebase.url" value="" />
 
-    <property name="library.url" value="http://fun123.cn/reference/info/" />
+    <property name="library.url" value="" />
     <property name="get_started.url" value="http://appinventor.mit.edu/explore/get-started" />
-    <property name="tutorials.url" value="http://appinventor.mit.edu/explore/ai2/tutorials" />
-    <property name="extensions.url" value="http://appinventor.mit.edu/extensions" />
-    <property name="troubleshooting.url" value="http://appinventor.mit.edu/explore/ai2/support/troubleshooting" />
+    <property name="tutorials.url" value="http://www.fun123.cn/reference/tutorials" />
+    <property name="extensions.url" value="" />
+    <property name="troubleshooting.url" value="" />
     <property name="forums.url" value="https://bbs.tsingfun.com/forum-147-1.html" />
     <property name="feedback.url" value="https://tsingfun.com/feedback.html" />
     <property name="release.notes.url" value="http://appinventor.mit.edu/ai2/ReleaseNotes.html" />
