@@ -63,10 +63,29 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <input type=hidden name=redirect value="<%= redirect %>">
 <% } %>
 <p></p>
+
+<center>
+<a href="<%= new UriBuilder("/login")
+                           .add("locale", "zh_CN")
+                           .add("repo", repo)
+                           .add("autoload", autoload)
+                           .add("galleryId", galleryId)
+                           .add("redirect", redirect).build() %>"  style="text-decoration:none;" >中文</a>&nbsp;
+<a href="<%= new UriBuilder("/login")
+                   .add("locale", "en")
+                   .add("repo", repo)
+                   .add("autoload", autoload)
+                   .add("galleryId", galleryId)
+                   .add("ng", newGalleryId)
+                   .add("redirect", redirect).build() %>"  style="text-decoration:none;" >English</a>
+</center>
+<br/>
+
 <center><input type=Submit value="${login}" style="font-size: 300%;"></center>
 </form>
 <p></p>
-<center><p><a href="/login/sendlink"  style="text-decoration:none;">${passwordclickhereLabel}</a></p></center>
+
+<!--<center><p><a href="/login/sendlink"  style="text-decoration:none;">${passwordclickhereLabel}</a></p></center>-->
 
 <!--
 <%    if (useGoogleLabel != null && useGoogleLabel.equals("true")) { %>
@@ -79,32 +98,23 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <%    } %>
 -->
 
+<br/>
+<br/>
 <center>
 <form method=POST action="/login">
 <input type=hidden name=email value="test@fun123.cn">
 <input type=hidden name=password value="000000">
-<input type=Submit value="登陆测试账号">
+<input type=Submit value="点击试用">
 </form>
+<p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/>如需开通正式账号，请添加QQ 348366338 咨询，谢谢！</p>
 </center>
 <br/>
 <br/>
 
 
 <footer>
-<center><a href="<%= new UriBuilder("/login")
-                           .add("locale", "zh_CN")
-                           .add("repo", repo)
-                           .add("autoload", autoload)
-                           .add("galleryId", galleryId)
-                           .add("redirect", redirect).build() %>"  style="text-decoration:none;" >中文</a>&nbsp;
-<a href="<%= new UriBuilder("/login")
-                   .add("locale", "en")
-                   .add("repo", repo)
-                   .add("autoload", autoload)
-                   .add("galleryId", galleryId)
-                   .add("ng", newGalleryId)
-                   .add("redirect", redirect).build() %>"  style="text-decoration:none;" >English</a></center>
-<p></p>
+
+<!--
 <center>
 <%    if (locale != null && locale.equals("zh_CN")) { %>
 <a href="http://www.weibo.com/mitappinventor" target="_blank"><img class="img-scale"
@@ -117,6 +127,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <p style="text-align: center; clear:both;"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"
                                               target="_blank"><img alt="Creative Commons License" src="/static/images/cc3.png"></a> <br>
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"></a></p>
+-->
+
 </footer>
 </body></html>
 
