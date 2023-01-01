@@ -232,8 +232,8 @@ public class TopToolbar extends Composite {
           new NewAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTPROJECT, MESSAGES.importProjectMenuItem(),
           new ImportProjectAction()));
-      fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTTEMPLATE, MESSAGES.importTemplateButton(),
-          new ImportTemplateAction()));
+      //fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTTEMPLATE, MESSAGES.importTemplateButton(),
+      //    new ImportTemplateAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_DELETE, MESSAGES.deleteProjectButton(),
           new DeleteAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_TRASH, MESSAGES.deleteFromTrashButton(),
@@ -251,17 +251,17 @@ public class TopToolbar extends Composite {
         new ExportProjectAction()));
     fileItems.add(new DropDownItem(WIDGET_NAME_EXPORTALLPROJECTS, MESSAGES.exportAllProjectsMenuItem(),
         new ExportAllProjectsAction()));
-    fileItems.add(null);
-    if (!isReadOnly) {
-      fileItems.add(new DropDownItem(WIDGET_NAME_UPLOAD_KEYSTORE, MESSAGES.uploadKeystoreMenuItem(),
-          new UploadKeystoreAction()));
-    }
-    fileItems.add(new DropDownItem(WIDGET_NAME_DOWNLOAD_KEYSTORE, MESSAGES.downloadKeystoreMenuItem(),
-        new DownloadKeystoreAction()));
-    if (!isReadOnly) {
-      fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_KEYSTORE, MESSAGES.deleteKeystoreMenuItem(),
-          new DeleteKeystoreAction()));
-    }
+    //fileItems.add(null);
+    //if (!isReadOnly) {
+    //  fileItems.add(new DropDownItem(WIDGET_NAME_UPLOAD_KEYSTORE, MESSAGES.uploadKeystoreMenuItem(),
+    //      new UploadKeystoreAction()));
+    //}
+    //fileItems.add(new DropDownItem(WIDGET_NAME_DOWNLOAD_KEYSTORE, MESSAGES.downloadKeystoreMenuItem(),
+    //    new DownloadKeystoreAction()));
+    //if (!isReadOnly) {
+    //  fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_KEYSTORE, MESSAGES.deleteKeystoreMenuItem(),
+    //      new DeleteKeystoreAction()));
+    //}
     refreshMenu(fileDropDown, fileItems);
   }
 
@@ -269,25 +269,25 @@ public class TopToolbar extends Composite {
     List<DropDownItem> connectItems = Lists.newArrayList();
     connectItems.add(new DropDownItem(WIDGET_NAME_WIRELESS_BUTTON,
         MESSAGES.AICompanionMenuItem(), new WirelessAction()));
-    if (iamChromebook) {
-      connectItems.add(new DropDownItem(WIDGET_NAME_CHROMEBOOK,
-          MESSAGES.chromebookMenuItem(), new ChromebookAction()));
-    } else {
-      connectItems.add(new DropDownItem(WIDGET_NAME_EMULATOR_BUTTON,
-          MESSAGES.emulatorMenuItem(), new EmulatorAction()));
-      connectItems.add(new DropDownItem(WIDGET_NAME_USB_BUTTON, MESSAGES.usbMenuItem(),
-          new UsbAction()));
-    }
-    connectItems.add(null);
+    //if (iamChromebook) {
+    //  connectItems.add(new DropDownItem(WIDGET_NAME_CHROMEBOOK,
+    //      MESSAGES.chromebookMenuItem(), new ChromebookAction()));
+    //} else {
+    //  connectItems.add(new DropDownItem(WIDGET_NAME_EMULATOR_BUTTON,
+    //      MESSAGES.emulatorMenuItem(), new EmulatorAction()));
+    //  connectItems.add(new DropDownItem(WIDGET_NAME_USB_BUTTON, MESSAGES.usbMenuItem(),
+    //      new UsbAction()));
+    //}
+    //connectItems.add(null);
     connectItems.add(new DropDownItem(WIDGET_NAME_REFRESHCOMPANION_BUTTON, MESSAGES.refreshCompanionMenuItem(),
             new RefreshCompanionAction()));
-    connectItems.add(null);
+    //connectItems.add(null);
     connectItems.add(new DropDownItem(WIDGET_NAME_RESET_BUTTON, MESSAGES.resetConnectionsMenuItem(),
         new ResetAction()));
-    if (!iamChromebook) {
-      connectItems.add(new DropDownItem(WIDGET_NAME_HARDRESET_BUTTON, MESSAGES.hardResetConnectionsMenuItem(),
-          new HardResetAction()));
-    }
+    //if (!iamChromebook) {
+    //  connectItems.add(new DropDownItem(WIDGET_NAME_HARDRESET_BUTTON, MESSAGES.hardResetConnectionsMenuItem(),
+    //      new HardResetAction()));
+    //}
     refreshMenu(connectDropDown, connectItems);
   }
 
@@ -392,10 +392,10 @@ public class TopToolbar extends Composite {
     }
     helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONINFO, MESSAGES.companionInformation(),
         new AboutCompanionAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONUPDATE, MESSAGES.companionUpdate(),
-        new CompanionUpdateAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
-        new ShowSplashAction()));
+    //helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONUPDATE, MESSAGES.companionUpdate(),
+    //    new CompanionUpdateAction()));
+    //helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
+    //    new ShowSplashAction()));
     refreshMenu(helpDropDown, helpItems);
   }
 
