@@ -133,15 +133,15 @@ public class TopPanel extends Composite {
     links.add(myProjects);
 
     // View Trash Link
-    TextButton viewTrash = new TextButton(MESSAGES.viewTrashTabName());
-    viewTrash.setStyleName("ode-TopPanelButton");
-    viewTrash.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        ode.switchToTrash();
-      }
-    });
-    links.add(viewTrash);
+    //TextButton viewTrash = new TextButton(MESSAGES.viewTrashTabName());
+    //viewTrash.setStyleName("ode-TopPanelButton");
+    //viewTrash.addClickHandler(new ClickHandler() {
+    //  @Override
+    //  public void onClick(ClickEvent event) {
+    //    ode.switchToTrash();
+    //  }
+    //});
+    //links.add(viewTrash);
 
     Config config = ode.getSystemConfig();
     String guideUrl = config.getGuideUrl();
