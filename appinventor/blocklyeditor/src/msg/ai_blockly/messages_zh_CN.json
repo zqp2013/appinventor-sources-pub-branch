@@ -570,7 +570,7 @@
 	"Blockly.Msg.REPL_PLUGGED_IN_Q": "是否已插入USB线？",
 	"Blockly.Msg.REPL_AI_NO_SEE_DEVICE": "AI2没有查找到设备，请确认USB是否连接以及驱动程序是否正常安装。",
 	"Blockly.Msg.REPL_HELPER_Q": "是否已运行aiStarter助手程序？",
-	"Blockly.Msg.REPL_HELPER_NOT_RUNNING": "aiStarter助手程序未运行，<br />是否需要<a href='http://appinventor.mit.edu' target='_blank'>帮助</a>?",
+	"Blockly.Msg.REPL_HELPER_NOT_RUNNING": "aiStarter助手程序未运行，<br />点此<a href='https://ai2-starter.software.informer.com/download/' target='_blank'>下载aiStarter助手程序</a>，是否需要<a href='https://bbs.tsingfun.com/forum-147-1.html' target='_blank'>帮助</a>？",
 	"Blockly.Msg.REPL_USB_CONNECTED_WAIT": "USB已连接，请等待",
 	"Blockly.Msg.REPL_SECONDS_ENSURE_RUNNING": "秒，确保相关资源全部加载。",
 	"Blockly.Msg.REPL_EMULATOR_STARTED": "模拟器已启动，请等待",
