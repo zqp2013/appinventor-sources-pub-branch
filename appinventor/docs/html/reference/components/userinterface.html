@@ -125,74 +125,71 @@
             </div>
             <div class="container-fluid">
                 <article class="documentation">
-<p><a href="index.html">« Back to index</a></p>
-<h1 id="user-interface">User Interface</h1>
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="user-interface">UI用户界面组件</h1>
 
-<p>Table of Contents:</p>
+<p>目录：</p>
 
 <ul>
-  <li><a href="#Button">Button</a></li>
-  <li><a href="#CheckBox">CheckBox</a></li>
-  <li><a href="#DatePicker">DatePicker</a></li>
-  <li><a href="#Image">Image</a></li>
-  <li><a href="#Label">Label</a></li>
-  <li><a href="#ListPicker">ListPicker</a></li>
-  <li><a href="#ListView">ListView</a></li>
-  <li><a href="#Notifier">Notifier</a></li>
-  <li><a href="#PasswordTextBox">PasswordTextBox</a></li>
-  <li><a href="#Screen">Screen</a></li>
-  <li><a href="#Slider">Slider</a></li>
-  <li><a href="#Spinner">Spinner</a></li>
+  <li><a href="#Button">按钮（Button）</a></li>
+  <li><a href="#CheckBox">复选框（CheckBox）</a></li>
+  <li><a href="#DatePicker">日期选择框（DatePicker）</a></li>
+  <li><a href="#Image">图像（Image）</a></li>
+  <li><a href="#Label">标签（Label）</a></li>
+  <li><a href="#ListPicker">选择选择框（ListPicker）</a></li>
+  <li><a href="#ListView">列表显示框（ListView）</a></li>
+  <li><a href="#Notifier">通知器（Notifier）</a></li>
+  <li><a href="#PasswordTextBox">密码输入框（PasswordTextBox）</a></li>
+  <li><a href="#Screen">屏幕（Screen）</a></li>
+  <li><a href="#Slider">滑动条（Slider）</a></li>
+  <li><a href="#Spinner">下拉框（Spinner）</a></li>
   <li><a href="#Switch">Switch</a></li>
-  <li><a href="#TextBox">TextBox</a></li>
-  <li><a href="#TimePicker">TimePicker</a></li>
-  <li><a href="#WebViewer">WebViewer</a></li>
+  <li><a href="#TextBox">文本输入框（TextBox）</a></li>
+  <li><a href="#TimePicker">时间选择框（TimePicker）</a></li>
+  <li><a href="#WebViewer">Web浏览框（WebViewer）</a></li>
 </ul>
 
-<h2 id="Button">Button</h2>
+<h2 id="Button">按钮（Button）</h2>
 
-<p>Button with the ability to detect clicks. Many aspects of its appearance can be changed, as well
- as whether it is clickable (<code class="highlighter-rouge">Enabled</code>). Its properties can be changed in the Designer or in the
- Blocks Editor.</p>
+<p>按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (<code class="highlighter-rouge">启用</code>)，可以在“设计视图”或“代码视图”中修改其属性。</p>
 
-<h3 id="Button-Properties">Properties</h3>
+<h3 id="Button-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="Button.BackgroundColor" class="color"><em>BackgroundColor</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Button</code>’s background color as an alpha-red-green-blue
- integer.  If an <a href="#Button.Image"><code class="highlighter-rouge">Image</code></a> has been set, the color
+  <dt id="Button.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd>指定<code class="highlighter-rouge">按钮</code>的背景颜色，使用rgba表示，  If an <a href="#Button.Image"><code class="highlighter-rouge">图像</code></a> has been set, the color
  change will not be visible until the <a href="#Button.Image"><code class="highlighter-rouge">Image</code></a> is removed.</dd>
-  <dt id="Button.Enabled" class="boolean"><em>Enabled</em></dt>
+  <dt id="Button.Enabled" class="boolean"><em>启用</em></dt>
   <dd>Specifies whether the <code class="highlighter-rouge">Button</code> should be active and clickable.</dd>
-  <dt id="Button.FontBold" class="boolean"><em>FontBold</em></dt>
+  <dt id="Button.FontBold" class="boolean"><em>粗体</em></dt>
   <dd>Specifies whether the text of the <code class="highlighter-rouge">Button</code> should be bold.
  Some fonts do not support bold.</dd>
-  <dt id="Button.FontItalic" class="boolean"><em>FontItalic</em></dt>
+  <dt id="Button.FontItalic" class="boolean"><em>斜体</em></dt>
   <dd>Specifies whether the text of the <code class="highlighter-rouge">Button</code> should be italic.
  Some fonts do not support italic.</dd>
-  <dt id="Button.FontSize" class="number"><em>FontSize</em></dt>
+  <dt id="Button.FontSize" class="number"><em>字体大小</em></dt>
   <dd>Specifies the text font size of the <code class="highlighter-rouge">Button</code>, measured in sp(scale-independent pixels).</dd>
   <dt id="Button.FontTypeface" class="number do"><em>FontTypeface</em></dt>
   <dd>Specifies the text font face of the <code class="highlighter-rouge">Button</code> as default, serif, sans
  serif, or monospace.</dd>
-  <dt id="Button.Height" class="number bo"><em>Height</em></dt>
+  <dt id="Button.Height" class="number bo"><em>高度</em></dt>
   <dd>Specifies the <code class="highlighter-rouge">Button</code>’s vertical height, measured in pixels.</dd>
   <dt id="Button.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
   <dd>Specifies the <code class="highlighter-rouge">Button</code>’s vertical height as a percentage
  of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
-  <dt id="Button.Image" class="text"><em>Image</em></dt>
+  <dt id="Button.Image" class="text"><em>图像</em></dt>
   <dd>Specifies the path of the <code class="highlighter-rouge">Button</code>’s image. If there is both an <code class="highlighter-rouge">Image</code> and a
  <a href="#Button.BackgroundColor"><code class="highlighter-rouge">BackgroundColor</code></a> specified, only the <code class="highlighter-rouge">Image</code> will be visible.</dd>
   <dt id="Button.Shape" class="number do"><em>Shape</em></dt>
   <dd>Specifies the shape of the <code class="highlighter-rouge">Button</code>. The valid values for this property are <code class="highlighter-rouge">0</code> (default),
  <code class="highlighter-rouge">1</code> (rounded), <code class="highlighter-rouge">2</code> (rectangle), and <code class="highlighter-rouge">3</code> (oval). The <code class="highlighter-rouge">Shape</code> will not be visible if an
- <a href="#Button.Image"><code class="highlighter-rouge">Image</code></a> is used.</dd>
+ <a href="#Button.Image"><code class="highlighter-rouge">图像</code></a> is used.</dd>
   <dt id="Button.ShowFeedback" class="boolean"><em>ShowFeedback</em></dt>
   <dd>Specifies if a visual feedback should be shown when a <code class="highlighter-rouge">Button</code> with an assigned
- <a href="#Button.Image"><code class="highlighter-rouge">Image</code></a> is pressed.</dd>
-  <dt id="Button.Text" class="text"><em>Text</em></dt>
+ <a href="#Button.Image"><code class="highlighter-rouge">图像</code></a> is pressed.</dd>
+  <dt id="Button.Text" class="text"><em>文本</em></dt>
   <dd>Specifies the text displayed by the <code class="highlighter-rouge">Button</code>.</dd>
-  <dt id="Button.TextAlignment" class="number do"><em>TextAlignment</em></dt>
+  <dt id="Button.TextAlignment" class="number do"><em>文本对齐</em></dt>
   <dd>Specifies the alignment of the <code class="highlighter-rouge">Button</code>’s text. Valid values are:
  <code class="highlighter-rouge">0</code> (normal; e.g., left-justified if text is written left to right),
  <code class="highlighter-rouge">1</code> (center), or
@@ -200,10 +197,10 @@
   <dt id="Button.TextColor" class="color"><em>TextColor</em></dt>
   <dd>Specifies the text color of the <code class="highlighter-rouge">Button</code> as an alpha-red-green-blue
  integer.</dd>
-  <dt id="Button.Visible" class="boolean"><em>Visible</em></dt>
+  <dt id="Button.Visible" class="boolean"><em>可见性</em></dt>
   <dd>Specifies whether the <code class="highlighter-rouge">Button</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">true</code>
  if the <code class="highlighter-rouge">Button</code> is showing and <code class="logic block highlighter-rouge">false</code> if hidden.</dd>
-  <dt id="Button.Width" class="number bo"><em>Width</em></dt>
+  <dt id="Button.Width" class="number bo"><em>宽度</em></dt>
   <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Button</code>, measured in pixels.</dd>
   <dt id="Button.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
   <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Button</code> as a percentage
