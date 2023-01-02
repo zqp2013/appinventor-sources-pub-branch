@@ -269,25 +269,25 @@ public class TopToolbar extends Composite {
     List<DropDownItem> connectItems = Lists.newArrayList();
     connectItems.add(new DropDownItem(WIDGET_NAME_WIRELESS_BUTTON,
         MESSAGES.AICompanionMenuItem(), new WirelessAction()));
-    //if (iamChromebook) {
-    //  connectItems.add(new DropDownItem(WIDGET_NAME_CHROMEBOOK,
-    //      MESSAGES.chromebookMenuItem(), new ChromebookAction()));
-    //} else {
-    //  connectItems.add(new DropDownItem(WIDGET_NAME_EMULATOR_BUTTON,
-    //      MESSAGES.emulatorMenuItem(), new EmulatorAction()));
-    //  connectItems.add(new DropDownItem(WIDGET_NAME_USB_BUTTON, MESSAGES.usbMenuItem(),
-    //      new UsbAction()));
-    //}
-    //connectItems.add(null);
+    if (iamChromebook) {
+      connectItems.add(new DropDownItem(WIDGET_NAME_CHROMEBOOK,
+          MESSAGES.chromebookMenuItem(), new ChromebookAction()));
+    } else {
+      connectItems.add(new DropDownItem(WIDGET_NAME_EMULATOR_BUTTON,
+          MESSAGES.emulatorMenuItem(), new EmulatorAction()));
+      connectItems.add(new DropDownItem(WIDGET_NAME_USB_BUTTON, MESSAGES.usbMenuItem(),
+          new UsbAction()));
+    }
+    connectItems.add(null);
     connectItems.add(new DropDownItem(WIDGET_NAME_REFRESHCOMPANION_BUTTON, MESSAGES.refreshCompanionMenuItem(),
             new RefreshCompanionAction()));
-    //connectItems.add(null);
+    connectItems.add(null);
     connectItems.add(new DropDownItem(WIDGET_NAME_RESET_BUTTON, MESSAGES.resetConnectionsMenuItem(),
         new ResetAction()));
-    //if (!iamChromebook) {
-    //  connectItems.add(new DropDownItem(WIDGET_NAME_HARDRESET_BUTTON, MESSAGES.hardResetConnectionsMenuItem(),
-    //      new HardResetAction()));
-    //}
+    if (!iamChromebook) {
+      connectItems.add(new DropDownItem(WIDGET_NAME_HARDRESET_BUTTON, MESSAGES.hardResetConnectionsMenuItem(),
+          new HardResetAction()));
+    }
     refreshMenu(connectDropDown, connectItems);
   }
 
