@@ -21,7 +21,7 @@
                                    }
      //--><!]]>
     </script>
-    <title>用户界面（UI）组件</title></head>
+    <title>用户界面（UI）组件 - App Inventor 2 中文版</title></head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
     <a class="navbar-brand" href="http://appinventor.mit.edu/">
 	<img src="/static/images/logo2.png" alt="Logo">
@@ -165,41 +165,36 @@
   <dt id="Button.FontItalic" class="boolean"><em>斜体</em></dt>
   <dd>设置<code class="highlighter-rouge">按钮</code>的显示字体是否是斜体。（注：有些字体不支持斜体）</dd>
   <dt id="Button.FontSize" class="number"><em>字体大小</em></dt>
-  <dd>设置<code class="highlighter-rouge">按钮</code>的字体大小，以像素px度量。</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的字体大小，以像素px为单位。</dd>
   <dt id="Button.FontTypeface" class="number do"><em>字体</em></dt>
   <dd>设置<code class="highlighter-rouge">按钮</code>的字体：default, serif, sans serif, or monospace。</dd>
   <dt id="Button.Height" class="number bo"><em>高度</em></dt>
-  <dd>设置<code class="highlighter-rouge">按钮</code>的垂直高度，以像素px度量。</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的垂直高度，以像素px为单位。</dd>
   <dt id="Button.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
   <dd>设置<code class="highlighter-rouge">按钮</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕</code><code class="highlighter-rouge">高度</code></a>的百分比。</dd>
   <dt id="Button.Image" class="text"><em>图像</em></dt>
-  <dd>Specifies the path of the <code class="highlighter-rouge">按钮</code>’s image. If there is both an <code class="highlighter-rouge">Image</code> and a
- <a href="#Button.BackgroundColor"><code class="highlighter-rouge">BackgroundColor</code></a> specified, only the <code class="highlighter-rouge">Image</code> will be visible.</dd>
-  <dt id="Button.Shape" class="number do"><em>Shape</em></dt>
-  <dd>Specifies the shape of the <code class="highlighter-rouge">按钮</code>. The valid values for this property are <code class="highlighter-rouge">0</code> (default),
- <code class="highlighter-rouge">1</code> (rounded), <code class="highlighter-rouge">2</code> (rectangle), and <code class="highlighter-rouge">3</code> (oval). The <code class="highlighter-rouge">Shape</code> will not be visible if an
- <a href="#Button.Image"><code class="highlighter-rouge">图像</code></a> is used.</dd>
-  <dt id="Button.ShowFeedback" class="boolean"><em>ShowFeedback</em></dt>
-  <dd>Specifies if a visual feedback should be shown when a <code class="highlighter-rouge">按钮</code> with an assigned
- <a href="#Button.Image"><code class="highlighter-rouge">图像</code></a> is pressed.</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>图像的路径，如果同时设置了<code class="highlighter-rouge">图像</code>和<a href="#Button.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>，则仅<code class="highlighter-rouge">图像</code>可见。</dd>
+  <dt id="Button.Shape" class="number do"><em>形状</em></dt>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的形状，此属性的有效值为<code class="highlighter-rouge">0</code>（默认）、 <code class="highlighter-rouge">1</code>
+  （圆形）、<code class="highlighter-rouge">2</code>（矩形）和<code class="highlighter-rouge">3</code>（椭圆形）。如果设置了<a href="#Button.Image"><code class="highlighter-rouge">图像</code></a>，则<code class="highlighter-rouge">形状</code>将不可见。
+ </dd>
+  <dt id="Button.ShowFeedback" class="boolean"><em>显示反馈</em></dt>
+  <dd>设置<code class="highlighter-rouge">按钮</code>指定<a href="#Button.Image"><code class="highlighter-rouge">图像</code></a>后被按压是否显示视觉反馈。</dd>
   <dt id="Button.Text" class="text"><em>文本</em></dt>
-  <dd>Specifies the text displayed by the <code class="highlighter-rouge">按钮</code>.</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的显示文本。</dd>
   <dt id="Button.TextAlignment" class="number do"><em>文本对齐</em></dt>
-  <dd>Specifies the alignment of the <code class="highlighter-rouge">按钮</code>’s text. Valid values are:
- <code class="highlighter-rouge">0</code> (normal; e.g., left-justified if text is written left to right),
- <code class="highlighter-rouge">1</code> (center), or
- <code class="highlighter-rouge">2</code> (opposite; e.g., right-justified if text is written left to right).</dd>
-  <dt id="Button.TextColor" class="color"><em>TextColor</em></dt>
-  <dd>Specifies the text color of the <code class="highlighter-rouge">Button</code> as an alpha-red-green-blue
- integer.</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>文本的对齐方式，有效值有：
+ <code class="highlighter-rouge">0</code>（正常；例如，如果文本从左到右书写，则左对齐）、
+ <code class="highlighter-rouge">1</code>（居中）或
+ <code class="highlighter-rouge">2</code>（相反；例如，如果文本从左到右书写，则右对齐）。</dd>
+  <dt id="Button.TextColor" class="color"><em>文本颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的文本颜色，使用RGBA数值表示。</dd>
   <dt id="Button.Visible" class="boolean"><em>可见性</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">Button</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">true</code>
- if the <code class="highlighter-rouge">Button</code> is showing and <code class="logic block highlighter-rouge">false</code> if hidden.</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">按钮</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
   <dt id="Button.Width" class="number bo"><em>宽度</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Button</code>, measured in pixels.</dd>
-  <dt id="Button.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Button</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="Button.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">按钮</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕</code><code class="highlighter-rouge">宽度</code></a>的百分比。</dd>
 </dl>
 
 <h3 id="Button-Events">事件</h3>
@@ -223,65 +218,64 @@
 
 <p class="methods">无</p>
 
-<h2 id="CheckBox">CheckBox</h2>
+<h2 id="CheckBox">复选框</h2>
 
 <p><img src="images/checkbox.png" alt="Example of a CheckBox" /></p>
 
-<p><code class="highlighter-rouge">CheckBox</code> components can detect user taps and can change their boolean state in response.</p>
+<p><code class="highlighter-rouge">复选框</code>组件可以检测用户点击，并更改其布尔状态。</p>
 
-<p>A <code class="highlighter-rouge">CheckBox</code> component raises an event when the user taps it. There are many properties affecting
- its appearance that can be set in the Designer or Blocks Editor.</p>
+<p>当用户点击<code class="highlighter-rouge">复选框</code>组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”或“程序设计”中进行设置。</p>
 
-<h3 id="CheckBox-Properties">Properties</h3>
+<h3 id="CheckBox-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="CheckBox.BackgroundColor" class="color"><em>BackgroundColor</em></dt>
-  <dd>Specifies the background color of the <code class="highlighter-rouge">CheckBox</code> as an alpha-red-green-blue
+  <dd>Specifies the background color of the <code class="highlighter-rouge">复选框</code> as an alpha-red-green-blue
  integer.</dd>
   <dt id="CheckBox.Checked" class="boolean"><em>Checked</em></dt>
   <dd>Set to <code class="logic block highlighter-rouge">true</code> if the box is checked, <code class="logic block highlighter-rouge">false</code> otherwise.</dd>
   <dt id="CheckBox.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">CheckBox</code> should be active and clickable.</dd>
+  <dd>Specifies whether the <code class="highlighter-rouge">复选框</code> should be active and clickable.</dd>
   <dt id="CheckBox.FontBold" class="boolean do"><em>FontBold</em></dt>
-  <dd>Specifies whether the text of the <code class="highlighter-rouge">CheckBox</code> should be bold.
+  <dd>Specifies whether the text of the <code class="highlighter-rouge">复选框</code> should be bold.
  Some fonts do not support bold.</dd>
   <dt id="CheckBox.FontItalic" class="boolean do"><em>FontItalic</em></dt>
-  <dd>Specifies whether the text of the <code class="highlighter-rouge">CheckBox</code> should be italic.
+  <dd>Specifies whether the text of the <code class="highlighter-rouge">复选框</code> should be italic.
  Some fonts do not support italic.</dd>
   <dt id="CheckBox.FontSize" class="number"><em>FontSize</em></dt>
-  <dd>Specifies the text font size of the <code class="highlighter-rouge">CheckBox</code>, measured in sp(scale-independent pixels).</dd>
+  <dd>Specifies the text font size of the <code class="highlighter-rouge">复选框</code>, measured in sp(scale-independent pixels).</dd>
   <dt id="CheckBox.FontTypeface" class="number do"><em>FontTypeface</em></dt>
-  <dd>Specifies the text font face of the <code class="highlighter-rouge">CheckBox</code> as default, serif, sans
+  <dd>Specifies the text font face of the <code class="highlighter-rouge">复选框</code> as default, serif, sans
  serif, or monospace.</dd>
   <dt id="CheckBox.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">CheckBox</code>’s vertical height, measured in pixels.</dd>
+  <dd>Specifies the <code class="highlighter-rouge">复选框</code>’s vertical height, measured in pixels.</dd>
   <dt id="CheckBox.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">CheckBox</code>’s vertical height as a percentage
+  <dd>Specifies the <code class="highlighter-rouge">复选框</code>’s vertical height as a percentage
  of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
   <dt id="CheckBox.Text" class="text"><em>Text</em></dt>
-  <dd>Specifies the text displayed by the <code class="highlighter-rouge">CheckBox</code>.</dd>
+  <dd>Specifies the text displayed by the <code class="highlighter-rouge">复选框</code>.</dd>
   <dt id="CheckBox.TextColor" class="color"><em>TextColor</em></dt>
-  <dd>Specifies the text color of the <code class="highlighter-rouge">CheckBox</code> as an alpha-red-green-blue
+  <dd>Specifies the text color of the <code class="highlighter-rouge">复选框</code> as an alpha-red-green-blue
  integer.</dd>
   <dt id="CheckBox.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">CheckBox</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">true</code>
- if the <code class="highlighter-rouge">CheckBox</code> is showing and <code class="logic block highlighter-rouge">false</code> if hidden.</dd>
+  <dd>Specifies whether the <code class="highlighter-rouge">复选框</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">true</code>
+ if the <code class="highlighter-rouge">复选框</code> is showing and <code class="logic block highlighter-rouge">false</code> if hidden.</dd>
   <dt id="CheckBox.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">CheckBox</code>, measured in pixels.</dd>
+  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">复选框</code>, measured in pixels.</dd>
   <dt id="CheckBox.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">CheckBox</code> as a percentage
+  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">复选框</code> as a percentage
  of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
 </dl>
 
-<h3 id="CheckBox-Events">Events</h3>
+<h3 id="CheckBox-Events">事件</h3>
 
 <dl class="events">
   <dt id="CheckBox.Changed">Changed()</dt>
-  <dd>User tapped and released the <code class="highlighter-rouge">CheckBox</code>.</dd>
+  <dd>User tapped and released the <code class="highlighter-rouge">复选框</code>.</dd>
   <dt id="CheckBox.GotFocus">GotFocus()</dt>
-  <dd><code class="highlighter-rouge">CheckBox</code> became the focused component.</dd>
+  <dd><code class="highlighter-rouge">复选框</code> became the focused component.</dd>
   <dt id="CheckBox.LostFocus">LostFocus()</dt>
-  <dd><code class="highlighter-rouge">CheckBox</code> stopped being the focused component.</dd>
+  <dd><code class="highlighter-rouge">复选框</code> stopped being the focused component.</dd>
 </dl>
 
 <h3 id="CheckBox-Methods">Methods</h3>
