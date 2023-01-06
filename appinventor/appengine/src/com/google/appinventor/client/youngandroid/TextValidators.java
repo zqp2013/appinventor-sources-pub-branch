@@ -138,6 +138,8 @@ public final class TextValidators {
    *         otherwise
    */
   public static boolean isValidIdentifier(String text) {
+	if ("".equals(text))
+      return false;
     return text.matches("^[\u4e00-\u9fa5a-zA-Z0-9_]*$");
   }
 
