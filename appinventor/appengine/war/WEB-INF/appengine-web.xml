@@ -160,7 +160,7 @@
     <property name="feedback.url" value="https://tsingfun.com/feedback.html" />
     <property name="release.notes.url" value="http://appinventor.mit.edu/ai2/ReleaseNotes.html" />
     <property name="tos.url" value="/about/termsofservice.html" />
-    <property name="logo.url" value="http://appinventor.mit.edu" />
+    <property name="logo.url" value="http://www.fun123.cn" />
     <property name="guide.url" value="http://fun123.cn/reference/info/" />
     <property name="reference.components.url" value="/reference/components/" />
 
