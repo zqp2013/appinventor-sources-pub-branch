@@ -1564,7 +1564,7 @@ public class YaVersion {
 
   public static final String PREFERRED_COMPANION = "2.65";
   public static final String EMULATOR_UPDATE_URL = ""; // Should be an APK
-  public static final String COMPANION_UPDATE_URL = "";
+  public static final String COMPANION_UPDATE_URL = "/reference/info/MITAI2Companion.apk";
   public static final String COMPANION_UPDATE_URL1 = "/reference/info/MITAI2Companion.apk";
   public static final String COMPANION_UPDATE_EMULATOR_URL = "";
   public static final String [] ACCEPTABLE_COMPANIONS = { "2.65", "2.65u" };
