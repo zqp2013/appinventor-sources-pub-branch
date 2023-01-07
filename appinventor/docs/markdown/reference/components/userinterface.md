@@ -1,39 +1,35 @@
 ---
 layout: documentation
-title: User Interface
+title: 用户界面（UI）组件 - App Inventor 2 中文版
 ---
 
-[&laquo; Back to index](index.html)
-# User Interface
+[&laquo; 返回首页](index.html)
+# 用户界面（UI）组件
 
-Table of Contents:
+目录：
 
-* [Button](#Button)
-* [CheckBox](#CheckBox)
-* [DatePicker](#DatePicker)
-* [Image](#Image)
-* [Label](#Label)
-* [ListPicker](#ListPicker)
-* [ListView](#ListView)
-* [Notifier](#Notifier)
-* [PasswordTextBox](#PasswordTextBox)
-* [Screen](#Screen)
-* [Slider](#Slider)
-* [Spinner](#Spinner)
-* [Switch](#Switch)
-* [TextBox](#TextBox)
-* [TimePicker](#TimePicker)
-* [WebViewer](#WebViewer)
+* [按钮（Button）](#Button)
+* [复选框（CheckBox）](#CheckBox)
+* [日期选择框（DatePicker）](#DatePicker)
+* [图像（Image）](#Image)
+* [标签（Label）](#Label)
+* [选择选择框（ListPicker）](#ListPicker)
+* [列表显示框（ListView）](#ListView)
+* [通知器（Notifier）](#Notifier)
+* [密码输入框（PasswordTextBox）](#PasswordTextBox)
+* [屏幕（Screen）](#Screen)
+* [滑动条（Slider）](#Slider)
+* [下拉框（Spinner）](#Spinner)
+* [切换开关（Switch）](#Switch)
+* [文本输入框（TextBox）](#TextBox)
+* [时间选择框（TimePicker）](#TimePicker)
+* [Web浏览框（WebViewer）](#WebViewer)
 
-## Button  {#Button}
+## 按钮（Button）  {#Button}
 
-Button with the ability to detect clicks. Many aspects of its appearance can be changed, as well
- as whether it is clickable (`Enabled`). Its properties can be changed in the Designer or in the
- Blocks Editor.
+按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”或“程序设计”中修改其属性。
 
-
-
-### Properties  {#Button-Properties}
+### 属性  {#Button-Properties}
 
 {:.properties}
 

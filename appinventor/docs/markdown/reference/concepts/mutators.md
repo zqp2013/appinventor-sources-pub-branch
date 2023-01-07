@@ -1,9 +1,9 @@
 ---
-title: Mutators
+title: 变异
 layout: documentation
 ---
 
-App Inventor 2 introduced a new feature that allows certain blocks to expand, shrink, or even change their functionality.
+App Inventor 2 引入了一项新功能，允许某些块扩展、收缩甚至更改其功能。
 
 ![Picture of the mutator icon](images/mutatoricon.png)
 

@@ -1,12 +1,10 @@
 ---
 layout: documentation
-title: Reference Documentation
+title: App Inventor 2 参考文档
 ---
 
-The MIT App Inventor reference documentation is organized into three
-main categories: built-in blocks reference, component reference, and
-other technical documentation.
+App Inventor 2 参考文档分为三大类：内置块参考文档、组件参考文档和其他技术文档。
 
-* [Built-in Blocks Reference](blocks/)
-* [Components Reference](components/)
-* [Technical and Other Guides](other/)
+* [内置块参考文档](blocks/)
+* [组件参考文档](components/)
+* [技术和其他指南](other/)
