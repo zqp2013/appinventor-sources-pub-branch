@@ -5,7 +5,7 @@ layout: documentation
 
 无论您的项目中有哪些组件，内置块都可用。除了这些语言块之外，项目中的每个组件都有自己的设置块，用于设置自己的事件、方法和属性。 这是“程序设计”视图中可用的所有内置块的概述。
 
-![内置块列表的屏幕截图](images/builtin.png){:style="float:right;border:3px;padding-right:40px;width:170px;"}
+![内置块列表的屏幕截图](images/builtin.png){:style="float:right;border:3px;padding-right:40px;"}
 
 * [控制块](control.html)
 * [逻辑块](logic.html)

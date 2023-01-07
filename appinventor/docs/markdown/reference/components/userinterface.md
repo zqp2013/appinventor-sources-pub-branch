@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: 用户界面（UI）组件 - App Inventor 2 中文版
+title: App Inventor 2 用户界面（UI）组件
 ---
 
 [&laquo; 返回首页](index.html)
@@ -33,115 +33,103 @@ title: 用户界面（UI）组件 - App Inventor 2 中文版
 
 {:.properties}
 
-{:id="Button.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `Button`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#Button.Image) has been set, the color
- change will not be visible until the [`Image`](#Button.Image) is removed.
+{:id="Button.BackgroundColor" .color} *背景颜色*
+: 设置`按钮`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#Button.Image)属性，则不能显示背景颜色直到删除[`图像`](#Button.Image)属性为止。
 
-{:id="Button.Enabled" .boolean} *Enabled*
-: Specifies whether the `Button` should be active and clickable.
+{:id="Button.Enabled" .boolean} *启用*
+: 设置`按钮`是否可以被点击。
 
-{:id="Button.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `Button` should be bold.
- Some fonts do not support bold.
+{:id="Button.FontBold" .boolean} *粗体*
+: 设置`按钮`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="Button.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `Button` should be italic.
- Some fonts do not support italic.
+{:id="Button.FontItalic" .boolean} *斜体*
+: 设置`按钮`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="Button.FontSize" .number} *FontSize*
-: Specifies the text font size of the `Button`, measured in sp(scale-independent pixels).
+{:id="Button.FontSize" .number} *字体大小*
+: 设置`按钮`的字体大小，以像素px为单位。
 
-{:id="Button.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `Button` as default, serif, sans
- serif, or monospace.
+{:id="Button.FontTypeface" .number .do} *字体*
+: 设置`按钮`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="Button.Height" .number .bo} *Height*
-: Specifies the `Button`'s vertical height, measured in pixels.
+{:id="Button.Height" .number .bo} *高度*
+: 设置`按钮`的垂直高度，以像素px为单位。
 
-{:id="Button.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Button`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="Button.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`按钮`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Button.Image" .text} *Image*
-: Specifies the path of the `Button`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#Button.BackgroundColor) specified, only the `Image` will be visible.
+{:id="Button.Image" .text} *图像*
+: 设置`按钮`图像的路径，如果同时设置了`图像`和[`背景颜色`](#Button.BackgroundColor)，则仅`图像`可见。
 
-{:id="Button.Shape" .number .do} *Shape*
-: Specifies the shape of the `Button`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#Button.Image) is used.
+{:id="Button.Shape" .number .do} *形状*
+: 设置`按钮`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
 
-{:id="Button.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `Button` with an assigned
- [`Image`](#Button.Image) is pressed.
+{:id="Button.ShowFeedback" .boolean} *显示反馈*
+: 设置`按钮`指定 [`图像`](#Button.Image)后被按压是否显示视觉反馈。
 
-{:id="Button.Text" .text} *Text*
-: Specifies the text displayed by the `Button`.
+{:id="Button.Text" .text} *文本*
+: 设置`按钮`的显示文本。
 
-{:id="Button.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `Button`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="Button.TextAlignment" .number .do} *文本对齐*
+: 设置`按钮`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="Button.TextColor" .color} *TextColor*
-: Specifies the text color of the `Button` as an alpha-red-green-blue
- integer.
+{:id="Button.TextColor" .color} *文本颜色*
+: 设置`按钮`的文本颜色，使用RGBA数值表示。
 
-{:id="Button.Visible" .boolean} *Visible*
-: Specifies whether the `Button` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Button` is showing and `false`{:.logic.block} if hidden.
+{:id="Button.Visible" .boolean} *可见性*
+: 设置`按钮`是否显示在屏幕上，值是`真`{:.logic.block}则`按钮`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Button.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Button`, measured in pixels.
+{:id="Button.Width" .number .bo} *宽度*
+: 设置`按钮`的水平宽度，以像素px为单位。
 
-{:id="Button.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Button` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="Button.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`按钮`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
-### Events  {#Button-Events}
+### 事件  {#Button-Events}
 
 {:.events}
 
-{:id="Button.Click"} Click()
-: Indicates that the user tapped and released the `Button`.
+{:id="Button.Click"} 被点击()
+: 表示用户点击并放开了`按钮`。
 
-{:id="Button.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `Button` so it is now possible
- to click it.
+{:id="Button.GotFocus"} 获得焦点()
+: 表示光标移到`按钮`上了，因此现在可以单击它。
 
-{:id="Button.LongClick"} LongClick()
-: Indicates that the user held the `Button` down.
+{:id="Button.LongClick"} 被慢点击()
+: 表示用户按住了`按钮`。
 
-{:id="Button.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `Button` so it is now no
- longer possible to click it.
+{:id="Button.LostFocus"} 失去焦点()
+: 表示光标从`按钮`移开，因此现在无法再单击它。
 
-{:id="Button.TouchDown"} TouchDown()
-: Indicates that the `Button` was pressed down.
+{:id="Button.TouchDown"} 被按压()
+: 表示`按钮`被按下。
 
-{:id="Button.TouchUp"} TouchUp()
-: Indicates that the `Button` has been released.
+{:id="Button.TouchUp"} 被松开()
+: 表示按下的`按钮`已被放开。
 
-### Methods  {#Button-Methods}
+### 方法  {#Button-Methods}
 
 {:.methods}
-None
+无
 
 
-## CheckBox  {#CheckBox}
+## 复选框  {#CheckBox}
 
 ![Example of a CheckBox](images/checkbox.png)
 
- `CheckBox` components can detect user taps and can change their boolean state in response.
+ `复选框`组件可以检测用户点击，并更改其布尔状态。
 
- A `CheckBox` component raises an event when the user taps it. There are many properties affecting
- its appearance that can be set in the Designer or Blocks Editor.
-
+ 当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”或“程序设计”中进行设置。
 
 
-### Properties  {#CheckBox-Properties}
+
+### 属性  {#CheckBox-Properties}
 
 {:.properties}
 
@@ -150,7 +138,7 @@ None
  integer.
 
 {:id="CheckBox.Checked" .boolean} *Checked*
-: Set to `true`{:.logic.block} if the box is checked, `false`{:.logic.block} otherwise.
+: Set to `真`{:.logic.block} if the box is checked, `假`{:.logic.block} otherwise.
 
 {:id="CheckBox.Enabled" .boolean} *Enabled*
 : Specifies whether the `CheckBox` should be active and clickable.
@@ -175,7 +163,7 @@ None
 
 {:id="CheckBox.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `CheckBox`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="CheckBox.Text" .text} *Text*
 : Specifies the text displayed by the `CheckBox`.
@@ -185,15 +173,15 @@ None
  integer.
 
 {:id="CheckBox.Visible" .boolean} *Visible*
-: Specifies whether the `CheckBox` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `CheckBox` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `CheckBox` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `CheckBox` is showing and `假`{:.logic.block} if hidden.
 
 {:id="CheckBox.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `CheckBox`, measured in pixels.
 
 {:id="CheckBox.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `CheckBox` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#CheckBox-Events}
 
@@ -258,7 +246,7 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
 
 {:id="DatePicker.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `DatePicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="DatePicker.Image" .text} *Image*
 : Specifies the path of the `DatePicker`'s image. If there is both an `Image` and a
@@ -296,15 +284,15 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
  integer.
 
 {:id="DatePicker.Visible" .boolean} *Visible*
-: Specifies whether the `DatePicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `DatePicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `DatePicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `DatePicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="DatePicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `DatePicker`, measured in pixels.
 
 {:id="DatePicker.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `DatePicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 {:id="DatePicker.Year" .number .ro .bo} *Year*
 : Returns the Year that was last picked using the DatePicker.
@@ -374,7 +362,7 @@ Component for displaying images and basic animations.
 
 {:id="Image.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `Image`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="Image.Picture" .text} *Picture*
 : Specifies the path of the `Image`'s `Picture`.
@@ -389,15 +377,15 @@ Component for displaying images and basic animations.
 : This property determines how the picture scales according to the Height or Width of the Image. Scale proportionally (0) preserves the picture aspect ratio. Scale to fit (1) matches the Image area, even if the aspect ratio changes.
 
 {:id="Image.Visible" .boolean} *Visible*
-: Specifies whether the `Image` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Image` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Image` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Image` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Image.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Image`, measured in pixels.
 
 {:id="Image.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `Image` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#Image-Events}
 
@@ -464,7 +452,7 @@ Labels are components used to show text.
 
 {:id="Label.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `Label`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="Label.Text" .text} *Text*
 : Specifies the text displayed by the label.
@@ -479,15 +467,15 @@ Labels are components used to show text.
  integer.
 
 {:id="Label.Visible" .boolean} *Visible*
-: Specifies whether the `Label` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Label` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Label` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Label` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Label.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Label`, measured in pixels.
 
 {:id="Label.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `Label` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#Label-Events}
 
@@ -509,7 +497,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
  (for example, `choice 1, choice 2, choice 3`) or by setting the [`Elements`](#ListPicker.Elements)
  property to a List in the Blocks editor.
 
- Setting property [`ShowFilterBar`](#ListPicker.ShowFilterBar) to `true`{:.logic.block}, will make the list
+ Setting property [`ShowFilterBar`](#ListPicker.ShowFilterBar) to `真`{:.logic.block}, will make the list
  searchable. Other properties affect the appearance of the button ([`TextAlignment`](#ListPicker.TextAlignment),
  [`BackgroundColor`](#ListPicker.BackgroundColor), etc.) and whether it can be clicked on
  ([`Enabled`](#ListPicker.Enabled)).
@@ -554,7 +542,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 
 {:id="ListPicker.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `ListPicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="ListPicker.Image" .text} *Image*
 : Specifies the path of the `ListPicker`'s image. If there is both an `Image` and a
@@ -584,7 +572,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
  [`Image`](#ListPicker.Image) is pressed.
 
 {:id="ListPicker.ShowFilterBar" .boolean} *ShowFilterBar*
-: If `true`{:.logic.block}, the ListPicker will show a search filter bar.
+: If `真`{:.logic.block}, the ListPicker will show a search filter bar.
 
 {:id="ListPicker.Text" .text} *Text*
 : Specifies the text displayed by the `ListPicker`.
@@ -603,15 +591,15 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 : Optional title displayed at the top of the list of choices.
 
 {:id="ListPicker.Visible" .boolean} *Visible*
-: Specifies whether the `ListPicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `ListPicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `ListPicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `ListPicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="ListPicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `ListPicker`, measured in pixels.
 
 {:id="ListPicker.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `ListPicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#ListPicker-Events}
 
@@ -691,7 +679,7 @@ This is a visible component that displays a list of text and image elements in y
 
 {:id="ListView.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `ListView`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="ListView.ImageHeight" .number} *ImageHeight*
 : Specifies the image height of ListView layouts containing images
@@ -730,8 +718,8 @@ This is a visible component that displays a list of text and image elements in y
  [`Selection`](#ListView.Selection) will be set to the empty text.
 
 {:id="ListView.ShowFilterBar" .boolean} *ShowFilterBar*
-: Sets visibility of the filter bar. `true`{:.logic.block} will show the bar,
- `false`{:.logic.block} will hide it.
+: Sets visibility of the filter bar. `真`{:.logic.block} will show the bar,
+ `假`{:.logic.block} will hide it.
 
 {:id="ListView.TextColor" .color} *TextColor*
 : The text color of the `ListView` items.
@@ -743,15 +731,15 @@ This is a visible component that displays a list of text and image elements in y
 : Specifies the `ListView` item's text font size
 
 {:id="ListView.Visible" .boolean} *Visible*
-: Specifies whether the `ListView` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `ListView` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `ListView` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `ListView` is showing and `假`{:.logic.block} if hidden.
 
 {:id="ListView.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `ListView`, measured in pixels.
 
 {:id="ListView.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `ListView` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#ListView-Events}
 
@@ -843,7 +831,7 @@ The Notifier component displays alert messages and creates Android log entries t
 
 {:id="Notifier.ShowChooseDialog" class="method"} <i/> ShowChooseDialog(*message*{:.text},*title*{:.text},*button1Text*{:.text},*button2Text*{:.text},*cancelable*{:.boolean})
 : Shows a dialog box with two buttons, from which the user can choose. If `cancelable` is
- `true`{:.logic.block} there will be an additional CANCEL button. Pressing a button will raise
+ `真`{:.logic.block} there will be an additional CANCEL button. Pressing a button will raise
  the [`AfterChoosing`](#Notifier.AfterChoosing) event. The "choice" parameter to
  [`AfterChoosing`](#Notifier.AfterChoosing) will be the text on the button that was pressed, or "Cancel" if
  the CANCEL button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also
@@ -854,7 +842,7 @@ The Notifier component displays alert messages and creates Android log entries t
 
 {:id="Notifier.ShowPasswordDialog" class="method"} <i/> ShowPasswordDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
 : Shows a dialog box where the user can enter password (input is masked), after which the
- [`AfterTextInput`](#Notifier.AfterTextInput) event will be raised. If `cancelable` is `true`{:.logic.block}
+ [`AfterTextInput`](#Notifier.AfterTextInput) event will be raised. If `cancelable` is `真`{:.logic.block}
  there will be an additional CANCEL button. The [`AfterTextInput`](#Notifier.AfterTextInput) and
  [`TextInputCanceled`](#Notifier.TextInputCanceled) events behave the same way as described in
  [`ShowTextDialog`](#Notifier.ShowTextDialog).
@@ -867,7 +855,7 @@ The Notifier component displays alert messages and creates Android log entries t
 
 {:id="Notifier.ShowTextDialog" class="method"} <i/> ShowTextDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
 : Shows a dialog box where the user can enter text, after which the
- [`AfterTextInput`](#Notifier.AfterTextInput)  event will be raised. If `cancelable` is `true`{:.logic.block}
+ [`AfterTextInput`](#Notifier.AfterTextInput)  event will be raised. If `cancelable` is `真`{:.logic.block}
  there will be an additional CANCEL button. Entering text will raise the
  [`AfterTextInput`](#Notifier.AfterTextInput) event. The "response" parameter to
  [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
@@ -922,7 +910,7 @@ Users enter passwords in a password text box component, which hides the text tha
 
 {:id="PasswordTextBox.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `PasswordTextBox`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="PasswordTextBox.Hint" .text} *Hint*
 : `PasswordTextBox` hint for the user.
@@ -951,15 +939,15 @@ Users enter passwords in a password text box component, which hides the text tha
  integer.
 
 {:id="PasswordTextBox.Visible" .boolean} *Visible*
-: Specifies whether the `PasswordTextBox` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `PasswordTextBox` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `PasswordTextBox` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `PasswordTextBox` is showing and `假`{:.logic.block} if hidden.
 
 {:id="PasswordTextBox.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `PasswordTextBox`, measured in pixels.
 
 {:id="PasswordTextBox.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `PasswordTextBox` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#PasswordTextBox-Events}
 
@@ -1079,8 +1067,8 @@ Top-level component containing all other components in the program.
  height is constrained to the height of the device.
 
 {:id="Screen.ShowListsAsJson" .boolean .do} *ShowListsAsJson*
-: If `true`{:.logic.block} (the default), lists will be shown as strings in JSON/Python notation
- for example [1, "a", true]. If `false`{:.logic.block}, lists will be shown in the LISP
+: If `真`{:.logic.block} (the default), lists will be shown as strings in JSON/Python notation
+ for example [1, "a", true]. If `假`{:.logic.block}, lists will be shown in the LISP
  notation, for example (1 a true).
 
    **Note:** This property appears only in Screen1 and the value for Screen1 determines the
@@ -1218,7 +1206,7 @@ This class is used to display a `Slider`.
 
 {:id="Slider.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `Slider`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="Slider.MaxValue" .number} *MaxValue*
 : Sets the maximum value of slider. If the new maximum is less than the
@@ -1242,15 +1230,15 @@ This class is used to display a `Slider`.
  [`MinValue`](#Slider.MinValue), then it will be set to same value as [`MinValue`](#Slider.MinValue).
 
 {:id="Slider.Visible" .boolean} *Visible*
-: Specifies whether the `Slider` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Slider` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Slider` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Slider` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Slider.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Slider`, measured in pixels.
 
 {:id="Slider.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `Slider` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#Slider-Events}
 
@@ -1292,7 +1280,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 {:id="Spinner.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `Spinner`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="Spinner.Prompt" .text} *Prompt*
 : Specifies the text used for the title of the Spinner window.
@@ -1307,15 +1295,15 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
  will be set to the empty text.
 
 {:id="Spinner.Visible" .boolean} *Visible*
-: Specifies whether the `Spinner` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Spinner` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Spinner` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Spinner` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Spinner.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Spinner`, measured in pixels.
 
 {:id="Spinner.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `Spinner` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#Spinner-Events}
 
@@ -1372,7 +1360,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 {:id="Switch.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `Switch`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="Switch.On" .boolean} *On*
 : True if the switch is in the On state, false otherwise.
@@ -1397,15 +1385,15 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 : Specifies the `Switch`'s track color when in the Off state.
 
 {:id="Switch.Visible" .boolean} *Visible*
-: Specifies whether the `Switch` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Switch` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Switch` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Switch` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Switch.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Switch`, measured in pixels.
 
 {:id="Switch.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `Switch` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#Switch-Events}
 
@@ -1485,7 +1473,7 @@ Users enter text in a text box component.
 
 {:id="TextBox.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `TextBox`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="TextBox.Hint" .text} *Hint*
 : `TextBox` hint for the user.
@@ -1503,7 +1491,7 @@ Users enter text in a text box component.
  [`Text`](#TextBox.Text) property.
 
 {:id="TextBox.ReadOnly" .boolean} *ReadOnly*
-: Whether the TextBox is read-only. By default, this is `true`{:.logic.block}.
+: Whether the TextBox is read-only. By default, this is `真`{:.logic.block}.
 
 {:id="TextBox.Text" .text} *Text*
 : The text in the `TextBox`, which can be set by the programmer in the Designer or Blocks Editor,
@@ -1520,15 +1508,15 @@ Users enter text in a text box component.
  integer.
 
 {:id="TextBox.Visible" .boolean} *Visible*
-: Specifies whether the `TextBox` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `TextBox` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `TextBox` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `TextBox` is showing and `假`{:.logic.block} if hidden.
 
 {:id="TextBox.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `TextBox`, measured in pixels.
 
 {:id="TextBox.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `TextBox` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#TextBox-Events}
 
@@ -1593,7 +1581,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 
 {:id="TimePicker.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `TimePicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="TimePicker.Hour" .number .ro .bo} *Hour*
 : Returns the hour of the time that was last picked using the `TimePicker``.
@@ -1633,15 +1621,15 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
  integer.
 
 {:id="TimePicker.Visible" .boolean} *Visible*
-: Specifies whether the `TimePicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `TimePicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `TimePicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `TimePicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="TimePicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `TimePicker`, measured in pixels.
 
 {:id="TimePicker.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `TimePicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#TimePicker-Events}
 
@@ -1746,20 +1734,20 @@ Component for viewing Web pages.
 
 {:id="WebViewer.HeightPercent" .number .wo .bo} *HeightPercent*
 : Specifies the `WebViewer`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+ of the [`屏幕高度`](userinterface.html#Screen.Height).
 
 {:id="WebViewer.HomeUrl" .text} *HomeUrl*
 : Specifies the URL of the page the `WebViewer` should initially open to. Setting this will
  load the page.
 
 {:id="WebViewer.IgnoreSslErrors" .boolean} *IgnoreSslErrors*
-: Determine whether or not to ignore SSL errors. Set to `true`{:.logic.block} to ignore errors.
+: Determine whether or not to ignore SSL errors. Set to `真`{:.logic.block} to ignore errors.
  Use this to accept self signed certificates from websites.
 
 {:id="WebViewer.PromptforPermission" .boolean} *PromptforPermission*
 : Determine if the user should be prompted for permission to use the geolocation API while in
- the `WebViewer`. If `true`{:.logic.block}, prompt the user of the `WebViewer` to give
- permission to access the geolocation API. If `false`{:.logic.block}, assume permission is
+ the `WebViewer`. If `真`{:.logic.block}, prompt the user of the `WebViewer` to give
+ permission to access the geolocation API. If `假`{:.logic.block}, assume permission is
  granted.
 
 {:id="WebViewer.UsesLocation" .boolean .wo .do} *UsesLocation*
@@ -1767,8 +1755,8 @@ Component for viewing Web pages.
  geolocation API.
 
 {:id="WebViewer.Visible" .boolean} *Visible*
-: Specifies whether the `WebViewer` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `WebViewer` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `WebViewer` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `WebViewer` is showing and `假`{:.logic.block} if hidden.
 
 {:id="WebViewer.WebViewString" .text .bo} *WebViewString*
 : Gets the `WebView`'s String, which is viewable through Javascript in the `WebView` as the
@@ -1779,7 +1767,7 @@ Component for viewing Web pages.
 
 {:id="WebViewer.WidthPercent" .number .wo .bo} *WidthPercent*
 : Specifies the horizontal width of the `WebViewer` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+ of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
 ### Events  {#WebViewer-Events}
 
