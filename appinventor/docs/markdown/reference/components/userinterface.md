@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: App Inventor 2 用户界面（UI）组件
+title: 用户界面（UI）组件
 ---
 
 [&laquo; 返回首页](index.html)
