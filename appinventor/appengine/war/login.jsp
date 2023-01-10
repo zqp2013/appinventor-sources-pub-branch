@@ -23,10 +23,10 @@
     <meta HTTP-EQUIV="pragma" CONTENT="no-cache"/>
     <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
     <meta HTTP-EQUIV="expires" CONTENT="0"/>
-    <title>App Inventor 2 中文版</title>
-	<meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文版,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文版，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文版"/>
+    <title>App Inventor 2 中文网</title>
+	<meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
+	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
   </head>
 <body>
   <center>
