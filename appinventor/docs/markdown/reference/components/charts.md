@@ -3,10 +3,10 @@ layout: documentation
 title: Charts
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Charts
 
-Table of Contents:
+目录：
 
 * [Chart](#Chart)
 * [ChartData2D](#ChartData2D)
@@ -72,8 +72,8 @@ The Chart component plots data originating from it's attached Data components. F
 : Specifies the type of the Chart, which determines how to visualize the data.
 
 {:id="Chart.Visible" .boolean} *Visible*
-: Specifies whether the `Chart` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Chart` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Chart` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Chart` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Chart.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Chart`, measured in pixels.

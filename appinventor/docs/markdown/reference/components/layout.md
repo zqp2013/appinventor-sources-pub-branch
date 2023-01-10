@@ -3,10 +3,10 @@ layout: documentation
 title: Layout
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Layout
 
-Table of Contents:
+目录：
 
 * [HorizontalArrangement](#HorizontalArrangement)
 * [HorizontalScrollArrangement](#HorizontalScrollArrangement)
@@ -77,8 +77,8 @@ Table of Contents:
 : Specifies the path of the background image of the `HorizontalArrangement`.
 
 {:id="HorizontalArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `HorizontalArrangement` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `HorizontalArrangement` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `HorizontalArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `HorizontalArrangement` is showing and `假`{:.logic.block} if hidden.
 
 {:id="HorizontalArrangement.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `HorizontalArrangement`, measured in pixels.
@@ -139,8 +139,8 @@ A formatting element in which to place components that should be displayed from 
 : Specifies the path of the background image of the `HorizontalScrollArrangement`.
 
 {:id="HorizontalScrollArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `HorizontalScrollArrangement` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `HorizontalScrollArrangement` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `HorizontalScrollArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `HorizontalScrollArrangement` is showing and `假`{:.logic.block} if hidden.
 
 {:id="HorizontalScrollArrangement.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `HorizontalScrollArrangement`, measured in pixels.
@@ -204,8 +204,8 @@ Use a table arrangement component to display a group of components in a tabular 
 : Determines the number of rows in the table.
 
 {:id="TableArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `TableArrangement` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `TableArrangement` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `TableArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `TableArrangement` is showing and `假`{:.logic.block} if hidden.
 
 {:id="TableArrangement.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `TableArrangement`, measured in pixels.
@@ -289,8 +289,8 @@ None
 : Specifies the path of the background image of the `VerticalArrangement`.
 
 {:id="VerticalArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `VerticalArrangement` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `VerticalArrangement` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `VerticalArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `VerticalArrangement` is showing and `假`{:.logic.block} if hidden.
 
 {:id="VerticalArrangement.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `VerticalArrangement`, measured in pixels.
@@ -351,8 +351,8 @@ A formatting element in which to place components that should be displayed one b
 : Specifies the path of the background image of the `VerticalScrollArrangement`.
 
 {:id="VerticalScrollArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `VerticalScrollArrangement` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `VerticalScrollArrangement` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `VerticalScrollArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `VerticalScrollArrangement` is showing and `假`{:.logic.block} if hidden.
 
 {:id="VerticalScrollArrangement.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `VerticalScrollArrangement`, measured in pixels.

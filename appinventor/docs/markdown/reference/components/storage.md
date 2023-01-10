@@ -1,67 +1,58 @@
 ---
 layout: documentation
-title: Storage
+title: 数据存储组件
 ---
 
-[&laquo; Back to index](index.html)
-# Storage
+[&laquo; 返回首页](index.html)
+# 数据存储组件
 
-Table of Contents:
+目录：
 
-* [CloudDB](#CloudDB)
-* [DataFile](#DataFile)
-* [File](#File)
-* [Spreadsheet](#Spreadsheet)
-* [TinyDB](#TinyDB)
-* [TinyWebDB](#TinyWebDB)
+* [云数据库](#CloudDB)
+* [数据文件](#DataFile)
+* [文件管理器](#File)
+* [电子表格](#Spreadsheet)
+* [微数据库](#TinyDB)
+* [网络微数据库](#TinyWebDB)
 
-## CloudDB  {#CloudDB}
-
-The `CloudDB` component is a Non-visible component that allows you to store data on a Internet
- connected database server (using Redis software). This allows the users of your App to share
- data with each other. By default data will be stored in a server maintained by MIT, however you
- can setup and run your own server. Set the [`RedisServer`](#CloudDB.RedisServer) property and
- [`RedisPort`](#CloudDB.RedisPort) property to access your own server.
+## 云数据库  {#CloudDB}
 
 
+`云数据库`是一个不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置[`服务地址`](#CloudDB.RedisServer)属性和[`服务端口`](#CloudDB.RedisPort)属性以访问您自己的服务器。
 
-### Properties  {#CloudDB-Properties}
+### 属性  {#CloudDB-Properties}
 
 {:.properties}
 
-{:id="CloudDB.ProjectID" .text .ro} *ProjectID*
-: Gets the ProjectID for this CloudDB project.
+{:id="CloudDB.ProjectID" .text .ro} *项目编号*
+: 获取此云数据库项目的编号。
 
-{:id="CloudDB.RedisPort" .number .ro} *RedisPort*
-: The Redis Server port to use. Defaults to 6381
+{:id="CloudDB.RedisPort" .number .ro} *服务端口*
+: 要使用的Redis服务器端口，默认为6381。
 
-{:id="CloudDB.RedisServer" .text .ro} *RedisServer*
-: The Redis Server to use to store data. A setting of "DEFAULT" means that the MIT server will be used.
+{:id="CloudDB.RedisServer" .text .ro} *服务地址*
+: 用于存储数据的Redis服务器地址，“DEFAULT”表示默认使用MIT服务器。
 
-{:id="CloudDB.Token" .text .ro .do} *Token*
-: This field contains the authentication token used to login to the backed Redis server. For the
- "DEFAULT" server, do not edit this value, the system will fill it in for you. A system
- administrator may also provide a special value to you which can be used to share data between
- multiple projects from multiple people. If using your own Redis server, set a password in the
- server's config and enter it here.
+{:id="CloudDB.Token" .text .ro .do} *令牌*
+: 此字段包含用于登录到支持的Redis服务器的身份验证令牌。 如果上面服务地址设置“DEFAULT”的话，这个值请不要编辑，系统会自动填上。 
+一个系统管理员还可以为您提供一个特殊值，可用于在彼此之间共享数据来自多人的多个项目。如果使用您自己的Redis服务器，请在服务器的配置并在此处输入。
 
-{:id="CloudDB.UseSSL" .boolean .ro .do} *UseSSL*
-: Set to true to use SSL to talk to CloudDB/Redis server. This should be set to True for the "DEFAULT" server.
+{:id="CloudDB.UseSSL" .boolean .ro .do} *使用SSL*
+: 设置为`真`{:.logic.block}则使用SSL加密通道与云数据库/Redis服务器通信。如果上面服务地址设置“DEFAULT”的话，这个应该设置为`真`{:.logic.block}。
 
-### Events  {#CloudDB-Events}
+### 事件  {#CloudDB-Events}
 
 {:.events}
 
-{:id="CloudDB.CloudDBError"} CloudDBError(*message*{:.text})
-: Indicates that an error occurred while communicating with the CloudDB Redis server.
+{:id="CloudDB.CloudDBError"} 云数据库错误(*消息*{:.text})
+: 表示与云数据库Redis服务器通信时发生错误。
 
-{:id="CloudDB.DataChanged"} DataChanged(*tag*{:.text},*value*{:.any})
-: Indicates that the data in the CloudDB project has changed. Launches an event with the
- `tag`{:.text.block} that has been updated and the `value`{:.variable.block} it now has.
+{:id="CloudDB.DataChanged"} 数据发生变化(*标签*{:.text},*值*{:.any})
+: 表示云数据库项目中的数据发生了变化，事件触发时`标签`{:.text.block}已被更新成最新的`值`{:.variable.block}。
 
-{:id="CloudDB.FirstRemoved"} FirstRemoved(*value*{:.any})
+{:id="CloudDB.FirstRemoved"} FirstRemoved(*值*{:.any})
 : Event triggered by the [`RemoveFirstFromList`](#CloudDB.RemoveFirstFromList) function. The argument
- `value`{:.variable.block} is the object that was the first in the list, and which is now
+ `值`{:.variable.block} is the object that was the first in the list, and which is now
  removed.
 
 {:id="CloudDB.GotValue"} GotValue(*tag*{:.text},*value*{:.any})
@@ -74,7 +65,7 @@ The `CloudDB` component is a Non-visible component that allows you to store data
 {:id="CloudDB.UpdateDone"} UpdateDone(*tag*{:.text},*operation*{:.text})
 : Indicates that operations that store data to CloudDB have completed.
 
-### Methods  {#CloudDB-Methods}
+### 方法  {#CloudDB-Methods}
 
 {:.methods}
 
@@ -85,7 +76,7 @@ The `CloudDB` component is a Non-visible component that allows you to store data
 : Remove the tag from CloudDB.
 
 {:id="CloudDB.CloudConnected" class="method returns boolean"} <i/> CloudConnected()
-: Returns `true`{:.logic.block} if we are on the network and will likely be able to connect to
+: Returns `真`{:.logic.block} if we are on the network and will likely be able to connect to
  the `CloudDB` server.
 
 {:id="CloudDB.GetTagList" class="method"} <i/> GetTagList()

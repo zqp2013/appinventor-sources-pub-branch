@@ -3,10 +3,10 @@ layout: documentation
 title: Sensors
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Sensors
 
-Table of Contents:
+目录：
 
 * [AccelerometerSensor](#AccelerometerSensor)
 * [BarcodeScanner](#BarcodeScanner)
@@ -48,7 +48,7 @@ Non-visible component that can detect shaking and measure acceleration approxima
 : Returns whether the `AccelerometerSensor` hardware is available on the device.
 
 {:id="AccelerometerSensor.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `true`{:.logic.block},
+: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated even if the device is accelerated or shaken.
 
@@ -145,7 +145,7 @@ Physical world component that can measure the ambient air pressure if
 : Specifies whether or not the device has the hardware to support the `Barometer` component.
 
 {:id="Barometer.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `true`{:.logic.block},
+: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
@@ -391,7 +391,7 @@ Physical world component that can measure the relative ambient air
 : Specifies whether or not the device has the hardware to support the `Hygrometer` component.
 
 {:id="Hygrometer.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `true`{:.logic.block},
+: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
@@ -434,7 +434,7 @@ Physical world component that can measure the light level.
  The sensor must be enabled and available to return meaningful values.
 
 {:id="LightSensor.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `true`{:.logic.block},
+: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
@@ -467,7 +467,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
  method) and a longitude (with the [`LongitudeFromAddress`](#LocationSensor.LongitudeFromAddress) method).
 
  In order to function, the component must have its [`Enabled`](#LocationSensor.Enabled) property set to
- `true`{:.logic.block}, and the device must have location sensing enabled through wireless
+ `真`{:.logic.block}, and the device must have location sensing enabled through wireless
  networks or GPS satellites (if outdoors).
 
  Location information might not be immediately available when an app starts. You'll have to wait
@@ -526,19 +526,19 @@ Non-visible component providing location information, including [`Latitude`](#Lo
  device is moving, the accuracy of the detected location is constantly changing.
 
 {:id="LocationSensor.Enabled" .boolean} *Enabled*
-: If `true`{:.logic.block}, the `LocationSensor` will attempt to read location information from
+: If `真`{:.logic.block}, the `LocationSensor` will attempt to read location information from
  GPS, WiFi location, or other means available on the device. This setting does not control
  whether location information is actually available. Device location must be enabled or
  disabled in the device settings.
 
 {:id="LocationSensor.HasAccuracy" .boolean .ro .bo} *HasAccuracy*
-: If `true`{:.logic.block}, the device can report its accuracy level.
+: If `真`{:.logic.block}, the device can report its accuracy level.
 
 {:id="LocationSensor.HasAltitude" .boolean .ro .bo} *HasAltitude*
-: If `true`{:.logic.block}, the device can report its altitude.
+: If `真`{:.logic.block}, the device can report its altitude.
 
 {:id="LocationSensor.HasLongitudeLatitude" .boolean .ro .bo} *HasLongitudeLatitude*
-: If `true`{:.logic.block}, the device can report longitude and latitude.  It is
+: If `真`{:.logic.block}, the device can report longitude and latitude.  It is
  always the case that either both or neither are.
 
 {:id="LocationSensor.Latitude" .number .ro .bo} *Latitude*
@@ -556,7 +556,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
 
    It is possible for a device to switch service providers when the current provider is unable
  to provide adequate location information. `ProviderLocked` is a Boolean value: true/false.
- Set to `true`{:.logic.block} to prevent providers from changing. Set to `false`{:.logic.block}
+ Set to `真`{:.logic.block} to prevent providers from changing. Set to `假`{:.logic.block}
  to allow for automatic switching when necessary.
 
 {:id="LocationSensor.ProviderName" .text .bo} *ProviderName*
@@ -644,7 +644,7 @@ Non-visible component to provide NFC capabilities. For now this component suppor
  and writing of text tags only (if supported by the device).
 
  In order to read and write text tags, the component must have its [`ReadMode`](#NearField.ReadMode)
- property set to `true`{:.logic.block} or `false`{:.logic.block} respectively.
+ property set to `真`{:.logic.block} or `假`{:.logic.block} respectively.
 
  **Note:** This component will only work on Screen1 of any App Inventor app.
 
@@ -658,12 +658,12 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 : Returns the content of the most recently received tag.
 
 {:id="NearField.ReadMode" .boolean} *ReadMode*
-: Specifies whether the NFC hardware should operate in read mode (`true`{:.logic.block}) or
- write mode (`false`{:.logic.block}).
+: Specifies whether the NFC hardware should operate in read mode (`真`{:.logic.block}) or
+ write mode (`假`{:.logic.block}).
 
 {:id="NearField.TextToWrite" .text .bo} *TextToWrite*
 : Specifies the content that will be written to the tag when in write mode. This method has no
- effect if [`ReadMode`](#NearField.ReadMode) is `true`{:.logic.block}.
+ effect if [`ReadMode`](#NearField.ReadMode) is `真`{:.logic.block}.
 
 {:id="NearField.WriteType" .number .ro .bo} *WriteType*
 : Returns the write type for the NFC component. For this version of the component, it is always
@@ -876,7 +876,7 @@ Physical world component that can measure the ambient air temperature if
 : Specifies whether or not the device has the hardware to support the `Thermometer` component.
 
 {:id="Thermometer.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `true`{:.logic.block},
+: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 

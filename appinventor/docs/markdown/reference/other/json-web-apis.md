@@ -5,7 +5,7 @@ title: Using Web APIs with JSON
 
 The JavaScript Object Notation (JSON) is widely used for interacting with application programming interfaces (APIs) on the web. JSON provides different types that are used to compose messages. App Inventor supports these values as well.
 
-* JSON values `true` and `false` become App Inventor `true`{:.logic.block} and `false`{:.logic.block}
+* JSON values `真` and `假` become App Inventor `真`{:.logic.block} and `假`{:.logic.block}
 * JSON numbers (both integers and decimal numbers) become App Inventor `number`{:.math.block}
 * JSON strings become App Inventor `text`{:.text.block}
 * JSON arrays become App Inventor `list`{:.list.block}
@@ -22,7 +22,7 @@ An example message in JSON might look like:
 }
 ```
 
-This JSON declares an object (indicated by the `{` and `}`). The keys are the quoted strings (e.g., `"name"`) before the colons (`:`). We see that there are different values, including arrays (comma-separated values between square brackets `[...]`), numbers (e.g., `42`), and Booleans (e.g., `true`).
+This JSON declares an object (indicated by the `{` and `}`). The keys are the quoted strings (e.g., `"name"`) before the colons (`:`). We see that there are different values, including arrays (comma-separated values between square brackets `[...]`), numbers (e.g., `42`), and Booleans (e.g., `真`).
 
 For the remainder of this document, we will be using a service called [JSONPlaceholder](https://jsonplaceholder.typicode.com), which is intended for use in examples. It produces sample JSON responses in the style of Lorem Ipsum and does not actually store any data.
 

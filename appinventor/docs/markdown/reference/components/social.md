@@ -3,10 +3,10 @@ layout: documentation
 title: Social
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Social
 
-Table of Contents:
+目录：
 
 * [ContactPicker](#ContactPicker)
 * [EmailPicker](#EmailPicker)
@@ -124,8 +124,8 @@ A button that, when clicked on, displays a list of the contacts to choose among.
  integer.
 
 {:id="ContactPicker.Visible" .boolean} *Visible*
-: Specifies whether the `ContactPicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `ContactPicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `ContactPicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `ContactPicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="ContactPicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `ContactPicker`, measured in pixels.
@@ -241,8 +241,8 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
  integer.
 
 {:id="EmailPicker.Visible" .boolean} *Visible*
-: Specifies whether the `EmailPicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `EmailPicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `EmailPicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `EmailPicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="EmailPicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `EmailPicker`, measured in pixels.
@@ -436,8 +436,8 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  integer.
 
 {:id="PhoneNumberPicker.Visible" .boolean} *Visible*
-: Specifies whether the `PhoneNumberPicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `PhoneNumberPicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `PhoneNumberPicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `PhoneNumberPicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="PhoneNumberPicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `PhoneNumberPicker`, measured in pixels.

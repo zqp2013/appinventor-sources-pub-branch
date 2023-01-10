@@ -3,10 +3,10 @@ layout: documentation
 title: Drawing and Animation
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Drawing and Animation
 
-Table of Contents:
+目录：
 
 * [Ball](#Ball)
 * [Canvas](#Canvas)
@@ -21,7 +21,7 @@ A round 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react
  For example, to have a `Ball` move 4 pixels toward the top of a `Canvas` every 500 milliseconds
  (half second), you would set the [`Speed`](#Ball.Speed) property to 4 [pixels], the
  [`Interval`](#Ball.Interval) property to 500 [milliseconds], the [`Heading`](#Ball.Heading) property to
- 90 [degrees], and the [`Enabled`](#Ball.Enabled) property to `true`{:.logic.block}. These and its
+ 90 [degrees], and the [`Enabled`](#Ball.Enabled) property to `真`{:.logic.block}. These and its
  other properties can be changed at any time.
 
  The difference between a `Ball` and an `ImageSprite` is that the latter can get its appearance
@@ -48,7 +48,7 @@ A round 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react
 
 {:id="Ball.OriginAtCenter" .boolean .wo .do} *OriginAtCenter*
 : Whether the x- and y-coordinates should represent the center of the `Ball`
- (`true`{:.logic.block}) or its left and top edges (`false`{:.logic.block}).
+ (`真`{:.logic.block}) or its left and top edges (`假`{:.logic.block}).
 
 {:id="Ball.PaintColor" .color} *PaintColor*
 : The color of the `Ball`.
@@ -58,7 +58,7 @@ A round 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react
 
 {:id="Ball.Speed" .number} *Speed*
 : The speed at which the `Ball` moves. The `Ball` moves this many pixels every
- [`Interval`](#Ball.Interval) milliseconds if [`Enabled`](#Ball.Enabled) is `true`{:.logic.block}.
+ [`Interval`](#Ball.Interval) milliseconds if [`Enabled`](#Ball.Enabled) is `真`{:.logic.block}.
 
 {:id="Ball.Visible" .boolean} *Visible*
 : Sets whether sprite should be visible.
@@ -231,8 +231,8 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
  [`DrawTextAtAngle`](#Canvas.DrawTextAtAngle)).
 
 {:id="Canvas.Visible" .boolean} *Visible*
-: Specifies whether the `Canvas` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Canvas` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Canvas` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Canvas` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Canvas.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Canvas`, measured in pixels.
@@ -339,13 +339,13 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
  interact with other sprites ([`Ball`](#Ball)s and other `ImageSprite`s) and the edge of the
  `Canvas`, and move according to its property values. Its appearance is that of the image
  specified in its [`Picture`](#ImageSprite.Picture) property (unless its [`Visible`](#ImageSprite.Visible) property is
- `false`{:.logic.block}.
+ `假`{:.logic.block}.
 
  To have an `ImageSprite` move 10 pixels to the left every 1000 milliseconds (one second), for
  example, you would set the [`Speed`](#ImageSprite.Speed) property to 10 [pixels], the [`Interval`](#ImageSprite.Interval)
  property to 1000 [milliseconds], the [`Heading`](#ImageSprite.Heading) property to 180 [degrees], and the
- [`Enabled`](#ImageSprite.Enabled) property to `true`{:.logic.block}. A sprite whose [`Rotates`](#ImageSprite.Rotates)
- property is `true`{:.logic.block} will rotate its image as the sprite's heading changes.
+ [`Enabled`](#ImageSprite.Enabled) property to `真`{:.logic.block}. A sprite whose [`Rotates`](#ImageSprite.Rotates)
+ property is `真`{:.logic.block} will rotate its image as the sprite's heading changes.
  *Checking for collisions with a rotated sprite currently checks the sprite's unrotated position
  so that collision checking will be inaccurate for tall narrow or short wide sprites that are
  rotated.* Any of the sprite properties can be changed at any time under program control.
@@ -380,7 +380,7 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 
 {:id="ImageSprite.Speed" .number} *Speed*
 : The speed at which the `ImageSprite` moves. The `ImageSprite` moves this many pixels every
- [`Interval`](#ImageSprite.Interval) milliseconds if [`Enabled`](#ImageSprite.Enabled) is `true`{:.logic.block}.
+ [`Interval`](#ImageSprite.Interval) milliseconds if [`Enabled`](#ImageSprite.Enabled) is `真`{:.logic.block}.
 
 {:id="ImageSprite.Visible" .boolean} *Visible*
 : Sets whether sprite should be visible.

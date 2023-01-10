@@ -3,10 +3,10 @@ layout: documentation
 title: Connectivity
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Connectivity
 
-Table of Contents:
+目录：
 
 * [ActivityStarter](#ActivityStarter)
 * [BluetoothClient](#BluetoothClient)
@@ -130,8 +130,8 @@ Use `BluetoothClient` to connect your device to other devices using Bluetooth. T
  device's name.
 
 {:id="BluetoothClient.Available" .boolean .ro .bo} *Available*
-: Returns `true`{:.logic.block} if Bluetooth is available on the device,
- `false`{:.logic.block} otherwise.
+: Returns `真`{:.logic.block} if Bluetooth is available on the device,
+ `假`{:.logic.block} otherwise.
 
 {:id="BluetoothClient.CharacterEncoding" .text} *CharacterEncoding*
 : Returns the character encoding to use when sending and receiving text.
@@ -145,7 +145,7 @@ Use `BluetoothClient` to connect your device to other devices using Bluetooth. T
 : Specifies whether BluetoothClient/BluetoothServer should be disconnected automatically when an error occurs.
 
 {:id="BluetoothClient.Enabled" .boolean .ro .bo} *Enabled*
-: Returns `true`{:.logic.block} if Bluetooth is enabled, `false`{:.logic.block} otherwise.
+: Returns `真`{:.logic.block} if Bluetooth is enabled, `假`{:.logic.block} otherwise.
 
 {:id="BluetoothClient.HighByteFirst" .boolean} *HighByteFirst*
 : Specifies whether numbers are sent and received with the most significant
@@ -269,8 +269,8 @@ Use the `BluetoothServer` component to turn your device into a server that recei
 {:.properties}
 
 {:id="BluetoothServer.Available" .boolean .ro .bo} *Available*
-: Returns `true`{:.logic.block} if Bluetooth is available on the device,
- `false`{:.logic.block} otherwise.
+: Returns `真`{:.logic.block} if Bluetooth is available on the device,
+ `假`{:.logic.block} otherwise.
 
 {:id="BluetoothServer.CharacterEncoding" .text} *CharacterEncoding*
 : Returns the character encoding to use when sending and receiving text.
@@ -281,7 +281,7 @@ Use the `BluetoothServer` component to turn your device into a server that recei
  ReceiveUnsignedBytes.
 
 {:id="BluetoothServer.Enabled" .boolean .ro .bo} *Enabled*
-: Returns `true`{:.logic.block} if Bluetooth is enabled, `false`{:.logic.block} otherwise.
+: Returns `真`{:.logic.block} if Bluetooth is enabled, `假`{:.logic.block} otherwise.
 
 {:id="BluetoothServer.HighByteFirst" .boolean} *HighByteFirst*
 : Specifies whether numbers are sent and received with the most significant

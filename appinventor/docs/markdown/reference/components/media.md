@@ -3,10 +3,10 @@ layout: documentation
 title: Media
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Media
 
-Table of Contents:
+目录：
 
 * [Camcorder](#Camcorder)
 * [Camera](#Camera)
@@ -160,8 +160,8 @@ A special-purpose button. When the user taps an `ImagePicker`, the device's imag
  integer.
 
 {:id="ImagePicker.Visible" .boolean} *Visible*
-: Specifies whether the `ImagePicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `ImagePicker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `ImagePicker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `ImagePicker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="ImagePicker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `ImagePicker`, measured in pixels.
@@ -390,9 +390,9 @@ None
 {:id="SpeechRecognizer.UseLegacy" .boolean} *UseLegacy*
 : If true, a separate dialog is used to recognize speech (the default). If false, speech is
  recognized in the background and updates are received as it recognizes words.
- [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) may get several calls with `partial` set to `true`{:.logic.block}.
+ [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) may get several calls with `partial` set to `真`{:.logic.block}.
  Once sufficient time has elapsed since the last utterance, or `StopListening` is called,
- the last string will be returned with `partial` set to `false`{:.logic.block} to indicate that it is the
+ the last string will be returned with `partial` set to `假`{:.logic.block} to indicate that it is the
  final recognized string and no more data will be provided until recognition is again started. See
  [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) for more details on partial speech recognition.
 
@@ -402,12 +402,12 @@ None
 
 {:id="SpeechRecognizer.AfterGettingText"} AfterGettingText(*result*{:.text},*partial*{:.boolean})
 : Simple event to raise after the SpeechRecognizer has recognized speech. If
- [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `true`{:.logic.block}, then this event will only happen once
- at the very end of the recognition. If [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `false`{:.logic.block},
+ [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `真`{:.logic.block}, then this event will only happen once
+ at the very end of the recognition. If [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `假`{:.logic.block},
  then this event will run multiple times as the `SpeechRecognizer` incrementally recognizes
- speech. In this case, `partial` will be `true`{:.logic.block} until the recognized speech
+ speech. In this case, `partial` will be `真`{:.logic.block} until the recognized speech
  has been finalized (e.g., the user has stopped speaking), in which case `partial` will be
- `false`{:.logic.block}.
+ `假`{:.logic.block}.
 
 {:id="SpeechRecognizer.BeforeGettingText"} BeforeGettingText()
 : Simple event to raise when the `SpeechRecognizer` is invoked but before its
@@ -425,7 +425,7 @@ None
 : Function used to forcefully stop listening speech in cases where
  SpeechRecognizer cannot stop automatically.
  This function works only when the [`UseLegacy`](#SpeechRecognizer.UseLegacy) property is
- set to `false`{:.logic.block}.
+ set to `假`{:.logic.block}.
 
 ## TextToSpeech  {#TextToSpeech}
 
@@ -474,8 +474,8 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
    The default value is 1.0 for normal pitch.
 
 {:id="TextToSpeech.Result" .boolean .ro .bo} *Result*
-: Returns `true`{:.logic.block} if the text was successfully converted to
- speech, otherwise `false`{:.logic.block}.
+: Returns `真`{:.logic.block} if the text was successfully converted to
+ speech, otherwise `假`{:.logic.block}.
 
 {:id="TextToSpeech.SpeechRate" .number} *SpeechRate*
 : Sets the SpeechRate for TextToSpeech.
@@ -491,8 +491,8 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
 
 {:id="TextToSpeech.AfterSpeaking"} AfterSpeaking(*result*{:.boolean})
 : Event to raise after the message is spoken. The `result`{:.variable.block} will be
- `true`{:.logic.block} if the message is spoken successfully, otherwise it will be
- `false`{:.logic.block}.
+ `真`{:.logic.block} if the message is spoken successfully, otherwise it will be
+ `假`{:.logic.block}.
 
 {:id="TextToSpeech.BeforeSpeaking"} BeforeSpeaking()
 : Event to raise when Speak is invoked, before the message is spoken.
@@ -594,8 +594,8 @@ A multimedia component capable of playing videos. When the application is run, t
  added in the Designer.
 
 {:id="VideoPlayer.Visible" .boolean} *Visible*
-: Specifies whether the `VideoPlayer` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `VideoPlayer` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `VideoPlayer` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `VideoPlayer` is showing and `假`{:.logic.block} if hidden.
 
 {:id="VideoPlayer.Volume" .number .wo} *Volume*
 : Sets the volume property to a number between 0 and 100. Values less than 0

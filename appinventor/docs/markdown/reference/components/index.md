@@ -11,7 +11,7 @@ title: App Inventor 2 组件参考文档
 * [界面布局组件](layout.html)
 * [多媒体组件](media.html)
 * [绘画动画组件](animation.html)
-* [Maps组件](maps.html)
+* [地图组件](maps.html)
 * [图表组件](charts.html)
 * [传感器组件](sensors.html)
 * [社交应用组件](social.html)

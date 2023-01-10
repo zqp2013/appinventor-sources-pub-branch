@@ -3,10 +3,10 @@ layout: documentation
 title: Experimental
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Experimental
 
-Table of Contents:
+目录：
 
 * [FirebaseDB](#FirebaseDB)
 

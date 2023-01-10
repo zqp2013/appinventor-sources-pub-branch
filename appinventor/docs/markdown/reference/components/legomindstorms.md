@@ -3,10 +3,10 @@ layout: documentation
 title: LEGO® MINDSTORMS®
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # LEGO® MINDSTORMS®
 
-Table of Contents:
+目录：
 
 * [Ev3ColorSensor](#Ev3ColorSensor)
 * [Ev3Commands](#Ev3Commands)

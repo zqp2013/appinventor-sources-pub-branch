@@ -3,7 +3,7 @@ title: MIT App Inventor Dictionary Blocks
 layout: documentation
 ---
 
-Table of Contents:
+目录：
 
 * [Introduction](#dictionaries)
 * [create empty dictionary](#create-empty-dictionary)
@@ -138,7 +138,7 @@ The `get values`{:.dictionary.block} returns a list containing the values in the
 
 ![](images/dictionaries/is-key-in.png)
 
-The `is key in dictionary?`{:.dictionary.block} tests whether the key exists in the dictionary and returns `true`{:.logic.block} if it does, otherwise it returns `false`{:.logic.block}.
+The `is key in dictionary?`{:.dictionary.block} tests whether the key exists in the dictionary and returns `真`{:.logic.block} if it does, otherwise it returns `假`{:.logic.block}.
 
 ### size of dictionary
 
@@ -236,4 +236,4 @@ The `walk all at level`{:.dictionary.block} block is a specialized block that ca
 
 ![](images/dictionaries/is-dict.png)
 
-The `is a dictionary?`{:.dictionary.block} block tests to see whether the `thing` given to it is a dictionary or not. It will return `true`{:.logic.block} if the `thing` is a dictionary and `false`{:.logic.block} otherwise.
+The `is a dictionary?`{:.dictionary.block} block tests to see whether the `thing` given to it is a dictionary or not. It will return `真`{:.logic.block} if the `thing` is a dictionary and `假`{:.logic.block} otherwise.

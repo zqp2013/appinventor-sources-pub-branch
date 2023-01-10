@@ -3,10 +3,10 @@ layout: documentation
 title: Maps
 ---
 
-[&laquo; Back to index](index.html)
+[&laquo; 返回首页](index.html)
 # Maps
 
-Table of Contents:
+目录：
 
 * [Circle](#Circle)
 * [FeatureCollection](#FeatureCollection)
@@ -85,8 +85,8 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 : Returns the type of the feature. For Circles, this returns MapFeature.Circle ("Circle").
 
 {:id="Circle.Visible" .boolean} *Visible*
-: Specifies whether the `Circle` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Circle` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Circle` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Circle` is showing and `假`{:.logic.block} if hidden.
 
 ### Events  {#Circle-Events}
 
@@ -100,7 +100,7 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 
 {:id="Circle.LongClick"} LongClick()
 : The `LongClick` event runs when the user presses and holds the `Circle` and then releases it.
- This event will only trigger if [`Draggable`](#Circle.Draggable) is `false`{:.logic.block} because it
+ This event will only trigger if [`Draggable`](#Circle.Draggable) is `假`{:.logic.block} because it
  uses the same gesture as [`StartDrag`](#Circle.StartDrag).
 
 {:id="Circle.StartDrag"} StartDrag()
@@ -117,16 +117,16 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 
 {:id="Circle.DistanceToFeature" class="method returns number"} <i/> DistanceToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Computes the distance between the `Circle` and the given `mapFeature`. If `centroids` is
- `true`{:.logic.block}, the computation is done between the centroids of the two features.
+ `真`{:.logic.block}, the computation is done between the centroids of the two features.
  Otherwise, the distance will be computed between the two features based on the closest points.
- Further, when `centroids` is `false`{:.logic.block}, this method will return 0 if the `Circle`
+ Further, when `centroids` is `假`{:.logic.block}, this method will return 0 if the `Circle`
  intersects or contains the `mapFeature`. If an error occurs, this method will return -1.
 
 {:id="Circle.DistanceToPoint" class="method returns number"} <i/> DistanceToPoint(*latitude*{:.number},*longitude*{:.number},*centroid*{:.boolean})
 : Computes the distance between the `Circle` and the given `latitude` and `longitude`. If
- `centroids` is `true`{:.logic.block}, the distance is computed from the center of the `Circle`
+ `centroids` is `真`{:.logic.block}, the distance is computed from the center of the `Circle`
  to the given point. Otherwise, the distance is computed from the closest point on the `Circle`
- to the given point. Further, this method will return 0 if `centroids` is `false`{:.logic.block}
+ to the given point. Further, this method will return 0 if `centroids` is `假`{:.logic.block}
  and the point is in the `Circle`. If an error occurs, -1 will be returned.
 
 {:id="Circle.HideInfobox" class="method"} <i/> HideInfobox()
@@ -174,8 +174,8 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Specifies the source URL used to populate the feature collection. If the feature collection was not loaded from a URL, this will be the empty string.
 
 {:id="FeatureCollection.Visible" .boolean} *Visible*
-: Specifies whether the `FeatureCollection` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `FeatureCollection` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `FeatureCollection` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `FeatureCollection` is showing and `假`{:.logic.block} if hidden.
 
 {:id="FeatureCollection.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `FeatureCollection`, measured in pixels.
@@ -308,8 +308,8 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Returns the type of the map feature. For LineString, this returns MapFeature.LineString ("LineString").
 
 {:id="LineString.Visible" .boolean} *Visible*
-: Specifies whether the `LineString` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `LineString` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `LineString` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `LineString` is showing and `假`{:.logic.block} if hidden.
 
 ### Events  {#LineString-Events}
 
@@ -323,7 +323,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 
 {:id="LineString.LongClick"} LongClick()
 : The `LongClick` event runs when the user presses and holds the `LineString` and then releases it.
- This event will only trigger if [`Draggable`](#LineString.Draggable) is `false`{:.logic.block} because it
+ This event will only trigger if [`Draggable`](#LineString.Draggable) is `假`{:.logic.block} because it
  uses the same gesture as [`StartDrag`](#LineString.StartDrag).
 
 {:id="LineString.StartDrag"} StartDrag()
@@ -340,16 +340,16 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 
 {:id="LineString.DistanceToFeature" class="method returns number"} <i/> DistanceToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Computes the distance between the `LineString` and the given `mapFeature`. If `centroids` is
- `true`{:.logic.block}, the computation is done between the centroids of the two features.
+ `真`{:.logic.block}, the computation is done between the centroids of the two features.
  Otherwise, the distance will be computed between the two features based on the closest points.
- Further, when `centroids` is `false`{:.logic.block}, this method will return 0 if the `LineString`
+ Further, when `centroids` is `假`{:.logic.block}, this method will return 0 if the `LineString`
  intersects or contains the `mapFeature`. If an error occurs, this method will return -1.
 
 {:id="LineString.DistanceToPoint" class="method returns number"} <i/> DistanceToPoint(*latitude*{:.number},*longitude*{:.number},*centroid*{:.boolean})
 : Computes the distance between the `LineString` and the given `latitude` and `longitude`. If
- `centroids` is `true`{:.logic.block}, the distance is computed from the center of the `LineString`
+ `centroids` is `真`{:.logic.block}, the distance is computed from the center of the `LineString`
  to the given point. Otherwise, the distance is computed from the closest point on the `LineString`
- to the given point. Further, this method will return 0 if `centroids` is `false`{:.logic.block}
+ to the given point. Further, this method will return 0 if `centroids` is `假`{:.logic.block}
  and the point is in the `LineString`. If an error occurs, -1 will be returned.
 
 {:id="LineString.HideInfobox" class="method"} <i/> HideInfobox()
@@ -466,8 +466,8 @@ A two-dimensional container that renders map tiles in the background and allows 
 : Returns the user's longitude if ShowUser is enabled.
 
 {:id="Map.Visible" .boolean} *Visible*
-: Specifies whether the `Map` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Map` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Map` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Map` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Map.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Map`, measured in pixels.
@@ -682,8 +682,8 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 : Return the type of the map feature. For Marker, this returns the text "Marker".
 
 {:id="Marker.Visible" .boolean} *Visible*
-: Specifies whether the `Marker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Marker` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Marker` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Marker` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Marker.Width" .number .bo} *Width*
 : Specifies the horizontal width of the `Marker`, measured in pixels.
@@ -704,7 +704,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 
 {:id="Marker.LongClick"} LongClick()
 : The `LongClick` event runs when the user presses and holds the `Marker` and then releases it.
- This event will only trigger if [`Draggable`](#Marker.Draggable) is `false`{:.logic.block} because it
+ This event will only trigger if [`Draggable`](#Marker.Draggable) is `假`{:.logic.block} because it
  uses the same gesture as [`StartDrag`](#Marker.StartDrag).
 
 {:id="Marker.StartDrag"} StartDrag()
@@ -721,7 +721,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 
 {:id="Marker.BearingToFeature" class="method returns number"} <i/> BearingToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Returns the bearing from the `Marker` to the given map feature, in degrees from due north.
- If the `centroids` parameter is `true`{:.logic.block}, the bearing will be to the center of
+ If the `centroids` parameter is `真`{:.logic.block}, the bearing will be to the center of
  the map feature. Otherwise, the bearing will be computed to the point in the feature nearest
  the `Marker`.
 
@@ -731,9 +731,9 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 
 {:id="Marker.DistanceToFeature" class="method returns number"} <i/> DistanceToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Computes the distance between the `Marker` and the given `mapFeature`. If `centroids` is
- `true`{:.logic.block}, the computation is done between the centroids of the two features.
+ `真`{:.logic.block}, the computation is done between the centroids of the two features.
  Otherwise, the distance will be computed between the two features based on the closest points.
- Further, when `centroids` is `false`{:.logic.block}, this method will return 0 if the `Marker`
+ Further, when `centroids` is `假`{:.logic.block}, this method will return 0 if the `Marker`
  intersects or contains the `mapFeature`. If an error occurs, this method will return -1.
 
 {:id="Marker.DistanceToPoint" class="method returns number"} <i/> DistanceToPoint(*latitude*{:.number},*longitude*{:.number})
@@ -889,8 +889,8 @@ The Navigation component generates directions between two locations using a serv
 : Returns the type of the feature. For polygons, this returns MapFeature.Polygon ("Polygon").
 
 {:id="Polygon.Visible" .boolean} *Visible*
-: Specifies whether the `Polygon` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Polygon` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Polygon` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Polygon` is showing and `假`{:.logic.block} if hidden.
 
 ### Events  {#Polygon-Events}
 
@@ -904,7 +904,7 @@ The Navigation component generates directions between two locations using a serv
 
 {:id="Polygon.LongClick"} LongClick()
 : The `LongClick` event runs when the user presses and holds the `Polygon` and then releases it.
- This event will only trigger if [`Draggable`](#Polygon.Draggable) is `false`{:.logic.block} because it
+ This event will only trigger if [`Draggable`](#Polygon.Draggable) is `假`{:.logic.block} because it
  uses the same gesture as [`StartDrag`](#Polygon.StartDrag).
 
 {:id="Polygon.StartDrag"} StartDrag()
@@ -924,16 +924,16 @@ The Navigation component generates directions between two locations using a serv
 
 {:id="Polygon.DistanceToFeature" class="method returns number"} <i/> DistanceToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Computes the distance between the `Polygon` and the given `mapFeature`. If `centroids` is
- `true`{:.logic.block}, the computation is done between the centroids of the two features.
+ `真`{:.logic.block}, the computation is done between the centroids of the two features.
  Otherwise, the distance will be computed between the two features based on the closest points.
- Further, when `centroids` is `false`{:.logic.block}, this method will return 0 if the `Polygon`
+ Further, when `centroids` is `假`{:.logic.block}, this method will return 0 if the `Polygon`
  intersects or contains the `mapFeature`. If an error occurs, this method will return -1.
 
 {:id="Polygon.DistanceToPoint" class="method returns number"} <i/> DistanceToPoint(*latitude*{:.number},*longitude*{:.number},*centroid*{:.boolean})
 : Computes the distance between the `Polygon` and the given `latitude` and `longitude`. If
- `centroids` is `true`{:.logic.block}, the distance is computed from the center of the `Polygon`
+ `centroids` is `真`{:.logic.block}, the distance is computed from the center of the `Polygon`
  to the given point. Otherwise, the distance is computed from the closest point on the `Polygon`
- to the given point. Further, this method will return 0 if `centroids` is `false`{:.logic.block}
+ to the given point. Further, this method will return 0 if `centroids` is `假`{:.logic.block}
  and the point is in the `Polygon`. If an error occurs, -1 will be returned.
 
 {:id="Polygon.HideInfobox" class="method"} <i/> HideInfobox()
@@ -999,8 +999,8 @@ The Navigation component generates directions between two locations using a serv
 : Returns the type of the feature. For rectangles, this returns MapFeature.Rectangle ("Rectangle").
 
 {:id="Rectangle.Visible" .boolean} *Visible*
-: Specifies whether the `Rectangle` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `Rectangle` is showing and `false`{:.logic.block} if hidden.
+: Specifies whether the `Rectangle` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `Rectangle` is showing and `假`{:.logic.block} if hidden.
 
 {:id="Rectangle.WestLongitude" .number} *WestLongitude*
 : Specifies the south-most edge of the `Rectangle`, in decimal degrees south of the equator.
@@ -1017,7 +1017,7 @@ The Navigation component generates directions between two locations using a serv
 
 {:id="Rectangle.LongClick"} LongClick()
 : The `LongClick` event runs when the user presses and holds the `Rectangle` and then releases it.
- This event will only trigger if [`Draggable`](#Rectangle.Draggable) is `false`{:.logic.block} because it
+ This event will only trigger if [`Draggable`](#Rectangle.Draggable) is `假`{:.logic.block} because it
  uses the same gesture as [`StartDrag`](#Rectangle.StartDrag).
 
 {:id="Rectangle.StartDrag"} StartDrag()
@@ -1040,16 +1040,16 @@ The Navigation component generates directions between two locations using a serv
 
 {:id="Rectangle.DistanceToFeature" class="method returns number"} <i/> DistanceToFeature(*mapFeature*{:.component},*centroids*{:.boolean})
 : Computes the distance between the `Rectangle` and the given `mapFeature`. If `centroids` is
- `true`{:.logic.block}, the computation is done between the centroids of the two features.
+ `真`{:.logic.block}, the computation is done between the centroids of the two features.
  Otherwise, the distance will be computed between the two features based on the closest points.
- Further, when `centroids` is `false`{:.logic.block}, this method will return 0 if the `Rectangle`
+ Further, when `centroids` is `假`{:.logic.block}, this method will return 0 if the `Rectangle`
  intersects or contains the `mapFeature`. If an error occurs, this method will return -1.
 
 {:id="Rectangle.DistanceToPoint" class="method returns number"} <i/> DistanceToPoint(*latitude*{:.number},*longitude*{:.number},*centroid*{:.boolean})
 : Computes the distance between the `Rectangle` and the given `latitude` and `longitude`. If
- `centroids` is `true`{:.logic.block}, the distance is computed from the center of the `Rectangle`
+ `centroids` is `真`{:.logic.block}, the distance is computed from the center of the `Rectangle`
  to the given point. Otherwise, the distance is computed from the closest point on the `Rectangle`
- to the given point. Further, this method will return 0 if `centroids` is `false`{:.logic.block}
+ to the given point. Further, this method will return 0 if `centroids` is `假`{:.logic.block}
  and the point is in the `Rectangle`. If an error occurs, -1 will be returned.
 
 {:id="Rectangle.HideInfobox" class="method"} <i/> HideInfobox()
