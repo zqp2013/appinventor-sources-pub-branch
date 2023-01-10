@@ -157,7 +157,7 @@
     <property name="extensions.url" value="" />
     <property name="troubleshooting.url" value="" />
     <property name="forums.url" value="https://bbs.tsingfun.com/forum-147-1.html" />
-    <property name="feedback.url" value="https://bbs.tsingfun.com/forum.php?mod=forumdisplay%26fid=147%26filter=typeid%26typeid=63" />
+    <property name="feedback.url" value="https://bbs.tsingfun.com/forum-147-1.html" />
     <property name="release.notes.url" value="http://appinventor.mit.edu/ai2/ReleaseNotes.html" />
     <property name="tos.url" value="/about/termsofservice.html" />
     <property name="logo.url" value="http://www.fun123.cn" />
