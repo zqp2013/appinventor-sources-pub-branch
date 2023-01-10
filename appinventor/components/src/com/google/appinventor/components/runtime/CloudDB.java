@@ -98,9 +98,14 @@ import redis.clients.jedis.exceptions.JedisNoScriptException;
  */
 
 @DesignerComponent(version = YaVersion.CLOUDDB_COMPONENT_VERSION,
-    description = "不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 " 
-        + "默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置“RedisServer”属性和“RedisPort”属性以访问您自己的服务器。",
-    designerHelpDescription = "不可见组件，与云数据库通信用于存储和获取数据。",
+    description = "Non-visible component allowing you to store data on a Internet " +
+    "connected database server (using Redis software). This allows the users of " +
+    "your App to share data with each other. " +
+    "By default data will be stored in a server maintained by MIT, however you " +
+    "can setup and run your own server. Set the \"RedisServer\" property and " +
+    "\"RedisPort\" Property to access your own server.",
+    designerHelpDescription = "Non-visible component that communicates with CloudDB " +
+    "server to store and retrieve information.",
     category = ComponentCategory.STORAGE,
     nonVisible = true,
     iconName = "images/cloudDB.png")
