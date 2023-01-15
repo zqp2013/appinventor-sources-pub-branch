@@ -517,10 +517,9 @@ public class AppInvHTTPD extends NanoHTTPD {
     "    </script>\n" +
     "  </head>\n" +
     "  <body>\n" +
-    "    <h1>This is a special window used by MIT App Inventor</h1>\n" +
+    "    <h1>这是AI伴侣连接使用的特殊窗口</h1>\n" +
     "    <p>\n" +
-    "      You can safely ignore this window, it should close when you\n" +
-    "      disconnect the MIT AI2 Companion, or exit MIT App Inventor.\n" +
+    "      您可以放心忽略此窗口，它将在您断开或退出AI伴侣时关闭。<a style=\"color:red;\">（注：请不要手动关闭此窗口）</a>\n" +
     "    </p>\n" +
     "  </body>\n" +
     "</html>\n";
