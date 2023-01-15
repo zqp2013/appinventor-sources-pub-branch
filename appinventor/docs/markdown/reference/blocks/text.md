@@ -1,91 +1,90 @@
 ---
-title: MIT App Inventor Text Blocks
+title: App Inventor 文本代码块
 layout: documentation
 ---
 
-* [string](#string)
-* [join](#join)
-* [length](#length)
-* [is empty](#isempty)
-* [compare texts](#compare)
-* [trim](#trim)
-* [upcase](#upcase)
-* [downcase](#downcase)
-* [starts at](#startsat)
-* [contains](#contains)
+* [字符串](#string)
+* [合并字符串](#join)
+* [求长度](#length)
+* [是否为空](#isempty)
+* [字符串比较](#compare)
+* [删除空格](#trim)
+* [大写](#upcase)
+* [小写](#downcase)
+* [求起始位置](#startsat)
+* [是否包含](#contains)
 * [contains any](#containsany)
 * [contains all](#containsall)
 * [split at first](#splitatfirst)
 * [split at first of any](#splitatfirstofany)
-* [split](#split)
+* [分解](#split)
 * [split at any](#splitatany)
 * [split at spaces](#splitatspaces)
 * [segment](#segment)
-* [replace all](#replaceall)
-* [obfuscated text](#obfuscatetext)
-* [is a string?](#isstring)
-* [reverse](#reverse)
-* [replace all mappings](#replaceallmappings)
+* [全部替换](#replaceall)
+* [模糊文本](#obfuscatetext)
+* [是一个字符串？](#isstring)
+* [反转](#reverse)
+* [替换所有映射](#replaceallmappings)
 
-### " " (string block)   {#string}
+### " " (字符串)   {#string}
 
 ![](images/text/string.png)
 
-Contains a text string.
+包含文本字符串。
+该字符串可以包含任何字符（字母、数字或其他特殊字符）。 在 App Inventor 上，它将被视为一个文本对象。
 
-This string can contain any characters (letters, numbers, or other special characters). On App Inventor it will be considered a Text object.
-
-### join   {#join}
+### 合并字符串   {#join}
 
 ![](images/text/join.png)
+合并所有输入以生成单个字符串，如果没有输入，则返回一个空字符串。
 
-Appends all of the inputs to make a single string. If no inputs, returns an empty string.
-
-### length   {#length}
+### 求长度   {#length}
 
 ![](images/text/length.png)
 
-Returns the number of characters including spaces in the string. This is the length of the given text string.
+返回字符串中包含空格的字符数，这是给定文本字符串的长度。
 
-### is empty   {#isempty}
+### 是否为空   {#isempty}
 
 ![](images/text/isempty.png)
 
-Returns whether or not the string contains any characters (including spaces). When the string length is 0, returns true otherwise it returns false.
+返回字符串是否包含任何字符（包括空格），当字符串长度为 0 时，返回“真”，否则返回“假”。
 
-### compare texts < > = ≠ {#compare}
+### 字符串比较 < > = ≠ {#compare}
 
 ![](images/text/compare.gif)
 
-Returns whether or not the first string is lexicographically <, >, =, or ≠ the second string depending on which dropdown is selected.
+根据选择的下拉列表，返回第一个字符串是否按字典顺序 <、>、= 或≠第二个字符串。
+如果一个字符串按字母顺序大于另一个字符串，则认为它在`ASCII`顺序上大于另一个字符串，比如：cat > Cat。
 
-A string a considered lexicographically greater than another if it is alphabetically greater than the other string. Essentially, it would come after it in the dictionary. All uppercase letters are considered smaller or to occur before lowercase letters. cat would be > Cat.
+![](images/text/ascii.png)
 
-### trim   {#trim}
+### 删除空格   {#trim}
 
 ![](images/text/trim.png)
 
-Removes any spaces leading or trailing the input string and returns the result.
+删除输入字符串前面或尾部的任何空格并返回结果。`注：不会删除中间的任何空格！`
 
-### upcase   {#upcase}
+### 大写   {#upcase}
 
 ![](images/text/upcase.png)
 
-Returns a copy of its text string argument converted to all upper case.
+返回转换为全部大写的文本字符串的副本。
 
-### downcase   {#downcase}
+### 小写   {#downcase}
 
 ![](images/text/downcase.png)
 
-Returns a copy of its text string argument converted to all lower case.
+返回转换为全部小写的文本字符串的副本。
 
-### starts at   {#startsat}
+### 求起始位置   {#startsat}
 
 ![](images/text/startsat.png)
 
 Returns the character position where the first character of *piece* first appears in text, or 0 if not present. For example, the location of *ana* in *havana banana* is 4.
 
-### contains   {#contains}
+### 是否包含   {#contains}
 
 ![](images/text/contains.png)
 
