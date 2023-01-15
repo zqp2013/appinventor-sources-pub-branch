@@ -28,7 +28,7 @@
 	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
   </head>
-<body>
+<body style="background: url(/static/images/bg.svg);padding-top:5%;">
   <center>
     <h1>${pleaselogin}</h1>
   </center>
