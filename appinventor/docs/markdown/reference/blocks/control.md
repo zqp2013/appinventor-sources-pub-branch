@@ -1,13 +1,13 @@
 ---
-title: MIT App Inventor Control Blocks
+title: App Inventor控制代码块
 layout: documentation
 ---
 
-* [if & else if](#if)
-* [for each number from to](#forrange)
-* [for each item in list](#foreach)
-* [for each key with value in dictionary](#foreachdict)
-* [while](#while)
+* [如果 & 则（if & else if）](#if)
+* [从范围循环(for each number from to)](#forrange)
+* [从列表循环（for each item in list）](#foreach)
+* [从字典循环(for each key with value in dictionary)](#foreachdict)
+* [while循环](#while)
 * [if then else](#choose)
 * [do with result](#doreturn)
 * [evaluate but ignore result](#evaluate)

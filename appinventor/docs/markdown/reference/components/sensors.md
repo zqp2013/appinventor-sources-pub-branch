@@ -1,29 +1,29 @@
 ---
 layout: documentation
-title: Sensors
+title: 传感器
 ---
 
 [&laquo; 返回首页](index.html)
-# Sensors
+# 传感器
 
 目录：
 
-* [AccelerometerSensor](#AccelerometerSensor)
-* [BarcodeScanner](#BarcodeScanner)
-* [Barometer](#Barometer)
-* [Clock](#Clock)
-* [GyroscopeSensor](#GyroscopeSensor)
-* [Hygrometer](#Hygrometer)
-* [LightSensor](#LightSensor)
-* [LocationSensor](#LocationSensor)
-* [MagneticFieldSensor](#MagneticFieldSensor)
-* [NearField](#NearField)
-* [OrientationSensor](#OrientationSensor)
-* [Pedometer](#Pedometer)
-* [ProximitySensor](#ProximitySensor)
-* [Thermometer](#Thermometer)
+* [加速度传感器](#AccelerometerSensor)
+* [条码扫描器](#BarcodeScanner)
+* [气压传感器](#Barometer)
+* [计时器](#Clock)
+* [陀螺仪传感器](#GyroscopeSensor)
+* [湿度传感器](#Hygrometer)
+* [光线传感器](#LightSensor)
+* [位置传感器](#LocationSensor)
+* [磁场传感器](#MagneticFieldSensor)
+* [NFC](#NearField)
+* [方向传感器](#OrientationSensor)
+* [计步器](#Pedometer)
+* [距离传感器](#ProximitySensor)
+* [温度传感器](#Thermometer)
 
-## AccelerometerSensor  {#AccelerometerSensor}
+## 加速度传感器  {#AccelerometerSensor}
 
 Non-visible component that can detect shaking and measure acceleration approximately in three
  dimensions using SI units (m/s<sup>2</sup>). The components are:
@@ -165,67 +165,56 @@ Physical world component that can measure the ambient air pressure if
 None
 
 
-## Clock  {#Clock}
+## 计时器  {#Clock}
 
 ![Image of the Clock component](images/clock.png)
 
- Non-visible component that provides the instant in time using the internal clock on the phone.
- It can fire a timer at regularly set intervals and perform time calculations, manipulations,
- and conversions.
+不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。
 
- Operations on dates and times, such as from [`DatePicker`](userinterface.html#DatePicker) and
- [`TimePicker`](userinterface.html#TimePicker), are accomplished through methods in Clock. Date
- and Time are represented as InstantInTime and Duration.
+对日期和时间的操作，比如来自[`日期选择器`](userinterface.html#DatePicker)和[`时间选择器`](userinterface.html#TimePicker)，
+通过计时器的方法实现。日期和时间表示为“即时时间” 和“持续时间”。
 
-  - **Instant**: consists of Year, Month, DayOfMnoth, Hour, Minute, and SEcond. An instant can be
-    created using the [`MakeInstant`](#Clock.MakeInstant), [`MakeInstantFromMillis`](#Clock.MakeInstantFromMillis) and
-    [`MakeInstantFromParts`](#Clock.MakeInstantFromParts) methods.
-  - **Duration**: time in milliseconds elapsed between instants. Duration can be obtained by the
-    [`Duration`](#Clock.Duration) method.
+  - **即时时间**: 由 年、月、日、时、分、秒 组成。 即时时间可以使用 [`创建即时时间`](#Clock.MakeInstant)、[`毫秒创建即时时间`](#Clock.MakeInstantFromMillis)和
+  [`MakeInstantFromParts`](#Clock.MakeInstantFromParts)方法。
+  - **持续时间**: 即时时间经过的时间（以毫秒为单位），持续时间可以通过[`持续时间`](#Clock.Duration) 方法获得。
 
- Instants are assumed to be in the device's local time zone. When they are converted to or from
- milliseconds, the milliseconds for a given Instance are calculated from January 1, 1970 in UTC
- (Greenwich Mean Time).
+即时时间假定在设备的本地时区，当它们被创建就表示它是从1970年1月1日（UTC格林威治标准时间）开始到现在的毫秒数。
 
- Methods to convert an Instant to text are also available. Acceptable patterns are empty string,
- `MM/dd/YYYY HH:mm:ss a`, or `MMM d, yyyy HH:mm`. The empty string will provide the default
- format, which is `"MMM d, yyyy HH:mm:ss a"` for [`FormatDateTime`](#Clock.FormatDateTime),
- `"MMM d, yyyy"` for [`FormatDate`](#Clock.FormatDate). To see all possible formats, please
- see [here](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html).
+通过调用方法可以将即时时间转换为文本，格式可以是空字符串、`MM/dd/YYYY HH:mm:ss a` 或 `MMM d, yyyy HH:mm`。空字符串将提供默认格式，对于 [`格式化日期时间`](#Clock.FormatDateTime)是
+`"MMM d, yyyy HH:mm:ss a"`，[`格式化日期`](#Clock.FormatDate)是`"MMM d, yyyy"`。要查看所有可能的格式，
+请请参阅[此处](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)。
 
- A note on combining date and time: In order to combine the date from one Instant and the time
- from another, for example from a [`DatePicker`](userinterface.html#DatePicker) and
- [`TimePicker`](userinterface.html#TimePicker), extract the parts as text and use the text to
- create a new Instant. For example:
+关于合并日期和时间的注意项：为了合并来自另一个即时时间的日期和时间，例如来自[`日期选择器`](userinterface.html#DatePicker)和
+[`时间选择器`](userinterface.html#TimePicker)，将部分提取为文本，并使用文本来创建一个新的即时时间。例如：
 
  ![Example code blocks to combine date and time picker data](images/date_and_time_instant.png)
 
 
 
-### Properties  {#Clock-Properties}
+### 属性  {#Clock-Properties}
 
 {:.properties}
 
-{:id="Clock.TimerAlwaysFires" .boolean} *TimerAlwaysFires*
+{:id="Clock.TimerAlwaysFires" .boolean} *一直计时*
 : Will fire even when application is not showing on the screen if true
 
-{:id="Clock.TimerEnabled" .boolean} *TimerEnabled*
-: Specifies whether the [`Timer`](#Clock.Timer) event should run.
+{:id="Clock.TimerEnabled" .boolean} *启用计时*
+: Specifies whether the [`计时`](#Clock.Timer) event should run.
 
-{:id="Clock.TimerInterval" .number} *TimerInterval*
-: Specifies the interval between subsequent [`Timer`](#Clock.Timer) events.
+{:id="Clock.TimerInterval" .number} *计时间隔（毫秒）*
+: Specifies the interval between subsequent [`计时`](#Clock.Timer) events.
 
-   **Note**: Drift may occur over time and that the system may not honor the
+   **注意：**: Drift may occur over time and that the system may not honor the
  timing specified here if the app or another process on the phone is busy.
 
-### Events  {#Clock-Events}
+### 事件  {#Clock-Events}
 
 {:.events}
 
-{:id="Clock.Timer"} Timer()
-: The Timer event runs when the timer has gone off.
+{:id="Clock.Timer"} 计时()
+: 计时事件开始运行，直至关闭为止。
 
-### Methods  {#Clock-Methods}
+### 方法  {#Clock-Methods}
 
 {:.methods}
 
