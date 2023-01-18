@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="zh_CN"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
@@ -21,7 +20,10 @@
                                    }
      //--><!]]>
     </script>
-    <title>Sensors</title></head>
+    <title>传感器</title>
+    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
+	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
+	<meta name="application-name" content="App Inventor 2 中文网"/></head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
     <a class="navbar-brand" href="http://fun123.cn/reference/">
 	<img src="/static/images/logo2.png" alt="Logo">
@@ -34,76 +36,52 @@
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    About
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/about-us">About App Inventor</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/our-team">Our Team</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/master-trainers">Master Trainers</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/app-month-gallery">App of the Month</a>
-                    <a class="dropdown-item"
-                       href="http://appinventor.mit.edu/ai2/ReleaseNotes">Release Notes</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/about/termsofservice" target="_blank">Terms of Service</a>
+		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
+			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
+			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Educators
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/teach" target="_blank">Teach</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/ai2/tutorials">Tutorials</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
+		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu/news" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    News
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    资源
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/news">In the news</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/events">Events</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/stories">Stories from the field</a>
+			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
+		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
 		</div>
 	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu/explore/resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Resources
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
 		</a>
 		<div class="dropdown-menu">
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/get-started">Get Started</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/library">Documentation</a>
-		    <a class="dropdown-item" href="https://community.appinventor.mit.edu"
-                       target="_blank">Forums</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/ai2/tutorials">Tutorials</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor Books</a>
-		    <a class="dropdown-item"
-                       href="https://github.com/mit-cml/appinventor-sources"
-                       target="_blank">Open Source Information</a>
-	            <a class="dropdown-item" href="http://appinventor.mit.edu/explore/research">Research</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/hour-of-code">Hour of Code</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/resources">Additional Resources</a>
+			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
 		</div>
-	    </li>
-            <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Blogs
-		</a>
-                <div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/blog">App Inventor Blog</a>
-	        </div>
-            </li>
-        </ul>
+		</li>
+    </ul>
         <div style="display: inline-flex;margin-left:auto;margin-right:0">
-            <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
         </div>
 	<!-- <form class="form-inline" action="/action_page.php">
 	     <div class="form-group has-search">
@@ -112,36 +90,39 @@ var _hmt = _hmt || [];
 	     </div>
 	     </form> -->
     </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Sensors</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">传感器</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
-<p><a href="index.html">« Back to index</a></p>
-<h1 id="sensors">Sensors</h1>
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="传感器">传感器</h1>
 
-<p>Table of Contents:</p>
+<p>目录：</p>
 
 <ul>
-  <li><a href="#AccelerometerSensor">AccelerometerSensor</a></li>
-  <li><a href="#BarcodeScanner">BarcodeScanner</a></li>
-  <li><a href="#Barometer">Barometer</a></li>
-  <li><a href="#Clock">Clock</a></li>
-  <li><a href="#GyroscopeSensor">GyroscopeSensor</a></li>
-  <li><a href="#Hygrometer">Hygrometer</a></li>
-  <li><a href="#LightSensor">LightSensor</a></li>
-  <li><a href="#LocationSensor">LocationSensor</a></li>
-  <li><a href="#MagneticFieldSensor">MagneticFieldSensor</a></li>
-  <li><a href="#NearField">NearField</a></li>
-  <li><a href="#OrientationSensor">OrientationSensor</a></li>
-  <li><a href="#Pedometer">Pedometer</a></li>
-  <li><a href="#ProximitySensor">ProximitySensor</a></li>
-  <li><a href="#Thermometer">Thermometer</a></li>
+  <li><a href="#AccelerometerSensor">加速度传感器</a></li>
+  <li><a href="#BarcodeScanner">条码扫描器</a></li>
+  <li><a href="#Barometer">气压传感器</a></li>
+  <li><a href="#Clock">计时器</a></li>
+  <li><a href="#GyroscopeSensor">陀螺仪传感器</a></li>
+  <li><a href="#Hygrometer">湿度传感器</a></li>
+  <li><a href="#LightSensor">光线传感器</a></li>
+  <li><a href="#LocationSensor">位置传感器</a></li>
+  <li><a href="#MagneticFieldSensor">磁场传感器</a></li>
+  <li><a href="#NearField">NFC</a></li>
+  <li><a href="#OrientationSensor">方向传感器</a></li>
+  <li><a href="#Pedometer">计步器</a></li>
+  <li><a href="#ProximitySensor">距离传感器</a></li>
+  <li><a href="#Thermometer">温度传感器</a></li>
 </ul>
 
-<h2 id="AccelerometerSensor">AccelerometerSensor</h2>
+<h2 id="AccelerometerSensor">加速度传感器</h2>
 
 <p>Non-visible component that can detect shaking and measure acceleration approximately in three
  dimensions using SI units (m/s<sup>2</sup>). The components are:</p>
@@ -164,7 +145,7 @@ gravity.</li>
   <dt id="AccelerometerSensor.Available" class="boolean ro bo"><em>Available</em></dt>
   <dd>Returns whether the <code class="highlighter-rouge">AccelerometerSensor</code> hardware is available on the device.</dd>
   <dt id="AccelerometerSensor.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">true</code>,
+  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">真</code>,
  the sensor will generate events.  Otherwise, no events are
  generated even if the device is accelerated or shaken.</dd>
   <dt id="AccelerometerSensor.LegacyMode" class="boolean wo do"><em>LegacyMode</em></dt>
@@ -245,7 +226,7 @@ gravity.</li>
   <dt id="Barometer.Available" class="boolean ro bo"><em>Available</em></dt>
   <dd>Specifies whether or not the device has the hardware to support the <code class="highlighter-rouge">Barometer</code> component.</dd>
   <dt id="Barometer.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">true</code>,
+  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">真</code>,
  the sensor will generate events.  Otherwise, no events are
  generated.</dd>
   <dt id="Barometer.RefreshTime" class="number"><em>RefreshTime</em></dt>
@@ -263,66 +244,55 @@ gravity.</li>
 
 <p class="methods">None</p>
 
-<h2 id="Clock">Clock</h2>
+<h2 id="Clock">计时器</h2>
 
 <p><img src="images/clock.png" alt="Image of the Clock component" /></p>
 
-<p>Non-visible component that provides the instant in time using the internal clock on the phone.
- It can fire a timer at regularly set intervals and perform time calculations, manipulations,
- and conversions.</p>
+<p>不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。</p>
 
-<p>Operations on dates and times, such as from <a href="userinterface.html#DatePicker"><code class="highlighter-rouge">DatePicker</code></a> and
- <a href="userinterface.html#TimePicker"><code class="highlighter-rouge">TimePicker</code></a>, are accomplished through methods in Clock. Date
- and Time are represented as InstantInTime and Duration.</p>
+<p>对日期和时间的操作，比如来自<a href="userinterface.html#DatePicker"><code class="highlighter-rouge">日期选择器</code></a>和<a href="userinterface.html#TimePicker"><code class="highlighter-rouge">时间选择器</code></a>，
+通过计时器的方法实现。日期和时间表示为“即时时间” 和“持续时间”。</p>
 
 <ul>
-  <li><strong>Instant</strong>: consists of Year, Month, DayOfMnoth, Hour, Minute, and SEcond. An instant can be
-created using the <a href="#Clock.MakeInstant"><code class="highlighter-rouge">MakeInstant</code></a>, <a href="#Clock.MakeInstantFromMillis"><code class="highlighter-rouge">MakeInstantFromMillis</code></a> and
-<a href="#Clock.MakeInstantFromParts"><code class="highlighter-rouge">MakeInstantFromParts</code></a> methods.</li>
-  <li><strong>Duration</strong>: time in milliseconds elapsed between instants. Duration can be obtained by the
-<a href="#Clock.Duration"><code class="highlighter-rouge">Duration</code></a> method.</li>
+  <li><strong>即时时间</strong>: 由 年、月、日、时、分、秒 组成。 即时时间可以使用 <a href="#Clock.MakeInstant"><code class="highlighter-rouge">创建即时时间</code></a>、<a href="#Clock.MakeInstantFromMillis"><code class="highlighter-rouge">毫秒创建即时时间</code></a>和
+  <a href="#Clock.MakeInstantFromParts"><code class="highlighter-rouge">MakeInstantFromParts</code></a>方法。</li>
+  <li><strong>持续时间</strong>: 即时时间经过的时间（以毫秒为单位），持续时间可以通过<a href="#Clock.Duration"><code class="highlighter-rouge">持续时间</code></a> 方法获得。</li>
 </ul>
 
-<p>Instants are assumed to be in the device’s local time zone. When they are converted to or from
- milliseconds, the milliseconds for a given Instance are calculated from January 1, 1970 in UTC
- (Greenwich Mean Time).</p>
+<p>即时时间假定在设备的本地时区，当它们被创建就表示它是从1970年1月1日（UTC格林威治标准时间）开始到现在的毫秒数。</p>
 
-<p>Methods to convert an Instant to text are also available. Acceptable patterns are empty string,
- <code class="highlighter-rouge">MM/dd/YYYY HH:mm:ss a</code>, or <code class="highlighter-rouge">MMM d, yyyy HH:mm</code>. The empty string will provide the default
- format, which is <code class="highlighter-rouge">"MMM d, yyyy HH:mm:ss a"</code> for <a href="#Clock.FormatDateTime"><code class="highlighter-rouge">FormatDateTime</code></a>,
- <code class="highlighter-rouge">"MMM d, yyyy"</code> for <a href="#Clock.FormatDate"><code class="highlighter-rouge">FormatDate</code></a>. To see all possible formats, please
- see <a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">here</a>.</p>
+<p>通过调用方法可以将即时时间转换为文本，格式可以是空字符串、<code class="highlighter-rouge">MM/dd/YYYY HH:mm:ss a</code> 或 <code class="highlighter-rouge">MMM d, yyyy HH:mm</code>。空字符串将提供默认格式，对于 <a href="#Clock.FormatDateTime"><code class="highlighter-rouge">格式化日期时间</code></a>是
+<code class="highlighter-rouge">"MMM d, yyyy HH:mm:ss a"</code>，<a href="#Clock.FormatDate"><code class="highlighter-rouge">格式化日期</code></a>是<code class="highlighter-rouge">"MMM d, yyyy"</code>。要查看所有可能的格式，
+请请参阅<a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">此处</a>。</p>
 
-<p>A note on combining date and time: In order to combine the date from one Instant and the time
- from another, for example from a <a href="userinterface.html#DatePicker"><code class="highlighter-rouge">DatePicker</code></a> and
- <a href="userinterface.html#TimePicker"><code class="highlighter-rouge">TimePicker</code></a>, extract the parts as text and use the text to
- create a new Instant. For example:</p>
+<p>关于合并日期和时间的注意项：为了合并来自另一个即时时间的日期和时间，例如来自<a href="userinterface.html#DatePicker"><code class="highlighter-rouge">日期选择器</code></a>和
+<a href="userinterface.html#TimePicker"><code class="highlighter-rouge">时间选择器</code></a>，将部分提取为文本，并使用文本来创建一个新的即时时间。例如：</p>
 
 <p><img src="images/date_and_time_instant.png" alt="Example code blocks to combine date and time picker data" /></p>
 
-<h3 id="Clock-Properties">Properties</h3>
+<h3 id="Clock-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="Clock.TimerAlwaysFires" class="boolean"><em>TimerAlwaysFires</em></dt>
+  <dt id="Clock.TimerAlwaysFires" class="boolean"><em>一直计时</em></dt>
   <dd>Will fire even when application is not showing on the screen if true</dd>
-  <dt id="Clock.TimerEnabled" class="boolean"><em>TimerEnabled</em></dt>
-  <dd>Specifies whether the <a href="#Clock.Timer"><code class="highlighter-rouge">Timer</code></a> event should run.</dd>
-  <dt id="Clock.TimerInterval" class="number"><em>TimerInterval</em></dt>
-  <dd>Specifies the interval between subsequent <a href="#Clock.Timer"><code class="highlighter-rouge">Timer</code></a> events.
+  <dt id="Clock.TimerEnabled" class="boolean"><em>启用计时</em></dt>
+  <dd>Specifies whether the <a href="#Clock.Timer"><code class="highlighter-rouge">计时</code></a> event should run.</dd>
+  <dt id="Clock.TimerInterval" class="number"><em>计时间隔（毫秒）</em></dt>
+  <dd>Specifies the interval between subsequent <a href="#Clock.Timer"><code class="highlighter-rouge">计时</code></a> events.
 
-    <p><strong>Note</strong>: Drift may occur over time and that the system may not honor the
+    <p><strong>注意：</strong>: Drift may occur over time and that the system may not honor the
  timing specified here if the app or another process on the phone is busy.</p>
   </dd>
 </dl>
 
-<h3 id="Clock-Events">Events</h3>
+<h3 id="Clock-Events">事件</h3>
 
 <dl class="events">
-  <dt id="Clock.Timer">Timer()</dt>
-  <dd>The Timer event runs when the timer has gone off.</dd>
+  <dt id="Clock.Timer">计时()</dt>
+  <dd>计时事件开始运行，直至关闭为止。</dd>
 </dl>
 
-<h3 id="Clock-Methods">Methods</h3>
+<h3 id="Clock-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Clock.AddDays" class="method returns InstantInTime"><i></i> AddDays(<em class="InstantInTime">instant</em>,<em class="number">quantity</em>)</dt>
@@ -443,7 +413,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
   <dt id="Hygrometer.Available" class="boolean ro bo"><em>Available</em></dt>
   <dd>Specifies whether or not the device has the hardware to support the <code class="highlighter-rouge">Hygrometer</code> component.</dd>
   <dt id="Hygrometer.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">true</code>,
+  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">真</code>,
  the sensor will generate events.  Otherwise, no events are
  generated.</dd>
   <dt id="Hygrometer.Humidity" class="number ro bo"><em>Humidity</em></dt>
@@ -478,7 +448,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
   <dd>Returns the brightness in lux by averaging the previous 10 measured values.
  The sensor must be enabled and available to return meaningful values.</dd>
   <dt id="LightSensor.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">true</code>,
+  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">真</code>,
  the sensor will generate events.  Otherwise, no events are
  generated.</dd>
   <dt id="LightSensor.Lux" class="number ro bo"><em>Lux</em></dt>
@@ -508,7 +478,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
  method) and a longitude (with the <a href="#LocationSensor.LongitudeFromAddress"><code class="highlighter-rouge">LongitudeFromAddress</code></a> method).</p>
 
 <p>In order to function, the component must have its <a href="#LocationSensor.Enabled"><code class="highlighter-rouge">Enabled</code></a> property set to
- <code class="logic block highlighter-rouge">true</code>, and the device must have location sensing enabled through wireless
+ <code class="logic block highlighter-rouge">真</code>, and the device must have location sensing enabled through wireless
  networks or GPS satellites (if outdoors).</p>
 
 <p>Location information might not be immediately available when an app starts. You’ll have to wait
@@ -563,16 +533,16 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
  device is moving, the accuracy of the detected location is constantly changing.</p>
   </dd>
   <dt id="LocationSensor.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>If <code class="logic block highlighter-rouge">true</code>, the <code class="highlighter-rouge">LocationSensor</code> will attempt to read location information from
+  <dd>If <code class="logic block highlighter-rouge">真</code>, the <code class="highlighter-rouge">LocationSensor</code> will attempt to read location information from
  GPS, WiFi location, or other means available on the device. This setting does not control
  whether location information is actually available. Device location must be enabled or
  disabled in the device settings.</dd>
   <dt id="LocationSensor.HasAccuracy" class="boolean ro bo"><em>HasAccuracy</em></dt>
-  <dd>If <code class="logic block highlighter-rouge">true</code>, the device can report its accuracy level.</dd>
+  <dd>If <code class="logic block highlighter-rouge">真</code>, the device can report its accuracy level.</dd>
   <dt id="LocationSensor.HasAltitude" class="boolean ro bo"><em>HasAltitude</em></dt>
-  <dd>If <code class="logic block highlighter-rouge">true</code>, the device can report its altitude.</dd>
+  <dd>If <code class="logic block highlighter-rouge">真</code>, the device can report its altitude.</dd>
   <dt id="LocationSensor.HasLongitudeLatitude" class="boolean ro bo"><em>HasLongitudeLatitude</em></dt>
-  <dd>If <code class="logic block highlighter-rouge">true</code>, the device can report longitude and latitude.  It is
+  <dd>If <code class="logic block highlighter-rouge">真</code>, the device can report longitude and latitude.  It is
  always the case that either both or neither are.</dd>
   <dt id="LocationSensor.Latitude" class="number ro bo"><em>Latitude</em></dt>
   <dd>The most recently available latitude value in degrees reported to 5 decimal places.
@@ -587,7 +557,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
 
     <p>It is possible for a device to switch service providers when the current provider is unable
  to provide adequate location information. <code class="highlighter-rouge">ProviderLocked</code> is a Boolean value: true/false.
- Set to <code class="logic block highlighter-rouge">true</code> to prevent providers from changing. Set to <code class="logic block highlighter-rouge">false</code>
+ Set to <code class="logic block highlighter-rouge">真</code> to prevent providers from changing. Set to <code class="logic block highlighter-rouge">假</code>
  to allow for automatic switching when necessary.</p>
   </dd>
   <dt id="LocationSensor.ProviderName" class="text bo"><em>ProviderName</em></dt>
@@ -664,7 +634,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
  and writing of text tags only (if supported by the device).</p>
 
 <p>In order to read and write text tags, the component must have its <a href="#NearField.ReadMode"><code class="highlighter-rouge">ReadMode</code></a>
- property set to <code class="logic block highlighter-rouge">true</code> or <code class="logic block highlighter-rouge">false</code> respectively.</p>
+ property set to <code class="logic block highlighter-rouge">真</code> or <code class="logic block highlighter-rouge">假</code> respectively.</p>
 
 <p><strong>Note:</strong> This component will only work on Screen1 of any App Inventor app.</p>
 
@@ -674,11 +644,11 @@ Valid values for the month field are 1-12 and 1-31 for the day field.</dd>
   <dt id="NearField.LastMessage" class="text ro bo"><em>LastMessage</em></dt>
   <dd>Returns the content of the most recently received tag.</dd>
   <dt id="NearField.ReadMode" class="boolean"><em>ReadMode</em></dt>
-  <dd>Specifies whether the NFC hardware should operate in read mode (<code class="logic block highlighter-rouge">true</code>) or
- write mode (<code class="logic block highlighter-rouge">false</code>).</dd>
+  <dd>Specifies whether the NFC hardware should operate in read mode (<code class="logic block highlighter-rouge">真</code>) or
+ write mode (<code class="logic block highlighter-rouge">假</code>).</dd>
   <dt id="NearField.TextToWrite" class="text bo"><em>TextToWrite</em></dt>
   <dd>Specifies the content that will be written to the tag when in write mode. This method has no
- effect if <a href="#NearField.ReadMode"><code class="highlighter-rouge">ReadMode</code></a> is <code class="logic block highlighter-rouge">true</code>.</dd>
+ effect if <a href="#NearField.ReadMode"><code class="highlighter-rouge">ReadMode</code></a> is <code class="logic block highlighter-rouge">真</code>.</dd>
   <dt id="NearField.WriteType" class="number ro bo"><em>WriteType</em></dt>
   <dd>Returns the write type for the NFC component. For this version of the component, it is always
  <code class="highlighter-rouge">1</code>.</dd>
@@ -859,7 +829,7 @@ etc.</li>
   <dt id="Thermometer.Available" class="boolean ro bo"><em>Available</em></dt>
   <dd>Specifies whether or not the device has the hardware to support the <code class="highlighter-rouge">Thermometer</code> component.</dd>
   <dt id="Thermometer.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">true</code>,
+  <dd>Specifies whether the sensor should generate events.  If <code class="logic block highlighter-rouge">真</code>,
  the sensor will generate events.  Otherwise, no events are
  generated.</dd>
   <dt id="Thermometer.RefreshTime" class="number"><em>RefreshTime</em></dt>
@@ -948,7 +918,7 @@ etc.</li>
             <div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
-	    <h3>App Inventor 2</h3>
+	    <h4>App Inventor 2 中文网</h4>
 	    <!-- <form class="form-inline" action="/action_page.php">
 		 <div class="form-group has-search">
 		 <span class="fa fa-search form-control-feedback"></span>
@@ -959,36 +929,20 @@ etc.</li>
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button"
-                       target="_blank">© 2023 fun123.cn</a>
+		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
 		</li>
 		<li>
 		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0</a>
+                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
 		</li>
 		<li>
-		    <a href="http://appinventor.mit.edu/about/termsofservice"
-                       target="_blank" class="btn btn-link" role="button">Terms of Service and Privacy Policy</a>
+		    <a href="http://fun123.cn/about/termsofservice"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-            <a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
-            <a href="mailto:appinventor@mit.edu">Other Inquiries</a>
-	    <div>
-		<span>Twitter:</span>
-		<a href="https://twitter.com/mitappinventor"
-                   target="_blank" class="btn btn-link" role="button">@MITAppInventor</a>
-		<div>
-		    <div>
-			<span>GitHub:</span>
-			<a href="https://github.com/mit-cml" class="btn btn-link" role="button"
-                           target="_blank">mit-cml</a>
-			<div>
-			</div>
-	            </div>
-	        </div>
-            </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
         </div>
     </div>
 </div>

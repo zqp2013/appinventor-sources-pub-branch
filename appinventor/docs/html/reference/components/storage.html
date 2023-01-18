@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="zh_CN"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
@@ -21,7 +20,10 @@
                                    }
      //--><!]]>
     </script>
-    <title>Storage</title></head>
+    <title>数据存储组件</title>
+    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
+	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
+	<meta name="application-name" content="App Inventor 2 中文网"/></head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
     <a class="navbar-brand" href="http://fun123.cn/reference/">
 	<img src="/static/images/logo2.png" alt="Logo">
@@ -34,76 +36,52 @@
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    About
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/about-us">About App Inventor</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/our-team">Our Team</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/master-trainers">Master Trainers</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/app-month-gallery">App of the Month</a>
-                    <a class="dropdown-item"
-                       href="http://appinventor.mit.edu/ai2/ReleaseNotes">Release Notes</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/about/termsofservice" target="_blank">Terms of Service</a>
+		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
+			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
+			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Educators
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/teach" target="_blank">Teach</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/ai2/tutorials">Tutorials</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
+		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu/news" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    News
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    资源
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/news">In the news</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/events">Events</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/stories">Stories from the field</a>
+			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
+		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
 		</div>
 	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu/explore/resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Resources
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
 		</a>
 		<div class="dropdown-menu">
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/get-started">Get Started</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/library">Documentation</a>
-		    <a class="dropdown-item" href="https://community.appinventor.mit.edu"
-                       target="_blank">Forums</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/ai2/tutorials">Tutorials</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor Books</a>
-		    <a class="dropdown-item"
-                       href="https://github.com/mit-cml/appinventor-sources"
-                       target="_blank">Open Source Information</a>
-	            <a class="dropdown-item" href="http://appinventor.mit.edu/explore/research">Research</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/hour-of-code">Hour of Code</a>
-                    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/resources">Additional Resources</a>
+			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
 		</div>
-	    </li>
-            <li class="nav-item dropdown">
-		<a class="nav-link" href="http://appinventor.mit.edu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Blogs
-		</a>
-                <div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/blog">App Inventor Blog</a>
-	        </div>
-            </li>
-        </ul>
+		</li>
+    </ul>
         <div style="display: inline-flex;margin-left:auto;margin-right:0">
-            <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
         </div>
 	<!-- <form class="form-inline" action="/action_page.php">
 	     <div class="form-group has-search">
@@ -112,65 +90,60 @@ var _hmt = _hmt || [];
 	     </div>
 	     </form> -->
     </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Storage</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">数据存储组件</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
-<p><a href="index.html">« Back to index</a></p>
-<h1 id="storage">Storage</h1>
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="数据存储组件">数据存储组件</h1>
 
-<p>Table of Contents:</p>
+<p>目录：</p>
 
 <ul>
-  <li><a href="#CloudDB">CloudDB</a></li>
-  <li><a href="#DataFile">DataFile</a></li>
-  <li><a href="#File">File</a></li>
-  <li><a href="#Spreadsheet">Spreadsheet</a></li>
-  <li><a href="#TinyDB">TinyDB</a></li>
-  <li><a href="#TinyWebDB">TinyWebDB</a></li>
+  <li><a href="#CloudDB">云数据库</a></li>
+  <li><a href="#DataFile">数据文件</a></li>
+  <li><a href="#File">文件管理器</a></li>
+  <li><a href="#Spreadsheet">电子表格</a></li>
+  <li><a href="#TinyDB">微数据库</a></li>
+  <li><a href="#TinyWebDB">网络微数据库</a></li>
 </ul>
 
-<h2 id="CloudDB">CloudDB</h2>
+<h2 id="CloudDB">云数据库</h2>
 
-<p>The <code class="highlighter-rouge">CloudDB</code> component is a Non-visible component that allows you to store data on a Internet
- connected database server (using Redis software). This allows the users of your App to share
- data with each other. By default data will be stored in a server maintained by MIT, however you
- can setup and run your own server. Set the <a href="#CloudDB.RedisServer"><code class="highlighter-rouge">RedisServer</code></a> property and
- <a href="#CloudDB.RedisPort"><code class="highlighter-rouge">RedisPort</code></a> property to access your own server.</p>
+<p><code class="highlighter-rouge">云数据库</code>是一个不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置<a href="#CloudDB.RedisServer"><code class="highlighter-rouge">服务地址</code></a>属性和<a href="#CloudDB.RedisPort"><code class="highlighter-rouge">服务端口</code></a>属性以访问您自己的服务器。</p>
 
-<h3 id="CloudDB-Properties">Properties</h3>
+<h3 id="CloudDB-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="CloudDB.ProjectID" class="text ro"><em>ProjectID</em></dt>
-  <dd>Gets the ProjectID for this CloudDB project.</dd>
-  <dt id="CloudDB.RedisPort" class="number ro"><em>RedisPort</em></dt>
-  <dd>The Redis Server port to use. Defaults to 6381</dd>
-  <dt id="CloudDB.RedisServer" class="text ro"><em>RedisServer</em></dt>
-  <dd>The Redis Server to use to store data. A setting of “DEFAULT” means that the MIT server will be used.</dd>
-  <dt id="CloudDB.Token" class="text ro do"><em>Token</em></dt>
-  <dd>This field contains the authentication token used to login to the backed Redis server. For the
- “DEFAULT” server, do not edit this value, the system will fill it in for you. A system
- administrator may also provide a special value to you which can be used to share data between
- multiple projects from multiple people. If using your own Redis server, set a password in the
- server’s config and enter it here.</dd>
-  <dt id="CloudDB.UseSSL" class="boolean ro do"><em>UseSSL</em></dt>
-  <dd>Set to true to use SSL to talk to CloudDB/Redis server. This should be set to True for the “DEFAULT” server.</dd>
+  <dt id="CloudDB.ProjectID" class="text ro"><em>项目编号</em></dt>
+  <dd>获取此云数据库项目的编号。</dd>
+  <dt id="CloudDB.RedisPort" class="number ro"><em>服务端口</em></dt>
+  <dd>要使用的Redis服务器端口，默认为6381。</dd>
+  <dt id="CloudDB.RedisServer" class="text ro"><em>服务地址</em></dt>
+  <dd>用于存储数据的Redis服务器地址，“DEFAULT”表示默认使用MIT服务器。</dd>
+  <dt id="CloudDB.Token" class="text ro do"><em>令牌</em></dt>
+  <dd>此字段包含用于登录到支持的Redis服务器的身份验证令牌。 如果上面服务地址设置“DEFAULT”的话，这个值请不要编辑，系统会自动填上。 
+一个系统管理员还可以为您提供一个特殊值，可用于在彼此之间共享数据来自多人的多个项目。如果使用您自己的Redis服务器，请在服务器的配置并在此处输入。</dd>
+  <dt id="CloudDB.UseSSL" class="boolean ro do"><em>使用SSL</em></dt>
+  <dd>设置为<code class="logic block highlighter-rouge">真</code>则使用SSL加密通道与云数据库/Redis服务器通信。如果上面服务地址设置“DEFAULT”的话，这个应该设置为<code class="logic block highlighter-rouge">真</code>。</dd>
 </dl>
 
-<h3 id="CloudDB-Events">Events</h3>
+<h3 id="CloudDB-Events">事件</h3>
 
 <dl class="events">
-  <dt id="CloudDB.CloudDBError">CloudDBError(<em class="text">message</em>)</dt>
-  <dd>Indicates that an error occurred while communicating with the CloudDB Redis server.</dd>
-  <dt id="CloudDB.DataChanged">DataChanged(<em class="text">tag</em>,<em class="any">value</em>)</dt>
-  <dd>Indicates that the data in the CloudDB project has changed. Launches an event with the
- <code class="text block highlighter-rouge">tag</code> that has been updated and the <code class="variable block highlighter-rouge">value</code> it now has.</dd>
-  <dt id="CloudDB.FirstRemoved">FirstRemoved(<em class="any">value</em>)</dt>
+  <dt id="CloudDB.CloudDBError">云数据库错误(<em class="text">消息</em>)</dt>
+  <dd>表示与云数据库Redis服务器通信时发生错误。</dd>
+  <dt id="CloudDB.DataChanged">数据发生变化(<em class="text">标签</em>,<em class="any">值</em>)</dt>
+  <dd>表示云数据库项目中的数据发生了变化，事件触发时<code class="text block highlighter-rouge">标签</code>已被更新成最新的<code class="variable block highlighter-rouge">值</code>。</dd>
+  <dt id="CloudDB.FirstRemoved">FirstRemoved(<em class="any">值</em>)</dt>
   <dd>Event triggered by the <a href="#CloudDB.RemoveFirstFromList"><code class="highlighter-rouge">RemoveFirstFromList</code></a> function. The argument
- <code class="variable block highlighter-rouge">value</code> is the object that was the first in the list, and which is now
+ <code class="variable block highlighter-rouge">值</code> is the object that was the first in the list, and which is now
  removed.</dd>
   <dt id="CloudDB.GotValue">GotValue(<em class="text">tag</em>,<em class="any">value</em>)</dt>
   <dd>Indicates that a <a href="#CloudDB.GetValue"><code class="highlighter-rouge">GetValue</code></a> request has succeeded.</dd>
@@ -181,7 +154,7 @@ var _hmt = _hmt || [];
   <dd>Indicates that operations that store data to CloudDB have completed.</dd>
 </dl>
 
-<h3 id="CloudDB-Methods">Methods</h3>
+<h3 id="CloudDB-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="CloudDB.AppendValueToList" class="method"><i></i> AppendValueToList(<em class="text">tag</em>,<em class="any">itemToAdd</em>)</dt>
@@ -189,7 +162,7 @@ var _hmt = _hmt || [];
   <dt id="CloudDB.ClearTag" class="method"><i></i> ClearTag(<em class="text">tag</em>)</dt>
   <dd>Remove the tag from CloudDB.</dd>
   <dt id="CloudDB.CloudConnected" class="method returns boolean"><i></i> CloudConnected()</dt>
-  <dd>Returns <code class="logic block highlighter-rouge">true</code> if we are on the network and will likely be able to connect to
+  <dd>Returns <code class="logic block highlighter-rouge">真</code> if we are on the network and will likely be able to connect to
  the <code class="highlighter-rouge">CloudDB</code> server.</dd>
   <dt id="CloudDB.GetTagList" class="method"><i></i> GetTagList()</dt>
   <dd>Asks <code class="highlighter-rouge">CloudDB</code> to retrieve all the tags belonging to this project. The
@@ -698,7 +671,7 @@ as <code class="highlighter-rouge">Pictures</code>.</li>
             <div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
-	    <h3>App Inventor 2</h3>
+	    <h4>App Inventor 2 中文网</h4>
 	    <!-- <form class="form-inline" action="/action_page.php">
 		 <div class="form-group has-search">
 		 <span class="fa fa-search form-control-feedback"></span>
@@ -709,36 +682,20 @@ as <code class="highlighter-rouge">Pictures</code>.</li>
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button"
-                       target="_blank">© 2023 fun123.cn</a>
+		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
 		</li>
 		<li>
 		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0</a>
+                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
 		</li>
 		<li>
-		    <a href="http://appinventor.mit.edu/about/termsofservice"
-                       target="_blank" class="btn btn-link" role="button">Terms of Service and Privacy Policy</a>
+		    <a href="http://fun123.cn/about/termsofservice"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-            <a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
-            <a href="mailto:appinventor@mit.edu">Other Inquiries</a>
-	    <div>
-		<span>Twitter:</span>
-		<a href="https://twitter.com/mitappinventor"
-                   target="_blank" class="btn btn-link" role="button">@MITAppInventor</a>
-		<div>
-		    <div>
-			<span>GitHub:</span>
-			<a href="https://github.com/mit-cml" class="btn btn-link" role="button"
-                           target="_blank">mit-cml</a>
-			<div>
-			</div>
-	            </div>
-	        </div>
-            </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
         </div>
     </div>
 </div>
