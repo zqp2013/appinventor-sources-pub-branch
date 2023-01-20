@@ -28,7 +28,15 @@
 	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
   </head>
-<body style="background: url(/static/images/bg.svg);padding-top:5%;">
+<body style="background: url(/static/images/bg.svg);padding-top:1%;">
+
+<center style="padding-bottom:4%;">
+<a href="http://fun123.cn/reference/info/" target="_blank">项目教程</a> &nbsp;&nbsp;
+<a href="http://www.fun123.cn/reference/components/" target="_blank">参考文档</a> &nbsp;&nbsp;
+<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">交流反馈</a>
+</center>
+
+
   <center>
     <h1>${pleaselogin}</h1>
   </center>
@@ -107,6 +115,30 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <form method=POST action="/login">
 <input type=hidden name=email value="test@fun123.cn">
 <input type=hidden name=password value="000000">
+<% if (locale != null && !locale.equals("zh_CN")) {
+   %>
+<input type=hidden name=locale value="<%= locale %>">
+<% }
+   if (repo != null && !repo.equals("")) {
+   %>
+<input type=hidden name=repo value="<%= repo %>">
+<% }
+   if (autoload != null && !autoload.equals("")) {
+   %>
+<input type=hidden name=autoload value="<%= autoload %>">
+<% }
+   if (galleryId != null && !galleryId.equals("")) {
+   %>
+<input type=hidden name=galleryId value="<%= galleryId %>">
+<% }
+   if (newGalleryId != null && !newGalleryId.equals("")) {
+   %>
+<input type=hidden name=ng value="<%= newGalleryId %>">
+<% } %>
+<% if (redirect != null && !redirect.equals("")) {
+   %>
+<input type=hidden name=redirect value="<%= redirect %>">
+<% } %>
 <input type=Submit value="点击试用">
 </form>
 <p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/>如需开通正式账号，请添加QQ 348366338 咨询，谢谢！</p>
@@ -131,6 +163,10 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
                                               target="_blank"><img alt="Creative Commons License" src="/static/images/cc3.png"></a> <br>
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"></a></p>
 -->
+
+<center>
+<p class="copyright" style="font-size:15px;color:#666;margin-top:10%;">版权所有 &copy; 2023&nbsp;<a href="http://www.fun123.cn"  style="color:#666;text-decoration: none;">fun123.cn</a></p>
+</center>
 
 </footer>
 <script>
