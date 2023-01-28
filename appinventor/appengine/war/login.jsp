@@ -160,7 +160,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <center>
 <a href="http://fun123.cn/reference/info/" target="_blank">项目教程</a> &nbsp;&nbsp;
 <a href="http://www.fun123.cn/reference/components/" target="_blank">参考文档</a> &nbsp;&nbsp;
-<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">交流反馈</a>
+<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">交流反馈</a> &nbsp;&nbsp;
+<a href="http://fun123.cn/reference/info/about-us.html" target="_blank">关于我们</a>
+
 
 <p class="copyright" style="font-size:15px;color:#666;margin-top:10%;">版权所有 &copy; 2023&nbsp;<a href="http://www.fun123.cn"  style="color:#666;text-decoration: none;">fun123.cn</a></p>
 </center>
