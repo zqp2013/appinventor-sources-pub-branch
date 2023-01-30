@@ -25,14 +25,15 @@
     <meta HTTP-EQUIV="expires" CONTENT="0"/>
     <title>App Inventor 2 中文网</title>
 	<meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
+	<meta name="description" content="App Inventor 2 中文网，在MIT官方原版基础上深度中文化定制且与原版同步更新，编程文档及案例本土化。不断开发中文教程并提供中文论坛方便学习交流，陪伴少儿编程成长，做忠实的编程陪伴者。">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
   </head>
-<body style="background: url(/static/images/bg.svg);padding-top:5%;">
+<body style="background: url(/static/images/bg.svg);padding-top:4%;">
 
   <center>
     <h1>欢迎来到 App Inventor 2 中文网</h1>
   </center>
+  <br/>
 <% if (error != null) {
 out.println("<center><font color=red><b>" + error + "</b></font></center><br/>");
    } %>
@@ -151,7 +152,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 	<a href="http://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
 	<%    if (locale != null && locale.equals("zh_CN")) { %>
-	<a href="https://weibo.com/tsingfun" target="_blank"><img class="img-scale" src="/static/images/mzl.png" width="19" height="19" title="微博" style="position:absolute;"></a>&nbsp;
+	<a href="https://weibo.com/tsingfun" target="_blank"><img class="img-scale" src="/static/images/mzl.png" width="19" height="19" title="@AI2中文网" style="position:absolute;"></a>&nbsp;
 	<%    } %>
 </p>
 </center>
