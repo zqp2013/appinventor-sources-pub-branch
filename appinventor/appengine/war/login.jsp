@@ -31,7 +31,7 @@
 <body style="background: url(/static/images/bg.svg);padding-top:5%;">
 
   <center>
-    <h1>${pleaselogin}</h1>
+    <h1>欢迎来到 App Inventor 2 中文网</h1>
   </center>
 <% if (error != null) {
 out.println("<center><font color=red><b>" + error + "</b></font></center><br/>");
@@ -158,11 +158,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 -->
 
 <center>
-<a href="http://fun123.cn/reference/info/" target="_blank">项目教程</a> &nbsp;&nbsp;
-<a href="http://www.fun123.cn/reference/components/" target="_blank">参考文档</a> &nbsp;&nbsp;
-<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">交流反馈</a> &nbsp;&nbsp;
-<a href="http://fun123.cn/reference/info/about-us.html" target="_blank">关于我们</a>
-
+<a href="http://fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
+<a href="http://fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
+<a href="https://bbs.tsingfun.com/forum-147-1.html?f=login" target="_blank">交流论坛</a>
 
 <p class="copyright" style="font-size:15px;color:#666;margin-top:10%;">版权所有 &copy; 2023&nbsp;<a href="http://www.fun123.cn"  style="color:#666;text-decoration: none;">fun123.cn</a></p>
 </center>
