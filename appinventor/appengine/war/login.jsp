@@ -142,28 +142,24 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 
 <footer>
 
-<!--
-<center>
-<%    if (locale != null && locale.equals("zh_CN")) { %>
-<a href="http://www.weibo.com/mitappinventor" target="_blank"><img class="img-scale"
-                  src="/static/images/mzl.png" width="30" height="30" title="Sina WeiBo"></a>&nbsp;
-<%    } %>
-<a href="http://www.appinventor.mit.edu" target="_blank"><img class="img-scale"
-                src="/static/images/login-app-inventor.jpg" width="50" height="30" title="MIT App Inventor"></a></center>
-<p></p>
-
-<p style="text-align: center; clear:both;"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"
-                                              target="_blank"><img alt="Creative Commons License" src="/static/images/cc3.png"></a> <br>
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"></a></p>
--->
-
 <center>
 <a href="http://fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
 <a href="http://fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
 <a href="https://bbs.tsingfun.com/forum-147-1.html?f=login" target="_blank">交流论坛</a>
 
-<p class="copyright" style="font-size:15px;color:#666;margin-top:10%;">版权所有 &copy; 2023&nbsp;<a href="http://www.fun123.cn"  style="color:#666;text-decoration: none;">fun123.cn</a></p>
+<p class="copyright" style="font-size:15px;color:#666;margin-top:8%;">版权所有 &copy; 2023&nbsp;
+	<a href="http://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
+	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
+	<%    if (locale != null && locale.equals("zh_CN")) { %>
+	<a href="https://weibo.com/tsingfun" target="_blank"><img class="img-scale" src="/static/images/mzl.png" width="19" height="19" title="微博" style="position:absolute;"></a>&nbsp;
+	<%    } %>
+</p>
 </center>
+<!--
+<p style="text-align: center; clear:both;">
+	<a href="http://www.appinventor.mit.edu" target="_blank"><img class="img-scale" src="/static/images/login-app-inventor.jpg" width="50" height="30" title="MIT App Inventor"></a>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img alt="Creative Commons License" src="/static/images/cc3.png"></a>
+</p>-->
 
 </footer>
 <script>
