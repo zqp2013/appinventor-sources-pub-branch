@@ -1,50 +1,45 @@
 ---
 layout: documentation
-title: Drawing and Animation
+title: 绘图动画
 ---
 
 [&laquo; 返回首页](index.html)
-# Drawing and Animation
+# 绘图动画
 
 目录：
 
-* [Ball](#Ball)
-* [Canvas](#Canvas)
-* [ImageSprite](#ImageSprite)
+* [球形精灵](#Ball)
+* [画布](#Canvas)
+* [图像精灵](#ImageSprite)
 
-## Ball  {#Ball}
+## 球形精灵  {#Ball}
 
-A round 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to touches and drags,
- interact with other sprites ([`ImageSprite`](#ImageSprite)s and other `Ball`s) and the edge of the
- `Canvas`, and move according to its property values.
+可以放置在 [`画布`](#Canvas) 上的圆形“精灵”，它可以对触摸和拖动做出反应，
+与其他精灵（[`图像精灵`](#ImageSprite) 和其他 `球形精灵`）及`画布`的边缘进行交互，并根据其属性值移动。
 
- For example, to have a `Ball` move 4 pixels toward the top of a `Canvas` every 500 milliseconds
- (half second), you would set the [`Speed`](#Ball.Speed) property to 4 [pixels], the
- [`Interval`](#Ball.Interval) property to 500 [milliseconds], the [`Heading`](#Ball.Heading) property to
- 90 [degrees], and the [`Enabled`](#Ball.Enabled) property to `真`{:.logic.block}. These and its
- other properties can be changed at any time.
+例如，让一个`球形精灵`每 500 毫秒（半秒）向`画布`的顶部移动 4 个像素，您可以将 [`速度`](#Ball.Speed) 属性设置为 4 [像素]，
+[`间隔`](#Ball.Interval) 属性为 500 [毫秒]，[`方向`](#Ball.Heading) 属性为90 [度]，[`启用`](#Ball.Enabled) 属性为`真`{:.logic.block}。 
+这些及其他属性可以随时更改。
 
- The difference between a `Ball` and an `ImageSprite` is that the latter can get its appearance
- from an image file, while a `Ball`'s appearance can only be changed by varying its
- [`PaintColor`](#Ball.PaintColor) and [`Radius`](#Ball.Radius) properties.
+`球形精灵` 和 `图像精灵` 的区别在于：`图像精灵`可以通过设置图像文件改变它的外观；
+而`球形精灵`的外观只能改变其[`画笔颜色`](#Ball.PaintColor) 和 [`半径`](#Ball.Radius) 属性。
 
 
-
-### Properties  {#Ball-Properties}
+### 属性  {#Ball-Properties}
 
 {:.properties}
 
-{:id="Ball.Enabled" .boolean} *Enabled*
-: Controls whether the `Ball` moves when its speed is non-zero.
+{:id="Ball.Enabled" .boolean} *启用*
+: 控制`球形精灵`在其速度非零时是否移动。
 
-{:id="Ball.Heading" .number} *Heading*
-: The `Ball`'s heading in degrees above the positive x-axis. Zero degrees is toward the right
- of the screen; 90 degrees is toward the top of the screen.
+{:id="Ball.Heading" .number} *方向*
+: `球形精灵` 在 x 轴方向上以度数表示的方向，图示如下：
 
-{:id="Ball.Interval" .number} *Interval*
-: The interval in milliseconds at which the `Ball`'s position is updated. For example, if the
- `Interval` is 50 and the [`Speed`](#Ball.Speed) is 10, then the `Ball` will move 10 pixels
- every 50 milliseconds.
+ ![方向含义](images/direction.jpg)
+
+
+{:id="Ball.Interval" .number} *间隔*
+: 更新`球形精灵`位置的时间间隔（以毫秒为单位）。例如，如果`间隔` 为 50，[`速度`](#Ball.Speed) 为 10，则`球形精灵`将每50毫秒移动10个像素。
 
 {:id="Ball.OriginAtCenter" .boolean .wo .do} *OriginAtCenter*
 : Whether the x- and y-coordinates should represent the center of the `Ball`
@@ -56,9 +51,8 @@ A round 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react
 {:id="Ball.Radius" .number} *Radius*
 : The distance from the center of the `Ball` to its edge.
 
-{:id="Ball.Speed" .number} *Speed*
-: The speed at which the `Ball` moves. The `Ball` moves this many pixels every
- [`Interval`](#Ball.Interval) milliseconds if [`Enabled`](#Ball.Enabled) is `真`{:.logic.block}.
+{:id="Ball.Speed" .number} *速度*
+: `球形精灵`移动的速度。如果 [`启用`](#Ball.Enabled) 是`真`{:.logic.block}，`球形精灵`每隔[`间隔`](#Ball.Interval)毫秒移动的像素数量。
 
 {:id="Ball.Visible" .boolean} *Visible*
 : Sets whether sprite should be visible.
