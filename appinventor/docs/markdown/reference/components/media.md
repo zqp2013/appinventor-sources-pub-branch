@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Media
+title: 多媒体组件
 ---
 
 [&laquo; 返回首页](index.html)
-# Media
+# 多媒体组件
 
 目录：
 

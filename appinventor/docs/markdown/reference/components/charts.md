@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Charts
+title: 图表组件
 ---
 
 [&laquo; 返回首页](index.html)
-# Charts
+# 图表组件
 
 目录：
 

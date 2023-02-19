@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Connectivity
+title: 通信连接组件
 ---
 
 [&laquo; 返回首页](index.html)
-# Connectivity
+# 通信连接组件
 
 目录：
 

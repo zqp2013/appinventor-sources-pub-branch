@@ -1,5 +1,5 @@
 ---
-title: MIT App Inventor Dictionary Blocks
+title: App Inventor 字典代码块
 layout: documentation
 ---
 

@@ -1,23 +1,24 @@
 ---
 layout: documentation
-title: Download Block Images
+title: 下载代码块图像
 ---
 
-Starting with version nb177 of MIT App Inventor, it is possible to export individual blocks in the Portable Network Graphics (PNG) image format. This feature makes it easier to write tutorials and curriculum materials by giving high quality images of blocks without needing to crop the larger workspace export image or stitch together screenshots of blocks.
+从 MIT App Inventor 的 nb177 版本开始，可以以便携式网络图形 (PNG) 图像格式导出单个块。此功能通过提供块的高质量图像，而无需裁剪较大的工作区，导出图像或将块的屏幕截图拼接在一起，从而使编写教程和课程材料变得更加容易。
 
-## Exporting Blocks
+## 导出代码块
 
-To export a block, right click on the block to bring up the context menu and click on the "Download Blocks as PNG" menu item:
+要导出代码块，请右键点击代码块以显示菜单，然后单击“将代码块保存PNG图像”菜单项：
 
-![Right click menu on a block showing the Download Blocks as PNG menu item](download-blocks-menu.png)
+![右键点击代码块，将代码块保存为PNG菜单项](download-blocks-menu.png)
 
-The browser will prompt you to download a file called blocks.png after selecting this menu item.
+选择此菜单项后，浏览器会提示您下载名为 blocks.png 的文件。
 
-## Importing Blocks
+## 导入代码块
 
-Blocks images created in this way contain additional metadata in the image that stores the block code in a machine readable format. MIT App Inventor will read the content of this metadata if the image is drag-and-dropped into the blocks workspace. Below is a video demonstrating how you can drag and drop blocks images from the documentation into App Inventor. You can also drag files from your computer to the workspace (similar to cloud storage services).
+以这种方式创建的代码块图像，还包含以特定格式存储的额外的元数据。如果将图像拖放到块工作区中，App Inventor将读取此元数据的内容。
+下面的视频演示了如何将块图像从文档拖放到 App Inventor 中。 您还可以将文件从您的计算机拖到工作区（类似于云存储服务）。
 
 <video width="640" height="320">
 <source src="drag-and-drop.mp4" type="video/mp4" />
-Your browser does not support playing this video.
+您的浏览器不支持播放该视频。
 </video>

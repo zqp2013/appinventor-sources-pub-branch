@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: LEGO® MINDSTORMS®
+title: 乐高机器人®组件
 ---
 
 [&laquo; 返回首页](index.html)
-# LEGO® MINDSTORMS®
+# 乐高机器人®组件
 
 目录：
 

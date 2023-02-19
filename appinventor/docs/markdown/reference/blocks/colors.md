@@ -1,5 +1,5 @@
 ---
-title: MIT App Inventor Color Blocks
+title: App Inventor 颜色代码块
 layout: documentation
 ---
 

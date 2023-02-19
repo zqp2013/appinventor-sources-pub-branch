@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Maps
+title: 地图组件
 ---
 
 [&laquo; 返回首页](index.html)
-# Maps
+# 地图组件
 
 目录：
 

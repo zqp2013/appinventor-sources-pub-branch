@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: 绘图动画
+title: 绘画动画组件
 ---
 
 [&laquo; 返回首页](index.html)
-# 绘图动画
+# 绘画动画组件
 
 目录：
 

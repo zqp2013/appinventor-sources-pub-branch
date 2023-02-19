@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Social
+title: 社交应用组件
 ---
 
 [&laquo; 返回首页](index.html)
-# Social
+# 社交应用组件
 
 目录：
 

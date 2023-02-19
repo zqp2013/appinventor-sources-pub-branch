@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: 传感器
+title: 传感器组件
 ---
 
 [&laquo; 返回首页](index.html)
-# 传感器
+# 传感器组件
 
 目录：
 
