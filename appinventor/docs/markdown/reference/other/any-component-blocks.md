@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title: Any Component Blocks
+title: 任何组件块
 ---
 
-A common concept when writing apps is "Don't Repeat Yourself" (or DRY). Rather than making lots of repetitive code, by copy and paste for example, you can instead use special blocks called "Any Component" blocks.
+编写应用程序时的一个常见概念是“不要重复自己”（或 DRY）。与其制作大量重复代码，例如通过复制和粘贴，不如使用称为“任何组件”块的特殊块。
 
-What exactly is an "any component" block? Every component block, such as <span class="setter block">set Button1.Text to</span>, has three parts: (1) the component that is being changed (<span class="component block">Button1</span>), the part of the component being manipulated (<span class="setter block">set ....Text to</span>) and (3) the inputs (if any). The blocks you would typically pull out of block drawer name a single component when you code your app. But what if you want to perform an action on many different components of the <strong><em>same type</em></strong>? One option would be to copy and paste each block as many times as needed, but as your app expands this becomes difficult to edit. Instead it might make sense to be able to substitute different components in place of a single component. That is what "any component" blocks allow you to do. Rather than fix the block to a specific component, they allow you to make your code more general by providing any component of the same type as an input. This allows you, for example, to create a list of buttons and update all of their properties at once using a <span class="control block">for-each</span> loop, for example:
+“任何组件”块到底是什么？ 每一个组件块，比如<span class="setter block">set Button1.Text to</span>，都包含三个部分：（1）被改变的组件（<span class="component block">Button1< /span>），被操作的组件部分（<span class="setter block">set ....Text to</span>）和 (3) 输入（如果有）。 在编写应用程序代码时，您通常会从块抽屉中拉出的块命名为单个组件。 但是，如果您想对<strong><em>同一类型</em></strong> 的许多不同组件执行操作怎么办？ 一种选择是根据需要多次复制和粘贴每个块，但随着您的应用程序扩展，这将变得难以编辑。 相反，能够用不同的组件代替单个组件可能是有意义的。 这就是“任何组件”块允许您执行的操作。 它们不是将块固定到特定组件，而是允许您通过提供相同类型的任何组件作为输入来使您的代码更通用。 例如，这允许您创建一个按钮列表并使用 <span class="control block">for-each</span> 循环一次更新它们的所有属性，例如：
 
 {:.figure}
 ![Hide all of the blocks in the list of buttons](loop-example.png)

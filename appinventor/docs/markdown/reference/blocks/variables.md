@@ -1,5 +1,5 @@
 ---
-title: App Inventor 变量代码块
+title: App Inventor 2 变量代码块
 layout: documentation
 ---
 

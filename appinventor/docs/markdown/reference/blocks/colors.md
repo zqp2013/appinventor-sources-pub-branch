@@ -1,5 +1,5 @@
 ---
-title: App Inventor 颜色代码块
+title: App Inventor 2 颜色代码块
 layout: documentation
 ---
 

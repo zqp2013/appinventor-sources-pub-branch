@@ -1,5 +1,5 @@
 ---
-title: App Inventor 数学代码块
+title: App Inventor 2 数学代码块
 layout: documentation
 ---
 
