@@ -39,7 +39,7 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 
 
 
-### Properties  {#ContactPicker-Properties}
+### 属性  {#ContactPicker-Properties}
 
 {:.properties}
 
@@ -134,7 +134,7 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 : Specifies the horizontal width of the `ContactPicker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#ContactPicker-Events}
+### 事件  {#ContactPicker-Events}
 
 {:.events}
 
@@ -161,7 +161,7 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.TouchUp"} TouchUp()
 : Indicates that the `ContactPicker` has been released.
 
-### Methods  {#ContactPicker-Methods}
+### 方法  {#ContactPicker-Methods}
 
 {:.methods}
 
@@ -190,7 +190,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 
 
-### Properties  {#EmailPicker-Properties}
+### 属性  {#EmailPicker-Properties}
 
 {:.properties}
 
@@ -251,7 +251,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 : Specifies the horizontal width of the `EmailPicker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#EmailPicker-Events}
+### 事件  {#EmailPicker-Events}
 
 {:.events}
 
@@ -263,7 +263,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 : Event raised when the `EmailPicker` is no longer selected for input, such
  as if the user touches a different text box.
 
-### Methods  {#EmailPicker-Methods}
+### 方法  {#EmailPicker-Methods}
 
 {:.methods}
 
@@ -291,14 +291,14 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 
 
-### Properties  {#PhoneCall-Properties}
+### 属性  {#PhoneCall-Properties}
 
 {:.properties}
 
 {:id="PhoneCall.PhoneNumber" .text} *PhoneNumber*
 : Specifies the phone number to call.
 
-### Events  {#PhoneCall-Events}
+### 事件  {#PhoneCall-Events}
 
 {:.events}
 
@@ -319,7 +319,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
    - `1`: Incoming call is ringing
    - `2`: Outgoing call is dialled
 
-### Methods  {#PhoneCall-Methods}
+### 方法  {#PhoneCall-Methods}
 
 {:.methods}
 
@@ -351,7 +351,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 
 
-### Properties  {#PhoneNumberPicker-Properties}
+### 属性  {#PhoneNumberPicker-Properties}
 
 {:.properties}
 
@@ -446,7 +446,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 : Specifies the horizontal width of the `PhoneNumberPicker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#PhoneNumberPicker-Events}
+### 事件  {#PhoneNumberPicker-Events}
 
 {:.events}
 
@@ -473,7 +473,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.TouchUp"} TouchUp()
 : Indicates that the `PhoneNumberPicker` has been released.
 
-### Methods  {#PhoneNumberPicker-Methods}
+### 方法  {#PhoneNumberPicker-Methods}
 
 {:.methods}
 
@@ -501,19 +501,19 @@ Sharing is a non-visible component that enables sharing files and/or messages be
 
 
 
-### Properties  {#Sharing-Properties}
+### 属性  {#Sharing-Properties}
 
 {:.properties}
-None
+无
 
 
-### Events  {#Sharing-Events}
+### 事件  {#Sharing-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Sharing-Methods}
+### 方法  {#Sharing-Methods}
 
 {:.methods}
 
@@ -568,7 +568,7 @@ None
 
 
 
-### Properties  {#Texting-Properties}
+### 属性  {#Texting-Properties}
 
 {:.properties}
 
@@ -598,7 +598,7 @@ None
  developer, it would be a good idea to give your users control over this property, so they can
  make their phones ignore text messages when your app is installed.
 
-### Events  {#Texting-Events}
+### 事件  {#Texting-Events}
 
 {:.events}
 
@@ -607,7 +607,7 @@ None
  [dangerous permissions](//developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
  that will require additional approval if your app is submitted to the Google Play Store.**
 
-### Methods  {#Texting-Methods}
+### 方法  {#Texting-Methods}
 
 {:.methods}
 
@@ -641,7 +641,7 @@ A non-visible component that enables communication with [Twitter](https://twitte
 
 
 
-### Properties  {#Twitter-Properties}
+### 属性  {#Twitter-Properties}
 
 {:.properties}
 
@@ -713,7 +713,7 @@ A non-visible component that enables communication with [Twitter](https://twitte
 {:id="Twitter.Username" .text .ro .bo} *Username*
 : The user name of the authorized user. Empty if there is no authorized user.
 
-### Events  {#Twitter-Events}
+### 事件  {#Twitter-Events}
 
 {:.events}
 
@@ -749,7 +749,7 @@ A non-visible component that enables communication with [Twitter](https://twitte
  [`SearchTwitter`](#Twitter.SearchTwitter) have been retrieved. A list of the results can then be found in
  the `results`{:.variable.block} parameter or the [`SearchResults`](#Twitter.SearchResults) property.
 
-### Methods  {#Twitter-Methods}
+### 方法  {#Twitter-Methods}
 
 {:.methods}
 

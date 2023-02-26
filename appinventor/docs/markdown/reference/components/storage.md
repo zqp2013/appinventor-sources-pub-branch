@@ -103,7 +103,7 @@ Component for DataFile
 
 
 
-### Properties  {#DataFile-Properties}
+### 属性  {#DataFile-Properties}
 
 {:.properties}
 
@@ -129,13 +129,13 @@ Component for DataFile
  [`Rows`](#DataFile.Rows) and [`ColumnNames`](#DataFile.ColumnNames) properties.
  The expected formatting of the file is either the CSV or JSON format.
 
-### Events  {#DataFile-Events}
+### 事件  {#DataFile-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#DataFile-Methods}
+### 方法  {#DataFile-Methods}
 
 {:.methods}
 
@@ -192,7 +192,7 @@ Non-visible component for storing and retrieving files. Use this component to wr
 
 
 
-### Properties  {#File-Properties}
+### 属性  {#File-Properties}
 
 {:.properties}
 
@@ -212,7 +212,7 @@ Non-visible component for storing and retrieving files. Use this component to wr
 : A designer-only property that can be used to enable write access to file storage outside of the
  app-specific directories.
 
-### Events  {#File-Events}
+### 事件  {#File-Events}
 
 {:.events}
 
@@ -222,7 +222,7 @@ Non-visible component for storing and retrieving files. Use this component to wr
 {:id="File.GotText"} GotText(*text*{:.text})
 : Event indicating that the contents from the file have been read.
 
-### Methods  {#File-Methods}
+### 方法  {#File-Methods}
 
 {:.methods}
 
@@ -302,7 +302,7 @@ Spreadsheet is a non-visible component for storing and receiving data from
 
 
 
-### Properties  {#Spreadsheet-Properties}
+### 属性  {#Spreadsheet-Properties}
 
 {:.properties}
 
@@ -315,7 +315,7 @@ Spreadsheet is a non-visible component for storing and receiving data from
 {:id="Spreadsheet.SpreadsheetID" .text} *SpreadsheetID*
 : The ID for the Google Sheets file you want to edit. You can find the spreadsheetID in the URL of the Google Sheets file.
 
-### Events  {#Spreadsheet-Events}
+### 事件  {#Spreadsheet-Events}
 
 {:.events}
 
@@ -384,7 +384,7 @@ Spreadsheet is a non-visible component for storing and receiving data from
 : The callback event for the [`ReadSheet`](#Spreadsheet.ReadSheet) block. The `sheetData` is a
  list of rows.
 
-### Methods  {#Spreadsheet-Methods}
+### 方法  {#Spreadsheet-Methods}
 
 {:.methods}
 
@@ -505,20 +505,20 @@ Spreadsheet is a non-visible component for storing and receiving data from
 
 
 
-### Properties  {#TinyDB-Properties}
+### 属性  {#TinyDB-Properties}
 
 {:.properties}
 
 {:id="TinyDB.Namespace" .text} *Namespace*
 : Namespace for storing data.
 
-### Events  {#TinyDB-Events}
+### 事件  {#TinyDB-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#TinyDB-Methods}
+### 方法  {#TinyDB-Methods}
 
 {:.methods}
 
@@ -556,7 +556,7 @@ The `TinyWebDB` component communicates with a Web service to store
 
 
 
-### Properties  {#TinyWebDB-Properties}
+### 属性  {#TinyWebDB-Properties}
 
 {:.properties}
 
@@ -564,7 +564,7 @@ The `TinyWebDB` component communicates with a Web service to store
 : Specifies the URL of the  Web service.
  The default value is the demo service running on App Engine.
 
-### Events  {#TinyWebDB-Events}
+### 事件  {#TinyWebDB-Events}
 
 {:.events}
 
@@ -577,7 +577,7 @@ The `TinyWebDB` component communicates with a Web service to store
 {:id="TinyWebDB.WebServiceError"} WebServiceError(*message*{:.text})
 : Indicates that the communication with the Web service signaled an error.
 
-### Methods  {#TinyWebDB-Methods}
+### 方法  {#TinyWebDB-Methods}
 
 {:.methods}
 

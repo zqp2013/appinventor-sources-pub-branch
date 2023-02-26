@@ -8,83 +8,75 @@ title: 多媒体组件
 
 目录：
 
-* [Camcorder](#Camcorder)
-* [Camera](#Camera)
-* [ImagePicker](#ImagePicker)
-* [Player](#Player)
-* [Sound](#Sound)
-* [SoundRecorder](#SoundRecorder)
-* [SpeechRecognizer](#SpeechRecognizer)
-* [TextToSpeech](#TextToSpeech)
-* [Translator](#Translator)
-* [VideoPlayer](#VideoPlayer)
+* [摄像机](#Camcorder)
+* [照相机](#Camera)
+* [图像选择框](#ImagePicker)
+* [音频播放器](#Player)
+* [音效](#Sound)
+* [录音机](#SoundRecorder)
+* [语音识别器](#SpeechRecognizer)
+* [文本语音转换器](#TextToSpeech)
+* [翻译器](#Translator)
+* [视频播放器](#VideoPlayer)
 
-## Camcorder  {#Camcorder}
+## 摄像机  {#Camcorder}
 
 ![Camcorder icon](images/camcorder.png)
 
- A component to record a video using the device's camcorder. After the video is recorded, the
- name of the file on the phone containing the clip is available as an argument to the
- [`AfterRecording`](#Camcorder.AfterRecording) event. The file name can be used, for example, to set the source
- property of a [`VideoPlayer`](#VideoPlayer) component.
+ 使用设备的摄像机录制视频的组件。录制视频后，手机上包含剪辑的文件的名称可作为参数提供给 [`录制完成`](#Camcorder.AfterRecording) 事件。
+ 例如，可以使用文件名来设置源 [`视频播放器`](#VideoPlayer) 组件的属性。
 
 
-
-### Properties  {#Camcorder-Properties}
+### 属性  {#Camcorder-Properties}
 
 {:.properties}
-None
+无
 
 
-### Events  {#Camcorder-Events}
+### 事件  {#Camcorder-Events}
 
 {:.events}
 
-{:id="Camcorder.AfterRecording"} AfterRecording(*clip*{:.text})
-: Indicates that a video was recorded with the camera and provides the path to
- the stored video.
+{:id="Camcorder.AfterRecording"} 录制完成(*clip*{:.text})
+: 表示视频是用相机录制的，提供已存储视频的路径。
 
-### Methods  {#Camcorder-Methods}
+### 方法  {#Camcorder-Methods}
 
 {:.methods}
 
-{:id="Camcorder.RecordVideo" class="method"} <i/> RecordVideo()
-: Records a video, then raises the [`AfterRecording`](#Camcorder.AfterRecording) event.
+{:id="Camcorder.RecordVideo" class="method"} <i/> 开始录制()
+: 录制视频，然后触发[`录制完成`](#Camcorder.AfterRecording)事件。
 
-## Camera  {#Camera}
+## 照相机  {#Camera}
 
 ![Camera icon](images/camera.png)
 
- Use a camera component to take a picture on the phone.
+ 使用相机组件在手机上拍照。
 
- `Camera` is a non-visible component that takes a picture using the device's camera. After the
- picture is taken, the path to the file on the phone containing the picture is available as an
- argument to the [`AfterPicture`](#Camera.AfterPicture) event. The path can be used, for example, as the
- [`Picture`](userinterface.html#Image.Picture) property of an [`Image`](userinterface.html3Image)
- component.
+ `照相机`是一个不可见的组件，它使用设备的相机拍照。照片拍摄完成后，手机上包含照片的文件路径可用作 [`拍摄完成`](#Camera.AfterPicture) 事件的参数。 
+ 例如，该路径可以用作 [`图像`](userinterface.html#Image) 的 [`图片`](userinterface.html#Image.Picture) 属性。
 
 
-
-### Properties  {#Camera-Properties}
+### 属性  {#Camera-Properties}
 
 {:.properties}
-None
+无
 
 
-### Events  {#Camera-Events}
+### 事件  {#Camera-Events}
 
 {:.events}
 
-{:id="Camera.AfterPicture"} AfterPicture(*image*{:.text})
+{:id="Camera.AfterPicture"} 拍摄完成(*image*{:.text})
 : Called after the picture is taken. The text argument `image` is the path that can be used to
  locate the image on the phone.
 
-### Methods  {#Camera-Methods}
+### 方法  {#Camera-Methods}
 
 {:.methods}
 
 {:id="Camera.TakePicture" class="method"} <i/> TakePicture()
-: Takes a picture, then raises the [`AfterPicture`](#Camera.AfterPicture) event.
+: Takes a picture, then raises the [`拍摄完成`](#Camera.AfterPicture) event.
 
 ## ImagePicker  {#ImagePicker}
 
@@ -96,7 +88,7 @@ A special-purpose button. When the user taps an `ImagePicker`, the device's imag
 
 
 
-### Properties  {#ImagePicker-Properties}
+### 属性  {#ImagePicker-Properties}
 
 {:.properties}
 
@@ -170,7 +162,7 @@ A special-purpose button. When the user taps an `ImagePicker`, the device's imag
 : Specifies the horizontal width of the `ImagePicker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#ImagePicker-Events}
+### 事件  {#ImagePicker-Events}
 
 {:.events}
 
@@ -197,7 +189,7 @@ A special-purpose button. When the user taps an `ImagePicker`, the device's imag
 {:id="ImagePicker.TouchUp"} TouchUp()
 : Indicates that the `ImagePicker` has been released.
 
-### Methods  {#ImagePicker-Methods}
+### 方法  {#ImagePicker-Methods}
 
 {:.methods}
 
@@ -219,7 +211,7 @@ Multimedia component that plays audio and controls phone vibration. The name of 
 
 
 
-### Properties  {#Player-Properties}
+### 属性  {#Player-Properties}
 
 {:.properties}
 
@@ -241,7 +233,7 @@ Multimedia component that plays audio and controls phone vibration. The name of 
 {:id="Player.Volume" .number .wo} *Volume*
 : Sets the volume property to a number between 0 and 100.
 
-### Events  {#Player-Events}
+### 事件  {#Player-Events}
 
 {:.events}
 
@@ -252,7 +244,7 @@ Multimedia component that plays audio and controls phone vibration. The name of 
 : This event is signaled when another player has started (and the current player is playing or
  paused, but not stopped).
 
-### Methods  {#Player-Methods}
+### 方法  {#Player-Methods}
 
 {:.methods}
 
@@ -283,7 +275,7 @@ A multimedia component that plays sound files and optionally vibrates for the nu
 
 
 
-### Properties  {#Sound-Properties}
+### 属性  {#Sound-Properties}
 
 {:.properties}
 
@@ -297,13 +289,13 @@ A multimedia component that plays sound files and optionally vibrates for the nu
 : The name of the sound file. Only certain formats are supported.
  See http://developer.android.com/guide/appendix/media-formats.html.
 
-### Events  {#Sound-Events}
+### 事件  {#Sound-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Sound-Methods}
+### 方法  {#Sound-Methods}
 
 {:.methods}
 
@@ -330,7 +322,7 @@ None
 
 
 
-### Properties  {#SoundRecorder-Properties}
+### 属性  {#SoundRecorder-Properties}
 
 {:.properties}
 
@@ -340,7 +332,7 @@ None
  property is not the empty string, it should specify a complete path to a file in an existing
  directory, including a file name with the extension .3gp.
 
-### Events  {#SoundRecorder-Events}
+### 事件  {#SoundRecorder-Events}
 
 {:.events}
 
@@ -353,7 +345,7 @@ None
 {:id="SoundRecorder.StoppedRecording"} StoppedRecording()
 : Indicates that the recorder has stopped, and can be started again.
 
-### Methods  {#SoundRecorder-Methods}
+### 方法  {#SoundRecorder-Methods}
 
 {:.methods}
 
@@ -372,7 +364,7 @@ None
 
 
 
-### Properties  {#SpeechRecognizer-Properties}
+### 属性  {#SpeechRecognizer-Properties}
 
 {:.properties}
 
@@ -396,7 +388,7 @@ None
  final recognized string and no more data will be provided until recognition is again started. See
  [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) for more details on partial speech recognition.
 
-### Events  {#SpeechRecognizer-Events}
+### 事件  {#SpeechRecognizer-Events}
 
 {:.events}
 
@@ -413,7 +405,7 @@ None
 : Simple event to raise when the `SpeechRecognizer` is invoked but before its
  activity is started.
 
-### Methods  {#SpeechRecognizer-Methods}
+### 方法  {#SpeechRecognizer-Methods}
 
 {:.methods}
 
@@ -445,7 +437,7 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
 
 
 
-### Properties  {#TextToSpeech-Properties}
+### 属性  {#TextToSpeech-Properties}
 
 {:.properties}
 
@@ -485,7 +477,7 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
 
    The default value is 1.0 for normal speech rate.
 
-### Events  {#TextToSpeech-Events}
+### 事件  {#TextToSpeech-Events}
 
 {:.events}
 
@@ -497,7 +489,7 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
 {:id="TextToSpeech.BeforeSpeaking"} BeforeSpeaking()
 : Event to raise when Speak is invoked, before the message is spoken.
 
-### Methods  {#TextToSpeech-Methods}
+### 方法  {#TextToSpeech-Methods}
 
 {:.methods}
 
@@ -522,7 +514,7 @@ Use this component to translate words and sentences between
 
 
 
-### Properties  {#Translator-Properties}
+### 属性  {#Translator-Properties}
 
 {:.properties}
 
@@ -530,14 +522,14 @@ Use this component to translate words and sentences between
 : The API Key to use. MIT App Inventor will automatically fill this
  value in. You should not need to change it.
 
-### Events  {#Translator-Events}
+### 事件  {#Translator-Events}
 
 {:.events}
 
 {:id="Translator.GotTranslation"} GotTranslation(*responseCode*{:.text},*translation*{:.text})
 : Event indicating that a request has finished and has returned data (translation).
 
-### Methods  {#Translator-Methods}
+### 方法  {#Translator-Methods}
 
 {:.methods}
 
@@ -575,7 +567,7 @@ A multimedia component capable of playing videos. When the application is run, t
 
 
 
-### Properties  {#VideoPlayer-Properties}
+### 属性  {#VideoPlayer-Properties}
 
 {:.properties}
 
@@ -608,14 +600,14 @@ A multimedia component capable of playing videos. When the application is run, t
 : Specifies the horizontal width of the `VideoPlayer` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#VideoPlayer-Events}
+### 事件  {#VideoPlayer-Events}
 
 {:.events}
 
 {:id="VideoPlayer.Completed"} Completed()
 : Indicates that the video has reached the end
 
-### Methods  {#VideoPlayer-Methods}
+### 方法  {#VideoPlayer-Methods}
 
 {:.methods}
 

@@ -33,7 +33,7 @@ title: 乐高机器人®组件
 
 
 
-### Properties  {#Ev3ColorSensor-Properties}
+### 属性  {#Ev3ColorSensor-Properties}
 
 {:.properties}
 
@@ -75,7 +75,7 @@ title: 乐高机器人®组件
 : Specifies whether the WithinRange event should fire when the light level
  goes between the BottomOfRange and the TopOfRange.
 
-### Events  {#Ev3ColorSensor-Events}
+### 事件  {#Ev3ColorSensor-Events}
 
 {:.events}
 
@@ -91,7 +91,7 @@ title: 乐高机器人®组件
 {:id="Ev3ColorSensor.WithinRange"} WithinRange()
 : Light level has gone within the range.
 
-### Methods  {#Ev3ColorSensor-Methods}
+### 方法  {#Ev3ColorSensor-Methods}
 
 {:.methods}
 
@@ -113,7 +113,7 @@ title: 乐高机器人®组件
 
 
 
-### Properties  {#Ev3Commands-Properties}
+### 属性  {#Ev3Commands-Properties}
 
 {:.properties}
 
@@ -121,13 +121,13 @@ title: 乐高机器人®组件
 : Specifies the BluetoothClient component that should be used for communication.
  **Must be set in the Designer**.
 
-### Events  {#Ev3Commands-Events}
+### 事件  {#Ev3Commands-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Ev3Commands-Methods}
+### 方法  {#Ev3Commands-Methods}
 
 {:.methods}
 
@@ -164,7 +164,7 @@ None
 
 
 
-### Properties  {#Ev3GyroSensor-Properties}
+### 属性  {#Ev3GyroSensor-Properties}
 
 {:.properties}
 
@@ -182,14 +182,14 @@ None
 {:id="Ev3GyroSensor.SensorValueChangedEventEnabled" .boolean} *SensorValueChangedEventEnabled*
 : Returns whether the SensorValueChanged event should fire when the sensor value changed.
 
-### Events  {#Ev3GyroSensor-Events}
+### 事件  {#Ev3GyroSensor-Events}
 
 {:.events}
 
 {:id="Ev3GyroSensor.SensorValueChanged"} SensorValueChanged(*sensorValue*{:.number})
 : Called then the sensor value changed.
 
-### Methods  {#Ev3GyroSensor-Methods}
+### 方法  {#Ev3GyroSensor-Methods}
 
 {:.methods}
 
@@ -206,7 +206,7 @@ None
 
 
 
-### Properties  {#Ev3Motors-Properties}
+### 属性  {#Ev3Motors-Properties}
 
 {:.properties}
 
@@ -232,14 +232,14 @@ None
 {:id="Ev3Motors.WheelDiameter" .number .do} *WheelDiameter*
 : Returns the diameter of the wheels attached on motors.
 
-### Events  {#Ev3Motors-Events}
+### 事件  {#Ev3Motors-Events}
 
 {:.events}
 
 {:id="Ev3Motors.TachoCountChanged"} TachoCountChanged(*tachoCount*{:.number})
 : Called when the tacho count has changed.
 
-### Methods  {#Ev3Motors-Methods}
+### 方法  {#Ev3Motors-Methods}
 
 {:.methods}
 
@@ -288,7 +288,7 @@ None
 
 
 
-### Properties  {#Ev3Sound-Properties}
+### 属性  {#Ev3Sound-Properties}
 
 {:.properties}
 
@@ -296,13 +296,13 @@ None
 : Specifies the BluetoothClient component that should be used for communication.
  **Must be set in the Designer**.
 
-### Events  {#Ev3Sound-Events}
+### 事件  {#Ev3Sound-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Ev3Sound-Methods}
+### 方法  {#Ev3Sound-Methods}
 
 {:.methods}
 
@@ -321,7 +321,7 @@ None
 
 
 
-### Properties  {#Ev3TouchSensor-Properties}
+### 属性  {#Ev3TouchSensor-Properties}
 
 {:.properties}
 
@@ -341,7 +341,7 @@ None
 : Specifies the sensor port that the sensor is connected to.
  **Must be set in the Designer.**
 
-### Events  {#Ev3TouchSensor-Events}
+### 事件  {#Ev3TouchSensor-Events}
 
 {:.events}
 
@@ -351,7 +351,7 @@ None
 {:id="Ev3TouchSensor.Released"} Released()
 : Called when the touch sensor is pressed.
 
-### Methods  {#Ev3TouchSensor-Methods}
+### 方法  {#Ev3TouchSensor-Methods}
 
 {:.methods}
 
@@ -367,7 +367,7 @@ None
 
 
 
-### Properties  {#Ev3UI-Properties}
+### 属性  {#Ev3UI-Properties}
 
 {:.properties}
 
@@ -375,13 +375,13 @@ None
 : Specifies the BluetoothClient component that should be used for communication.
  **Must be set in the Designer**.
 
-### Events  {#Ev3UI-Events}
+### 事件  {#Ev3UI-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Ev3UI-Methods}
+### 方法  {#Ev3UI-Methods}
 
 {:.methods}
 
@@ -412,7 +412,7 @@ None
 
 
 
-### Properties  {#Ev3UltrasonicSensor-Properties}
+### 属性  {#Ev3UltrasonicSensor-Properties}
 
 {:.properties}
 
@@ -447,7 +447,7 @@ None
 : Specifies whether the WithinRange event should fire when the distance
  goes between the BottomOfRange and the TopOfRange.
 
-### Events  {#Ev3UltrasonicSensor-Events}
+### 事件  {#Ev3UltrasonicSensor-Events}
 
 {:.events}
 
@@ -460,7 +460,7 @@ None
 {:id="Ev3UltrasonicSensor.WithinRange"} WithinRange()
 : Called when the detected distance has gone within the range.
 
-### Methods  {#Ev3UltrasonicSensor-Methods}
+### 方法  {#Ev3UltrasonicSensor-Methods}
 
 {:.methods}
 
@@ -476,7 +476,7 @@ None
 
 
 
-### Properties  {#NxtColorSensor-Properties}
+### 属性  {#NxtColorSensor-Properties}
 
 {:.properties}
 
@@ -524,7 +524,7 @@ None
  property is set to False and the light level goes between the
  BottomOfRange and the TopOfRange.
 
-### Events  {#NxtColorSensor-Events}
+### 事件  {#NxtColorSensor-Events}
 
 {:.events}
 
@@ -540,7 +540,7 @@ None
 {:id="NxtColorSensor.WithinRange"} WithinRange()
 : Light level has gone within the range. The WithinRange event will not occur if the DetectColor property is set to True or if the WithinRangeEventEnabled property is set to False.
 
-### Methods  {#NxtColorSensor-Methods}
+### 方法  {#NxtColorSensor-Methods}
 
 {:.methods}
 
@@ -559,7 +559,7 @@ None
 
 
 
-### Properties  {#NxtDirectCommands-Properties}
+### 属性  {#NxtDirectCommands-Properties}
 
 {:.properties}
 
@@ -567,13 +567,13 @@ None
 : Specifies the BluetoothClient component that should be used for communication.
  **Must be set in the Designer.**
 
-### Events  {#NxtDirectCommands-Events}
+### 事件  {#NxtDirectCommands-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#NxtDirectCommands-Methods}
+### 方法  {#NxtDirectCommands-Methods}
 
 {:.methods}
 
@@ -664,7 +664,7 @@ None
 
 
 
-### Properties  {#NxtDrive-Properties}
+### 属性  {#NxtDrive-Properties}
 
 {:.properties}
 
@@ -681,13 +681,13 @@ None
 {:id="NxtDrive.WheelDiameter" .number .do} *WheelDiameter*
 : Returns the diameter of the wheels used for driving.
 
-### Events  {#NxtDrive-Events}
+### 事件  {#NxtDrive-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#NxtDrive-Methods}
+### 方法  {#NxtDrive-Methods}
 
 {:.methods}
 
@@ -721,7 +721,7 @@ None
 
 
 
-### Properties  {#NxtLightSensor-Properties}
+### 属性  {#NxtLightSensor-Properties}
 
 {:.properties}
 
@@ -756,7 +756,7 @@ None
 : Specifies whether the WithinRange event should fire when the light level
  goes between the BottomOfRange and the TopOfRange.
 
-### Events  {#NxtLightSensor-Events}
+### 事件  {#NxtLightSensor-Events}
 
 {:.events}
 
@@ -769,7 +769,7 @@ None
 {:id="NxtLightSensor.WithinRange"} WithinRange()
 : Light level has gone within the range.
 
-### Methods  {#NxtLightSensor-Methods}
+### 方法  {#NxtLightSensor-Methods}
 
 {:.methods}
 
@@ -785,7 +785,7 @@ None
 
 
 
-### Properties  {#NxtSoundSensor-Properties}
+### 属性  {#NxtSoundSensor-Properties}
 
 {:.properties}
 
@@ -817,7 +817,7 @@ None
 : Specifies whether the WithinRange event should fire when the sound level
  goes between the BottomOfRange and the TopOfRange.
 
-### Events  {#NxtSoundSensor-Events}
+### 事件  {#NxtSoundSensor-Events}
 
 {:.events}
 
@@ -830,7 +830,7 @@ None
 {:id="NxtSoundSensor.WithinRange"} WithinRange()
 : Sound level has gone within the range.
 
-### Methods  {#NxtSoundSensor-Methods}
+### 方法  {#NxtSoundSensor-Methods}
 
 {:.methods}
 
@@ -846,7 +846,7 @@ None
 
 
 
-### Properties  {#NxtTouchSensor-Properties}
+### 属性  {#NxtTouchSensor-Properties}
 
 {:.properties}
 
@@ -866,7 +866,7 @@ None
 : Specifies the sensor port that the sensor is connected to.
  **Must be set in the Designer.**
 
-### Events  {#NxtTouchSensor-Events}
+### 事件  {#NxtTouchSensor-Events}
 
 {:.events}
 
@@ -876,7 +876,7 @@ None
 {:id="NxtTouchSensor.Released"} Released()
 : Touch sensor has been released.
 
-### Methods  {#NxtTouchSensor-Methods}
+### 方法  {#NxtTouchSensor-Methods}
 
 {:.methods}
 
@@ -892,7 +892,7 @@ None
 
 
 
-### Properties  {#NxtUltrasonicSensor-Properties}
+### 属性  {#NxtUltrasonicSensor-Properties}
 
 {:.properties}
 
@@ -924,7 +924,7 @@ None
 : Specifies whether the WithinRange event should fire when the distance
  goes between the BottomOfRange and the TopOfRange.
 
-### Events  {#NxtUltrasonicSensor-Events}
+### 事件  {#NxtUltrasonicSensor-Events}
 
 {:.events}
 
@@ -937,7 +937,7 @@ None
 {:id="NxtUltrasonicSensor.WithinRange"} WithinRange()
 : Distance has gone within the range.
 
-### Methods  {#NxtUltrasonicSensor-Methods}
+### 方法  {#NxtUltrasonicSensor-Methods}
 
 {:.methods}
 

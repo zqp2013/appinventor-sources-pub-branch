@@ -21,7 +21,7 @@ The Chart component plots data originating from it's attached Data components. F
 
 
 
-### Properties  {#Chart-Properties}
+### 属性  {#Chart-Properties}
 
 {:.properties}
 
@@ -82,7 +82,7 @@ The Chart component plots data originating from it's attached Data components. F
 : Specifies the horizontal width of the `Chart` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#Chart-Events}
+### 事件  {#Chart-Events}
 
 {:.events}
 
@@ -90,10 +90,10 @@ The Chart component plots data originating from it's attached Data components. F
 : Indicates that the user clicked on a data entry in the `Chart`. The specific series, along
  with its x and y values, are reported.
 
-### Methods  {#Chart-Methods}
+### 方法  {#Chart-Methods}
 
 {:.methods}
-None
+无
 
 
 ## ChartData2D  {#ChartData2D}
@@ -106,7 +106,7 @@ A ChartData2D component represents a single two-dimensional Data Series in the C
 
 
 
-### Properties  {#ChartData2D-Properties}
+### 属性  {#ChartData2D-Properties}
 
 {:.properties}
 
@@ -220,7 +220,7 @@ A ChartData2D component represents a single two-dimensional Data Series in the C
  retrieved in JSON format, and an array with the "Temperature" tag exists,
  the "Temperature" column value can be specified to use that array.
 
-### Events  {#ChartData2D-Events}
+### 事件  {#ChartData2D-Events}
 
 {:.events}
 
@@ -228,7 +228,7 @@ A ChartData2D component represents a single two-dimensional Data Series in the C
 : Indicates that the user tapped on a data point in the chart. The x and y values of the
  tapped entry are reported.
 
-### Methods  {#ChartData2D-Methods}
+### 方法  {#ChartData2D-Methods}
 
 {:.methods}
 

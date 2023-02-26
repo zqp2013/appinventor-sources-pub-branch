@@ -32,7 +32,7 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 
 
 
-### Properties  {#Circle-Properties}
+### 属性  {#Circle-Properties}
 
 {:.properties}
 
@@ -88,7 +88,7 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 : Specifies whether the `Circle` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `Circle` is showing and `假`{:.logic.block} if hidden.
 
-### Events  {#Circle-Events}
+### 事件  {#Circle-Events}
 
 {:.events}
 
@@ -111,7 +111,7 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 {:id="Circle.StopDrag"} StopDrag()
 : The `StopDrag` event runs when the user releases the `Circle` at the end of a drag.
 
-### Methods  {#Circle-Methods}
+### 方法  {#Circle-Methods}
 
 {:.methods}
 
@@ -149,7 +149,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 
 
 
-### Properties  {#FeatureCollection-Properties}
+### 属性  {#FeatureCollection-Properties}
 
 {:.properties}
 
@@ -184,7 +184,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Specifies the horizontal width of the `FeatureCollection` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#FeatureCollection-Events}
+### 事件  {#FeatureCollection-Events}
 
 {:.events}
 
@@ -230,7 +230,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
  will contain an HTTP status code and the `errorMessage`{:.variable.block} parameter will
  contain a detailed error message.
 
-### Methods  {#FeatureCollection-Methods}
+### 方法  {#FeatureCollection-Methods}
 
 {:.methods}
 
@@ -268,7 +268,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 
 
 
-### Properties  {#LineString-Properties}
+### 属性  {#LineString-Properties}
 
 {:.properties}
 
@@ -311,7 +311,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Specifies whether the `LineString` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `LineString` is showing and `假`{:.logic.block} if hidden.
 
-### Events  {#LineString-Events}
+### 事件  {#LineString-Events}
 
 {:.events}
 
@@ -334,7 +334,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 {:id="LineString.StopDrag"} StopDrag()
 : The `StopDrag` event runs when the user releases the `LineString` at the end of a drag.
 
-### Methods  {#LineString-Methods}
+### 方法  {#LineString-Methods}
 
 {:.methods}
 
@@ -375,7 +375,7 @@ A two-dimensional container that renders map tiles in the background and allows 
 
 
 
-### Properties  {#Map-Properties}
+### 属性  {#Map-Properties}
 
 {:.properties}
 
@@ -484,7 +484,7 @@ A two-dimensional container that renders map tiles in the background and allows 
  1-20 over cities. Tile providers may send warning or error tiles if the zoom level is too
  great for the server to support.
 
-### Events  {#Map-Events}
+### 事件  {#Map-Events}
 
 {:.events}
 
@@ -563,7 +563,7 @@ A two-dimensional container that renders map tiles in the background and allows 
 : The `ZoomChange` event runs when the user has changed the zoom level of the map, such as by
  pinching or double-tapping to zoom.
 
-### Methods  {#Map-Methods}
+### 方法  {#Map-Methods}
 
 {:.methods}
 
@@ -611,7 +611,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 
 
 
-### Properties  {#Marker-Properties}
+### 属性  {#Marker-Properties}
 
 {:.properties}
 
@@ -692,7 +692,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 : Specifies the horizontal width of the `Marker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#Marker-Events}
+### 事件  {#Marker-Events}
 
 {:.events}
 
@@ -715,7 +715,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 {:id="Marker.StopDrag"} StopDrag()
 : The `StopDrag` event runs when the user releases the `Marker` at the end of a drag.
 
-### Methods  {#Marker-Methods}
+### 方法  {#Marker-Methods}
 
 {:.methods}
 
@@ -757,7 +757,7 @@ The Navigation component generates directions between two locations using a serv
 
 
 
-### Properties  {#Navigation-Properties}
+### 属性  {#Navigation-Properties}
 
 {:.properties}
 
@@ -798,7 +798,7 @@ The Navigation component generates directions between two locations using a serv
   - `cycling-regular`: Route based on bicycle paths
   - `wheelchair`: Route based on wheelchair accessible paths
 
-### Events  {#Navigation-Events}
+### 事件  {#Navigation-Events}
 
 {:.events}
 
@@ -812,7 +812,7 @@ The Navigation component generates directions between two locations using a serv
   - `distance`: Estimated distance for the route, in meters.
   - `duration`: Estimated duration for the route, in seconds.
 
-### Methods  {#Navigation-Methods}
+### 方法  {#Navigation-Methods}
 
 {:.methods}
 
@@ -832,7 +832,7 @@ The Navigation component generates directions between two locations using a serv
 
 
 
-### Properties  {#Polygon-Properties}
+### 属性  {#Polygon-Properties}
 
 {:.properties}
 
@@ -892,7 +892,7 @@ The Navigation component generates directions between two locations using a serv
 : Specifies whether the `Polygon` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `Polygon` is showing and `假`{:.logic.block} if hidden.
 
-### Events  {#Polygon-Events}
+### 事件  {#Polygon-Events}
 
 {:.events}
 
@@ -915,7 +915,7 @@ The Navigation component generates directions between two locations using a serv
 {:id="Polygon.StopDrag"} StopDrag()
 : The `StopDrag` event runs when the user releases the `Polygon` at the end of a drag.
 
-### Methods  {#Polygon-Methods}
+### 方法  {#Polygon-Methods}
 
 {:.methods}
 
@@ -950,7 +950,7 @@ The Navigation component generates directions between two locations using a serv
 
 
 
-### Properties  {#Rectangle-Properties}
+### 属性  {#Rectangle-Properties}
 
 {:.properties}
 
@@ -1005,7 +1005,7 @@ The Navigation component generates directions between two locations using a serv
 {:id="Rectangle.WestLongitude" .number} *WestLongitude*
 : Specifies the south-most edge of the `Rectangle`, in decimal degrees south of the equator.
 
-### Events  {#Rectangle-Events}
+### 事件  {#Rectangle-Events}
 
 {:.events}
 
@@ -1028,7 +1028,7 @@ The Navigation component generates directions between two locations using a serv
 {:id="Rectangle.StopDrag"} StopDrag()
 : The `StopDrag` event runs when the user releases the `Rectangle` at the end of a drag.
 
-### Methods  {#Rectangle-Methods}
+### 方法  {#Rectangle-Methods}
 
 {:.methods}
 

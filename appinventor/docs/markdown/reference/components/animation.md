@@ -70,7 +70,7 @@ title: 绘画动画组件
 {:id="Ball.Z" .number} *Z*
 : How the Ball should be layered relative to other Balls and ImageSprites, with higher-numbered layers in front of lower-numbered layers.
 
-### Events  {#Ball-Events}
+### 事件  {#Ball-Events}
 
 {:.events}
 
@@ -122,7 +122,7 @@ title: 绘画动画组件
 : When the user touches the sprite and then immediately lifts finger: provides
  the (x,y) position of the touch, relative to the upper left of the canvas.
 
-### Methods  {#Ball-Methods}
+### 方法  {#Ball-Methods}
 
 {:.methods}
 
@@ -176,7 +176,7 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 
 
 
-### Properties  {#Canvas-Properties}
+### 属性  {#Canvas-Properties}
 
 {:.properties}
 
@@ -235,7 +235,7 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Specifies the horizontal width of the `Canvas` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#Canvas-Events}
+### 事件  {#Canvas-Events}
 
 {:.events}
 
@@ -268,7 +268,7 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
  the (x,y) position of the touch, relative to the upper left of the canvas.  TouchedAnySprite
  is true if the same touch also touched a sprite, and false otherwise.
 
-### Methods  {#Canvas-Methods}
+### 方法  {#Canvas-Methods}
 
 {:.methods}
 
@@ -346,7 +346,7 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 
 
 
-### Properties  {#ImageSprite-Properties}
+### 属性  {#ImageSprite-Properties}
 
 {:.properties}
 
@@ -391,7 +391,7 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 {:id="ImageSprite.Z" .number} *Z*
 : How the ImageSprite should be layered relative to other Balls and ImageSprites, with higher-numbered layers in front of lower-numbered layers.
 
-### Events  {#ImageSprite-Events}
+### 事件  {#ImageSprite-Events}
 
 {:.events}
 
@@ -443,7 +443,7 @@ A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to to
 : When the user touches the sprite and then immediately lifts finger: provides
  the (x,y) position of the touch, relative to the upper left of the canvas.
 
-### Methods  {#ImageSprite-Methods}
+### 方法  {#ImageSprite-Methods}
 
 {:.methods}
 
