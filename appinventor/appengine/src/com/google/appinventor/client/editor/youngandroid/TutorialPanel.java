@@ -39,7 +39,7 @@ public class TutorialPanel extends Frame {
     // Adds Youtube Video
     //HTML message = new HTML("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/" + tutorialId + "?rel=0&autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>");
     //改为B站视频
-    HTML message = new HTML("<iframe width=\"980\" height=\"680\" src=\"//player.bilibili.com/player.html?bvid=" + tutorialId + "\" frameborder=\"0\" allowfullscreen></iframe>");
+    HTML message = new HTML("<iframe width=\"980\" height=\"680\" src=\"//player.bilibili.com/player.html?high_quality=1&bvid=" + tutorialId + "\" frameborder=\"0\" allowfullscreen></iframe>");
     message.setStyleName("DialogBox-message");
     FlowPanel holder = new FlowPanel();
     Button ok = new Button("关闭");
