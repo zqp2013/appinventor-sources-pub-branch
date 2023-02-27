@@ -1,7 +1,7 @@
 ### 更新&编译
 ```
 git pull
-rm -rf docs/html   #必要执行，否则文档会被恢复成英文
+rm -rf docs/html   #必要执行，否则文档会被恢复成英文。！！docs/markdown目录不能随便删除！！
 ant -Drelease=true noplay
 ```
 

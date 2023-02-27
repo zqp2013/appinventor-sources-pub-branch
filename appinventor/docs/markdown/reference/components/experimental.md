@@ -22,7 +22,7 @@ The Firebase component communicates with a Web service to store
 
 
 
-### Properties  {#FirebaseDB-Properties}
+### 属性  {#FirebaseDB-Properties}
 
 {:.properties}
 
@@ -44,7 +44,7 @@ The Firebase component communicates with a Web service to store
 {:id="FirebaseDB.ProjectBucket" .text} *ProjectBucket*
 : Getter for the ProjectBucket.
 
-### Events  {#FirebaseDB-Events}
+### 事件  {#FirebaseDB-Events}
 
 {:.events}
 
@@ -64,7 +64,7 @@ The Firebase component communicates with a Web service to store
 {:id="FirebaseDB.TagList"} TagList(*value*{:.list})
 : Event triggered when we have received the list of known tags. Used with the "GetTagList" Function.
 
-### Methods  {#FirebaseDB-Methods}
+### 方法  {#FirebaseDB-Methods}
 
 {:.methods}
 

@@ -47,7 +47,7 @@ A component that can launch an activity using the StartActivity method.
 
 
 
-### Properties  {#ActivityStarter-Properties}
+### 属性  {#ActivityStarter-Properties}
 
 {:.properties}
 
@@ -90,7 +90,7 @@ A component that can launch an activity using the StartActivity method.
 {:id="ActivityStarter.ResultUri" .text .ro .bo} *ResultUri*
 : Returns the URI from the activity.
 
-### Events  {#ActivityStarter-Events}
+### 事件  {#ActivityStarter-Events}
 
 {:.events}
 
@@ -100,7 +100,7 @@ A component that can launch an activity using the StartActivity method.
 {:id="ActivityStarter.AfterActivity"} AfterActivity(*result*{:.text})
 : Event raised after this `ActivityStarter` returns.
 
-### Methods  {#ActivityStarter-Methods}
+### 方法  {#ActivityStarter-Methods}
 
 {:.methods}
 
@@ -120,7 +120,7 @@ Use `BluetoothClient` to connect your device to other devices using Bluetooth. T
 
 
 
-### Properties  {#BluetoothClient-Properties}
+### 属性  {#BluetoothClient-Properties}
 
 {:.properties}
 
@@ -160,13 +160,13 @@ Use `BluetoothClient` to connect your device to other devices using Bluetooth. T
 {:id="BluetoothClient.Secure" .boolean} *Secure*
 : Specifies whether a secure connection should be used.
 
-### Events  {#BluetoothClient-Events}
+### 事件  {#BluetoothClient-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#BluetoothClient-Methods}
+### 方法  {#BluetoothClient-Methods}
 
 {:.methods}
 
@@ -264,7 +264,7 @@ Use the `BluetoothServer` component to turn your device into a server that recei
 
 
 
-### Properties  {#BluetoothServer-Properties}
+### 属性  {#BluetoothServer-Properties}
 
 {:.properties}
 
@@ -297,14 +297,14 @@ Use the `BluetoothServer` component to turn your device into a server that recei
 {:id="BluetoothServer.Secure" .boolean} *Secure*
 : Specifies whether a secure connection should be used.
 
-### Events  {#BluetoothServer-Events}
+### 事件  {#BluetoothServer-Events}
 
 {:.events}
 
 {:id="BluetoothServer.ConnectionAccepted"} ConnectionAccepted()
 : Indicates that a bluetooth connection has been accepted.
 
-### Methods  {#BluetoothServer-Methods}
+### 方法  {#BluetoothServer-Methods}
 
 {:.methods}
 
@@ -401,7 +401,7 @@ Component for Serial
 
 
 
-### Properties  {#Serial-Properties}
+### 属性  {#Serial-Properties}
 
 {:.properties}
 
@@ -417,13 +417,13 @@ Component for Serial
 {:id="Serial.IsOpen" .boolean .ro .bo} *IsOpen*
 : Returns true when the Serial connection is open.
 
-### Events  {#Serial-Events}
+### 事件  {#Serial-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Serial-Methods}
+### 方法  {#Serial-Methods}
 
 {:.methods}
 
@@ -451,7 +451,7 @@ Non-visible component that provides functions for HTTP GET, POST, PUT, and DELET
 
 
 
-### Properties  {#Web-Properties}
+### 属性  {#Web-Properties}
 
 {:.properties}
 
@@ -476,7 +476,7 @@ Non-visible component that provides functions for HTTP GET, POST, PUT, and DELET
 {:id="Web.Url" .text} *Url*
 : Specifies the URL.
 
-### Events  {#Web-Events}
+### 事件  {#Web-Events}
 
 {:.events}
 
@@ -489,7 +489,7 @@ Non-visible component that provides functions for HTTP GET, POST, PUT, and DELET
 {:id="Web.TimedOut"} TimedOut(*url*{:.text})
 : Event indicating that a request has timed out.
 
-### Methods  {#Web-Methods}
+### 方法  {#Web-Methods}
 
 {:.methods}
 

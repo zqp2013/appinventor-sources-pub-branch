@@ -40,7 +40,7 @@ Non-visible component that can detect shaking and measure acceleration approxima
 
 
 
-### Properties  {#AccelerometerSensor-Properties}
+### 属性  {#AccelerometerSensor-Properties}
 
 {:.properties}
 
@@ -77,7 +77,7 @@ Non-visible component that can detect shaking and measure acceleration approxima
 : Returns the acceleration in the Z-dimension in SI units (m/s²).
  The sensor must be enabled to return meaningful values.
 
-### Events  {#AccelerometerSensor-Events}
+### 事件  {#AccelerometerSensor-Events}
 
 {:.events}
 
@@ -87,10 +87,10 @@ Non-visible component that can detect shaking and measure acceleration approxima
 {:id="AccelerometerSensor.Shaking"} Shaking()
 : Indicates the device started being shaken or continues to be shaken.
 
-### Methods  {#AccelerometerSensor-Methods}
+### 方法  {#AccelerometerSensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## BarcodeScanner  {#BarcodeScanner}
@@ -99,7 +99,7 @@ Component for scanning a QR code and getting back the resulting string.
 
 
 
-### Properties  {#BarcodeScanner-Properties}
+### 属性  {#BarcodeScanner-Properties}
 
 {:.properties}
 
@@ -111,14 +111,14 @@ Component for scanning a QR code and getting back the resulting string.
  Bar Code Scanner. If false a version of ZXing integrated into App Inventor
  will be used.
 
-### Events  {#BarcodeScanner-Events}
+### 事件  {#BarcodeScanner-Events}
 
 {:.events}
 
 {:id="BarcodeScanner.AfterScan"} AfterScan(*result*{:.text})
 : Indicates that the scanner has read a (text) result and provides the result
 
-### Methods  {#BarcodeScanner-Methods}
+### 方法  {#BarcodeScanner-Methods}
 
 {:.methods}
 
@@ -133,7 +133,7 @@ Physical world component that can measure the ambient air pressure if
 
 
 
-### Properties  {#Barometer-Properties}
+### 属性  {#Barometer-Properties}
 
 {:.properties}
 
@@ -152,17 +152,17 @@ Physical world component that can measure the ambient air pressure if
 {:id="Barometer.RefreshTime" .number} *RefreshTime*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
-### Events  {#Barometer-Events}
+### 事件  {#Barometer-Events}
 
 {:.events}
 
 {:id="Barometer.AirPressureChanged"} AirPressureChanged(*pressure*{:.number})
 : Called when a change is detected in the air pressure (provided in hPa).
 
-### Methods  {#Barometer-Methods}
+### 方法  {#Barometer-Methods}
 
 {:.methods}
-None
+无
 
 
 ## 计时器  {#Clock}
@@ -333,7 +333,7 @@ Component providing data from the device's gyroscope sensor.
 
 
 
-### Properties  {#GyroscopeSensor-Properties}
+### 属性  {#GyroscopeSensor-Properties}
 
 {:.properties}
 
@@ -352,17 +352,17 @@ Component providing data from the device's gyroscope sensor.
 {:id="GyroscopeSensor.ZAngularVelocity" .number .ro .bo} *ZAngularVelocity*
 : The angular velocity around the Z axis, in degrees per second.
 
-### Events  {#GyroscopeSensor-Events}
+### 事件  {#GyroscopeSensor-Events}
 
 {:.events}
 
 {:id="GyroscopeSensor.GyroscopeChanged"} GyroscopeChanged(*xAngularVelocity*{:.number},*yAngularVelocity*{:.number},*zAngularVelocity*{:.number},*timestamp*{:.number})
 : Indicates that the gyroscope sensor data has changed. The timestamp parameter is the time in nanoseconds at which the event occurred.
 
-### Methods  {#GyroscopeSensor-Methods}
+### 方法  {#GyroscopeSensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## Hygrometer  {#Hygrometer}
@@ -372,7 +372,7 @@ Physical world component that can measure the relative ambient air
 
 
 
-### Properties  {#Hygrometer-Properties}
+### 属性  {#Hygrometer-Properties}
 
 {:.properties}
 
@@ -392,17 +392,17 @@ Physical world component that can measure the relative ambient air
 {:id="Hygrometer.RefreshTime" .number} *RefreshTime*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
-### Events  {#Hygrometer-Events}
+### 事件  {#Hygrometer-Events}
 
 {:.events}
 
 {:id="Hygrometer.HumidityChanged"} HumidityChanged(*humidity*{:.number})
 : Indicates the relative humidity changed.
 
-### Methods  {#Hygrometer-Methods}
+### 方法  {#Hygrometer-Methods}
 
 {:.methods}
-None
+无
 
 
 ## LightSensor  {#LightSensor}
@@ -411,7 +411,7 @@ Physical world component that can measure the light level.
 
 
 
-### Properties  {#LightSensor-Properties}
+### 属性  {#LightSensor-Properties}
 
 {:.properties}
 
@@ -434,17 +434,17 @@ Physical world component that can measure the light level.
 {:id="LightSensor.RefreshTime" .number} *RefreshTime*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
-### Events  {#LightSensor-Events}
+### 事件  {#LightSensor-Events}
 
 {:.events}
 
 {:id="LightSensor.LightChanged"} LightChanged(*lux*{:.number})
 : Indicates the light level changed.
 
-### Methods  {#LightSensor-Methods}
+### 方法  {#LightSensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## LocationSensor  {#LocationSensor}
@@ -467,7 +467,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
 
 
 
-### Properties  {#LocationSensor-Properties}
+### 属性  {#LocationSensor-Properties}
 
 {:.properties}
 
@@ -561,7 +561,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
    Values smaller than 30000ms (30 seconds) are not practical for most devices. Small values
  may drain battery and overwork the GPS.
 
-### Events  {#LocationSensor-Events}
+### 事件  {#LocationSensor-Events}
 
 {:.events}
 
@@ -573,7 +573,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
 : Indicates that the status of the location provider service has changed, such as when a
  provider is lost or a new provider starts being used.
 
-### Methods  {#LocationSensor-Methods}
+### 方法  {#LocationSensor-Methods}
 
 {:.methods}
 
@@ -589,7 +589,7 @@ Component for MagneticFieldSensor
 
 
 
-### Properties  {#MagneticFieldSensor-Properties}
+### 属性  {#MagneticFieldSensor-Properties}
 
 {:.properties}
 
@@ -614,17 +614,17 @@ Component for MagneticFieldSensor
 {:id="MagneticFieldSensor.ZStrength" .number .ro .bo} *ZStrength*
 : Indicates the field's strength in the Z-axis.
 
-### Events  {#MagneticFieldSensor-Events}
+### 事件  {#MagneticFieldSensor-Events}
 
 {:.events}
 
 {:id="MagneticFieldSensor.MagneticChanged"} MagneticChanged(*xStrength*{:.number},*yStrength*{:.number},*zStrength*{:.number},*absoluteStrength*{:.number})
 : Triggers when magnetic field has changed, setting the new values in parameters.
 
-### Methods  {#MagneticFieldSensor-Methods}
+### 方法  {#MagneticFieldSensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## NearField  {#NearField}
@@ -639,7 +639,7 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 
 
 
-### Properties  {#NearField-Properties}
+### 属性  {#NearField-Properties}
 
 {:.properties}
 
@@ -658,7 +658,7 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 : Returns the write type for the NFC component. For this version of the component, it is always
  `1`.
 
-### Events  {#NearField-Events}
+### 事件  {#NearField-Events}
 
 {:.events}
 
@@ -670,10 +670,10 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 {:id="NearField.TagWritten"} TagWritten()
 : Indicates that a tag has come into range of the NFC sensor and has been written.
 
-### Methods  {#NearField-Methods}
+### 方法  {#NearField-Methods}
 
 {:.methods}
-None
+无
 
 
 ## OrientationSensor  {#OrientationSensor}
@@ -700,7 +700,7 @@ None
 
 
 
-### Properties  {#OrientationSensor-Properties}
+### 属性  {#OrientationSensor-Properties}
 
 {:.properties}
 
@@ -732,17 +732,17 @@ None
 : Returns the roll angle of the device.
  To return meaningful values the sensor must be enabled.
 
-### Events  {#OrientationSensor-Events}
+### 事件  {#OrientationSensor-Events}
 
 {:.events}
 
 {:id="OrientationSensor.OrientationChanged"} OrientationChanged(*azimuth*{:.number},*pitch*{:.number},*roll*{:.number})
 : The `OrientationChanged` event handler is run when the orientation has changed.
 
-### Methods  {#OrientationSensor-Methods}
+### 方法  {#OrientationSensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## Pedometer  {#Pedometer}
@@ -751,7 +751,7 @@ This component keeps count of steps using the accelerometer.
 
 
 
-### Properties  {#Pedometer-Properties}
+### 属性  {#Pedometer-Properties}
 
 {:.properties}
 
@@ -774,7 +774,7 @@ This component keeps count of steps using the accelerometer.
 {:id="Pedometer.WalkSteps" .number .ro .bo} *WalkSteps*
 : Returns the number of walk steps taken since the pedometer has started.
 
-### Events  {#Pedometer-Events}
+### 事件  {#Pedometer-Events}
 
 {:.events}
 
@@ -784,7 +784,7 @@ This component keeps count of steps using the accelerometer.
 {:id="Pedometer.WalkStep"} WalkStep(*walkSteps*{:.number},*distance*{:.number})
 : This event is run when a walking step is detected. A walking step is a step that appears to be involved in forward motion.
 
-### Methods  {#Pedometer-Methods}
+### 方法  {#Pedometer-Methods}
 
 {:.methods}
 
@@ -813,7 +813,7 @@ A sensor component that can measure the proximity of an object (in cm) relative 
 
 
 
-### Properties  {#ProximitySensor-Properties}
+### 属性  {#ProximitySensor-Properties}
 
 {:.properties}
 
@@ -837,17 +837,17 @@ A sensor component that can measure the proximity of an object (in cm) relative 
  its maximum range value in the far state and a lesser value in the near state.
  Typically, the far value is a value > 5 cm, but this can vary from sensor to sensor.
 
-### Events  {#ProximitySensor-Events}
+### 事件  {#ProximitySensor-Events}
 
 {:.events}
 
 {:id="ProximitySensor.ProximityChanged"} ProximityChanged(*distance*{:.number})
 : Triggered when distance (in cm) of the object to the device changes.
 
-### Methods  {#ProximitySensor-Methods}
+### 方法  {#ProximitySensor-Methods}
 
 {:.methods}
-None
+无
 
 
 ## Thermometer  {#Thermometer}
@@ -857,7 +857,7 @@ Physical world component that can measure the ambient air temperature if
 
 
 
-### Properties  {#Thermometer-Properties}
+### 属性  {#Thermometer-Properties}
 
 {:.properties}
 
@@ -877,15 +877,15 @@ Physical world component that can measure the ambient air temperature if
  The sensor must be enabled and available 
  to return meaningful values.
 
-### Events  {#Thermometer-Events}
+### 事件  {#Thermometer-Events}
 
 {:.events}
 
 {:id="Thermometer.TemperatureChanged"} TemperatureChanged(*temperature*{:.number})
 : Indicates a change of temperature, provided in degrees Celsius.
 
-### Methods  {#Thermometer-Methods}
+### 方法  {#Thermometer-Methods}
 
 {:.methods}
-None
+无
 

@@ -47,7 +47,7 @@ title: 界面布局组件
 
 
 
-### Properties  {#HorizontalArrangement-Properties}
+### 属性  {#HorizontalArrangement-Properties}
 
 {:.properties}
 
@@ -87,16 +87,16 @@ title: 界面布局组件
 : Specifies the horizontal width of the `HorizontalArrangement` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#HorizontalArrangement-Events}
+### 事件  {#HorizontalArrangement-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#HorizontalArrangement-Methods}
+### 方法  {#HorizontalArrangement-Methods}
 
 {:.methods}
-None
+无
 
 
 ## HorizontalScrollArrangement  {#HorizontalScrollArrangement}
@@ -109,7 +109,7 @@ A formatting element in which to place components that should be displayed from 
 
 
 
-### Properties  {#HorizontalScrollArrangement-Properties}
+### 属性  {#HorizontalScrollArrangement-Properties}
 
 {:.properties}
 
@@ -149,16 +149,16 @@ A formatting element in which to place components that should be displayed from 
 : Specifies the horizontal width of the `HorizontalScrollArrangement` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#HorizontalScrollArrangement-Events}
+### 事件  {#HorizontalScrollArrangement-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#HorizontalScrollArrangement-Methods}
+### 方法  {#HorizontalScrollArrangement-Methods}
 
 {:.methods}
-None
+无
 
 
 ## TableArrangement  {#TableArrangement}
@@ -186,7 +186,7 @@ Use a table arrangement component to display a group of components in a tabular 
 
 
 
-### Properties  {#TableArrangement-Properties}
+### 属性  {#TableArrangement-Properties}
 
 {:.properties}
 
@@ -214,16 +214,16 @@ Use a table arrangement component to display a group of components in a tabular 
 : Specifies the horizontal width of the `TableArrangement` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#TableArrangement-Events}
+### 事件  {#TableArrangement-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#TableArrangement-Methods}
+### 方法  {#TableArrangement-Methods}
 
 {:.methods}
-None
+无
 
 
 ## VerticalArrangement  {#VerticalArrangement}
@@ -259,7 +259,7 @@ None
 
 
 
-### Properties  {#VerticalArrangement-Properties}
+### 属性  {#VerticalArrangement-Properties}
 
 {:.properties}
 
@@ -299,16 +299,16 @@ None
 : Specifies the horizontal width of the `VerticalArrangement` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#VerticalArrangement-Events}
+### 事件  {#VerticalArrangement-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#VerticalArrangement-Methods}
+### 方法  {#VerticalArrangement-Methods}
 
 {:.methods}
-None
+无
 
 
 ## VerticalScrollArrangement  {#VerticalScrollArrangement}
@@ -321,7 +321,7 @@ A formatting element in which to place components that should be displayed one b
 
 
 
-### Properties  {#VerticalScrollArrangement-Properties}
+### 属性  {#VerticalScrollArrangement-Properties}
 
 {:.properties}
 
@@ -361,14 +361,14 @@ A formatting element in which to place components that should be displayed one b
 : Specifies the horizontal width of the `VerticalScrollArrangement` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
-### Events  {#VerticalScrollArrangement-Events}
+### 事件  {#VerticalScrollArrangement-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#VerticalScrollArrangement-Methods}
+### 方法  {#VerticalScrollArrangement-Methods}
 
 {:.methods}
-None
+无
 

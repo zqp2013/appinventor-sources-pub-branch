@@ -183,7 +183,7 @@ title: 用户界面（UI）组件
 : Specifies the horizontal width of the `CheckBox` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#CheckBox-Events}
+### 事件  {#CheckBox-Events}
 
 {:.events}
 
@@ -196,10 +196,10 @@ title: 用户界面（UI）组件
 {:id="CheckBox.LostFocus"} LostFocus()
 : `CheckBox` stopped being the focused component.
 
-### Methods  {#CheckBox-Methods}
+### 方法  {#CheckBox-Methods}
 
 {:.methods}
-None
+无
 
 
 ## DatePicker  {#DatePicker}
@@ -211,7 +211,7 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
 
 
 
-### Properties  {#DatePicker-Properties}
+### 属性  {#DatePicker-Properties}
 
 {:.properties}
 
@@ -297,7 +297,7 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
 {:id="DatePicker.Year" .number .ro .bo} *Year*
 : Returns the Year that was last picked using the DatePicker.
 
-### Events  {#DatePicker-Events}
+### 事件  {#DatePicker-Events}
 
 {:.events}
 
@@ -318,7 +318,7 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
 {:id="DatePicker.TouchUp"} TouchUp()
 : Indicates that the `DatePicker` has been released.
 
-### Methods  {#DatePicker-Methods}
+### 方法  {#DatePicker-Methods}
 
 {:.methods}
 
@@ -342,7 +342,7 @@ Component for displaying images and basic animations.
 
 
 
-### Properties  {#Image-Properties}
+### 属性  {#Image-Properties}
 
 {:.properties}
 
@@ -387,17 +387,17 @@ Component for displaying images and basic animations.
 : Specifies the horizontal width of the `Image` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#Image-Events}
+### 事件  {#Image-Events}
 
 {:.events}
 
 {:id="Image.Click"} Click()
 : An event that occurs when an image is clicked.
 
-### Methods  {#Image-Methods}
+### 方法  {#Image-Methods}
 
 {:.methods}
-None
+无
 
 
 ## Label  {#Label}
@@ -411,7 +411,7 @@ Labels are components used to show text.
 
 
 
-### Properties  {#Label-Properties}
+### 属性  {#Label-Properties}
 
 {:.properties}
 
@@ -477,16 +477,16 @@ Labels are components used to show text.
 : Specifies the horizontal width of the `Label` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#Label-Events}
+### 事件  {#Label-Events}
 
 {:.events}
-None
+无
 
 
-### Methods  {#Label-Methods}
+### 方法  {#Label-Methods}
 
 {:.methods}
-None
+无
 
 
 ## ListPicker  {#ListPicker}
@@ -504,7 +504,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 
 
 
-### Properties  {#ListPicker-Properties}
+### 属性  {#ListPicker-Properties}
 
 {:.properties}
 
@@ -601,7 +601,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 : Specifies the horizontal width of the `ListPicker` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#ListPicker-Events}
+### 事件  {#ListPicker-Events}
 
 {:.events}
 
@@ -628,7 +628,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.TouchUp"} TouchUp()
 : Indicates that the `ListPicker` has been released.
 
-### Methods  {#ListPicker-Methods}
+### 方法  {#ListPicker-Methods}
 
 {:.methods}
 
@@ -649,7 +649,7 @@ This is a visible component that displays a list of text and image elements in y
 
 
 
-### Properties  {#ListView-Properties}
+### 属性  {#ListView-Properties}
 
 {:.properties}
 
@@ -741,7 +741,7 @@ This is a visible component that displays a list of text and image elements in y
 : Specifies the horizontal width of the `ListView` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#ListView-Events}
+### 事件  {#ListView-Events}
 
 {:.events}
 
@@ -749,7 +749,7 @@ This is a visible component that displays a list of text and image elements in y
 : Simple event to be raised after the an element has been chosen in the list.
  The selected element is available in the [`Selection`](#ListView.Selection) property.
 
-### Methods  {#ListView-Methods}
+### 方法  {#ListView-Methods}
 
 {:.methods}
 
@@ -775,7 +775,7 @@ The Notifier component displays alert messages and creates Android log entries t
 
 
 
-### Properties  {#Notifier-Properties}
+### 属性  {#Notifier-Properties}
 
 {:.properties}
 
@@ -788,7 +788,7 @@ The Notifier component displays alert messages and creates Android log entries t
 {:id="Notifier.TextColor" .color} *TextColor*
 : Specifies the text color for alerts (not dialogs).
 
-### Events  {#Notifier-Events}
+### 事件  {#Notifier-Events}
 
 {:.events}
 
@@ -808,7 +808,7 @@ The Notifier component displays alert messages and creates Android log entries t
  [`ShowPasswordDialog`](#Notifier.ShowPasswordDialog), or
  [`ShowTextDialog`](#Notifier.ShowTextDialog).
 
-### Methods  {#Notifier-Methods}
+### 方法  {#Notifier-Methods}
 
 {:.methods}
 
@@ -879,7 +879,7 @@ Users enter passwords in a password text box component, which hides the text tha
 
 
 
-### Properties  {#PasswordTextBox-Properties}
+### 属性  {#PasswordTextBox-Properties}
 
 {:.properties}
 
@@ -949,7 +949,7 @@ Users enter passwords in a password text box component, which hides the text tha
 : Specifies the horizontal width of the `PasswordTextBox` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#PasswordTextBox-Events}
+### 事件  {#PasswordTextBox-Events}
 
 {:.events}
 
@@ -961,7 +961,7 @@ Users enter passwords in a password text box component, which hides the text tha
 : Event raised when the `PasswordTextBox` is no longer selected for input, such
  as if the user touches a different text box.
 
-### Methods  {#PasswordTextBox-Methods}
+### 方法  {#PasswordTextBox-Methods}
 
 {:.methods}
 
@@ -974,7 +974,7 @@ Top-level component containing all other components in the program.
 
 
 
-### Properties  {#Screen-Properties}
+### 属性  {#Screen-Properties}
 
 {:.properties}
 
@@ -1123,7 +1123,7 @@ Top-level component containing all other components in the program.
 {:id="Screen.Width" .number .ro .bo} *Width*
 : Returns the Screen width in pixels (x-size).
 
-### Events  {#Screen-Events}
+### 事件  {#Screen-Events}
 
 {:.events}
 
@@ -1149,7 +1149,7 @@ Top-level component containing all other components in the program.
 {:id="Screen.ScreenOrientationChanged"} ScreenOrientationChanged()
 : Screen orientation changed
 
-### Methods  {#Screen-Methods}
+### 方法  {#Screen-Methods}
 
 {:.methods}
 
@@ -1190,7 +1190,7 @@ This class is used to display a `Slider`.
 
 
 
-### Properties  {#Slider-Properties}
+### 属性  {#Slider-Properties}
 
 {:.properties}
 
@@ -1240,17 +1240,17 @@ This class is used to display a `Slider`.
 : Specifies the horizontal width of the `Slider` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#Slider-Events}
+### 事件  {#Slider-Events}
 
 {:.events}
 
 {:id="Slider.PositionChanged"} PositionChanged(*thumbPosition*{:.number})
 : Indicates that position of the slider thumb has changed.
 
-### Methods  {#Slider-Methods}
+### 方法  {#Slider-Methods}
 
 {:.methods}
-None
+无
 
 
 ## Spinner  {#Spinner}
@@ -1265,7 +1265,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 
 
-### Properties  {#Spinner-Properties}
+### 属性  {#Spinner-Properties}
 
 {:.properties}
 
@@ -1305,14 +1305,14 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 : Specifies the horizontal width of the `Spinner` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#Spinner-Events}
+### 事件  {#Spinner-Events}
 
 {:.events}
 
 {:id="Spinner.AfterSelecting"} AfterSelecting(*selection*{:.text})
 : Event called after the user selects an item from the dropdown list.
 
-### Methods  {#Spinner-Methods}
+### 方法  {#Spinner-Methods}
 
 {:.methods}
 
@@ -1329,7 +1329,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 
 
-### Properties  {#Switch-Properties}
+### 属性  {#Switch-Properties}
 
 {:.properties}
 
@@ -1395,7 +1395,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 : Specifies the horizontal width of the `Switch` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#Switch-Events}
+### 事件  {#Switch-Events}
 
 {:.events}
 
@@ -1408,10 +1408,10 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Switch.LostFocus"} LostFocus()
 : `Switch` stopped being the focused component.
 
-### Methods  {#Switch-Methods}
+### 方法  {#Switch-Methods}
 
 {:.methods}
-None
+无
 
 
 ## TextBox  {#TextBox}
@@ -1442,7 +1442,7 @@ Users enter text in a text box component.
 
 
 
-### Properties  {#TextBox-Properties}
+### 属性  {#TextBox-Properties}
 
 {:.properties}
 
@@ -1518,7 +1518,7 @@ Users enter text in a text box component.
 : Specifies the horizontal width of the `TextBox` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#TextBox-Events}
+### 事件  {#TextBox-Events}
 
 {:.events}
 
@@ -1530,7 +1530,7 @@ Users enter text in a text box component.
 : Event raised when the `TextBox` is no longer selected for input, such
  as if the user touches a different text box.
 
-### Methods  {#TextBox-Methods}
+### 方法  {#TextBox-Methods}
 
 {:.methods}
 
@@ -1549,7 +1549,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 
 
 
-### Properties  {#TimePicker-Properties}
+### 属性  {#TimePicker-Properties}
 
 {:.properties}
 
@@ -1631,7 +1631,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 : Specifies the horizontal width of the `TimePicker` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#TimePicker-Events}
+### 事件  {#TimePicker-Events}
 
 {:.events}
 
@@ -1652,7 +1652,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 {:id="TimePicker.TouchUp"} TouchUp()
 : Indicates that the `TimePicker` has been released.
 
-### Methods  {#TimePicker-Methods}
+### 方法  {#TimePicker-Methods}
 
 {:.methods}
 
@@ -1714,7 +1714,7 @@ Component for viewing Web pages.
 
 
 
-### Properties  {#WebViewer-Properties}
+### 属性  {#WebViewer-Properties}
 
 {:.properties}
 
@@ -1769,7 +1769,7 @@ Component for viewing Web pages.
 : Specifies the horizontal width of the `WebViewer` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-### Events  {#WebViewer-Events}
+### 事件  {#WebViewer-Events}
 
 {:.events}
 
@@ -1786,7 +1786,7 @@ Component for viewing Web pages.
 : Event that runs when the `AppInventor.setWebViewString` method is called from JavaScript.
  The new [`WebViewString`](#WebViewer.WebViewString) is given by the `value`{:.variable.block} parameter.
 
-### Methods  {#WebViewer-Methods}
+### 方法  {#WebViewer-Methods}
 
 {:.methods}
 
