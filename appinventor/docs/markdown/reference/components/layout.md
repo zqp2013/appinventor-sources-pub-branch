@@ -8,41 +8,35 @@ title: 界面布局组件
 
 目录：
 
-* [HorizontalArrangement](#HorizontalArrangement)
-* [HorizontalScrollArrangement](#HorizontalScrollArrangement)
-* [TableArrangement](#TableArrangement)
-* [VerticalArrangement](#VerticalArrangement)
-* [VerticalScrollArrangement](#VerticalScrollArrangement)
+* [水平布局](#HorizontalArrangement)
+* [水平滚动条布局](#HorizontalScrollArrangement)
+* [表格布局](#TableArrangement)
+* [垂直布局](#VerticalArrangement)
+* [垂直滚动条布局](#VerticalScrollArrangement)
 
-## HorizontalArrangement  {#HorizontalArrangement}
+## 水平布局  {#HorizontalArrangement}
 
 ![HorizontalArrangement icon](images/horizontalarrangement.png)
 
- Use a horizontal arrangement component to display a group of components laid out from left to
- right.
+ 使用水平布局组件来展示一组从左到右排列的组件，你可以在其中从左到右放置应该显示的组件。如果你想让组件显示在另一个上面，使用 [`垂直布局`](#VerticalArrangement) 代替。
+ 
+ 在`水平布局`中，组件沿水平轴排列，垂直居中对齐。
 
- This component is a formatting element in which you place components that should be displayed
- from left to right. If you want to have components displayed one over another, use
- [`VerticalArrangement`](#VerticalArrangement) instead.
-
- In a `HorizontalArrangement`, components are arranged along the horizontal axis, vertically
- center-aligned.
-
- If a `HorizontalArrangement`'s [`Height`](#HorizontalArrangement.Height) property is set to `Automatic`, the actual
+ If a `水平布局`'s [`Height`](#HorizontalArrangement.Height) property is set to `Automatic`, the actual
  height of the arrangement is determined by the tallest component in the arrangement whose
  [`Height`](#HorizontalArrangement.Height) property is not set to `Fill Parent`. If a `HorizontalArrangment`'s
  [`Height`](#HorizontalArrangement.Height) property is set to `Automatic` and it contains only components whose `Height`
  properties are set to `Fill Parent`, the actual height of the arrangement is calculated using
- the automatic heights of the components. If a `HorizontalArrangement`'s [`Height`](#HorizontalArrangement.Height)
+ the automatic heights of the components. If a `水平布局`'s [`Height`](#HorizontalArrangement.Height)
  property is set to `Automatic` and it is empty, the [`Height`](#HorizontalArrangement.Height) will be 100.
 
- If a `HorizontalArrangement`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, the actual width
+ If a `水平布局`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, the actual width
  of the arrangement is determined by the sum of the widths of the components. **If a
- `HorizontalArrangement`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, any components whose
+ `水平布局`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, any components whose
  [`Width`](#HorizontalArrangement.Width) properties are set to `Fill Parent` will behave as if they were set to
  `Automatic`.**
 
- If a `HorizontalArrangement`'s [`Width`](#HorizontalArrangement.Width) properties are set to `Fill Parent` will equally
+ If a `水平布局`'s [`Width`](#HorizontalArrangement.Width) properties are set to `Fill Parent` will equally
  take up the width not occupied by other components.
 
 
@@ -52,14 +46,14 @@ title: 界面布局组件
 {:.properties}
 
 {:id="HorizontalArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `HorizontalArrangement` are aligned horizontally. The choices
+: A number that encodes how contents of the `水平布局` are aligned horizontally. The choices
  are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `HorizontalArrangement`'s [`Width`](#HorizontalArrangement.Width) is `Automatic`.
+ effect if the `水平布局`'s [`Width`](#HorizontalArrangement.Width) is `Automatic`.
 
 {:id="HorizontalArrangement.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the `HorizontalArrangement` are aligned vertically. The choices
+: A number that encodes how the contents of the `水平布局` are aligned vertically. The choices
  are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `HorizontalArrangement`'s [`Height`](#HorizontalArrangement.Height) is `Automatic`.
+ Alignment has no effect if the `水平布局`'s [`Height`](#HorizontalArrangement.Height) is `Automatic`.
 
 {:id="HorizontalArrangement.BackgroundColor" .color} *BackgroundColor*
 : Specifies the background color of the HorizontalArrangement as an alpha-red-green-blue
@@ -67,24 +61,24 @@ title: 界面布局组件
  until the Image is removed.
 
 {:id="HorizontalArrangement.Height" .number .bo} *Height*
-: Specifies the `HorizontalArrangement`'s vertical height, measured in pixels.
+: Specifies the `水平布局`'s vertical height, measured in pixels.
 
 {:id="HorizontalArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `HorizontalArrangement`'s vertical height as a percentage
+: Specifies the `水平布局`'s vertical height as a percentage
  of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
 
 {:id="HorizontalArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `HorizontalArrangement`.
+: Specifies the path of the background image of the `水平布局`.
 
 {:id="HorizontalArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `HorizontalArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `HorizontalArrangement` is showing and `假`{:.logic.block} if hidden.
+: Specifies whether the `水平布局` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `水平布局` is showing and `假`{:.logic.block} if hidden.
 
 {:id="HorizontalArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `HorizontalArrangement`, measured in pixels.
+: Specifies the horizontal width of the `水平布局`, measured in pixels.
 
 {:id="HorizontalArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `HorizontalArrangement` as a percentage
+: Specifies the horizontal width of the `水平布局` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
 ### 事件  {#HorizontalArrangement-Events}
@@ -99,7 +93,7 @@ title: 界面布局组件
 无
 
 
-## HorizontalScrollArrangement  {#HorizontalScrollArrangement}
+## 水平滚动条布局  {#HorizontalScrollArrangement}
 
 A formatting element in which to place components that should be displayed from left to right.
  If you wish to have components displayed one over another, use [`VerticalScrollArrangement`](#VerticalScrollArrangement)
@@ -114,14 +108,14 @@ A formatting element in which to place components that should be displayed from 
 {:.properties}
 
 {:id="HorizontalScrollArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `HorizontalScrollArrangement` are aligned horizontally. The choices
+: A number that encodes how contents of the `水平滚动条布局` are aligned horizontally. The choices
  are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `HorizontalScrollArrangement`'s [`Width`](#HorizontalScrollArrangement.Width) is `Automatic`.
+ effect if the `水平滚动条布局`'s [`Width`](#HorizontalScrollArrangement.Width) is `Automatic`.
 
 {:id="HorizontalScrollArrangement.AlignVertical" .number} *AlignVertical*
 : A number that encodes how the contents of the `HorizontalScrollArrangement` are aligned vertically. The choices
  are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `HorizontalScrollArrangement`'s [`Height`](#HorizontalScrollArrangement.Height) is `Automatic`.
+ Alignment has no effect if the `水平滚动条布局`'s [`Height`](#HorizontalScrollArrangement.Height) is `Automatic`.
 
 {:id="HorizontalScrollArrangement.BackgroundColor" .color} *BackgroundColor*
 : Specifies the background color of the HorizontalScrollArrangement as an alpha-red-green-blue
@@ -129,24 +123,24 @@ A formatting element in which to place components that should be displayed from 
  until the Image is removed.
 
 {:id="HorizontalScrollArrangement.Height" .number .bo} *Height*
-: Specifies the `HorizontalScrollArrangement`'s vertical height, measured in pixels.
+: Specifies the `水平滚动条布局`'s vertical height, measured in pixels.
 
 {:id="HorizontalScrollArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `HorizontalScrollArrangement`'s vertical height as a percentage
+: Specifies the `水平滚动条布局`'s vertical height as a percentage
  of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
 
 {:id="HorizontalScrollArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `HorizontalScrollArrangement`.
+: Specifies the path of the background image of the `水平滚动条布局`.
 
 {:id="HorizontalScrollArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `HorizontalScrollArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `HorizontalScrollArrangement` is showing and `假`{:.logic.block} if hidden.
+: Specifies whether the `水平滚动条布局` should be visible on the screen.  Value is `真`{:.logic.block}
+ if the `水平滚动条布局` is showing and `假`{:.logic.block} if hidden.
 
 {:id="HorizontalScrollArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `HorizontalScrollArrangement`, measured in pixels.
+: Specifies the horizontal width of the `水平滚动条布局`, measured in pixels.
 
 {:id="HorizontalScrollArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `HorizontalScrollArrangement` as a percentage
+: Specifies the horizontal width of the `水平滚动条布局` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
 ### 事件  {#HorizontalScrollArrangement-Events}
