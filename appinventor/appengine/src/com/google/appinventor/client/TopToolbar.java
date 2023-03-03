@@ -542,6 +542,36 @@ public class TopToolbar extends Composite {
     }
   }
 
+  // VIP提醒
+  public static void showVip(){
+    final DialogBox db = new DialogBox(false, true);
+    db.setText("App Inventor 2 中文网VIP会员");
+    db.setStyleName("ode-DialogBox");
+    db.setHeight("200px");
+    db.setWidth("400px");
+    db.setGlassEnabled(true);
+    db.setAnimationEnabled(true);
+    db.center();
+
+    VerticalPanel DialogBoxContents = new VerticalPanel();
+    String html = "<p style=\"color:red\">抱歉，此功能需要VIP权限才能继续！<p/><br/><a href=\"//fun123.cn/reference/info/vip.html\" target=\"_blank\">点此开通VIP账号</a><br/><br/>";
+    HTML message = new HTML(html);
+
+    SimplePanel holder = new SimplePanel();
+    Button ok = new Button("关闭");
+    ok.addClickListener(new ClickListener() {
+      public void onClick(Widget sender) {
+        db.hide();
+      }
+    });
+    holder.add(ok);
+    DialogBoxContents.add(message);
+    DialogBoxContents.add(holder);
+    db.setWidget(DialogBoxContents);
+    db.show();
+  }
+
+
   private class BarcodeAction implements Command {
 
     private boolean secondBuildserver = false;
@@ -554,6 +584,12 @@ public class TopToolbar extends Composite {
 
     @Override
     public void execute() {
+      // VIP检查
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+        showVip();
+        return;
+      }
+
       ProjectRootNode projectRootNode = Ode.getInstance().getCurrentYoungAndroidProjectRootNode();
       if (projectRootNode != null) {
         String target = YoungAndroidProjectNode.YOUNG_ANDROID_TARGET_ANDROID;
@@ -580,6 +616,12 @@ public class TopToolbar extends Composite {
   private static class ExportProjectAction implements Command {
     @Override
     public void execute() {
+      // VIP检查
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+        showVip();
+        return;
+      }
+
       if (Ode.getInstance().getCurrentView() == Ode.PROJECTS) {
         List<Project> selectedProjects =
           ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
@@ -626,6 +668,11 @@ public class TopToolbar extends Composite {
     public void execute() {
       Tracking.trackEvent(Tracking.PROJECT_EVENT,
           Tracking.PROJECT_ACTION_DOWNLOAD_ALL_PROJECTS_SOURCE_YA);
+      // VIP检查
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+        showVip();
+        return;
+      }
 
       // Is there a way to disable the Download All button until this completes?
       if (Window.confirm(MESSAGES.downloadAllAlert())) {
