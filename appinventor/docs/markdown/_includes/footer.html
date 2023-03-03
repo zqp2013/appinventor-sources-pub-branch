@@ -1,3 +1,79 @@
+<link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/*cndns-right*/
+.cndns-right{position:fixed;right:1px;top:60%;margin-top:-100px;z-index:100}
+.cndns-right i{font-style:normal;}
+.cndns-right a:hover{text-decoration:none;}
+.cndns-right-menu{position:relative;}
+.cndns-right-btn{
+	width: 48px;
+    height: 48px;
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+    position: relative;
+    background-color: #fbfbfb;
+    border-radius: 30px;
+}
+.cndns-right-btn span{color:#848484;font-size:26px;line-height:50px;}
+.cndns-right-btn sup{display:block;min-width:24px;height:24px;text-align:center;line-height:24px;color:#fff;border-radius: 50%;background-color:#ff6800;position:absolute;left:-12px;top:-12px;}
+.cndns-right-btn p{color:#ff6800;font-size:14px;line-height:18px;padding-top:5px;display:none;}
+.cndns-right-menu:hover .cndns-right-btn span{display:none}
+.cndns-right-menu:hover .cndns-right-btn p{display:block;}
+.menu-top .cndns-right-btn span{font-size:12px;line-height:12px;padding-top:10px;display:block}
+.menu-top .cndns-right-btn span.fa-angle-up{font-size:28px;}
+.menu-top .cndns-right-btn i{display:block;color:#999;}
+.menu-top.cndns-right-menu:hover .cndns-right-btn{background-color:#ff6800}
+.menu-top.cndns-right-menu:hover .cndns-right-btn span{display:block;color:#fff} 
+.menu-top.cndns-right-menu:hover .cndns-right-btn i{color:#fff;}
+.cndns-right-box{position:absolute;top:-15px;right:48px;padding-right:25px;overflow:hidden;display:none;}
+.cndns-right-box .box-border{border:1px solid #ccc;border-top:4px solid #ff6800;padding:20px;background-color:#fff;-webkit-box-shadow: 0 3px 8px rgba(0,0,0,.15);-moz-box-shadow: 0 3px 8px rgba(0,0,0,.15);box-shadow: 0 3px 8px rgba(0,0,0,.15);position:relative;overflow:hidden;}
+.cndns-right-box .box-border .arrow-right{display:block;width:13px;height:16px;background:url(../images/arrow.png) no-repeat;position:absolute;right:-13px;top:26px;}
+.menu-sev .cndns-right-box .box-border{width:430px;}
+.menu-contact .cndns-right-box .box-border{width:250px;}
+.cndns-right-menu:hover .cndns-right-box{display:block}
+.menu-common .cndns-right-box{top:inherit;bottom:-35px;}
+.menu-common .cndns-right-box .box-border{text-align:center;border-top:1px solid #ccc;}
+.menu-common .cndns-right-box .box-border img{width:150px;height:150px;}
+.menu-common .cndns-right-box .box-border i{display:block;color:#f66e06;font-size:16px;line-height:16px;}
+.menu-common .cndns-right-box .box-border .arrow-right{top:inherit;bottom:50px;}
+</style>
+<div class="cndns-right">
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				微信
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="https://support.qq.com/products/514085" target="_blank" class="cndns-right-btn">
+			<span class="fa fa-edit"></span>
+			<p>
+				留言<br />
+				反馈
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
 <div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
