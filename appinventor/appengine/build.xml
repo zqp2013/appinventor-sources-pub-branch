@@ -137,6 +137,7 @@
       </fileset>
       <fileset dir="${docs.dir}/html">
         <include name="index.html"/>
+        <include name="sitemaps.xml"/>
         <include name="reference/**/*"/>
         <exclude name="static/*"/>
         <exclude name="assets/*"/>
