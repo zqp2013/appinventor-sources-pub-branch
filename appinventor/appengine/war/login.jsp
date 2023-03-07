@@ -135,25 +135,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <% } %>
 <input type=Submit value="点击试用">
 </form>
-<style type="text/css">
-a.vip{
-    font-size: 12px;
-    color: #A17118!important;
-    padding: 3px 9px 5px;
-    +padding: 4px 9px;
-    border-radius: 12px;
-    background: #FAD86E!important;
-    position: relative;
-    top: 5px;
-	text-decoration:none;
-}
-a.vip:hover, a.vip:active, a.vip:focus{
-	background:#FAC930!important;
-	color:#fff!important;
-}
-</style>
-<p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/>
-<a href="//fun123.cn/reference/info/vip.html" target="_blank" class="vip">开通VIP账号</a></p>
+<p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/>如需开通正式账号，请添加QQ 348366338 咨询，谢谢！</p>
 </center>
 <br/>
 <br/>
