@@ -27,9 +27,10 @@
 	<meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
 	<meta name="description" content="App Inventor 2 中文网，在MIT官方原版基础上深度中文化定制且与原版同步更新，编程文档及案例本土化。不断开发中文教程并提供中文论坛方便学习交流，陪伴少儿编程成长，做忠实的编程陪伴者。">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
+	<link rel="apple-touch-icon" href="/static/images/logo2.png"/>
   </head>
 <body style="background: url(/static/images/bg.svg);padding-top:4%;">
-
+   <img width="121" height="75" style="width:121px;height:75px;position:absolute;top:-100px;" src="/static/images/logo2.png"/>
   <center>
     <h1>欢迎来到 App Inventor 2 中文网</h1>
   </center>
@@ -135,11 +136,11 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <% } %>
 <input type=Submit value="点击试用">
 </form>
-<p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/>如需开通正式账号，请添加QQ 348366338 咨询，谢谢！</p>
+<p><font style="color:red;">注：试用账号下，项目会不定期进行清理！</font><br/><br/>
+<img src="/static/images/weixin.png" width="120" height="120" title="扫码咨询"/><br/>
+如需开通正式账号，请扫码咨询！</p>
 </center>
 <br/>
-<br/>
-
 
 <footer>
 
@@ -148,7 +149,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <a href="http://fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
 <a href="https://bbs.tsingfun.com/forum-147-1.html?f=login" target="_blank">中文论坛</a>
 
-<p class="copyright" style="font-size:15px;color:#666;margin-top:8%;">版权所有 &copy; 2023&nbsp;
+<p class="copyright" style="font-size:15px;color:#666;margin-top:6%;">版权所有 &copy; 2023&nbsp;
 	<a href="http://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
 	<%    if (locale != null && locale.equals("zh_CN")) { %>
