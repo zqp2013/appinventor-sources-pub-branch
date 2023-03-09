@@ -111,3 +111,70 @@
 <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script async src="/static/js/widgets.js" charset="utf-8"></script>
+<script type="text/javascript">
+function animate(elem, sty, timeout, callback){
+	var f = j = 0,//j动画总数
+		tween = function(t,b,c,d) { return -c*(t/=d)*(t-2) + b; },
+		execution = function(key, val, px, t){
+			var s = (new Date()).getTime(),
+			d = t || 500,
+			b = parseInt(elem.style[key] || elem[key]) || 0,//当前值
+			c = val - b;					 				//变化差值
+			(function(){
+				var t = (new Date()).getTime() - s;
+				var styleAttr = (typeof(elem.style[key]) != 'undefined');
+				if(t > d)
+				{
+					t = d;
+					if (styleAttr)
+						elem.style[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
+					else
+						elem[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
+					++f==j && callback && callback.apply(elem);
+					return;
+				}
+				if (styleAttr)
+					elem.style[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
+				else
+					elem[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
+				setTimeout(arguments.callee, 10); //arguments.callee 匿名函数递归调用
+			})();
+		};
+	for(var i in sty)
+	{
+		j++;
+		execution(i, parseInt(sty[i]), sty[i].toString().indexOf('px') > 0, timeout);
+	}
+}
+function fadeIn(id){
+	if (document.getElementById(id) == null) return;
+	document.getElementById(id).style.display = 'block';
+	if (document.getElementById(id).style.opacity != 0) return;
+	animate(document.getElementById(id), {opacity: 1}, 700);
+}
+function fadeOut(id){
+	var obj = document.getElementById(id);
+	if (obj == null) return;
+	if (obj.style.opacity == '')
+		obj.style.opacity = 1;
+	if (obj.style.opacity != 1) return;
+	animate(obj, {opacity: 0}, 700);
+	setTimeout(function(){obj.style.display = 'none';}, 700);
+}
+window.onscroll = function (){
+	var d = document.body.scrollTop||document.documentElement.scrollTop;
+	if (d > 60) {
+		fadeIn('float_scrolltop');
+	} else {
+		fadeOut('float_scrolltop');
+	}
+};
+function scroll2Top(){
+	var ie = document.documentElement;
+	var chrome = document.body;
+	if (ie.scrollTop == 0 && chrome.scrollTop == 0)
+		return;
+	
+	animate(ie.scrollTop > chrome.scrollTop ? ie : chrome, {scrollTop: 0}, 700);
+}
+</script>
