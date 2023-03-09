@@ -8,43 +8,36 @@ title: 通信连接组件
 
 目录：
 
-* [ActivityStarter](#ActivityStarter)
-* [BluetoothClient](#BluetoothClient)
-* [BluetoothServer](#BluetoothServer)
-* [Serial](#Serial)
-* [Web](#Web)
+* [Activity启动器](#ActivityStarter)
+* [蓝牙客户端](#BluetoothClient)
+* [蓝牙服务器](#BluetoothServer)
+* [串口通信器](#Serial)
+* [Web客户端](#Web)
 
-## ActivityStarter  {#ActivityStarter}
+## Activity启动器  {#ActivityStarter}
 
-A component that can launch an activity using the StartActivity method.
+使用`启动Activity`方法启动一个Activity（活动）的组件。
 
- Activities that can be launched include:
-
- * Starting another App Inventor for Android app. To do so, first find out the class of the other
-   application by downloading the source code and using a file explorer or unzip utility to find
-   a file named "youngandroidproject/project.properties". The first line of the file will start
-   with "main=" and be followed by the class name; for example,
-   `main=com.gmail.Bitdiddle.Ben.HelloPurr.Screen1`. (The first components indicate that it was
-   created by Ben.Bitdiddle@gmail.com.) To make your `ActivityStarter` launch this application,
-   set the following properties:
-   * `ActivityPackage` to the class name, dropping the last component (for example,
-     `com.gmail.Bitdiddle.Ben.HelloPurr`)
-   * `ActivityClass` to the entire class name (for example,
-     `com.gmail.Bitdiddle.Ben.HelloPurr.Screen1`)
- * Starting the camera application by setting the following properties:
-   * `Action`: `android.intent.action.MAIN`
-   * `ActivityPackage`: `com.android.camera`
-   * `ActivityClass`: `com.android.camera.Camera`
- * Performing web search. Assuming the term you want to search for is "vampire" (feel free to substitute your own choice), set the properties to:
-   * `Action`: `android.intent.action.WEB_SEARCH`
-   * `ExtraKey`: `query`
-   * `ExtraValue`: `vampire`
-   * `ActivityPackage`: `com.google.android.providers.enhancedgooglesearch`
-   * `ActivityClass`: `com.google.android.providers.enhancedgooglesearch.Launcher`
- * Opening a browser to a specified web page. Assuming the page you want to go to is "www.facebook.com" (feel free to substitute your own choice), set the properties to:
-   * `Action`: `android.intent.action.VIEW`
-   * `DataUri`: `http://www.facebook.com`
-
+  可启动的Activity包括：
+  * 为 Android 应用启动另一个 App Inventor。 首先通过下载源代码并使用文件资源管理器或解压缩utility，找到一个名为“youngandroidproject/project.properties”的文件，找出另一个程序的的类。 
+  
+    文件的第一行将开始使用“main=”并后跟类名。
+    例如：`main=com.gmail.Bitdiddle.Ben.HelloPurr.Screen1`（第一个组件表明它是由 Ben.Bitdiddle@gmail.com 创建）要让您的 `Activity启动器` 启动此应用程序，设置以下属性：
+    * `ActivityPackage` 到类名，删除最后一个组件（例如： `com.gmail.Bitdiddle.Ben.HelloPurr`)
+    * `ActivityClass` 到整个类名（例如：`com.gmail.Bitdiddle.Ben.HelloPurr.Screen1`)
+  * 通过设置以下属性启动相机应用程序：
+    * `Action`: `android.intent.action.MAIN`
+    * `ActivityPackage`: `com.android.camera`
+    * `ActivityClass`: `com.android.camera.Camera`
+  * 执行网络搜索。 假设您要搜索的词是“vampire”（您可以随意替换自己的选择），将属性设置为：
+    * `Action`: `android.intent.action.WEB_SEARCH`
+    * `ExtraKey`: `query`
+    * `ExtraValue`: `vampire`
+    * `ActivityPackage`: `com.google.android.providers.enhancedgooglesearch`
+    * `ActivityClass`: `com.google.android.providers.enhancedgooglesearch.Launcher`
+  * 打开浏览器到指定的网页。 假设您要访问的页面是“www.fun123.cn”（您可以随意替换自己的选择），将属性设置为：
+    * `Action`: `android.intent.action.VIEW`
+    * `DataUri`: `http://www.fun123.cn`
 
 
 ### 属性  {#ActivityStarter-Properties}
@@ -111,13 +104,11 @@ A component that can launch an activity using the StartActivity method.
 {:id="ActivityStarter.StartActivity" class="method"} <i/> StartActivity()
 : Start the activity corresponding to this `ActivityStarter`.
 
-## BluetoothClient  {#BluetoothClient}
+## 蓝牙客户端  {#BluetoothClient}
 
-Use `BluetoothClient` to connect your device to other devices using Bluetooth. This component
- uses the Serial Port Profile (SPP) for communication. If you are interested in using Bluetooth
- low energy, please see the
- [BluetoothLE](http://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro) extension.
+使用 `蓝牙客户端` 通过蓝牙将您的设备连接到其他设备。这个组件使用串行端口配置文件 (SPP) 进行通信。 
 
+如果您有兴趣使用低能耗蓝牙，请看 [BluetoothLE](http://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro) 扩展。
 
 
 ### 属性  {#BluetoothClient-Properties}
@@ -257,10 +248,9 @@ Use `BluetoothClient` to connect your device to other devices using Bluetooth. T
 {:id="BluetoothClient.SendText" class="method"} <i/> SendText(*text*{:.text})
 : Converts the given text to bytes and writes them to the output stream.
 
-## BluetoothServer  {#BluetoothServer}
+## 蓝牙服务器  {#BluetoothServer}
 
-Use the `BluetoothServer` component to turn your device into a server that receive connections
- from other apps that use the `BluetoothClient` component.
+使用 `蓝牙服务器` 组件将您的设备变成接收来自其他使用 `蓝牙客户端` 组件的应用程序连接的服务器。
 
 
 
@@ -395,10 +385,9 @@ Use the `BluetoothServer` component to turn your device into a server that recei
 {:id="BluetoothServer.StopAccepting" class="method"} <i/> StopAccepting()
 : Stop accepting an incoming connection.
 
-## Serial  {#Serial}
+## 串口通信器  {#Serial}
 
-Component for Serial
-
+串口通信组件。
 
 
 ### 属性  {#Serial-Properties}
@@ -445,9 +434,9 @@ Component for Serial
 {:id="Serial.WriteSerial" class="method"} <i/> WriteSerial(*data*{:.text})
 : Writes given data to serial.
 
-## Web  {#Web}
+## Web客户端  {#Web}
 
-Non-visible component that provides functions for HTTP GET, POST, PUT, and DELETE requests.
+为 HTTP GET、POST、PUT 和 DELETE 请求提供功能的非可视组件。
 
 
 

@@ -105,7 +105,6 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 -->
 
 <br/>
-<br/>
 <center>
 <form method=POST action="/login">
 <input type=hidden name=email value="test@fun123.cn">
