@@ -46,12 +46,12 @@ public class NoProjectDialogBox extends DialogBox {
 
   @UiField
   Button closeDialogBox;
-  @UiField
-  Button goToPurr;
-  @UiField
-  Button goToTalk;
-  @UiField
-  Button goToYR;
+  //@UiField
+  //Button goToPurr;
+  //@UiField
+  //Button goToTalk;
+  //@UiField
+  //Button goToYR;
   @UiField
   Button noDialogNewProject;
 
@@ -73,7 +73,7 @@ public class NoProjectDialogBox extends DialogBox {
   void handleClose(ClickEvent e) {
     this.hide();
   }
-
+/*
   @UiHandler("goToPurr")
   void handleGoToPurr(ClickEvent e) {
     this.hide();
@@ -92,7 +92,7 @@ public class NoProjectDialogBox extends DialogBox {
     this.hide();
     TemplateUploadWizard.openProjectFromTemplate("http://fun123.cn/reference/tutorials/yr/aiaFiles/hello_bonjour/translate_tutorial.asc", new NewTutorialProject());
   }
-
+ */
   @UiHandler("noDialogNewProject")
   void handleNewProject(ClickEvent e) {
     this.hide();

@@ -148,7 +148,7 @@ public class TopPanel extends Composite {
     if (!Strings.isNullOrEmpty(guideUrl)) {
       TextButton guideLink = new TextButton(MESSAGES.guideTabName());
       guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
-      guideLink.setStyleName("ode-TopPanelButton");
+      guideLink.setStyleName("ode-TopPanelButton hot");
       links.add(guideLink);
     }
 
