@@ -153,7 +153,7 @@ public class TopPanel extends Composite {
     }
 
     // Feedback Link
-    String feedbackUrl = config.getFeedbackUrl();
+    String feedbackUrl = config.getForumsUrl();
     if (!Strings.isNullOrEmpty(feedbackUrl)) {
       TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
       feedbackLink.addClickHandler(
