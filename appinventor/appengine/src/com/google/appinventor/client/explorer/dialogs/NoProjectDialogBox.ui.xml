@@ -53,7 +53,6 @@
       text-decoration: none;
       text-align: center;
       padding: 5px 8px;
-      width: 25%;
       background-color: white;
       border: 1px #8fc202 solid;
       border-radius: 5px;
@@ -107,9 +106,10 @@
 
         </div>
 
-        <a href="//fun123.cn/reference/info/" target="_blank" styleName='{style.ode-tutorialButton}' style="color:#8fc202;text-decoration:none;"
+        <a href="//fun123.cn/reference/info/" target="_blank" class='{style.ode-tutorialButton}' style="color:#8fc202;text-decoration:none;"
                  ui:ph="yrMediaLink">项目指南</a>
       </div>
+      
     </div>
 
 

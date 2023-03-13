@@ -1333,8 +1333,8 @@ path.ode-SimpleMockMapFeature-selected {
 /* Start of NoProjectsDialogBox. */
 .ode-noDialogDiv {
   box-shadow: 0 0 10px gray;
-  min-width: 700px;
-  width: 60%;
+  /*min-width: 700px;
+  width: 60%;*/
   background-color: white;
   padding-bottom: 25px;
 }
@@ -1386,12 +1386,12 @@ path.ode-SimpleMockMapFeature-selected {
   align-items: center;
   justify-content: space-between;
   width: 25%;
-  min-width: 182px;
-  min-height: 300px;
+  min-width: 300px;
+  min-height: 130px;
   box-shadow: 0 0 2px #808080;
   border-radius: 15px;
   padding: 15px;
-  margin: 10px 0px;
+  margin: 10px;
 }
 
 .ode-noDialogExampleTitle {
