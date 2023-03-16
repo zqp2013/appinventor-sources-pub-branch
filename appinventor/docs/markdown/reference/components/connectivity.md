@@ -115,41 +115,35 @@ title: 通信连接组件
 
 {:.properties}
 
-{:id="BluetoothClient.AddressesAndNames" .list .ro .bo} *AddressesAndNames*
-: Returns the list of paired Bluetooth devices. Each element of the returned
- list is a String consisting of the device's address, a space, and the
- device's name.
+{:id="BluetoothClient.AddressesAndNames" .list .ro .bo} *地址及名称*
+: 返回配对的蓝牙设备列表，返回的列表每个元素都是一个字符串，由设备地址、一个空格和设备的名称组成。
 
-{:id="BluetoothClient.Available" .boolean .ro .bo} *Available*
-: Returns `真`{:.logic.block} if Bluetooth is available on the device,
- `假`{:.logic.block} otherwise.
+{:id="BluetoothClient.Available" .boolean .ro .bo} *可用状态*
+: 如果蓝牙在设备上可用，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
-{:id="BluetoothClient.CharacterEncoding" .text} *CharacterEncoding*
-: Returns the character encoding to use when sending and receiving text.
+{:id="BluetoothClient.CharacterEncoding" .text} *字符编码*
+: 返回发送和接收文本时使用的字符集编码（如GBK，UTF-8）。
 
-{:id="BluetoothClient.DelimiterByte" .number} *DelimiterByte*
-: Returns the delimiter byte to use when passing a negative number for the
- numberOfBytes parameter when calling ReceiveText, ReceiveSignedBytes, or
- ReceiveUnsignedBytes.
+{:id="BluetoothClient.DelimiterByte" .number} *分隔符字节码*
+: 调用 ReceiveText、ReceiveSignedBytes 或 ReceiveUnsignedBytes 返回传递负数时使用的分隔符字节码。
 
-{:id="BluetoothClient.DisconnectOnError" .boolean} *DisconnectOnError*
-: Specifies whether BluetoothClient/BluetoothServer should be disconnected automatically when an error occurs.
+{:id="BluetoothClient.DisconnectOnError" .boolean} *错误时断开连接*
+: 指定 蓝牙客户端/蓝牙服务器 是否在发生错误时自动断开连接。
 
-{:id="BluetoothClient.Enabled" .boolean .ro .bo} *Enabled*
-: Returns `真`{:.logic.block} if Bluetooth is enabled, `假`{:.logic.block} otherwise.
+{:id="BluetoothClient.Enabled" .boolean .ro .bo} *启用*
+: 如果启用了蓝牙，返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
-{:id="BluetoothClient.HighByteFirst" .boolean} *HighByteFirst*
-: Specifies whether numbers are sent and received with the most significant
- byte first.
+{:id="BluetoothClient.HighByteFirst" .boolean} *高位优先*
+: 指定发送和接收数字时是否使用最高有效位字节优先。
 
-{:id="BluetoothClient.IsConnected" .boolean .ro .bo} *IsConnected*
-: Returns `frue`{:.logic.block} if a connection to a Bluetooth device has been made.
+{:id="BluetoothClient.IsConnected" .boolean .ro .bo} *是否已连接*
+: 如果已建立与蓝牙设备的连接，则返回 `真`{:.logic.block}。
 
-{:id="BluetoothClient.PollingRate" .number} *PollingRate*
-: Returns the configured polling rate value of the Bluetooth Client.
+{:id="BluetoothClient.PollingRate" .number} *轮询率*
+: 返回蓝牙客户端配置的轮询速率值。
 
-{:id="BluetoothClient.Secure" .boolean} *Secure*
-: Specifies whether a secure connection should be used.
+{:id="BluetoothClient.Secure" .boolean} *启用安全连接*
+: 指定是否启用安全连接。
 
 ### 事件  {#BluetoothClient-Events}
 
@@ -161,59 +155,59 @@ title: 通信连接组件
 
 {:.methods}
 
-{:id="BluetoothClient.BytesAvailableToReceive" class="method returns number"} <i/> BytesAvailableToReceive()
+{:id="BluetoothClient.BytesAvailableToReceive" class="method returns number"} <i/> 获取接收字节数()
 : Returns number of bytes available from the input stream.
 
-{:id="BluetoothClient.Connect" class="method returns boolean"} <i/> Connect(*address*{:.text})
+{:id="BluetoothClient.Connect" class="method returns boolean"} <i/> 连接(*地址*{:.text})
 : Connect to a Bluetooth device with the given address.
 
-{:id="BluetoothClient.ConnectWithUUID" class="method returns boolean"} <i/> ConnectWithUUID(*address*{:.text},*uuid*{:.text})
+{:id="BluetoothClient.ConnectWithUUID" class="method returns boolean"} <i/> 连接指定设备(*地址*{:.text},*唯一编号*{:.text})
 : Connect to a Bluetooth device with the given address and a specific UUID.
 
-{:id="BluetoothClient.Disconnect" class="method"} <i/> Disconnect()
+{:id="BluetoothClient.Disconnect" class="method"} <i/> 断开连接()
 : Disconnects from the connected Bluetooth device.
 
-{:id="BluetoothClient.IsDevicePaired" class="method returns boolean"} <i/> IsDevicePaired(*address*{:.text})
+{:id="BluetoothClient.IsDevicePaired" class="method returns boolean"} <i/> 检查设备是否配对(*地址*{:.text})
 : Checks whether the Bluetooth device with the given address is paired.
 
-{:id="BluetoothClient.ReceiveSigned1ByteNumber" class="method returns number"} <i/> ReceiveSigned1ByteNumber()
+{:id="BluetoothClient.ReceiveSigned1ByteNumber" class="method returns number"} <i/> 接收单字节带符号数字()
 : Reads a signed 1-byte number.
 
-{:id="BluetoothClient.ReceiveSigned2ByteNumber" class="method returns number"} <i/> ReceiveSigned2ByteNumber()
+{:id="BluetoothClient.ReceiveSigned2ByteNumber" class="method returns number"} <i/> 接收双字节带符号数字()
 : Reads a signed 2-byte number.
 
-{:id="BluetoothClient.ReceiveSigned4ByteNumber" class="method returns number"} <i/> ReceiveSigned4ByteNumber()
+{:id="BluetoothClient.ReceiveSigned4ByteNumber" class="method returns number"} <i/> 接收四字节带符号数字()
 : Reads a signed 4-byte number.
 
-{:id="BluetoothClient.ReceiveSignedBytes" class="method returns list"} <i/> ReceiveSignedBytes(*numberOfBytes*{:.number})
+{:id="BluetoothClient.ReceiveSignedBytes" class="method returns list"} <i/> 接收带符号字节数组(*字节数*{:.number})
 : Reads a number of signed bytes from the input stream and returns them as
  a List.
 
    If numberOfBytes is negative, this method reads until a delimiter byte
  value is read. The delimiter byte value is included in the returned list.
 
-{:id="BluetoothClient.ReceiveText" class="method returns text"} <i/> ReceiveText(*numberOfBytes*{:.number})
+{:id="BluetoothClient.ReceiveText" class="method returns text"} <i/> 接收文本(*字节数*{:.number})
 : Reads a number of bytes from the input stream and converts them to text.
 
    If numberOfBytes is negative, read until a delimiter byte value is read.
 
-{:id="BluetoothClient.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> ReceiveUnsigned1ByteNumber()
+{:id="BluetoothClient.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> 接收单字节无符号数字()
 : Reads an unsigned 1-byte number.
 
-{:id="BluetoothClient.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> ReceiveUnsigned2ByteNumber()
+{:id="BluetoothClient.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> 接收双字节无符号数字()
 : Reads an unsigned 2-byte number.
 
-{:id="BluetoothClient.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> ReceiveUnsigned4ByteNumber()
+{:id="BluetoothClient.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> 接收四字节无符号数字()
 : Reads an unsigned 4-byte number.
 
-{:id="BluetoothClient.ReceiveUnsignedBytes" class="method returns list"} <i/> ReceiveUnsignedBytes(*numberOfBytes*{:.number})
+{:id="BluetoothClient.ReceiveUnsignedBytes" class="method returns list"} <i/> 接收无符号字节数组(*字节数*{:.number})
 : Reads a number of unsigned bytes from the input stream and returns them as
  a List.
 
    If numberOfBytes is negative, this method reads until a delimiter byte
  value is read. The delimiter byte value is included in the returned list.
 
-{:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> Send1ByteNumber(*number*{:.text})
+{:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*number*{:.text})
 : Decodes the given number String to an integer and writes it as one byte
  to the output stream.
 
@@ -221,7 +215,7 @@ title: 通信连接组件
  fit in one byte, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> Send2ByteNumber(*number*{:.text})
+{:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*number*{:.text})
 : Decodes the given number String to an integer and writes it as two bytes
  to the output stream.
 
@@ -229,7 +223,7 @@ title: 通信连接组件
  fit in two bytes, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> Send4ByteNumber(*number*{:.text})
+{:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*number*{:.text})
 : Decodes the given number String to an integer and writes it as four bytes
  to the output stream.
 
@@ -237,7 +231,7 @@ title: 通信连接组件
  fit in four bytes, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothClient.SendBytes" class="method"} <i/> SendBytes(*list*{:.list})
+{:id="BluetoothClient.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
 : Takes each element from the given list, converts it to a String, decodes
  the String to an integer, and writes it as one byte to the output stream.
 
@@ -245,7 +239,7 @@ title: 通信连接组件
  fit in one byte, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothClient.SendText" class="method"} <i/> SendText(*text*{:.text})
+{:id="BluetoothClient.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : Converts the given text to bytes and writes them to the output stream.
 
 ## 蓝牙服务器  {#BluetoothServer}
@@ -258,96 +252,96 @@ title: 通信连接组件
 
 {:.properties}
 
-{:id="BluetoothServer.Available" .boolean .ro .bo} *Available*
+{:id="BluetoothServer.Available" .boolean .ro .bo} *可用状态*
 : Returns `真`{:.logic.block} if Bluetooth is available on the device,
  `假`{:.logic.block} otherwise.
 
-{:id="BluetoothServer.CharacterEncoding" .text} *CharacterEncoding*
+{:id="BluetoothServer.CharacterEncoding" .text} *字符编码*
 : Returns the character encoding to use when sending and receiving text.
 
-{:id="BluetoothServer.DelimiterByte" .number} *DelimiterByte*
+{:id="BluetoothServer.DelimiterByte" .number} *分隔符字节码*
 : Returns the delimiter byte to use when passing a negative number for the
  numberOfBytes parameter when calling ReceiveText, ReceiveSignedBytes, or
  ReceiveUnsignedBytes.
 
-{:id="BluetoothServer.Enabled" .boolean .ro .bo} *Enabled*
+{:id="BluetoothServer.Enabled" .boolean .ro .bo} *启用*
 : Returns `真`{:.logic.block} if Bluetooth is enabled, `假`{:.logic.block} otherwise.
 
-{:id="BluetoothServer.HighByteFirst" .boolean} *HighByteFirst*
+{:id="BluetoothServer.HighByteFirst" .boolean} *高位优先*
 : Specifies whether numbers are sent and received with the most significant
  byte first.
 
-{:id="BluetoothServer.IsAccepting" .boolean .ro .bo} *IsAccepting*
+{:id="BluetoothServer.IsAccepting" .boolean .ro .bo} *接收状态*
 : Returns true if this BluetoothServer component is accepting an
  incoming connection.
 
-{:id="BluetoothServer.IsConnected" .boolean .ro .bo} *IsConnected*
+{:id="BluetoothServer.IsConnected" .boolean .ro .bo} *连接状态*
 : Returns `frue`{:.logic.block} if a connection to a Bluetooth device has been made.
 
-{:id="BluetoothServer.Secure" .boolean} *Secure*
+{:id="BluetoothServer.Secure" .boolean} *启用安全连接*
 : Specifies whether a secure connection should be used.
 
 ### 事件  {#BluetoothServer-Events}
 
 {:.events}
 
-{:id="BluetoothServer.ConnectionAccepted"} ConnectionAccepted()
+{:id="BluetoothServer.ConnectionAccepted"} 接受连接()
 : Indicates that a bluetooth connection has been accepted.
 
 ### 方法  {#BluetoothServer-Methods}
 
 {:.methods}
 
-{:id="BluetoothServer.AcceptConnection" class="method"} <i/> AcceptConnection(*serviceName*{:.text})
+{:id="BluetoothServer.AcceptConnection" class="method"} <i/> 接受连接(*serviceName*{:.text})
 : Accept an incoming connection with the Serial Port Profile (SPP).
 
-{:id="BluetoothServer.AcceptConnectionWithUUID" class="method"} <i/> AcceptConnectionWithUUID(*serviceName*{:.text},*uuid*{:.text})
+{:id="BluetoothServer.AcceptConnectionWithUUID" class="method"} <i/> 接受与指定设备连接(*服务名*{:.text},*唯一编号*{:.text})
 : Accept an incoming connection with a specific UUID.
 
-{:id="BluetoothServer.BytesAvailableToReceive" class="method returns number"} <i/> BytesAvailableToReceive()
+{:id="BluetoothServer.BytesAvailableToReceive" class="method returns number"} <i/> 获取接收字节数()
 : Returns number of bytes available from the input stream.
 
-{:id="BluetoothServer.Disconnect" class="method"} <i/> Disconnect()
+{:id="BluetoothServer.Disconnect" class="method"} <i/> 断开连接()
 : Disconnects from the connected Bluetooth device.
 
-{:id="BluetoothServer.ReceiveSigned1ByteNumber" class="method returns number"} <i/> ReceiveSigned1ByteNumber()
+{:id="BluetoothServer.ReceiveSigned1ByteNumber" class="method returns number"} <i/> 接收单字节带符号数字()
 : Reads a signed 1-byte number.
 
-{:id="BluetoothServer.ReceiveSigned2ByteNumber" class="method returns number"} <i/> ReceiveSigned2ByteNumber()
+{:id="BluetoothServer.ReceiveSigned2ByteNumber" class="method returns number"} <i/> 接收双字节带符号数字()
 : Reads a signed 2-byte number.
 
-{:id="BluetoothServer.ReceiveSigned4ByteNumber" class="method returns number"} <i/> ReceiveSigned4ByteNumber()
+{:id="BluetoothServer.ReceiveSigned4ByteNumber" class="method returns number"} <i/> 接收四字节带符号数字()
 : Reads a signed 4-byte number.
 
-{:id="BluetoothServer.ReceiveSignedBytes" class="method returns list"} <i/> ReceiveSignedBytes(*numberOfBytes*{:.number})
+{:id="BluetoothServer.ReceiveSignedBytes" class="method returns list"} <i/> 接收带符号字节数组(*字节数*{:.number})
 : Reads a number of signed bytes from the input stream and returns them as
  a List.
 
    If numberOfBytes is negative, this method reads until a delimiter byte
  value is read. The delimiter byte value is included in the returned list.
 
-{:id="BluetoothServer.ReceiveText" class="method returns text"} <i/> ReceiveText(*numberOfBytes*{:.number})
+{:id="BluetoothServer.ReceiveText" class="method returns text"} <i/> 接收文本(*字节数*{:.number})
 : Reads a number of bytes from the input stream and converts them to text.
 
    If numberOfBytes is negative, read until a delimiter byte value is read.
 
-{:id="BluetoothServer.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> ReceiveUnsigned1ByteNumber()
+{:id="BluetoothServer.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> 接收单字节无符号数字()
 : Reads an unsigned 1-byte number.
 
-{:id="BluetoothServer.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> ReceiveUnsigned2ByteNumber()
+{:id="BluetoothServer.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> 接收双字节无符号数字()
 : Reads an unsigned 2-byte number.
 
-{:id="BluetoothServer.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> ReceiveUnsigned4ByteNumber()
+{:id="BluetoothServer.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> 接收四字节无符号数字()
 : Reads an unsigned 4-byte number.
 
-{:id="BluetoothServer.ReceiveUnsignedBytes" class="method returns list"} <i/> ReceiveUnsignedBytes(*numberOfBytes*{:.number})
+{:id="BluetoothServer.ReceiveUnsignedBytes" class="method returns list"} <i/> 接收无符号字节数组(*字节数*{:.number})
 : Reads a number of unsigned bytes from the input stream and returns them as
  a List.
 
    If numberOfBytes is negative, this method reads until a delimiter byte
  value is read. The delimiter byte value is included in the returned list.
 
-{:id="BluetoothServer.Send1ByteNumber" class="method"} <i/> Send1ByteNumber(*number*{:.text})
+{:id="BluetoothServer.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
 : Decodes the given number String to an integer and writes it as one byte
  to the output stream.
 
@@ -355,7 +349,7 @@ title: 通信连接组件
  fit in one byte, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothServer.Send2ByteNumber" class="method"} <i/> Send2ByteNumber(*number*{:.text})
+{:id="BluetoothServer.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
 : Decodes the given number String to an integer and writes it as two bytes
  to the output stream.
 
@@ -363,7 +357,7 @@ title: 通信连接组件
  fit in two bytes, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothServer.Send4ByteNumber" class="method"} <i/> Send4ByteNumber(*number*{:.text})
+{:id="BluetoothServer.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
 : Decodes the given number String to an integer and writes it as four bytes
  to the output stream.
 
@@ -371,7 +365,7 @@ title: 通信连接组件
  fit in four bytes, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothServer.SendBytes" class="method"} <i/> SendBytes(*list*{:.list})
+{:id="BluetoothServer.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
 : Takes each element from the given list, converts it to a String, decodes
  the String to an integer, and writes it as one byte to the output stream.
 
@@ -379,10 +373,10 @@ title: 通信连接组件
  fit in one byte, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothServer.SendText" class="method"} <i/> SendText(*text*{:.text})
+{:id="BluetoothServer.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : Converts the given text to bytes and writes them to the output stream.
 
-{:id="BluetoothServer.StopAccepting" class="method"} <i/> StopAccepting()
+{:id="BluetoothServer.StopAccepting" class="method"} <i/> 停止接受连接()
 : Stop accepting an incoming connection.
 
 ## 串口通信器  {#Serial}
