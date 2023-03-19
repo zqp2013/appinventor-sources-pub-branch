@@ -2088,7 +2088,7 @@ public class ObjectifyStorageIo implements  StorageIo {
           if (allowedUrls == null) {
             AllowedTutorialUrls firstAllowedUrls = new AllowedTutorialUrls();
             firstAllowedUrls.id = ALLOWEDURL_ID;
-            firstAllowedUrls.allowedUrls = "[\"http://appinventor.mit.edu/\",\"https://appinventor.mit.edu/\",\"http://appinv.us/\"]";
+            firstAllowedUrls.allowedUrls = "[\"http://appinventor.mit.edu/\",\"https://appinventor.mit.edu/\",\"http://appinv.us/\",\"http://fun123.cn/\",\"https://fun123.cn/\"]";
             datastore.put(firstAllowedUrls);
           }
         }
