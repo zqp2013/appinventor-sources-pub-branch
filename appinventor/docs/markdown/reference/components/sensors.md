@@ -800,49 +800,39 @@ This component keeps count of steps using the accelerometer.
 {:id="Pedometer.Stop" class="method"} <i/> Stop()
 : Stops the pedometer.
 
-## ProximitySensor  {#ProximitySensor}
+## 距离传感器  {#ProximitySensor}
 
-A sensor component that can measure the proximity of an object (in cm) relative to the view
- screen of a device. This sensor is typically used to determine whether a handset is being held
- up to a persons ear; i.e. lets you determine how far away an object is from a device. Many
- devices return the absolute distance, in cm, but some return only near and far values. In this
- case, the sensor usually reports its maximum range value in the far state and a lesser value
- in the near state. It reports the following value:
-
-   - **Distance**: The distance from the object to the device
-
-
+用于测量物体相对于设备屏幕距离（以cm厘米为单位）的传感器组件。该传感器通常用于检测手机听筒是否处于耳边接听状态。
+大多数设备返回绝对距离（以cm厘米为单位），但也有些设备仅返回近值和远值，在这个情况下，传感器通常报告其在远距离状态下的最大范围值 和 近距离状态下较小的值。
+它报告以下值：
+   - **距离**: 物体到设备之间的距离。
 
 ### 属性  {#ProximitySensor-Properties}
 
 {:.properties}
 
-{:id="ProximitySensor.Available" .boolean .ro .bo} *Available*
-: Reports whether or not the device has a proximity sensor.
+{:id="ProximitySensor.Available" .boolean .ro .bo} *可用状态*
+: 报告当前设备是否有距离传感器。
 
-{:id="ProximitySensor.Distance" .number .ro .bo} *Distance*
-: Returns the distance from the object to the device.
- The sensor must be enabled to return meaningful values.
+{:id="ProximitySensor.Distance" .number .ro .bo} *距离*
+: 返回对象到设备之间的距离。必须启用传感器才能返回有效值。
 
-{:id="ProximitySensor.Enabled" .boolean} *Enabled*
-: If true, the sensor will generate events.  Otherwise, no events
- are generated.
+{:id="ProximitySensor.Enabled" .boolean} *启用*
+: 如果为真，传感器将触发事件，否则，不触发事件。
 
-{:id="ProximitySensor.KeepRunningWhenOnPause" .boolean} *KeepRunningWhenOnPause*
-: Returns value of keepRunningWhenOnPause.
+{:id="ProximitySensor.KeepRunningWhenOnPause" .boolean} *暂停时保持运动*
+: 返回“暂停时保持运动”属性值。
 
-{:id="ProximitySensor.MaximumRange" .number .ro .bo} *MaximumRange*
-: Determines a sensor's maximum range. Some proximity sensors return binary values
- that represent "near" or "far." In this case, the sensor usually reports
- its maximum range value in the far state and a lesser value in the near state.
- Typically, the far value is a value > 5 cm, but this can vary from sensor to sensor.
+{:id="ProximitySensor.MaximumRange" .number .ro .bo} *最大范围*
+: 确定传感器的最大范围。一些距离传感器返回二进制值代表“近”或“远”，在这种情况下，传感器通常会报告它在远距离状态下的最大范围值 和 近距离状态下较小的值。
+  通常，远值是 > 5 cm 的值，但不同的传感器可能有差异。
 
 ### 事件  {#ProximitySensor-Events}
 
 {:.events}
 
-{:id="ProximitySensor.ProximityChanged"} ProximityChanged(*distance*{:.number})
-: Triggered when distance (in cm) of the object to the device changes.
+{:id="ProximitySensor.ProximityChanged"} 距离改变(*距离*{:.number})
+: 当对象与设备的距离（以cm厘米为单位）发生变化时触发该事件。
 
 ### 方法  {#ProximitySensor-Methods}
 

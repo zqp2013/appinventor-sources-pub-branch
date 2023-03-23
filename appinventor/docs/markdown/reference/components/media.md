@@ -67,98 +67,92 @@ title: 多媒体组件
 
 {:.events}
 
-{:id="Camera.AfterPicture"} 拍摄完成(*image*{:.text})
-: Called after the picture is taken. The text argument `image` is the path that can be used to
- locate the image on the phone.
+{:id="Camera.AfterPicture"} 拍摄完成(*图像位址*{:.text})
+: 拍照完成后调用，文本参数 `图像位址` 是手机上找到图像位置的路径。
 
 ### 方法  {#Camera-Methods}
 
 {:.methods}
 
-{:id="Camera.TakePicture" class="method"} <i/> TakePicture()
-: Takes a picture, then raises the [`拍摄完成`](#Camera.AfterPicture) event.
+{:id="Camera.TakePicture" class="method"} <i/> 拍照()
+: 拍照，然后触发 [`拍摄完成`](#Camera.AfterPicture) 事件。
 
-## ImagePicker  {#ImagePicker}
+## 图像选择框  {#ImagePicker}
 
-A special-purpose button. When the user taps an `ImagePicker`, the device's image gallery
- appears, and the user can choose an image. After an image is picked, it is saved, and the
- [`Selection`](#ImagePicker.Selection) property will be the name of the file where the image is stored. In order
- to not fill up storage, a maximum of 10 images will be stored. Picking more images will delete
- previous images, in order from oldest to newest.
-
-
+当用户点击 `图像选择框` 时，打开设备的图片库，用户可以选择图像。选取图像后，[`选中项`](#ImagePicker.Selection) 属性返回选中图像的文件名称。
+最多返回10个图像，超过则删除之前旧的图像，按时间从旧到新的顺序排列。
 
 ### 属性  {#ImagePicker-Properties}
 
 {:.properties}
 
-{:id="ImagePicker.BackgroundColor" .color} *BackgroundColor*
+{:id="ImagePicker.BackgroundColor" .color} *背景颜色*
 : Specifies the `ImagePicker`'s background color as an alpha-red-green-blue
  integer.  If an [`Image`](#ImagePicker.Image) has been set, the color
  change will not be visible until the [`Image`](#ImagePicker.Image) is removed.
 
-{:id="ImagePicker.Enabled" .boolean} *Enabled*
+{:id="ImagePicker.Enabled" .boolean} *启用*
 : Specifies whether the `ImagePicker` should be active and clickable.
 
-{:id="ImagePicker.FontBold" .boolean} *FontBold*
+{:id="ImagePicker.FontBold" .boolean} *粗体*
 : Specifies whether the text of the `ImagePicker` should be bold.
  Some fonts do not support bold.
 
-{:id="ImagePicker.FontItalic" .boolean} *FontItalic*
+{:id="ImagePicker.FontItalic" .boolean} *斜体*
 : Specifies whether the text of the `ImagePicker` should be italic.
  Some fonts do not support italic.
 
-{:id="ImagePicker.FontSize" .number} *FontSize*
+{:id="ImagePicker.FontSize" .number} *字号*
 : Specifies the text font size of the `ImagePicker`, measured in sp(scale-independent pixels).
 
-{:id="ImagePicker.FontTypeface" .number .do} *FontTypeface*
+{:id="ImagePicker.FontTypeface" .number .do} *字体*
 : Specifies the text font face of the `ImagePicker` as default, serif, sans
  serif, or monospace.
 
-{:id="ImagePicker.Height" .number .bo} *Height*
+{:id="ImagePicker.Height" .number .bo} *高度*
 : Specifies the `ImagePicker`'s vertical height, measured in pixels.
 
-{:id="ImagePicker.HeightPercent" .number .wo .bo} *HeightPercent*
+{:id="ImagePicker.HeightPercent" .number .wo .bo} *高度百分比*
 : Specifies the `ImagePicker`'s vertical height as a percentage
  of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
 
-{:id="ImagePicker.Image" .text} *Image*
+{:id="ImagePicker.Image" .text} *图像*
 : Specifies the path of the `ImagePicker`'s image. If there is both an `Image` and a
  [`BackgroundColor`](#ImagePicker.BackgroundColor) specified, only the `Image` will be visible.
 
 {:id="ImagePicker.Selection" .text .ro .bo} *Selection*
 : Path to the file containing the image that was selected.
 
-{:id="ImagePicker.Shape" .number .do} *Shape*
+{:id="ImagePicker.Shape" .number .do} *形状*
 : Specifies the shape of the `ImagePicker`. The valid values for this property are `0` (default),
  `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
  [`Image`](#ImagePicker.Image) is used.
 
-{:id="ImagePicker.ShowFeedback" .boolean} *ShowFeedback*
+{:id="ImagePicker.ShowFeedback" .boolean} *显示交互效果*
 : Specifies if a visual feedback should be shown when a `ImagePicker` with an assigned
  [`Image`](#ImagePicker.Image) is pressed.
 
-{:id="ImagePicker.Text" .text} *Text*
+{:id="ImagePicker.Text" .text} *文本*
 : Specifies the text displayed by the `ImagePicker`.
 
-{:id="ImagePicker.TextAlignment" .number .do} *TextAlignment*
+{:id="ImagePicker.TextAlignment" .number .do} *文本对齐方式*
 : Specifies the alignment of the `ImagePicker`'s text. Valid values are:
  `0` (normal; e.g., left-justified if text is written left to right),
  `1` (center), or
  `2` (opposite; e.g., right-justified if text is written left to right).
 
-{:id="ImagePicker.TextColor" .color} *TextColor*
+{:id="ImagePicker.TextColor" .color} *文本颜色*
 : Specifies the text color of the `ImagePicker` as an alpha-red-green-blue
  integer.
 
-{:id="ImagePicker.Visible" .boolean} *Visible*
+{:id="ImagePicker.Visible" .boolean} *可见性*
 : Specifies whether the `ImagePicker` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `ImagePicker` is showing and `假`{:.logic.block} if hidden.
 
-{:id="ImagePicker.Width" .number .bo} *Width*
+{:id="ImagePicker.Width" .number .bo} *宽度*
 : Specifies the horizontal width of the `ImagePicker`, measured in pixels.
 
-{:id="ImagePicker.WidthPercent" .number .wo .bo} *WidthPercent*
+{:id="ImagePicker.WidthPercent" .number .wo .bo} *宽度百分比*
 : Specifies the horizontal width of the `ImagePicker` as a percentage
  of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
 
@@ -166,50 +160,44 @@ A special-purpose button. When the user taps an `ImagePicker`, the device's imag
 
 {:.events}
 
-{:id="ImagePicker.AfterPicking"} AfterPicking()
+{:id="ImagePicker.AfterPicking"} 选择完成()
 : Event to be raised after the `ImagePicker` activity returns its
  result and the properties have been filled in.
 
-{:id="ImagePicker.BeforePicking"} BeforePicking()
+{:id="ImagePicker.BeforePicking"} 准备选择()
 : Event to raise when the `ImagePicker` is clicked or the picker is shown
  using the [`Open`](#ImagePicker.Open) method.  This event occurs before the picker is displayed, and
  can be used to prepare the picker before it is shown.
 
-{:id="ImagePicker.GotFocus"} GotFocus()
+{:id="ImagePicker.GotFocus"} 获得焦点()
 : Indicates the cursor moved over the `ImagePicker` so it is now possible
  to click it.
 
-{:id="ImagePicker.LostFocus"} LostFocus()
+{:id="ImagePicker.LostFocus"} 失去焦点()
 : Indicates the cursor moved away from the `ImagePicker` so it is now no
  longer possible to click it.
 
-{:id="ImagePicker.TouchDown"} TouchDown()
+{:id="ImagePicker.TouchDown"} 被按压()
 : Indicates that the `ImagePicker` was pressed down.
 
-{:id="ImagePicker.TouchUp"} TouchUp()
+{:id="ImagePicker.TouchUp"} 被松开()
 : Indicates that the `ImagePicker` has been released.
 
 ### 方法  {#ImagePicker-Methods}
 
 {:.methods}
 
-{:id="ImagePicker.Open" class="method"} <i/> Open()
+{:id="ImagePicker.Open" class="method"} <i/> 打开选框()
 : Opens the `ImagePicker`, as though the user clicked on it.
 
-## Player  {#Player}
+## 音频播放器  {#Player}
 
-Multimedia component that plays audio and controls phone vibration. The name of a multimedia
- file is specified in the [`Source`](#Player.Source) property, which can be set in the Designer or
- in the Blocks Editor. The length of time for a vibration is specified in the Blocks Editor in
- milliseconds (thousandths of a second).
+播放音频和控制手机振动的多媒体组件。多媒体文件名称在[`源文件`](#Player.Source) 属性中指定，在界面设计和程序设计视图中都可以进行设置。
+振动的时长只能在程序设计视图中指定，单位是ms毫秒（千分之一秒）。
 
- For supported audio formats, see
- [Android Supported Media Formats](//developer.android.com/guide/appendix/media-formats.html).
+有关支持的音频格式，请参阅[Android支持的媒体格式](//developer.android.com/guide/appendix/media-formats.html)。
 
- This component is best for long sound files, such as songs, while the [`Sound`](#Sound) component is
- more efficient for short files, such as sound effects.
-
-
+`音频播放器`组件尤其适合时间较长的声音文件（例如歌曲）；而[`音效`](#Sound) 组件播放时间较短的声音文件则更高效（例如音效）。
 
 ### 属性  {#Player-Properties}
 
@@ -261,19 +249,13 @@ Multimedia component that plays audio and controls phone vibration. The name of 
 {:id="Player.Vibrate" class="method"} <i/> Vibrate(*milliseconds*{:.number})
 : Vibrates for specified number of milliseconds.
 
-## Sound  {#Sound}
+## 音效  {#Sound}
 
-A multimedia component that plays sound files and optionally vibrates for the number of
- milliseconds (thousandths of a second) specified in the Blocks Editor. The name of the sound
- file to play can be specified either in the Designer or in the Blocks Editor.
+一种多媒体组件，可播放声音文件并根据播放次数选择振动几ms毫秒（千分之一秒），在程序设计视图中指定。声音文件的名称可以在界面设计或程序设计视图中指定。
 
- For supported sound file formats, see
- [Android Supported Media Formats](//developer.android.com/guide/appendix/media-formats.html).
+有关支持的声音文件格式，请参阅[Android支持的媒体格式](//developer.android.com/guide/appendix/media-formats.html)。
 
- This `Sound` component is best for short sound files, such as sound effects, while the
- [`Player`](#Player) component is more efficient for longer sounds, such as songs.
-
-
+`音效`组件适合播放短声音文件（例如音效）；而[`音频播放器`](#Player)组件播放较长的声音文件更高效（例如歌曲）。
 
 ### 属性  {#Sound-Properties}
 
