@@ -1,5 +1,5 @@
 ---
-title: Using the Location Sensor
+title: 使用位置传感器
 layout: documentation
 ---
 

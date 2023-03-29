@@ -1,5 +1,5 @@
 ---
-title: Editing Functions in App Inventor
+title: 编辑你的应用（复制和粘贴）
 layout: documentation
 ---
 

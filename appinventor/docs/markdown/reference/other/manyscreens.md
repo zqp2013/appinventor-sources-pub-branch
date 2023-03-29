@@ -1,5 +1,5 @@
 ---
-title: Building Apps with Many Screens
+title: 构建具有多个屏幕的应用程序
 layout: documentation
 ---
 

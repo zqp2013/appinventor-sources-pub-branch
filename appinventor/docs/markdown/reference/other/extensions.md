@@ -1,5 +1,5 @@
 ---
-title: App Inventor Extensions
+title: App Inventor扩展
 layout: documentation
 ---
 

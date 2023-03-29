@@ -1,5 +1,5 @@
 ---
-title: Uploading Your Apps to Google Play
+title: 将你的应用程序上传到 Google Play
 layout: documentation
 ---
 

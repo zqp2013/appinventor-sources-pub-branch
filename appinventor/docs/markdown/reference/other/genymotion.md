@@ -1,5 +1,5 @@
 ---
-title: Using the Genymotion Emulator with App Inventor
+title: 将Genymotion模拟器与App Inventor一起使用
 layout: documentation
 ---
 

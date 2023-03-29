@@ -1,5 +1,5 @@
 ---
-title: Controlling Internet of Things Devices with MIT App Inventor
+title: 使用App Inventor控制物联网设备
 layout: documentation
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Using App Inventor extension to implement multitouch
+title: 使用App Inventor扩展实现多点触控：Scale Detector
 layout: documentation
 ---
 

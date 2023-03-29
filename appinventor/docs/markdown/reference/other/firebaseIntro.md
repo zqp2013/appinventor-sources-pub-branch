@@ -1,5 +1,5 @@
 ---
-title: Brief introduction to cloud data and the FirebaseDB component
+title: 云数据及Firebase组件简介
 layout: documentation
 ---
 
