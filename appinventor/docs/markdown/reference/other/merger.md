@@ -1,5 +1,5 @@
 ---
-title: Project Merger Tool for AI2
+title: AI2项目合并工具
 layout: documentation
 ---
 

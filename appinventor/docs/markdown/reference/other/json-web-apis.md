@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Using Web APIs with JSON
+title: 使用 JSON 和 Web API
 ---
 
 The JavaScript Object Notation (JSON) is widely used for interacting with application programming interfaces (APIs) on the web. JSON provides different types that are used to compose messages. App Inventor supports these values as well.

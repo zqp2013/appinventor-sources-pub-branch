@@ -1,5 +1,5 @@
 ---
-title: Accessing Images and Sounds
+title: 访问图像和声音
 layout: documentation
 ---
 

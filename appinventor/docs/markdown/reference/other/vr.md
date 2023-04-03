@@ -1,5 +1,5 @@
 ---
-title: Experiments with Virtual Reality and MIT App Inventor
+title: 使用虚拟现实和App Inventor进行实验
 layout: documentation
 ---
 

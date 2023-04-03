@@ -1,5 +1,5 @@
 ---
-title: Building Apps with the Emulator
+title: 使用模拟器构建应用程序
 layout: documentation
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Using the Activity Starter Component
+title: 使用Activity Starter
 layout: documentation
 ---
 

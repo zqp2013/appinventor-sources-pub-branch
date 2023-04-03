@@ -1,5 +1,5 @@
 ---
-title: Extending MIT App Inventor with Multi-touch and Gesture Detection
+title: 使用多点触控和手势检测扩展App Inventor
 layout: documentation
 ---
 

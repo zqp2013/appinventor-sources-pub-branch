@@ -1,5 +1,5 @@
 ---
-title: Responsive Design in App Inventor
+title: App Inventor中的响应式设计
 layout: documentation
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Using Images with App Inventor
+title: 在App Inventor中使用图像
 layout: documentation
 ---
 

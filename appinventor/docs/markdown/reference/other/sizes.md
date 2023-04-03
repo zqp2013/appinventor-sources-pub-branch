@@ -1,5 +1,5 @@
 ---
-title: Specifying Sizes of Components
+title: 指定组件的大小
 layout: documentation
 ---
 

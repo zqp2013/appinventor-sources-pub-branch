@@ -5,13 +5,22 @@ title: 任何组件块
 
 编写应用程序时的一个常见概念是“不要重复自己”（或 DRY）。与其制作大量重复代码，例如通过复制和粘贴，不如使用称为“任何组件”块的特殊块。
 
-“任何组件”块到底是什么？ 每一个组件块，比如<span class="setter block">set Button1.Text to</span>，都包含三个部分：（1）被改变的组件（<span class="component block">Button1< /span>），被操作的组件部分（<span class="setter block">set ....Text to</span>）和 (3) 输入（如果有）。 在编写应用程序代码时，您通常会从块抽屉中拉出的块命名为单个组件。 但是，如果您想对<strong><em>同一类型</em></strong> 的许多不同组件执行操作怎么办？ 一种选择是根据需要多次复制和粘贴每个块，但随着您的应用程序扩展，这将变得难以编辑。 相反，能够用不同的组件代替单个组件可能是有意义的。 这就是“任何组件”块允许您执行的操作。 它们不是将块固定到特定组件，而是允许您通过提供相同类型的任何组件作为输入来使您的代码更通用。 例如，这允许您创建一个按钮列表并使用 <span class="control block">for-each</span> 循环一次更新它们的所有属性，例如：
+“任何组件”块到底是什么？ 
+
+每一个组件块，比如<span class="setter block">设置 按钮1.文本 为</span>，都包含三个部分：
+（1）被改变的组件（<span class="component block">按钮1</span>），（2）被操作的组件部分（<span class="setter block">设置 ....文本 为</span>）和 (3) 输入（如果有）。 
+
+在编写应用程序代码时，通常会从组件面板中拖动组件命名为单个组件，但是如果您想对<strong><em>同一类型</em></strong> 的许多不同组件执行操作怎么办？ 
+ 一种选择是根据需要多次复制和粘贴每个块，但随着您的应用程序扩展，这将变得难以编辑。 
+ 相反，能够用不同的组件代替单个组件可能是有意义的。 这就是“任何组件”块允许您执行的操作。 
+ 它们不是将块固定到特定组件，而是允许您通过提供相同类型的任何组件作为输入来使您的代码更通用。 
+ 例如，这允许您创建一个按钮列表并使用 <span class="control block">for-each</span> 循环一次更新它们的所有属性，例如：
 
 {:.figure}
-![Hide all of the blocks in the list of buttons](loop-example.png)
+![隐藏列表中所有按钮](loop-example.png)
 
 {:.caption}
-**Figure 1.** An example of a for loop that hides all of the buttons in a list.
+**Figure 1.** 使用循环隐藏列表中所有按钮的例子
 
 Each of the three major component block types, i.e., events, methods, and properties, have corresponding "any component" blocks.
 

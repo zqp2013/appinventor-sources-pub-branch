@@ -1,5 +1,5 @@
 ---
-title: Using App Inventor extensions to implement rotation
+title: 使用App Inventor扩展实现多点触控：Rotation Detector
 layout: documentation
 ---
 
