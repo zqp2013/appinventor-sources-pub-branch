@@ -176,7 +176,9 @@ public class TopPanel extends Composite {
     // Sign Out
     userItems.add(new DropDownItem(WIDGET_NAME_SIGN_OUT, MESSAGES.signOutLink(), new SignOutAction()));
     // if we are allowed to delete accounts
-    if (ode.getDeleteAccountAllowed()) {
+    if (ode.getDeleteAccountAllowed() 
+      && Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn"
+      && Ode.getInstance().getUser().getUserEmail() != "admin") {
       userItems.add(new DropDownItem(WIDGET_NAME_DELETE_ACCOUNT, MESSAGES.deleteAccountLink(), new DeleteAccountAction(), "ode-ContextMenuItem-Red"));
     }
 
