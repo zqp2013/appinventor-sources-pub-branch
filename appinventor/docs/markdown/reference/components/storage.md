@@ -481,36 +481,25 @@ Spreadsheet is a non-visible component for storing and receiving data from
  will not erase the entire row.) Once complete, it triggers the
  [`FinishedWriteRow`](#Spreadsheet.FinishedWriteRow) callback event.
 
-## TinyDB  {#TinyDB}
+## 微数据库  {#TinyDB}
 
-`TinyDB` is a non-visible component that stores data for an app.
+`微数据库`是一个不可见的组件，用于存储应用程序的数据。
 
- Apps created with App Inventor are initialized each time they run. This means that if an app
- sets the value of a variable and the user then quits the app, the value of that variable will
- not be remembered the next time the app is run. In contrast, TinyDB is a persistent data store
- for the app. The data stored in a `TinyDB` will be available each time the app is run. An
- example might be a game that saves the high score and retrieves it each time the game is played.
+ 使用 App Inventor 创建的应用程序在每次运行时都会进行初始化，这意味着如果一个应用程序设置变量的值，然后用户退出应用程序，该变量的值将在下次运行应用程序时不会被记住。
+ 相比之下，微数据库是一个持久化的数据存储，每次运行应用程序时，存储在“微数据库”中的数据都能被记住并获取。例如游戏中保存最高分，并在每次玩游戏时获取它。
 
- Data items consist of tags and values. To store a data item, you specify the tag it should be
- stored under. The tag must be a text block, giving the data a name. Subsequently, you can
- retrieve the data that was stored under a given tag.
+ 数据项由标签和值组成，要存储数据项需要指定标签（标签必须是文本块，为数据命名），然后可以根据标签获取存储在该标签下的数据。
 
- You cannot use the `TinyDB` to pass data between two different apps on the phone, although you
- can use the `TinyDB` to share data between the different screens of a multi-screen app.
+ 不能使用“微数据库”在手机上的两个不同应用程序之间传递数据，可以使用微数据库在多屏应用的不同屏幕之间共享数据。
 
- When you are developing apps using the AI Companion, all the apps using that Companion will
- share the same `TinyDB`. That sharing will disappear once the apps are packaged and installed on
- the phone. During development you should be careful to clear the Companion app's data each time
- you start working on a new app.
-
-
+ 在使用AI伴侣开发应用时，使用该伴侣的所有应用都将共用一个微数据库，而一旦应用打包之后，数据的共享将不复存在。但在开发过程中，每次创建新项目时，都需留心清空微数据库。
 
 ### 属性  {#TinyDB-Properties}
 
 {:.properties}
 
-{:id="TinyDB.Namespace" .text} *Namespace*
-: Namespace for storing data.
+{:id="TinyDB.Namespace" .text} *命名空间*
+: 用于存储数据的命名空间。
 
 ### 事件  {#TinyDB-Events}
 
@@ -522,22 +511,22 @@ Spreadsheet is a non-visible component for storing and receiving data from
 
 {:.methods}
 
-{:id="TinyDB.ClearAll" class="method"} <i/> ClearAll()
-: Clear the entire data store.
+{:id="TinyDB.ClearAll" class="method"} <i/> 清除所有数据()
+: 清除整个数据存储。
 
-{:id="TinyDB.ClearTag" class="method"} <i/> ClearTag(*tag*{:.text})
-: Clear the entry with the given `tag`{:.text.block}.
+{:id="TinyDB.ClearTag" class="method"} <i/> 清除标签数据(*标签*{:.text})
+: 清除指定 `标签`{:.text.block} 下的数据。
 
-{:id="TinyDB.GetTags" class="method returns any"} <i/> GetTags()
-: Return a list of all the tags in the data store.
+{:id="TinyDB.GetTags" class="method returns any"} <i/> 获取标签数据()
+: 返回数据存储中所有标签的列表（是一个列表对象）。
 
-{:id="TinyDB.GetValue" class="method returns any"} <i/> GetValue(*tag*{:.text},*valueIfTagNotThere*{:.any})
-: Retrieve the value stored under the given `tag`{:.text.block}.  If there's no such tag, then
- return `valueIfTagNotThere`{:.variable.block}.
+{:id="TinyDB.GetValue" class="method returns any"} <i/> 获取数值(*标签*{:.text},*无标签时返回值*{:.any})
+: 获取指定 `标签`{:.text.block} 下的数据，如果没有该标签，则返回 `无标签时返回值`{:.variable.block} 中指定的值。
 
-{:id="TinyDB.StoreValue" class="method"} <i/> StoreValue(*tag*{:.text},*valueToStore*{:.any})
-: Store the given `valueToStore`{:.variable.block} under the given `tag`{:.text.block}.
- The storage persists on the phone when the app is restarted.
+{:id="TinyDB.StoreValue" class="method"} <i/> 保存数值(*tag*{:.text},*存储值*{:.any})
+: 将 `存储值`{:.variable.block} 保存到指定 `标签`{:.text.block} 下，当应用程序重新启动时，存储仍然存在于手机上。
+ 
+: `存储值`可以是文本，也可以是数字。重复保存同一个标签的话，第二次会覆盖第一次的值，即以最新存储的值为准。
 
 ## TinyWebDB  {#TinyWebDB}
 
