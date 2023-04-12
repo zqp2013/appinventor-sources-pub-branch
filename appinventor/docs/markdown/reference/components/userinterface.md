@@ -1144,7 +1144,7 @@ Top-level component containing all other components in the program.
 
 {:id="Screen.PermissionGranted"} PermissionGranted(*permissionName*{:.text})
 : Event to handle when the app user has granted a needed permission. This event is only run when permission is
- granted in response to the [`AskForPermission`](#Screen.AskForPermission) method.
+ granted in response to the [`请求权限`](#Screen.AskForPermission) method.
 
 {:id="Screen.ScreenOrientationChanged"} ScreenOrientationChanged()
 : Screen orientation changed
@@ -1153,17 +1153,12 @@ Top-level component containing all other components in the program.
 
 {:.methods}
 
-{:id="Screen.AskForPermission" class="method"} <i/> AskForPermission(*permissionName*{:.text})
-: Ask the user to grant access to a sensitive permission, such as `ACCESS_FINE_LOCATION`. This
- block is typically used as part of a [`PermissionDenied`](#Screen.PermissionDenied)
- event to ask for permission. If the user grants permission, the
- [`PermissionGranted`](#Screen.PermissionGranted) event will be run. If the user denies permission, the
- [`PermissionDenied`](#Screen.PermissionDenied) event will be run.
+{:id="Screen.AskForPermission" class="method"} <i/> 请求权限(*权限名称*{:.text})
+: 要求用户授予对敏感权限的访问权限，例如`精确定位`权限。
 
-   **Note:** It is a best practice to only ask for permissions at the time they are needed,
- which App Inventor components will do when necessary. You should not use `AskForPermission`
- in your [`Initialize`](#Screen.Initialize) event unless access to that permission is critical to the
- behavior of your app and is needed up front, such as location services for a navigation app.
+ 如果用户许可了授权，[`权限被授予时`](#Screen.PermissionGranted) 事件将被触发；如果用户拒绝授权，[`权限被拒绝时`](#Screen.PermissionDenied)事件将被触发。
+
+   **注意：** 最佳做法是仅在需要时请求权限，App Inventor组件将在必要时执行。不建议在[`初始化`](#Screen.Initialize) 事件中使用`请求权限`，除非访问该权限对你的应用是预先需要的，例如导航应用需要定位服务。
 
 {:id="Screen.HideKeyboard" class="method"} <i/> HideKeyboard()
 : Hide the soft keyboard
