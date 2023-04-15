@@ -53,6 +53,12 @@ public class StoredData {
 
     @Indexed public Date visited; // Used to figure out if a user is active. Timestamp when settings are stored.
 
+    
+    public String from;            //用户来源
+    @Indexed public Date expired;  //到期日
+    public String remark;          //备注
+
+
     public String name;
     public String link;
     public int emailFrequency;

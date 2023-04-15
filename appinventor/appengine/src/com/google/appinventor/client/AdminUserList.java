@@ -44,6 +44,8 @@ public class AdminUserList extends Composite {
   private enum SortField {
     NAME,
     VISITED,
+    FROM,
+    EXPIRED,
   }
   private enum SortOrder {
     ASCENDING,
@@ -60,9 +62,12 @@ public class AdminUserList extends Composite {
   private final Grid table;
   private final Label nameSortIndicator;
   private final Label visitedSortIndicator;
+  private final Label fromSortIndicator;
+  private final Label expiredSortIndicator;
 
   // Date Time Formatter
   static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
+  static final DateTimeFormat expiredFormat = DateTimeFormat.getFormat("yyyy/MM/dd");
 
   // Callback to fill in table with user objects
   private final OdeAsyncCallback<List<AdminUser>> searchCallback = new OdeAsyncCallback<List<AdminUser>>(
@@ -90,22 +95,24 @@ public class AdminUserList extends Composite {
     sortOrder = SortOrder.ASCENDING;;
 
     // Initialize UI
-    table = new Grid(1, 4); // The table initially contains just the header row.
+    table = new Grid(1, 7); // The table initially contains just the header row.
     table.addStyleName("ode-ProjectTable");
     table.setWidth("100%");
     table.setCellSpacing(0);
     nameSortIndicator = new Label("");
     visitedSortIndicator = new Label("");
+    fromSortIndicator = new Label("");
+    expiredSortIndicator = new Label("");
     refreshSortIndicators();
     setHeaderRow();
 
     HorizontalPanel searchPanel = new HorizontalPanel();
     searchPanel.setSpacing(5);
-    final LabeledTextBox searchText = new LabeledTextBox("Enter Email address (or partial)");
-    Button searchButton = new Button("Search");
+    final LabeledTextBox searchText = new LabeledTextBox("输入账号（部分）");
+    Button searchButton = new Button("搜索");
     searchPanel.add(searchText);
     searchPanel.add(searchButton);
-    Button addUserButton = new Button("Add User");
+    Button addUserButton = new Button("添加账户");
     addUserButton.addClickListener(new ClickListener() {
         @Override
         public void onClick(Widget sender) {
@@ -126,7 +133,7 @@ public class AdminUserList extends Composite {
 
     panel.add(searchPanel);
     panel.add(table);
-    Button dismissButton = new Button("Dismiss");
+    Button dismissButton = new Button("禁用");
     dismissButton.addClickListener(new ClickListener() {
         @Override
         public void onClick(Widget sender) {
@@ -145,7 +152,7 @@ public class AdminUserList extends Composite {
     table.getRowFormatter().setStyleName(0, "ode-ProjectHeaderRow");
 
     HorizontalPanel emailHeader = new HorizontalPanel();
-    final Label emailHeaderLabel = new Label("User Email");
+    final Label emailHeaderLabel = new Label("用户账号");
     emailHeaderLabel.addStyleName("ode-ProjectHeaderLabel");
     emailHeader.add(emailHeaderLabel);
     emailHeader.add(nameSortIndicator);
@@ -158,17 +165,40 @@ public class AdminUserList extends Composite {
     table.setWidget(0, 1, uidHeader);
 
     HorizontalPanel adminHeader = new HorizontalPanel();
-    final Label adminHeaderLabel = new Label("isAdmin?");
+    final Label adminHeaderLabel = new Label("是管理员？");
     adminHeaderLabel.addStyleName("ode-ProjectHeaderLabel");
     adminHeader.add(adminHeaderLabel);
     table.setWidget(0, 2, adminHeader);
 
     HorizontalPanel visitedHeader = new HorizontalPanel();
-    final Label visitedLabel = new Label("Visited");
+    final Label visitedLabel = new Label("最后一次访问时间");
     visitedLabel.addStyleName("ode-ProjectHeaderLabel");
     visitedHeader.add(visitedLabel);
     visitedHeader.add(visitedSortIndicator);
     table.setWidget(0, 3, visitedHeader);
+
+
+    // AI2中文网新增
+    HorizontalPanel fromHeader = new HorizontalPanel();
+    final Label fromHeaderLabel = new Label("用户来源");
+    fromHeaderLabel.addStyleName("ode-ProjectHeaderLabel");
+    fromHeader.add(fromHeaderLabel);
+    fromHeader.add(fromSortIndicator);
+    table.setWidget(0, 4, fromHeader);
+
+    HorizontalPanel expiredHeader = new HorizontalPanel();
+    final Label expiredHeaderLabel = new Label("到期日");
+    expiredHeaderLabel.addStyleName("ode-ProjectHeaderLabel");
+    expiredHeader.add(expiredHeaderLabel);
+    expiredHeader.add(expiredSortIndicator);
+    table.setWidget(0, 5, expiredHeader);
+
+    HorizontalPanel remarkHeader = new HorizontalPanel();
+    final Label remarkHeaderLabel = new Label("备注");
+    remarkHeaderLabel.addStyleName("ode-ProjectHeaderLabel");
+    remarkHeader.add(remarkHeaderLabel);
+    table.setWidget(0, 6, remarkHeader);
+
 
     MouseDownHandler mouseDownHandler = new MouseDownHandler() {
       @Override
@@ -178,6 +208,10 @@ public class AdminUserList extends Composite {
           clickedSortField = SortField.NAME;
         } else if (e.getSource() == visitedLabel || e.getSource() == visitedSortIndicator) {
           clickedSortField = SortField.VISITED;
+        } else if (e.getSource() == fromHeaderLabel || e.getSource() == fromSortIndicator) {
+          clickedSortField = SortField.FROM;
+        } else if (e.getSource() == expiredHeaderLabel || e.getSource() == expiredSortIndicator) {
+          clickedSortField = SortField.EXPIRED;
         } else {
           return;
         }
@@ -188,6 +222,10 @@ public class AdminUserList extends Composite {
     nameSortIndicator.addMouseDownHandler(mouseDownHandler);
     visitedLabel.addMouseDownHandler(mouseDownHandler);
     visitedSortIndicator.addMouseDownHandler(mouseDownHandler);
+    fromHeaderLabel.addMouseDownHandler(mouseDownHandler);
+    fromSortIndicator.addMouseDownHandler(mouseDownHandler);
+    expiredHeaderLabel.addMouseDownHandler(mouseDownHandler);
+    expiredSortIndicator.addMouseDownHandler(mouseDownHandler);
   }
 
   private void changeSortOrder(SortField clickedSortField) {
@@ -212,10 +250,26 @@ public class AdminUserList extends Composite {
       case NAME:
         nameSortIndicator.setText(text);
         visitedSortIndicator.setText("");
+        fromSortIndicator.setText("");
+        expiredSortIndicator.setText("");
         break;
-    case VISITED:
+      case VISITED:
         nameSortIndicator.setText("");
         visitedSortIndicator.setText(text);
+        fromSortIndicator.setText("");
+        expiredSortIndicator.setText("");
+        break;
+      case FROM:
+        nameSortIndicator.setText("");
+        visitedSortIndicator.setText("");
+        fromSortIndicator.setText(text);
+        expiredSortIndicator.setText("");
+        break;
+      case EXPIRED:
+        nameSortIndicator.setText("");
+        visitedSortIndicator.setText("");
+        fromSortIndicator.setText("");
+        expiredSortIndicator.setText(text);
         break;
     }
   }
@@ -225,6 +279,9 @@ public class AdminUserList extends Composite {
     final Label uidLabel;
     final Label visitedLabel;
     final Label isAdminLabel;
+    final Label fromLabel;
+    final Label expiredLabel;
+    final Label remarkLabel;
 
     private UserWidgets(final AdminUser user) {
       nameLabel = new Label(user.getEmail());
@@ -232,16 +289,24 @@ public class AdminUserList extends Composite {
       uidLabel = new Label(user.getId());
       Date visited = user.getVisited();
       if (visited == null) {
-        visitedLabel = new Label("<never>");
+        visitedLabel = new Label("<从未登录>");
       } else {
         visitedLabel = new Label(dateTimeFormat.format(user.getVisited()));
       }
       boolean isAdmin = user.getIsAdmin();
       if (!isAdmin) {
-        isAdminLabel = new Label("No");
+        isAdminLabel = new Label("否");
       } else {
-        isAdminLabel = new Label("Yes");
+        isAdminLabel = new Label("<是>");
       }
+      fromLabel = new Label(user.getFrom());
+      Date expired = user.getExpired();
+      if (expired == null) {
+        expiredLabel = new Label("<未设置>");
+      } else {
+        expiredLabel = new Label(expiredFormat.format(expired));
+      }
+      remarkLabel = new Label(user.getRemark());
       nameLabel.addMouseDownHandler(new MouseDownHandler() {
           @Override
           public void onMouseDown(MouseDownEvent e) {
@@ -270,6 +335,16 @@ public class AdminUserList extends Composite {
             ? AdminComparators.COMPARE_BY_VISTED_DATE_ASCENDING
             : AdminComparators.COMPARE_BY_VISTED_DATE_DESCENDING;
           break;
+        case FROM:
+          comparator = (sortOrder == SortOrder.ASCENDING)
+            ? AdminComparators.COMPARE_BY_FROM_ASCENDING
+            : AdminComparators.COMPARE_BY_FROM_DESCENDING;
+          break;
+        case EXPIRED:
+          comparator = (sortOrder == SortOrder.ASCENDING)
+            ? AdminComparators.COMPARE_BY_EXPIRED_DATE_ASCENDING
+            : AdminComparators.COMPARE_BY_EXPIRED_DATE_DESCENDING;
+          break;
       }
       Collections.sort(adminUsers, comparator);
     }
@@ -277,7 +352,7 @@ public class AdminUserList extends Composite {
     refreshSortIndicators();
 
     // Refill the table.
-    table.resize(1 + adminUsers.size(), 4);
+    table.resize(1 + adminUsers.size(), 7);
     int row = 1;
     for (AdminUser user : adminUsers) {
       UserWidgets uw = new UserWidgets(user);
@@ -285,6 +360,9 @@ public class AdminUserList extends Composite {
       table.setWidget(row, 1, uw.uidLabel);
       table.setWidget(row, 2, uw.isAdminLabel);
       table.setWidget(row, 3, uw.visitedLabel);
+      table.setWidget(row, 4, uw.fromLabel);
+      table.setWidget(row, 5, uw.expiredLabel);
+      table.setWidget(row, 6, uw.remarkLabel);
       row++;
     }
 
@@ -298,19 +376,19 @@ public class AdminUserList extends Composite {
     final DialogBox dialogBox = new DialogBox(false, true);
     dialogBox.setStylePrimaryName("ode-DialogBox");
     if (adding) {
-      dialogBox.setText("Add User");
+      dialogBox.setText("添加账户");
     } else {
-      dialogBox.setText("Update User");
+      dialogBox.setText("更新账户");
     }
     dialogBox.setGlassEnabled(true);
     dialogBox.setAnimationEnabled(true);
     final HTML message = new HTML("");
     message.setStyleName("DialogBox-message");
     final FlexTable userInfo = new FlexTable(); // Holds the username and password labels and boxes
-    final Label userNameLabel = new Label("User Name");
+    final Label userNameLabel = new Label("账户");
     final TextBox userName = new TextBox();
-    final Label passwordLabel = new Label("Password");
-    final Label passwordLabel2 = new Label("Password (again)");
+    final Label passwordLabel = new Label("密码");
+    final Label passwordLabel2 = new Label("确认密码");
     final TextBox passwordBox = new TextBox();
     // We switch to the ones below if the hidePasswordCheckbox is selected
     // otherwise we use the passwordBox above for the password
@@ -321,8 +399,21 @@ public class AdminUserList extends Composite {
     userInfo.setWidget(1, 0, passwordLabel);
     userInfo.setWidget(1, 1, passwordBox);
 
-    final CheckBox isAdminBox = new CheckBox("Is Admin?");
-    final CheckBox hidePasswordCheckbox = new CheckBox("Hide Password");
+    final Label fromLabel = new Label("来源");
+    final TextBox from = new TextBox();
+    final Label expiredLabel = new Label("到期日");
+    final TextBox expired = new TextBox();
+    final Label remarkLabel = new Label("备注");
+    final TextBox remark = new TextBox();
+    userInfo.setWidget(2, 0, fromLabel);
+    userInfo.setWidget(2, 1, from);
+    userInfo.setWidget(3, 0, expiredLabel);
+    userInfo.setWidget(3, 1, expired);
+    userInfo.setWidget(4, 0, remarkLabel);
+    userInfo.setWidget(4, 1, remark);
+
+    final CheckBox isAdminBox = new CheckBox("是管理员?");
+    final CheckBox hidePasswordCheckbox = new CheckBox("隐藏密码");
     final HorizontalPanel checkboxPanel = new HorizontalPanel();
     checkboxPanel.add(isAdminBox);
     checkboxPanel.add(hidePasswordCheckbox);
@@ -332,7 +423,7 @@ public class AdminUserList extends Composite {
     vPanel.add(userInfo);
     vPanel.add(checkboxPanel);
     HorizontalPanel buttonPanel = new HorizontalPanel();
-    Button okButton = new Button("OK");
+    Button okButton = new Button("确定");
     buttonPanel.add(okButton);
     hidePasswordCheckbox.addClickListener(new ClickListener() {
         @Override
@@ -342,9 +433,24 @@ public class AdminUserList extends Composite {
             userInfo.setWidget(1, 1, passwordBox1);
             userInfo.setWidget(2, 0, passwordLabel2);
             userInfo.setWidget(2, 1, passwordBox2);
+            
+            userInfo.setWidget(3, 0, fromLabel);
+            userInfo.setWidget(3, 1, from);
+            userInfo.setWidget(4, 0, expiredLabel);
+            userInfo.setWidget(4, 1, expired);
+            userInfo.setWidget(5, 0, remarkLabel);
+            userInfo.setWidget(5, 1, remark);
           } else {              // Unchecked, passwords in the clear
             userInfo.setWidget(1, 0, passwordLabel);
             userInfo.setWidget(1, 1, passwordBox);
+
+            userInfo.setWidget(2, 0, fromLabel);
+            userInfo.setWidget(2, 1, from);
+            userInfo.setWidget(3, 0, expiredLabel);
+            userInfo.setWidget(3, 1, expired);
+            userInfo.setWidget(4, 0, remarkLabel);
+            userInfo.setWidget(4, 1, remark);
+
             userInfo.removeRow(2);
           }
         }
@@ -357,22 +463,40 @@ public class AdminUserList extends Composite {
             password = passwordBox1.getText();
             String checkPassword = passwordBox2.getText();
             if (!checkPassword.equals(password)) {
-              message.setHTML("<font color=red>Passwords do not match.</font>");
+              message.setHTML("<font color=red>两次密码不匹配！</font>");
               return;
             }
           }
           String email = userName.getText();
           if (email.equals("")) {
-            message.setHTML("<font color=red>You Must Supply a user name (email address)</font>");
+            message.setHTML("<font color=red>账户不能为空！</font>");
             return;
           } else {
             // Work!!
             AdminUser nuser = user;
+            String fromStr = from.getText();
+            String expiredStr = expired.getText();
+            if (expiredStr.equals("")) {
+              message.setHTML("<font color=red>到期日不能为空！</font>");
+              return;
+            }
+            Date expiredDate = null;
+            try {
+              expiredDate = expiredFormat.parse(expiredStr);
+            } catch (Exception e) {
+              message.setHTML("<font color=red>到期日格式不对！格式例如：2023/01/01</font>");
+              return;
+            }
+            
+            String remarkStr = remark.getText();
             if (nuser == null) {
-              nuser = new AdminUser(null, email, email, false, isAdminBox.isChecked(), null);
+              nuser = new AdminUser(null, email, email, false, isAdminBox.isChecked(), null, fromStr, expiredDate, remarkStr);
             } else {
               nuser.setIsAdmin(isAdminBox.isChecked());
               nuser.setEmail(email);
+              nuser.setFrom(fromStr);
+              nuser.setExpired(expiredDate);
+              nuser.setRemark(remarkStr);
             }
             nuser.setPassword(password);
             Ode.getInstance().getAdminInfoService().storeUser(nuser,
@@ -395,7 +519,7 @@ public class AdminUserList extends Composite {
           }
         }
       });
-    Button cancelButton = new Button("Cancel");
+    Button cancelButton = new Button("取消");
     buttonPanel.add(cancelButton);
     cancelButton.addClickListener(new ClickListener() {
         @Override
@@ -408,12 +532,16 @@ public class AdminUserList extends Composite {
     if (!adding) {
       isAdminBox.setChecked(user.getIsAdmin());
       userName.setText(user.getEmail());
+      from.setText(user.getFrom());
+      if(user.getExpired() != null)
+        expired.setText(expiredFormat.format(user.getExpired()));
+      remark.setText(user.getRemark());
     }
     // switchUserPanel -- Put up a button to permit us to
     // switch to the selected user, but readonly
     if (!adding) {
       HorizontalPanel switchUserPanel = new HorizontalPanel();
-      Button switchButton = new Button("Switch to This User");
+      Button switchButton = new Button("切换到该用户下");
       switchButton.addClickListener(new ClickListener() {
           @Override
           public void onClick(Widget sender) {

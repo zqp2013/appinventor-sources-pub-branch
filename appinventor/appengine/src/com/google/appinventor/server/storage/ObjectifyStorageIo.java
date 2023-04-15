@@ -310,6 +310,9 @@ public class ObjectifyStorageIo implements  StorageIo {
           user.setUserEmail(userData.email);
           user.setUserTosAccepted(userData.tosAccepted || !requireTos.get());
           user.setIsAdmin(userData.isAdmin);
+          //user.setFrom(userData.from);
+          //user.setExpired(userData.expired);
+          //user.setRemark(userData.remark);
           user.setSessionId(userData.sessionid);
           user.setPassword(userData.password);
         }
@@ -2526,7 +2529,7 @@ public class ObjectifyStorageIo implements  StorageIo {
             int count = 0;
             for (UserData user : userDataQuery) {
               retval.add(new AdminUser(user.id, user.name, user.email, user.tosAccepted,
-                  user.isAdmin, user.visited));
+                  user.isAdmin, user.visited, user.from, user.expired, user.remark));
               count++;
               if (count > 20) {
                 break;
@@ -2558,6 +2561,9 @@ public class ObjectifyStorageIo implements  StorageIo {
                 userData.password = user.getPassword();
               }
               userData.isAdmin = user.getIsAdmin();
+              userData.from = user.getFrom();
+              userData.expired = user.getExpired();
+              userData.remark = user.getRemark();
               datastore.put(userData);
             } else {            // New User
               String emaillower = user.getEmail().toLowerCase();
@@ -2578,6 +2584,9 @@ public class ObjectifyStorageIo implements  StorageIo {
                 userData.password = user.getPassword();
               }
               userData.isAdmin = user.getIsAdmin();
+              userData.from = user.getFrom();
+              userData.expired = user.getExpired();
+              userData.remark = user.getRemark();
               datastore.put(userData);
             }
           }

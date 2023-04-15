@@ -34,6 +34,10 @@ public class AdminUser implements IsSerializable, Serializable {
 
   private Date visited;         // When they last logged in
 
+  private String from;   //用户来源
+  private Date expired;  //到期日
+  private String remark; //备注
+
   private String password;
 
   /**
@@ -46,7 +50,7 @@ public class AdminUser implements IsSerializable, Serializable {
    * @param isAdmin -- are they an admin
    * @param visited -- when they last logged in.
    */
-  public AdminUser(String id, String name, String email, boolean tosAccepted, boolean isAdmin, Date visited) {
+  public AdminUser(String id, String name, String email, boolean tosAccepted, boolean isAdmin, Date visited, String from, Date expired, String remark) {
     this.id = id;
     this.email = email;
     this.name = name;
@@ -54,6 +58,9 @@ public class AdminUser implements IsSerializable, Serializable {
     this.isAdmin = isAdmin;
     this.type = type;
     this.visited = visited;
+    this.from = from;
+    this.expired = expired;
+    this.remark = remark;
   }
 
   /**
@@ -103,6 +110,25 @@ public class AdminUser implements IsSerializable, Serializable {
 
   public Date getVisited() {
     return this.visited;
+  }
+
+  public String getFrom() {
+    return this.from;
+  }
+  public void setFrom(String from) {
+    this.from = from;
+  }
+  public Date getExpired() {
+    return this.expired;
+  }
+  public void setExpired(Date expired) {
+    this.expired = expired;
+  }
+  public String getRemark() {
+    return this.remark;
+  }
+  public void setRemark(String remark) {
+    this.remark = remark;
   }
 
   public String getPassword() {

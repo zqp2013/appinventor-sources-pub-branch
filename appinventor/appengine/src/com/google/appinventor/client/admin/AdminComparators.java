@@ -74,4 +74,64 @@ public final class AdminComparators {
     }
   };
 
+
+  
+  public static final Comparator<AdminUser> COMPARE_BY_FROM_ASCENDING = new Comparator<AdminUser>() {
+    @Override
+    public int compare(AdminUser user1, AdminUser user2) {
+      String user1Name = user1.getFrom();
+      String user2Name = user2.getFrom();
+      if (user1Name == null)
+        user1Name = "";
+      if (user2Name == null)
+        user2Name = "";
+      return user1Name.compareToIgnoreCase(user2Name); // ascending
+    }
+  };
+  public static final Comparator<AdminUser> COMPARE_BY_FROM_DESCENDING = new Comparator<AdminUser>() {
+    @Override
+    public int compare(AdminUser user1, AdminUser user2) {
+      String user1Name = user1.getFrom();
+      String user2Name = user2.getFrom();
+      if (user1Name == null)
+        user1Name = "";
+      if (user2Name == null)
+        user2Name = "";
+      return user2Name.compareToIgnoreCase(user1Name); // ascending
+    }
+  };
+
+  public static final Comparator<AdminUser> COMPARE_BY_EXPIRED_DATE_ASCENDING = new Comparator<AdminUser>() {
+    @Override
+    public int compare(AdminUser user1, AdminUser user2) {
+      Date date1 = user1.getExpired();
+      Date date2 = user2.getExpired();
+      if (date1 == null && date2 == null) {
+        return 0;
+      } else if (date1 == null) {
+        return 1;
+      } else if (date2 == null) {
+        return -1;
+      } else {
+        return date1.compareTo(date2);
+      }
+    }
+  };
+  public static final Comparator<AdminUser> COMPARE_BY_EXPIRED_DATE_DESCENDING = new Comparator<AdminUser>() {
+    @Override
+    public int compare(AdminUser user1, AdminUser user2) {
+      Date date1 = user1.getExpired();
+      Date date2 = user2.getExpired();
+      if (date1 == null && date2 == null) {
+        return 0;
+      } else if (date1 == null) {
+        return -1;
+      } else if (date2 == null) {
+        return 1;
+      } else {
+        return date2.compareTo(date1);
+      }
+    }
+  };
+
 }
