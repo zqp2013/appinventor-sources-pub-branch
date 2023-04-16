@@ -585,7 +585,7 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       // VIP检查
-      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
         return;
       }
@@ -617,7 +617,7 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       // VIP检查
-      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
         return;
       }
@@ -669,7 +669,7 @@ public class TopToolbar extends Composite {
       Tracking.trackEvent(Tracking.PROJECT_EVENT,
           Tracking.PROJECT_ACTION_DOWNLOAD_ALL_PROJECTS_SOURCE_YA);
       // VIP检查
-      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
         return;
       }
