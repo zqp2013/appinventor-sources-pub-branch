@@ -17,6 +17,15 @@ import com.google.appinventor.client.tracking.Tracking;
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
 import com.google.appinventor.client.widgets.DropDownButton;
 import com.google.appinventor.client.widgets.TextButton;
+import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.SimplePanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.ClickListener;
 
 import com.google.appinventor.shared.rpc.project.ProjectRootNode;
 import com.google.appinventor.shared.rpc.user.Config;
@@ -41,6 +50,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import java.util.List;
 import java.util.MissingResourceException;
+import java.util.Date;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
 
@@ -67,6 +77,8 @@ public class TopPanel extends Composite {
   private final VerticalPanel rightPanel;  // remember this so we can add MOTD later if needed
 
   final Ode ode = Ode.getInstance();
+
+  static final DateTimeFormat expiredFormat = DateTimeFormat.getFormat("yyyy/MM/dd");
 
   interface Translations extends ClientBundle {
     Translations INSTANCE = GWT.create(Translations.class);
@@ -175,10 +187,24 @@ public class TopPanel extends Composite {
 
     // Sign Out
     userItems.add(new DropDownItem(WIDGET_NAME_SIGN_OUT, MESSAGES.signOutLink(), new SignOutAction()));
+
+
+    //VIP到期日
+    if (Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn") {
+      Date expired = Ode.getInstance().getUser().getExpired();
+      String expiredStr = "到期日：";
+      if (expired != null) {
+        expiredStr += expiredFormat.format(expired);
+      }
+      userItems.add(new DropDownItem(expiredStr, expiredStr, new VipInfoAction(), "ode-ContextMenuItem-Red"));
+    }
+
     // if we are allowed to delete accounts
-    if (ode.getDeleteAccountAllowed() 
-      && Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn"
-      && Ode.getInstance().getUser().getUserEmail() != "admin") {
+    //if (ode.getDeleteAccountAllowed() 
+    //  && Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn"
+    //  && Ode.getInstance().getUser().getUserEmail() != "admin") {
+    //只有管理员才能删除账户
+    if (Ode.getInstance().isReadOnly()) {
       userItems.add(new DropDownItem(WIDGET_NAME_DELETE_ACCOUNT, MESSAGES.deleteAccountLink(), new DeleteAccountAction(), "ode-ContextMenuItem-Red"));
     }
 
@@ -295,6 +321,43 @@ public class TopPanel extends Composite {
             Window.Location.replace(SIGNOUT_URL);
           }
         }, true);               // Wait for i/o
+    }
+  }
+
+  private static class VipInfoAction implements Command {
+    @Override
+    public void execute() {
+      final DialogBox db = new DialogBox(false, true);
+      db.setText("App Inventor 2 中文网VIP会员");
+      db.setStyleName("ode-DialogBox");
+      db.setHeight("200px");
+      db.setWidth("400px");
+      db.setGlassEnabled(true);
+      db.setAnimationEnabled(true);
+      db.center();
+
+      VerticalPanel DialogBoxContents = new VerticalPanel();
+      //VIP到期日
+      Date expired = Ode.getInstance().getUser().getExpired();
+      String expiredStr = "";
+      if (expired != null) {
+        expiredStr = expiredFormat.format(expired);
+      }
+      String html = "<p>尊敬的VIP用户，您的VIP期限为： " + expiredStr + "<p/><br/><a href=\"//fun123.cn/reference/info/vip.html\" target=\"_blank\">点此续费</a><br/><br/>";
+      HTML message = new HTML(html);
+
+      SimplePanel holder = new SimplePanel();
+      Button ok = new Button("关闭");
+      ok.addClickListener(new ClickListener() {
+        public void onClick(Widget sender) {
+          db.hide();
+        }
+      });
+      holder.add(ok);
+      DialogBoxContents.add(message);
+      DialogBoxContents.add(holder);
+      db.setWidget(DialogBoxContents);
+      db.show();
     }
   }
 

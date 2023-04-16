@@ -5,6 +5,7 @@
 // http://www.apache.org/licenses/LICENSE-2.0
 
 package com.google.appinventor.shared.rpc.user;
+import java.util.Date;
 
 /**
  * Provides user information.
@@ -53,6 +54,8 @@ public interface UserInfoProvider {
   void setReadOnly(boolean value);
 
   boolean isReadOnly();
+
+  Date getExpired();
 
   void setSessionId(String SessionId);
 

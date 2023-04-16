@@ -262,7 +262,7 @@ public class ObjectifyStorageIo implements  StorageIo {
       return tuser;
     } else {                    // If not in memcache, or tos
                                 // not yet accepted, fetch from datastore
-        tuser = new User(userId, email, false, false, null);
+        tuser = new User(userId, email, false, false, null, null);
     }
     final User user = tuser;
     try {
@@ -311,7 +311,7 @@ public class ObjectifyStorageIo implements  StorageIo {
           user.setUserTosAccepted(userData.tosAccepted || !requireTos.get());
           user.setIsAdmin(userData.isAdmin);
           //user.setFrom(userData.from);
-          //user.setExpired(userData.expired);
+          user.setExpired(userData.expired);
           //user.setRemark(userData.remark);
           user.setSessionId(userData.sessionid);
           user.setPassword(userData.password);
@@ -349,7 +349,7 @@ public class ObjectifyStorageIo implements  StorageIo {
         user = createUser(datastore, newId, email);
       }
     }
-    User retUser = new User(user.id, email, user.tosAccepted, false, user.sessionid);
+    User retUser = new User(user.id, email, user.tosAccepted, false, user.sessionid, user.expired);
     retUser.setPassword(user.password);
     return retUser;
   }

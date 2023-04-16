@@ -8,6 +8,7 @@ package com.google.appinventor.shared.rpc.user;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Data Transfer Object representing user data.
@@ -33,6 +34,8 @@ public class User implements IsSerializable, UserInfoProvider, Serializable {
   // system by unsetting it on their client to cause mischief
   private boolean isReadOnly;
 
+  private Date expired; //到期日
+
   private String sessionId;        // Used to ensure only one account active at a time
 
   private String password;      // Hashed password (if using local login system)
@@ -54,12 +57,13 @@ public class User implements IsSerializable, UserInfoProvider, Serializable {
    * @param tosAccepted TOS accepted?
    * @param sessionId client session Id
    */
-  public User(String id, String email, boolean tosAccepted, boolean isAdmin, String sessionId) {
+  public User(String id, String email, boolean tosAccepted, boolean isAdmin, String sessionId, Date expired) {
     this.id = id;
     this.email = email;
     this.tosAccepted = tosAccepted;
     this.isAdmin = isAdmin;
     this.sessionId = sessionId;
+    this.expired = expired;
   }
 
   /**
@@ -206,6 +210,13 @@ public class User implements IsSerializable, UserInfoProvider, Serializable {
     return isReadOnly;
   }
 
+  @Override
+  public Date getExpired() {
+    return expired;
+  }
+  public void setExpired(Date value) {
+    this.expired = value;
+  }
 
   public String getBackpackId() {
     return backPackId;
@@ -220,7 +231,7 @@ public class User implements IsSerializable, UserInfoProvider, Serializable {
     // modify all the places in the source where we create a "User" object. There are
     // only a few places where we assert or read the isReadOnly flag, so we want to
     // limit the places where we have to have knowledge of it to just those places that care
-    User retval =  new User(id, email, tosAccepted, isAdmin, sessionId);
+    User retval =  new User(id, email, tosAccepted, isAdmin, sessionId, expired);
     retval.setReadOnly(isReadOnly);
     retval.setBackpackId(this.backPackId);
     return retval;

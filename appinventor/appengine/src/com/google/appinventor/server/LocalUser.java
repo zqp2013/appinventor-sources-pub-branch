@@ -8,6 +8,7 @@ package com.google.appinventor.server;
 
 import com.google.appinventor.shared.rpc.user.User;
 import com.google.appinventor.shared.rpc.user.UserInfoProvider;
+import java.util.Date;
 
 /**
  * A singleton providing the UserInfoProvider interface information.
@@ -104,6 +105,15 @@ public class LocalUser implements UserInfoProvider {
       return user.get().getSessionId();
     } catch (NullPointerException e) {
       // This should never happen, but just in case...
+      throw new UnsupportedOperationException("User field should have been initialized.");
+    }
+  }
+
+  @Override
+  public Date getExpired() {
+    try {
+      return user.get().getExpired();
+    } catch (NullPointerException e) {
       throw new UnsupportedOperationException("User field should have been initialized.");
     }
   }
