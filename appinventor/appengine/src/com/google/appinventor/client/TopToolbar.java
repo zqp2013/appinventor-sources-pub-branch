@@ -57,6 +57,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
 
@@ -141,6 +142,17 @@ public class TopToolbar extends Composite {
    */
   private volatile boolean isKeystorePresent = false;
 
+  public static int getLeftDays(){
+    int leftDays = -1;
+    Date expired = Ode.getInstance().getUser().getExpired();
+    if (expired != null) {
+      Date now = new Date();
+      leftDays = (int)((expired.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+      leftDays += 1;
+    }
+    return leftDays;
+  }
+
   public TopToolbar() {
     /*
      * Layout is as follows:
@@ -182,6 +194,10 @@ public class TopToolbar extends Composite {
     }
 
     initWidget(toolbar);
+
+    // vip续费提醒
+    int leftDays = getLeftDays();
+    checkVip(leftDays);
   }
 
   public void updateMoveToTrash(String menu_item){
@@ -420,6 +436,14 @@ public class TopToolbar extends Composite {
   private static class NewAction implements Command {
     @Override
     public void execute() {
+
+      // VIP到期
+      if (getLeftDays() <= 0) {
+        checkVip(-1);
+        return;
+      }
+
+
       new NewYoungAndroidProjectWizard(null).center();
       // The wizard will switch to the design view when the new
       // project is created.
@@ -570,6 +594,36 @@ public class TopToolbar extends Composite {
     db.setWidget(DialogBoxContents);
     db.show();
   }
+  public static void checkVip(int leftDays){
+    if (leftDays > 3)
+      return;
+    final DialogBox db = new DialogBox(false, true);
+    db.setText("App Inventor 2 中文网VIP会员到期提醒");
+    db.setStyleName("ode-DialogBox");
+    db.setHeight("200px");
+    db.setWidth("400px");
+    db.setGlassEnabled(true);
+    db.setAnimationEnabled(true);
+    db.center();
+
+    VerticalPanel DialogBoxContents = new VerticalPanel();
+    String vipInfo = (leftDays > 0) ? "还有 " + leftDays + " 天到期" : "已到期";
+    String html = "<p>尊敬的VIP会员您好，您的VIP <a style=\"color:red\">" + vipInfo + "！</a>到期后您将不能新建、导出及编译项目，如需导出所有项目请联系客服。为了不影响您的正常使用，请及时续费，感谢您的支持！<p/><br/><a href=\"//fun123.cn/reference/info/vip.html\" target=\"_blank\">点此续费VIP账号</a><br/><br/>";
+    HTML message = new HTML(html);
+
+    SimplePanel holder = new SimplePanel();
+    Button ok = new Button("关闭");
+    ok.addClickListener(new ClickListener() {
+      public void onClick(Widget sender) {
+        db.hide();
+      }
+    });
+    holder.add(ok);
+    DialogBoxContents.add(message);
+    DialogBoxContents.add(holder);
+    db.setWidget(DialogBoxContents);
+    db.show();
+  }
 
 
   private class BarcodeAction implements Command {
@@ -584,6 +638,13 @@ public class TopToolbar extends Composite {
 
     @Override
     public void execute() {
+
+      // VIP到期
+      if (getLeftDays() <= 0) {
+        checkVip(-1);
+        return;
+      }
+
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
@@ -616,6 +677,13 @@ public class TopToolbar extends Composite {
   private static class ExportProjectAction implements Command {
     @Override
     public void execute() {
+
+      // VIP到期
+      if (getLeftDays() <= 0) {
+        checkVip(-1);
+        return;
+      }
+
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
@@ -668,6 +736,13 @@ public class TopToolbar extends Composite {
     public void execute() {
       Tracking.trackEvent(Tracking.PROJECT_EVENT,
           Tracking.PROJECT_ACTION_DOWNLOAD_ALL_PROJECTS_SOURCE_YA);
+
+      // VIP到期
+      if (getLeftDays() <= 0) {
+        checkVip(-1);
+        return;
+      }
+
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
