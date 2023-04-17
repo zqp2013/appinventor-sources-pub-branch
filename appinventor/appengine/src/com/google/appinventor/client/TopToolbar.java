@@ -887,7 +887,7 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       final DialogBox db = new DialogBox(false, true);
-      db.setText("About MIT App Inventor");
+      db.setText("关于App Inventor 2 中文网");
       db.setStyleName("ode-DialogBox");
       db.setHeight("200px");
       db.setWidth("400px");
@@ -896,14 +896,14 @@ public class TopToolbar extends Composite {
       db.center();
 
       VerticalPanel DialogBoxContents = new VerticalPanel();
-      String html = MESSAGES.gitBuildId(GitBuildId.getDate(), GitBuildId.getVersion()) +
-          "<BR/>" + MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
+      String html = //MESSAGES.gitBuildId(GitBuildId.getDate(), GitBuildId.getVersion()) + "<BR/>" + 
+          MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
           "<BR/>" + MESSAGES.targetSdkVersion(YaVersion.TARGET_SDK_VERSION, YaVersion.TARGET_ANDROID_VERSION);
       Config config = Ode.getInstance().getSystemConfig();
       String releaseNotesUrl = config.getReleaseNotesUrl();
       if (!Strings.isNullOrEmpty(releaseNotesUrl)) {
-        html += "<BR/><BR/>Please see <a href=\"" + releaseNotesUrl +
-            "\" target=\"_blank\">release notes</a>";
+        html += "<BR/><BR/>请查看 <a href=\"" + releaseNotesUrl +
+            "\" target=\"_blank\">发布日志</a>";
       }
       String tosUrl = config.getTosUrl();
       if (!Strings.isNullOrEmpty(tosUrl)) {
@@ -913,7 +913,7 @@ public class TopToolbar extends Composite {
       HTML message = new HTML(html);
 
       SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
+      Button ok = new Button("关闭");
       ok.addClickListener(new ClickListener() {
         public void onClick(Widget sender) {
           db.hide();
