@@ -108,7 +108,7 @@ public class AdminUserList extends Composite {
 
     HorizontalPanel searchPanel = new HorizontalPanel();
     searchPanel.setSpacing(5);
-    final LabeledTextBox searchText = new LabeledTextBox("输入账号（部分）");
+    final LabeledTextBox searchText = new LabeledTextBox("输入账号：");
     Button searchButton = new Button("搜索");
     searchPanel.add(searchText);
     searchPanel.add(searchButton);
