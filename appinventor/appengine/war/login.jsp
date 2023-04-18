@@ -150,6 +150,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <p class="copyright" style="font-size:15px;color:#666;margin-top:4%;">版权所有 &copy; 2023&nbsp;
 	<a href="https://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
+	<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011702008921" target="_blank" style="color:#666;text-decoration: none;"><i></i>沪公网安备31011702008921号</a>&nbsp;
 	<%    if (locale != null && locale.equals("zh_CN")) { %>
 	<a href="https://weibo.com/tsingfun" target="_blank"><img class="img-scale" src="/static/images/mzl.png" width="19" height="19" title="@AI2中文网" style="position:absolute;"></a>&nbsp;
 	<%    } %>
