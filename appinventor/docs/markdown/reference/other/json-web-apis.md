@@ -3,56 +3,55 @@ layout: documentation
 title: 使用 JSON 和 Web API
 ---
 
-The JavaScript Object Notation (JSON) is widely used for interacting with application programming interfaces (APIs) on the web. JSON provides different types that are used to compose messages. App Inventor supports these values as well.
+JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)进行交互，JSON提供了不同的数据类型，同样App Inventor也支持这些值。
+* JSON 布尔值`true`和`false` 对应 App Inventor`真`{:.logic.block}和`假`{:.logic.block}
+* JSON 数字（整数和小数）对应 App Inventor `数字`{:.math.block}
+* JSON 字符串 对应 App Inventor `文本`{:.text.block}
+* JSON 数组 对应 App Inventor `列表`{:.list.block}
+* JSON 对象 对应 App Inventor `字典`{:.dictionary.block}
 
-* JSON values `真` and `假` become App Inventor `真`{:.logic.block} and `假`{:.logic.block}
-* JSON numbers (both integers and decimal numbers) become App Inventor `number`{:.math.block}
-* JSON strings become App Inventor `text`{:.text.block}
-* JSON arrays become App Inventor `list`{:.list.block}
-* JSON objects become App Inventor `dictionary`{:.dictionary.block}
-
-An example message in JSON might look like:
+一个简单的JSON消息例子如下：
 
 ```json
 {
-  "name": "Tim Beaver",
-  "likes": ["dams", "engineering"],
+  "name": "张三",
+  "likes": ["reading", "music"],
   "hasTowel": true,
   "widgets": 42
 }
 ```
 
-This JSON declares an object (indicated by the `{` and `}`). The keys are the quoted strings (e.g., `"name"`) before the colons (`:`). We see that there are different values, including arrays (comma-separated values between square brackets `[...]`), numbers (e.g., `42`), and Booleans (e.g., `真`).
+此 JSON 声明了一个对象（由 `{` 和 `}` 表示），key是冒号 (`:`) 前的带引号的字符串（例如，`"name"`），有不同的值，包括数组（方括号`[...]`之间的逗号分隔值）、数字（例如`42`）和布尔值（例如`true`）。
 
-For the remainder of this document, we will be using a service called [JSONPlaceholder](https://jsonplaceholder.typicode.com), which is intended for use in examples. It produces sample JSON responses in the style of Lorem Ipsum and does not actually store any data.
+对于本文档的其余部分，我们将使用 [JSONPlaceholder](https://jsonplaceholder.typicode.com) 服务生成示例JSON响应，实际上并不存储任何数据。
 
-## Components Used in this Document
+## 本文档中使用的组件
 
-The following examples make use of these components:
+以下示例使用了这些组件：
 
-* [Button](../components/userinterface.html#Button)
-* [Label](../components/userinterface.html#Label)
-* [ListView](../components/userinterface.html#ListView)
-* [Web](../components/connectivity.html#Web)
+* [按钮](../components/userinterface.html#Button)
+* [标签](../components/userinterface.html#Label)
+* [列表显示框](../components/userinterface.html#ListView)
+* [Web客户端](../components/connectivity.html#Web)
 
-## Retrieving Data
+## 获取数据
 
-The Web component provides a `Get`{:.method.block}. When the request completes, the Web's `GotText`{:.event.block} event block will run. The event has two important parameters:
+Web客户端组件提供了一个 `执行GET请求`{:.method.block} 方法，当请求完成时Web客户端的 `获得文本`{:.event.block} 事件块将触发，该事件有两个重要参数：
 
-* `responseCode`{:.variable.block}: The HTTP status code provided by the server. Usually this will be `200`{:.math.block} (OK) or `201`{:.math.block} (Created), but you may also get values such as `400`{:.math.block} (Bad Request), `403`{:.math.block} (Forbidden), and `404`{:.math.block} (Not Found). Depending on the API you use in your app, you should check the status code to know whether your request was successful.
-* `responseContent`{:.variable.block}: The content of the response returned by the server as a `text`{:.text.block}. Let's look at how it can be processed as JSON:
+* `响应代码`{:.variable.block}: 服务器提供的HTTP状态码，常见的有 `200`{:.math.block}（OK）或 `201`{:.math.block}（已创建），也可能是 `400`{:.math.block} 之类的值 （错误请求）、`403`{:.math.block}（禁止访问）和 `404`{:.math.block}（未找到）。根据你在应用程序中使用的 API，你应该检查状态代码以了解您的请求是否成功。
+* `响应内容`{:.variable.block}：服务器返回的响应内容为`文本`{:.text.block}，让我们看看如何将其作为JSON进行处理：
 
-The Web component provides the method [`JsonTextDecodeWithDictionaries`{:.method.block}](../components/connectivity.html#Web.JsonTextDecodeWithDictionaries) that takes `text`{:.text.block}, such as the contents of the `responseContent`{:.variable.block} parameter, and converts it into the appropriate App Inventor type. Depending on the returned content, the output of the `JsonTextDecodeWithDictionaries`{:.method.block} may return different types, such as `list`{:.list.block} or `dictionary`{:.dictionary.block}. App Inventor provides blocks such as `is a list?`{:.list.block} and `is a dictionary?`{:.dictionary.block} that you can use to test the value if the API allows for more than one type of thing to be returned.
+Web客户端组件提供了方法[`将JSON文本解码为字典`{:.method.block}](../components/connectivity.html#Web.JsonTextDecodeWithDictionaries) 获取`文本`{:.text.block}的内容，比如 `响应内容`{:.variable.block} 参数，并将其转换为适当的 App Inventor 类型。根据返回的内容，`将JSON文本解码为字典`{:.method.block} 的输出可能会返回不同的类型，例如`列表`{:.list.block} 或`字典`{:.dictionary.block}。 App Inventor 提供了诸如`是列表?`{:.list.block} 和`是字典?`{:.dictionary.block} 之类的代码块，如果 API 允许多种类型，你可以使用它们来测试返回值的类型。
 
-### Example - Successful Get
+### 示例 - 成功获取
 
-Request the first post by setting the `Url`{:.setter.block} property accordingly and calling `Get`{:.method.block}
+通过相应地设置 `Url`{:.setter.block} 属性并调用 `执行GET请求`{:.method.block} 来执行第一次请求：
 
 ![](images/webapis-get-button.png)
 
-On success, the `GotText`{:.event.block} event will have a `responseCode`{:.variable.block} of `200`{:.math.block}. We can parse the contents of the `responseText}`{:.variable.block} using the `JsonTextDecodeWithDictionaries`{:.method.block} method. Once we have our dictionary with the result, we can access its `title`{:.text.block} and `body`{:.text.block} properties.
+成功时，`获得文本`{:.event.block} 事件的 `响应代码`{:.variable.block} 为 `200`{:.math.block}，我们可以使用 `将JSON文本解码为字典`{:.method.block} 方法解析 `响应内容`{:.variable.block} ，一旦我们有了包含结果的字典，我们就可以访问如下示例中的 `title`{:.text.block} 和 `body`{:.text.block} 属性。
 
-**Sample JSON**
+**JSON 示例**
 
 ```json
 {
@@ -63,52 +62,54 @@ On success, the `GotText`{:.event.block} event will have a `responseCode`{:.vari
 }
 ```
 
-**Blocks**
+**代码块**
 
 ![](images/webapis-get-success.png)
 
-After running the blocks above, Label1 will contain the title from the JSON (i.e., `"sunt aut facere..."`) and Label2 will contain the body from the JSON (i.e., `"quia et sucipit..."`).
+运行上述块后，标签1 将包含 JSON 中的标题（即`"sunt aut facere..."`），标签2 将包含 JSON 中的正文（即`"quia et sucipit..."`）。
 
-### Example - Failed Get
+### 示例 - 获取失败
 
-If you request a resource that does not exist (post 101 in the example shown), then you will get an error instead.
+如果您请求一个不存在的资源（示例中的 post 101），那么你将得到一个错误：
 
 ![](images/webapis-get-button-fail.png)
 
-HTTP uses the error code `404`{:.math.block} to indicate that a resource cannot be found by the server. We test for this and report an error to the user.
+HTTP 使用错误代码 `404`{:.math.block} 表示服务器找不到资源，我们对此进行测试并向用户报告错误。
 
 ![](images/webapis-get-failure.png)
 
-### Example - Walking a Response
 
-If you call `Get`{:.method.block} with `Url`{:.setter.block} set to `https://jsonplaceholder.typicode.com/posts`{:.text.block}, then you will get a list of 100 entries back.
+
+### 示例 - 跟踪响应数据
+
+如果您调用 `执行GET请求`{:.method.block} 并将 `Url`{:.setter.block} 设置为 `https://jsonplaceholder.typicode.com/posts`{:.text.block}，那么您将 获取包含 100 个条目的列表。
 
 ![](images/webapis-get-all-posts.png)
 
-If you wanted to display some information about these items in a ListView, one way to do it would be to use a `for each item`{:.control.block} block to loop over the list. 
+如果您想在 列表显示框(ListView) 中显示有关这些项目的一些信息，一种方法是使用`for each item`{:.control.block} 块来遍历列表。
 
 ![](images/webapis-get-foreach.png)
 
-However, the [`list by walking key path`{:.dictionary.block}](../blocks/dictionaries.html#list-by-walking-key-path) makes this easier. This block works by starting at the object it is given and following a sequence of steps provided to it in the form of a `list`{:.list.block}. In the following example, we give it the key path of `walk all at level`{:.dictionary.block} and `title`{:.text.block} to get the title of every post in the list (in order of appearance). This code is functionally equivalent to the code above using the `for each`{:.control.block} block but it is more concise.
+但是，[`list by walking key path`{:.dictionary.block}](../blocks/dictionaries.html#list-by-walking-key-path) 使这更容易，这个块的工作原理是从给定的对象开始，然后按照以`列表`{:.list.block} 的形式提供给它的后续步骤。在下面的例子中，我们给它 `walk all at level`{:.dictionary.block} 和 `title`{:.text.block} 的关键路径来获取列表中每个帖子的标题（按appearance排序）。这段代码在功能上等同于上面使用 `for each`{:.control.block} 块的代码，但它更简洁。
 
 ![](images/webapis-get-walk.png)
 
-## Sending Data
+## 发送数据
 
-Sending data to a web API for processing typically involves two things. First, you must construct the message you need to send to the API. API developers will usually provide thorough documentation on how to use their API. Second, depending on the whether the action is sensitive, such as changing or deleting data, you will need to provide some authentication token.
+将数据发送到 Web API 进行处理通常涉及两件事。首先，你必须构建需要发送到 API 的消息，API 开发人员通常会提供有关如何使用其 API 的详尽文档；其次，根据操作是否敏感，例如更改或删除数据，你需要提供一些身份验证令牌。
 
-To work with Web APIs that consume JSON, you will want to make use of App Inventor's list and dictionary types. For example,
+要使用 JSON 的 Web API，您需要使用 App Inventor 的列表和字典类型，例如：
 
-### Example
+### 例子
 
-We can use the Web component's [`PostText`{:.method.block}](../components/connectivity.html#Web.PostText) method to send content to a JSON-baed Web API. For JSONPlaceholder, posts should contain 3 keys: `"userId"`, `"title"`, and `"body"`.
+我们可以使用 Web客户端 组件的 [`PostText`{:.method.block}](../components/connectivity.html#Web.PostText) 方法将内容发送到基于 JSON 的 Web API。 对于 JSONPlaceholder，帖子应包含 3 个键：`"userId"`、`"title"` 和 `"body"`。
 
 ![](images/webapis-post.png)
 
-On success, the `responseCode`{:.variable.block} in `GotText`{:.event.block} will be `201`{:.math.block}, which means "Created".
+成功时，`获得文本`{:.event.block} 中的`响应代码`{:.variable.block} 将为 `201`{:.math.block}，表示“已创建”。
 
 ![](images/webapis-post-success.png)
 
 ## Further Reading
 
-To learn more about HTTP response codes, please see [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+要了解有关 HTTP 响应代码的更多信息，请参阅 [HTTP 响应状态代码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)。
