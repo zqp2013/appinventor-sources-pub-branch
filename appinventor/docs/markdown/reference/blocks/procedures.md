@@ -3,31 +3,40 @@ title: App Inventor 2 过程代码块
 layout: documentation
 ---
 
-A procedure is a sequence of blocks or code that is stored under a name, the name of your procedure block. Instead of having to keep putting together the same long sequence of blocks, you can create a procedure and just call the procedure block whenever you want your sequence of blocks to run. In computer science, a procedure also might be called a function or a method.
+过程是一系列代码块的组合，为了减少代码块的重复。在计算机科学中，过程也可以称为函数或方法。
 
-* [procedure do](#do)
-* [procedure result](#return)
+**示例：**
 
-### procedure do   {#do}
+1. 游戏加分时，+10分，你需要将总分变量+10，然后将总分变量显示在屏幕上。
+1. 游戏扣分时，-10分，你需要将总分变量-10，然后将总分变量显示在屏幕上。
+
+这时，就可以定义一个过程`“分数”`，定义一个参数`“分数变化”`：总分变量+`“分数变化”`，然后将总分变量显示在屏幕上。
+
+加分时调用这个过程并传入 `10`，扣分时调用并传入`-10`。可以看到，分数变化及分数显示的代码块就不会多处出现了。
+
+* [定义无返回值过程](#do)
+* [定义返回值过程](#return)
+
+### 定义无返回值过程（procedure do）   {#do}
 
 ![](images/procedure/do.png)
 
-Collects a sequence of blocks together into a group. You can then use the sequence of blocks repeatedly by calling the procedure. If the procedure has arguments, you specify the arguments by using the block's mutator button. If you click the blue plus sign, you can drag additional arguments into the procedure.
+1. 将一系列代码块放到一个组中，然后你可以通过调用过程重复使用这些代码块序列。如果过程有参数，可以使用块的设置器按钮指定参数，单击蓝色设置按钮，可将其他参数拖到过程中。
 
-When you create a new procedure block, App Inventor chooses a unique name automatically. Click on the name and type to change it. Procedure names in an app must be unique. App Inventor will not let you define two procedures on the same screen with the same name. You can rename a procedure at any time while you are building the app, by changing the label in the block. App Inventor will automatically rename the associated call blocks to match.
+1. 同一屏幕上不允许定义两个同名的过程，如果同名，App Inventor会帮你自动改名；不同屏幕上可以出现同名的过程。你可以随时修改过程名，调用的相关地方会自动更新。
 
-Java kewords cannot be used as procedure names. [Here](https://en.wikipedia.org/wiki/List_of_Java_keywords) is a list of keywords.
+1. Java关键字不能用作过程名称。 [此处](https://en.wikipedia.org/wiki/List_of_Java_keywords) 是关键字列表。
 
 ![](images/procedure/calldo.png)
 
-When you create a procedure, App Inventor automatically generates a call block and places it in the Procedures drawer. You use the call block to invoke the procedure.
+当你创建一个过程时，App Inventor会自动生成一个调用块并将其放在过程抽屉中，可以从抽屉中拖动使用调用块来调用过程。
 
-### procedure result   {#return}
+### 定义返回值过程（procedure result）   {#return}
 
 ![](images/procedure/return.png)
 
-Same as a [procedure do](#do) block, but calling this procedure returns a result.
+与 [定义无返回值过程](#do) 块相同，但调用此过程会返回一个结果。
 
 ![](images/procedure/callreturn.png)
 
-After creating this procedure, a call block that needs to be plugged in will be created. This is because the result from executing this procedure will be returned in that call block and the value will be passed on to whatever block is connected to the plug.
+创建此过程后，将创建一个需要连接的调用块，执行此过程的结果将在该调用块中返回，并将该结果值传递到连接处的代码块。
