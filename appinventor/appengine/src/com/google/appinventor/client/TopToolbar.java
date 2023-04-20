@@ -1016,9 +1016,9 @@ public class TopToolbar extends Composite {
 
       String downloadinfo = "";
       if (!YaVersion.COMPANION_UPDATE_URL1.equals("")) {
-        //String url = "https://" + Window.Location.getHost() + YaVersion.COMPANION_UPDATE_URL1;
-        String url = "https://ai2.appinventor.mit.edu/companions/MITAI2Companion.apk";
-        downloadinfo = "<br/>\n<a href=" + url + ">Download URL: " + url + "</a><br/>\n";
+        String url = "https://" + Window.Location.getHost() + YaVersion.COMPANION_UPDATE_URL1;
+        //String url = "https://ai2.appinventor.mit.edu/companions/MITAI2Companion.apk";
+        downloadinfo = "<br/>下载地址：\n<a href=" + url + ">" + url + "</a><br/>\n";
         downloadinfo += BlocklyPanel.getQRCode(url);
       }
 
