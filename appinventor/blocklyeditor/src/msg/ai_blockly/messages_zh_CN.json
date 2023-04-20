@@ -38,6 +38,7 @@
 	"Blockly.Msg.DOIT_OPTION": "执行该代码块",
 	"Blockly.Msg.COPY_TO_BACKPACK": "增加至背包",
 	"Blockly.Msg.COPY_ALLBLOCKS": "复制所有代码块到背包",
+	"Blockly.Msg.REMOVE_FROM_BACKPACK": "从背包中移除代码块",
 	"Blockly.Msg.BACKPACK_GET": "提取背包中所有代码块",
 	"Blockly.Msg.BACKPACK_EMPTY": "清空背包",
 	"Blockly.Msg.BACKPACK_CONFIRM_EMPTY": "你确定要清空背包吗？",

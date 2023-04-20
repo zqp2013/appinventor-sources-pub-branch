@@ -425,7 +425,7 @@ public class TopToolbar extends Composite {
     adminItems.add(new DropDownItem(WIDGET_NAME_SWITCH_TO_DEBUG,
         MESSAGES.switchToDebugMenuItem(), new SwitchToDebugAction()));
     adminItems.add(new DropDownItem(WIDGET_NAME_USER_ADMIN,
-        "User Admin", new SwitchToUserAdminAction()));
+        "用户管理", new SwitchToUserAdminAction()));
     refreshMenu(adminDropDown, adminItems);
   }
 
@@ -640,7 +640,7 @@ public class TopToolbar extends Composite {
     public void execute() {
 
       // VIP到期
-      if (getLeftDays() <= 0) {
+      if (getLeftDays() <= 0 && !Ode.getInstance().isReadOnly()) {
         checkVip(-1);
         return;
       }
@@ -679,7 +679,7 @@ public class TopToolbar extends Composite {
     public void execute() {
 
       // VIP到期
-      if (getLeftDays() <= 0) {
+      if (getLeftDays() <= 0 && !Ode.getInstance().isReadOnly()) {
         checkVip(-1);
         return;
       }
@@ -738,7 +738,7 @@ public class TopToolbar extends Composite {
           Tracking.PROJECT_ACTION_DOWNLOAD_ALL_PROJECTS_SOURCE_YA);
 
       // VIP到期
-      if (getLeftDays() <= 0) {
+      if (getLeftDays() <= 0 && !Ode.getInstance().isReadOnly()) {
         checkVip(-1);
         return;
       }
