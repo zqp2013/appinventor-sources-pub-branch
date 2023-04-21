@@ -3,59 +3,65 @@ title: App Inventor 2 逻辑代码块
 layout: documentation
 ---
 
-* [true](#true)
-* [false](#false)
-* [not](#not)
-* [=](#=)
-* [≠](#not=)
-* [and](#and)
-* [or](#or)
+* [真](#true)
+* [假](#false)
+* [非](#not)
+* [=](#equals)
+* [≠](#notequals)
+* [与](#and)
+* [或](#or)
 
-### true   {#true}
+### 真   {#true}
 
 ![](images/logic/true.png)
 
-Represents the constant value true. Use it for setting boolean property values of components, or as the value of a variable that represents a condition.
+表示常量值 `true`，使用它来设置组件的布尔属性值，或作为表示条件的变量值。
 
-### false   {#false}
+### 假   {#false}
 
 ![](images/logic/false.png)
 
-Represents the constant value false. Use it for setting boolean property values of components, or as the value of a variable that represents a condition.
+表示常量值 `false`，使用它来设置组件的布尔属性值，或作为表示条件的变量值。
 
-### not   {#not}
+### 非   {#not}
 
 ![](images/logic/not.png)
 
-Performs logical negation, returning false if the input is true, and true if the input is false.
+执行逻辑非，如果输入为真则返回假，如果输入为假则返回真。
 
-### =   {#=}
+### =   {#equals}
 
 ![](images/logic/equals.png)
 
-Tests whether its arguments are equal.
+测试两个值是否相等。
 
-* Two numbers are equal if they are numerically equal, for example, 1 is equal to 1.0.
-* Two text blocks are equal if they have the same characters in the same order, with the same case. For example, banana is not equal to Banana.
-* Numbers and text are equal if the number is numerically equal to a number that would be printed with that text. For example, 12.0 is equal to the result of joining the first character of 1A to the last character of Teafor2.
-* Two lists are equal if they have the same number of elements and the corresponding elements are equal.
+* 如果两个数在数值上相等，则它们相等，例如，1 等于 1.0。
+* 如果两个文本块具有相同顺序、相同大小写的相同字符，则它们是相等的。 例如，banana 不等于 Banana。
+* 如果数字在数值上等于将与该文本一起打印的数字，则数字和文本相等。 例如，12.0 等于 取 `1`A 的第一个字符 拼接 Teafor`2` 的最后一个字符 的结果。
+* 如果两个列表的元素个数相同且对应的元素相等，则两个列表相等。
 
-Acts exactly the same as the = block found in Math
+与 数学代码块 中的 `=` 块完全相同。
 
-### ≠   {#not=}
+### ≠   {#notequals}
 
 ![](images/logic/notequals.png)
 
-Tests to see whether two arguments are not equal.
+测试两个值是否不相等，和上面相等正好相反，即相等取 `非` 逻辑。
 
-### and   {#and}
+### 与   {#and}
 
 ![](images/logic/and.png){:height="36"}
 
-Tests whether all of a set of logical conditions are true. The result is true if and only if all the tested conditions are true. The number of tests can be expanded using the [mutator](../concepts/mutators.html). The conditions are tested left to right, and the testing stops as soon as one of the conditions is false. If there are no conditions to test, then the result is true. You can consider this to be a logician's joke.
+* 测试一组逻辑条件是否全部为真，当且仅当所有测试条件都为真时，结果为真。
+* 可以使用 [蓝色齿轮状设置按钮](../concepts/mutators.html) 扩展测试的数量。
+* 从左到右测试条件，一旦其中一个条件为假，测试就会停止。
+* 如果没有要测试的条件，则结果为真。
 
-### or   {#or}
+### 或   {#or}
 
 ![](images/logic/or.png){:height="36"}
 
-Tests whether any of a set of logical conditions are true. The result is true if one or more of the tested conditions are true. The number of tests can be expanded using the [mutator](../concepts/mutators.html). The conditions are tested left to right, and the testing stops as soon as one of the conditions is true. If there are no conditions to test, then the result is false.
+* 测试一组逻辑条件中的任何一个是否为真，如果一个或多个测试条件为真，则结果为真。
+* 可以使用 [蓝色齿轮状设置按钮](../concepts/mutators.html) 扩展测试的数量。
+* 从左到右测试条件，一旦其中一个条件为真，测试就会停止。
+* 如果没有要测试的条件，则结果为假。
