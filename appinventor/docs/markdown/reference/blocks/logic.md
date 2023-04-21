@@ -53,7 +53,7 @@ layout: documentation
 ![](images/logic/and.png){:height="36"}
 
 * 测试一组逻辑条件是否全部为真，当且仅当所有测试条件都为真时，结果为真。
-* 可以使用 [蓝色齿轮状设置按钮](../concepts/mutators.html) 扩展测试的数量。
+* 可以使用 [块扩展](../concepts/mutators.html) 扩展测试的数量。
 * 从左到右测试条件，一旦其中一个条件为假，测试就会停止。
 * 如果没有要测试的条件，则结果为真。
 
@@ -62,6 +62,6 @@ layout: documentation
 ![](images/logic/or.png){:height="36"}
 
 * 测试一组逻辑条件中的任何一个是否为真，如果一个或多个测试条件为真，则结果为真。
-* 可以使用 [蓝色齿轮状设置按钮](../concepts/mutators.html) 扩展测试的数量。
+* 可以使用 [块扩展](../concepts/mutators.html) 扩展测试的数量。
 * 从左到右测试条件，一旦其中一个条件为真，测试就会停止。
 * 如果没有要测试的条件，则结果为假。

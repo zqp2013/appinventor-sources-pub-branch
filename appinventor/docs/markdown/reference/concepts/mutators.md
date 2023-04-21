@@ -1,43 +1,42 @@
 ---
-title: 变异
+title: 块扩展
 layout: documentation
 ---
 
 App Inventor 2 引入了一项新功能，允许某些块扩展、收缩甚至更改其功能。
 
-![Picture of the mutator icon](images/mutatoricon.png)
+![块扩展图标](images/mutatoricon.png)
 
-Any block that has a blue box with a white gear on top that matches the image to the right is considered a mutator block.
+顶部具有蓝色框白色齿轮的代码块都是可拓展块。
 
-## What does a mutator do?
+## 块扩展用法
 
-Mutators change shape. By clicking the blue icon, the user can drag additional smaller blocks into the larger mutator block, thus changing the shape and functionality of the original block. Clicking the icon again will minimize the extra blocks window and show the modified block.
+块扩展可以改变形状，通过单击蓝色图标，用户可以将较小的块拖到较大的块中，从而改变原始块的形状和功能。
+再次单击该图标将最小化拓展窗口，并显示修改后的块。
 
-The example below shows the <span class="math block">min</span> mutator block:
+下面的示例演示了 <span class="math block">最小值</span> 块扩展：
 
-![Example of using the mutator to extend a min block](images/minmutator.gif)<br>
-**Explanation of the min mutator block.**
+![块扩展用法示例](images/minmutator.gif)<br>
+**块扩展用法示例**
 
-The user wants to find the minimum number of a list of 3 values. Currently there is only space for 2 to connect to the min block.
+用户想要找到包含 3 个值的列表中的最小值，默认只有 2 个空间可以连接到值代码块。
 
-To fix this, the user clicks the blue gear icon on the min block and drags another item over.
+要解决此问题，用户单击块上的蓝色齿轮图标并将另一个项目拖到上面，之后就可连接 3 个值代码块。
 
-Now there are three sockets for blocks to plug into.
+有哪些块扩展？
 
-What are the different mutators?
-
-* [if](../blocks/controls.html#if)
-* [and](../blocks/logic.html#and)
-* [or](../blocks/logic.html#or)
+* [如果](../blocks/controls.html#if)
+* [与](../blocks/logic.html#and)
+* [或](../blocks/logic.html#or)
 * [+](../blocks/math.html#add)
 * [*](../blocks/math.html#multiply)
-* [min](../blocks/math.html#min)
-* [max](../blocks/math.html#max)
-* [join](../blocks/text.html#join)
-* [make a list](../blocks/lists.html#makealist)
-* [add items to list](../blocks/lists.html#additems)
-* [make a dictionary](../blocks/dictionaries.html#make-a-dictionary)
-* [initialize local name in (do)](../blocks/variables.html#do)
-* [initialize local name in (return)](../blocks/variables.html#return)
-* [procedure do](../blocks/procedures.html#do)
-* [procedure return](../blocks/procedures.html#return)
+* [最小值](../blocks/math.html#min)
+* [最大值](../blocks/math.html#max)
+* [合并字符串](../blocks/text.html#join)
+* [创建列表](../blocks/lists.html#makealist)
+* [追加列表项](../blocks/lists.html#additems)
+* [创建字典](../blocks/dictionaries.html#make-a-dictionary)
+* [初始化局部变量（无返回值）](../blocks/variables.html#do)
+* [初始化局部变量（有返回值）](../blocks/variables.html#return)
+* [定义无返回值过程](../blocks/procedures.html#do)
+* [定义返回值过程](../blocks/procedures.html#return)
