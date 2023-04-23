@@ -188,5 +188,47 @@
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
 		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E6%92%B8%E7%8C%AB%E6%B8%B8%E6%88%8F.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E5%BC%B9%E7%90%83%E6%B8%B8%E6%88%8F.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E6%8E%A5%E6%B0%B4%E6%9E%9C%E6%B8%B8%E6%88%8F.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E6%B0%B4%E6%9E%9C%E7%BF%BB%E7%BF%BB%E7%BF%BB.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E9%97%AE%E7%AD%94App.html</loc>
+			<lastmod>2023-04-23</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
 	</urlset>
 
