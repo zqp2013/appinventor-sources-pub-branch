@@ -156,66 +156,59 @@ title: 通信连接组件
 {:.methods}
 
 {:id="BluetoothClient.BytesAvailableToReceive" class="method returns number"} <i/> 获取接收字节数()
-: Returns number of bytes available from the input stream.
+: 返回输入流中可用的字节数。
 
 {:id="BluetoothClient.Connect" class="method returns boolean"} <i/> 连接(*地址*{:.text})
-: Connect to a Bluetooth device with the given address.
+: 连接到指定地址的蓝牙设备。
 
 {:id="BluetoothClient.ConnectWithUUID" class="method returns boolean"} <i/> 连接指定设备(*地址*{:.text},*唯一编号*{:.text})
-: Connect to a Bluetooth device with the given address and a specific UUID.
+: 连接到指定地址和UUID的蓝牙设备。
 
 {:id="BluetoothClient.Disconnect" class="method"} <i/> 断开连接()
-: Disconnects from the connected Bluetooth device.
+: 断开已连接的蓝牙设备。
 
 {:id="BluetoothClient.IsDevicePaired" class="method returns boolean"} <i/> 检查设备是否配对(*地址*{:.text})
-: Checks whether the Bluetooth device with the given address is paired.
+: 检查指定地址的蓝牙设备是否已配对。
 
 {:id="BluetoothClient.ReceiveSigned1ByteNumber" class="method returns number"} <i/> 接收单字节带符号数字()
-: Reads a signed 1-byte number.
+: 读取带符号的 1 字节数字。
 
 {:id="BluetoothClient.ReceiveSigned2ByteNumber" class="method returns number"} <i/> 接收双字节带符号数字()
-: Reads a signed 2-byte number.
+: 读取带符号的 2 字节数字。
 
 {:id="BluetoothClient.ReceiveSigned4ByteNumber" class="method returns number"} <i/> 接收四字节带符号数字()
-: Reads a signed 4-byte number.
+: 读取带符号的 4 字节数字。
 
 {:id="BluetoothClient.ReceiveSignedBytes" class="method returns list"} <i/> 接收带符号字节数组(*字节数*{:.number})
-: Reads a number of signed bytes from the input stream and returns them as
- a List.
+: 从输入流中读取指定数量(`字节数`)的带符号的字节，并将它们作为列表返回。
 
-   If numberOfBytes is negative, this method reads until a delimiter byte
- value is read. The delimiter byte value is included in the returned list.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止，分隔符字节码包含在返回的列表中。
 
 {:id="BluetoothClient.ReceiveText" class="method returns text"} <i/> 接收文本(*字节数*{:.number})
-: Reads a number of bytes from the input stream and converts them to text.
+: 从输入流中读取指定数量(`字节数`)的带符号的字节，并将它们转换为文本。
 
-   If numberOfBytes is negative, read until a delimiter byte value is read.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止。
 
 {:id="BluetoothClient.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> 接收单字节无符号数字()
-: Reads an unsigned 1-byte number.
+: 读取一个无符号的 1 字节数字。
 
 {:id="BluetoothClient.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> 接收双字节无符号数字()
-: Reads an unsigned 2-byte number.
+: 读取一个无符号的 2 字节数字。
 
 {:id="BluetoothClient.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> 接收四字节无符号数字()
-: Reads an unsigned 4-byte number.
+: 读取一个无符号的 4 字节数字。
 
 {:id="BluetoothClient.ReceiveUnsignedBytes" class="method returns list"} <i/> 接收无符号字节数组(*字节数*{:.number})
-: Reads a number of unsigned bytes from the input stream and returns them as
- a List.
+: 从输入流中读取指定数量(`字节数`)的无符号的字节，并将它们作为列表返回。
 
-   If numberOfBytes is negative, this method reads until a delimiter byte
- value is read. The delimiter byte value is included in the returned list.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止，分隔符字节码包含在返回的列表中。
 
-{:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*number*{:.text})
-: Decodes the given number String to an integer and writes it as one byte
- to the output stream.
+{:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
+: 将指定的`数值`字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in one byte, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或者整数一个字节不够表达，就会触发 Form 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
-{:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*number*{:.text})
+{:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
 : Decodes the given number String to an integer and writes it as two bytes
  to the output stream.
 
@@ -223,7 +216,7 @@ title: 通信连接组件
  fit in two bytes, then the Form's ErrorOccurred event is triggered and this
  method returns without writing any bytes to the output stream.
 
-{:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*number*{:.text})
+{:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
 : Decodes the given number String to an integer and writes it as four bytes
  to the output stream.
 
