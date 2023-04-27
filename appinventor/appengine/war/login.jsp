@@ -145,7 +145,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 
 <center>
 <a href="https://www.fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
-<a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a>
+<a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
+<a href="https://space.bilibili.com/3493106345314902" target="_blank">bilibili 视频教程</a>
 
 <p class="copyright" style="font-size:15px;color:#666;margin-top:4%;">版权所有 &copy; 2023&nbsp;
 	<a href="https://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
