@@ -599,7 +599,7 @@ Blockly.BlockSvg.prototype.showHelp_ = function() {
   if (url) {
     var parts = url.split('#');
     var hereparts = top.location.href.match('[&?]locale=([a-zA-Z-]*)');
-    if (hereparts && hereparts[1].toLowerCase() !== 'en') {
+    if (hereparts && hereparts[1].toLowerCase() !== 'zh') {
       parts[0] += '?locale=' + hereparts[1];
     }
     window.open(parts.join('#'));
