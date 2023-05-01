@@ -148,8 +148,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
 <a href="https://space.bilibili.com/3493106345314902" target="_blank">bilibili 视频教程</a>
 
-<p class="copyright" style="font-size:15px;color:#666;margin-top:4%;">版权所有 &copy; 2023&nbsp;
-	<a href="https://www.fun123.cn" style="color:#666;text-decoration: none;">fun123.cn</a>&nbsp;&nbsp;
+<p class="copyright" style="font-size:15px;color:#666;margin-top:4%;line-height:24px;">版权所有 &copy; 2023&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;<br/>
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
 	<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011702008921" target="_blank" style="color:#666;text-decoration: none;"><i></i>沪公网安备31011702008921号</a>&nbsp;
 	<%    if (locale != null && locale.equals("zh_CN")) { %>
