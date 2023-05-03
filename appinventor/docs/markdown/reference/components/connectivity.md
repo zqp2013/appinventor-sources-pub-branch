@@ -119,7 +119,7 @@ title: 通信连接组件
 : 返回配对的蓝牙设备列表，返回的列表每个元素都是一个字符串，由设备地址、一个空格和设备的名称组成。
 
 {:id="BluetoothClient.Available" .boolean .ro .bo} *可用状态*
-: 如果蓝牙在设备上可用，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
+: 如果设备上有蓝牙功能，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
 {:id="BluetoothClient.CharacterEncoding" .text} *字符编码*
 : 返回发送和接收文本时使用的字符集编码（如GBK，UTF-8）。
@@ -206,34 +206,25 @@ title: 通信连接组件
 {:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或者整数一个字节不够表达，就会触发 Form 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
-: Decodes the given number String to an integer and writes it as two bytes
- to the output stream.
+: 将指定的`数值`字符串转换成整数，并将其作为 2 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in two bytes, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
-: Decodes the given number String to an integer and writes it as four bytes
- to the output stream.
+: 将指定的`数值`字符串转换成整数，并将其作为 4 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in four bytes, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
-: Takes each element from the given list, converts it to a String, decodes
- the String to an integer, and writes it as one byte to the output stream.
+: 从指定列表中取出每个元素，将其转换为字符串，字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-   If an element could not be decoded to an integer, or the integer would not
- fit in one byte, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
-: Converts the given text to bytes and writes them to the output stream.
+: 将指定文本转换为字节并将它们写入到输出流。
 
 ## 蓝牙服务器  {#BluetoothServer}
 
@@ -246,131 +237,110 @@ title: 通信连接组件
 {:.properties}
 
 {:id="BluetoothServer.Available" .boolean .ro .bo} *可用状态*
-: Returns `真`{:.logic.block} if Bluetooth is available on the device,
- `假`{:.logic.block} otherwise.
+: 如果设备上有蓝牙功能，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
 {:id="BluetoothServer.CharacterEncoding" .text} *字符编码*
-: Returns the character encoding to use when sending and receiving text.
+: 返回发送和接收文本时使用的字符编码。
 
 {:id="BluetoothServer.DelimiterByte" .number} *分隔符字节码*
-: Returns the delimiter byte to use when passing a negative number for the
- numberOfBytes parameter when calling ReceiveText, ReceiveSignedBytes, or
- ReceiveUnsignedBytes.
+: 调用 ReceiveText、ReceiveSignedBytes 或 ReceiveUnsignedBytes 返回传递负数时使用的分隔符字节码。
 
 {:id="BluetoothServer.Enabled" .boolean .ro .bo} *启用*
-: Returns `真`{:.logic.block} if Bluetooth is enabled, `假`{:.logic.block} otherwise.
+: 如果启用了蓝牙，返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
 {:id="BluetoothServer.HighByteFirst" .boolean} *高位优先*
-: Specifies whether numbers are sent and received with the most significant
- byte first.
+: 指定发送和接收数字时是否使用最高有效位字节优先。
 
 {:id="BluetoothServer.IsAccepting" .boolean .ro .bo} *接收状态*
-: Returns true if this BluetoothServer component is accepting an
- incoming connection.
+: 如果此 `蓝牙服务器` 组件正在接受一个传入连接，则返回`真`{:.logic.block}。
 
 {:id="BluetoothServer.IsConnected" .boolean .ro .bo} *连接状态*
-: Returns `frue`{:.logic.block} if a connection to a Bluetooth device has been made.
+: 如果与蓝牙设备已建立连接，则返回 `真`{:.logic.block}。
 
 {:id="BluetoothServer.Secure" .boolean} *启用安全连接*
-: Specifies whether a secure connection should be used.
+: 指定是否启用安全连接。
 
 ### 事件  {#BluetoothServer-Events}
 
 {:.events}
 
 {:id="BluetoothServer.ConnectionAccepted"} 接受连接()
-: Indicates that a bluetooth connection has been accepted.
+: 表示已接受蓝牙连接。
 
 ### 方法  {#BluetoothServer-Methods}
 
 {:.methods}
 
-{:id="BluetoothServer.AcceptConnection" class="method"} <i/> 接受连接(*serviceName*{:.text})
-: Accept an incoming connection with the Serial Port Profile (SPP).
+{:id="BluetoothServer.AcceptConnection" class="method"} <i/> 接受连接(*服务名*{:.text})
+: 接受使用串行端口配置文件 (SPP) 进行通信的传入连接。
 
 {:id="BluetoothServer.AcceptConnectionWithUUID" class="method"} <i/> 接受与指定设备连接(*服务名*{:.text},*唯一编号*{:.text})
-: Accept an incoming connection with a specific UUID.
+: 接受指定 UUID 的传入连接。
 
 {:id="BluetoothServer.BytesAvailableToReceive" class="method returns number"} <i/> 获取接收字节数()
-: Returns number of bytes available from the input stream.
+: 返回输入流中可用的字节数。
 
 {:id="BluetoothServer.Disconnect" class="method"} <i/> 断开连接()
-: Disconnects from the connected Bluetooth device.
+: 断开当前已连接的蓝牙设备。
 
 {:id="BluetoothServer.ReceiveSigned1ByteNumber" class="method returns number"} <i/> 接收单字节带符号数字()
-: Reads a signed 1-byte number.
+: 读取带符号的 1 字节数字。
 
 {:id="BluetoothServer.ReceiveSigned2ByteNumber" class="method returns number"} <i/> 接收双字节带符号数字()
-: Reads a signed 2-byte number.
+: 读取带符号的 2 字节数字。
 
 {:id="BluetoothServer.ReceiveSigned4ByteNumber" class="method returns number"} <i/> 接收四字节带符号数字()
-: Reads a signed 4-byte number.
+: 读取带符号的 4 字节数字。
 
 {:id="BluetoothServer.ReceiveSignedBytes" class="method returns list"} <i/> 接收带符号字节数组(*字节数*{:.number})
-: Reads a number of signed bytes from the input stream and returns them as
- a List.
+: 从输入流中读取指定数量(`字节数`)的带符号的字节，并将它们作为列表返回。
 
-   If numberOfBytes is negative, this method reads until a delimiter byte
- value is read. The delimiter byte value is included in the returned list.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止，分隔符字节码包含在返回的列表中。
 
 {:id="BluetoothServer.ReceiveText" class="method returns text"} <i/> 接收文本(*字节数*{:.number})
-: Reads a number of bytes from the input stream and converts them to text.
+: 从输入流中读取指定数量(`字节数`)的带符号的字节，并将它们转换为文本。
 
-   If numberOfBytes is negative, read until a delimiter byte value is read.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止。
 
 {:id="BluetoothServer.ReceiveUnsigned1ByteNumber" class="method returns number"} <i/> 接收单字节无符号数字()
-: Reads an unsigned 1-byte number.
+: 读取一个无符号的 1 字节数字。
 
 {:id="BluetoothServer.ReceiveUnsigned2ByteNumber" class="method returns number"} <i/> 接收双字节无符号数字()
-: Reads an unsigned 2-byte number.
+: 读取一个无符号的 2 字节数字。
 
 {:id="BluetoothServer.ReceiveUnsigned4ByteNumber" class="method returns number"} <i/> 接收四字节无符号数字()
-: Reads an unsigned 4-byte number.
+: 读取一个无符号的 4 字节数字。
 
 {:id="BluetoothServer.ReceiveUnsignedBytes" class="method returns list"} <i/> 接收无符号字节数组(*字节数*{:.number})
-: Reads a number of unsigned bytes from the input stream and returns them as
- a List.
+: 从输入流中读取指定数量(`字节数`)的无符号的字节，并将它们作为列表返回。
 
-   If numberOfBytes is negative, this method reads until a delimiter byte
- value is read. The delimiter byte value is included in the returned list.
+    如果 `字节数` 为负数，则读取到分隔符字节码（*分隔符字节码*属性指定的）为止，分隔符字节码包含在返回的列表中。
 
 {:id="BluetoothServer.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
-: Decodes the given number String to an integer and writes it as one byte
- to the output stream.
+: 将指定的`数值`字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in one byte, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
-: Decodes the given number String to an integer and writes it as two bytes
- to the output stream.
+: 将指定的`数值`字符串转换成整数，并将其作为 2 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in two bytes, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
-: Decodes the given number String to an integer and writes it as four bytes
- to the output stream.
+: 将指定的`数值`字符串转换成整数，并将其作为 4 个字节写入到输出流。
 
-   If the number could not be decoded to an integer, or the integer would not
- fit in four bytes, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
-: Takes each element from the given list, converts it to a String, decodes
- the String to an integer, and writes it as one byte to the output stream.
+: 从指定列表中取出每个元素，将其转换为字符串，字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-   If an element could not be decoded to an integer, or the integer would not
- fit in one byte, then the Form's ErrorOccurred event is triggered and this
- method returns without writing any bytes to the output stream.
+    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
-: Converts the given text to bytes and writes them to the output stream.
+: 将指定文本转换为字节并将它们写入到输出流。
 
 {:id="BluetoothServer.StopAccepting" class="method"} <i/> 停止接受连接()
-: Stop accepting an incoming connection.
+: 停止接受传入连接。
 
 ## 串口通信器  {#Serial}
 
