@@ -1191,6 +1191,12 @@ public class TopToolbar extends Composite {
   public void updateFileMenuButtons(int view) {
     if (isReadOnly) {
       // This may be too simple
+
+      // 启用导出单项目菜单
+      if (view != 0) { // Designer/Blocks view
+        fileDropDown.setItemEnabledById(WIDGET_NAME_EXPORTPROJECT, true);
+      }
+
       return;
     }
     if (view == 0) {  // We are in the Projects view

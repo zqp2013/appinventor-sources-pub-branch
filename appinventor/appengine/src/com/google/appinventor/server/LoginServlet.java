@@ -477,7 +477,8 @@ public class LoginServlet extends HttpServlet {
     }
 
     if (!validLogin) {
-      fail(req, resp, bundle.getString("invalidpassword"), locale);
+      //fail(req, resp, bundle.getString("invalidpassword"), locale);
+      fail(req, resp, "Invalid Password", locale);
       return;
     }
 

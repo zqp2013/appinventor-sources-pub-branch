@@ -2531,7 +2531,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               retval.add(new AdminUser(user.id, user.name, user.email, user.tosAccepted,
                   user.isAdmin, user.visited, user.from, user.expired, user.remark));
               count++;
-              if (count > 20) {
+              if (count > 30) {
                 break;
               }
             }

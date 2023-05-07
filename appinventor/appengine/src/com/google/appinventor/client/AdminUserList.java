@@ -91,7 +91,7 @@ public class AdminUserList extends Composite {
 
     adminUsers = new ArrayList<AdminUser>();
 
-    sortField = SortField.NAME;
+    sortField = SortField.VISITED;
     sortOrder = SortOrder.ASCENDING;;
 
     // Initialize UI
