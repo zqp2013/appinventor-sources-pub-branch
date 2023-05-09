@@ -45,64 +45,60 @@ title: 通信连接组件
 {:.properties}
 
 {:id="ActivityStarter.Action" .text} *Action*
-: Specifies the action that will be used to start the activity.
+: 指定将用于启动Activity活动的操作。
 
-{:id="ActivityStarter.ActivityClass" .text} *ActivityClass*
-: Specifies the class part of the specific component that will be started.
+{:id="ActivityStarter.ActivityClass" .text} *Activity类名*
+: 指定将启动的特定组件的Class类部分。
 
-{:id="ActivityStarter.ActivityPackage" .text} *ActivityPackage*
-: Specifies the package part of the specific component that will be started.
+{:id="ActivityStarter.ActivityPackage" .text} *Activity包名*
+: 指定将启动的特定组件的包部分。
 
-{:id="ActivityStarter.DataType" .text} *DataType*
-: Specifies the MIME type to pass to the activity.
+{:id="ActivityStarter.DataType" .text} *数据类型*
+: 指定要传递给Activity活动的 MIME 类型。
 
-{:id="ActivityStarter.DataUri" .text} *DataUri*
-: Specifies the data URI that will be used to start the activity.
+{:id="ActivityStarter.DataUri" .text} *数据URI*
+: 指定将用于启动Activity活动的数据URI。
 
 {:id="ActivityStarter.ExtraKey" .text} *ExtraKey*
-: Specifies the extra key that will be passed to the activity.
- Obsolete. Should use Extras instead
+: 指定将传递给Activity活动的额外键。（已过时，应使用 Extras）
 
 {:id="ActivityStarter.ExtraValue" .text} *ExtraValue*
-: Specifies the extra value that will be passed to the activity.
- Obsolete. Should use Extras instead
+: 指定将传递给Activity活动的额外值。（已过时，应使用 Extras）
 
 {:id="ActivityStarter.Extras" .list .bo} *Extras*
-: Returns the list of key-value pairs that will be passed as extra data to the activity.
+: 返回将作为额外数据传递给Activity活动的键值对列表。
 
-{:id="ActivityStarter.Result" .text .ro .bo} *Result*
-: Returns the result from the activity.
+{:id="ActivityStarter.Result" .text .ro .bo} *结果*
+: 返回Activity活动的结果。
 
-{:id="ActivityStarter.ResultName" .text} *ResultName*
-: Specifies the name that will be used to retrieve a result from the
- activity.
+{:id="ActivityStarter.ResultName" .text} *结果名称*
+: 指定一个名称，用于从Activity活动中获取结果。
 
-{:id="ActivityStarter.ResultType" .text .ro .bo} *ResultType*
-: Returns the MIME type from the activity.
+{:id="ActivityStarter.ResultType" .text .ro .bo} *结果类型*
+: 从Activity活动中返回的结果 MIME 类型。
 
-{:id="ActivityStarter.ResultUri" .text .ro .bo} *ResultUri*
-: Returns the URI from the activity.
+{:id="ActivityStarter.ResultUri" .text .ro .bo} *结果URI地址*
+: 从Activity活动中返回的结果URI。
 
 ### 事件  {#ActivityStarter-Events}
 
 {:.events}
 
-{:id="ActivityStarter.ActivityCanceled"} ActivityCanceled()
-: Event raised if this `ActivityStarter returns because the activity was canceled.
+{:id="ActivityStarter.ActivityCanceled"} 取消活动调用()
+: 如果此 `Activity启动器` 因为Activity活动被取消而返回，则引发该事件。
 
-{:id="ActivityStarter.AfterActivity"} AfterActivity(*result*{:.text})
-: Event raised after this `ActivityStarter` returns.
+{:id="ActivityStarter.AfterActivity"} 活动调用结束(*result*{:.text})
+: 此 `Activity启动器` 返回后触发的事件。
 
 ### 方法  {#ActivityStarter-Methods}
 
 {:.methods}
 
-{:id="ActivityStarter.ResolveActivity" class="method returns text"} <i/> ResolveActivity()
-: Returns the name of the activity that corresponds to this `ActivityStarter`,
- or an empty string if no corresponding activity can be found.
+{:id="ActivityStarter.ResolveActivity" class="method returns text"} <i/> 处理活动信息()
+: 返回与此 `Activity启动器` 对应的Activity活动名称，如果找不到相应的Activity活动，则为空字符串。
 
-{:id="ActivityStarter.StartActivity" class="method"} <i/> StartActivity()
-: Start the activity corresponding to this `ActivityStarter`.
+{:id="ActivityStarter.StartActivity" class="method"} <i/> 启动活动对象()
+: 启动这个 `Activity启动器` 对应的Activity活动。
 
 ## 蓝牙客户端  {#BluetoothClient}
 
