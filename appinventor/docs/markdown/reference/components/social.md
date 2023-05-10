@@ -8,13 +8,13 @@ title: 社交应用组件
 
 目录：
 
-* [ContactPicker](#ContactPicker)
-* [EmailPicker](#EmailPicker)
-* [PhoneCall](#PhoneCall)
-* [PhoneNumberPicker](#PhoneNumberPicker)
-* [Sharing](#Sharing)
-* [Texting](#Texting)
-* [Twitter](#Twitter)
+* [联系人选择框](#ContactPicker)
+* [邮箱地址选择框](#EmailPicker)
+* [电话拨号器](#PhoneCall)
+* [电话号选择框](#PhoneNumberPicker)
+* [信息分享器](#Sharing)
+* [短信收发器](#Texting)
+* [推特客户端](#Twitter)
 
 ## ContactPicker  {#ContactPicker}
 
@@ -483,20 +483,15 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
 : Opens the selected contact's entry in the device's default Contacts app.
 
-## Sharing  {#Sharing}
+## 信息分享器  {#Sharing}
 
-Sharing is a non-visible component that enables sharing files and/or messages between your app
- and other apps installed on a device. The component will display a list of the installed apps
- that can handle the information provided, and will allow the user to choose one to share the
- content with, for instance a mail app, a social network app, a texting app, and so on.
+`信息分享器`是一个不可见的组件，可以让App和设备上其他App之间共享数据或文件。
+该组件将显示已安装的可处理所提供信息的App列表，并允许用户选择一个App来共享内容，例如邮件App、社交网络App、短信App等。
 
- The file path can be taken directly from other components such as the
- [`Camera`](media.html#Camera) or the [`ImagePicker`](media.html#ImagePicker), but can also be
- specified directly to read from storage. Be aware that different devices treat storage
- differently, so a few things to try if, for instance, you have a file called `arrow.gif` in the
- folder `Appinventor/assets`, would be:
+  文件路径可以来自其他组件，例如[`照相机`](media.html#Camera) 或 [`图像选择框`](media.html#ImagePicker)，但也可以指定直接从存储中读取。
+  请注意：不同的设备处理的存储路径可能不同，例如有一个名为 `arrow.gif` 的文件在文件夹 `Appinventor/assets` 中，它的表示方式可能是：
 
- - `"file:///sdcard/Appinventor/assets/arrow.gif"`; or
+ - `"file:///sdcard/Appinventor/assets/arrow.gif"`; 或
  - `"/storage/Appinventor/assets/arrow.gif"`
 
 
@@ -517,14 +512,14 @@ Sharing is a non-visible component that enables sharing files and/or messages be
 
 {:.methods}
 
-{:id="Sharing.ShareFile" class="method"} <i/> ShareFile(*file*{:.text})
-: Shares a file through any capable application installed on the phone by displaying a list of the available apps and allowing the user to choose one from the list. The selected app will open with the file inserted on it.
+{:id="Sharing.ShareFile" class="method"} <i/> 分享文件(*文件*{:.text})
+: 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件。选定的应用程序将打开，向其中传入文件。
 
-{:id="Sharing.ShareFileWithMessage" class="method"} <i/> ShareFileWithMessage(*file*{:.text},*message*{:.text})
-: Shares both a file and a message through any capable application installed on the phone by displaying a list of available apps and allowing the user to  choose one from the list. The selected app will open with the file and message inserted on it.
+{:id="Sharing.ShareFileWithMessage" class="method"} <i/> 分享文件及消息(*文件*{:.text},*消息*{:.text})
+: 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件及消息。选定的应用程序将打开，向其中传入文件及消息。
 
-{:id="Sharing.ShareMessage" class="method"} <i/> ShareMessage(*message*{:.text})
-: Shares a message through any capable application installed on the phone by displaying a list of the available apps and allowing the user to choose one from the list. The selected app will open with the message inserted on it.
+{:id="Sharing.ShareMessage" class="method"} <i/> 分享消息(*消息*{:.text})
+: 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享消息。所选应用程序将打开，并向其中传入消息。
 
 ## Texting  {#Texting}
 
