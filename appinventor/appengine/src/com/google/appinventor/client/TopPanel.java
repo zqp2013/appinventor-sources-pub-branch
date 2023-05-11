@@ -196,7 +196,7 @@ public class TopPanel extends Composite {
       if (expired != null) {
         expiredStr += expiredFormat.format(expired);
       }
-      userItems.add(new DropDownItem(expiredStr, expiredStr, new VipInfoAction(), "ode-ContextMenuItem-Red"));
+      userItems.add(new DropDownItem(expiredStr, expiredStr, new VipInfoAction(), "ode-ContextMenuItem hot"));
     }
 
     // if we are allowed to delete accounts
