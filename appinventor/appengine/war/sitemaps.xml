@@ -237,5 +237,12 @@
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
 		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/tutorials/yr/tutorials/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95.html</loc>
+			<lastmod>2023-05-13</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
 	</urlset>
 

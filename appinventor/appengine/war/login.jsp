@@ -70,21 +70,6 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <% } %>
 <p></p>
 
-<center>
-<a href="<%= new UriBuilder("/login")
-                           .add("locale", "zh_CN")
-                           .add("repo", repo)
-                           .add("autoload", autoload)
-                           .add("galleryId", galleryId)
-                           .add("redirect", redirect).build() %>"  style="text-decoration:none;" >中文</a>&nbsp;
-<a href="<%= new UriBuilder("/login")
-                   .add("locale", "en")
-                   .add("repo", repo)
-                   .add("autoload", autoload)
-                   .add("galleryId", galleryId)
-                   .add("ng", newGalleryId)
-                   .add("redirect", redirect).build() %>"  style="text-decoration:none;" >English</a>
-</center>
 <br/>
 
 <center><input type=Submit value="${login}" style="font-size: 300%;"></center>
@@ -149,7 +134,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <a href="https://www.fun123.cn/reference/?f=login" target="_blank">参考文档</a> &nbsp;&nbsp;
 <a href="https://space.bilibili.com/3493106345314902" target="_blank">bilibili 视频教程</a>
 
-<p class="copyright" style="font-size:15px;color:#666;margin-top:4%;line-height:24px;">版权所有 &copy; 2023&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;<br/>
+<p class="copyright" style="font-size:15px;color:#666;margin-top:4%;line-height:24px;">&copy; 2023&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;<br/>
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
 	<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011702008921" target="_blank" style="color:#666;text-decoration: none;"><i></i>沪公网安备31011702008921号</a>&nbsp;
 	<%    if (locale != null && locale.equals("zh_CN")) { %>

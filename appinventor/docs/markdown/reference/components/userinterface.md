@@ -27,7 +27,7 @@ title: 用户界面（UI）组件
 
 ## 按钮（Button）  {#Button}
 
-按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”或“程序设计”中修改其属性。
+按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”视图或“程序设计”视图中修改其属性。
 
 ### 属性  {#Button-Properties}
 
@@ -121,11 +121,11 @@ title: 用户界面（UI）组件
 
 ## 复选框  {#CheckBox}
 
-![Example of a CheckBox](images/checkbox.png)
+![复选框示例](images/checkbox.png)
 
  `复选框`组件可以检测用户点击，并更改其布尔状态。
 
- 当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”或“程序设计”中进行设置。
+ 当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”视图或“程序设计”视图中进行设置。
 
 
 
@@ -133,68 +133,60 @@ title: 用户界面（UI）组件
 
 {:.properties}
 
-{:id="CheckBox.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the `CheckBox` as an alpha-red-green-blue
- integer.
+{:id="CheckBox.BackgroundColor" .color} *背景颜色*
+: 设置`复选框`的背景颜色，使用RGBA数值表示。
 
-{:id="CheckBox.Checked" .boolean} *Checked*
-: Set to `真`{:.logic.block} if the box is checked, `假`{:.logic.block} otherwise.
+{:id="CheckBox.Checked" .boolean} *选中*
+: 设置`复选框`是否处于选中状态，值是`真`{:.logic.block}则`复选框`选中，`假`{:.logic.block}则未选中。
 
-{:id="CheckBox.Enabled" .boolean} *Enabled*
-: Specifies whether the `CheckBox` should be active and clickable.
+{:id="CheckBox.Enabled" .boolean} *启用*
+: 设置`复选框`是否可以被点击。
 
-{:id="CheckBox.FontBold" .boolean .do} *FontBold*
-: Specifies whether the text of the `CheckBox` should be bold.
- Some fonts do not support bold.
+{:id="CheckBox.FontBold" .boolean .do} *粗体*
+: 设置`复选框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="CheckBox.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the text of the `CheckBox` should be italic.
- Some fonts do not support italic.
+{:id="CheckBox.FontItalic" .boolean .do} *斜体*
+: 设置`复选框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="CheckBox.FontSize" .number} *FontSize*
-: Specifies the text font size of the `CheckBox`, measured in sp(scale-independent pixels).
+{:id="CheckBox.FontSize" .number} *字体大小*
+: 设置`复选框`的字体大小，以像素px为单位。
 
-{:id="CheckBox.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `CheckBox` as default, serif, sans
- serif, or monospace.
+{:id="CheckBox.FontTypeface" .number .do} *字体*
+: 设置`复选框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="CheckBox.Height" .number .bo} *Height*
-: Specifies the `CheckBox`'s vertical height, measured in pixels.
+{:id="CheckBox.Height" .number .bo} *高度*
+: 设置`复选框`的垂直高度，以像素px为单位。
 
-{:id="CheckBox.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `CheckBox`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="CheckBox.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`复选框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="CheckBox.Text" .text} *Text*
-: Specifies the text displayed by the `CheckBox`.
+{:id="CheckBox.Text" .text} *文本*
+: 设置`复选框`的显示文本。
 
-{:id="CheckBox.TextColor" .color} *TextColor*
-: Specifies the text color of the `CheckBox` as an alpha-red-green-blue
- integer.
+{:id="CheckBox.TextColor" .color} *文本颜色*
+: 设置`复选框`的文本颜色，使用RGBA数值表示。
 
-{:id="CheckBox.Visible" .boolean} *Visible*
-: Specifies whether the `CheckBox` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `CheckBox` is showing and `假`{:.logic.block} if hidden.
+{:id="CheckBox.Visible" .boolean} *可见性*
+: 设置`复选框`是否显示在屏幕上，值是`真`{:.logic.block}则`复选框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="CheckBox.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `CheckBox`, measured in pixels.
+{:id="CheckBox.Width" .number .bo} *宽度*
+: 设置`复选框`的水平宽度，以像素px为单位。
 
-{:id="CheckBox.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `CheckBox` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="CheckBox.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`复选框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#CheckBox-Events}
 
 {:.events}
 
 {:id="CheckBox.Changed"} Changed()
-: User tapped and released the `CheckBox`.
+: 用户点击，`复选框`选中状态发生改变时触发该事件。
 
 {:id="CheckBox.GotFocus"} GotFocus()
-: `CheckBox` became the focused component.
+: `复选框`获得焦点时，触发该事件。
 
 {:id="CheckBox.LostFocus"} LostFocus()
-: `CheckBox` stopped being the focused component.
+: `复选框`失去焦点时，触发该事件。
 
 ### 方法  {#CheckBox-Methods}
 
@@ -202,7 +194,7 @@ title: 用户界面（UI）组件
 无
 
 
-## DatePicker  {#DatePicker}
+## 日期选择框  {#DatePicker}
 
 A button that, when clicked on, launches a popup dialog to allow the user to select a date on
  the Gregorian Calendar.
@@ -333,7 +325,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
 : Allows the user to set the date from the instant to be displayed when the date picker opens.
 
-## Image  {#Image}
+## 图像  {#Image}
 
 Component for displaying images and basic animations.
 
@@ -400,82 +392,65 @@ Component for displaying images and basic animations.
 无
 
 
-## Label  {#Label}
+## 标签  {#Label}
 
-Labels are components used to show text.
+标签是用于显示文本的组件。
 
- ![Example of a label](images/label.png)
+ ![标签示例](images/label.png)
 
- A label displays text which is specified by the `Text` property. Other properties, all of which
- can be set in the Designer or Blocks Editor, control the appearance and placement of the text.
-
-
+标签显示由 `文本` 属性指定的文本内容，其他属性可以在“界面设计”视图或“程序设计”视图中进行设置，控制文本的外观和位置等。
 
 ### 属性  {#Label-Properties}
 
 {:.properties}
 
-{:id="Label.BackgroundColor" .color} *BackgroundColor*
-: Specifies the label's background color as an alpha-red-green-blue
- integer.
+{:id="Label.BackgroundColor" .color} *背景颜色*
+: 指定`标签`的背景颜色，使用RGBA数值表示。
 
-{:id="Label.FontBold" .boolean .do} *FontBold*
-: Specifies whether the label's text should be bold.
- Some fonts do not support bold.
+{:id="Label.FontBold" .boolean .do} *粗体*
+: 指定`标签`的文本是否为粗体（有些字体不支持粗体）。
 
-{:id="Label.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the label's text should be italic.
- Some fonts do not support italic.
+{:id="Label.FontItalic" .boolean .do} *斜体*
+: : 指定`标签`的文本是否为斜体（有些字体不支持斜体）。
 
-{:id="Label.FontSize" .number} *FontSize*
-: Specifies the label's text's font size, measured in sp(scale-independent pixels).
+{:id="Label.FontSize" .number} *字号*
+: 指定`标签`文本的字体大小，以像素px为单位。
 
-{:id="Label.FontTypeface" .number .do} *FontTypeface*
-: Specifies the label's text's font face as default, serif, sans
- serif, or monospace.
+{:id="Label.FontTypeface" .number .do} *字体*
+: 设置`标签`文本的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="Label.HTMLContent" .text .ro .bo} *HTMLContent*
-: Returns the content of the Label as HTML. This is only useful if the
- HTMLFormat property is true.
+{:id="Label.HTMLContent" .text .ro .bo} *HTML内容*
+: 在`HTML格式`为`真`{:.logic.block}时，以 HTML 形式返回`标签`的内容。
 
-{:id="Label.HTMLFormat" .boolean .do} *HTMLFormat*
-: Specifies the label's text's format
+{:id="Label.HTMLFormat" .boolean .do} *HTML格式*
+: 指定`标签`的文本格式是否是HTML格式。
 
-{:id="Label.HasMargins" .boolean} *HasMargins*
-: Specifies whether the label should have margins.
- This margin value is not well coordinated with the
- designer, where the margins are defined for the arrangement, not just for individual
- labels.
+{:id="Label.HasMargins" .boolean} *具有外边距*
+: 指定`标签`是否有外边距。
 
-{:id="Label.Height" .number .bo} *Height*
-: Specifies the `Label`'s vertical height, measured in pixels.
+{:id="Label.Height" .number .bo} *高度*
+: 设置`标签`的垂直高度，以像素px为单位。
 
-{:id="Label.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Label`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="Label.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`标签`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Label.Text" .text} *Text*
-: Specifies the text displayed by the label.
+{:id="Label.Text" .text} *文本*
+: 设置`标签`的显示文本。
 
-{:id="Label.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the label's text: center, normal
- (e.g., left-justified if text is written left to right), or
- opposite (e.g., right-justified if text is written left to right).
+{:id="Label.TextAlignment" .number .do} *文本对齐*
+: 指定`标签`文本的对齐方式：居中、正常（例如，如果文本是从左到右书写的，则左对齐），或者相反（例如，如果文本是从左到右书写的，则右对齐）。
 
-{:id="Label.TextColor" .color} *TextColor*
-: Specifies the label's text color as an alpha-red-green-blue
- integer.
+{:id="Label.TextColor" .color} *文本颜色*
+: 设置`标签`的文本颜色，使用RGBA数值表示。
 
-{:id="Label.Visible" .boolean} *Visible*
-: Specifies whether the `Label` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Label` is showing and `假`{:.logic.block} if hidden.
+{:id="Label.Visible" .boolean} *可见性*
+: 设置`标签`是否显示在屏幕上，值是`真`{:.logic.block}则`标签`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Label.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Label`, measured in pixels.
+{:id="Label.Width" .number .bo} *宽度*
+: 设置`标签`的水平宽度，以像素px为单位。
 
-{:id="Label.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Label` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="Label.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`标签`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Label-Events}
 
@@ -489,7 +464,7 @@ Labels are components used to show text.
 无
 
 
-## ListPicker  {#ListPicker}
+## 选择选择框  {#ListPicker}
 
 A button that, when clicked on, displays a list of texts for the user to choose among. The texts
  can be specified through the Designer or Blocks Editor by setting the
@@ -635,7 +610,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.Open" class="method"} <i/> Open()
 : Opens the `ListPicker`, as though the user clicked on it.
 
-## ListView  {#ListView}
+## 列表显示框  {#ListView}
 
 This is a visible component that displays a list of text and image elements in your [`Screen`](#Screen) to
  display. Simple lists of strings may be set using the [`ElementsFromString`](#ListView.ElementsFromString) property.
@@ -768,7 +743,7 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.Refresh" class="method"} <i/> Refresh()
 : Reload the ListView to reflect any changes in the data.
 
-## Notifier  {#Notifier}
+## 通知器  {#Notifier}
 
 The Notifier component displays alert messages and creates Android log entries through
  an assortment of methods.
@@ -861,7 +836,7 @@ The Notifier component displays alert messages and creates Android log entries t
  [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
  button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
 
-## PasswordTextBox  {#PasswordTextBox}
+## 密码输入框  {#PasswordTextBox}
 
 Users enter passwords in a password text box component, which hides the text that has been typed in it.
 
@@ -968,7 +943,7 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `PasswordTextBox`.
 
-## Screen  {#Screen}
+## 屏幕  {#Screen}
 
 Top-level component containing all other components in the program.
 
@@ -1163,7 +1138,7 @@ Top-level component containing all other components in the program.
 {:id="Screen.HideKeyboard" class="method"} <i/> HideKeyboard()
 : Hide the soft keyboard
 
-## Slider  {#Slider}
+## 滑动条  {#Slider}
 
 This class is used to display a `Slider`.
 
@@ -1248,7 +1223,7 @@ This class is used to display a `Slider`.
 无
 
 
-## Spinner  {#Spinner}
+## 下拉框  {#Spinner}
 
 A `Spinner` component that displays a dialog with a list of elements. These elements can be set
  in the Designer or Blocks Editor by setting the [`ElementsFromString`](#Spinner.ElementsFromString) property to
@@ -1314,7 +1289,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Spinner.DisplayDropdown" class="method"} <i/> DisplayDropdown()
 : Displays the dropdown list for selection, same action as when the user clicks on the spinner.
 
-## Switch  {#Switch}
+## 切换开关  {#Switch}
 
 `Switch` components can detect user taps and can change their boolean state in response. They
  are identical to [`CheckBox`](#CheckBox)es except in appearance.
@@ -1409,7 +1384,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 无
 
 
-## TextBox  {#TextBox}
+## 文本输入框  {#TextBox}
 
 Users enter text in a text box component.
 
@@ -1536,7 +1511,7 @@ Users enter text in a text box component.
 {:id="TextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `TextBox`.
 
-## TimePicker  {#TimePicker}
+## 时间选择框  {#TimePicker}
 
 A button that, when clicked on, opens a dialog to allow the user to select a time.
 
@@ -1663,7 +1638,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
  Instants are used in [`Clock`](sensors.html#Clock), [`DatePicker`](#DatePicker), and [`TimePicker`](#TimePicker)
  components.
 
-## WebViewer  {#WebViewer}
+## Web浏览框  {#WebViewer}
 
 Component for viewing Web pages.
 
