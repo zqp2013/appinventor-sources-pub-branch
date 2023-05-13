@@ -196,61 +196,56 @@ title: 用户界面（UI）组件
 
 ## 日期选择框  {#DatePicker}
 
-A button that, when clicked on, launches a popup dialog to allow the user to select a date on
- the Gregorian Calendar.
+单击一个按钮弹出对话框以允许用户选择日期(公历)。
 
- Note: Date and time are manipulated using methods in the [Clock](sensors.html#Clock) component.
-
-
+  注意：日期和时间可使用 [计时器](sensors.html#Clock) 组件中的方法进行操作。
 
 ### 属性  {#DatePicker-Properties}
 
 {:.properties}
 
-{:id="DatePicker.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `DatePicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#DatePicker.Image) has been set, the color
- change will not be visible until the [`Image`](#DatePicker.Image) is removed.
+{:id="DatePicker.BackgroundColor" .color} *背景颜色*
+: 设置`日期选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#DatePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#DatePicker.Image)属性为止。
 
-{:id="DatePicker.Day" .number .ro .bo} *Day*
+{:id="DatePicker.Day" .number .ro .bo} *日期*
 : Returns the Day of the month that was last picked using the DatePicker.
 
-{:id="DatePicker.Enabled" .boolean} *Enabled*
+{:id="DatePicker.Enabled" .boolean} *启用*
 : Specifies whether the `DatePicker` should be active and clickable.
 
-{:id="DatePicker.FontBold" .boolean} *FontBold*
+{:id="DatePicker.FontBold" .boolean} *粗体*
 : Specifies whether the text of the `DatePicker` should be bold.
  Some fonts do not support bold.
 
-{:id="DatePicker.FontItalic" .boolean} *FontItalic*
+{:id="DatePicker.FontItalic" .boolean} *斜体*
 : Specifies whether the text of the `DatePicker` should be italic.
  Some fonts do not support italic.
 
-{:id="DatePicker.FontSize" .number} *FontSize*
+{:id="DatePicker.FontSize" .number} *字体大小*
 : Specifies the text font size of the `DatePicker`, measured in sp(scale-independent pixels).
 
-{:id="DatePicker.FontTypeface" .number .do} *FontTypeface*
+{:id="DatePicker.FontTypeface" .number .do} *字体*
 : Specifies the text font face of the `DatePicker` as default, serif, sans
  serif, or monospace.
 
-{:id="DatePicker.Height" .number .bo} *Height*
+{:id="DatePicker.Height" .number .bo} *高度*
 : Specifies the `DatePicker`'s vertical height, measured in pixels.
 
-{:id="DatePicker.HeightPercent" .number .wo .bo} *HeightPercent*
+{:id="DatePicker.HeightPercent" .number .wo .bo} *高度百分比*
 : Specifies the `DatePicker`'s vertical height as a percentage
  of the [`屏幕高度`](userinterface.html#Screen.Height).
 
-{:id="DatePicker.Image" .text} *Image*
+{:id="DatePicker.Image" .text} *图像*
 : Specifies the path of the `DatePicker`'s image. If there is both an `Image` and a
  [`BackgroundColor`](#DatePicker.BackgroundColor) specified, only the `Image` will be visible.
 
-{:id="DatePicker.Instant" .InstantInTime .ro .bo} *Instant*
+{:id="DatePicker.Instant" .InstantInTime .ro .bo} *时刻*
 : Returns instant of the date that was last picked using the DatePicker.
 
-{:id="DatePicker.Month" .number .ro .bo} *Month*
+{:id="DatePicker.Month" .number .ro .bo} *月份*
 : Returns the number of the Month that was last picked using the DatePicker.
 
-{:id="DatePicker.MonthInText" .text .ro .bo} *MonthInText*
+{:id="DatePicker.MonthInText" .text .ro .bo} *月份名称*
 : Returns the name of the Month that was last picked using the DatePicker.
 
 {:id="DatePicker.Shape" .number .do} *Shape*
@@ -258,35 +253,35 @@ A button that, when clicked on, launches a popup dialog to allow the user to sel
  `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
  [`Image`](#DatePicker.Image) is used.
 
-{:id="DatePicker.ShowFeedback" .boolean} *ShowFeedback*
+{:id="DatePicker.ShowFeedback" .boolean} *显示反馈*
 : Specifies if a visual feedback should be shown when a `DatePicker` with an assigned
  [`Image`](#DatePicker.Image) is pressed.
 
-{:id="DatePicker.Text" .text} *Text*
+{:id="DatePicker.Text" .text} *文本*
 : Specifies the text displayed by the `DatePicker`.
 
-{:id="DatePicker.TextAlignment" .number .do} *TextAlignment*
+{:id="DatePicker.TextAlignment" .number .do} *文本对齐*
 : Specifies the alignment of the `DatePicker`'s text. Valid values are:
  `0` (normal; e.g., left-justified if text is written left to right),
  `1` (center), or
  `2` (opposite; e.g., right-justified if text is written left to right).
 
-{:id="DatePicker.TextColor" .color} *TextColor*
+{:id="DatePicker.TextColor" .color} *文本颜色*
 : Specifies the text color of the `DatePicker` as an alpha-red-green-blue
  integer.
 
-{:id="DatePicker.Visible" .boolean} *Visible*
+{:id="DatePicker.Visible" .boolean} *可见性*
 : Specifies whether the `DatePicker` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `DatePicker` is showing and `假`{:.logic.block} if hidden.
 
-{:id="DatePicker.Width" .number .bo} *Width*
+{:id="DatePicker.Width" .number .bo} *宽度*
 : Specifies the horizontal width of the `DatePicker`, measured in pixels.
 
-{:id="DatePicker.WidthPercent" .number .wo .bo} *WidthPercent*
+{:id="DatePicker.WidthPercent" .number .wo .bo} *宽度百分比*
 : Specifies the horizontal width of the `DatePicker` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
-{:id="DatePicker.Year" .number .ro .bo} *Year*
+{:id="DatePicker.Year" .number .ro .bo} *年度*
 : Returns the Year that was last picked using the DatePicker.
 
 ### 事件  {#DatePicker-Events}
