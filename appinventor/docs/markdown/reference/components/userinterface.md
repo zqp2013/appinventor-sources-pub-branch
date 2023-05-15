@@ -13,7 +13,7 @@ title: 用户界面（UI）组件
 * [日期选择框（DatePicker）](#DatePicker)
 * [图像（Image）](#Image)
 * [标签（Label）](#Label)
-* [选择选择框（ListPicker）](#ListPicker)
+* [列表选择框（ListPicker）](#ListPicker)
 * [列表显示框（ListView）](#ListView)
 * [通知器（Notifier）](#Notifier)
 * [密码输入框（PasswordTextBox）](#PasswordTextBox)
@@ -211,33 +211,28 @@ title: 用户界面（UI）组件
 : Returns the Day of the month that was last picked using the DatePicker.
 
 {:id="DatePicker.Enabled" .boolean} *启用*
-: Specifies whether the `DatePicker` should be active and clickable.
+: 设置`日期选择框`是否可以被激活和点击。
 
 {:id="DatePicker.FontBold" .boolean} *粗体*
-: Specifies whether the text of the `DatePicker` should be bold.
- Some fonts do not support bold.
+: 设置`日期选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
 {:id="DatePicker.FontItalic" .boolean} *斜体*
-: Specifies whether the text of the `DatePicker` should be italic.
- Some fonts do not support italic.
+: 设置`日期选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
 {:id="DatePicker.FontSize" .number} *字体大小*
-: Specifies the text font size of the `DatePicker`, measured in sp(scale-independent pixels).
+: 设置`日期选择框`的字体大小，以像素px为单位。
 
 {:id="DatePicker.FontTypeface" .number .do} *字体*
-: Specifies the text font face of the `DatePicker` as default, serif, sans
- serif, or monospace.
+: 设置`日期选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
 {:id="DatePicker.Height" .number .bo} *高度*
-: Specifies the `DatePicker`'s vertical height, measured in pixels.
+: 设置`日期选择框`的垂直高度，以像素px为单位。
 
 {:id="DatePicker.HeightPercent" .number .wo .bo} *高度百分比*
-: Specifies the `DatePicker`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+: 设置`日期选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="DatePicker.Image" .text} *图像*
-: Specifies the path of the `DatePicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#DatePicker.BackgroundColor) specified, only the `Image` will be visible.
+: 设置`日期选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#DatePicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="DatePicker.Instant" .InstantInTime .ro .bo} *时刻*
 : Returns instant of the date that was last picked using the DatePicker.
@@ -248,38 +243,36 @@ title: 用户界面（UI）组件
 {:id="DatePicker.MonthInText" .text .ro .bo} *月份名称*
 : Returns the name of the Month that was last picked using the DatePicker.
 
-{:id="DatePicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `DatePicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#DatePicker.Image) is used.
+{:id="DatePicker.Shape" .number .do} *形状*
+: 设置`日期选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#DatePicker.Image)，则`形状`将不可见。
 
 {:id="DatePicker.ShowFeedback" .boolean} *显示反馈*
-: Specifies if a visual feedback should be shown when a `DatePicker` with an assigned
- [`Image`](#DatePicker.Image) is pressed.
+: 设置`日期选择框`指定 [`图像`](#DatePicker.Image)后被按压是否显示视觉反馈。
 
 {:id="DatePicker.Text" .text} *文本*
-: Specifies the text displayed by the `DatePicker`.
+: 设置`日期选择框`的显示文本。
 
 {:id="DatePicker.TextAlignment" .number .do} *文本对齐*
-: Specifies the alignment of the `DatePicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+: 设置`日期选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="DatePicker.TextColor" .color} *文本颜色*
-: Specifies the text color of the `DatePicker` as an alpha-red-green-blue
- integer.
+: 设置`日期选择框`的文本颜色，使用RGBA数值表示。
 
 {:id="DatePicker.Visible" .boolean} *可见性*
-: Specifies whether the `DatePicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `DatePicker` is showing and `假`{:.logic.block} if hidden.
+: 设置`日期选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`日期选择框`显示，`假`{:.logic.block}则隐藏。
 
 {:id="DatePicker.Width" .number .bo} *宽度*
-: Specifies the horizontal width of the `DatePicker`, measured in pixels.
+: 设置`日期选择框`的水平宽度，以像素px为单位。
 
 {:id="DatePicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: Specifies the horizontal width of the `DatePicker` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+: 设置`日期选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 {:id="DatePicker.Year" .number .ro .bo} *年度*
 : Returns the Year that was last picked using the DatePicker.
@@ -322,12 +315,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 ## 图像  {#Image}
 
-Component for displaying images and basic animations.
-
- The picture to display, and other aspects of the Image's appearance, can be specified in the
- Designer or in the Blocks Editor.
-
-
+用于显示图像和基本动画的组件。要显示的图片以及图像外观的其他方面，可以在“界面设计”视图或“程序设计”视图中进行设置。
 
 ### 属性  {#Image-Properties}
 
@@ -344,12 +332,11 @@ Component for displaying images and basic animations.
 {:id="Image.Clickable" .boolean} *Clickable*
 : Specifies whether the image should be clickable or not.
 
-{:id="Image.Height" .number .bo} *Height*
-: Specifies the `Image`'s vertical height, measured in pixels.
+{:id="Image.Height" .number .bo} *高度*
+: 设置`图像`的垂直高度，以像素px为单位。
 
-{:id="Image.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Image`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="Image.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`图像`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Image.Picture" .text} *Picture*
 : Specifies the path of the `Image`'s `Picture`.
@@ -363,16 +350,14 @@ Component for displaying images and basic animations.
 {:id="Image.Scaling" .number .bo} *Scaling*
 : This property determines how the picture scales according to the Height or Width of the Image. Scale proportionally (0) preserves the picture aspect ratio. Scale to fit (1) matches the Image area, even if the aspect ratio changes.
 
-{:id="Image.Visible" .boolean} *Visible*
-: Specifies whether the `Image` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Image` is showing and `假`{:.logic.block} if hidden.
+{:id="Image.Visible" .boolean} *可见性*
+: 设置`图像`是否显示在屏幕上，值是`真`{:.logic.block}则`图像`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Image.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Image`, measured in pixels.
+{:id="Image.Width" .number .bo} *宽度*
+: 设置`图像`的水平宽度，以像素px为单位。
 
-{:id="Image.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Image` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="Image.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`图像`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Image-Events}
 
@@ -459,7 +444,7 @@ Component for displaying images and basic animations.
 无
 
 
-## 选择选择框  {#ListPicker}
+## 列表选择框  {#ListPicker}
 
 A button that, when clicked on, displays a list of texts for the user to choose among. The texts
  can be specified through the Designer or Blocks Editor by setting the
@@ -478,10 +463,8 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 
 {:.properties}
 
-{:id="ListPicker.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `ListPicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#ListPicker.Image) has been set, the color
- change will not be visible until the [`Image`](#ListPicker.Image) is removed.
+{:id="ListPicker.BackgroundColor" .color} *背景颜色*
+: 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
 
 {:id="ListPicker.Elements" .list .bo} *Elements*
 : Specifies the list of choices to display.
@@ -489,34 +472,29 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.ElementsFromString" .text .wo} *ElementsFromString*
 : Set the list of choices from a string of comma-separated values.
 
-{:id="ListPicker.Enabled" .boolean} *Enabled*
-: Specifies whether the `ListPicker` should be active and clickable.
+{:id="ListPicker.Enabled" .boolean} *启用*
+: 设置`列表选择框`是否可以被激活和点击。
 
-{:id="ListPicker.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `ListPicker` should be bold.
- Some fonts do not support bold.
+{:id="ListPicker.FontBold" .boolean} *粗体*
+: 设置`列表选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="ListPicker.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `ListPicker` should be italic.
- Some fonts do not support italic.
+{:id="ListPicker.FontItalic" .boolean} *斜体*
+: 设置`列表选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="ListPicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `ListPicker`, measured in sp(scale-independent pixels).
+{:id="ListPicker.FontSize" .number} *字体大小*
+: 设置`列表选择框`的字体大小，以像素px为单位。
 
-{:id="ListPicker.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `ListPicker` as default, serif, sans
- serif, or monospace.
+{:id="ListPicker.FontTypeface" .number .do} *字体*
+: 设置`列表选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="ListPicker.Height" .number .bo} *Height*
-: Specifies the `ListPicker`'s vertical height, measured in pixels.
+{:id="ListPicker.Height" .number .bo} *高度*
+: 设置`列表选择框`的垂直高度，以像素px为单位。
 
-{:id="ListPicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `ListPicker`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="ListPicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`列表选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="ListPicker.Image" .text} *Image*
-: Specifies the path of the `ListPicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#ListPicker.BackgroundColor) specified, only the `Image` will be visible.
+{:id="ListPicker.Image" .text} *图像*
+: 设置`列表选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="ListPicker.ItemBackgroundColor" .color} *ItemBackgroundColor*
 : The background color of the `ListPicker` items.
@@ -532,44 +510,42 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.SelectionIndex" .number .bo} *SelectionIndex*
 : Selection index property setter method.
 
-{:id="ListPicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `ListPicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#ListPicker.Image) is used.
+{:id="ListPicker.Shape" .number .do} *形状*
+: 设置`列表选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
 
-{:id="ListPicker.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `ListPicker` with an assigned
- [`Image`](#ListPicker.Image) is pressed.
+{:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
 
 {:id="ListPicker.ShowFilterBar" .boolean} *ShowFilterBar*
 : If `真`{:.logic.block}, the ListPicker will show a search filter bar.
 
-{:id="ListPicker.Text" .text} *Text*
-: Specifies the text displayed by the `ListPicker`.
+{:id="ListPicker.Text" .text} *文本*
+: 设置`列表选择框`的显示文本。
 
-{:id="ListPicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `ListPicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="ListPicker.TextAlignment" .number .do} *文本对齐*
+: 设置`列表选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="ListPicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `ListPicker` as an alpha-red-green-blue
- integer.
+{:id="ListPicker.TextColor" .color} *文本颜色*
+: 设置`列表选择框`的文本颜色，使用RGBA数值表示。
 
-{:id="ListPicker.Title" .text} *Title*
-: Optional title displayed at the top of the list of choices.
+{:id="ListPicker.Title" .text} *标题*
+: 可选标题显示在选项列表的顶部。
 
-{:id="ListPicker.Visible" .boolean} *Visible*
-: Specifies whether the `ListPicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `ListPicker` is showing and `假`{:.logic.block} if hidden.
+{:id="ListPicker.Visible" .boolean} *可见性*
+: 设置`列表选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表选择框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="ListPicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `ListPicker`, measured in pixels.
+{:id="ListPicker.Width" .number .bo} *宽度*
+: 设置`列表选择框`的水平宽度，以像素px为单位。
 
-{:id="ListPicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `ListPicker` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="ListPicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`列表选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ListPicker-Events}
 
@@ -623,8 +599,8 @@ This is a visible component that displays a list of text and image elements in y
 
 {:.properties}
 
-{:id="ListView.BackgroundColor" .color} *BackgroundColor*
-: The color of the `ListView` background.
+{:id="ListView.BackgroundColor" .color} *背景颜色*
+: 设置`列表显示框`的背景颜色。
 
 {:id="ListView.Elements" .list .bo} *Elements*
 : Specifies the list of choices to display.
@@ -636,20 +612,18 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.FontSizeDetail" .number} *FontSizeDetail*
 : Specifies the `ListView` item's text font size
 
-{:id="ListView.FontTypeface" .number .do} *FontTypeface*
-: Specifies the label's text's font face as default, serif, sans
- serif, or monospace.
+{:id="ListView.FontTypeface" .number .do} *字体*
+: 设置`列表显示框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
 {:id="ListView.FontTypefaceDetail" .number .do} *FontTypefaceDetail*
 : Specifies the label's text's font face as default, serif, sans
  serif, or monospace.
 
-{:id="ListView.Height" .number .bo} *Height*
-: Specifies the `ListView`'s vertical height, measured in pixels.
+{:id="ListView.Height" .number .bo} *高度*
+: 设置`列表显示框`的垂直高度，以像素px为单位。
 
-{:id="ListView.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `ListView`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="ListView.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`列表显示框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="ListView.ImageHeight" .number} *ImageHeight*
 : Specifies the image height of ListView layouts containing images
@@ -691,25 +665,23 @@ This is a visible component that displays a list of text and image elements in y
 : Sets visibility of the filter bar. `真`{:.logic.block} will show the bar,
  `假`{:.logic.block} will hide it.
 
-{:id="ListView.TextColor" .color} *TextColor*
-: The text color of the `ListView` items.
+{:id="ListView.TextColor" .color} *文本颜色*
+:: 设置`列表显示框`的文本颜色，使用RGBA数值表示。
 
 {:id="ListView.TextColorDetail" .color} *TextColorDetail*
 : Specifies the color of the secondary text in a ListView layout
 
 {:id="ListView.TextSize" .number} *TextSize*
-: Specifies the `ListView` item's text font size
+: Specifies the `列表显示框` item's text font size
 
-{:id="ListView.Visible" .boolean} *Visible*
-: Specifies whether the `ListView` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `ListView` is showing and `假`{:.logic.block} if hidden.
+{:id="ListView.Visible" .boolean} *可见性*
+: 设置`列表显示框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表显示框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="ListView.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `ListView`, measured in pixels.
+{:id="ListView.Width" .number .bo} *宽度*
+: 设置`列表显示框`的水平宽度，以像素px为单位。
 
-{:id="ListView.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `ListView` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="ListView.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`列表显示框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ListView-Events}
 
@@ -749,13 +721,13 @@ The Notifier component displays alert messages and creates Android log entries t
 
 {:.properties}
 
-{:id="Notifier.BackgroundColor" .color .wo} *BackgroundColor*
+{:id="Notifier.BackgroundColor" .color .wo} *背景颜色*
 : Specifies the background color for alerts (not dialogs).
 
 {:id="Notifier.NotifierLength" .number .do} *NotifierLength*
 : Specifies the length of time that the alert is shown -- either "short" or "long".
 
-{:id="Notifier.TextColor" .color} *TextColor*
+{:id="Notifier.TextColor" .color} *文本颜色*
 : Specifies the text color for alerts (not dialogs).
 
 ### 事件  {#Notifier-Events}
@@ -853,34 +825,30 @@ Users enter passwords in a password text box component, which hides the text tha
 
 {:.properties}
 
-{:id="PasswordTextBox.BackgroundColor" .color} *BackgroundColor*
+{:id="PasswordTextBox.BackgroundColor" .color} *背景颜色*
 : The background color of the `PasswordTextBox``. You can choose a color by name in the Designer or in
  the Blocks Editor. The default background color is 'default' (shaded 3-D look).
 
-{:id="PasswordTextBox.Enabled" .boolean} *Enabled*
+{:id="PasswordTextBox.Enabled" .boolean} *启用*
 : If set, user can enter text into the `PasswordTextBox`.
 
-{:id="PasswordTextBox.FontBold" .boolean .do} *FontBold*
-: Specifies whether the text of the `PasswordTextBox` should be bold.
- Some fonts do not support bold.
+{:id="PasswordTextBox.FontBold" .boolean .do} *粗体*
+: 设置`密码输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="PasswordTextBox.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the text of the `PasswordTextBox` should be italic.
- Some fonts do not support italic.
+{:id="PasswordTextBox.FontItalic" .boolean .do} *斜体*
+: 设置`密码输入框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="PasswordTextBox.FontSize" .number} *FontSize*
-: Specifies the text font size of the `PasswordTextBox`, measured in sp(scale-independent pixels).
+{:id="PasswordTextBox.FontSize" .number} *字体大小*
+: 设置`密码输入框`的字体大小，以像素px为单位。
 
-{:id="PasswordTextBox.FontTypeface" .number .do} *FontTypeface*
-: The text font face of the `PasswordTextBox`. Valid values are `0` (default), `1` (serif), `2` (sans
- serif), or `3` (monospace).
+{:id="PasswordTextBox.FontTypeface" .number .do} *字体*
+: 设置`密码输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
 
-{:id="PasswordTextBox.Height" .number .bo} *Height*
-: Specifies the `PasswordTextBox`'s vertical height, measured in pixels.
+{:id="PasswordTextBox.Height" .number .bo} *高度*
+: 设置`密码输入框`的垂直高度，以像素px为单位。
 
-{:id="PasswordTextBox.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `PasswordTextBox`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="PasswordTextBox.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`密码输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="PasswordTextBox.Hint" .text} *Hint*
 : `PasswordTextBox` hint for the user.
@@ -894,30 +862,27 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.PasswordVisible" .boolean .bo} *PasswordVisible*
 : Specifies whether the password is hidden (default) or shown.
 
-{:id="PasswordTextBox.Text" .text} *Text*
+{:id="PasswordTextBox.Text" .text} *文本*
 : The text in the `PasswordTextBox`, which can be set by the programmer in the Designer or Blocks Editor,
  or it can be entered by the user (unless the [`Enabled`](#PasswordTextBox.Enabled) property is false).
 
-{:id="PasswordTextBox.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `PasswordTextBox`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="PasswordTextBox.TextAlignment" .number .do} *文本对齐*
+: 设置`密码输入框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="PasswordTextBox.TextColor" .color} *TextColor*
-: Specifies the text color of the `PasswordTextBox` as an alpha-red-green-blue
- integer.
+{:id="PasswordTextBox.TextColor" .color} *文本颜色*
+: 设置`密码输入框`的文本颜色，使用RGBA数值表示。
 
-{:id="PasswordTextBox.Visible" .boolean} *Visible*
-: Specifies whether the `PasswordTextBox` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `PasswordTextBox` is showing and `假`{:.logic.block} if hidden.
+{:id="PasswordTextBox.Visible" .boolean} *可见性*
+: 设置`密码输入框`是否显示在屏幕上，值是`真`{:.logic.block}则`密码输入框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="PasswordTextBox.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `PasswordTextBox`, measured in pixels.
+{:id="PasswordTextBox.Width" .number .bo} *宽度*
+: 设置`密码输入框`的水平宽度，以像素px为单位。
 
-{:id="PasswordTextBox.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `PasswordTextBox` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="PasswordTextBox.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`密码输入框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#PasswordTextBox-Events}
 
@@ -971,12 +936,10 @@ Top-level component containing all other components in the program.
 : This is the display name of the installed application in the phone. If the `AppName` is blank,
  it will be set to the name of the project when the project is built.
 
-{:id="Screen.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `Screen`'s background color as an alpha-red-green-blue
- integer.  If an [`BackgroundImage`](#Screen.BackgroundImage) has been set, the color
- change will not be visible until the [`BackgroundImage`](#Screen.BackgroundImage) is removed.
+{:id="Screen.BackgroundColor" .color} *背景颜色*
+: 设置`屏幕`的背景颜色，使用RGBA数值表示，如果设置了[`背景图像`](#Screen.BackgroundImage)属性，则不能显示背景颜色直到删除[`背景图像`](#Screen.BackgroundImage)属性为止。
 
-{:id="Screen.BackgroundImage" .text} *BackgroundImage*
+{:id="Screen.BackgroundImage" .text} *背景图像*
 : Specifies the path of the `Screen`'s background image. If there is both an `BackgroundImage`
  and a [`BackgroundColor`](#Screen.BackgroundColor) specified, only the `BackgroundImage` will be visible.
 
@@ -994,7 +957,7 @@ Top-level component containing all other components in the program.
 : Specifies the default scope used when components access files. Note that the [`File`](#File)
  component has its own property for controlling file scopes.
 
-{:id="Screen.Height" .number .ro .bo} *Height*
+{:id="Screen.Height" .number .ro .bo} *高度*
 : Returns the Screen height in pixels (y-size).
 
 {:id="Screen.HighContrast" .boolean} *HighContrast*
@@ -1090,7 +1053,7 @@ Top-level component containing all other components in the program.
 : A string which can be changed to allow Google Play Store users to distinguish between
  different versions of the App.
 
-{:id="Screen.Width" .number .ro .bo} *Width*
+{:id="Screen.Width" .number .ro .bo} *宽度*
 : Returns the Screen width in pixels (x-size).
 
 ### 事件  {#Screen-Events}
@@ -1169,7 +1132,7 @@ This class is used to display a `Slider`.
  integer, i.e., `0xAARRGGBB`.  An alpha of `00`
  indicates fully transparent and `FF` means opaque.
 
-{:id="Slider.HeightPercent" .number .wo .bo} *HeightPercent*
+{:id="Slider.HeightPercent" .number .wo .bo} *高度百分比*
 : Specifies the `Slider`'s vertical height as a percentage
  of the [`屏幕高度`](userinterface.html#Screen.Height).
 
@@ -1194,14 +1157,14 @@ This class is used to display a `Slider`.
  then it will be set to same value as [`MaxValue`](#Slider.MaxValue). If this value is less than
  [`MinValue`](#Slider.MinValue), then it will be set to same value as [`MinValue`](#Slider.MinValue).
 
-{:id="Slider.Visible" .boolean} *Visible*
+{:id="Slider.Visible" .boolean} *可见性*
 : Specifies whether the `Slider` should be visible on the screen.  Value is `真`{:.logic.block}
  if the `Slider` is showing and `假`{:.logic.block} if hidden.
 
-{:id="Slider.Width" .number .bo} *Width*
+{:id="Slider.Width" .number .bo} *宽度*
 : Specifies the horizontal width of the `Slider`, measured in pixels.
 
-{:id="Slider.WidthPercent" .number .wo .bo} *WidthPercent*
+{:id="Slider.WidthPercent" .number .wo .bo} *宽度百分比*
 : Specifies the horizontal width of the `Slider` as a percentage
  of the [`屏幕宽度`](userinterface.html#Screen.Width).
 
@@ -1240,12 +1203,11 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Spinner.ElementsFromString" .text .wo} *ElementsFromString*
 : Set the list of choices from a string of comma-separated values.
 
-{:id="Spinner.Height" .number .bo} *Height*
-: Specifies the `Spinner`'s vertical height, measured in pixels.
+{:id="Spinner.Height" .number .bo} *高度*
+: 设置`下拉框`的垂直高度，以像素px为单位。
 
-{:id="Spinner.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Spinner`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="Spinner.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`下拉框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Spinner.Prompt" .text} *Prompt*
 : Specifies the text used for the title of the Spinner window.
@@ -1259,16 +1221,14 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
  items in the `Spinner`, `SelectionIndex` will be set to `0`, and [`Selection`](#Spinner.Selection)
  will be set to the empty text.
 
-{:id="Spinner.Visible" .boolean} *Visible*
-: Specifies whether the `Spinner` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Spinner` is showing and `假`{:.logic.block} if hidden.
+{:id="Spinner.Visible" .boolean} *可见性*
+: 设置`下拉框`是否显示在屏幕上，值是`真`{:.logic.block}则`下拉框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Spinner.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Spinner`, measured in pixels.
+{:id="Spinner.Width" .number .bo} *宽度*
+: 设置`下拉框`的水平宽度，以像素px为单位。
 
-{:id="Spinner.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Spinner` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="Spinner.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`下拉框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Spinner-Events}
 
@@ -1298,44 +1258,38 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 {:.properties}
 
-{:id="Switch.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the `Switch` as an alpha-red-green-blue
- integer.
+{:id="Switch.BackgroundColor" .color} *背景颜色*
+: 设置`切换开关`的背景颜色，使用RGBA数值表示。
 
-{:id="Switch.Enabled" .boolean} *Enabled*
-: Specifies whether the `Switch` should be active and clickable.
+{:id="Switch.Enabled" .boolean} *启用*
+: 设置`切换开关`是否可以被激活和点击。
 
-{:id="Switch.FontBold" .boolean .do} *FontBold*
-: Specifies whether the text of the `Switch` should be bold.
- Some fonts do not support bold.
+{:id="Switch.FontBold" .boolean .do} *粗体*
+: 设置`切换开关`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="Switch.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the text of the `Switch` should be italic.
- Some fonts do not support italic.
+{:id="Switch.FontItalic" .boolean .do} *斜体*
+: 设置`切换开关`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="Switch.FontSize" .number} *FontSize*
-: Specifies the text font size of the `Switch`, measured in sp(scale-independent pixels).
+{:id="Switch.FontSize" .number} *字体大小*
+: 设置`切换开关`的字体大小，以像素px为单位。
 
-{:id="Switch.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `Switch` as default, serif, sans
- serif, or monospace.
+{:id="Switch.FontTypeface" .number .do} *字体*
+: 设置`切换开关`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="Switch.Height" .number .bo} *Height*
-: Specifies the `Switch`'s vertical height, measured in pixels.
+{:id="Switch.Height" .number .bo} *高度*
+: 设置`切换开关`的垂直高度，以像素px为单位。
 
-{:id="Switch.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Switch`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="Switch.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`切换开关`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Switch.On" .boolean} *On*
 : True if the switch is in the On state, false otherwise.
 
-{:id="Switch.Text" .text} *Text*
-: Specifies the text displayed by the `Switch`.
+{:id="Switch.Text" .text} *文本*
+: 设置`切换开关`的显示文本。
 
-{:id="Switch.TextColor" .color} *TextColor*
-: Specifies the text color of the `Switch` as an alpha-red-green-blue
- integer.
+{:id="Switch.TextColor" .color} *文本颜色*
+: 设置`切换开关`的文本颜色，使用RGBA数值表示。
 
 {:id="Switch.ThumbColorActive" .color} *ThumbColorActive*
 : Specifies the `Switch`'s thumb color when switch is in the On state.
@@ -1349,16 +1303,14 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Switch.TrackColorInactive" .color} *TrackColorInactive*
 : Specifies the `Switch`'s track color when in the Off state.
 
-{:id="Switch.Visible" .boolean} *Visible*
-: Specifies whether the `Switch` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Switch` is showing and `假`{:.logic.block} if hidden.
+{:id="Switch.Visible" .boolean} *可见性*
+: 设置`切换开关`是否显示在屏幕上，值是`真`{:.logic.block}则`切换开关`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Switch.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Switch`, measured in pixels.
+{:id="Switch.Width" .number .bo} *宽度*
+: 设置`切换开关`的水平宽度，以像素px为单位。
 
-{:id="Switch.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Switch` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="Switch.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`切换开关`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Switch-Events}
 
@@ -1411,34 +1363,30 @@ Users enter text in a text box component.
 
 {:.properties}
 
-{:id="TextBox.BackgroundColor" .color} *BackgroundColor*
+{:id="TextBox.BackgroundColor" .color} *背景颜色*
 : The background color of the `TextBox``. You can choose a color by name in the Designer or in
  the Blocks Editor. The default background color is 'default' (shaded 3-D look).
 
-{:id="TextBox.Enabled" .boolean} *Enabled*
+{:id="TextBox.Enabled" .boolean} *启用*
 : If set, user can enter text into the `TextBox`.
 
-{:id="TextBox.FontBold" .boolean .do} *FontBold*
-: Specifies whether the text of the `TextBox` should be bold.
- Some fonts do not support bold.
+{:id="TextBox.FontBold" .boolean .do} *粗体*
+: 设置`文本输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="TextBox.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the text of the `TextBox` should be italic.
- Some fonts do not support italic.
+{:id="TextBox.FontItalic" .boolean .do} *斜体*
+: 设置`文本输入框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="TextBox.FontSize" .number} *FontSize*
-: Specifies the text font size of the `TextBox`, measured in sp(scale-independent pixels).
+{:id="TextBox.FontSize" .number} *字体大小*
+: 设置`文本输入框`的字体大小，以像素px为单位。
 
-{:id="TextBox.FontTypeface" .number .do} *FontTypeface*
-: The text font face of the `TextBox`. Valid values are `0` (default), `1` (serif), `2` (sans
- serif), or `3` (monospace).
+{:id="TextBox.FontTypeface" .number .do} *字体*
+: 设置`文本输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
 
-{:id="TextBox.Height" .number .bo} *Height*
-: Specifies the `TextBox`'s vertical height, measured in pixels.
+{:id="TextBox.Height" .number .bo} *高度*
+: 设置`文本输入框`的垂直高度，以像素px为单位。
 
-{:id="TextBox.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `TextBox`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="TextBox.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`文本输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="TextBox.Hint" .text} *Hint*
 : `TextBox` hint for the user.
@@ -1458,30 +1406,27 @@ Users enter text in a text box component.
 {:id="TextBox.ReadOnly" .boolean} *ReadOnly*
 : Whether the TextBox is read-only. By default, this is `真`{:.logic.block}.
 
-{:id="TextBox.Text" .text} *Text*
+{:id="TextBox.Text" .text} *文本*
 : The text in the `TextBox`, which can be set by the programmer in the Designer or Blocks Editor,
  or it can be entered by the user (unless the [`Enabled`](#TextBox.Enabled) property is false).
 
-{:id="TextBox.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `TextBox`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="TextBox.TextAlignment" .number .do} *文本对齐*
+: 设置`文本输入框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="TextBox.TextColor" .color} *TextColor*
-: Specifies the text color of the `TextBox` as an alpha-red-green-blue
- integer.
+{:id="TextBox.TextColor" .color} *文本颜色*
+: 设置`文本输入框`的文本颜色，使用RGBA数值表示。
 
-{:id="TextBox.Visible" .boolean} *Visible*
-: Specifies whether the `TextBox` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `TextBox` is showing and `假`{:.logic.block} if hidden.
+{:id="TextBox.Visible" .boolean} *可见性*
+: 设置`文本输入框`是否显示在屏幕上，值是`真`{:.logic.block}则`文本输入框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="TextBox.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `TextBox`, measured in pixels.
+{:id="TextBox.Width" .number .bo} *宽度*
+: 设置`文本输入框`的水平宽度，以像素px为单位。
 
-{:id="TextBox.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `TextBox` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="TextBox.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`文本输入框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#TextBox-Events}
 
@@ -1518,35 +1463,31 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 
 {:.properties}
 
-{:id="TimePicker.BackgroundColor" .color} *BackgroundColor*
+{:id="TimePicker.BackgroundColor" .color} *背景颜色*
 : Specifies the `TimePicker`'s background color as an alpha-red-green-blue
  integer.  If an [`Image`](#TimePicker.Image) has been set, the color
  change will not be visible until the [`Image`](#TimePicker.Image) is removed.
 
-{:id="TimePicker.Enabled" .boolean} *Enabled*
-: Specifies whether the `TimePicker` should be active and clickable.
+{:id="TimePicker.Enabled" .boolean} *启用*
+: 设置`时间选择框`是否可以被激活和点击。
 
-{:id="TimePicker.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `TimePicker` should be bold.
- Some fonts do not support bold.
+{:id="TimePicker.FontBold" .boolean} *粗体*
+: 设置`时间选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="TimePicker.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `TimePicker` should be italic.
- Some fonts do not support italic.
+{:id="TimePicker.FontItalic" .boolean} *斜体*
+: 设置`时间选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="TimePicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `TimePicker`, measured in sp(scale-independent pixels).
+{:id="TimePicker.FontSize" .number} *字体大小*
+: 设置`时间选择框`的字体大小，以像素px为单位。
 
-{:id="TimePicker.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `TimePicker` as default, serif, sans
- serif, or monospace.
+{:id="TimePicker.FontTypeface" .number .do} *字体*
+: 设置`时间选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="TimePicker.Height" .number .bo} *Height*
-: Specifies the `TimePicker`'s vertical height, measured in pixels.
+{:id="TimePicker.Height" .number .bo} *高度*
+: 设置`时间选择框`的垂直高度，以像素px为单位。
 
-{:id="TimePicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `TimePicker`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="TimePicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`时间选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="TimePicker.Hour" .number .ro .bo} *Hour*
 : Returns the hour of the time that was last picked using the `TimePicker``.
@@ -1572,29 +1513,26 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 : Specifies if a visual feedback should be shown when a `TimePicker` with an assigned
  [`Image`](#TimePicker.Image) is pressed.
 
-{:id="TimePicker.Text" .text} *Text*
-: Specifies the text displayed by the `TimePicker`.
+{:id="TimePicker.Text" .text} *文本*
+: 设置`时间选择框`的显示文本。
 
-{:id="TimePicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `TimePicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="TimePicker.TextAlignment" .number .do} *文本对齐*
+: 设置`时间选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="TimePicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `TimePicker` as an alpha-red-green-blue
- integer.
+{:id="TimePicker.TextColor" .color} *文本颜色*
+: 设置`时间选择框`的文本颜色，使用RGBA数值表示。
 
-{:id="TimePicker.Visible" .boolean} *Visible*
-: Specifies whether the `TimePicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `TimePicker` is showing and `假`{:.logic.block} if hidden.
+{:id="TimePicker.Visible" .boolean} *可见性*
+: 设置`时间选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`时间选择框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="TimePicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `TimePicker`, measured in pixels.
+{:id="TimePicker.Width" .number .bo} *宽度*
+: 设置`时间选择框`的水平宽度，以像素px为单位。
 
-{:id="TimePicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `TimePicker` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="TimePicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`时间选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#TimePicker-Events}
 
@@ -1694,12 +1632,11 @@ Component for viewing Web pages.
 : Determines whether to follow links when they are tapped in the `WebViewer`. If you follow
  links, you can use [`GoBack`](#WebViewer.GoBack) and [`GoForward`](#WebViewer.GoForward) to navigate the browser history.
 
-{:id="WebViewer.Height" .number .bo} *Height*
-: Specifies the `WebViewer`'s vertical height, measured in pixels.
+{:id="WebViewer.Height" .number .bo} *高度*
+: 设置`Web浏览框`的垂直高度，以像素px为单位。
 
-{:id="WebViewer.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `WebViewer`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+{:id="WebViewer.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`Web浏览框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="WebViewer.HomeUrl" .text} *HomeUrl*
 : Specifies the URL of the page the `WebViewer` should initially open to. Setting this will
@@ -1719,20 +1656,18 @@ Component for viewing Web pages.
 : Specifies whether or not this `WebViewer` can access the JavaScript
  geolocation API.
 
-{:id="WebViewer.Visible" .boolean} *Visible*
-: Specifies whether the `WebViewer` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `WebViewer` is showing and `假`{:.logic.block} if hidden.
+{:id="WebViewer.Visible" .boolean} *可见性*
+: 设置`Web浏览框`是否显示在屏幕上，值是`真`{:.logic.block}则`Web浏览框`显示，`假`{:.logic.block}则隐藏。
 
 {:id="WebViewer.WebViewString" .text .bo} *WebViewString*
 : Gets the `WebView`'s String, which is viewable through Javascript in the `WebView` as the
  `window.AppInventor` object.
 
-{:id="WebViewer.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `WebViewer`, measured in pixels.
+{:id="WebViewer.Width" .number .bo} *宽度*
+: 设置`Web浏览框`的水平宽度，以像素px为单位。
 
-{:id="WebViewer.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `WebViewer` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+{:id="WebViewer.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`Web浏览框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#WebViewer-Events}
 
