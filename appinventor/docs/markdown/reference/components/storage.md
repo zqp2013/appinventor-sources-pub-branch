@@ -15,8 +15,8 @@ title: 数据存储组件
 * [微数据库](#TinyDB)
 * [网络微数据库](#TinyWebDB)
 
+***
 ## 云数据库  {#CloudDB}
-
 
 `云数据库`是一个不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置[`服务地址`](#CloudDB.RedisServer)属性和[`服务端口`](#CloudDB.RedisPort)属性以访问您自己的服务器。
 
@@ -97,37 +97,31 @@ title: 数据存储组件
 : Asks `CloudDB` to store the given `value`{:.variable.block} under the given
  `tag`{:.text.block}.
 
-## DataFile  {#DataFile}
+***
+## 数据文件  {#DataFile}
 
-Component for DataFile
-
-
+`数据文件`组件。
 
 ### 属性  {#DataFile-Properties}
 
 {:.properties}
 
-{:id="DataFile.ColumnNames" .list .ro .bo} *ColumnNames*
-: Retrieve the column names of the currently loaded Source file.
- For CSV files, this will return a List of entries in the first row.
- For JSON files, this will return a List of keys in the JSON object.
+{:id="DataFile.ColumnNames" .list .ro .bo} *列名列表*
+: 获取当前已加载的源文件的列名列表。
+  * 对于 CSV 文件，将返回第一行的数据列表。
+  * 对于 JSON 文件，将返回 JSON 对象中的键列表。
 
-{:id="DataFile.Columns" .list .ro .bo} *Columns*
-: Retrieve a List of columns of the currently loaded Source file.
+{:id="DataFile.Columns" .list .ro .bo} *列数据*
+: 获取当前已加载的源文件的列数据列表。
 
-{:id="DataFile.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *DefaultScope*
-: Specifies the default scope for files accessed using the File component. The App scope should
- work for most apps. Legacy mode can be used for apps that predate the newer constraints in
- Android on app file access.
+{:id="DataFile.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认范围*
+: 指定使用`数据文件`组件访问文件的默认范围。App范围适用于大多数应用程序。兼容模式可用于旧的应用程序（新约束之前）Android 上的文件访问。
 
-{:id="DataFile.Rows" .list .ro .bo} *Rows*
-: Retrieve a List of rows of the currently loaded Source file.
+{:id="DataFile.Rows" .list .ro .bo} *行数据*
+: 获取当前已加载的源文件的行数据列表。
 
-{:id="DataFile.SourceFile" .text .wo .do} *SourceFile*
-: Sets the source file to parse data from, and then parses the
- file asynchronously. The results are stored in the [`Columns`](#DataFile.Columns),
- [`Rows`](#DataFile.Rows) and [`ColumnNames`](#DataFile.ColumnNames) properties.
- The expected formatting of the file is either the CSV or JSON format.
+{:id="DataFile.SourceFile" .text .wo .do} *源文件*
+: 设置数据解析的源文件，然后**异步解析**文件。结果存储在 [`列数据`](#DataFile.Columns) 、[`行数据`](#DataFile.Rows) 及 [`列名列表`](#DataFile.ColumnNames) 属性中。文件格式为 CSV 或 JSON 格式。
 
 ### 事件  {#DataFile-Events}
 
@@ -139,76 +133,54 @@ Component for DataFile
 
 {:.methods}
 
-{:id="DataFile.ReadFile" class="method"} <i/> ReadFile(*fileName*{:.text})
-: Indicates source file to load data from. The expected format of the contents of the file
- are either CSV or JSON. Prefix the `fileName`{:.text.block} with `/` to read from a
- specific file on the SD card (for example, `/myFile.txt` will read the file
- `/sdcard/myFile.txt`). To read assets packaged with an application (also works for the
- Companion) start the `fileName`{:.text.block} with `//` (two slashes). If a
- `fileName`{:.text.block} does not start with a slash, it will be read from the application's
- private storage (for packaged apps) and from `/sdcard/AppInventor/data` for the Companion.
+{:id="DataFile.ReadFile" class="method"} <i/> 读取文件(*文件名*{:.text})
+: 开始加载数据源文件，文件内容的格式是 CSV 或 JSON。 
+  * 在 `文件名`{:.text.block} 前加上 `/` 来读取SD 卡上的特定文件（例如，`/myFile.txt` 将读取该文件 `/sdcard/myFile.txt`）。
+  * 读取应用程序打包的资源（也适用于AI伴侣)，`文件名`{:.text.block} 以 `//`（两个斜杠）开始。
+  * 如果一个`文件名`{:.text.block} 不以 `/` 开头，打包的应用程序会从应用程序的私有存储读取，AI伴侣则是`/sdcard/AppInventor/data`目录。
 
-## File  {#File}
+***
+## 文件管理器  {#File}
 
-Non-visible component for storing and retrieving files. Use this component to write or read files
- on the device.
+不可见组件，用于写入或读取设备上的文件，外部文件的路径均由[`范围`](#File.Scope) 属性指定，不论应用程序是AI伴侣运行还是已编译、以及应用运行的 Android 版本。
 
- The exact location where external files are placed is a function of the value of the
- [`Scope`](#File.Scope) property, whether the app is running in the Companion or compiled,
- and which version of Android the app is running on.
+由于较新版本的 Android 要求将文件存储在App特定目录中，因此 `默认范围` 设置为 `App`，如果使用的是旧版 Android 并且需要访问兼容的公共存储，将 `默认范围` 属性更改为`兼容`，当然你也可以使用代码块来修改`范围`属性。
 
-   Because newer versions of Android require files be stored in app-specific directories, the
- `DefaultScope` is set to `App`. If you are using an older version of Android and need access to
- the legacy public storage, change the `DefaultScope` property to `Legacy`. You can also change
- the `Scope` using the blocks.
+  **下面是每种`范围`类型的简述：**
 
-   Below we briefly describe each scope type:
+  - App：Android 2.2及更高版本上文件将从应用程序特定存储中读取和写入，在 Android 早期版本上，文件将写入兼容存储中。
+  - 程序包：从应用程序包中读取文件，应用程序包属于**只读存储**，不可写入。
+  - 缓存：文件将从应用程序的缓存目录读取和写入，可以在缓存中重新创建临时文件，也允许用户清理临时文件以重新获得存储空间。
+  - 兼容：文件将使用 App Inventor 在nb187版本之前的规则从文件系统读取和写入，也就是说，将从中读取以单个`/`开头的文件名写入外部存储目录的根目录，例如 `/sdcard/`。
+      兼容功能***将无法在 Android 11 或更高版本上运行***。
+  - 私有：文件将从应用程序的私有目录读取和写入，使用这个范围存储的数据对其他App不可见，例如文件管理App。
+  - 共享：文件将从设备的共享媒体目录中读取和写入，例如`图片`目录。
 
-   - App: Files will be read from and written to app-specific storage on Android 2.2 and
-     higher. On earlier versions of Android, files will be written to legacy storage.
-   - Asset: Files will be read from the app assets. It is an error to attempt to write to app
-     assets as they are contained in read-only storage.
-   - Cache: Files will be read from and written to the app's cache directory. Cache is useful for
-     temporary files that can be recreated as it allows the user to clear temporary files to get
-     back storage space.
-   - Legacy: Files will be read from and written to the file system using the App Inventor rules
-     prior to release nb187. That is, file names starting with a single `/` will be read from and
-     written to the root of the external storage directory, e.g., `/sdcard/`. Legacy functionality
-     ***will not work*** on Android 11 or later.
-   - Private: Files will be read from and written to the app's private directory. Use this scope
-     to store information that shouldn't be visible to other applications, such as file
-     management apps.
-   - Shared: Files will be read from and written to the device's shared media directories, such
-     as `Pictures`.
+  1. 注1：在 `兼容` 模式下，文件名可以采用以下三种形式之一：
+   - 私有文件：没有前导 `/` ，写入应用程序私有存储（例如，`file.txt`）
+   - 外部文件：有一个前导的`/`，写入公共存储（例如，`/file.txt`）
+   - 应用程序包：有两个前导的 `//`，**只能读取**（例如，`//file.txt`）
 
- Note 1: In Legacy mode, file names can take one of three forms:
-
-  - Private files have no leading `/` and are written to app private storage (e.g., "file.txt")
-  - External files have a single leading `/` and are written to public storage (e.g., "/file.txt")
-  - Bundled app assets have two leading `//` and can only be read (e.g., "//file.txt")
-
- Note 2: In all scopes, a file name beginning with two slashes (`//`) will be interpreted as an
- asset name.
-
+  1. 注2：在所有范围内，以两个斜杠 (`//`) 开头的文件名是程序包中的文件，**只读，不可写**。
 
 
 ### 属性  {#File-Properties}
 
 {:.properties}
 
-{:id="File.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *DefaultScope*
+{:id="File.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认范围*
 : Specifies the default scope for files accessed using the File component. The App scope should
  work for most apps. Legacy mode can be used for apps that predate the newer constraints in
  Android on app file access.
 
-{:id="File.ReadPermission" .boolean .wo .do} *ReadPermission*
+{:id="File.ReadPermission" .boolean .wo .do} *读权限*
 : A designer-only property that can be used to enable read access to file storage outside of the
  app-specific directories.
 
 {:id="File.Scope" .com.google.appinventor.components.common.FileScopeEnum .bo} *Scope*
 : Indicates the current scope for operations such as ReadFrom and SaveFile.
 
-{:id="File.WritePermission" .boolean .wo .do} *WritePermission*
+{:id="File.WritePermission" .boolean .wo .do} *写权限*
 : A designer-only property that can be used to enable write access to file storage outside of the
  app-specific directories.
 
@@ -284,7 +256,8 @@ Non-visible component for storing and retrieving files. Use this component to wr
    Note that this block will overwrite a file if it already exists. If you want to add content
  to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
 
-## Spreadsheet  {#Spreadsheet}
+***
+## 电子表格  {#Spreadsheet}
 
 Spreadsheet is a non-visible component for storing and receiving data from
  a Google Sheets document using the Google Sheets API.
@@ -299,8 +272,6 @@ Spreadsheet is a non-visible component for storing and receiving data from
  found <a href='/reference/other/googlesheets-api-setup.html'>here</a>.
 
  Row and column numbers are 1-indexed.
-
-
 
 ### 属性  {#Spreadsheet-Properties}
 
@@ -481,6 +452,7 @@ Spreadsheet is a non-visible component for storing and receiving data from
  will not erase the entire row.) Once complete, it triggers the
  [`FinishedWriteRow`](#Spreadsheet.FinishedWriteRow) callback event.
 
+***
 ## 微数据库  {#TinyDB}
 
 `微数据库`是一个不可见的组件，用于存储应用程序的数据。
@@ -528,7 +500,8 @@ Spreadsheet is a non-visible component for storing and receiving data from
  
 : `存储值`可以是文本，也可以是数字。重复保存同一个标签的话，第二次会覆盖第一次的值，即以最新存储的值为准。
 
-## TinyWebDB  {#TinyWebDB}
+***
+## 网络微数据库  {#TinyWebDB}
 
 The `TinyWebDB` component communicates with a Web service to store
  and retrieve information.  Although this component is usable, it is
