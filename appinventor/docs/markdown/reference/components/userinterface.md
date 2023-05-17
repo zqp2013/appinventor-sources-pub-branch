@@ -25,6 +25,7 @@ title: 用户界面（UI）组件
 * [时间选择框（TimePicker）](#TimePicker)
 * [Web浏览框（WebViewer）](#WebViewer)
 
+***
 ## 按钮（Button）  {#Button}
 
 按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”视图或“程序设计”视图中修改其属性。
@@ -118,7 +119,7 @@ title: 用户界面（UI）组件
 {:.methods}
 无
 
-
+***
 ## 复选框  {#CheckBox}
 
 ![复选框示例](images/checkbox.png)
@@ -126,8 +127,6 @@ title: 用户界面（UI）组件
  `复选框`组件可以检测用户点击，并更改其布尔状态。
 
  当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”视图或“程序设计”视图中进行设置。
-
-
 
 ### 属性  {#CheckBox-Properties}
 
@@ -194,6 +193,7 @@ title: 用户界面（UI）组件
 无
 
 
+***
 ## 日期选择框  {#DatePicker}
 
 单击一个按钮弹出对话框以允许用户选择日期(公历)。
@@ -313,6 +313,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
 : Allows the user to set the date from the instant to be displayed when the date picker opens.
 
+***
 ## 图像  {#Image}
 
 用于显示图像和基本动画的组件。要显示的图片以及图像外观的其他方面，可以在“界面设计”视图或“程序设计”视图中进行设置。
@@ -372,6 +373,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 无
 
 
+***
 ## 标签  {#Label}
 
 标签是用于显示文本的组件。
@@ -444,20 +446,14 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 无
 
 
+***
 ## 列表选择框  {#ListPicker}
 
-A button that, when clicked on, displays a list of texts for the user to choose among. The texts
- can be specified through the Designer or Blocks Editor by setting the
- [`ElementsFromString`](#ListPicker.ElementsFromString)  property to their string-separated concatenation
- (for example, `choice 1, choice 2, choice 3`) or by setting the [`Elements`](#ListPicker.Elements)
- property to a List in the Blocks editor.
+一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
+  （例如，`选择1,选择2,选择3`）或在“程序设计”视图中设置[`元素`](#ListPicker.Elements)属性，是一个列表属性。
 
- Setting property [`ShowFilterBar`](#ListPicker.ShowFilterBar) to `真`{:.logic.block}, will make the list
- searchable. Other properties affect the appearance of the button ([`TextAlignment`](#ListPicker.TextAlignment),
- [`BackgroundColor`](#ListPicker.BackgroundColor), etc.) and whether it can be clicked on
- ([`Enabled`](#ListPicker.Enabled)).
-
-
+[`显示搜索框`](#ListPicker.ShowFilterBar)属性设置为 `真`{:.logic.block}，将生成可搜索列表，其他属性影响按钮的外观 ([`文本对齐`](#ListPicker.TextAlignment),
+  [`背景颜色`](#ListPicker.BackgroundColor)等) 以及是否可以被点击（[`启用`](#ListPicker.Enabled)）。
 
 ### 属性  {#ListPicker-Properties}
 
@@ -466,10 +462,10 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.BackgroundColor" .color} *背景颜色*
 : 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
 
-{:id="ListPicker.Elements" .list .bo} *Elements*
+{:id="ListPicker.Elements" .list .bo} *元素*
 : Specifies the list of choices to display.
 
-{:id="ListPicker.ElementsFromString" .text .wo} *ElementsFromString*
+{:id="ListPicker.ElementsFromString" .text .wo} *元素字串*
 : Set the list of choices from a string of comma-separated values.
 
 {:id="ListPicker.Enabled" .boolean} *启用*
@@ -520,7 +516,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
 : 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
 
-{:id="ListPicker.ShowFilterBar" .boolean} *ShowFilterBar*
+{:id="ListPicker.ShowFilterBar" .boolean} *显示搜索框*
 : If `真`{:.logic.block}, the ListPicker will show a search filter bar.
 
 {:id="ListPicker.Text" .text} *文本*
@@ -581,6 +577,7 @@ A button that, when clicked on, displays a list of texts for the user to choose 
 {:id="ListPicker.Open" class="method"} <i/> Open()
 : Opens the `ListPicker`, as though the user clicked on it.
 
+***
 ## 列表显示框  {#ListView}
 
 This is a visible component that displays a list of text and image elements in your [`Screen`](#Screen) to
@@ -710,12 +707,11 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.Refresh" class="method"} <i/> Refresh()
 : Reload the ListView to reflect any changes in the data.
 
+***
 ## 通知器  {#Notifier}
 
 The Notifier component displays alert messages and creates Android log entries through
  an assortment of methods.
-
-
 
 ### 属性  {#Notifier-Properties}
 
@@ -803,6 +799,7 @@ The Notifier component displays alert messages and creates Android log entries t
  [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
  button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
 
+***
 ## 密码输入框  {#PasswordTextBox}
 
 Users enter passwords in a password text box component, which hides the text that has been typed in it.
@@ -818,8 +815,6 @@ Users enter passwords in a password text box component, which hides the text tha
 
  Password text box components are usually used with a [`Button`](#Button) component. The user taps the
  `Button` after entering text.
-
-
 
 ### 属性  {#PasswordTextBox-Properties}
 
@@ -903,11 +898,10 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `PasswordTextBox`.
 
+***
 ## 屏幕  {#Screen}
 
 Top-level component containing all other components in the program.
-
-
 
 ### 属性  {#Screen-Properties}
 
@@ -1096,6 +1090,7 @@ Top-level component containing all other components in the program.
 {:id="Screen.HideKeyboard" class="method"} <i/> HideKeyboard()
 : Hide the soft keyboard
 
+***
 ## 滑动条  {#Slider}
 
 This class is used to display a `Slider`.
@@ -1115,8 +1110,6 @@ This class is used to display a `Slider`.
   * [`MinValue`](#Slider.MinValue) = 10
   * [`MaxValue`](#Slider.MaxValue) = 50
   * [`ThumbPosition`](#Slider.ThumbPosition) = 30
-
-
 
 ### 属性  {#Slider-Properties}
 
@@ -1180,7 +1173,7 @@ This class is used to display a `Slider`.
 {:.methods}
 无
 
-
+***
 ## 下拉框  {#Spinner}
 
 A `Spinner` component that displays a dialog with a list of elements. These elements can be set
@@ -1190,8 +1183,6 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
  the first item already selected, so selecting it does not generate an
  [`AfterSelecting`](#Spinner.AfterSelecting) event. Consequently it's useful to make the first `Spinner` item
  be a non-choice like "Select from below...".
-
-
 
 ### 属性  {#Spinner-Properties}
 
@@ -1244,6 +1235,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Spinner.DisplayDropdown" class="method"} <i/> DisplayDropdown()
 : Displays the dropdown list for selection, same action as when the user clicks on the spinner.
 
+***
 ## 切换开关  {#Switch}
 
 `Switch` components can detect user taps and can change their boolean state in response. They
@@ -1251,8 +1243,6 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
  Switches have an on (true) state and an off (false) state. A `Switch` component raises an event
  when the user taps it to toggle between states.
-
-
 
 ### 属性  {#Switch-Properties}
 
@@ -1330,7 +1320,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:.methods}
 无
 
-
+***
 ## 文本输入框  {#TextBox}
 
 Users enter text in a text box component.
@@ -1356,8 +1346,6 @@ Users enter text in a text box component.
  `Button` when text entry is complete.
 
  If the text entered by the user should not be displayed, use [`PasswordTextBox`](#PasswordTextBox) instead.
-
-
 
 ### 属性  {#TextBox-Properties}
 
@@ -1451,13 +1439,12 @@ Users enter text in a text box component.
 {:id="TextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `TextBox`.
 
+***
 ## 时间选择框  {#TimePicker}
 
 A button that, when clicked on, opens a dialog to allow the user to select a time.
 
  Note: Date and time are manipulated using methods in the [`Clock`](sensors.html#Clock) component.
-
-
 
 ### 属性  {#TimePicker-Properties}
 
@@ -1571,6 +1558,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
  Instants are used in [`Clock`](sensors.html#Clock), [`DatePicker`](#DatePicker), and [`TimePicker`](#TimePicker)
  components.
 
+***
 ## Web浏览框  {#WebViewer}
 
 Component for viewing Web pages.
@@ -1614,8 +1602,6 @@ Component for viewing Web pages.
  both scenarios. You may also use "file:///appinventor_asset/" which provides more security by
  preventing the use of asynchronous requests from JavaScript in your assets from going out to the
  web.
-
-
 
 ### 属性  {#WebViewer-Properties}
 
