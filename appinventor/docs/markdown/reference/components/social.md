@@ -16,7 +16,8 @@ title: 社交应用组件
 * [短信收发器](#Texting)
 * [推特客户端](#Twitter)
 
-## ContactPicker  {#ContactPicker}
+***
+## 联系人选择框  {#ContactPicker}
 
 A button that, when clicked on, displays a list of the contacts to choose among. After the user
  has made a selection, the following properties will be set to information about the chosen
@@ -171,7 +172,8 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
 : Opens the selected contact's entry in the device's default Contacts app.
 
-## EmailPicker  {#EmailPicker}
+***
+## 邮箱地址选择框  {#EmailPicker}
 
 An `EmailPicker` is a kind of text box. If the user begins entering the name or email address of
  a contact, the phone will show a dropdown menu of choices that complete the entry. If there are
@@ -270,7 +272,8 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 {:id="EmailPicker.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `EmailPicker`.
 
-## PhoneCall  {#PhoneCall}
+***
+## 电话拨号器  {#PhoneCall}
 
 ![PhoneCall component icon](images/phonecall.png)
 
@@ -332,7 +335,8 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
  bypassing user interaction to start the call. **Most apps should use
  [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead, which requires no permissions.**
 
-## PhoneNumberPicker  {#PhoneNumberPicker}
+***
+## 电话号选择框  {#PhoneNumberPicker}
 
 A button that, when clicked on, displays a list of the contacts' phone numbers to choose among.
  After the user has made a selection, the following properties will be set to information about
@@ -483,6 +487,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
 : Opens the selected contact's entry in the device's default Contacts app.
 
+***
 ## 信息分享器  {#Sharing}
 
 `信息分享器`是一个不可见的组件，可以让App和设备上其他App之间共享数据或文件。
@@ -494,7 +499,13 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  - `"file:///sdcard/Appinventor/assets/arrow.gif"`; 或
  - `"/storage/Appinventor/assets/arrow.gif"`
 
+  * `分享消息` 弹出其他App的界面：弹出的是文档、地图、蓝牙之类的App，**没有打印机相关的，打印机App在`分享文件`的方式才弹出**。
 
+  <img src="images/sharing/分享消息弹出界面.jpg" alt="分享消息弹出界面" style="width:30%; border:1px solid #eee;"/>
+
+  * `分享文件`、`分享文件及消息` 弹出其他App的界面：`分享文件`的方式弹出的App几乎非常全面了，包括打印机App。`分享文件及消息`弹出的和`分享文件`是一致的。
+
+  <img src="images/sharing/分享文件弹出界面.jpg" alt="分享文件（分享文件及消息）弹出界面" style="width:30%; border:1px solid #eee;"/>
 
 ### 属性  {#Sharing-Properties}
 
@@ -515,13 +526,20 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="Sharing.ShareFile" class="method"} <i/> 分享文件(*文件*{:.text})
 : 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件。选定的应用程序将打开，向其中传入文件。
 
+<img src="images/sharing/分享文件.jpg" alt="分享文件效果预览" style="width:30%; border:1px solid #eee;"/>
+
 {:id="Sharing.ShareFileWithMessage" class="method"} <i/> 分享文件及消息(*文件*{:.text},*消息*{:.text})
 : 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件及消息。选定的应用程序将打开，向其中传入文件及消息。
+
+<img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;"/>
 
 {:id="Sharing.ShareMessage" class="method"} <i/> 分享消息(*消息*{:.text})
 : 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享消息。所选应用程序将打开，并向其中传入消息。
 
-## Texting  {#Texting}
+<img src="images/sharing/分享文件及消息.jpg" alt="分享文件及消息效果预览" style="width:30%; border:1px solid #eee;"/>
+
+***
+## 短信收发器  {#Texting}
 
 ![Texting component icon](images/texting.png)
 
@@ -614,7 +632,8 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  [dangerous permissions](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
  that will require additional approval if your app is submitted to the Google Play Store.**
 
-## Twitter  {#Twitter}
+***
+## 推特客户端  {#Twitter}
 
 A non-visible component that enables communication with [Twitter](https://twitter.com). Once a
  user has logged into their Twitter account (and the authorization has been confirmed successful
