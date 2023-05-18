@@ -3,17 +3,19 @@ title: App Inventor 2 颜色代码块
 layout: documentation
 ---
 
-There are three main types of color blocks:
+颜色代码块主要分为三种类型：
 
-* [a color box](#basic)
-* [make color](#make)
-* [split color](#split)
+* [基本颜色](#basic)
+* [合成颜色](#make)
+* [分解颜色](#split)
 
+***
 ### How do colors work in App Inventor?
 
 Internally, App Inventor stores each color as a single number. When you use `make color`{:.color.block} and take in a list as an argument, internally this list is then converted using App Inventor's color scheme and stored as a number. If you knew the numbers for the colors, you could even specify what color you wanted something to be by just setting its Color property to a specific number. If you want to see a chart of colors to numbers, check out [this page](http://appinventor.mit.edu/explore/app-inventor-color-chart).
 
-### basic color   {#basic}
+***
+### 基本颜色   {#basic}
 
 ![](images/colors/basiccolorblock.png)
 
@@ -25,13 +27,15 @@ If you click on the color in the middle, a pop-up appears on the screen with a t
 
 Each basic color block that you drag from the Colors drawer to the Blocks Editor screen will display a table with the same colors when clicked.
 
-### make color   {#make}
+***
+### 合成颜色   {#make}
 
 ![](images/colors/makecolor.png)
 
 `make color`{:.color.block} takes in a list of 3 or 4 numbers. These numbers in this list represent values in an RGB code. RGB codes are used to make colors on the Internet. An RGB color chart is available [here](https://sites.google.com/view/metricrat-ai2/scraps/android-and-html-colour-codes). This first number in this list represents the R value of the code. The second represents the G. The third represents the B. The fourth value is optional and represents the alpha value or how saturated the color is. The default alpha value is 100. Experiment with different values and see how the colors change using this block.
 
-### split color   {#split}
+***
+### 分解颜色   {#split}
 
 ![](images/colors/splitcolor.png)
 

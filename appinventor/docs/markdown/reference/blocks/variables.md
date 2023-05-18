@@ -11,6 +11,7 @@ layout: documentation
 * [初始化局部变量（无返回值）](#do)
 * [初始化局部变量（有返回值）](#return)
 
+***
 ### 初始化全局变量   {#global}
 
 ![](images/variables/initializeglobal.png)
@@ -19,18 +20,21 @@ layout: documentation
 
 全局变量可以在应用程序运行时更改，并且可以从应用程序的任何部分获取和设置，甚至在过程和事件处理程序中也是如此。你可以随时重命名此块，引用旧名称的任何关联块将自动更新。
 
+***
 ### 取值   {#get}
 
 ![](images/variables/get.png)
 
 通过此块可获取已创建变量块的值。
 
+***
 ### 设置值   {#set}
 
 ![](images/variables/set.png)
 
 通过此块可设置已创建变量块的值，与`取值`{:.variable.block} 相对应，下拉列表中只有范围内的变量可用。选择 *变量* 后，你可以附加一个块以赋予 *变量* 一个新值。
 
+***
 ### 初始化局部变量（无返回值）   {#do}
 
 ![](images/variables/initializelocaldo.png)
@@ -40,6 +44,7 @@ layout: documentation
 
 你可以随时重命名此块中的变量，并且程序中其他地方引用旧名称的任何相应块将自动更新。
 
+***
 ### 初始化局部变量（有返回值）   {#return}
 
 ![](images/variables/initializelocalreturn.png)

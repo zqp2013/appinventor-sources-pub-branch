@@ -17,6 +17,7 @@ layout: documentation
 * [定义无返回值过程](#do)
 * [定义返回值过程](#return)
 
+***
 ### 定义无返回值过程（procedure do）   {#do}
 
 ![](images/procedure/do.png)
@@ -31,6 +32,7 @@ layout: documentation
 
 当你创建一个过程时，App Inventor会自动生成一个调用块并将其放在过程抽屉中，可以从抽屉中拖动使用调用块来调用过程。
 
+***
 ### 定义返回值过程（procedure result）   {#return}
 
 ![](images/procedure/return.png)

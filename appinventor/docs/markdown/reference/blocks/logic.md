@@ -11,24 +11,28 @@ layout: documentation
 * [与](#and)
 * [或](#or)
 
+***
 ### 真   {#true}
 
 ![](images/logic/true.png)
 
 表示常量值 `true`，使用它来设置组件的布尔属性值，或作为表示条件的变量值。
 
+***
 ### 假   {#false}
 
 ![](images/logic/false.png)
 
 表示常量值 `false`，使用它来设置组件的布尔属性值，或作为表示条件的变量值。
 
+***
 ### 非   {#not}
 
 ![](images/logic/not.png)
 
 执行逻辑非，如果输入为真则返回假，如果输入为假则返回真。
 
+***
 ### =   {#equals}
 
 ![](images/logic/equals.png)
@@ -42,12 +46,14 @@ layout: documentation
 
 与 数学代码块 中的 `=` 块完全相同。
 
+***
 ### ≠   {#notequals}
 
 ![](images/logic/notequals.png)
 
 测试两个值是否不相等，和上面相等正好相反，即相等取 `非` 逻辑。
 
+***
 ### 与   {#and}
 
 ![](images/logic/and.png){:height="36"}
@@ -57,6 +63,7 @@ layout: documentation
 * 从左到右测试条件，一旦其中一个条件为假，测试就会停止。
 * 如果没有要测试的条件，则结果为真。
 
+***
 ### 或   {#or}
 
 ![](images/logic/or.png){:height="36"}
