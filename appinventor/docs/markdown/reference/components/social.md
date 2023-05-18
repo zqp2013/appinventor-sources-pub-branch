@@ -499,11 +499,11 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  - `"file:///sdcard/Appinventor/assets/arrow.gif"`; 或
  - `"/storage/Appinventor/assets/arrow.gif"`
 
-  * `分享消息` 弹出其他App的界面：弹出的是文档、地图、蓝牙之类的App，**没有打印机相关的，打印机App在`分享文件`的方式才弹出**。
+  * `分享消息` 弹出其他App的界面：弹出的是文档（保存文本到文档）、地图（文本作为搜索地址）、蓝牙（传输文本数据）之类的App，**没有打印机相关的，打印机App在`分享文件`的方式才弹出**。
 
   <img src="images/sharing/分享消息弹出界面.jpg" alt="分享消息弹出界面" style="width:30%; border:1px solid #eee;"/>
 
-  * `分享文件`、`分享文件及消息` 弹出其他App的界面：`分享文件`的方式弹出的App几乎非常全面了，包括打印机App。`分享文件及消息`弹出的和`分享文件`是一致的。
+  * `分享文件`、`分享文件及消息` 弹出其他App的界面：`分享文件`的方式弹出的App几乎非常全面了，包括打印机App（打印分享的文件）。`分享文件及消息`弹出的和`分享文件`是一致的。
 
   <img src="images/sharing/分享文件弹出界面.jpg" alt="分享文件（分享文件及消息）弹出界面" style="width:30%; border:1px solid #eee;"/>
 
