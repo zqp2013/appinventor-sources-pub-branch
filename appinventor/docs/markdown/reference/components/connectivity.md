@@ -397,88 +397,77 @@ title: 通信连接组件
 
 {:.properties}
 
-{:id="Web.AllowCookies" .boolean} *AllowCookies*
-: Specifies whether cookies should be allowed
+{:id="Web.AllowCookies" .boolean} *允许使用Cookies*
+: 指定是否允许使用Cookies。（Cookies是一种浏览器本地缓存技术，用于缓存一些用户个性数据、身份验证信息等。常见的如“30天免登陆”功能就是将用户登录验证信息保存到Cookies，有效期30天。还有诸如你的搜索偏好，浏览偏好等设置也是通过Cookies进行保存的）
 
-{:id="Web.RequestHeaders" .list .bo} *RequestHeaders*
-: Sets the request headers.
+{:id="Web.RequestHeaders" .list .bo} *请求标头*
+: 设置请求标头。以下是一个请求标头示例截图：
 
-{:id="Web.ResponseFileName" .text} *ResponseFileName*
-: Specifies the name of the file where the response should be saved.
- If SaveResponse is true and ResponseFileName is empty, then a new file
- name will be generated.
+<img src="images/请求标头.png" alt="请求标头" style="border:1px solid #eee;margin-bottom:10px;"/>
 
-{:id="Web.SaveResponse" .boolean} *SaveResponse*
-: Specifies whether the response should be saved in a file.
+{:id="Web.ResponseFileName" .text} *响应文件名称*
+: 指定保存响应数据的文件的名称，如果 [保存响应信息](#Web.SaveResponse) 为`真` 且 [响应文件名称](#Web.ResponseFileName) 为空，则自动创建一个新文件名。
 
-{:id="Web.Timeout" .number} *Timeout*
-: Returns the number of milliseconds that each request will wait for a response before they time out.
- If set to 0, then the request will wait for a response indefinitely.
+{:id="Web.SaveResponse" .boolean} *保存响应信息*
+: 指定是否将响应数据保存到文件中。
 
-{:id="Web.Url" .text} *Url*
-: Specifies the URL.
+{:id="Web.Timeout" .number} *超时时间(ms)*
+: 返回每个请求在超时前等待响应的毫秒数，如果设置为`0`，则请求将无限期等待响应。
+
+{:id="Web.Url" .text} *URL网址*
+: 指定待请求的URL网址.
 
 ### 事件  {#Web-Events}
 
 {:.events}
 
-{:id="Web.GotFile"} GotFile(*url*{:.text},*responseCode*{:.number},*responseType*{:.text},*fileName*{:.text})
-: Event indicating that a request has finished.
+{:id="Web.GotFile"} 获得文件(*URL网址*{:.text},*响应代码*{:.number},*响应类型*{:.text},*文件名*{:.text})
+: 当请求完成时触发该事件，以文件形式返回内容。
 
-{:id="Web.GotText"} GotText(*url*{:.text},*responseCode*{:.number},*responseType*{:.text},*responseContent*{:.text})
-: Event indicating that a request has finished.
+{:id="Web.GotText"} 获得文本(*URL网址*{:.text},*响应代码*{:.number},*响应类型*{:.text},*响应内容*{:.text})
+: 当请求完成时触发该事件，以文本形式返回内容。
 
-{:id="Web.TimedOut"} TimedOut(*url*{:.text})
-: Event indicating that a request has timed out.
+{:id="Web.TimedOut"} 超时(*URL网址*{:.text})
+: 当请求超时触发该事件。
 
 ### 方法  {#Web-Methods}
 
 {:.methods}
 
-{:id="Web.BuildRequestData" class="method returns text"} <i/> BuildRequestData(*list*{:.list})
-: Converts a list of two-element sublists, representing name and value pairs, to a
- string formatted as application/x-www-form-urlencoded media type, suitable to pass to
- PostText.
+{:id="Web.BuildRequestData" class="method returns text"} <i/> 创建数据请求(*列表*{:.list})
+: 将表示名称和值对的二元素列表转换为 `application/x-www-form-urlencoded` 媒体类型格式的字符串，适合传递给[执行POST文本请求](#Web.PostText)。
 
-{:id="Web.ClearCookies" class="method"} <i/> ClearCookies()
-: Clears all cookies for this Web component.
+{:id="Web.ClearCookies" class="method"} <i/> 清除Cookies()
+: 清除此 Web客户端 组件的所有 Cookies。
 
-{:id="Web.Delete" class="method"} <i/> Delete()
-: Performs an HTTP DELETE request using the Url property and retrieves the
- response.
+{:id="Web.Delete" class="method"} <i/> 删除()
+: 使用 [URL网址](#Web.Url) 属性执行 HTTP DELETE 请求并获取响应数据。
 
-   If the SaveResponse property is true, the response will be saved in a file
- and the GotFile event will be triggered. The ResponseFileName property
- can be used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is false, the GotText event will be
- triggered.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-{:id="Web.Get" class="method"} <i/> Get()
-: Performs an HTTP GET request using the Url property and retrieves the
- response.
+{:id="Web.Get" class="method"} <i/> 执行GET请求()
+: 使用 [URL网址](#Web.Url) 属性执行 HTTP GET 请求并获取响应数据。
 
-   If the SaveResponse property is true, the response will be saved in a file
- and the GotFile event will be triggered. The ResponseFileName property
- can be used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is false, the GotText event will be
- triggered.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-{:id="Web.HtmlTextDecode" class="method returns text"} <i/> HtmlTextDecode(*htmlText*{:.text})
+{:id="Web.HtmlTextDecode" class="method returns text"} <i/> 解码HTML文本(*HTML文本*{:.text})
 : Decodes the given HTML text value.
 
    HTML Character Entities such as `&amp;`, `&lt;`, `&gt;`, `&apos;`, and `&quot;` are
  changed to `&`, `<`, `>`, `'`, and `"`.
  Entities such as `&#xhhhh;`, and `&#nnnn;` are changed to the appropriate characters.
 
-{:id="Web.JsonObjectEncode" class="method returns text"} <i/> JsonObjectEncode(*jsonObject*{:.any})
+{:id="Web.JsonObjectEncode" class="method returns text"} <i/> 编码JSON对象(*JSON对象*{:.any})
 : Returns the value of a built-in type (i.e., boolean, number, text, list, dictionary)
  in its JavaScript Object Notation representation. If the value cannot be
  represented as JSON, the Screen's ErrorOccurred event will be run, if any,
  and the Web component will return the empty string.
 
-{:id="Web.JsonTextDecode" class="method returns any"} <i/> JsonTextDecode(*jsonText*{:.text})
+{:id="Web.JsonTextDecode" class="method returns any"} <i/> 解码JSON文本(*JSON文本*{:.text})
 : Decodes the given JSON encoded value to produce a corresponding AppInventor value.
  A JSON list `[x, y, z]` decodes to a list `(x y z)`,  A JSON object with key A and value B,
  (denoted as `{A:B}`) decodes to a list `((A B))`, that is, a list containing the two-element
@@ -487,111 +476,83 @@ title: 通信连接组件
    Use the method [JsonTextDecodeWithDictionaries](#Web.JsonTextDecodeWithDictionaries) if you
  would prefer to get back dictionary objects rather than lists-of-lists in the result.
 
-{:id="Web.JsonTextDecodeWithDictionaries" class="method returns any"} <i/> JsonTextDecodeWithDictionaries(*jsonText*{:.text})
+{:id="Web.JsonTextDecodeWithDictionaries" class="method returns any"} <i/> JsonTextDecodeWithDictionaries(*JSON文本*{:.text})
 : Decodes the given JSON encoded value to produce a corresponding App Inventor value.
  A JSON list [x, y, z] decodes to a list (x y z). A JSON Object with name A and value B,
  denoted as \{a: b\} decodes to a dictionary with the key a and value b.
 
-{:id="Web.PatchFile" class="method"} <i/> PatchFile(*path*{:.text})
-: Performs an HTTP PATCH request using the Url property and data from the specified file.
+{:id="Web.PatchFile" class="method"} <i/> 执行PATCH文件请求(*文件路径*{:.text})
+: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP PATCH 请求。
 
-   If the SaveResponse property is true, the response will be saved in a file
- and the GotFile event will be triggered. The ResponseFileName property can be
- used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-{:id="Web.PatchText" class="method"} <i/> PatchText(*text*{:.text})
-: Performs an HTTP PATCH request using the Url property and the specified text.
+{:id="Web.PatchText" class="method"} <i/> 执行PATCH文本请求(*文本*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP PATCH 请求。文本的字符集使用 UTF-8 进行编码。
 
-   The characters of the text are encoded using UTF-8 encoding.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The responseFileName property
- can be used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+{:id="Web.PatchTextWithEncoding" class="method"} <i/> 执行PATCH编码文本请求(*文本*{:.text},*编码*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP PATCH 请求。文本的字符集使用指定的编码方式进行编码。
 
-{:id="Web.PatchTextWithEncoding" class="method"} <i/> PatchTextWithEncoding(*text*{:.text},*encoding*{:.text})
-: Performs an HTTP PATCH request using the Url property and the specified text.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   The characters of the text are encoded using the given encoding.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The ResponseFileName property
- can be used to specify the name of the file.
+{:id="Web.PostFile" class="method"} <i/> 执行POST文件请求(*文件路径*{:.text})
+: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP POST 请求。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-{:id="Web.PostFile" class="method"} <i/> PostFile(*path*{:.text})
-: Performs an HTTP POST request using the Url property and data from the specified file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is true, the response will be saved in a file
- and the GotFile event will be triggered. The ResponseFileName property can be
- used to specify the name of the file.
+{:id="Web.PostText" class="method"} <i/> 执行POST文本请求(*文本*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP POST 请求。文本的字符集使用 UTF-8 进行编码。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-{:id="Web.PostText" class="method"} <i/> PostText(*text*{:.text})
-: Performs an HTTP POST request using the Url property and the specified text.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   The characters of the text are encoded using UTF-8 encoding.
+{:id="Web.PostTextWithEncoding" class="method"} <i/> 执行POST编码文本请求(*文本*{:.text},*编码*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP POST 请求。文本的字符集使用指定的编码方式进行编码。
 
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The responseFileName property
- can be used to specify the name of the file.
+   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-{:id="Web.PostTextWithEncoding" class="method"} <i/> PostTextWithEncoding(*text*{:.text},*encoding*{:.text})
-: Performs an HTTP POST request using the Url property and the specified text.
+{:id="Web.PutFile" class="method"} <i/> 执行PUT文件请求(*文件路径*{:.text})
+: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP PUT 请求。
 
-   The characters of the text are encoded using the given encoding.
+   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The ResponseFileName property
- can be used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+{:id="Web.PutText" class="method"} <i/> 执行PUT文本请求(*文本*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP PUT 请求。文本的字符集使用 UTF-8 进行编码。
 
-{:id="Web.PutFile" class="method"} <i/> PutFile(*path*{:.text})
-: Performs an HTTP PUT request using the Url property and data from the specified file.
+   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   If the SaveResponse property is true, the response will be saved in a file
- and the GotFile event will be triggered. The ResponseFileName property can be
- used to specify the name of the file.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+{:id="Web.PutTextWithEncoding" class="method"} <i/> 执行PUT编码文本请求(*文本*{:.text},*编码*{:.text})
+: 使用 [URL网址](#Web.Url) 属性和指定文本执行 HTTP PUT 请求。文本的字符集使用指定的编码方式进行编码。
 
-{:id="Web.PutText" class="method"} <i/> PutText(*text*{:.text})
-: Performs an HTTP PUT request using the Url property and the specified text.
+   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
-   The characters of the text are encoded using UTF-8 encoding.
+  * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The responseFileName property
- can be used to specify the name of the file.
+{:id="Web.UriDecode" class="method returns text"} <i/> URI解码(*文本*{:.text})
+: 对已编码的文本值进行URI解码操作，解码后的内容是原始的文本。如：`%E6%B8%B8%20%E6%88%8F` --解码--> `游 戏`。
 
-   If the SaveResponse property is false, the GotText event will be triggered.
+{:id="Web.UriEncode" class="method returns text"} <i/> URI编码(*文本*{:.text})
+: 对给定的文本进行URI编码操作，编码后可用于URL网址。如：`游 戏` --编码--> `%E6%B8%B8%20%E6%88%8F`。
 
-{:id="Web.PutTextWithEncoding" class="method"} <i/> PutTextWithEncoding(*text*{:.text},*encoding*{:.text})
-: Performs an HTTP PUT request using the Url property and the specified text.
+* 空格不能用于URL网址中，需要编码成`%20`，中文也是一样，要编码成UTF-8格式。
 
-   The characters of the text are encoded using the given encoding.
-
-   If the SaveResponse property is true, the response will be saved in a
- file and the GotFile event will be triggered. The ResponseFileName property
- can be used to specify the name of the file.
-
-   If the SaveResponse property is false, the GotText event will be triggered.
-
-{:id="Web.UriDecode" class="method returns text"} <i/> UriDecode(*text*{:.text})
-: Decodes the encoded text value so that the values aren't URL encoded anymore.
-
-{:id="Web.UriEncode" class="method returns text"} <i/> UriEncode(*text*{:.text})
-: Encodes the given text value so that it can be used in a URL.
-
-{:id="Web.XMLTextDecode" class="method returns any"} <i/> XMLTextDecode(*XmlText*{:.text})
+{:id="Web.XMLTextDecode" class="method returns any"} <i/> 解码XML文本(*XML文本*{:.text})
 : Decodes the given XML string to produce a list structure. `<tag>string</tag>` decodes to
  a list that contains a pair of tag and string.  More generally, if obj1, obj2, ...
  are tag-delimited XML strings, then `<tag>obj1 obj2 ...</tag>` decodes to a list
@@ -623,7 +584,7 @@ title: 通信连接组件
  in `$namespaceUri`. The attributes are stored in a dictionary in `$attributes` and the
  child nodes are given as a list under `$content`.
 
-   **More Information on Special Keys**
+   **有关特殊Keys的更多信息**
 
    Consider the following XML document:
 
