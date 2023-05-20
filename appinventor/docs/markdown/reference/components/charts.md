@@ -8,10 +8,11 @@ title: 图表组件
 
 目录：
 
-* [Chart](#Chart)
-* [ChartData2D](#ChartData2D)
+* [图表](#Chart)
+* [二维图表](#ChartData2D)
 
-## Chart  {#Chart}
+***
+## 图表  {#Chart}
 
 The Chart component plots data originating from it's attached Data components. Five different
  Chart types are available, including Line, Area, Scatter, Bar and Pie, which can be changed by
@@ -95,8 +96,8 @@ The Chart component plots data originating from it's attached Data components. F
 {:.methods}
 无
 
-
-## ChartData2D  {#ChartData2D}
+***
+## 二维图表  {#ChartData2D}
 
 A ChartData2D component represents a single two-dimensional Data Series in the Chart component,
  for example, a single Line in the case of a Line Chart, or a single Bar in the case of a Bar

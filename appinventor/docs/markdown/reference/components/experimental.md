@@ -8,9 +8,9 @@ title: 试验组件
 
 目录：
 
-* [FirebaseDB](#FirebaseDB)
+* [Firebase数据库](#FirebaseDB)
 
-## FirebaseDB  {#FirebaseDB}
+## Firebase数据库  {#FirebaseDB}
 
 The Firebase component communicates with a Web service to store
  and retrieve information.  The component has methods to

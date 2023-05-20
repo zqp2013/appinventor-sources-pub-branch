@@ -5,13 +5,13 @@ layout: documentation
 
 目录：
 
-* [Introduction](#dictionaries)
-* [create empty dictionary](#create-empty-dictionary)
-* [make a dictionary](#make-a-dictionary)
-* [pair](#pair)
-* [get value for key](#get-value-for-key)
-* [set value for key](#set-value-for-key)
-* [delete entry for key](#delete-entry-for-key)
+* [介绍](#dictionaries)
+* [创建空字典](#create-empty-dictionary)
+* [创建字典](#make-a-dictionary)
+* [键值对](#pair)
+* [获取键的值](#get-value-for-key)
+* [设置键的值](#set-value-for-key)
+* [删除键的条目](#delete-entry-for-key)
 * [get value at key path](#get-value-at-key-path)
 * [set value for key path](#set-value-for-key-path)
 * [get keys](#get-keys)
@@ -24,9 +24,9 @@ layout: documentation
 * [merge into dictionary](#merge-into-dictionary)
 * [list by walking key path](#list-by-walking-key-path)
 * [walk all at level](#walk-all-at-level)
-* [is a dictionary?](#is-a-dictionary)
+* [对象是否是字典？](#is-a-dictionary)
 
-## Introduction
+## 介绍
 
 Dictionaries, called in other languages terms such as maps, associative arrays or lists, are data structures that associate one value, often called the key, with another value. A common way of displaying dictionaries is using the JavaScript Object Notation (JSON), for example:
 
@@ -48,42 +48,49 @@ The above example shows that in JSON the keys (quoted text before the `:`) can m
 
 **Figure 1**: A blocks representation of the JSON code snippet shown above.
 
-### create empty dictionary
+***
+### 创建空字典
 
 ![](images/dictionaries/create-with.png)
 
 The `create empty dictionary`{:.dictionary.block} block creates a dictionary without any key-value pairs. Entries can be added to the empty dictionary using the `set value for key`{:.dictionary.block} block. The `create empty dictionary`{:.dictionary.block} block can also be turned into a `make a dictionary`{:.dictionary.block} block by using the blue mutator button to add `pair`{:.dictionary.block} entries.
 
-### make a dictionary
+***
+### 创建字典
 
 ![](images/dictionaries/make-a-dictionary.png)
 
 The `make a dictionary`{:.dictionary.block} is used to create a dictionary with a set of `pair`{:.dictionary.block}s known in advance. Additional entries can be added using `set value for key`{:.dictionary.block}.
 
-### pair
+***
+### 键值对
 
 ![](images/dictionaries/pair.png)
 
 The `pair`{:.dictionary.block} block is a special purpose block used for constructing dictionaries.
 
-### get value for key
+***
+### 获取键的值
 
 ![](images/dictionaries/get-value-for-key2.png)
 
 The `get value for key`{:.dictionary.block} block checks to see if the dictionary contains a corresponding value for the given key. If it does, the value is returned. Otherwise, the value of the `not found` parameter is returned. This behavior is similar to the behavior of the [`lookup in pairs`{:.list.block}](lists.html#lookupinpairs) block.
 
-### set value for key
+***
+### 设置键的值
 
 ![](images/dictionaries/set-value-for-key.png)
 
 The `set value for key`{:.dictionary.block} block sets the corresponding value for the given `key` in the `dictionary` to `value`. If no mapping exists for `key`, a new one will be created. Otherwise, the existing value is replaced by the new value.
 
-### delete entry for key
+***
+### 删除键的条目
 
 ![](images/dictionaries/delete-value-for-key.png)
 
 The `delete entry for key`{:.dictionary.block} block removes the key-value mapping in the dictionary for the given key. If no entry for the key exists in the dictionary, the dictionary is not modified.
 
+***
 ### get value at key path
 
 The `get value at key path`{:.dictionary.block} block is a more advanced version of the `get value for key`{:.dictionary.block} block. Rather than getting the value of a specific key, it instead takes a list of valid keys and numbers representing a path through a data structure. The `get value for key`{:.dictionary.block} block is equivalent to using this block with a key path of length 1 containing the key. For example, the following two blocks would return `"Tim the Beaver"`{:.text.block}:
@@ -116,36 +123,42 @@ The `get value at key path<`{:.dictionary.block} allows for the path to include 
 
 which returns the value `"18.01"`.
 
+***
 ### set value for key path
 
 ![](images/dictionaries/set-value-for-key-path.png)
 
 The `set value for key path`{:.dictionary.block} block updates the value at a specific `key path` in a data structure. It is the mirror of `get value for key path`{:.dictionary.block}, which retrieves a value at a specific `key path`. The path **must be valid**, except for the last key, which if a mapping does not exist will create a mapping to the new value. Otherwise, the existing value is replaced with the new value.
 
+***
 ### get keys
 
 ![](images/dictionaries/get-keys.png)
 
 The `get keys`{:.dictionary.block} returns a list of keys in the dictionary.
 
+***
 ### get values
 
 ![](images/dictionaries/get-values.png)
 
 The `get values`{:.dictionary.block} returns a list containing the values in the dictionary. Modifying the contents of a value in the list will also modify it in the dictionary.
 
+***
 ### is key in dictionary?
 
 ![](images/dictionaries/is-key-in.png)
 
 The `is key in dictionary?`{:.dictionary.block} tests whether the key exists in the dictionary and returns `真`{:.logic.block} if it does, otherwise it returns `假`{:.logic.block}.
 
+***
 ### size of dictionary
 
 ![](images/dictionaries/size.png)
 
 The `size of dictionary`{:.dictionary.block} block returns the number of key-value pairs present in the dictionary.
 
+***
 ### list of pairs to dictionary
 
 ![](images/dictionaries/alist-to-dict.png)
@@ -153,6 +166,7 @@ The `size of dictionary`{:.dictionary.block} block returns the number of key-val
 The `list of pairs to dictionary`{:.dictionary.block} block converts an associative list of the form `((key1 value1) (key2 value2) ...)` into a dictionary mapping the keys to their values.
 Because dictionaries provide better lookup performance than associative lists, if you want to perform many operations on a data structure it is advisable to use this block to convert the associative list into a dictionary first.
 
+***
 ### dictionary to list of pairs
 
 ![](images/dictionaries/dict-to-alist.png)
@@ -162,18 +176,21 @@ This block reverses the conversion performed by the [`list of pairs to dictionar
 
 ![Example of how the dictionary to list of pairs block reverses the list of pairs to dictionary block](images/dictionaries/alist-dict-reversability.png)
 
+***
 ### copy dictionary
 
 ![](images/dictionaries/copy-dict.png)
 
 The `copy dictionary`{:.dictionary.block} makes a deep copy of the given dictionary. This means that all of the values are copied recursively and that changing a value in the copy will not change it in the original.
 
+***
 ### merge into dictionary
 
 ![](images/dictionaries/combine-dicts.png)
 
 The `merge into dictionary from dictionary`{:.dictionary.block} block ccopies the key-value pairs from one dictionary into another, overwriting any keys in the target dictionary.
 
+***
 ### list by walking key path
 
 ![](images/dictionaries/walk-tree.png)
@@ -226,13 +243,15 @@ You can use the following blocks to get a list of the names of the rooms on the 
 
 ![](images/dictionaries/walk-tree-xml.png)
 
+***
 ### walk all at level
 
 ![](images/dictionaries/walk-all.png)
 
 The `walk all at level`{:.dictionary.block} block is a specialized block that can be used in the key path of a `list by walking key path`{:.dictionary.block}. When encountered during a walk, it causes every item at that level to be explored. For dictionaries, this means that every value is visited. For lists, each item in the list is visited. This can be used to aggregate information from a list of items in a dictionary, such as the first name of every person in a database represented by JSON objects. See the [`list by walking key path`{:.dictionary.block}](#list-by-walking-key-path) block for examples.
 
-### is a dictionary?
+***
+### 对象是否是字典？
 
 ![](images/dictionaries/is-dict.png)
 

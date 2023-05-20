@@ -8,16 +8,17 @@ title: 地图组件
 
 目录：
 
-* [Circle](#Circle)
-* [FeatureCollection](#FeatureCollection)
-* [LineString](#LineString)
-* [Map](#Map)
-* [Marker](#Marker)
-* [Navigation](#Navigation)
-* [Polygon](#Polygon)
-* [Rectangle](#Rectangle)
+* [圆](#Circle)
+* [特征集合](#FeatureCollection)
+* [线段](#LineString)
+* [地图](#Map)
+* [标记](#Marker)
+* [导航](#Navigation)
+* [多边形](#Polygon)
+* [矩形](#Rectangle)
 
-## Circle  {#Circle}
+***
+## 圆  {#Circle}
 
 The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius), in meters,
  centered at a [`Latitude`](#Circle.Latitude) and [`Longitude`](#Circle.Longitude). The `Circle`'s appearance
@@ -140,7 +141,8 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 : Shows the info box for the `Circle` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Circle.EnableInfobox) is false.
 
-## FeatureCollection  {#FeatureCollection}
+***
+## 特征集合  {#FeatureCollection}
 
 A `FeatureCollection` groups one or more map features together. Any events that occur on a
  feature in the collection will also trigger the corresponding event in the collection component.
@@ -259,7 +261,8 @@ A `FeatureCollection` groups one or more map features together. Any events that 
  the [`LoadError`](#FeatureCollection.LoadError) event will be raised with any applicable HTTP
  response code and error message.
 
-## LineString  {#LineString}
+***
+## 线段  {#LineString}
 
 `LineString` is a component for drawing an open, continuous sequence of lines on a `Map`. To add
  new points to a `LineString` in the designer, drag the midpoint of any segment away from the
@@ -359,7 +362,8 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Shows the info box for the `LineString` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#LineString.EnableInfobox) is false.
 
-## Map  {#Map}
+***
+## 地图  {#Map}
 
 A two-dimensional container that renders map tiles in the background and allows for multiple
  [`Marker`](#Marker) elements to identify points on the map. Map tiles are supplied by OpenStreetMap
@@ -601,7 +605,8 @@ A two-dimensional container that renders map tiles in the background and allows 
 {:id="Map.Save" class="method"} <i/> Save(*path*{:.text})
 : Saves the features on the `Map` as a GeoJSON file at the specified path.
 
-## Marker  {#Marker}
+***
+## 标记  {#Marker}
 
 The `Marker` component indicates points on a [`Map`](#Map), such as buildings or other points of
  interest. `Marker`s can be customized in many ways, such as using custom images from the app's
@@ -749,7 +754,8 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 : Shows the info box for the `Marker` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Marker.EnableInfobox) is false.
 
-## Navigation  {#Navigation}
+***
+## 导航  {#Navigation}
 
 The Navigation component generates directions between two locations using a service called
  [OpenRouteService](https://openrouteservice.org). You must provide a valid API key from that
@@ -823,7 +829,8 @@ The Navigation component generates directions between two locations using a serv
  error occurs, the error will be reported via the
  [`Screen's ErrorOccurred`](userinterface.html#Screen.ErrorOccurred) event.
 
-## Polygon  {#Polygon}
+***
+## 多边形  {#Polygon}
 
 `Polygon` encloses an arbitrary 2-dimensional area on a [`Map`](#Map). `Polygon`s can be used for
  drawing a perimeter, such as a campus, city, or country. `Polygon`s begin as basic triangles.
@@ -943,7 +950,8 @@ The Navigation component generates directions between two locations using a serv
 : Shows the info box for the `Polygon` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Polygon.EnableInfobox) is false.
 
-## Rectangle  {#Rectangle}
+***
+## 矩形  {#Rectangle}
 
 `Rectangle`s are polygons with fixed latitudes and longitudes for the north, south, east, and
  west boundaries. Moving a vertex of the `Rectangle` updates the appropriate edges accordingly.
