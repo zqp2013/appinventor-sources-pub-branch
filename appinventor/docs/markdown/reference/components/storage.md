@@ -259,19 +259,13 @@ title: 数据存储组件
 ***
 ## 电子表格  {#Spreadsheet}
 
-Spreadsheet is a non-visible component for storing and receiving data from
- a Google Sheets document using the Google Sheets API.
+电子表格是一个不可见的组件，用于存储和接收来自使用 Google Sheets API 的 Google Sheets 文档。
 
- In order to utilize this component, one must first have a Google Developer
- Account. Then, one must create a new project under that Google Developer
- Account, enable the Google Sheets API on that project, and finally create a
- Service Account for the Sheets API.
+要使用此组件，首先必须拥有 Google Developer 帐户，然后，必须在该 Google Developer 下创建一个新项目帐户，在该项目上启用 Google Sheets API，最后创建一个Sheets API 的服务帐户。
 
- Instructions on how to create the Service Account, as well as where to find
- other relevant information for using the Google Sheets Component, can be
- found <a href='/reference/other/googlesheets-api-setup.html'>here</a>.
+有关如何创建服务帐户以及在何处查找的说明使用 Google 表格组件的其他相关信息，可以在<a href='/reference/other/googlesheets-api-setup.html'>此处</a>找到。
 
- Row and column numbers are 1-indexed.
+行号和列号是从 1 开始索引的。
 
 ### 属性  {#Spreadsheet-Properties}
 
@@ -505,52 +499,41 @@ Spreadsheet is a non-visible component for storing and receiving data from
 ***
 ## 网络微数据库  {#TinyWebDB}
 
-The `TinyWebDB` component communicates with a Web service to store
- and retrieve information.  Although this component is usable, it is
- very limited and meant primarily as a demonstration for people who
- would like to create their own components that talk to the Web.
- The accompanying Web service is at
- (http://tinywebdb.appinventor.mit.edu).  The component has methods to
- [store a value](#TinyWebDB.StoreValue) under a tag and to
- [retrieve the value](#TinyWebDB.GetValue) associated with
- the tag.  The interpretation of what "store" and "retrieve" means
- is up to the Web service.  In this implementation, all tags and
- values are strings (text).  This restriction may be relaxed in
- future versions.
+`网络微数据库` 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，但是非常有限，主要是作为对那些想要创建自己的组件与 Web 对话的`Demo应用`。
 
+随附的 Web 服务位于 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。该组件有方法[保存数值](#TinyWebDB.StoreValue) 和[获取数值](#TinyWebDB.GetValue) ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。
 
 
 ### 属性  {#TinyWebDB-Properties}
 
 {:.properties}
 
-{:id="TinyWebDB.ServiceURL" .text} *ServiceURL*
-: Specifies the URL of the  Web service.
- The default value is the demo service running on App Engine.
+{:id="TinyWebDB.ServiceURL" .text} *服务地址*
+: 指定Web服务的 URL，默认值是 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。
 
 ### 事件  {#TinyWebDB-Events}
 
 {:.events}
 
-{:id="TinyWebDB.GotValue"} GotValue(*tagFromWebDB*{:.text},*valueFromWebDB*{:.any})
-: Indicates that a [`GetValue`](#TinyWebDB.GetValue) server request has succeeded.
+{:id="TinyWebDB.GotValue"} GotValue(*网络微数据库标签*{:.text},*网络微数据库数值*{:.any})
+: [`获取数值`](#TinyWebDB.GetValue) 请求服务器执行成功时触发该事件。
 
-{:id="TinyWebDB.ValueStored"} ValueStored()
-: Event indicating that a [`StoreValue`](#TinyWebDB.StoreValue)  server request has succeeded.
+{:id="TinyWebDB.ValueStored"} 数值存储完毕()
+: [`保存数值`](#TinyWebDB.StoreValue) 请求服务器执行成功时触发该事件。
 
-{:id="TinyWebDB.WebServiceError"} WebServiceError(*message*{:.text})
-: Indicates that the communication with the Web service signaled an error.
+{:id="TinyWebDB.WebServiceError"} 发生Web服务故障(*消息*{:.text})
+: 与Web服务器的通信发出错误信号时触发该事件。
 
 ### 方法  {#TinyWebDB-Methods}
 
 {:.methods}
 
-{:id="TinyWebDB.GetValue" class="method"} <i/> GetValue(*tag*{:.text})
-: `GetValue` asks the Web service to get the value stored under the given `tag`{:.text.block}.
+{:id="TinyWebDB.GetValue" class="method"} <i/> 获取数值(*tag*{:.text})
+: `获取数值` asks the Web service to get the value stored under the given `tag`{:.text.block}.
  It is up to the Web service what to return if there is no value stored under the
  `tag`{:.text.block}.  This component just accepts whatever is returned. The
- [`GotValue`](#TinyWebDB.GotValue) event will be run on completion.
+ [`获取数值`](#TinyWebDB.GotValue) event will be run on completion.
 
-{:id="TinyWebDB.StoreValue" class="method"} <i/> StoreValue(*tag*{:.text},*valueToStore*{:.any})
+{:id="TinyWebDB.StoreValue" class="method"} <i/> 保存数值(*tag*{:.text},*valueToStore*{:.any})
 : Sends a request to the Web service to store the given `valueToStore`{:.variable.block} under
- the given `tag`{:.text.block}. The [`ValueStored`](#TinyWebDB.ValueStored) event will be run on completion.
+ the given `tag`{:.text.block}. The [`数值存储完毕`](#TinyWebDB.ValueStored) event will be run on completion.
