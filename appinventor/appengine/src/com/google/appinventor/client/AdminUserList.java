@@ -110,6 +110,10 @@ public class AdminUserList extends Composite {
     searchPanel.setSpacing(6);
     final LabeledTextBox searchText = new LabeledTextBox("输入账号：");
     TextBox countText = new TextBox();
+    countText.setWidth("40px");
+    countText.setHeight("26px");
+    countText.setText("30");
+
     Button searchButton = new Button("搜索");
     searchPanel.add(searchText);
     searchPanel.add(countText);
@@ -397,6 +401,7 @@ public class AdminUserList extends Composite {
     final Label userNameLabel = new Label("账户");
     final TextBox userName = new TextBox();
     final Label passwordLabel = new Label("密码");
+    final Label passwordDefaultLabel = new Label("默认");
     final Label passwordLabel2 = new Label("确认密码");
     final TextBox passwordBox = new TextBox();
     // We switch to the ones below if the hidePasswordCheckbox is selected
@@ -407,10 +412,24 @@ public class AdminUserList extends Composite {
     userInfo.setWidget(0, 1, userName);
     userInfo.setWidget(1, 0, passwordLabel);
     userInfo.setWidget(1, 1, passwordBox);
+    userInfo.setWidget(1, 2, passwordDefaultLabel);
+
+    //点击自动截取后六位作为默认密码
+    passwordDefaultLabel.addClickListener(new ClickListener() {
+      @Override
+      public void onClick(Widget sender) {
+        String phoneNumber = userName.getText();
+        if (phoneNumber.length() == 11) {
+          passwordBox.setText(phoneNumber.substring(5));
+        }
+      }
+    });
 
     final Label fromLabel = new Label("来源");
     final TextBox from = new TextBox();
     final Label expiredLabel = new Label("到期日");
+    final Label expired7DayLabel = new Label("7天");
+    final Label expiredMonthLabel = new Label("+1月");
     final TextBox expired = new TextBox();
     final Label remarkLabel = new Label("备注");
     final TextBox remark = new TextBox();
@@ -418,9 +437,38 @@ public class AdminUserList extends Composite {
     userInfo.setWidget(2, 1, from);
     userInfo.setWidget(3, 0, expiredLabel);
     userInfo.setWidget(3, 1, expired);
+    userInfo.setWidget(3, 2, expired7DayLabel);
+    userInfo.setWidget(3, 3, expiredMonthLabel);
     userInfo.setWidget(4, 0, remarkLabel);
     userInfo.setWidget(4, 1, remark);
 
+    // 点击当前日期加7天
+    expired7DayLabel.addClickListener(new ClickListener() {
+      @Override
+      public void onClick(Widget sender) {
+        Date now = new Date();
+        now.setTime(now.getTime() + 1000*60*60*24*7);
+        expired.setText(expiredFormat.format(now));
+      }
+    });
+    expiredMonthLabel.addClickListener(new ClickListener() {
+      @Override
+      public void onClick(Widget sender) {
+        Date now = new Date();
+        if (!expired.getText().equals("")) {
+          try {
+            now = expiredFormat.parse(expired.getText());
+          } catch (Exception e) {
+            message.setHTML("<font color=red>到期日格式不对！格式例如：2023/01/01</font>");
+            return;
+          }
+        }
+        now.setMonth(now.getMonth()+1);
+        expired.setText(expiredFormat.format(now));
+      }
+    });
+
+    
     final CheckBox isAdminBox = new CheckBox("是管理员?");
     final CheckBox hidePasswordCheckbox = new CheckBox("隐藏密码");
     final HorizontalPanel checkboxPanel = new HorizontalPanel();
