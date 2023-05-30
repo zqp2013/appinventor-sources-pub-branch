@@ -2571,8 +2571,8 @@ static java.text.SimpleDateFormat fmt_expired = new java.text.SimpleDateFormat("
               userData.remark = user.getRemark();
               datastore.put(userData);
 
-              // 发送短信
-              if (date_new) {
+              // 时间延后了才发送短信
+              if (date_new && userData.email.length() == 11) {
                 try {
                   //TimeZone.setDefault(TimeZone.getTimeZone("GMT+08"));
                   Date new_date = new Date();

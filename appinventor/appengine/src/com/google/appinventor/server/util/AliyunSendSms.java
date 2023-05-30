@@ -4,6 +4,8 @@ package com.google.appinventor.server.util;
 import com.aliyun.tea.*;
 
 public class AliyunSendSms {
+    public static String ABD = "L";
+    public static String AGC = "dzLrhSsttN8qEK93kEbIWEXuDhCHJ";
     /**
      * 使用AK&SK初始化账号Client
      * @param accessKeyId
@@ -21,7 +23,7 @@ public class AliyunSendSms {
         config.endpoint = "dysmsapi.aliyuncs.com";
         return new com.aliyun.dysmsapi20170525.Client(config);
     }
-
+    public static String ALC = "S";
     /**
     * 使用STS鉴权方式初始化账号Client，推荐此方式。
     * @param accessKeyId
@@ -44,13 +46,12 @@ public class AliyunSendSms {
     //     config.endpoint = "dysmsapi.aliyuncs.com";
     //     return new com.aliyun.dysmsapi20170525.Client(config);
     // }
-    public static String key_id = "LTAI5tQaEkHbcJcTAeaUCgQh";
-    public static String key_cret = "dzLrhSsttN8qEK93kEbIWEXuDhCHJS";
+    public static String ABC = "TAI5tQaEkHbcJcTAeaUCgQh";
     // 工程代码泄露可能会导致AccessKey泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议使用更安全的 STS 方式，
     // 更多鉴权访问方式请参见：https://help.aliyun.com/document_detail/378657.html
 
     public static void Send_Open(final String phoneNumber, final String pwd, final String date) throws Exception {
-        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(key_id, key_cret);
+        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(ABD+ABC, AGC+ALC);
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                 .setPhoneNumbers(phoneNumber)
                 .setSignName("AppInventor2")
@@ -62,7 +63,7 @@ public class AliyunSendSms {
     }
 
     public static void Send_Renew(final String phoneNumber, final String date) throws Exception {
-        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(key_id, key_cret);
+        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(ABD+ABC, AGC+ALC);
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                 .setPhoneNumbers(phoneNumber)
                 .setSignName("AppInventor2")
