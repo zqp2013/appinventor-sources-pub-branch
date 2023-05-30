@@ -257,7 +257,7 @@ title: 数据存储组件
  to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
 
 ***
-## 电子表格  {#Spreadsheet}
+## 电子表格（*依赖谷歌服务，国内无法使用*）  {#Spreadsheet}
 
 电子表格是一个不可见的组件，用于存储和接收来自使用 Google Sheets API 的 Google Sheets 文档。
 
@@ -499,7 +499,7 @@ title: 数据存储组件
 ***
 ## 网络微数据库  {#TinyWebDB}
 
-`网络微数据库` 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，但是非常有限，主要是作为对那些想要创建自己的组件与 Web 对话的`Demo应用`。
+`网络微数据库` 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，**但是非常有限**，主要是作为对那些想要创建自己的组件与 Web 对话的`Demo应用`。
 
 随附的 Web 服务位于 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。该组件有方法[保存数值](#TinyWebDB.StoreValue) 和[获取数值](#TinyWebDB.GetValue) ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。
 
@@ -528,12 +528,10 @@ title: 数据存储组件
 
 {:.methods}
 
-{:id="TinyWebDB.GetValue" class="method"} <i/> 获取数值(*tag*{:.text})
-: `获取数值` asks the Web service to get the value stored under the given `tag`{:.text.block}.
- It is up to the Web service what to return if there is no value stored under the
- `tag`{:.text.block}.  This component just accepts whatever is returned. The
- [`获取数值`](#TinyWebDB.GotValue) event will be run on completion.
+{:id="TinyWebDB.GetValue" class="method"} <i/> 获取数值(*标签*{:.text})
+: `获取数值` 请求Web服务获取存储在指定 `标签`{:.text.block} 下的值，如果 `标签`{:.text.block} 下没有存储值，则返回什么取决于Web服务。
 
-{:id="TinyWebDB.StoreValue" class="method"} <i/> 保存数值(*tag*{:.text},*valueToStore*{:.any})
-: Sends a request to the Web service to store the given `valueToStore`{:.variable.block} under
- the given `tag`{:.text.block}. The [`数值存储完毕`](#TinyWebDB.ValueStored) event will be run on completion.
+  该组件接受返回任何内容，然后 [`获取数值`](#TinyWebDB.GotValue) 事件将在完成时触发。
+
+{:id="TinyWebDB.StoreValue" class="method"} <i/> 保存数值(*标签*{:.text},*待存储值*{:.any})
+: 向Web服务发送请求，将给定的 `待存储值`{:.variable.block} 存储在指定的 `标签`{:.text.block} 下，[`数值存储完成`](#TinyWebDB.ValueStored) 事件将在完成时触发。
