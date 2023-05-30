@@ -51,7 +51,7 @@ public class AliyunSendSms {
     // 更多鉴权访问方式请参见：https://help.aliyun.com/document_detail/378657.html
 
     public static void Send_Open(final String phoneNumber, final String pwd, final String date) throws Exception {
-        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(ABD+ABC, AGC+ALC);
+        com.aliyun.dysmsapi20170525.Client client = AliyunSendSms.createClient(ABD+ABC, AGC+ALC);
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                 .setPhoneNumbers(phoneNumber)
                 .setSignName("AppInventor2")
@@ -63,7 +63,7 @@ public class AliyunSendSms {
     }
 
     public static void Send_Renew(final String phoneNumber, final String date) throws Exception {
-        com.aliyun.dysmsapi20170525.Client client = SendSms.createClient(ABD+ABC, AGC+ALC);
+        com.aliyun.dysmsapi20170525.Client client = AliyunSendSms.createClient(ABD+ABC, AGC+ALC);
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                 .setPhoneNumbers(phoneNumber)
                 .setSignName("AppInventor2")
