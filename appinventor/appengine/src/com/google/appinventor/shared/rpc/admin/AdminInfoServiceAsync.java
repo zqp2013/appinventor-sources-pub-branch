@@ -17,7 +17,7 @@ public interface AdminInfoServiceAsync {
   /**
    * @see AdminInfoService#searchUsers()
    */
-  void searchUsers(String startingPoint, AsyncCallback<List<AdminUser>> callback);
+  void searchUsers(String startingPoint, int count_limit, AsyncCallback<List<AdminUser>> callback);
   void storeUser(AdminUser user, AsyncCallback<Void> callback);
   void switchUser(AdminUser user, AsyncCallback<Void> callback);
 

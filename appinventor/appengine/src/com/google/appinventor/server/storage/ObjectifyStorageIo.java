@@ -105,6 +105,8 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import org.json.JSONObject;
+import com.google.appinventor.server.util.AliyunSendSms;
+import java.util.TimeZone;
 
 /**
  * Implements the StorageIo interface using Objectify as the underlying data
@@ -2519,7 +2521,7 @@ public class ObjectifyStorageIo implements  StorageIo {
   // The routines below are part of the user admin interface. Called from AdminInfoServiceImpl
 
   @Override
-  public List<AdminUser> searchUsers(final String partialEmail) {
+  public List<AdminUser> searchUsers(final String partialEmail, final int count_limit) {
     final List<AdminUser> retval = new ArrayList();
     try {
       runJobWithRetries(new JobRetryHelper() {
@@ -2531,7 +2533,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               retval.add(new AdminUser(user.id, user.name, user.email, user.tosAccepted,
                   user.isAdmin, user.visited, user.from, user.expired, user.remark));
               count++;
-              if (count > 30) {
+              if (count > count_limit) {
                 break;
               }
             }
@@ -2543,8 +2545,10 @@ public class ObjectifyStorageIo implements  StorageIo {
     return retval;
   }
 
+static java.text.SimpleDateFormat fmt_expired = new java.text.SimpleDateFormat("yyyy/MM/dd");
+
   @Override
-  public void storeUser(final AdminUser user) throws AdminInterfaceException {
+  public void storeUser(final AdminUser user, final String ori_pwd) throws AdminInterfaceException {
     try {
       runJobWithRetries(new JobRetryHelper() {
           @Override
@@ -2562,9 +2566,23 @@ public class ObjectifyStorageIo implements  StorageIo {
               }
               userData.isAdmin = user.getIsAdmin();
               userData.from = user.getFrom();
+              boolean date_new = user.getExpired().after(userData.expired);
               userData.expired = user.getExpired();
               userData.remark = user.getRemark();
               datastore.put(userData);
+
+              // 发送短信
+              if (date_new) {
+                try {
+                  //TimeZone.setDefault(TimeZone.getTimeZone("GMT+08"));
+                  Date new_date = new Date();
+                  new_date.setTime(user.getExpired().getTime() + 1000*60*60*24); //临时解决少一天的问题
+                  AliyunSendSms.Send_Renew(userData.email, fmt_expired.format(new_date));
+                } catch (Exception e) {
+                  throw new ObjectifyException(e.toString());
+                }
+              }
+
             } else {            // New User
               String emaillower = user.getEmail().toLowerCase();
               Objectify qDatastore = ObjectifyService.begin(); // Need an instance not in this transaction
@@ -2588,6 +2606,19 @@ public class ObjectifyStorageIo implements  StorageIo {
               userData.expired = user.getExpired();
               userData.remark = user.getRemark();
               datastore.put(userData);
+
+              // 发送短信
+              if (userData.email.length() == 11) {
+                try {
+                  //TimeZone.setDefault(TimeZone.getTimeZone("GMT+08"));
+                  Date new_date = new Date();
+                  new_date.setTime(userData.expired.getTime() + 1000*60*60*24); //临时解决少一天的问题
+                  AliyunSendSms.Send_Open(userData.email, ori_pwd, fmt_expired.format(new_date));
+                } catch (Exception e) {
+                  throw new ObjectifyException(e.toString());
+                }
+              }
+
             }
           }
         }, true);

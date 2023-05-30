@@ -580,8 +580,8 @@ public interface StorageIo {
 
   // Routines for user admin interface
 
-  List<AdminUser> searchUsers(String partialEmail);
-  void storeUser(AdminUser user) throws AdminInterfaceException;
+  List<AdminUser> searchUsers(String partialEmail, int count_limit);
+  void storeUser(AdminUser user, String ori_pwd) throws AdminInterfaceException;
 
   /**
    * There are two kinds of backpacks. User backpacks, which are

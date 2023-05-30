@@ -40,11 +40,11 @@ public class AdminInfoServiceImpl extends OdeRemoteServiceServlet implements Adm
    */
 
   @Override
-  public List<AdminUser> searchUsers(String startingPoint) {
+  public List<AdminUser> searchUsers(String startingPoint, int count_limit) {
     if (!userInfoProvider.getIsAdmin()) {
       throw new IllegalArgumentException("Unauthorized.");
     }
-    return storageIo.searchUsers(startingPoint);
+    return storageIo.searchUsers(startingPoint, count_limit);
   }
 
   @Override
@@ -66,7 +66,7 @@ public class AdminInfoServiceImpl extends OdeRemoteServiceServlet implements Adm
         throw new IllegalArgumentException("Error hashing password");
       }
     }
-    storageIo.storeUser(user);
+    storageIo.storeUser(user, password);
   }
 
   @Override

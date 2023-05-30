@@ -25,7 +25,7 @@ public interface AdminInfoService extends RemoteService {
    * search starting from the provided argument
    */
 
-  List<AdminUser> searchUsers(String startingPoint);
+  List<AdminUser> searchUsers(String startingPoint, int count_limit);
 
   /*
    * Update or Add a user.

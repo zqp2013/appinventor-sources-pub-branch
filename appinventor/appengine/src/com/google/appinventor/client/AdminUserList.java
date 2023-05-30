@@ -92,7 +92,7 @@ public class AdminUserList extends Composite {
     adminUsers = new ArrayList<AdminUser>();
 
     sortField = SortField.VISITED;
-    sortOrder = SortOrder.ASCENDING;;
+    sortOrder = SortOrder.ASCENDING;
 
     // Initialize UI
     table = new Grid(1, 7); // The table initially contains just the header row.
@@ -107,10 +107,12 @@ public class AdminUserList extends Composite {
     setHeaderRow();
 
     HorizontalPanel searchPanel = new HorizontalPanel();
-    searchPanel.setSpacing(5);
+    searchPanel.setSpacing(6);
     final LabeledTextBox searchText = new LabeledTextBox("输入账号：");
+    TextBox countText = new TextBox();
     Button searchButton = new Button("搜索");
     searchPanel.add(searchText);
+    searchPanel.add(countText);
     searchPanel.add(searchButton);
     Button addUserButton = new Button("添加账户");
     addUserButton.addClickListener(new ClickListener() {
@@ -124,7 +126,14 @@ public class AdminUserList extends Composite {
     searchButton.addClickListener(new ClickListener() {
         @Override
         public void onClick(Widget sender) {
-          Ode.getInstance().getAdminInfoService().searchUsers(searchText.getText(), searchCallback);
+
+          int count = 30;
+          try {
+            count = Integer.parseInt(countText.getText());
+          } catch (Exception e) {            
+          }
+
+          Ode.getInstance().getAdminInfoService().searchUsers(searchText.getText(), count, searchCallback);
         }
       });
 

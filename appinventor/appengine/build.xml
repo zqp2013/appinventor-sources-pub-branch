@@ -286,6 +286,12 @@
     <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/protobuf/protobuf-java-3.0.0.jar" />
     <!-- OWASP -->
     <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/owasp/owasp-java-html-sanitizer-20160628.1.jar" />
+    <!-- Aliyun:copy this compile ok, but copy all of lib to WEB_INFO when run -->
+    <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/aliyun/tea-1.1.14.jar" />
+    <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/aliyun/tea-openapi-0.2.8.jar" />
+    <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/aliyun/tea-util-0.2.16.jar" />
+    <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/aliyun/tea-console-0.0.1.jar" />
+    <copy todir="${build.war.dir}/WEB-INF/lib" file="${lib.dir}/aliyun/dysmsapi20170525-2.0.23.jar" />
     <!-- Add any additional server libs that need to be copied -->
     <copy todir="${build.war.dir}/WEB-INF/lib" flatten="true">
       <fileset dir="${appengine.sdk}/lib/user" includes="**/*.jar"/>
