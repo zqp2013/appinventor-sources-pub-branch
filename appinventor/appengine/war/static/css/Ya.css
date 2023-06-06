@@ -470,7 +470,10 @@ body {
   background:#FAC930!important;
   color:#fff!important;
 }
-
+.userCount{
+  padding:4px;
+  color:#FF8E21;
+}
 
 /*
  * Deck Panel
