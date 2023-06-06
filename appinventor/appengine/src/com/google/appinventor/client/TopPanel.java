@@ -131,7 +131,7 @@ public class TopPanel extends Composite {
 
     // VIP提醒
     if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
-      Label vipTip = new Label("查看VIP特权");
+      Label vipTip = new Label("升级VIP会员");
       vipTip.addClickHandler(new WindowOpenClickHandler("https://www.fun123.cn/reference/info/vip.html?f=top"));
       vipTip.setStyleName("ode-TopPanelButton vip");
       links.add(vipTip);
@@ -351,7 +351,7 @@ public class TopPanel extends Composite {
       if (expired != null) {
         expiredStr = expiredFormat.format(expired);
       }
-      String html = "<p>尊敬的VIP用户，您的VIP期限为： " + expiredStr + "<p/><br/><a href=\"//fun123.cn/reference/info/vip.html\" target=\"_blank\">点此续费</a><br/><br/>";
+      String html = "<p>尊敬的VIP用户，您的VIP期限为： " + expiredStr + "<p/><br/><a class=\"vip\" href=\"//fun123.cn/reference/info/vip.html?f=account\" target=\"_blank\">VIP续期</a><br/><br/>";
       HTML message = new HTML(html);
 
       SimplePanel holder = new SimplePanel();
