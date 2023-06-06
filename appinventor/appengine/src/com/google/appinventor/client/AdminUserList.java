@@ -64,6 +64,7 @@ public class AdminUserList extends Composite {
   private final Label visitedSortIndicator;
   private final Label fromSortIndicator;
   private final Label expiredSortIndicator;
+  private final Label userCount;
 
   // Date Time Formatter
   static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
@@ -107,7 +108,7 @@ public class AdminUserList extends Composite {
     setHeaderRow();
 
     HorizontalPanel searchPanel = new HorizontalPanel();
-    searchPanel.setSpacing(6);
+    searchPanel.setSpacing(7);
     final LabeledTextBox searchText = new LabeledTextBox("输入账号：");
     TextBox countText = new TextBox();
     countText.setWidth("40px");
@@ -126,6 +127,9 @@ public class AdminUserList extends Composite {
         }
       });
     searchPanel.add(addUserButton);
+    userCount = new Label();
+    userCount.addStyleName("userCount");
+    searchPanel.add(userCount);
 
     searchButton.addClickListener(new ClickListener() {
         @Override
@@ -365,6 +369,7 @@ public class AdminUserList extends Composite {
     refreshSortIndicators();
 
     // Refill the table.
+    userCount.setText("数量：" + adminUsers.size());
     table.resize(1 + adminUsers.size(), 7);
     int row = 1;
     for (AdminUser user : adminUsers) {
