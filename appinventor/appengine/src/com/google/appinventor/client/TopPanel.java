@@ -129,6 +129,14 @@ public class TopPanel extends Composite {
       links.add(readOnly);
     }
 
+    // VIP提醒
+    if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+      Label vipTip = new Label("查看VIP特权");
+      vipTip.addClickHandler(new WindowOpenClickHandler("https://www.fun123.cn/reference/info/vip.html?f=top"));
+      vipTip.setStyleName("ode-TopPanelButton vip");
+      links.add(vipTip);
+    }
+
     // My Projects Link
     TextButton myProjects = new TextButton(MESSAGES.myProjectsTabName());
     myProjects.setStyleName("ode-TopPanelButton");

@@ -455,6 +455,22 @@ body {
 	color:#FF8E21;
 }
 
+.vip{
+  font-size: 12px;
+  color: #A17118!important;
+  padding: 4px 12px;
+  height:18px;
+  border-radius: 12px;
+  background: #FAD86E!important;
+  position: relative;
+  right: 5px;
+  text-decoration:none;
+}
+.vip:hover, .vip:active, s.vip:focus{
+  background:#FAC930!important;
+  color:#fff!important;
+}
+
 
 /*
  * Deck Panel
