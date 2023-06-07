@@ -143,7 +143,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
 <% } %>
                                                     <input type=hidden name=email value="test@fun123.cn">
                                                     <input type=hidden name=password value="000000">
-                                                    <button name="button" type="submit" class="button btn btn-block ">点击试用（试用账户下项目会不定期清理）</button>
+                                                    <button name="button" type="submit" class="button btn btn-block ">免费试用（试用账户项目会不定期清理）</button>
                                                 </form>
                                             </div>
                                     </div>
