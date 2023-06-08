@@ -184,6 +184,11 @@ public class OdeAuthFilter implements Filter {
         Cookie cook = new Cookie("AppInventor", newCookie);
         cook.setPath("/");
         response.addCookie(cook);
+
+        // Add by 中文网
+        Cookie cook_uid = new Cookie("auth", userInfo.userId);
+        cook_uid.setPath("/");
+        response.addCookie(cook_uid);
       }
       chain.doFilter(request, response);
     } finally {

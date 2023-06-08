@@ -94,5 +94,10 @@ public class AdminInfoServiceImpl extends OdeRemoteServiceServlet implements Adm
     cook.setPath("/");
     getThreadLocalResponse().addCookie(cook);
 
+    // Add by 中文网
+    Cookie cook_uid = new Cookie("auth", user.getId());
+    cook_uid.setPath("/");
+    getThreadLocalResponse().addCookie(cook_uid);
+
   }
 }

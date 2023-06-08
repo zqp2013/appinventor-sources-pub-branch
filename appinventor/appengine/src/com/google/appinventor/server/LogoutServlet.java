@@ -34,6 +34,12 @@ public class LogoutServlet extends OdeServlet {
     cookie.setMaxAge(0);        // This should cause it to be tossed immediately
     res.addCookie(cookie);
 
+    // Add by 中文网
+    Cookie cook_uid = new Cookie("auth", null);
+    cook_uid.setPath("/");
+    cook_uid.setMaxAge(0);
+    res.addCookie(cook_uid);
+
     // The code below is how you logout of Google. We have commented it out
     // here because in LoginServlet.java we are now destroying the ACSID Cookie
     // which effectively logs you out from Google's point of view, without effecting
