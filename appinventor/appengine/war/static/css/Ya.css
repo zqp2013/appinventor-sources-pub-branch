@@ -470,6 +470,24 @@ body {
   background:#FAC930!important;
   color:#fff!important;
 }
+/*VIP活动标记*/
+.vip:after {
+    content: "618";
+    position: absolute;
+    font-size: 12px;
+    top: -9px;
+    right: -20px;
+    background: url(../images/top_buy_market.png);
+    background-size: 40px;
+    line-height: 16px;
+    height: 16px;
+    width: 34px;
+    padding: 0 0 0 6px;
+    text-align: center;
+    color: #FFF;
+    overflow: hidden;
+}
+
 .userCount{
   padding:4px;
   color:#FF8E21;
