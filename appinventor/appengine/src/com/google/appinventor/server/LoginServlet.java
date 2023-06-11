@@ -516,12 +516,20 @@ public class LoginServlet extends HttpServlet {
     if (redirect != null && !redirect.equals("")) {
       uri = redirect;
     }
-    uri = new UriBuilder(uri)
-      .add("locale", locale)
-      .add("autoload", autoload)
-      .add("repo", repo)
-      .add("ng", newGalleryId)
-      .add("galleryId", galleryId).build();
+    if (locale == "zh_CN") {
+      uri = new UriBuilder(uri)
+        .add("autoload", autoload)
+        .add("repo", repo)
+        .add("ng", newGalleryId)
+        .add("galleryId", galleryId).build();
+    } else {
+      uri = new UriBuilder(uri)
+        .add("locale", locale)
+        .add("autoload", autoload)
+        .add("repo", repo)
+        .add("ng", newGalleryId)
+        .add("galleryId", galleryId).build();
+    }
     resp.sendRedirect(uri);
   }
 
