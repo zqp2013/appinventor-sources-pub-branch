@@ -32,7 +32,7 @@ public class TutorialPanel extends Frame {
     // Create the UI elements of the DialogBox
     final DialogBox dialogBox = new DialogBox(true, true); // DialogBox(autohide, modal)
     dialogBox.setStylePrimaryName("ode-DialogBox");
-    dialogBox.setText("Tutorial Video");
+    dialogBox.setText("教程视频（如清晰度不佳，请切换清晰度）");
     dialogBox.setGlassEnabled(true);
     dialogBox.setAnimationEnabled(true);
     VerticalPanel DialogBoxContents = new VerticalPanel();
