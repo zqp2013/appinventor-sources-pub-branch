@@ -12,6 +12,7 @@ title: 绘画动画组件
 * [画布](#Canvas)
 * [图像精灵](#ImageSprite)
 
+***
 ## 球形精灵  {#Ball}
 
 可以放置在 [`画布`](#Canvas) 上的圆形“精灵”，它可以对触摸和拖动做出反应，
@@ -156,7 +157,8 @@ title: 绘画动画组件
 : Turns this `Ball` to point towards a given `target` sprite. The new heading will be parallel
  to the line joining the centerpoints of the two sprites.
 
-## Canvas  {#Canvas}
+***
+## 画布  {#Canvas}
 
 A two-dimensional touch-sensitive rectangular panel on which drawing can
  be done and sprites can be moved.
@@ -195,15 +197,14 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 {:id="Canvas.ExtendMovesOutsideCanvas" .boolean} *ExtendMovesOutsideCanvas*
 : Determines whether moves can extend beyond the canvas borders.   Default is false. This should normally be false, and the property is provided for backwards compatibility.
 
-{:id="Canvas.FontSize" .number} *FontSize*
-: Specifies the font size of text drawn on the Canvas.
+{:id="Canvas.FontSize" .number} *字体大小*
+: 指定画布上绘制的文本的字体大小。
 
-{:id="Canvas.Height" .number .bo} *Height*
-: Specifies the `Canvas`'s vertical height, measured in pixels.
+{:id="Canvas.Height" .number .bo} *高度*
+: 设置`画布`的垂直高度，以像素px为单位。
 
-{:id="Canvas.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Canvas`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="Canvas.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`画布`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Canvas.LineWidth" .number} *LineWidth*
 : Specifies the width of lines drawn on the Canvas.
@@ -224,16 +225,14 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
  [`DrawText`](#Canvas.DrawText) or
  [`DrawTextAtAngle`](#Canvas.DrawTextAtAngle)).
 
-{:id="Canvas.Visible" .boolean} *Visible*
-: Specifies whether the `Canvas` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Canvas` is showing and `假`{:.logic.block} if hidden.
+{:id="Canvas.Visible" .boolean} *可见性*
+: 设置`画布`是否显示在屏幕上，值是`真`{:.logic.block}则`画布`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Canvas.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Canvas`, measured in pixels.
+{:id="Canvas.Width" .number .bo} *宽度*
+: 设置`画布`的水平宽度，以像素px为单位。
 
-{:id="Canvas.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Canvas` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="Canvas.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`画布`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Canvas-Events}
 
@@ -327,7 +326,8 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Sets the color of the given pixel.  This has no effect if the
  coordinates are out of bounds.
 
-## ImageSprite  {#ImageSprite}
+***
+## 图像精灵  {#ImageSprite}
 
 A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to touches and drags,
  interact with other sprites ([`Ball`](#Ball)s and other `ImageSprite`s) and the edge of the

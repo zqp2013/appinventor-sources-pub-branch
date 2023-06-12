@@ -165,26 +165,23 @@ A `FeatureCollection` groups one or more map features together. Any events that 
  such strings, it is recommended to load the feature collection from assets or the web using
  the [`Source`](#FeatureCollection.Source) property.
 
-{:id="FeatureCollection.Height" .number .bo} *Height*
-: Specifies the `FeatureCollection`'s vertical height, measured in pixels.
+{:id="FeatureCollection.Height" .number .bo} *高度*
+: 设置`特征集合`的垂直高度，以像素px为单位。
 
-{:id="FeatureCollection.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `FeatureCollection`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="FeatureCollection.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`特征集合`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="FeatureCollection.Source" .text .ro} *Source*
 : Specifies the source URL used to populate the feature collection. If the feature collection was not loaded from a URL, this will be the empty string.
 
-{:id="FeatureCollection.Visible" .boolean} *Visible*
-: Specifies whether the `FeatureCollection` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `FeatureCollection` is showing and `假`{:.logic.block} if hidden.
+{:id="FeatureCollection.Visible" .boolean} *可见性*
+: 设置`特征集合`是否显示在屏幕上，值是`真`{:.logic.block}则`特征集合`显示，`假`{:.logic.block}则隐藏。
 
-{:id="FeatureCollection.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `FeatureCollection`, measured in pixels.
+{:id="FeatureCollection.Width" .number .bo} *宽度*
+: 设置`特征集合`的水平宽度，以像素px为单位。
 
-{:id="FeatureCollection.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `FeatureCollection` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="FeatureCollection.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`特征集合`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#FeatureCollection-Events}
 
@@ -411,12 +408,11 @@ A two-dimensional container that renders map tiles in the background and allows 
  feature's `Visible`{:.getter.block} property). This list also includes any features created on
  the `Map` by calls to [`FeatureFromDescription`](#Map.FeatureFromDescription).
 
-{:id="Map.Height" .number .bo} *Height*
-: Specifies the `Map`'s vertical height, measured in pixels.
+{:id="Map.Height" .number .bo} *高度*
+: 设置`地图`的垂直高度，以像素px为单位。
 
-{:id="Map.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Map`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="Map.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`地图`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Map.Latitude" .number .ro .bo} *Latitude*
 : Gets the latitude of the center of the Map. To change the latitude, use the
@@ -469,16 +465,14 @@ A two-dimensional container that renders map tiles in the background and allows 
 {:id="Map.UserLongitude" .number .ro .bo} *UserLongitude*
 : Returns the user's longitude if ShowUser is enabled.
 
-{:id="Map.Visible" .boolean} *Visible*
-: Specifies whether the `Map` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Map` is showing and `假`{:.logic.block} if hidden.
+{:id="Map.Visible" .boolean} *可见性*
+: 设置`地图`是否显示在屏幕上，值是`真`{:.logic.block}则`地图`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Map.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Map`, measured in pixels.
+{:id="Map.Width" .number .bo} *宽度*
+: 设置`地图`的水平宽度，以像素px为单位。
 
-{:id="Map.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Map` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="Map.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`地图`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 {:id="Map.ZoomLevel" .number} *ZoomLevel*
 : Specifies the zoom level of the map.
@@ -646,12 +640,11 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 : Sets or gets the opacity of the color used to fill the `Marker`. A value of 0.0 will be
  completely invisible and a value of 1.0 will be completely opaque.
 
-{:id="Marker.Height" .number .bo} *Height*
-: Specifies the `Marker`'s vertical height, measured in pixels.
+{:id="Marker.Height" .number .bo} *高度*
+: 设置`标记`的垂直高度，以像素px为单位。
 
-{:id="Marker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Marker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="Marker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`标记`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Marker.ImageAsset" .text} *ImageAsset*
 : Specifies the image shown for the `Marker`. If set to the empty string "", then the default
@@ -686,16 +679,14 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 {:id="Marker.Type" .text .ro .bo} *Type*
 : Return the type of the map feature. For Marker, this returns the text "Marker".
 
-{:id="Marker.Visible" .boolean} *Visible*
-: Specifies whether the `Marker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Marker` is showing and `假`{:.logic.block} if hidden.
+{:id="Marker.Visible" .boolean} *可见性*
+: 设置`标记`是否显示在屏幕上，值是`真`{:.logic.block}则`标记`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Marker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Marker`, measured in pixels.
+{:id="Marker.Width" .number .bo} *宽度*
+: 设置`标记`的水平宽度，以像素px为单位。
 
-{:id="Marker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Marker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="Marker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`标记`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Marker-Events}
 

@@ -14,6 +14,7 @@ title: 界面布局组件
 * [垂直布局](#VerticalArrangement)
 * [垂直滚动条布局](#VerticalScrollArrangement)
 
+***
 ## 水平布局  {#HorizontalArrangement}
 
 ![HorizontalArrangement icon](images/horizontalarrangement.png)
@@ -60,26 +61,23 @@ title: 界面布局组件
  integer.  If an Image has been set, the color change will not be visible
  until the Image is removed.
 
-{:id="HorizontalArrangement.Height" .number .bo} *Height*
-: Specifies the `水平布局`'s vertical height, measured in pixels.
+{:id="HorizontalArrangement.Height" .number .bo} *高度*
+: 设置`水平布局`的垂直高度，以像素px为单位。
 
-{:id="HorizontalArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `水平布局`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="HorizontalArrangement.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`水平布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="HorizontalArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `水平布局`.
+{:id="HorizontalArrangement.Image" .text} *图像*
+: 设置`水平布局`背景图片路径。
 
-{:id="HorizontalArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `水平布局` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `水平布局` is showing and `假`{:.logic.block} if hidden.
+{:id="HorizontalArrangement.Visible" .boolean} *可见性*
+: 设置`水平布局`是否显示在屏幕上，值是`真`{:.logic.block}则`水平布局`显示，`假`{:.logic.block}则隐藏。
 
-{:id="HorizontalArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `水平布局`, measured in pixels.
+{:id="HorizontalArrangement.Width" .number .bo} *宽度*
+: 设置`水平布局`的水平宽度，以像素px为单位。
 
-{:id="HorizontalArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `水平布局` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="HorizontalArrangement.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`水平布局`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#HorizontalArrangement-Events}
 
@@ -92,7 +90,7 @@ title: 界面布局组件
 {:.methods}
 无
 
-
+***
 ## 水平滚动条布局  {#HorizontalScrollArrangement}
 
 A formatting element in which to place components that should be displayed from left to right.
@@ -122,26 +120,23 @@ A formatting element in which to place components that should be displayed from 
  integer.  If an Image has been set, the color change will not be visible
  until the Image is removed.
 
-{:id="HorizontalScrollArrangement.Height" .number .bo} *Height*
-: Specifies the `水平滚动条布局`'s vertical height, measured in pixels.
+{:id="HorizontalScrollArrangement.Height" .number .bo} *高度*
+: 设置`水平滚动条布局`的垂直高度，以像素px为单位。
 
-{:id="HorizontalScrollArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `水平滚动条布局`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="HorizontalScrollArrangement.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`水平滚动条布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="HorizontalScrollArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `水平滚动条布局`.
+{:id="HorizontalScrollArrangement.Image" .text} *图像*
+: 设置`水平滚动条布局`背景图片路径。
 
-{:id="HorizontalScrollArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `水平滚动条布局` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `水平滚动条布局` is showing and `假`{:.logic.block} if hidden.
+{:id="HorizontalScrollArrangement.Visible" .boolean} *可见性*
+: 设置`水平滚动条布局`是否显示在屏幕上，值是`真`{:.logic.block}则`水平滚动条布局`显示，`假`{:.logic.block}则隐藏。
 
-{:id="HorizontalScrollArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `水平滚动条布局`, measured in pixels.
+{:id="HorizontalScrollArrangement.Width" .number .bo} *宽度*
+: 设置`水平滚动条布局`的水平宽度，以像素px为单位。
 
-{:id="HorizontalScrollArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `水平滚动条布局` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="HorizontalScrollArrangement.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`水平滚动条布局`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#HorizontalScrollArrangement-Events}
 
@@ -154,8 +149,8 @@ A formatting element in which to place components that should be displayed from 
 {:.methods}
 无
 
-
-## TableArrangement  {#TableArrangement}
+***
+## 表格布局  {#TableArrangement}
 
 Use a table arrangement component to display a group of components in a tabular fashion.
 
@@ -187,26 +182,23 @@ Use a table arrangement component to display a group of components in a tabular 
 {:id="TableArrangement.Columns" .number .do} *Columns*
 : Determines the number of columns in the table.
 
-{:id="TableArrangement.Height" .number .bo} *Height*
-: Specifies the `TableArrangement`'s vertical height, measured in pixels.
+{:id="TableArrangement.Height" .number .bo} *高度*
+: 设置`表格布局`的垂直高度，以像素px为单位。
 
-{:id="TableArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `TableArrangement`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="TableArrangement.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`表格布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="TableArrangement.Rows" .number .do} *Rows*
 : Determines the number of rows in the table.
 
-{:id="TableArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `TableArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `TableArrangement` is showing and `假`{:.logic.block} if hidden.
+{:id="TableArrangement.Visible" .boolean} *可见性*
+: 设置`表格布局`是否显示在屏幕上，值是`真`{:.logic.block}则`表格布局`显示，`假`{:.logic.block}则隐藏。
 
-{:id="TableArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `TableArrangement`, measured in pixels.
+{:id="TableArrangement.Width" .number .bo} *宽度*
+: 设置`表格布局`的水平宽度，以像素px为单位。
 
-{:id="TableArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `TableArrangement` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="TableArrangement.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`表格布局`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#TableArrangement-Events}
 
@@ -219,8 +211,8 @@ Use a table arrangement component to display a group of components in a tabular 
 {:.methods}
 无
 
-
-## VerticalArrangement  {#VerticalArrangement}
+***
+## 垂直布局  {#VerticalArrangement}
 
 ![VerticalArrangement icon](images/verticalarrangement.png)
 
@@ -267,31 +259,26 @@ Use a table arrangement component to display a group of components in a tabular 
  are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
  Alignment has no effect if the `VerticalArrangement`'s [`Height`](#VerticalArrangement.Height) is `Automatic`.
 
-{:id="VerticalArrangement.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the VerticalArrangement as an alpha-red-green-blue
- integer.  If an Image has been set, the color change will not be visible
- until the Image is removed.
+{:id="VerticalArrangement.BackgroundColor" .color} *背景颜色*
+: 设置`垂直布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#VerticalArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#VerticalArrangement.Image)属性为止。
 
-{:id="VerticalArrangement.Height" .number .bo} *Height*
-: Specifies the `VerticalArrangement`'s vertical height, measured in pixels.
+{:id="VerticalArrangement.Height" .number .bo} *高度*
+: 设置`垂直布局`的垂直高度，以像素px为单位。
 
-{:id="VerticalArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `VerticalArrangement`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="VerticalArrangement.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`垂直布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="VerticalArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `VerticalArrangement`.
+{:id="VerticalArrangement.Image" .text} *图像*
+: 设置`垂直布局`背景图片路径。
 
-{:id="VerticalArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `VerticalArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `VerticalArrangement` is showing and `假`{:.logic.block} if hidden.
+{:id="VerticalArrangement.Visible" .boolean} *可见性*
+: 设置`垂直布局`是否显示在屏幕上，值是`真`{:.logic.block}则`垂直布局`显示，`假`{:.logic.block}则隐藏。
 
-{:id="VerticalArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `VerticalArrangement`, measured in pixels.
+{:id="VerticalArrangement.Width" .number .bo} *宽度*
+: 设置`垂直布局`的水平宽度，以像素px为单位。
 
-{:id="VerticalArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `VerticalArrangement` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="VerticalArrangement.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`垂直布局`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#VerticalArrangement-Events}
 
@@ -304,8 +291,8 @@ Use a table arrangement component to display a group of components in a tabular 
 {:.methods}
 无
 
-
-## VerticalScrollArrangement  {#VerticalScrollArrangement}
+***
+## 垂直滚动条布局  {#VerticalScrollArrangement}
 
 A formatting element in which to place components that should be displayed one below another.
  (The first child component is stored on top, the second beneath it, etc.) If you wish to have
@@ -329,31 +316,26 @@ A formatting element in which to place components that should be displayed one b
  are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
  Alignment has no effect if the `VerticalScrollArrangement`'s [`Height`](#VerticalScrollArrangement.Height) is `Automatic`.
 
-{:id="VerticalScrollArrangement.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the VerticalScrollArrangement as an alpha-red-green-blue
- integer.  If an Image has been set, the color change will not be visible
- until the Image is removed.
+{:id="VerticalScrollArrangement.BackgroundColor" .color} *背景颜色*
+: 设置`垂直滚动条布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#VerticalScrollArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#VerticalScrollArrangement.Image)属性为止。
 
-{:id="VerticalScrollArrangement.Height" .number .bo} *Height*
-: Specifies the `VerticalScrollArrangement`'s vertical height, measured in pixels.
+{:id="VerticalScrollArrangement.Height" .number .bo} *高度*
+: 设置`垂直滚动条布局`的垂直高度，以像素px为单位。
 
-{:id="VerticalScrollArrangement.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `VerticalScrollArrangement`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="VerticalScrollArrangement.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`垂直滚动条布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="VerticalScrollArrangement.Image" .text} *Image*
-: Specifies the path of the background image of the `VerticalScrollArrangement`.
+{:id="VerticalScrollArrangement.Image" .text} *图像*
+: 设置`垂直滚动条布局`背景图片路径。
 
-{:id="VerticalScrollArrangement.Visible" .boolean} *Visible*
-: Specifies whether the `VerticalScrollArrangement` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `VerticalScrollArrangement` is showing and `假`{:.logic.block} if hidden.
+{:id="VerticalScrollArrangement.Visible" .boolean} *可见性*
+: 设置`垂直滚动条布局`是否显示在屏幕上，值是`真`{:.logic.block}则`垂直滚动条布局`显示，`假`{:.logic.block}则隐藏。
 
-{:id="VerticalScrollArrangement.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `VerticalScrollArrangement`, measured in pixels.
+{:id="VerticalScrollArrangement.Width" .number .bo} *宽度*
+: 设置`垂直滚动条布局`的水平宽度，以像素px为单位。
 
-{:id="VerticalScrollArrangement.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `VerticalScrollArrangement` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="VerticalScrollArrangement.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`垂直滚动条布局`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#VerticalScrollArrangement-Events}
 

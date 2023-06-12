@@ -26,9 +26,8 @@ The Chart component plots data originating from it's attached Data components. F
 
 {:.properties}
 
-{:id="Chart.BackgroundColor" .color} *BackgroundColor*
-: Specifies the chart's background color as an alpha-red-green-blue
- integer.
+{:id="Chart.BackgroundColor" .color} *背景颜色*
+: 设置`图表`的背景颜色，使用RGBA数值表示。
 
 {:id="Chart.Description" .text} *Description*
 : Specifies the text displayed by the description label inside the Chart.
@@ -39,12 +38,11 @@ The Chart component plots data originating from it's attached Data components. F
  Chart Type is set to a Chart with an Axis (applies for Area, Bar, Line,
  Scatter Chart types).
 
-{:id="Chart.Height" .number .bo} *Height*
-: Specifies the `Chart`'s vertical height, measured in pixels.
+{:id="Chart.Height" .number .bo} *高度*
+: 设置`图表`的垂直高度，以像素px为单位。
 
-{:id="Chart.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `Chart`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="Chart.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`图表`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Chart.Labels" .list .bo} *Labels*
 : Changes the Chart's X axis labels to the specified List,
@@ -72,16 +70,14 @@ The Chart component plots data originating from it's attached Data components. F
 {:id="Chart.Type" .com.google.appinventor.components.common.ChartTypeEnum .do} *Type*
 : Specifies the type of the Chart, which determines how to visualize the data.
 
-{:id="Chart.Visible" .boolean} *Visible*
-: Specifies whether the `Chart` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Chart` is showing and `假`{:.logic.block} if hidden.
+{:id="Chart.Visible" .boolean} *可见性*
+: 设置`图表`是否显示在屏幕上，值是`真`{:.logic.block}则`图表`显示，`假`{:.logic.block}则隐藏。
 
-{:id="Chart.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `Chart`, measured in pixels.
+{:id="Chart.Width" .number .bo} *宽度*
+: 设置`图表`的水平宽度，以像素px为单位。
 
-{:id="Chart.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `Chart` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="Chart.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`图表`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Chart-Events}
 

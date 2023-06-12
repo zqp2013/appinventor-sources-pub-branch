@@ -534,31 +534,28 @@ title: 多媒体组件
 {:id="VideoPlayer.FullScreen" .boolean .bo} *FullScreen*
 : Sets whether the video should be shown in fullscreen or not.
 
-{:id="VideoPlayer.Height" .number .bo} *Height*
-: Specifies the component's vertical height, measured in pixels.
+{:id="VideoPlayer.Height" .number .bo} *高度*
+: 设置`视频播放器`的垂直高度，以像素px为单位。
 
-{:id="VideoPlayer.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `VideoPlayer`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="VideoPlayer.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`视频播放器`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="VideoPlayer.Source" .text .wo} *Source*
 : Sets the "path" to the video. Usually, this will be the name of the video file, which should be
  added in the Designer.
 
-{:id="VideoPlayer.Visible" .boolean} *Visible*
-: Specifies whether the `VideoPlayer` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `VideoPlayer` is showing and `假`{:.logic.block} if hidden.
+{:id="VideoPlayer.Visible" .boolean} *可见性*
+: 设置`视频播放器`是否显示在屏幕上，值是`真`{:.logic.block}则`视频播放器`显示，`假`{:.logic.block}则隐藏。
 
 {:id="VideoPlayer.Volume" .number .wo} *Volume*
 : Sets the volume property to a number between 0 and 100. Values less than 0
  will be treated as 0, and values greater than 100 will be treated as 100.
 
-{:id="VideoPlayer.Width" .number .bo} *Width*
-: Specifies the component's horizontal width, measured in pixels.
+{:id="VideoPlayer.Width" .number .bo} *宽度*
+: 设置`视频播放器`的水平宽度，以像素px为单位。
 
-{:id="VideoPlayer.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `VideoPlayer` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="VideoPlayer.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`视频播放器`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#VideoPlayer-Events}
 
