@@ -15,10 +15,11 @@ title: 多媒体组件
 * [音效](#Sound)
 * [录音机](#SoundRecorder)
 * [语音识别器](#SpeechRecognizer)
-* [文本语音转换器](#TextToSpeech)
+* [文本朗读器](#TextToSpeech)
 * [翻译器](#Translator)
 * [视频播放器](#VideoPlayer)
 
+***
 ## 摄像机  {#Camcorder}
 
 ![Camcorder icon](images/camcorder.png)
@@ -47,9 +48,10 @@ title: 多媒体组件
 {:id="Camcorder.RecordVideo" class="method"} <i/> 开始录制()
 : 录制视频，然后触发[`录制完成`](#Camcorder.AfterRecording)事件。
 
+***
 ## 照相机  {#Camera}
 
-![Camera icon](images/camera.png)
+![照相机图标](images/camera.png)
 
  使用相机组件在手机上拍照。
 
@@ -77,7 +79,10 @@ title: 多媒体组件
 {:id="Camera.TakePicture" class="method"} <i/> 拍照()
 : 拍照，然后触发 [`拍摄完成`](#Camera.AfterPicture) 事件。
 
+***
 ## 图像选择框  {#ImagePicker}
+
+![图像选择框图标](images/imagepicker.png)
 
 当用户点击 `图像选择框` 时，打开设备的图片库，用户可以选择图像。选取图像后，[`选中项`](#ImagePicker.Selection) 属性返回选中图像的文件名称。
 最多返回10个图像，超过则删除之前旧的图像，按时间从旧到新的顺序排列。
@@ -87,110 +92,99 @@ title: 多媒体组件
 {:.properties}
 
 {:id="ImagePicker.BackgroundColor" .color} *背景颜色*
-: Specifies the `ImagePicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#ImagePicker.Image) has been set, the color
- change will not be visible until the [`Image`](#ImagePicker.Image) is removed.
+: 设置`图像选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ImagePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ImagePicker.Image)属性为止。
 
 {:id="ImagePicker.Enabled" .boolean} *启用*
-: Specifies whether the `ImagePicker` should be active and clickable.
+: 设置`图像选择框`是否可以被激活和点击。
 
 {:id="ImagePicker.FontBold" .boolean} *粗体*
-: Specifies whether the text of the `ImagePicker` should be bold.
- Some fonts do not support bold.
+: 设置`图像选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
 {:id="ImagePicker.FontItalic" .boolean} *斜体*
-: Specifies whether the text of the `ImagePicker` should be italic.
- Some fonts do not support italic.
+: 设置`图像选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="ImagePicker.FontSize" .number} *字号*
-: Specifies the text font size of the `ImagePicker`, measured in sp(scale-independent pixels).
+{:id="ImagePicker.FontSize" .number} *字体大小*
+: 设置`图像选择框`的字体大小，以像素px为单位。
 
 {:id="ImagePicker.FontTypeface" .number .do} *字体*
-: Specifies the text font face of the `ImagePicker` as default, serif, sans
- serif, or monospace.
+: 设置`图像选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
 {:id="ImagePicker.Height" .number .bo} *高度*
-: Specifies the `ImagePicker`'s vertical height, measured in pixels.
+: 设置`图像选择框`的垂直高度，以像素px为单位。
 
 {:id="ImagePicker.HeightPercent" .number .wo .bo} *高度百分比*
-: Specifies the `ImagePicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+: 设置`图像选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="ImagePicker.Image" .text} *图像*
-: Specifies the path of the `ImagePicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#ImagePicker.BackgroundColor) specified, only the `Image` will be visible.
+: 设置`图像选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ImagePicker.BackgroundColor)，则仅`图像`可见。
 
-{:id="ImagePicker.Selection" .text .ro .bo} *Selection*
-: Path to the file containing the image that was selected.
+{:id="ImagePicker.Selection" .text .ro .bo} *选中项*
+: 包含所选图像文件的路径。
 
 {:id="ImagePicker.Shape" .number .do} *形状*
-: Specifies the shape of the `ImagePicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#ImagePicker.Image) is used.
+: 设置`图像选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#ImagePicker.Image)，则`形状`将不可见。
 
 {:id="ImagePicker.ShowFeedback" .boolean} *显示交互效果*
-: Specifies if a visual feedback should be shown when a `ImagePicker` with an assigned
- [`Image`](#ImagePicker.Image) is pressed.
+: 设置`图像选择框`指定 [`图像`](#ImagePicker.Image)后被按压是否显示视觉反馈。
 
 {:id="ImagePicker.Text" .text} *文本*
-: Specifies the text displayed by the `ImagePicker`.
+: 设置`图像选择框`的显示文本。
 
 {:id="ImagePicker.TextAlignment" .number .do} *文本对齐方式*
-: Specifies the alignment of the `ImagePicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+: 设置`图像选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="ImagePicker.TextColor" .color} *文本颜色*
-: Specifies the text color of the `ImagePicker` as an alpha-red-green-blue
- integer.
+: 设置`图像选择框`的文本颜色，使用RGBA数值表示。
 
 {:id="ImagePicker.Visible" .boolean} *可见性*
-: Specifies whether the `ImagePicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `ImagePicker` is showing and `假`{:.logic.block} if hidden.
+: 设置`图像选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`图像选择框`显示，`假`{:.logic.block}则隐藏。
 
 {:id="ImagePicker.Width" .number .bo} *宽度*
-: Specifies the horizontal width of the `ImagePicker`, measured in pixels.
+: 设置`图像选择框`的水平宽度，以像素px为单位。
 
 {:id="ImagePicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: Specifies the horizontal width of the `ImagePicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+: 设置`图像选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ImagePicker-Events}
 
 {:.events}
 
 {:id="ImagePicker.AfterPicking"} 选择完成()
-: Event to be raised after the `ImagePicker` activity returns its
- result and the properties have been filled in.
+: 在 `图像选择框` 活动返回其结果和属性时触发该事件。
 
 {:id="ImagePicker.BeforePicking"} 准备选择()
-: Event to raise when the `ImagePicker` is clicked or the picker is shown
- using the [`Open`](#ImagePicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
+: 单击 `图像选择框` 或使用 [`打开选框`](#ImagePicker.Open) 方法显示选择器时触发该事件，此事件发生在选择器显示之前。
 
 {:id="ImagePicker.GotFocus"} 获得焦点()
-: Indicates the cursor moved over the `ImagePicker` so it is now possible
- to click it.
+: 表示光标移动到 `图像选择框` 上，现在可以点击它。
 
 {:id="ImagePicker.LostFocus"} 失去焦点()
-: Indicates the cursor moved away from the `ImagePicker` so it is now no
- longer possible to click it.
+: 表示光标从 `图像选择框` 移开，现在它不可再被点击。
 
 {:id="ImagePicker.TouchDown"} 被按压()
-: Indicates that the `ImagePicker` was pressed down.
+: 表示 `图像选择框` 被按下。
 
 {:id="ImagePicker.TouchUp"} 被松开()
-: Indicates that the `ImagePicker` has been released.
+: 表示 `图像选择框` 被松开。
 
 ### 方法  {#ImagePicker-Methods}
 
 {:.methods}
 
 {:id="ImagePicker.Open" class="method"} <i/> 打开选框()
-: Opens the `ImagePicker`, as though the user clicked on it.
+: 打开 `图像选择框`，就像用户点击它一样。
 
+***
 ## 音频播放器  {#Player}
+
+![音频播放器图标](images/player.png)
 
 播放音频和控制手机振动的多媒体组件。多媒体文件名称在[`源文件`](#Player.Source) 属性中指定，在界面设计和程序设计视图中都可以进行设置。
 振动的时长只能在程序设计视图中指定，单位是ms毫秒（千分之一秒）。
@@ -249,7 +243,10 @@ title: 多媒体组件
 {:id="Player.Vibrate" class="method"} <i/> Vibrate(*milliseconds*{:.number})
 : Vibrates for specified number of milliseconds.
 
+***
 ## 音效  {#Sound}
+
+![音效图标](images/sound.png)
 
 一种多媒体组件，可播放声音文件并根据播放次数选择振动几ms毫秒（千分之一秒），在程序设计视图中指定。声音文件的名称可以在界面设计或程序设计视图中指定。
 
@@ -296,9 +293,10 @@ title: 多媒体组件
 {:id="Sound.Vibrate" class="method"} <i/> Vibrate(*millisecs*{:.number})
 : Vibrates for the specified number of milliseconds.
 
-## SoundRecorder  {#SoundRecorder}
+***
+## 录音机  {#SoundRecorder}
 
-![SoundRecorder icon](images/soundrecorder.png)
+![录音机图标](images/soundRecorder.png)
 
  Multimedia component that records audio.
 
@@ -337,55 +335,47 @@ title: 多媒体组件
 {:id="SoundRecorder.Stop" class="method"} <i/> Stop()
 : Stops recording.
 
-## SpeechRecognizer  {#SpeechRecognizer}
+## 语音识别器  {#SpeechRecognizer}
 
-![SpeechRecognizer icon](images/speechrecognizer.png)
+![语音识别器图标](images/speechrecognizer.png)
 
- Use a `SpeechRecognizer` component to listen to the user speaking and convert the spoken sound
- into text using the device's speech recognition feature.
-
+ 使用 `语音识别器` 组件来收听用户说话并转换语音，使用设备的语音识别功能转换为文本。
 
 
 ### 属性  {#SpeechRecognizer-Properties}
 
 {:.properties}
 
-{:id="SpeechRecognizer.Language" .text .bo} *Language*
-: Suggests the language to use for recognizing speech. An empty string (the default) will
- use the system's default language.
+{:id="SpeechRecognizer.Language" .text .bo} *语言*
+: 指定用于识别语音的语言，空字符串（默认值）将使用系统的默认语言。
+  
+  使用 [语言标签](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) 指定语言带有可选的区域后缀，例如 en 或 zh-CN，支持的语言集因设备而异。
 
-     Language is specified using a [language tag](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-     with an optional region suffix, such as en or es-MX. The set of supported languages will
-     vary by device.
-
-{:id="SpeechRecognizer.Result" .text .ro .bo} *Result*
-: Returns the last text produced by the recognizer.
+{:id="SpeechRecognizer.Result" .text .ro .bo} *结果*
+: 返回识别器生成的最后一个文本。
 
 {:id="SpeechRecognizer.UseLegacy" .boolean} *UseLegacy*
-: If true, a separate dialog is used to recognize speech (the default). If false, speech is
- recognized in the background and updates are received as it recognizes words.
- [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) may get several calls with `partial` set to `真`{:.logic.block}.
- Once sufficient time has elapsed since the last utterance, or `StopListening` is called,
- the last string will be returned with `partial` set to `假`{:.logic.block} to indicate that it is the
- final recognized string and no more data will be provided until recognition is again started. See
- [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) for more details on partial speech recognition.
+: 如果为真，则使用单独的对话框来识别语音（默认）；如果为假，则语音在后台识别，并在识别新的内容时更新。
+  
+  `部分结果` 设置为 `真`{:.logic.block} 时，[`识别完成`](#SpeechRecognizer.AfterGettingText) 可能会触发多次。
+  
+  一旦自上次说话以来经过了足够的时间，或者调用了 `停止识别`，最后一个文本结果将返回，并将 `部分结果` 设置为 `假`{:.logic.block} 以表示它是最终识别的字符串，之后不再会有更多结果返回，除非再次开始识别。更多详细信息请参考[`识别完成`](#SpeechRecognizer.AfterGettingText)。
 
 ### 事件  {#SpeechRecognizer-Events}
 
 {:.events}
 
-{:id="SpeechRecognizer.AfterGettingText"} AfterGettingText(*result*{:.text},*partial*{:.boolean})
-: Simple event to raise after the SpeechRecognizer has recognized speech. If
- [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `真`{:.logic.block}, then this event will only happen once
- at the very end of the recognition. If [`UseLegacy`](#SpeechRecognizer.UseLegacy) is `假`{:.logic.block},
- then this event will run multiple times as the `SpeechRecognizer` incrementally recognizes
- speech. In this case, `partial` will be `真`{:.logic.block} until the recognized speech
- has been finalized (e.g., the user has stopped speaking), in which case `partial` will be
- `假`{:.logic.block}.
+{:id="SpeechRecognizer.AfterGettingText"} 识别完成(*返回结果*{:.text},*部分结果*{:.boolean})
+: 在 `语音识别器` 识别语音后触发该事件。
+  
+  如果 [`UseLegacy`](#SpeechRecognizer.UseLegacy) 是`真`{:.logic.block}，那么这个事件在识别的最后只会触发一次；
+  
+  如果 [`UseLegacy`](#SpeechRecognizer.UseLegacy) 是`假`{:.logic.block}，那么这个事件将触发多次，因为 `语音识别器` 会逐渐识别语音，在这种情况下，`部分结果` 将是 `真`{:.logic.block} 。
+  
+  直至语音识别已完成（例如，用户已停止说话），在这种情况下，`部分结果`将是 `假`{:.logic.block}。
 
-{:id="SpeechRecognizer.BeforeGettingText"} BeforeGettingText()
-: Simple event to raise when the `SpeechRecognizer` is invoked but before its
- activity is started.
+{:id="SpeechRecognizer.BeforeGettingText"} 准备识别()
+: 在调用 `语音识别器` 之前触发该事件。
 
 ### 方法  {#SpeechRecognizer-Methods}
 
@@ -401,22 +391,20 @@ title: 多媒体组件
  This function works only when the [`UseLegacy`](#SpeechRecognizer.UseLegacy) property is
  set to `假`{:.logic.block}.
 
-## TextToSpeech  {#TextToSpeech}
+***
+## 文本朗读器  {#TextToSpeech}
 
-The `TextToSpeech` component speaks a given text aloud. You can set the pitch
- and the rate of speech.
+![文本朗读器图标](images/texttospeech.png)
 
- You can also set a language by supplying a language code. This changes the pronunciation of
- words, not the actual language spoken. For example, setting the [`Language`](#TextToSpeech.Language) to French
- and speaking English text will sound like someone speaking English (en) with a French accent.
+`文本朗读器` 组件会大声朗读给定的文本，你可以设置音高和语速。
 
- You can also specify a country by supplying a [`Country`](#TextToSpeech.Country) code. This can affect the
- pronunciation. For example, British English (GBR) will sound different from US English (USA).
- Not every country code will affect every language.
+  你还可以通过提供语言代码来设置语言，这将改变单词的读法，而不是实际使用的语言。
+  
+  例如，将 [`语言`](#TextToSpeech.Language) 设置为法语，并且说英语文本，听起来就像有人说带有法国口音的英语 (en)。
 
- The languages and countries available depend on the particular device, and can be listed with
- the [`AvailableLanguages`](#TextToSpeech.AvailableLanguages) and [`AvailableCountries`](#TextToSpeech.AvailableCountries) properties.
+  你还可以通过提供 [`国家`](#TextToSpeech.Country) 代码来指定国家/地区，这会影响发音。例如，英国英语 (GBR) 听起来与美国英语 (USA) 不同，并非每个国家/地区代码都会影响每种语言。
 
+  可用的语言和国家/地区取决于特定设备，并且可以使用 [`可用语言`](#TextToSpeech.AvailableLanguages) 和 [`可用国家`](#TextToSpeech.AvailableCountries) 属性列出。
 
 
 ### 属性  {#TextToSpeech-Properties}
@@ -478,22 +466,18 @@ The `TextToSpeech` component speaks a given text aloud. You can set the pitch
 {:id="TextToSpeech.Speak" class="method"} <i/> Speak(*message*{:.text})
 : Speaks the given message.
 
-## Translator  {#Translator}
+***
+## 翻译器  {#Translator}
 
-Use this component to translate words and sentences between
- different languages. This component needs Internet access, as it
- will request translations from a server at MIT (which in turn will
- request translations from a commercial translation service).
- Specify the source and target language in the form source-target
- using two letter language codes.  So "en-es" will translate from
- English to Spanish while "es-ru" will translate from Spanish to
- Russian. If you leave out the source language, the service will
- attempt to detect the source language. So providing just "es" will
- attempt to detect the source language and translate it to Spanish.
+![翻译器图标](images/translator.png)
 
- **Note:** Translation happens asynchronously in the background. When the translation is complete,
- the [`GotTranslation`](#Translator.GotTranslation) event is triggered.
+使用此组件在不同的语言之间翻译单词和句子。该组件需要 Internet 访问，因为它将从麻省理工学院（MIT）的服务器请求翻译（也可切换成请求商业翻译服务）。
+  
+  以 `源语言-目标语言` 的形式指定源语言和目标语言使用两个字母的语言代码。因此 `en-es` 将翻译自英语翻译成西班牙语，而 `es-ru` 将从西班牙语翻译成俄语。 
+  
+  如果省略源语言，该服务将尝试检测源语言。因此只提供 `es` 将尝试检测源语言并将其翻译成西班牙语。
 
+  **注意：** 翻译在后台异步进行，翻译完成后，[`获取翻译内容`](#Translator.GotTranslation) 事件将被触发。
 
 
 ### 属性  {#Translator-Properties}
@@ -525,28 +509,22 @@ Use this component to translate words and sentences between
  prepending it to the language translation, e.g., es-ru will specify Spanish to Russian
  translation.
 
-## VideoPlayer  {#VideoPlayer}
+***
+## 视频播放器  {#VideoPlayer}
 
-A multimedia component capable of playing videos. When the application is run, the `VideoPlayer`
- will be displayed as a rectangle on-screen. If the user touches the rectangle, controls will
- appear to play/pause, skip ahead, and skip backward within the video. The application can also
- control behavior by calling the [`Start`](#VideoPlayer.Start), [`Pause`](#VideoPlayer.Pause), and [`SeekTo`](#VideoPlayer.SeekTo)
- methods.
+![视频播放器图标](images/videoplayer.png)
 
- Video files should be in 3GPP (.3gp) or MPEG-4 (.mp4) formats. For more details about legal
- formats, see
- [Android Supported Media Formats](//developer.android.com/guide/appendix/media-formats.html).
+能够播放视频的多媒体组件。当应用程序运行时，`视频播放器`将在屏幕上显示为一个矩形。
 
- App Inventor only permits video files under 1 MB and limits the total size of an application to
- 5 MB, not all of which is available for media (video, audio, and sound) files. If your media
- files are too large, you may get errors when packaging or installing your application, in which
- case you should reduce the number of media files or their sizes. Most video editing software,
- such as Windows Movie Maker and Apple iMovie, can help you decrease the size of videos by
- shortening them or re-encoding the video into a more compact format.
+  如果用户触摸矩形，将在视频中出现播放、暂停、向前跳转和向后跳转控件。
+  
+  App可以通过调用 [`播放`](#VideoPlayer.Start)、[`暂停`](#VideoPlayer.Pause) 和 [`跳转`](#VideoPlayer.SeekTo) 方法来控制`视频播放器`的行为。
 
- You can also set the media source to a URL that points to a streaming video, but the URL must
- point to the video file itself, not to a program that plays the video.
+  视频文件应为 3GPP (.3gp) 或 MPEG-4 (.mp4) 格式。更多详细信息格式，见 [Android 支持的媒体格式](//developer.android.com/guide/appendix/media-formats.html)。
 
+  App Inventor 只允许 1 MB 以下的视频文件，并将应用程序的总大小限制为 5 MB，并非所有文件都可用于媒体（视频、音频和声音）文件。如果媒体文件太大，打包或安装应用程序时可能会出错，在这种情况下，你应该减少媒体文件的数量或它们的大小。大多数视频编辑软件，例如 Windows Movie Maker 和 Apple iMovie，可以帮助你减小视频的大小，或将视频重新编码为更紧凑的格式。
+
+  你还可以将媒体源设置为指向流式视频的 URL，但该 URL 必须指向视频文件本身，而不是播放视频的程序。
 
 
 ### 属性  {#VideoPlayer-Properties}

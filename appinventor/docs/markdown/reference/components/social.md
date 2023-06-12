@@ -44,10 +44,8 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 
 {:.properties}
 
-{:id="ContactPicker.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `ContactPicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#ContactPicker.Image) has been set, the color
- change will not be visible until the [`Image`](#ContactPicker.Image) is removed.
+{:id="ContactPicker.BackgroundColor" .color} *背景颜色*
+: 设置`联系人选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ContactPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ContactPicker.Image)属性为止。
 
 {:id="ContactPicker.ContactName" .text .ro .bo} *ContactName*
 : Returns the full name of the selected contact, or the empty string if a name is unavailable.
@@ -62,34 +60,29 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.EmailAddressList" .list .ro .bo} *EmailAddressList*
 : Returns a list of email addresses associated with the selected contact.
 
-{:id="ContactPicker.Enabled" .boolean} *Enabled*
-: Specifies whether the `ContactPicker` should be active and clickable.
+{:id="ContactPicker.Enabled" .boolean} *启用*
+: 设置`联系人选择框`是否可以被激活和点击。
 
-{:id="ContactPicker.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `ContactPicker` should be bold.
- Some fonts do not support bold.
+{:id="ContactPicker.FontBold" .boolean} *粗体*
+: 设置`联系人选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="ContactPicker.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `ContactPicker` should be italic.
- Some fonts do not support italic.
+{:id="ContactPicker.FontItalic" .boolean} *斜体*
+: 设置`联系人选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="ContactPicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `ContactPicker`, measured in sp(scale-independent pixels).
+{:id="ContactPicker.FontSize" .number} *字体大小*
+: 设置`联系人选择框`的字体大小，以像素px为单位。
 
-{:id="ContactPicker.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `ContactPicker` as default, serif, sans
- serif, or monospace.
+{:id="ContactPicker.FontTypeface" .number .do} *字体*
+: 设置`联系人选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="ContactPicker.Height" .number .bo} *Height*
-: Specifies the `ContactPicker`'s vertical height, measured in pixels.
+{:id="ContactPicker.Height" .number .bo} *高度*
+: 设置`联系人选择框`的垂直高度，以像素px为单位。
 
-{:id="ContactPicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `ContactPicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="ContactPicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`联系人选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="ContactPicker.Image" .text} *Image*
-: Specifies the path of the `ContactPicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#ContactPicker.BackgroundColor) specified, only the `Image` will be visible.
+{:id="ContactPicker.Image" .text} *图像*
+: 设置`联系人选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ContactPicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="ContactPicker.PhoneNumber" .text .ro .bo} *PhoneNumber*
 : Returns the primary phone number associated with the selected contact, or the empty string if
@@ -102,38 +95,36 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 : Returns a picture URI for the selected contact, which can be
  used to retrieve the contact's photo and other fields.
 
-{:id="ContactPicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `ContactPicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#ContactPicker.Image) is used.
+{:id="ContactPicker.Shape" .number .do} *形状*
+: 设置`联系人选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#ContactPicker.Image)，则`形状`将不可见。
 
-{:id="ContactPicker.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `ContactPicker` with an assigned
- [`Image`](#ContactPicker.Image) is pressed.
+{:id="ContactPicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`联系人选择框`指定 [`图像`](#ContactPicker.Image)后被按压是否显示视觉反馈。
 
-{:id="ContactPicker.Text" .text} *Text*
-: Specifies the text displayed by the `ContactPicker`.
+{:id="ContactPicker.Text" .text} *文本*
+: 设置`联系人选择框`的显示文本。
 
-{:id="ContactPicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `ContactPicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="ContactPicker.TextAlignment" .number .do} *文本对齐*
+: 设置`联系人选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="ContactPicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `ContactPicker` as an alpha-red-green-blue
- integer.
+{:id="ContactPicker.TextColor" .color} *文本颜色*
+: 设置`联系人选择框`的文本颜色，使用RGBA数值表示。
 
-{:id="ContactPicker.Visible" .boolean} *Visible*
-: Specifies whether the `ContactPicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `ContactPicker` is showing and `假`{:.logic.block} if hidden.
+{:id="ContactPicker.Visible" .boolean} *可见性*
+: 设置`联系人选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`联系人选择框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="ContactPicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `ContactPicker`, measured in pixels.
+{:id="ContactPicker.Width" .number .bo} *宽度*
+: 设置`联系人选择框`的水平宽度，以像素px为单位。
 
-{:id="ContactPicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `ContactPicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="ContactPicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`联系人选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ContactPicker-Events}
 
@@ -196,62 +187,53 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:.properties}
 
-{:id="EmailPicker.BackgroundColor" .color} *BackgroundColor*
-: The background color of the `EmailPicker``. You can choose a color by name in the Designer or in
- the Blocks Editor. The default background color is 'default' (shaded 3-D look).
+{:id="EmailPicker.BackgroundColor" .color} *背景颜色*
+: `邮箱地址选择框` 的背景色，可以在“界面设计”视图或“程序设计”视图中通过颜色名字选择一个颜色，`默认`背景颜色为：default（阴影 3-D 外观）。
 
-{:id="EmailPicker.Enabled" .boolean} *Enabled*
-: If set, user can enter text into the `EmailPicker`.
+{:id="EmailPicker.Enabled" .boolean} *启用*
+：如果设置为`真`{:.logic.block}则用户可以在 `邮箱地址选择框` 中输入文本。
 
-{:id="EmailPicker.FontBold" .boolean .do} *FontBold*
-: Specifies whether the text of the `EmailPicker` should be bold.
- Some fonts do not support bold.
+{:id="EmailPicker.FontBold" .boolean .do} *粗体*
+: 设置`邮箱地址选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="EmailPicker.FontItalic" .boolean .do} *FontItalic*
-: Specifies whether the text of the `EmailPicker` should be italic.
- Some fonts do not support italic.
+{:id="EmailPicker.FontItalic" .boolean .do} *斜体*
+: 设置`邮箱地址选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="EmailPicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `EmailPicker`, measured in sp(scale-independent pixels).
+{:id="EmailPicker.FontSize" .number} *字体大小*
+: 设置`邮箱地址选择框`的字体大小，以像素px为单位。
 
-{:id="EmailPicker.FontTypeface" .number .do} *FontTypeface*
-: The text font face of the `EmailPicker`. Valid values are `0` (default), `1` (serif), `2` (sans
- serif), or `3` (monospace).
+{:id="EmailPicker.FontTypeface" .number .do} *字体*
+: 设置`邮箱地址选择框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
 
-{:id="EmailPicker.Height" .number .bo} *Height*
-: Specifies the `EmailPicker`'s vertical height, measured in pixels.
+{:id="EmailPicker.Height" .number .bo} *高度*
+: 设置`邮箱地址选择框`的垂直高度，以像素px为单位。
 
-{:id="EmailPicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `EmailPicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="EmailPicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`邮箱地址选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="EmailPicker.Hint" .text} *Hint*
 : `EmailPicker` hint for the user.
 
-{:id="EmailPicker.Text" .text} *Text*
-: The text in the `EmailPicker`, which can be set by the programmer in the Designer or Blocks Editor,
- or it can be entered by the user (unless the [`Enabled`](#EmailPicker.Enabled) property is false).
+{:id="EmailPicker.Text" .text} *文本*
+: `邮箱地址选择框`中的文本，可以在“界面设计”视图或“程序设计”视图中设置，或由用户输入（除非 [`启用`](#EmailPicker.Enabled) 属性为 `假`{:.logic.block}）。
 
-{:id="EmailPicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `EmailPicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="EmailPicker.TextAlignment" .number .do} *文本对齐*
+: 设置`邮箱地址选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="EmailPicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `EmailPicker` as an alpha-red-green-blue
- integer.
+{:id="EmailPicker.TextColor" .color} *文本颜色*
+: 设置`邮箱地址选择框`的文本颜色，使用RGBA数值表示。
 
-{:id="EmailPicker.Visible" .boolean} *Visible*
-: Specifies whether the `EmailPicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `EmailPicker` is showing and `假`{:.logic.block} if hidden.
+{:id="EmailPicker.Visible" .boolean} *可见性*
+: 设置`邮箱地址选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`邮箱地址选择框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="EmailPicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `EmailPicker`, measured in pixels.
+{:id="EmailPicker.Width" .number .bo} *宽度*
+: 设置`邮箱地址选择框`的水平宽度，以像素px为单位。
 
-{:id="EmailPicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `EmailPicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="EmailPicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`邮箱地址选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#EmailPicker-Events}
 
@@ -359,10 +341,8 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:.properties}
 
-{:id="PhoneNumberPicker.BackgroundColor" .color} *BackgroundColor*
-: Specifies the `PhoneNumberPicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#PhoneNumberPicker.Image) has been set, the color
- change will not be visible until the [`Image`](#PhoneNumberPicker.Image) is removed.
+{:id="PhoneNumberPicker.BackgroundColor" .color} *背景颜色*
+: 设置`电话号选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#PhoneNumberPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#PhoneNumberPicker.Image)属性为止。
 
 {:id="PhoneNumberPicker.ContactName" .text .ro .bo} *ContactName*
 : Returns the full name of the selected contact, or the empty string if a name is unavailable.
@@ -377,34 +357,29 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.EmailAddressList" .list .ro .bo} *EmailAddressList*
 : Returns a list of email addresses associated with the selected contact.
 
-{:id="PhoneNumberPicker.Enabled" .boolean} *Enabled*
-: Specifies whether the `PhoneNumberPicker` should be active and clickable.
+{:id="PhoneNumberPicker.Enabled" .boolean} *启用*
+: 设置`电话号选择框`是否可以被激活和点击。
 
-{:id="PhoneNumberPicker.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `PhoneNumberPicker` should be bold.
- Some fonts do not support bold.
+{:id="PhoneNumberPicker.FontBold" .boolean} *粗体*
+: 设置`电话号选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="PhoneNumberPicker.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `PhoneNumberPicker` should be italic.
- Some fonts do not support italic.
+{:id="PhoneNumberPicker.FontItalic" .boolean} *斜体*
+: 设置`电话号选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="PhoneNumberPicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `PhoneNumberPicker`, measured in sp(scale-independent pixels).
+{:id="PhoneNumberPicker.FontSize" .number} *字体大小*
+: 设置`电话号选择框`的字体大小，以像素px为单位。
 
-{:id="PhoneNumberPicker.FontTypeface" .number .do} *FontTypeface*
-: Specifies the text font face of the `PhoneNumberPicker` as default, serif, sans
- serif, or monospace.
+{:id="PhoneNumberPicker.FontTypeface" .number .do} *字体*
+: 设置`电话号选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="PhoneNumberPicker.Height" .number .bo} *Height*
-: Specifies the `PhoneNumberPicker`'s vertical height, measured in pixels.
+{:id="PhoneNumberPicker.Height" .number .bo} *高度*
+: 设置`电话号选择框`的垂直高度，以像素px为单位。
 
-{:id="PhoneNumberPicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `PhoneNumberPicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="PhoneNumberPicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`电话号选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="PhoneNumberPicker.Image" .text} *Image*
-: Specifies the path of the `PhoneNumberPicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#PhoneNumberPicker.BackgroundColor) specified, only the `Image` will be visible.
+{:id="PhoneNumberPicker.Image" .text} *图像*
+: 设置`电话号选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#PhoneNumberPicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="PhoneNumberPicker.PhoneNumber" .text .ro .bo} *PhoneNumber*
 : Returns the primary phone number associated with the selected contact, or the empty string if
@@ -417,38 +392,36 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 : Returns a picture URI for the selected contact, which can be
  used to retrieve the contact's photo and other fields.
 
-{:id="PhoneNumberPicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `PhoneNumberPicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#PhoneNumberPicker.Image) is used.
+{:id="PhoneNumberPicker.Shape" .number .do} *形状*
+: 设置`电话号选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#PhoneNumberPicker.Image)，则`形状`将不可见。
 
-{:id="PhoneNumberPicker.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `PhoneNumberPicker` with an assigned
- [`Image`](#PhoneNumberPicker.Image) is pressed.
+{:id="PhoneNumberPicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`电话号选择框`指定 [`图像`](#PhoneNumberPicker.Image)后被按压是否显示视觉反馈。
 
-{:id="PhoneNumberPicker.Text" .text} *Text*
-: Specifies the text displayed by the `PhoneNumberPicker`.
+{:id="PhoneNumberPicker.Text" .text} *文本*
+: 设置`电话号选择框`的显示文本。
 
-{:id="PhoneNumberPicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `PhoneNumberPicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+{:id="PhoneNumberPicker.TextAlignment" .number .do} *文本对齐*
+: 设置`电话号选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
-{:id="PhoneNumberPicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `PhoneNumberPicker` as an alpha-red-green-blue
- integer.
+{:id="PhoneNumberPicker.TextColor" .color} *文本颜色*
+: 设置`电话号选择框`的文本颜色，使用RGBA数值表示。
 
-{:id="PhoneNumberPicker.Visible" .boolean} *Visible*
-: Specifies whether the `PhoneNumberPicker` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `PhoneNumberPicker` is showing and `假`{:.logic.block} if hidden.
+{:id="PhoneNumberPicker.Visible" .boolean} *可见性*
+: 设置`电话号选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`电话号选择框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="PhoneNumberPicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `PhoneNumberPicker`, measured in pixels.
+{:id="PhoneNumberPicker.Width" .number .bo} *宽度*
+: 设置`电话号选择框`的水平宽度，以像素px为单位。
 
-{:id="PhoneNumberPicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `PhoneNumberPicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="PhoneNumberPicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`电话号选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#PhoneNumberPicker-Events}
 
@@ -633,7 +606,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  that will require additional approval if your app is submitted to the Google Play Store.**
 
 ***
-## 推特客户端  {#Twitter}
+## 推特客户端（*国内无法使用*）  {#Twitter}
 
 A non-visible component that enables communication with [Twitter](https://twitter.com). Once a
  user has logged into their Twitter account (and the authorization has been confirmed successful
