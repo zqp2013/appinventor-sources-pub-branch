@@ -39,6 +39,11 @@ title: 通信连接组件
   * 打开浏览器到指定的网页。 假设您要访问的页面是“www.fun123.cn”（您可以随意替换自己的选择），将属性设置为：
     * `Action`: `android.intent.action.VIEW`
     * `DataUri`: `http://www.fun123.cn`
+    * 调用第三方地图也可以使用这个启动器：
+    * 调用高德地图的uri参考地址：[https://lbs.amap.com/api/uri-api/guide/mobile-web/point/#point-on-lnglat](https://lbs.amap.com/api/uri-api/guide/mobile-web/point/#point-on-lnglat)
+    * 调用百度地图的uri参考地址：[https://lbsyun.baidu.com/index.php?title=uri/api/web](https://lbsyun.baidu.com/index.php?title=uri/api/web)
+  * 打开系统照相机（比[照相机](media.html#Camera)组件打开的界面会丰富一些）
+    * `Action`: `android.media.action.STILL_IMAGE_CAMERA`
 
 
 ### 属性  {#ActivityStarter-Properties}
