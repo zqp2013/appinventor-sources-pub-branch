@@ -23,6 +23,7 @@ title: 传感器组件
 * [距离传感器](#ProximitySensor)
 * [温度传感器](#Thermometer)
 
+***
 ## 加速度传感器  {#AccelerometerSensor}
 
 Non-visible component that can detect shaking and measure acceleration approximately in three
@@ -92,8 +93,8 @@ Non-visible component that can detect shaking and measure acceleration approxima
 {:.methods}
 无
 
-
-## BarcodeScanner  {#BarcodeScanner}
+***
+## 条码扫描器  {#BarcodeScanner}
 
 Component for scanning a QR code and getting back the resulting string.
 
@@ -126,7 +127,8 @@ Component for scanning a QR code and getting back the resulting string.
 : Begins a barcode scan, using the camera. When the scan is complete, the
  AfterScan event will be raised.
 
-## Barometer  {#Barometer}
+***
+## 气压传感器  {#Barometer}
 
 Physical world component that can measure the ambient air pressure if
  supported by the hardware.
@@ -164,7 +166,7 @@ Physical world component that can measure the ambient air pressure if
 {:.methods}
 无
 
-
+***
 ## 计时器  {#Clock}
 
 ![Image of the Clock component](images/clock.png)
@@ -327,7 +329,8 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="Clock.Year" class="method returns number"} <i/> Year(*instant*{:.InstantInTime})
 : Returns the year of the given instant.
 
-## GyroscopeSensor  {#GyroscopeSensor}
+***
+## 陀螺仪传感器  {#GyroscopeSensor}
 
 Component providing data from the device's gyroscope sensor.
 
@@ -364,8 +367,8 @@ Component providing data from the device's gyroscope sensor.
 {:.methods}
 无
 
-
-## Hygrometer  {#Hygrometer}
+***
+## 湿度传感器  {#Hygrometer}
 
 Physical world component that can measure the relative ambient air 
  humidity if supported by the hardware.
@@ -404,8 +407,8 @@ Physical world component that can measure the relative ambient air
 {:.methods}
 无
 
-
-## LightSensor  {#LightSensor}
+***
+## 光线传感器  {#LightSensor}
 
 Physical world component that can measure the light level.
 
@@ -446,8 +449,8 @@ Physical world component that can measure the light level.
 {:.methods}
 无
 
-
-## LocationSensor  {#LocationSensor}
+***
+## 位置传感器  {#LocationSensor}
 
 Non-visible component providing location information, including [`Latitude`](#LocationSensor.Latitude),
  [`Longitude`](#LocationSensor.Longitude), [`Altitude`](#LocationSensor.Altitude) (if supported by the device), speed (if supported by
@@ -583,7 +586,8 @@ Non-visible component providing location information, including [`Latitude`](#Lo
 {:id="LocationSensor.LongitudeFromAddress" class="method returns number"} <i/> LongitudeFromAddress(*locationName*{:.text})
 : Derives longitude from the given `locationName`.
 
-## MagneticFieldSensor  {#MagneticFieldSensor}
+***
+## 磁场传感器  {#MagneticFieldSensor}
 
 Component for MagneticFieldSensor
 
@@ -626,8 +630,8 @@ Component for MagneticFieldSensor
 {:.methods}
 无
 
-
-## NearField  {#NearField}
+***
+## NFC  {#NearField}
 
 Non-visible component to provide NFC capabilities. For now this component supports the reading
  and writing of text tags only (if supported by the device).
@@ -675,8 +679,8 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 {:.methods}
 无
 
-
-## OrientationSensor  {#OrientationSensor}
+***
+## 方向传感器  {#OrientationSensor}
 
 ![Example of the OrientationSensor icon](images/orientationsensor.png)
 
@@ -744,11 +748,10 @@ Non-visible component to provide NFC capabilities. For now this component suppor
 {:.methods}
 无
 
+***
+## 计步器  {#Pedometer}
 
-## Pedometer  {#Pedometer}
-
-This component keeps count of steps using the accelerometer.
-
+该组件使用 [加速度传感器](#AccelerometerSensor) 来记录步数。
 
 
 ### 属性  {#Pedometer-Properties}
@@ -800,6 +803,7 @@ This component keeps count of steps using the accelerometer.
 {:id="Pedometer.Stop" class="method"} <i/> Stop()
 : Stops the pedometer.
 
+***
 ## 距离传感器  {#ProximitySensor}
 
 用于测量物体相对于设备屏幕距离（以cm厘米为单位）的传感器组件。该传感器通常用于检测手机听筒是否处于耳边接听状态。
@@ -839,13 +843,10 @@ This component keeps count of steps using the accelerometer.
 {:.methods}
 无
 
+***
+## 温度传感器  {#Thermometer}
 
-## Thermometer  {#Thermometer}
-
-Physical world component that can measure the ambient air temperature if
- supported by the hardware.
-
-
+可以测量环境空气温度的物理组件（如果硬件支持）。
 
 ### 属性  {#Thermometer-Properties}
 
