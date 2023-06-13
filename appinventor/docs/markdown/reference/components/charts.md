@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 图表组件
+description: 图表组件参考文档：包括图表、二维图表。
 ---
 
 [&laquo; 返回首页](index.html)

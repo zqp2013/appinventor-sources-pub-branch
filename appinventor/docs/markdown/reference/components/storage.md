@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 数据存储组件
+description: 数据存储组件参考文档：包括云数据库、数据文件、文件管理器、电子表格、微数据库、网络微数据库。
 ---
 
 [&laquo; 返回首页](index.html)

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 社交应用组件
+description: 社交应用组件参考文档：包括联系人选择框、邮箱地址选择框、电话拨号器、电话号选择框、信息分享器、短信收发器、推特客户端。
 ---
 
 [&laquo; 返回首页](index.html)

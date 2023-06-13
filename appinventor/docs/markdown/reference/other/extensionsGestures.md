@@ -1,6 +1,7 @@
 ---
 title: 使用多点触控和手势检测扩展App Inventor
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1nTDRtwvubXQq9GAOMHdzVobd9hMsvqNDqJh1W38mM54)

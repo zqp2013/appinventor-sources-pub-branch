@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 文本代码块
 layout: documentation
+description: 文本代码块参考文档：包括字符串、合并字符串、求长度、是否为空、字符串比较、删除空格、大写、小写、求起始位置、是否包含...。
 ---
 
 * [字符串](#string)

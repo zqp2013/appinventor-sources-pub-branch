@@ -1,6 +1,7 @@
 ---
 title: Android和App Inventor版本的兼容性问题
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/134_pdUFP7Y-R542lahgdTgTv-byOpsIKrfY_JA0BvQk)

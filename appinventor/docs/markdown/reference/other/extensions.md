@@ -1,6 +1,7 @@
 ---
 title: App Inventor扩展
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1orlYWGlHOY0hmAC0zjadQ4DET2K8U34C8hv5zmuxZLU/edit)

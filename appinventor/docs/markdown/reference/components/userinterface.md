@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 用户界面（UI）组件
+description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择框、列表显示框、通知器、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
 ---
 
 [&laquo; 返回首页](index.html)

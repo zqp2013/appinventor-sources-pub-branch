@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 逻辑代码块
 layout: documentation
+description: 逻辑代码块参考文档。
 ---
 
 * [真](#true)

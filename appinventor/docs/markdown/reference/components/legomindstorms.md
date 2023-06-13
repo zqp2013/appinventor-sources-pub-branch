@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 乐高机器人®组件
+description: 乐高机器人®组件参考文档。
 ---
 
 [&laquo; 返回首页](index.html)

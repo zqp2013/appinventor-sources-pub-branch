@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 变量代码块
 layout: documentation
+description: 变量代码块参考文档：包括初始化全局变量、取值、设置值、初始化局部变量（无返回值）、初始化局部变量（有返回值）。
 ---
 
 变量块主要有五种类型：

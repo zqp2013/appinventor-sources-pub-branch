@@ -1,6 +1,7 @@
 ---
 title: 编辑你的应用（复制和粘贴）
 layout: documentation
+description: 
 ---
 
 Beginning with version nb184, App Inventor has included the capability to cut, copy, and paste parts of your app design. This document explains this functionality.

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 地图组件
+description: 地图组件参考文档：包括圆、特征集合、线段、地图、标记、导航、多边形、矩形。
 ---
 
 [&laquo; 返回首页](index.html)

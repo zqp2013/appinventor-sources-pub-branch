@@ -1,6 +1,7 @@
 ---
 title: 使用虚拟现实和App Inventor进行实验
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/13i-_ZhPoQwqpniEoQtq1PaQHkmKA8MWtEVXRdYFXeig)

@@ -1,6 +1,7 @@
 ---
 title: 在App Inventor中使用图像
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1-3KHTe6w9GCpSLNni87bEEEZGRF03jIPx6y5_O8CU34)

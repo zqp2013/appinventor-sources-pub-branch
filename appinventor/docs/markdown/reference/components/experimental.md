@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 试验组件
+description: 试验组件参考文档：包括Firebase数据库。
 ---
 
 [&laquo; 返回首页](index.html)

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 通信连接组件
+description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端。
 ---
 
 [&laquo; 返回首页](index.html)

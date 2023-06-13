@@ -1,6 +1,7 @@
 ---
 title: 使用位置传感器
 layout: documentation
+description: 
 ---
 
 *This tutorial was developed by [Professor David Wolber](http://appinventorblog.com/) at The University of San Francisco.*

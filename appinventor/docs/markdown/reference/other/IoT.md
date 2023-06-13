@@ -1,6 +1,7 @@
 ---
 title: 使用App Inventor控制物联网设备
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1l3N6ZZNIrhXvRz3iNVgDNXk0WVYFANLVMmGGzg7kMrY)

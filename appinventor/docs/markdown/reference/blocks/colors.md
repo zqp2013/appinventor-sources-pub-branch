@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 颜色代码块
 layout: documentation
+description: 颜色代码块参考文档：包括基本颜色、合成颜色、分解颜色。
 ---
 
 颜色代码块主要分为三种类型：

@@ -1,6 +1,7 @@
 ---
 title: 访问图像和声音
 layout: documentation
+description: 
 ---
 
 Applications built with App Inventor can access sound, image, and video sources from three different kinds of locations:

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: 多媒体组件
+description: 多媒体组件参考文档：包括摄像机、照相机、图像选择框、音频播放器、音效、录音机、语音识别器、文本朗读器、翻译器、视频播放器。
 ---
 
 [&laquo; 返回首页](index.html)

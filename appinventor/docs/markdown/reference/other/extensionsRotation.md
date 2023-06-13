@@ -1,6 +1,7 @@
 ---
 title: 使用App Inventor扩展实现多点触控：Rotation Detector
 layout: documentation
+description: 
 ---
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1fRxTxLCNQlbaf0pcStHpyFpplkdDArsugLIBgV4awWU)

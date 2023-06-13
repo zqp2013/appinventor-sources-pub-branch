@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 数学代码块
 layout: documentation
+description: 数学代码块参考文档。
 ---
 
 * [0 (basic number block)](#number)

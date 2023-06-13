@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 字典代码块
 layout: documentation
+description: 字典代码块参考文档：包括创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目...。
 ---
 
 目录：

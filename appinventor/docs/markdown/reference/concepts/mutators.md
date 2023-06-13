@@ -1,6 +1,7 @@
 ---
 title: 块扩展
 layout: documentation
+description: 块扩展参考文档及用法示例。
 ---
 
 App Inventor 2 引入了一项新功能，允许某些块扩展、收缩甚至更改其功能。

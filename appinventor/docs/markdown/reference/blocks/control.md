@@ -1,6 +1,7 @@
 ---
 title: App Inventor 2 控制代码块
 layout: documentation
+description: 控制代码块参考文档。
 ---
 
 * [如果 & 则（if & else if）](#if)
