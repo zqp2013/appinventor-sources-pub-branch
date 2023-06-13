@@ -463,6 +463,8 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 ***
 ## 信息分享器  {#Sharing}
 
+![信息分享器图标](images/sharing.png)
+
 `信息分享器`是一个不可见的组件，可以让App和设备上其他App之间共享数据或文件。
 该组件将显示已安装的可处理所提供信息的App列表，并允许用户选择一个App来共享内容，例如邮件App、社交网络App、短信App等。
 
@@ -504,54 +506,42 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="Sharing.ShareFileWithMessage" class="method"} <i/> 分享文件及消息(*文件*{:.text},*消息*{:.text})
 : 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件及消息。选定的应用程序将打开，向其中传入文件及消息。
 
-<img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;"/>
+<img src="images/sharing/分享文件及消息.jpg" alt="分享文件及消息效果预览" style="width:30%; border:1px solid #eee;"/>
 
 {:id="Sharing.ShareMessage" class="method"} <i/> 分享消息(*消息*{:.text})
 : 通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享消息。所选应用程序将打开，并向其中传入消息。
 
-<img src="images/sharing/分享文件及消息.jpg" alt="分享文件及消息效果预览" style="width:30%; border:1px solid #eee;"/>
+<img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;"/>
 
 ***
 ## 短信收发器  {#Texting}
 
 ![Texting component icon](images/texting.png)
 
- A component that will, when the [`SendMessage`](#Texting.SendMessage) method is called, launch the device's
- preferred texting app to send the text message specified in the [`SendMessage`](#Texting.SendMessage) property
- to the phone number specified in the [`PhoneNumber`](#Texting.PhoneNumber) property. You may also send text
- messages without user interaction by calling [`SendMessageDirect`](#Texting.SendMessageDirect) instead, but this
- adds dangerous permissions to your final app.
+当调用组件 [`发送消息`](#Texting.SendMessage) 方法时，将启动设备的首选短信应用程序将属性中指定的短信内容发送到 [`电话号码`](#Texting.PhoneNumber) 属性中指定的电话中。
+  
+  也可以通过调用 [`直接发送消息`](#Texting.SendMessageDirect) 直接发送短信，而无需进行交互，但前提是应用程序已请求危险权限。
 
- If the [`ReceivingEnabled`](#Texting.ReceivingEnabled) property is set to 1 messages will not be received. If
- [`ReceivingEnabled`](#Texting.ReceivingEnabled) is set to 2 messages will be received only when the application is
- running. Finally if [`ReceivingEnabled`](#Texting.ReceivingEnabled) is set to 3, messages will be received when the
- application is running and when the application is not running they will be queued and a
- notification displayed to the user.
+  * 如果 [`启用消息接收`](#Texting.ReceivingEnabled) 属性设为 1，将不会收到消息。 
+  * 如果 [`启用消息接收`](#Texting.ReceivingEnabled) 属性设为 2，消息将仅在应用程序正在运行的时候才被接收。
+  * 如果 [`启用消息接收`](#Texting.ReceivingEnabled) 属性设置 3，则消息将在应用程序正在运行时被接收；当应用程序未运行时，消息将排队给用户显示通知消息。
 
- When a message arrives, the [`MessageReceived`](#Texting.MessageReceived) event is raised and
- provides the sending number and message.
+  当消息到达时，将触发 [`收到消息`](#Texting.MessageReceived) 事件，并提供发送号码和消息。
 
- An app that includes this component will receive messages even when it is in the background
- (i.e. when it's not visible on the screen) and, moreso, even if the app is not running, so long
- as it's installed on the phone. If the phone receives a text message when the app is not in the
- foreground, the phone will show a notification in the notification bar. Selecting the
- notification will bring up the app. As an app developer, you'll probably want to give your users
- the ability to control ReceivingEnabled so that they can make the phone ignore text messages.
+  包含此组件的应用程序即使在后台也会收到消息（即当它在屏幕上不可见时），而且**只要应用程序安装在手机上了，即使没有运行也能收到消息**。
 
- If the [`GoogleVoiceEnabled`](#Texting.GoogleVoiceEnabled) property is true, messages can be sent over Wifi using
- Google Voice. This option requires that the user have a Google Voice account and that the mobile
- Voice app is installed on the phone. The Google Voice option works only on phones that support
- Android 2.0 (Eclair) or higher. **Unfortunately, receiving no longer works in Google Voice due to
- changes introduced in Google Voice App.**
+  如果应用程序不在手机前台运行，收到短信时手机将在通知栏中显示一条通知。选中通知栏的通知将调出该应用程序，作为应用程序开发人员，你可能希望为用户提供控制 `启用消息接收` 的能力，这样他们就可以让手机忽略短信。
 
- To specify the phone number (e.g., 650-555-1212), set the PhoneNumber property to a Text string
- with the specified digits (e.g., 6505551212). Dashes, dots, and parentheses may be included
- (e.g., (650)-555-1212) but will be ignored; spaces may not be included.
+<br/>
+  如果 [`启用谷歌语音`](#Texting.GoogleVoiceEnabled) 属性为`真`{:.logic.block}，则可以通过 Wifi 使用谷歌语音发送消息。
 
- Another way for an app to specify a phone number would be to include a [`PhoneNumberPicker`](#PhoneNumberPicker)
- component, which lets the users select a phone numbers from the ones stored in the the phone's
- contacts.
+  此选项要求用户拥有谷歌语音帐户并且手机手机上安装了语音应用程序，谷歌语音选项仅适用于支持 Android 2.0 (Eclair) 或更高版本。
+  
+  **不幸的是，由于以下原因，谷歌语音App中引入的变更，导致谷歌语音不再被接收。**
 
+  要指定电话号码（例如 650-555-1212），请将 `电话号码` 属性设置为文本字符串与指定的数字（例如，6505551212），可能包含破折号、点和括号（例如，(650)-555-1212）会被忽略，但是不能有空格。
+
+  应用程序指定电话号码的另一种方法是包含 [`电话号选择框`](#PhoneNumberPicker) 组件，它允许用户从手机中存储的电话号码中选择一个联系人。
 
 
 ### 属性  {#Texting-Properties}
@@ -567,13 +557,13 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  The maximum length of a standard SMS message is usually 170. It may be less for languages
  using diacritical marks.
 
-{:id="Texting.PhoneNumber" .text} *PhoneNumber*
+{:id="Texting.PhoneNumber" .text} *电话号码*
 : The number that the message will be sent to when the SendMessage method is called.  The 
  number is a text string with the specified digits (e.g., 6505551212).  Dashes, dots, 
  and parentheses may be included (e.g., (650)-555-1212) but will be ignored; spaces
  should not be included.
 
-{:id="Texting.ReceivingEnabled" .number} *ReceivingEnabled*
+{:id="Texting.ReceivingEnabled" .number} *启用消息接收*
 : If set to 1 (OFF) no messages will be received. If set to 2 (FOREGROUND) or 3 (ALWAYS) the
  component will respond to messages if it is running. In the case of 2 (FOREGROUND), messages
  received while the app is not running are discarded. In the case of 3 (ALWAYS), messages
@@ -588,7 +578,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:.events}
 
-{:id="Texting.MessageReceived"} MessageReceived(*number*{:.text},*messageText*{:.text})
+{:id="Texting.MessageReceived"} 收到消息(*数值*{:.text},*消息内容*{:.text})
 : Event that's raised when a text message is received by the phone. **Using this block will add
  [dangerous permissions](//developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
  that will require additional approval if your app is submitted to the Google Play Store.**
@@ -597,10 +587,10 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:.methods}
 
-{:id="Texting.SendMessage" class="method"} <i/> SendMessage()
+{:id="Texting.SendMessage" class="method"} <i/> 发送消息()
 : Launch the phone's default text messaging app with the message and phone number prepopulated.
 
-{:id="Texting.SendMessageDirect" class="method"} <i/> SendMessageDirect()
+{:id="Texting.SendMessageDirect" class="method"} <i/> 直接发送消息()
 : Send a text message. **Using this block will add
  [dangerous permissions](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
  that will require additional approval if your app is submitted to the Google Play Store.**
