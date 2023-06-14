@@ -149,13 +149,13 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
   **下面是每种`范围`类型的简述：**
 
-  - App：Android 2.2及更高版本上文件将从应用程序特定存储中读取和写入，在 Android 早期版本上，文件将写入兼容存储中。
-  - 程序包：从应用程序包中读取文件，应用程序包属于**只读存储**，不可写入。
-  - 缓存：文件将从应用程序的缓存目录读取和写入，可以在缓存中重新创建临时文件，也允许用户清理临时文件以重新获得存储空间。
-  - 兼容：文件将使用 App Inventor 在nb187版本之前的规则从文件系统读取和写入，也就是说，将从中读取以单个`/`开头的文件名写入外部存储目录的根目录，例如 `/sdcard/`。
+  - App     ：Android 2.2及更高版本上文件将从应用程序特定存储中读取和写入，在 Android 早期版本上，文件将写入兼容存储中。
+  - 程序包 ：从应用程序包中读取文件，应用程序包属于**只读存储**，不可写入。
+  - 缓存   ：文件将从应用程序的缓存目录读取和写入，可以在缓存中重新创建临时文件，也允许用户清理临时文件以重新获得存储空间。
+  - 兼容   ：文件将使用 App Inventor 在nb187版本之前的规则从文件系统读取和写入，也就是说，将从中读取以单个`/`开头的文件名写入外部存储目录的根目录，例如 `/sdcard/`。
       兼容功能***将无法在 Android 11 或更高版本上运行***。
-  - 私有：文件将从应用程序的私有目录读取和写入，使用这个范围存储的数据对其他App不可见，例如文件管理App。
-  - 共享：文件将从设备的共享媒体目录中读取和写入，例如`图片`目录。
+  - 私有   ：文件将从应用程序的私有目录读取和写入，使用这个范围存储的数据对其他App不可见，例如文件管理App。
+  - 共享   ：文件将从设备的共享媒体目录中读取和写入，例如`图片`目录。
 
   1. 注1：在 `兼容` 模式下，文件名可以采用以下三种形式之一：
    - 私有文件：没有前导 `/` ，写入应用程序私有存储（例如，`file.txt`）
@@ -170,20 +170,16 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 {:.properties}
 
 {:id="File.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认范围*
-: Specifies the default scope for files accessed using the File component. The App scope should
- work for most apps. Legacy mode can be used for apps that predate the newer constraints in
- Android on app file access.
+: 指定使用 `文件管理器` 组件访问文件的默认范围，`App`范围适用于大多数应用程序，`兼容`模式可用于早于新约束的Android上应用程序的文件访问。
 
 {:id="File.ReadPermission" .boolean .wo .do} *读权限*
-: A designer-only property that can be used to enable read access to file storage outside of the
- app-specific directories.
+: 仅用于“界面设计”视图的属性，用于启用`App`范围之外的文件的读取权限。
 
-{:id="File.Scope" .com.google.appinventor.components.common.FileScopeEnum .bo} *Scope*
-: Indicates the current scope for operations such as ReadFrom and SaveFile.
+{:id="File.Scope" .com.google.appinventor.components.common.FileScopeEnum .bo} *范围*
+: 表示 `读取文件` 和 `保存文件` 等操作的当前范围。
 
 {:id="File.WritePermission" .boolean .wo .do} *写权限*
-: A designer-only property that can be used to enable write access to file storage outside of the
- app-specific directories.
+: 仅用于“界面设计”视图的属性，用于启用`App`范围之外的文件的写入权限。
 
 ### 事件  {#File-Events}
 
@@ -204,8 +200,8 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
  text under [`SaveFile`](#File.SaveFile) for information about where files are written.
  On success, the [`AfterFileSaved`](#File.AfterFileSaved) event will run.
 
-{:id="File.CopyFile" class="method returns boolean"} <i/> CopyFile(*fromScope*{:.com.google.appinventor.components.common.FileScopeEnum},*fromFileName*{:.text},*toScope*{:.com.google.appinventor.components.common.FileScopeEnum},*toFileName*{:.text})
-: Copy the contents from the first file to the second file.
+{:id="File.CopyFile" class="method returns boolean"} <i/> 拷贝文件(*源范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
+: 将第一个文件的内容复制到第二个文件。
 
 {:id="File.Delete" class="method"} <i/> Delete(*fileName*{:.text})
 : Deletes a file from storage. Prefix the `fileName`{:.text.block} with `/` to delete a specific
@@ -231,10 +227,10 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 {:id="File.MakeFullPath" class="method returns text"} <i/> MakeFullPath(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*path*{:.text})
 : Converts the scope and path into a single string for other components.
 
-{:id="File.MoveFile" class="method returns boolean"} <i/> MoveFile(*fromScope*{:.com.google.appinventor.components.common.FileScopeEnum},*fromFileName*{:.text},*toScope*{:.com.google.appinventor.components.common.FileScopeEnum},*toFileName*{:.text})
-: Move a file from one location to another.
+{:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*fromScope*{:.com.google.appinventor.components.common.FileScopeEnum},*fromFileName*{:.text},*toScope*{:.com.google.appinventor.components.common.FileScopeEnum},*toFileName*{:.text})
+: 将文件从一个位置移动到另一个位置。
 
-{:id="File.ReadFrom" class="method"} <i/> ReadFrom(*fileName*{:.text})
+{:id="File.ReadFrom" class="method"} <i/> 读取文件(*文件名*{:.text})
 : Reads text from a file in storage. Prefix the `fileName`{:.text.block} with `/` to read from a
  specific file on the SD card (for example, `/myFile.txt` will read the file
  `/sdcard/myFile.txt`). To read assets packaged with an application (also works for the
@@ -246,7 +242,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 : Remove a directory from the file system. If recursive is true, then everything is removed. If
  recursive is false, only the directory is removed and only if it is empty.
 
-{:id="File.SaveFile" class="method"} <i/> SaveFile(*text*{:.text},*fileName*{:.text})
+{:id="File.SaveFile" class="method"} <i/> 保存文件(*文本*{:.text},*文件名*{:.text})
 : Saves text to a file. If the `fileName`{:.text.block} begins with a slash (`/`) the file is
  written to the sdcard (for example, writing to `/myFile.txt` will write the file to
  `/sdcard/myFile.txt`). If the `fileName`{:.text.block} does not start with a slash, it will be
