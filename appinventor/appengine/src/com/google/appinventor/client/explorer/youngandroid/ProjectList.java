@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
+import com.google.appinventor.client.TopToolbar;
 
 /**
  * The project list shows all projects in a table.
@@ -337,11 +338,18 @@ public class ProjectList extends Composite implements ProjectManagerEventListene
         } else {
           table.getRowFormatter().setStyleName(row, "ode-ProjectRowUnHighlighted");
           pw.checkBox.setValue(false);
-          table.getRowFormatter().getElement(row).setAttribute("data-exporturl",
+
+          // 非VIP禁用拖拽，直接导出源代码
+          int leftDays = TopToolbar.getLeftDays();
+          if ((Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn" || Ode.getInstance().isReadOnly()) && leftDays > 0) {
+            table.getRowFormatter().getElement(row).setAttribute("data-exporturl",
               "application/octet-stream:" + project.getProjectName() + ".aia:"
                   + GWT.getModuleBaseURL() + ServerLayout.DOWNLOAD_SERVLET_BASE
                   + ServerLayout.DOWNLOAD_PROJECT_SOURCE + "/" + project.getProjectId());
-          configureDraggable(table.getRowFormatter().getElement(row));
+            configureDraggable(table.getRowFormatter().getElement(row));
+          } else {
+            table.getRowFormatter().getElement(row).setAttribute("draggable", "false");
+          }
         }
         pw.checkBox.setName(String.valueOf(row));
         if (row >= previous_rowmax) {
