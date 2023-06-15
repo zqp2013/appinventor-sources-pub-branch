@@ -52,7 +52,7 @@
 
                 <div class="mt-3">
                     <div class="col-sm-12 text-center">
-                        <a href="/"><img alt="fun123.cn" src="/static/images/logo.png" loading="lazy"></a>
+                        <a href="/"><img alt="fun123.cn" src="/static/images/logo.png" style="width: 179px; height: 57px;"></a>
                         <h1 class="mb-3 font-size-h2">欢迎来到 App Inventor 2 中文网</h1>
 <% if (error != null) {
 out.println("<center><font color=red><b>" + error + "</b></font></center>");
