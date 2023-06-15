@@ -27,7 +27,7 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 * [在键值对中查找](#lookupinpairs)
 * [分隔符拼接成文本](#joinwithseparator)
 
-*Need additional help understanding lists? Check out [making lists](../concepts/lists.html) on the Concepts page.*
+*需要额外的帮助来理解列表吗？请查看“概念”页面上的[制作列表](../concepts/lists.html)。*
 
 ***
 ### 创建空列表   {#emptylist}
@@ -80,7 +80,9 @@ If list has no items, returns true; otherwise, returns false.
 
 ![](images/lists/pickrandomitem.png)
 
-Picks an item at random from the list.
+从给定列表中随机返回一个列表项，如果列表为空则会发出异常、报错。
+
+如果给定列表是一个二维列表，如 `[["abc","123"],["xyz","456"]]` ，则返回的列表项也是一个列表对象，如 `["abc","123"]`。
 
 ***
 ### 求对象在列表中的位置   {#indexinlist}
@@ -170,16 +172,16 @@ In the returned text, items in rows are separated by commas and rows are separat
 
 ![](images/lists/listfromcsvrow.png)
 
-Parses a text as a CSV (comma-separated value) formatted row to produce a list of fields.
-For example, converting ("a", "b", "c", "d") to a list produces (a b c d).
+从CSV（逗号分隔）文件的单行文本中解析出一个列表。如CSV内容：`a,b,c,d`  →  列表：`["a","b","c","d"]`。
 
 ***
 ### CSV表转换为列表   {#listfromcsvtable}
 
 ![](images/lists/listfromcsvtable.png)
 
-Parses a text as a CSV (comma-separated value) formatted table to produce a list of rows, each of which is a list of fields.
-Rows can be separated by newlines (\n) or CRLF (\r\n).
+从CSV（逗号分隔）文件的多行文本中解析出一个二维列表，CSV文件的多行内容以换行符（Linux下`\n` 或 Windows下`\r\n`）分隔。
+
+如CSV内容：`a,b,c,d` \n `1,2,3,4`  →   二维列表：`[["a","b","c","d"],["1","2","3","4"]]`。
 
 ***
 ### 在键值对中查找   {#lookupinpairs}
