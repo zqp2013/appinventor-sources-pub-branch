@@ -113,7 +113,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <div class="display-inline-block">
                                                     <div class="form-checkbox custom-control custom-checkbox" style="padding-left:0;">
                                                         <p>
-                                                            登入即代表您同意并接受<a href="/Ya_tos_form.html" target="_blank">服务条款和账号规范</a>
+                                                            登入即代表您同意并接受<a href="/Ya_tos_form.html" target="_blank">《服务条款和账号规范》</a>
                                                         </p>
                                                     </div>
                                                 </div>
