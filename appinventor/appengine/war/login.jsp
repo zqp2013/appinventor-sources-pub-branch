@@ -162,7 +162,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
 
                             </div>
                             
-                            <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 60px;">
+                            <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 50px;">
                                 官方平台
                             </div>
                             <div class="clearfix">
