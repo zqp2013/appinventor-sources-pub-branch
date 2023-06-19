@@ -472,7 +472,7 @@ body {
 }
 /*VIP活动标记*/
 .vip:after {
-    content: "618";
+    content: "端午";
     position: absolute;
     font-size: 12px;
     top: -9px;
