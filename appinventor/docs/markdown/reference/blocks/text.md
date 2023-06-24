@@ -14,8 +14,8 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 * [小写](#downcase)
 * [求起始位置](#startsat)
 * [是否包含](#contains)
-* [contains any](#containsany)
-* [contains all](#containsall)
+* [是否包含（任何）](#containsany)
+* [是否包含（所有）](#containsall)
 * [split at first](#splitatfirst)
 * [split at first of any](#splitatfirstofany)
 * [分解](#split)
@@ -92,32 +92,36 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 ![](images/text/startsat.png)
 
-Returns the character position where the first character of *piece* first appears in text, or 0 if not present. For example, the location of *ana* in *havana banana* is 4.
+返回 *子串* 在文本中首次出现的首个字符位置，如果不存在则返回 0。 例如，*havanabanana* 中 *ana* 的位置是 4。
 
 ***
 ### 是否包含   {#contains}
 
 ![](images/text/contains.png)
 
-Returns true if *piece* appears in text; otherwise, returns false.
+如果 *子串* 出现在文本中，则返回 `真`{:.logic.block}， 否则，返回 `假`{:.logic.block}。
 
 ***
-### contains any   {#containsany}
+### 是否包含（任何）   {#containsany}
 
 ![](images/text/containsany.png)
 
-Returns true if any of the pieces in the piece list appear in text; otherwise, returns false.
+如果 *子串列表* 中的任何子串出现在文本中，则返回 `真`{:.logic.block}， 否则，返回 `假`{:.logic.block}。
 
-This block can be obtained by changing the dropdown on the contains block.
+通过选择`是否包含`代码块中下拉框来获取此代码块：
+
+![](images/text/是否包含任何.png)
 
 ***
-### contains all   {#containsall}
+### 是否包含（所有）   {#containsall}
 
 ![](images/text/containsall.png)
 
-Returns true if all of the pieces in the piece list appear in text; otherwise, returns false.
+如果 *子串列表* 中的所有子串都出现在文本中，则返回 `真`{:.logic.block}， 否则，返回 `假`{:.logic.block}。
 
-This block can be obtained by changing the dropdown on the contains block.
+通过选择`是否包含`代码块中下拉框来获取此代码块：
+
+![](images/text/是否包含所有.png)
 
 ***
 ### split at first   {#splitatfirst}
