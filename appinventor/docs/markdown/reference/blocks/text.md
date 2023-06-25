@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 文本代码块
 layout: documentation
-description: 文本代码块参考文档：包括字符串、合并字符串、求长度、是否为空、字符串比较、删除空格、大写、小写、求起始位置、是否包含...。
+description: 文本代码块参考文档：包括字符串、合并字符串、求长度、是否为空、字符串比较、删除空格、大写、小写、求起始位置、是否包含、分解字符串、截取字符串、替换字符串。
 ---
 
 * [字符串](#string)
@@ -16,12 +16,12 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 * [是否包含](#contains)
 * [是否包含（任何）](#containsany)
 * [是否包含（所有）](#containsall)
-* [split at first](#splitatfirst)
-* [split at first of any](#splitatfirstofany)
+* [分解（首项）](#splitatfirst)
+* [分解（任意首项）](#splitatfirstofany)
 * [分解](#split)
-* [split at any](#splitatany)
-* [split at spaces](#splitatspaces)
-* [segment](#segment)
+* [分解（任意）](#splitatany)
+* [用空格分解](#splitatspaces)
+* [截取](#segment)
 * [全部替换](#replaceall)
 * [模糊文本](#obfuscatetext)
 * [是一个字符串？](#isstring)
@@ -124,99 +124,102 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 ![](images/text/是否包含所有.png)
 
 ***
-### split at first   {#splitatfirst}
+### 分解（首项）   {#splitatfirst}
 
 ![](images/text/splitatfirst.png)
 
-Divides the given text into two pieces using the location of the first occurrence of at as the dividing point, and returns a two-item list consisting of the piece before the dividing point and the piece after the dividing point. Splitting *apple,banana,cherry,dogfood* with a comma as the splitting point returns a list of two items: the first is the text *apple* and the second is the text *banana,cherry,dogfood*. Notice that the comma after apple doesn't appear in the result, because that is the dividing point.
+使用 `分隔符` 第一次出现的位置作为分割点将给定文本分成两部分，并返回由分割点之前的部分和分割点之后的部分组成的两项列表。例如：
+
+使用逗号作为分割点分割 *apple,banana,cherry,dogfood* 将返回两个项目的列表：第一个是文本 *apple*，第二个是文本 *banana,cherry,dogfood*。请注意，apple 后面的逗号不会出现在结果中，因为那是分界点。
 
 ***
-### split at first of any   {#splitatfirstofany}
+### 分解（任意首项）   {#splitatfirstofany}
 
 ![](images/text/splitatfirstofany.png)
 
-Divides the given text into a two-item list, using the first location of any item in the list at as the dividing point.
+使用 `分隔符(列表)` 中任意项目的第一个位置作为分割点，将给定文本划分为两个项目的列表。例如：
 
-Splitting *i love apples bananas apples grapes* by the list *[ba,ap]* would result in a list of two items the first being *i love* and the second *ples bananas apples grapes*.
+通过列表 *[ba,ap]* 拆分 *i love apples bananas apples grapes* 将产生一个包含两个项目的列表，第一个是 *i love*，第二个是 *ples bananas apples grapes*。
 
 ***
-### split   {#split}
+### 分解   {#split}
 
 ![](images/text/split.png)
 
-Divides text into pieces using at as the dividing points and produces a list of the results. Splitting *one,two,three,four* at *,* (comma) returns the list *(one two three four)*. Splitting *one-potato,two-potato,three-potato,four* at *-potato,* returns the list *(one two three four)*.
+使用 `分隔符` 作为分割点将文本分成多个部分并生成结果列表。例如：
+
+用 *,*（逗号）拆分 *one,two,three,four* 返回列表 *["one","two","three","four"]*。
+
+用 *-potato,* 拆分 *one-potato,two-potato,three-potato,four* 返回列表 *["one","two","three","four"]*。
 
 ***
-### split at any   {#splitatany}
+### 分解（任意）   {#splitatany}
 
 ![](images/text/splitatany.png)
 
-Divides the given text into a list, using any of the items in at as the dividing point, and returns a list of the results.
+使用 `分隔符(列表)` 中的任意项目作为分割点将给定文本划分为列表，并返回结果列表。例如：
 
-Splitting *appleberry,banana,cherry,dogfood* with at as the two-element list whose first item is a comma and whose second item is *rry* returns a list of four items: *(applebe banana che dogfood)*.
+使用 *[",","rry"]* 作为双元素列表拆分 *appleberry,banana,cherry,dogfood*，返回一个包含四个项目的列表：*["applebe","Banana","che","Dogfood"]*。
 
 ***
-### split at spaces   {#splitatspaces}
+### 用空格分解   {#splitatspaces}
 
 ![](images/text/splitatspaces.png)
 
-Divides the given text at any occurrence of a space, producing a list of the pieces.
+在任意出现空格的地方分割给定文本，返回子串列表。
 
 ***
-### segment   {#segment}
+### 截取   {#segment}
 
 ![](images/text/segment.png)
 
-Extracts part of the text starting at start position and continuing for length characters.
+提取从起始位置开始指定长度的部分文本。
 
 ***
 ### 全部替换   {#replaceall}
 
 ![](images/text/replaceall.png)
 
-Returns a new text string obtained by replacing all occurrences of the substring with the replacement.
+返回使用替换内容替换所有出现的子字符串而获得的新文本字符串。例如：
 
-Replace all with *She loves eating. She loves writing. She loves coding* as the text, *She* as the segment, and *Hannah* as the replacement would result in *Hannah loves eating. Hannah loves writing. Hannah loves coding*.
+*她喜欢吃东西。 她热爱写作。 她喜欢编码* 作为文本，*她* 作为片段，*汉娜* 作为替换，替换的结果是：*汉娜喜欢吃。 汉娜喜欢写作。 汉娜喜欢编码*。
 
 ***
 ### 模糊文本   {#obfuscatetext}
 
 ![](images/text/obfuscatetext.png)
 
-Produces text, like a text block.  The difference is that th etext is not easily discoverable by examining the app's contents.  Use this when creating apps to distribute that include confidential information, for example, API keys.
+将文本内容进行一定的混淆，使得最终编译成安装包后，其中的敏感信息不容易被泄漏。例如在创建要分发的包含机密信息（例如 API 密钥）的应用程序时使用此选项。
 
-*Warning: This provides only very low security against expert adversaries.*
+*警告：对于专家及高手而言，这种方式的安全性仍然是非常的低！！！*
 
 ***
 ### 是一个字符串？  {#isstring}
 
 ![](images/text/isstring.png)
 
-Returns true if *thing* is a text object, otherwise false.
+如果 *输入* 是文本对象，则返回 `真`{:.logic.block}， 否则，返回 `假`{:.logic.block}。
 
 ***
 ### 反转   {#reverse}
 
 ![](images/text/text_reverse.png)
 
-Reverse the given text. For example, "reverse" would become "esrever".
+反转给定的文本，例如，`reverse` 将变为 `esrever`。
 
 ***
 ### 替换所有映射 {#replaceallmappings}
 
-![](images/text/replaceallmappings.png)
+给定映射字典作为输入，将文本中的key替换为字典中的相应值，返回映射替换后的文本。替换规则有如下两种：
 
-Given a dictionary of mappings as input, replaces the key entries in the text with the corresponding values in the dictionary.
-Returns the text with the mappings applied.
+#### 字典顺序 {#replaceallmappingsdictionary}
 
-***
-#### dictionary order {#replaceallmappingsdictionary}
+![](images/text/字典顺序.png)
 
-If the dictionary order is specified, in the case of one key entry being a substring of another key entry, the first one to be replaced
-is based on the entry order in the dictionary (the earliest one gets replaced first).
+如果指定了字典顺序，当一个key是另一个key的子串时，则第一个被替换的是基于字典中的顺序，也就是最早的条目首先被替换。
 
-***
-#### longest string first order {#replaceallmappingslongeststring}
+#### 最长字符串优先顺序 {#replaceallmappingslongeststring}
 
-If the longest string order is specified, in the case of one key entry being a substring of another key entry, the first one to be replaced
-is the one which is longer.
+![](images/text/最长字符串优先顺序.png)
+
+如果指定了最长字符串顺序优先，则当一个key是另一个key的子串时，第一个被替换是较长的那个。
