@@ -92,7 +92,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 ![](images/text/startsat.png)
 
-返回 *子串* 在文本中首次出现的首个字符位置，如果不存在则返回 0。 例如，*havanabanana* 中 *ana* 的位置是 4。
+返回 *子串* 在文本中首次出现的首个字符位置，如果不存在则返回 0。 例如，`havanabanana` 中 `ana` 的位置是 4。
 
 ***
 ### 是否包含   {#contains}
@@ -130,7 +130,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 使用 `分隔符` 第一次出现的位置作为分割点将给定文本分成两部分，并返回由分割点之前的部分和分割点之后的部分组成的两项列表。例如：
 
-使用逗号作为分割点分割 *apple,banana,cherry,dogfood* 将返回两个项目的列表：第一个是文本 *apple*，第二个是文本 *banana,cherry,dogfood*。请注意，apple 后面的逗号不会出现在结果中，因为那是分界点。
+使用逗号作为分割点分割 `apple,banana,cherry,dogfood` 将返回两个项目的列表：第一个是文本 `apple`，第二个是文本 `banana,cherry,dogfood`。请注意，`apple` 后面的逗号不会出现在结果中，因为那是分界点。
 
 ***
 ### 分解（任意首项）   {#splitatfirstofany}
@@ -139,7 +139,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 使用 `分隔符(列表)` 中任意项目的第一个位置作为分割点，将给定文本划分为两个项目的列表。例如：
 
-通过列表 *[ba,ap]* 拆分 *i love apples bananas apples grapes* 将产生一个包含两个项目的列表，第一个是 *i love*，第二个是 *ples bananas apples grapes*。
+通过列表 `[ba,ap]` 拆分 `i love apples bananas apples grapes` 将产生一个包含两个项目的列表，第一个是 `i love`，第二个是 `ples bananas apples grapes`。
 
 ***
 ### 分解   {#split}
@@ -148,9 +148,9 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 使用 `分隔符` 作为分割点将文本分成多个部分并生成结果列表。例如：
 
-用 *,*（逗号）拆分 *one,two,three,four* 返回列表 *["one","two","three","four"]*。
+用 `,`（逗号）拆分 `one,two,three,four` 返回列表 `["one","two","three","four"]`。
 
-用 *-potato,* 拆分 *one-potato,two-potato,three-potato,four* 返回列表 *["one","two","three","four"]*。
+用 `-potato,` 拆分 `one-potato,two-potato,three-potato,four` 返回列表 `["one","two","three","four"]`。
 
 ***
 ### 分解（任意）   {#splitatany}
@@ -159,7 +159,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 使用 `分隔符(列表)` 中的任意项目作为分割点将给定文本划分为列表，并返回结果列表。例如：
 
-使用 *[",","rry"]* 作为双元素列表拆分 *appleberry,banana,cherry,dogfood*，返回一个包含四个项目的列表：*["applebe","Banana","che","Dogfood"]*。
+使用 *[",","rry"]* 作为双元素列表拆分 `appleberry,banana,cherry,dogfood`，返回一个包含四个项目的列表：`["applebe","Banana","che","Dogfood"]`。
 
 ***
 ### 用空格分解   {#splitatspaces}
@@ -182,7 +182,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 返回使用替换内容替换所有出现的子字符串而获得的新文本字符串。例如：
 
-*她喜欢吃东西。 她热爱写作。 她喜欢编码* 作为文本，*她* 作为片段，*汉娜* 作为替换，替换的结果是：*汉娜喜欢吃。 汉娜喜欢写作。 汉娜喜欢编码*。
+`她喜欢吃东西。 她热爱写作。 她喜欢编码` 作为文本，`她` 作为片段，`汉娜` 作为替换，替换的结果是：`汉娜喜欢吃东西。 汉娜喜欢写作。 汉娜喜欢编码`。
 
 ***
 ### 模糊文本   {#obfuscatetext}
@@ -191,7 +191,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 将文本内容进行一定的混淆，使得最终编译成安装包后，其中的敏感信息不容易被泄漏。例如在创建要分发的包含机密信息（例如 API 密钥）的应用程序时使用此选项。
 
-*警告：对于专家及高手而言，这种方式的安全性仍然是非常的低！！！*
+`警告：对于专家及高手而言，这种方式的安全性仍然是非常的低！！！`
 
 ***
 ### 是一个字符串？  {#isstring}
