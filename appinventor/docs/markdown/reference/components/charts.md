@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 图表组件
-description: 图表组件参考文档：包括图表、二维图表。
+description: 图表组件参考文档：包括图表、二维图表数据。
 ---
 
 [&laquo; 返回首页](index.html)
@@ -10,17 +10,14 @@ description: 图表组件参考文档：包括图表、二维图表。
 目录：
 
 * [图表](#Chart)
-* [二维图表](#ChartData2D)
+* [二维图表数据](#ChartData2D)
 
 ***
 ## 图表  {#Chart}
 
-The Chart component plots data originating from it's attached Data components. Five different
- Chart types are available, including Line, Area, Scatter, Bar and Pie, which can be changed by
- the [`Type`](#Chart.Type) property.
- The Chart component itself has various other properties that change the appearance
- of the Chart, such as {[`Description`](#Chart.Description), [`GridEnabled`](#Chart.GridEnabled),
+图表组件用于绘制其附加数据（如[`二维图表数据`](#ChartData2D)组件）的组件。有五种不同的图表类型，包括折线图、面积图、散点图、条形图和饼图，可通过[`类型`](#Chart.Type) 属性修改。
 
+图表组件有其他可以更改外观的属性，例如 [`描述`](#Chart.Description)、[`启用网格`](#Chart.GridEnabled)。
 
 
 ### 属性  {#Chart-Properties}
@@ -30,14 +27,11 @@ The Chart component plots data originating from it's attached Data components. F
 {:id="Chart.BackgroundColor" .color} *背景颜色*
 : 设置`图表`的背景颜色，使用RGBA数值表示。
 
-{:id="Chart.Description" .text} *Description*
-: Specifies the text displayed by the description label inside the Chart.
- Specifying an empty string ("") will not display any label.
+{:id="Chart.Description" .text} *描述*
+: 指定图表内描述标签显示的文本。指定空字符串 ("") 将不会显示标签。
 
-{:id="Chart.GridEnabled" .boolean} *GridEnabled*
-: Changes the visibility of the Chart's grid, if the
- Chart Type is set to a Chart with an Axis (applies for Area, Bar, Line,
- Scatter Chart types).
+{:id="Chart.GridEnabled" .boolean} *启用网格*
+: 更改图表网格的可见性，如果图表类型设置为带轴的图表（适用于面积图、条形图、折线图、散点图类型，*饼图不适用*）。
 
 {:id="Chart.Height" .number .bo} *高度*
 : 设置`图表`的垂直高度，以像素px为单位。
@@ -45,31 +39,26 @@ The Chart component plots data originating from it's attached Data components. F
 {:id="Chart.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`图表`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Chart.Labels" .list .bo} *Labels*
-: Changes the Chart's X axis labels to the specified List,
- if the Chart's Type is set to a Chart with an Axis.
+{:id="Chart.Labels" .list .bo} *标签列表*
+: 将图表的 x 轴标签更改为指定的列表，如果图表类型设置为带轴图表。
 
-   The first entry of the List corresponds to the minimum x value of the data,
- the second to the min x value + 1, and so on.
+  列表的第一个条目对应于数据的最小 x 值，第二个为最小 x 值 + 1，依此类推。
 
-   If a label is not specified for an x value, a default value
- is used (the x value of the axis tick at that location).
+  如果没有为 x 值指定标签，则使用默认值使用（该位置的轴刻度的 x 值）。
 
-{:id="Chart.LabelsFromString" .text .wo .do} *LabelsFromString*
-: Specifies the labels to set to the Chart's X Axis, provided the current
- view is a Chart with an X Axis. The labels are specified as a single comma-separated
- values String (meaning each value is separated by a comma). See [`Labels`](#Chart.Labels)
- for more details on how the Labels are applied to the Chart.
+{:id="Chart.LabelsFromString" .text .wo .do} *CSV字符串标签*
+: 指定要设置到图表 x 轴的标签，如果当前是一个带有 x 轴的图表。
 
-{:id="Chart.LegendEnabled" .boolean} *LegendEnabled*
-: Changes the visibility of the Chart's Legend.
+  标签被指定为逗号分隔（CSV格式）的值字符串，类似的用法参考[`标签列表`](#Chart.Labels)。
 
-{:id="Chart.PieRadius" .number .wo .do} *PieRadius*
-: Sets the Pie Radius of the Chart. If the current type is
- not the Pie Chart, the value has no effect.
+{:id="Chart.LegendEnabled" .boolean} *启用图例*
+: 更改图表图例的可见性。
 
-{:id="Chart.Type" .com.google.appinventor.components.common.ChartTypeEnum .do} *Type*
-: Specifies the type of the Chart, which determines how to visualize the data.
+{:id="Chart.PieRadius" .number .wo .do} *饼图半径*
+: 设置图表的饼图半径，如果当前类型是不是饼图，该值则没有效果。
+
+{:id="Chart.Type" .com.google.appinventor.components.common.ChartTypeEnum .do} *类型*
+: 指定图表的类型，它决定如何可视化数据。
 
 {:id="Chart.Visible" .boolean} *可见性*
 : 设置`图表`是否显示在屏幕上，值是`真`{:.logic.block}则`图表`显示，`假`{:.logic.block}则隐藏。
@@ -84,9 +73,8 @@ The Chart component plots data originating from it's attached Data components. F
 
 {:.events}
 
-{:id="Chart.EntryClick"} EntryClick(*series*{:.component},*x*{:.any},*y*{:.number})
-: Indicates that the user clicked on a data entry in the `Chart`. The specific series, along
- with its x and y values, are reported.
+{:id="Chart.EntryClick"} 数据点被点击时(*数据序列*{:.component},*x坐标*{:.any},*y坐标*{:.number})
+: 指示用户单击`图表`中的数据点，返回指定点的 x轴 和 y轴值。
 
 ### 方法  {#Chart-Methods}
 
@@ -94,15 +82,11 @@ The Chart component plots data originating from it's attached Data components. F
 无
 
 ***
-## 二维图表  {#ChartData2D}
+## 二维图表数据  {#ChartData2D}
 
-A ChartData2D component represents a single two-dimensional Data Series in the Chart component,
- for example, a single Line in the case of a Line Chart, or a single Bar in the case of a Bar
- Chart. The Data component is responsible for handling all the data of the Chart. The entries
- of the Data component correspond of an x and a y value.
- The component is attached directly to a Chart component by dragging it onto the Chart.
+二维图表数据组件表示图表组件中的单个二维数据序列。例如：如果是折线图，则为一条线；如果是条形图，则为一条条形图图表。
 
-
+数据组件负责处理图表的数据，数据组件的点对应 x 和 y 值。**可以将该组件拖到图表上，也就是将其直接附加到图表组件上。**
 
 ### 属性  {#ChartData2D-Properties}
 
