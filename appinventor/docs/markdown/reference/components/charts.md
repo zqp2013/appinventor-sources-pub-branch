@@ -92,89 +92,68 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 
 {:.properties}
 
-{:id="ChartData2D.Color" .color} *Color*
-: Specifies the data series color as an alpha-red-green-blue integer.
+{:id="ChartData2D.Color" .color} *颜色*
+: 指定数据序列的颜色，使用RGBA数值表示。
 
-{:id="ChartData2D.Colors" .list .bo} *Colors*
-: Specifies the data series colors as a list of alpha-red-green-blue integers.
+{:id="ChartData2D.Colors" .list .bo} *颜色列表*
+: 指定数据序列的RGBA颜色数值列表。
 
-   If there is more data than there are colors, the colors will be alternated
- in order. E.g. if there are two colors Red and Blue, the colors will be applied
- in the order: Red, Blue, Red, Blue, ...
+  如果数据多于颜色，颜色将交替显示。例如，如果有红色和蓝色两种颜色，则颜色顺序为：红、蓝、红、蓝...
 
-{:id="ChartData2D.DataFileXColumn" .text .wo .do} *DataFileXColumn*
-: Value used when importing data from a DataFile component [`Source`](#ChartData2D.Source). The
- value represents the column to use from the DataFile for the x entries
- of the Data Series. For instance, if a column's first value is "Time",
- and a column value of "Time" is specified, that column will be used
- for the x values. If a value here is not specified, default values for the
- x values will be generated instead.
+{:id="ChartData2D.DataFileXColumn" .text .wo .do} *数据文件x列*
+: 从 [`数据文件`](storage.html#DataFile) 组件导入数据时， [`数据源`](#ChartData2D.Source) 使用的值。
 
-{:id="ChartData2D.DataFileYColumn" .text .wo .do} *DataFileYColumn*
-: Value used when importing data from a DataFile component [`Source`](#ChartData2D.Source). The
- value represents the column to use from the DataFile for the y entries
- of the Data Series. For instance, if a column's first value is "Temperature",
- and a column value of "Temperature" is specified, that column will be used
- for the y values. If a value here is not specified, default values for the
- y values will be generated instead.
+  这个值表示数据文件中用于 x 条目的列数据序列。例如，如果列的第一个值是“时间”，并且指定了“时间”列值，将使用该列用于 x 值。
+  
+  如果未指定值，则使用默认值生成 x 值。
 
-{:id="ChartData2D.DataSourceKey" .text .wo .do} *DataSourceKey*
-: Sets the Data Source key identifier for the value to import from the
- attached Data Source.
+{:id="ChartData2D.DataFileYColumn" .text .wo .do} *数据文件y列*
+: 从 [`数据文件`](storage.html#DataFile) 组件导入数据时， [`数据源`](#ChartData2D.Source) 使用的值。
 
-   An example is the tag of the TinyDB component, which identifies the value.
+  这个值表示数据文件中用于 y 条目的列数据序列。例如，如果列的第一个值为“温度”，并且指定了“温度”列值，将使用该列 y 值。
+  
+  如果未指定值，则使用默认值生成 y 值。
 
-   The property is a Designer-only property, and should be changed after setting the
- Source component of the Chart Data component.
+{:id="ChartData2D.DataSourceKey" .text .wo .do} *数据源键标识符*
+: 为附加数据源导入的值设置键标识符。类似 [`微数据库`](storage.html#TinyDB) 组件的标签，使用它标识具体的值。
 
-   A complete list of applicable values for each compatible source is as follows:
+  该属性是“界面设计”视图专用的属性，应在设置图表数据组件的数据源后修改成相应的标识值。
 
-     * For TinyDB and CloudDB, this is the tag value.
-     * For the AccelerometerSensor, the value should be one of the following: X Y or Z
-     * For the GyroscopeSensor, the value should be one of the following: X Y or Z
-     * For the LocationSensor, the value should be one of the following:
-       latitude, longitude, altitude or speed
-     * For the OrientationSensor, the value should be one of the following:
-       pitch, azimuth or roll
-     * For the Pedometer, the value should be one of the following:
-       WalkSteps, SimpleSteps or Distance
-     * For the ProximitySensor, the value should be distance.
-     * For the BluetoothClient, the value represents the prefix to remove from the value.
-       For instance, if values come in the format "t:12", the prefix can be specified as "t:",
-       and the prefix will then be removed from the data. No value can be specified if purely
-       numerical values are returned.
+  每种兼容数据源的适用值的完整列表如下：
 
-{:id="ChartData2D.ElementsFromPairs" .text .wo .do} *ElementsFromPairs*
-: Comma separated list of Elements to use for the data series. Values are formatted
- as follows: x1,y1,x2,y2,x3,y3. Values are taken in pairs, and an entry is formed
- from the x and y values.
+    * 对于 [`微数据库`](storage.html#TinyDB) 和 [`云数据库`](storage.html#CloudDB)，这是标签值。
+    * 对于 [`加速度传感器`](sensors.html#AccelerometerSensor)，该值应为以下之一：X Y 或 Z
+    * 对于 [`陀螺仪传感器`](sensors.html#GyroscopeSensor)，该值应为以下之一：X Y 或 Z
+    * 对于 [`位置传感器`](sensors.html#LocationSensor)，该值应为以下之一：纬度、经度、高度或速度
+    * 对于 [`方向传感器`](sensors.html#OrientationSensor)，该值应为以下之一：俯仰角、方位角或横滚角
+    * 对于 [`计步器`](sensors.html#Pedometer)，该值应为以下之一：行走步数、简单步数或距离
+    * 对于 [`距离传感器`](sensors.html#ProximitySensor)，该值应为距离。
+    * 对于 [`蓝牙客户端`](connectivity.html#BluetoothClient)，该值表示要从该值中删除的前缀。
+      
+      例如，如果值的格式为“t:12”，则前缀可以指定为“t:”，然后前缀将从数据中删除。如果是纯数值的话，则不能指定任何值。
 
-{:id="ChartData2D.Label" .text} *Label*
-: Specifies the text for the data series label.
+{:id="ChartData2D.ElementsFromPairs" .text .wo .do} *元素来自键值对*
+: 用于数据序列的逗号分隔（CSV）元素列表。值格式化如下：x1,y1,x2,y2,x3,y3。值成对获取， x 和 y 值形成一个条目。
 
-{:id="ChartData2D.LineType" .com.google.appinventor.components.common.LineTypeEnum .wo .do} *LineType*
-: Changes the Line Type of the Data Series, provided that the
- Data component is attached to a Chart that has the type set to
- a line-based Chart(applies to area and line Chart types).
-    Valid types include linear, curved or stepped.
+{:id="ChartData2D.Label" .text} *标签*
+: 指定数据序列标签的文本。
 
-{:id="ChartData2D.PointShape" .com.google.appinventor.components.common.PointStyleEnum .wo .do} *PointShape*
-: Changes the Point Shape of the Data Series, provided that the
- Data component is attached to a Chart that has the type set to
- the Scatter Chart. Valid types include circle, square, triangle, cross, x.
+{:id="ChartData2D.LineType" .com.google.appinventor.components.common.LineTypeEnum .wo .do} *线型*
+: 更改数据序列的线的类型，前提是数据组件附加到基于折线的图表（适用于`面积图`和`折线图`）。
 
-{:id="ChartData2D.Source" .component .wo .do} *Source*
-: Sets the Source to use for the Data component. Valid choices
- include AccelerometerSensor, BluetoothClient, CloudDB, DataFile,
- GyroscopeSensor, LocationSesnro, OrientationSensor, Pedometer,
- ProximitySensor TinyDB and Web components. The Source value also requires
- valid DataSourceValue, WebColumn or DataFileColumn properties,
- depending on the type of the Source attached (the required properties
- show up in the Properties menu after the Source is changed).
+  有效类型包括`折线`、`曲线`、`阶梯`。
 
-   If the data identified by the [`DataSourceKey`](#ChartData2D.DataSourceKey) is updated
- in the attached Data Source component, then the data is also updated in
- the Chart Data component.
+{:id="ChartData2D.PointShape" .com.google.appinventor.components.common.PointStyleEnum .wo .do} *点型*
+: 更改数据序列的点的形状，前提是数据组件附加到`散点图`的图表。
+
+  有效类型包括`圆形`、`方形`、`三角`、`十字`、`叉号`。
+
+{:id="ChartData2D.Source" .component .wo .do} *数据源*
+: 设置数据组件的数据源。有效的选择包括：[`加速度传感器`](sensors.html#AccelerometerSensor)、[`蓝牙客户端`](connectivity.html#BluetoothClient)、[`云数据库`](storage.html#CloudDB)、[`数据文件`](storage.html#DataFile)、[`陀螺仪传感器`](sensors.html#GyroscopeSensor)、[`位置传感器`](sensors.html#LocationSensor)、[`方向传感器`](sensors.html#OrientationSensor)、[`计步器`](sensors.html#Pedometer)、[`距离传感器`](sensors.html#ProximitySensor)、[`微数据库`](storage.html#TinyDB) 和 [`Web客户端`](connectivity.html#Web)。 
+  
+  `数据源` 值还需要有效的 DataSourceValue、WebColumn 或 DataFileColumn 属性，取决于附加的数据源的类型（更改数据源后，所需的属性会显示在“属性”菜单中）。
+
+  如果 [`数据源键标识符`](#ChartData2D.DataSourceKey) 标识的数据在附加的数据源组件中更新，然后数据也会在图表数据组件中更新。
 
 {:id="ChartData2D.SpreadsheetUseHeaders" .boolean .wo .do} *SpreadsheetUseHeaders*
 : If checked, the first row of the spreadsheet will be used to interpret the x and y column
@@ -206,21 +185,20 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 
 {:.events}
 
-{:id="ChartData2D.EntryClick"} EntryClick(*x*{:.any},*y*{:.number})
-: Indicates that the user tapped on a data point in the chart. The x and y values of the
- tapped entry are reported.
+{:id="ChartData2D.EntryClick"} 数据点被点击时(*x坐标*{:.any},*y坐标*{:.number})
+: 指示用户单击`图表`中的数据点，返回指定点的 x轴 和 y轴值。
 
 ### 方法  {#ChartData2D-Methods}
 
 {:.methods}
 
-{:id="ChartData2D.AddEntry" class="method"} <i/> AddEntry(*x*{:.text},*y*{:.text})
+{:id="ChartData2D.AddEntry" class="method"} <i/> 添加数据点(*x*{:.text},*y*{:.text})
 : Adds an entry with the specified x and y value. Values can be specified as text,
  or as numbers. For Line, Scatter, Area and Bar Charts, both values should represent a number.
  For Bar charts, the x value is rounded to the nearest integer.
  For Pie Charts, the x value is a text value.
 
-{:id="ChartData2D.ChangeDataSource" class="method"} <i/> ChangeDataSource(*source*{:.component},*keyValue*{:.text})
+{:id="ChartData2D.ChangeDataSource" class="method"} <i/> 改变数据源(*source*{:.component},*keyValue*{:.text})
 : Changes the Data Source of the component to the specified component Source with the
  specified key value. See the [`Source`](#ChartData2D.Source) property for
  applicable components. See the [`DataSourceKey`](#ChartData2D.DataSourceKey) property for the interpretation
@@ -228,29 +206,29 @@ description: 图表组件参考文档：包括图表、二维图表数据。
  be a CSV formatted string, where the first value corresponds to the x column, and the second
  value corresponds to the y value.
 
-{:id="ChartData2D.Clear" class="method"} <i/> Clear()
+{:id="ChartData2D.Clear" class="method"} <i/> 清除数据序列()
 : Removes all the entries from the Data Series.
 
-{:id="ChartData2D.DoesEntryExist" class="method returns boolean"} <i/> DoesEntryExist(*x*{:.text},*y*{:.text})
+{:id="ChartData2D.DoesEntryExist" class="method returns boolean"} <i/> 数据点是否存在(*x*{:.text},*y*{:.text})
 : Returns a boolean value specifying whether an entry with the specified x and y
  values exists. The boolean value of true is returned if the value exists,
  and a false value otherwise. See [`AddEntry`](#ChartData2D.AddEntry)
  for an explanation of the valid entry values.
 
-{:id="ChartData2D.GetAllEntries" class="method returns list"} <i/> GetAllEntries()
+{:id="ChartData2D.GetAllEntries" class="method returns list"} <i/> 获取所有数据点()
 : Returns all entries of the data series.
  The returned value is a list, where each element of the list
  is a list containing the values of the entry in order.
 
-{:id="ChartData2D.GetEntriesWithXValue" class="method returns list"} <i/> GetEntriesWithXValue(*x*{:.text})
+{:id="ChartData2D.GetEntriesWithXValue" class="method returns list"} <i/> 获取X值数据点(*x*{:.text})
 : Returns all entries of the data series matching the specified x value.
  For a description of the format of the returned List, see [`GetAllEntries`](#ChartData2D.GetAllEntries)
 
-{:id="ChartData2D.GetEntriesWithYValue" class="method returns list"} <i/> GetEntriesWithYValue(*y*{:.text})
+{:id="ChartData2D.GetEntriesWithYValue" class="method returns list"} <i/> 获取Y值数据点(*y*{:.text})
 : Returns all entries of the data series matching the specified y value.
  For a description of the format of the returned List, see [`GetAllEntries`](#ChartData2D.GetAllEntries)
 
-{:id="ChartData2D.ImportFromCloudDB" class="method"} <i/> ImportFromCloudDB(*cloudDB*{:.component},*tag*{:.text})
+{:id="ChartData2D.ImportFromCloudDB" class="method"} <i/> 从云数据库导入(*云数据库*{:.component},*标签*{:.text})
 : Imports data from the specified CloudDB component by taking the value
  identified by the specified tag value.
 
