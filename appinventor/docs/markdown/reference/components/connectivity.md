@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 通信连接组件
-description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端。
+description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端、MQTT拓展、ClientSocket拓展。
 ---
 
 [&laquo; 返回首页](index.html)
@@ -14,6 +14,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 * [蓝牙服务器](#BluetoothServer)
 * [串口通信器](#Serial)
 * [Web客户端](#Web)
+* [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
+* [Socket *拓展：TCP/IP传输协议*](#Socket)
 
 ***
 ## Activity启动器  {#ActivityStarter}
@@ -610,3 +612,31 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
  attribute on an element, a key-value pair mapping `name` to `value` will exist in the
  `$attributes` dictionary. In addition to these special keys, there will also be `"ex:title"`
  and `"ex:author"` to allow lookups faster than having to traverse the `$content` list.
+
+
+***
+## MqttClient *拓展*  {#Mqtt}
+
+拓展.aix[下载地址](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)。
+
+`MQTT`是机器对机器(M2M)/物联网(IoT)连接协议。它被设计为一个极其轻量级的发布/订阅消息传输协议。
+
+对于需要较小代码占用空间和/或网络带宽非常宝贵的远程连接非常有用，是专为受限设备和低带宽、高延迟或不可靠的网络而设计。
+
+这些原则也使该协议成为新兴的“机器到机器”(M2M)或物联网(IoT)世界的连接设备，以及带宽和电池功率非常高的移动应用的理想选择。
+
+例如，它已被用于通过卫星链路与代理通信的传感器、与医疗服务提供者的拨号连接，以及一系列家庭自动化和小型设备场景。它也是移动应用的理想选择，因为它体积小，功耗低，数据包最小，并且可以有效地将信息分配给一个或多个接收器。 　　
+
+**特点：**
+  * 开放消息协议，简单易实现
+  * 发布订阅模式，一对多消息发布
+  * 基于TCP/IP网络连接,提供有序，无损，双向连接。
+  * 1字节固定报头，2字节心跳报文，最小化传输开销和协议交换，有效减少网络流量。
+  * 消息QoS支持，可靠传输保证
+
+***
+## ClientSocket *拓展*  {#Socket}
+
+拓展.aix[下载地址](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)。
+
+提供TCP/IP连接及通信功能。
