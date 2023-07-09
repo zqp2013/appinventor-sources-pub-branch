@@ -272,9 +272,8 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 
 {:.methods}
 
-{:id="Canvas.Clear" class="method"} <i/> Clear()
-: Clears the canvas, without removing the background image, if one
- was provided.
+{:id="Canvas.Clear" class="method"} <i/> 清除画布()
+: 清除画布，但不删除背景图像（如果设置了的话）。
 
 {:id="Canvas.DrawArc" class="method"} <i/> DrawArc(*left*{:.number},*top*{:.number},*right*{:.number},*bottom*{:.number},*startAngle*{:.number},*sweepAngle*{:.number},*useCenter*{:.boolean},*fill*{:.boolean})
 : Draw an arc on Canvas, by drawing an arc from a specified oval (specified by left, top, right & bottom).
@@ -319,7 +318,7 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Gets the color of the given pixel, including sprites.
 
 {:id="Canvas.Save" class="method returns text"} <i/> 保存()
-: 将此画布的图片保存到设备的外部存储(file:///)中。如果发生错误，屏幕的 ErrorOccurred 事件将被调用。
+: 将此画布的图片（包括背景图像和绘制内容）保存到设备的外部存储(file:///)中。如果发生错误，屏幕的 ErrorOccurred 事件将被调用。
 
   此函数的`返回值`是已保存的图片的路径。
 

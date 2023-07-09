@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 数据存储组件
-description: 数据存储组件参考文档：包括云数据库、数据文件、文件管理器、电子表格、微数据库、网络微数据库。
+description: 数据存储组件参考文档：包括云数据库、数据文件、文件管理器、FileTools拓展、电子表格、微数据库、网络微数据库。
 ---
 
 [&laquo; 返回首页](index.html)
@@ -12,7 +12,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 * [云数据库](#CloudDB)
 * [数据文件](#DataFile)
 * [文件管理器](#File)
-* [FileTools *拓展*](#FileTools)
+* [FileTools *拓展*：提供额外的更强大的文件相关操作](#FileTools)
 * [电子表格](#Spreadsheet)
 * [微数据库](#TinyDB)
 * [网络微数据库](#TinyWebDB)
@@ -255,7 +255,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
  to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
 
 ***
-## FileTools [*拓展*](https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)  {#FileTools}
+## FileTools [*拓展*](https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)  {#FileTools}
 
 提供一些额外的更加强大的文件相关的操作。是 [`文件管理器`](#File) 的加强拓展。
 
@@ -268,9 +268,7 @@ FileTools demo程序下载：
 ### 属性  {#FileTools-Properties}
 
 {:.properties}
-
-{:id="FileTools.xxx" .list .ro .bo} *...*
-: ...
+无
 
 ### 事件  {#FileTools-Events}
 
@@ -282,9 +280,127 @@ FileTools demo程序下载：
 
 {:.methods}
 
-{:id="FileTools.xxx" class="method"} <i/> ...(*...*{:.text})
-: ...
+1. ![1](extension/FileTools/1.png)
 
+    返回应用程序特定目录的路径。
+
+1. ![2](extension/FileTools/2.png)
+  
+    返回可用存储目录的列表。
+
+1. ![3](extension/FileTools/3.png)
+  
+    将文件从源文件夹复制到目标文件夹。
+
+1. ![4](extension/FileTools/4.png)
+  
+    将文件从源异步复制到目标。使用此功能复制大文件以避免运行时错误。
+
+1. ![5](extension/FileTools/5.png)
+  
+    如果应用程序特定目录不存在，则创建该目录。
+
+1. ![6](extension/FileTools/6.png)
+  
+    创建一个目录。它用布尔值 true 或 false 触发“Directory Created”。
+
+1. ![7](extension/FileTools/7.png)
+  
+    删除给定的文件或文件夹。如果是目录，则所有子目录将被删除，这可能需要一些时间。它会触发布尔值 true 或 false 的“FileDeleted”事件。
+
+1. ![8](extension/FileTools/8.png)
+
+    ![9](extension/FileTools/9.png)
+
+    如果文件或文件夹存在则返回 true，否则返回 false。
+
+1. ![](extension/FileTools/10.png)
+  
+    从给定目录返回文件列表（如果存在）。使用文件扩展名作为过滤器，如 mp3、txt 等。如果您不想使用过滤器，则使用空字符串。另外，如果不想获取子目录，则设置 ' withFolders' to false else true。如果recursive设置为true，那么它也会递归地从子目录中获取文件。
+
+1. ![](extension/FileTools/11.png)
+  
+    与 FilesList 的工作方式相同，但它异步获取文件列表，这拒绝了从具有如此多文件的目录获取文件列表时出现任何运行时错误的机会。它会引发带有文件列表的“GotFileList”事件。
+
+1. ![](extension/FileTools/12.png)
+  
+    从资产返回文件列表。
+
+1. ![](extension/FileTools/13.png)
+  
+    如果存在则返回路径中的文件名。
+
+1. ![](extension/FileTools/14.png)
+  
+    返回文件或文件夹的当前大小。
+
+1. ![](extension/FileTools/15.png)
+  
+    从文件名返回文件路径。在这种情况下，它将返回 /storage/sdcard/mFile.txt。
+
+1. ![](extension/FileTools/16.png)
+  
+    返回给定目录的文件夹列表。
+
+1. ![](extension/FileTools/17.png)
+  
+    返回目录的可用大小（以字节为单位）。注意：它使用绝对文件路径。
+
+1. ![](extension/FileTools/18.png)
+  
+    将文件路径转换为内容 uri。
+
+1. ![](extension/FileTools/19.png)
+  
+    将文件从源异步移动到目标。
+
+1. ![](extension/FileTools/20.png)
+  
+    检查给定路径是否是完整路径。例如：/testt.txt 和 /mnt/sdcard/Android/com.sunny.notez/files/testt.txt 不相同。
+
+1. ![](extension/FileTools/21.png)
+  
+    返回文件夹/文件是否可执行。
+
+1. ![](extension/FileTools/22.png)
+  
+    如果路径是文件则返回 true，否则返回 false。
+
+1. ![](extension/FileTools/23.png)
+  
+    如果文件/文件夹被隐藏则返回 true，否则返回 false。
+
+1. ![](extension/FileTools/24.png)
+  
+    如果文件/文件夹可读则返回 true，否则返回 false。
+
+1. ![](extension/FileTools/25.png)
+  
+    如果文件/文件夹可写则返回 true，否则返回 false。
+
+1. ![](extension/FileTools/26.png)
+  
+    给定格式的文件/文件夹的最后修改时间。
+
+1. ![](extension/FileTools/27.png)
+  
+    给定文件的 Mime 类型。在上述情况下，它将返回 text/plain。
+
+1. ![](extension/FileTools/28.png)
+  
+    将文件从源移动到目标并删除源文件。
+
+1. ![](extension/FileTools/29.png)
+  
+    将内容 uri 转换为文件路径。
+
+1. ![](extension/FileTools/30.png)
+  
+    重命名文件而不删除它。
+
+1. ![](extension/FileTools/31.png)
+
+    返回目录的总空间。注意：它使用绝对文件路径。
 
 ***
 ## 电子表格（*依赖谷歌服务，国内无法使用*）  {#Spreadsheet}
