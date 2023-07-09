@@ -286,8 +286,12 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Draws a circle (filled in) with the given radius centered at the given coordinates on the
  Canvas.
 
-{:id="Canvas.DrawLine" class="method"} <i/> DrawLine(*x1*{:.number},*y1*{:.number},*x2*{:.number},*y2*{:.number})
-: Draws a line between the given coordinates on the canvas.
+{:id="Canvas.DrawLine" class="method"} <i/> 画线(*x1*{:.number},*y1*{:.number},*x2*{:.number},*y2*{:.number})
+: 在画布上给定坐标之间(从x1,y1点到x2,y2点)绘制一条线。
+
+  典型用法参考（实现画笔绘画功能）：
+
+  ![画布画线](images/画布画线.png)
 
 {:id="Canvas.DrawPoint" class="method"} <i/> DrawPoint(*x*{:.number},*y*{:.number})
 : Draws a point at the given coordinates on the canvas.
@@ -314,14 +318,13 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 {:id="Canvas.GetPixelColor" class="method returns color"} <i/> GetPixelColor(*x*{:.number},*y*{:.number})
 : Gets the color of the given pixel, including sprites.
 
-{:id="Canvas.Save" class="method returns text"} <i/> Save()
-: Saves a picture of this Canvas to the device's external storage.
- If an error occurs, the Screen's ErrorOccurred event will be called.
+{:id="Canvas.Save" class="method returns text"} <i/> 保存()
+: 将此画布的图片保存到设备的外部存储(file:///)中。如果发生错误，屏幕的 ErrorOccurred 事件将被调用。
 
-{:id="Canvas.SaveAs" class="method returns text"} <i/> SaveAs(*fileName*{:.text})
-: Saves a picture of this Canvas to the device's external storage in the file
- named fileName. fileName must end with one of ".jpg", ".jpeg", or ".png"
- (which determines the file type: JPEG, or PNG).
+  此函数的`返回值`是已保存的图片的路径。
+
+{:id="Canvas.SaveAs" class="method returns text"} <i/> 另存为...(*文件名*{:.text})
+: 将此画布的图片以指定的文件名保存到设备的外部存储文件中，文件名必须以“.jpg”、“.jpeg”或“.png”之一结尾（文件类型：JPEG 或 PNG）。
 
 {:id="Canvas.SetBackgroundPixelColor" class="method"} <i/> SetBackgroundPixelColor(*x*{:.number},*y*{:.number},*color*{:.color})
 : Sets the color of the given pixel.  This has no effect if the
