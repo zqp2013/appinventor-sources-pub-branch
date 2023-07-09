@@ -615,9 +615,10 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 
 ***
-## MqttClient *拓展*  {#Mqtt}
+## MqttClient [*拓展*](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)  {#Mqtt}
 
-拓展.aix[下载地址](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)。
+.aix 拓展及demo程序打包下载：
+[UrsAI2Paho.zip](extension/UrsAI2Paho.zip)
 
 `MQTT`是机器对机器(M2M)/物联网(IoT)连接协议。它被设计为一个极其轻量级的发布/订阅消息传输协议。
 
@@ -635,8 +636,12 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   * 消息QoS支持，可靠传输保证
 
 ***
-## ClientSocket *拓展*  {#Socket}
+## ClientSocket [*拓展*](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)  {#Socket}
 
-拓展.aix[下载地址](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)。
+.aix 拓展下载：
+[com.gmail.at.moicjarod.aix](extension/com.gmail.at.moicjarod.aix)
+
+demo程序下载：
+[TestSocket.aia](extension/TestSocket.aia)
 
 提供TCP/IP连接及通信功能。

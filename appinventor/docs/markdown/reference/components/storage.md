@@ -12,6 +12,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 * [云数据库](#CloudDB)
 * [数据文件](#DataFile)
 * [文件管理器](#File)
+* [FileTools *拓展*](#FileTools)
 * [电子表格](#Spreadsheet)
 * [微数据库](#TinyDB)
 * [网络微数据库](#TinyWebDB)
@@ -252,6 +253,38 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
    Note that this block will overwrite a file if it already exists. If you want to add content
  to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
+
+***
+## FileTools [*拓展*](https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)  {#FileTools}
+
+提供一些额外的更加强大的文件相关的操作。是 [`文件管理器`](#File) 的加强拓展。
+
+.aix 拓展下载：
+[com.sunny.FileTools.aix](extension/com.sunny.FileTools.aix)
+
+FileTools demo程序下载：
+[FileTools.aia](extension/FileTools.aia)
+
+### 属性  {#FileTools-Properties}
+
+{:.properties}
+
+{:id="FileTools.xxx" .list .ro .bo} *...*
+: ...
+
+### 事件  {#FileTools-Events}
+
+{:.events}
+无
+
+
+### 方法  {#FileTools-Methods}
+
+{:.methods}
+
+{:id="FileTools.xxx" class="method"} <i/> ...(*...*{:.text})
+: ...
+
 
 ***
 ## 电子表格（*依赖谷歌服务，国内无法使用*）  {#Spreadsheet}
