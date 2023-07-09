@@ -14,6 +14,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 * [蓝牙服务器](#BluetoothServer)
 * [串口通信器](#Serial)
 * [Web客户端](#Web)
+* [SimpleBase64 *拓展：图像Base64编解码传输*](#SimpleBase64)
 * [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
 * [Socket *拓展：TCP/IP传输协议*](#Socket)
 
@@ -612,6 +613,38 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
  attribute on an element, a key-value pair mapping `name` to `value` will exist in the
  `$attributes` dictionary. In addition to these special keys, there will also be `"ex:title"`
  and `"ex:author"` to allow lookups faster than having to traverse the `$content` list.
+
+***
+## SimpleBase64 *拓展*  {#SimpleBase64}
+
+SimpleBase64.aix 拓展下载：
+请联系客服咨询！
+<!--[com.ghostfox.SimpleBase64.aix](com.ghostfox.SimpleBase64.aix)-->
+
+SimpleBase64 demo程序下载：
+请联系客服咨询！
+<!--[base64_demo.aia](base64_demo.aia)-->
+
+提供图像的Base64编码及解码方法，便于图像文件的通信传输。此插件仅提供2个函数，使用非常方便，几乎没有学习成本。
+
+<img src="extension/SimpleBase64效果截图.png" alt="SimpleBase64效果截图" style="width:40%; border:1px solid #eee;"/>
+
+### 属性  {#SimpleBase64-Properties}
+
+{:.properties}
+无
+
+### 事件  {#SimpleBase64-Events}
+
+{:.events}
+无
+
+### 方法  {#SimpleBase64-Methods}
+
+{:.methods}
+
+* EncodeImage
+* DecodeImage
 
 
 ***
