@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 通信连接组件
-description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端、MQTT拓展、ClientSocket拓展。
+description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端、SimpleBase64拓展、MQTT拓展、ClientSocket拓展。
 ---
 
 [&laquo; 返回首页](index.html)
