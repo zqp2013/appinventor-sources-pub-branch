@@ -645,3 +645,39 @@ demo程序下载：
 [TestSocket.aia](extension/TestSocket.aia)
 
 提供TCP/IP连接及通信功能。
+
+### 属性  {#ClientSocket-Properties}
+
+{:.properties}
+
+* serverAddress (R/W)
+* serverPort (R/W)
+* timeoutms (R/W)
+* hexaStringMode (R/W)
+* connectionState (RO)
+* debugMessages (RW)
+
+### 事件  {#ClientSocket-Events}
+
+{:.events}
+
+* Connect
+* Disconnect
+* SendData
+
+### 方法  {#ClientSocket-Methods}
+
+{:.methods}
+
+* DataReceived
+* RemoteConnectionClosed
+
+发送文本消息时，`hexaStringMode`设为 false；发送16制消息时，`hexaStringMode`设为 true，例如：0x012 ---> “303132” 字符串发送，接收的数据也是16进制字符串。
+
+连接的超时时间默认是 2000 毫秒，可以设置修改。
+
+##### *已知的bug*：
+
+* 消息不能超过 1024 字节。
+
+* 如果与服务器的连接丢失（不是服务器关闭，而是 wifi 连接问题），则不会有任何事件触发（但崩溃现已修复）。
