@@ -406,7 +406,7 @@ public class TopPanel extends Composite {
       vPanel.add(message);
       vPanel.add(userInfo);
       HorizontalPanel buttonPanel = new HorizontalPanel();
-      Button okButton = new Button("修改");
+      Button okButton = new Button("提交");
       buttonPanel.add(okButton);
       okButton.addClickListener(new ClickListener() {
           @Override
@@ -440,13 +440,18 @@ public class TopPanel extends Composite {
                 new OdeAsyncCallback<String>("密码修改失败！") {
                   @Override
                   public void onSuccess(String reusltStr) {
-                    message.setHTML("<font color=green>" + reusltStr + "</font>");
+                    if (reusltStr.contains("成功"))
+                      message.setHTML("<font color=green>" + reusltStr + "</font>");
+                    else
+                      message.setHTML("<font color=red>" + reusltStr + "</font>");
+
                     //dialogBox.hide();
                   }
                   @Override
                   public void onFailure(Throwable error) {
                     OdeLog.xlog(error);
                     super.onFailure(error);
+
                     //dialogBox.hide();
                   }
                 });
