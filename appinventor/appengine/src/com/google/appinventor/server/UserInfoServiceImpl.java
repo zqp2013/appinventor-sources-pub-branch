@@ -14,6 +14,7 @@ import com.google.appinventor.shared.rpc.user.User;
 import com.google.appinventor.shared.rpc.user.UserInfoService;
 import com.google.appinventor.shared.storage.StorageUtil;
 import com.google.appinventor.server.tokens.Token;
+import com.google.appinventor.server.util.PasswordHash;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -239,6 +240,34 @@ public class UserInfoServiceImpl extends OdeRemoteServiceServlet implements User
     } else {
       return ("");
     }
+  }
+
+  @Override
+  public String modifyPassword(String userid, String orignal_pwd, String new_pwd) {
+    User user = storageIo.getUser(userid);
+    if (user == null) {
+      return "用户不存在！";
+    }
+
+    String hash = user.getPassword();
+    boolean validLogin = false;
+    try {
+      validLogin = PasswordHash.validatePassword(orignal_pwd, hash);
+    } catch (Exception e) {
+      return "密码验证失败！";
+    }
+    if (!validLogin) {
+      return "原密码不正确！";
+    }
+
+    String hashedPassword;
+    try {
+      hashedPassword = PasswordHash.createHash(new_pwd);
+    } catch (Exception e) {
+      return "密码修改失败！";
+    }
+    storageIo.setUserPassword(userid,  hashedPassword);
+    return "恭喜，密码修改成功，请注销后重新登录！";
   }
 
 }

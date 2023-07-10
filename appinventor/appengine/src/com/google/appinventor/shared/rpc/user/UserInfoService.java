@@ -92,4 +92,6 @@ public interface UserInfoService extends RemoteService {
 
   public String deleteAccount();
 
+  public String modifyPassword(String userid, String orignal_pwd, String new_pwd);
+
 }

@@ -77,4 +77,9 @@ public interface UserInfoServiceAsync {
 
   void deleteAccount(AsyncCallback<String> callback);
 
+  /**
+   * @see UserInfoService#modifyPassword()
+   */
+
+   void modifyPassword(String userid, String orignal_pwd, String new_pwd, AsyncCallback<String> callback);
 }

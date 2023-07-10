@@ -13,6 +13,7 @@ import com.google.appinventor.client.explorer.commands.ChainableCommand;
 import com.google.appinventor.client.explorer.commands.SaveAllEditorsCommand;
 
 import com.google.appinventor.client.tracking.Tracking;
+import com.google.appinventor.client.output.OdeLog;
 
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
 import com.google.appinventor.client.widgets.DropDownButton;
@@ -26,9 +27,14 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ClickListener;
+import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.TextBox;
 
 import com.google.appinventor.shared.rpc.project.ProjectRootNode;
 import com.google.appinventor.shared.rpc.user.Config;
+import com.google.appinventor.shared.rpc.admin.AdminUser;
+import com.google.appinventor.shared.rpc.AdminInterfaceException;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.gwt.core.client.GWT;
@@ -195,10 +201,13 @@ public class TopPanel extends Composite {
 
     // Sign Out
     userItems.add(new DropDownItem(WIDGET_NAME_SIGN_OUT, MESSAGES.signOutLink(), new SignOutAction()));
-
-
-    //VIP到期日
+    
     if (Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn") {
+      //修改密码
+      String cpwStr = "密码修改";
+      userItems.add(new DropDownItem(cpwStr, cpwStr, new ChangePwdAction(), "ode-ContextMenuItem"));
+
+      //VIP到期日
       Date expired = Ode.getInstance().getUser().getExpired();
       String expiredStr = "到期日：";
       if (expired != null) {
@@ -366,6 +375,97 @@ public class TopPanel extends Composite {
       DialogBoxContents.add(holder);
       db.setWidget(DialogBoxContents);
       db.show();
+    }
+  }
+
+  private static class ChangePwdAction implements Command {
+    @Override
+    public void execute() {
+      final DialogBox dialogBox = new DialogBox(false, true);
+      dialogBox.setStylePrimaryName("ode-DialogBox");
+      dialogBox.setText("密码修改");
+      dialogBox.setGlassEnabled(true);
+      dialogBox.setAnimationEnabled(true);
+      final HTML message = new HTML("");
+      message.setStyleName("DialogBox-message");
+      final FlexTable userInfo = new FlexTable();
+      final Label userNameLabel = new Label("原密码：");
+      final PasswordTextBox userName = new PasswordTextBox();
+      final Label passwordLabel = new Label("新密码：");
+      final Label passwordLabel2 = new Label("新密码确认：");
+      final PasswordTextBox passwordBox1 = new PasswordTextBox();
+      final PasswordTextBox passwordBox2 = new PasswordTextBox();
+      userInfo.setWidget(0, 0, userNameLabel);
+      userInfo.setWidget(0, 1, userName);
+      userInfo.setWidget(1, 0, passwordLabel);
+      userInfo.setWidget(1, 1, passwordBox1);
+      userInfo.setWidget(2, 0, passwordLabel2);
+      userInfo.setWidget(2, 1, passwordBox2);
+
+      VerticalPanel vPanel = new VerticalPanel();
+      vPanel.add(message);
+      vPanel.add(userInfo);
+      HorizontalPanel buttonPanel = new HorizontalPanel();
+      Button okButton = new Button("修改");
+      buttonPanel.add(okButton);
+      okButton.addClickListener(new ClickListener() {
+          @Override
+          public void onClick(Widget sender) {
+            String pwd = userName.getText();
+            if (pwd.equals("")) {
+              message.setHTML("<font color=red>原密码不能为空！</font>");
+              return;
+            } else {
+              String password = passwordBox1.getText();
+              String checkPassword = passwordBox2.getText();
+              if (password.equals("")) {
+                message.setHTML("<font color=red>新密码不能为空！</font>");
+                return;
+              }
+              if (password.length() < 6) {
+                message.setHTML("<font color=red>新密码长度不能小于6位！</font>");
+                return;
+              }
+              if (!checkPassword.equals(password)) {
+                message.setHTML("<font color=red>新密码两次输入不一致！</font>");
+                return;
+              }
+              if (password.equals(pwd)) {
+                message.setHTML("<font color=red>新密码不能和原密码一样！</font>");
+                return;
+              }
+            
+              String userid = Ode.getInstance().getUser().getUserId();
+              Ode.getInstance().getUserInfoService().modifyPassword(userid, pwd, password,
+                new OdeAsyncCallback<String>("密码修改失败！") {
+                  @Override
+                  public void onSuccess(String reusltStr) {
+                    message.setHTML("<font color=green>" + reusltStr + "</font>");
+                    //dialogBox.hide();
+                  }
+                  @Override
+                  public void onFailure(Throwable error) {
+                    OdeLog.xlog(error);
+                    super.onFailure(error);
+                    //dialogBox.hide();
+                  }
+                });
+
+            }
+          }
+        });
+      Button cancelButton = new Button("关闭");
+      buttonPanel.add(cancelButton);
+      cancelButton.addClickListener(new ClickListener() {
+          @Override
+          public void onClick(Widget sender) {
+            dialogBox.hide();
+          }
+        });
+      vPanel.add(buttonPanel);
+      dialogBox.setWidget(vPanel);
+      dialogBox.center();
+      dialogBox.show();
     }
   }
 
