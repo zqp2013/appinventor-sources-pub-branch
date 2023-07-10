@@ -39,7 +39,8 @@ import org.keyczar.Crypter;
 import org.keyczar.exceptions.KeyczarException;
 
 import org.keyczar.util.Base64Coder;
-
+import com.google.appinventor.shared.rpc.user.User;
+import java.util.Date;
 
 /**
  * An authentication filter that uses Google Accounts for logged-in users.
@@ -69,6 +70,22 @@ public class OdeAuthFilter implements Filter {
 
   private final LocalUser localUser = LocalUser.getInstance();
   private static final boolean DEBUG = Flag.createFlag("appinventor.debugging", false).get();
+
+  // Add by 中文网
+  public static void SetAuthCookie(HttpServletResponse resp, String userid) {
+    boolean is_expired = false;
+    User user = StorageIoInstanceHolder.getInstance().getUser(userid);
+    if (user != null) {
+      Date expired = user.getExpired();
+      if (expired != null) {
+        Date now = new Date();
+        is_expired = (expired.getTime() - now.getTime() < 0);
+      }
+    }
+    Cookie cook_uid = new Cookie("auth", is_expired ? null : userid);
+    cook_uid.setPath("/");
+    resp.addCookie(cook_uid);
+  }
 
   /**
    * Filters using Google Accounts
@@ -186,9 +203,7 @@ public class OdeAuthFilter implements Filter {
         response.addCookie(cook);
 
         // Add by 中文网
-        Cookie cook_uid = new Cookie("auth", userInfo.userId);
-        cook_uid.setPath("/");
-        response.addCookie(cook_uid);
+        SetAuthCookie(response, userInfo.userId);
       }
       chain.doFilter(request, response);
     } finally {

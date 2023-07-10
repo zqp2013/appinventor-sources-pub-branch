@@ -442,8 +442,8 @@ public class AdminUserList extends Composite {
     userInfo.setWidget(2, 1, from);
     userInfo.setWidget(3, 0, expiredLabel);
     userInfo.setWidget(3, 1, expired);
-    userInfo.setWidget(3, 2, expired7DayLabel);
-    userInfo.setWidget(3, 3, expiredMonthLabel);
+    userInfo.setWidget(3, 2, expiredMonthLabel);
+    userInfo.setWidget(3, 3, expired7DayLabel);
     userInfo.setWidget(4, 0, remarkLabel);
     userInfo.setWidget(4, 1, remark);
 

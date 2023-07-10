@@ -165,9 +165,7 @@ public class LoginServlet extends HttpServlet {
         resp.addCookie(cook);
 
         // Add by 中文网
-        Cookie cook_uid = new Cookie("auth", userId);
-        cook_uid.setPath("/");
-        resp.addCookie(cook_uid);
+        OdeAuthFilter.SetAuthCookie(resp, userId);
       }
       // Remove the ACSID Cookie used by Google for Authentication
       Cookie cook = new Cookie("ACSID", null);
@@ -337,9 +335,7 @@ public class LoginServlet extends HttpServlet {
         resp.addCookie(cook);
 
         // Add by 中文网
-        Cookie cook_uid = new Cookie("auth", token.getUuid());
-        cook_uid.setPath("/");
-        resp.addCookie(cook_uid);
+        OdeAuthFilter.SetAuthCookie(resp, token.getUuid());
       }
 
       String uri = new UriBuilder("/")
@@ -507,9 +503,7 @@ public class LoginServlet extends HttpServlet {
       resp.addCookie(cook);
 
       // Add by 中文网
-      Cookie cook_uid = new Cookie("auth", userInfo.getUserId());
-      cook_uid.setPath("/");
-      resp.addCookie(cook_uid);
+      OdeAuthFilter.SetAuthCookie(resp, userInfo.getUserId());
     }
 
     String uri = "/";
@@ -617,9 +611,7 @@ public class LoginServlet extends HttpServlet {
         resp.addCookie(cook);
 
         // Add by 中文网
-        Cookie cook_uid = new Cookie("auth", userInfo.getUserId());
-        cook_uid.setPath("/");
-        resp.addCookie(cook_uid);
+        OdeAuthFilter.SetAuthCookie(resp, userInfo.getUserId());
       }
     }
     resp.setContentType("text/html; charset=utf-8");
