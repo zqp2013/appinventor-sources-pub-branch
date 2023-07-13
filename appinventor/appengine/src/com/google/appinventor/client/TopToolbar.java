@@ -384,6 +384,11 @@ public class TopToolbar extends Composite {
       helpItems.add(new DropDownItem(WIDGET_NAME_EXTENSIONS, MESSAGES.extensionsMenuItem(),
           new WindowOpenAction(extensionsUrl)));
     }
+
+    // Add by 中文网
+    helpItems.add(new DropDownItem("参考文档", "参考文档", new WindowOpenAction("https://www.fun123.cn/reference/?f=help")));
+    helpItems.add(new DropDownItem("拓展文档", "拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
+
     String tutorialsUrl = config.getTutorialsUrl();
     if (!Strings.isNullOrEmpty(tutorialsUrl)) {
       helpItems.add(new DropDownItem(WIDGET_NAME_TUTORIALS, MESSAGES.tutorialsMenuItem(),
