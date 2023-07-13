@@ -13,6 +13,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 * [复选框（CheckBox）](#CheckBox)
 * [日期选择框（DatePicker）](#DatePicker)
 * [图像（Image）](#Image)
+* [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
 * [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
 * [标签（Label）](#Label)
 * [列表选择框（ListPicker）](#ListPicker)
