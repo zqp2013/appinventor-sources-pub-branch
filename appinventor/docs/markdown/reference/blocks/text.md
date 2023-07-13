@@ -40,6 +40,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 ### 合并字符串   {#join}
 
 ![](images/text/join.png)
+
 合并所有输入以生成单个字符串，如果没有输入，则返回一个空字符串。
 
 ***
@@ -159,7 +160,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 
 使用 `分隔符(列表)` 中的任意项目作为分割点将给定文本划分为列表，并返回结果列表。例如：
 
-使用 *[",","rry"]* 作为双元素列表拆分 `appleberry,banana,cherry,dogfood`，返回一个包含四个项目的列表：`["applebe","Banana","che","Dogfood"]`。
+使用 `[",","rry"]` 作为双元素列表拆分 `appleberry,banana,cherry,dogfood`，返回一个包含四个项目的列表：`["applebe","Banana","che","Dogfood"]`。
 
 ***
 ### 用空格分解   {#splitatspaces}
