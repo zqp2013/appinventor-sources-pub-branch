@@ -19,23 +19,27 @@ demo程序下载：
 <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/rotate.aia" target="_blank">Download Rotate test project (aia file)</a><br>
 <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/overlay.aia" target="_blank">Download Scale &amp; Overlay test project (aia file)</a><br>
 
+***
 
+用于基本图像处理的图像扩展。
 
-<h3>Description</h3>
-<p>Image Extension for basic image manipulation.
-<br>Required permissions: android.permission.READ_EXTERNAL_STORAGE, android.permission.WRITE_EXTERNAL_STORAGE</p>
+所需权限：`android.permission.READ_EXTERNAL_STORAGE`、`android.permission.WRITE_EXTERNAL_STORAGE`
 
-<h3>Properties</h3>
+### 属性  {#TaifunImage-Properties}
+
+{:.properties}
 
 <p><img class="noscale" src="./TaifunImage/getSuppress.JPG" width="306" height="37" alt="" title=""><br>
-Returns whether Warnings should be suppressed
+    返回是否隐藏警告。
 </p>
 
 <p><img class="noscale" src="./TaifunImage/setSuppress.JPG" width="355" height="45" alt="" title=""><br>
-Specifies whether Warnings should be suppressed
+    设置是否隐藏警告。
 </p>
 
-<h3>Methods</h3>
+### 方法  {#TaifunImage-Methods}
+
+{:.methods}
 
 <p><img class="noscale" src="./TaifunImage/resize.JPG" width="236" height="122" alt="" title=""><br>
 Resize a jpg image file in the ASD - application specific directory.<br>
@@ -91,7 +95,10 @@ The second image should be an image in png format with transparency to get the o
 <b>Note:</b> Both images must be available in the ASD - application specific directory.
 </p>
 
-<h3>Events</h3>
+### 事件  {#TaifunImage-Events}
+
+{:.events}
+
 <p><img class="noscale" src="./TaifunImage/chunksCreated.JPG" width="296" height="101" alt="" title=""><br>
 Event indicating that chunks have been created. A list of filenames will be provided as result.
 </p>

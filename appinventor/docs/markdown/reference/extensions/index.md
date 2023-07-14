@@ -10,7 +10,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 * [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
 * [FileTools 拓展：提供额外的更强大的文件相关操作](../components/storage.html#FileTools)
-* [TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
+* [![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
 * [SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
 * [MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 * [ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)

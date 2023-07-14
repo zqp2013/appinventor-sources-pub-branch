@@ -26,6 +26,7 @@ JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)
 
 对于本文档的其余部分，我们将使用 [JSONPlaceholder](https://jsonplaceholder.typicode.com) 服务生成示例JSON响应，实际上并不存储任何数据。
 
+***
 ## 本文档中使用的组件
 
 以下示例使用了这些组件：
@@ -35,6 +36,7 @@ JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)
 * [列表显示框](../components/userinterface.html#ListView)
 * [Web客户端](../components/connectivity.html#Web)
 
+***
 ## 获取数据
 
 Web客户端组件提供了一个 `执行GET请求`{:.method.block} 方法，当请求完成时Web客户端的 `获得文本`{:.event.block} 事件块将触发，该事件有两个重要参数：
@@ -44,6 +46,7 @@ Web客户端组件提供了一个 `执行GET请求`{:.method.block} 方法，当
 
 Web客户端组件提供了方法[`将JSON文本解码为字典`{:.method.block}](../components/connectivity.html#Web.JsonTextDecodeWithDictionaries) 获取`文本`{:.text.block}的内容，比如 `响应内容`{:.variable.block} 参数，并将其转换为适当的 App Inventor 类型。根据返回的内容，`将JSON文本解码为字典`{:.method.block} 的输出可能会返回不同的类型，例如`列表`{:.list.block} 或`字典`{:.dictionary.block}。 App Inventor 提供了诸如`是列表?`{:.list.block} 和`是字典?`{:.dictionary.block} 之类的代码块，如果 API 允许多种类型，你可以使用它们来测试返回值的类型。
 
+***
 ### 示例 - 成功获取
 
 通过相应地设置 `Url`{:.setter.block} 属性并调用 `执行GET请求`{:.method.block} 来执行第一次请求：
@@ -69,6 +72,7 @@ Web客户端组件提供了方法[`将JSON文本解码为字典`{:.method.block}
 
 运行上述块后，标签1 将包含 JSON 中的标题（即`"sunt aut facere..."`），标签2 将包含 JSON 中的正文（即`"quia et sucipit..."`）。
 
+***
 ### 示例 - 获取失败
 
 如果您请求一个不存在的资源（示例中的 post 101），那么你将得到一个错误：
@@ -80,7 +84,7 @@ HTTP 使用错误代码 `404`{:.math.block} 表示服务器找不到资源，我
 ![](images/webapis-get-failure.png)
 
 
-
+***
 ### 示例 - 跟踪响应数据
 
 如果您调用 `执行GET请求`{:.method.block} 并将 `Url`{:.setter.block} 设置为 `https://jsonplaceholder.typicode.com/posts`{:.text.block}，那么您将 获取包含 100 个条目的列表。
@@ -95,6 +99,7 @@ HTTP 使用错误代码 `404`{:.math.block} 表示服务器找不到资源，我
 
 ![](images/webapis-get-walk.png)
 
+***
 ## 发送数据
 
 将数据发送到 Web API 进行处理通常涉及两件事。首先，你必须构建需要发送到 API 的消息，API 开发人员通常会提供有关如何使用其 API 的详尽文档；其次，根据操作是否敏感，例如更改或删除数据，你需要提供一些身份验证令牌。
@@ -111,6 +116,7 @@ HTTP 使用错误代码 `404`{:.math.block} 表示服务器找不到资源，我
 
 ![](images/webapis-post-success.png)
 
-## Further Reading
+***
+## 更多信息
 
 要了解有关 HTTP 响应代码的更多信息，请参阅 [HTTP 响应状态代码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)。
