@@ -657,6 +657,14 @@ FileTools demo程序下载：
 
 随附的 Web 服务位于 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。该组件有方法[保存数值](#TinyWebDB.StoreValue) 和[获取数值](#TinyWebDB.GetValue) ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。
 
+**中文网注：**
+
+MIT官方的功能很单一，目前国内也有免费的网络微数据库，功能上也进行了一定的拓展，详细可以去各自的网站上查看中文文档。网站如下：
+
+[https://tinywebdb.cn/](https://tinywebdb.cn/)
+
+[https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   经过测试，单个键值的大小不可超过9000字节，否则不能保存成功。
+
 
 ### 属性  {#TinyWebDB-Properties}
 
