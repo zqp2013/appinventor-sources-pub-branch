@@ -13,21 +13,21 @@ description: 字典代码块参考文档：包括创建空字典、创建字典�
 * [获取键的值](#get-value-for-key)
 * [设置键的值](#set-value-for-key)
 * [删除键的条目](#delete-entry-for-key)
-* [get value at key path](#get-value-at-key-path)
-* [set value for key path](#set-value-for-key-path)
-* [get keys](#get-keys)
-* [get values](#get-values)
-* [is key in dictionary?](#is-key-in-dictionary)
-* [size of dictionary](#size-of-dictionary)
+* [获取键路径的值](#get-value-at-key-path)
+* [设置键路径的值](#set-value-for-key-path)
+* [获取键列表](#get-keys)
+* [获取值列表](#get-values)
+* [键是否在字典中？](#is-key-in-dictionary)
+* [字典的长度](#size-of-dictionary)
 * [list of pairs to dictionary](#list-of-pairs-to-dictionary)
 * [dictionary to list of pairs](#dictionary-to-list-of-pairs)
-* [copy dictionary](#copy-dictionary)
+* [复制字典](#copy-dictionary)
 * [merge into dictionary](#merge-into-dictionary)
 * [list by walking key path](#list-by-walking-key-path)
 * [walk all at level](#walk-all-at-level)
-* [对象是否是字典？](#is-a-dictionary)
+* [是否为字典？](#is-a-dictionary)
 
-## 介绍
+## 介绍   {#dictionaries}
 
 Dictionaries, called in other languages terms such as maps, associative arrays or lists, are data structures that associate one value, often called the key, with another value. A common way of displaying dictionaries is using the JavaScript Object Notation (JSON), for example:
 
@@ -50,57 +50,65 @@ The above example shows that in JSON the keys (quoted text before the `:`) can m
 **Figure 1**: A blocks representation of the JSON code snippet shown above.
 
 ***
-### 创建空字典
+### 创建空字典   {#create-empty-dictionary}
 
 ![](images/dictionaries/create-with.png)
 
 The `create empty dictionary`{:.dictionary.block} block creates a dictionary without any key-value pairs. Entries can be added to the empty dictionary using the `set value for key`{:.dictionary.block} block. The `create empty dictionary`{:.dictionary.block} block can also be turned into a `make a dictionary`{:.dictionary.block} block by using the blue mutator button to add `pair`{:.dictionary.block} entries.
 
 ***
-### 创建字典
+### 创建字典   {#make-a-dictionary}
 
 ![](images/dictionaries/make-a-dictionary.png)
 
 The `make a dictionary`{:.dictionary.block} is used to create a dictionary with a set of `pair`{:.dictionary.block}s known in advance. Additional entries can be added using `set value for key`{:.dictionary.block}.
 
 ***
-### 键值对
+### 键值对   {#pair}
 
 ![](images/dictionaries/pair.png)
 
 The `pair`{:.dictionary.block} block is a special purpose block used for constructing dictionaries.
 
 ***
-### 获取键的值
+### 获取键的值   {#get-value-for-key}
 
 ![](images/dictionaries/get-value-for-key2.png)
 
-The `get value for key`{:.dictionary.block} block checks to see if the dictionary contains a corresponding value for the given key. If it does, the value is returned. Otherwise, the value of the `not found` parameter is returned. This behavior is similar to the behavior of the [`lookup in pairs`{:.list.block}](lists.html#lookupinpairs) block.
+`获取键的值`{:.dictionary.block} 块检查字典是否包含给定键的对应值，如果是，则返回该值；否则，返回“未找到”参数的值。
+
+此代码块的行为类似于[`列表`](lists.html)的 [`在键值对中查找`{:.list.block}](lists.html#lookupinpairs) 。
 
 ***
-### 设置键的值
+### 设置键的值   {#set-value-for-key}
 
 ![](images/dictionaries/set-value-for-key.png)
 
 The `set value for key`{:.dictionary.block} block sets the corresponding value for the given `key` in the `dictionary` to `value`. If no mapping exists for `key`, a new one will be created. Otherwise, the existing value is replaced by the new value.
 
 ***
-### 删除键的条目
+### 删除键的条目   {#delete-entry-for-key}
 
 ![](images/dictionaries/delete-value-for-key.png)
 
 The `delete entry for key`{:.dictionary.block} block removes the key-value mapping in the dictionary for the given key. If no entry for the key exists in the dictionary, the dictionary is not modified.
 
 ***
-### get value at key path
+### 获取键路径的值   {#get-value-at-key-path}
 
-The `get value at key path`{:.dictionary.block} block is a more advanced version of the `get value for key`{:.dictionary.block} block. Rather than getting the value of a specific key, it instead takes a list of valid keys and numbers representing a path through a data structure. The `get value for key`{:.dictionary.block} block is equivalent to using this block with a key path of length 1 containing the key. For example, the following two blocks would return `"Tim the Beaver"`{:.text.block}:
+`获取键路径的值`{:.dictionary.block} 块是 `获取键的值`{:.dictionary.block} 块的`更高级版本`，它不是获取特定键的值，而是逐层遍历路径，逐层深入数据结构获取值。
+
+`获取键的值`{:.dictionary.block} 块等同于`获取键路径的值`{:.dictionary.block} 块路径长度为 1。
+
+例如，以下两个块将返回 `"Tim the Beaver"`{:.text.block}：
 
 ![](images/dictionaries/get-value-for-key.png) ![](images/dictionaries/get-value-for-key-path.png)
 
-It walks the data structure, starting from the initial dictionary, using the `path` provided in order to retrieve values nested deeply in complex data structures. It is best used for processing JSON data from web services. Starting from the initial input, it takes the first element in the `key path` and checks to see if a key (if the input is a dictionary) or index (if the input is a list) exists at that point. If so, it selects that item as the input and proceeds to check the next element in the `key path`, continuing until either the whole path has been followed, at which point it returns what is at that location, or the `"not found"` parameter.
+它从初始字典开始，使用提供的“路径”遍历数据结构，以便检索深度嵌套在复杂数据结构中的值。
 
-**Examples**
+它最适合处理来自 Web 服务的 JSON 数据，从初始输入开始，它获取“键路径”中的第一个元素，并检查该点是否存在键（如果输入是字典）或索引（如果输入是列表），如果是，它选择该项目作为输入，并继续检查“关键路径”中的下一个元素，继续检查整个路径，此时它返回该位置的内容，或者“未找到”参数的值。
+
+**不明白？看例子最直观！**
 
 ```json
 {
@@ -114,53 +122,55 @@ It walks the data structure, starting from the initial dictionary, using the `pa
 }
 ```
 
-For example, given the JSON dictionary above, the following use of `get value at key path`{:.dictionary.block} will yield the result `"Massachusetts Institute of Technology"`{:.text.block}.
+例如，给定上面的 JSON 字典，以下使用 `获取键路径的值`{:.dictionary.block} 将产生结果 `"Massachusetts Institute of Technology"`{:.text.block}。
 
 ![](images/dictionaries/get-value-for-key-path2.png)
 
-The `get value at key path<`{:.dictionary.block} allows for the path to include numbers representing the index of elements to traverse when dictionaries and lists are mixed. For example, if we wanted to know the second class that Tim was taking, we could do the following:
+`获取键路径的值`{:.dictionary.block} 允许路径包含表示混合字典和列表时要遍历的元素索引的数字。
+
+例如，如果我们想知道 Tim 正在上的第二堂课，我们可以执行以下操作：
 
 ![](images/dictionaries/get-value-for-key-path-with-index.png)
 
-which returns the value `"18.01"`.
+这将返回值：`"18.01"`
 
 ***
-### set value for key path
+### 设置键路径的值   {#set-value-for-key-path}
 
 ![](images/dictionaries/set-value-for-key-path.png)
 
 The `set value for key path`{:.dictionary.block} block updates the value at a specific `key path` in a data structure. It is the mirror of `get value for key path`{:.dictionary.block}, which retrieves a value at a specific `key path`. The path **must be valid**, except for the last key, which if a mapping does not exist will create a mapping to the new value. Otherwise, the existing value is replaced with the new value.
 
 ***
-### get keys
+### 获取键列表   {#get-keys}
 
 ![](images/dictionaries/get-keys.png)
 
 The `get keys`{:.dictionary.block} returns a list of keys in the dictionary.
 
 ***
-### get values
+### 获取值列表   {#get-values}
 
 ![](images/dictionaries/get-values.png)
 
 The `get values`{:.dictionary.block} returns a list containing the values in the dictionary. Modifying the contents of a value in the list will also modify it in the dictionary.
 
 ***
-### is key in dictionary?
+### 键是否在字典中？   {#is-key-in-dictionary}
 
 ![](images/dictionaries/is-key-in.png)
 
-The `is key in dictionary?`{:.dictionary.block} tests whether the key exists in the dictionary and returns `真`{:.logic.block} if it does, otherwise it returns `假`{:.logic.block}.
+`键是否在字典中？`{:.dictionary.block} 测试字典中是否存在该键，如果存在则返回 `真`{:.logic.block}，否则返回 `假`{:.logic.block}。
 
 ***
-### size of dictionary
+### 字典的长度   {#size-of-dictionary}
 
 ![](images/dictionaries/size.png)
 
-The `size of dictionary`{:.dictionary.block} block returns the number of key-value pairs present in the dictionary.
+`字典的长度`{:.dictionary.block} 块返回字典中存在的键值对的数量。
 
 ***
-### list of pairs to dictionary
+### list of pairs to dictionary   {#list-of-pairs-to-dictionary}
 
 ![](images/dictionaries/alist-to-dict.png)
 
@@ -168,7 +178,7 @@ The `list of pairs to dictionary`{:.dictionary.block} block converts an associat
 Because dictionaries provide better lookup performance than associative lists, if you want to perform many operations on a data structure it is advisable to use this block to convert the associative list into a dictionary first.
 
 ***
-### dictionary to list of pairs
+### dictionary to list of pairs   {#dictionary-to-list-of-pairs}
 
 ![](images/dictionaries/dict-to-alist.png)
 
@@ -178,21 +188,21 @@ This block reverses the conversion performed by the [`list of pairs to dictionar
 ![Example of how the dictionary to list of pairs block reverses the list of pairs to dictionary block](images/dictionaries/alist-dict-reversability.png)
 
 ***
-### copy dictionary
+### copy dictionary   {#copy-dictionary}
 
 ![](images/dictionaries/copy-dict.png)
 
 The `copy dictionary`{:.dictionary.block} makes a deep copy of the given dictionary. This means that all of the values are copied recursively and that changing a value in the copy will not change it in the original.
 
 ***
-### merge into dictionary
+### merge into dictionary   {#merge-into-dictionary}
 
 ![](images/dictionaries/combine-dicts.png)
 
 The `merge into dictionary from dictionary`{:.dictionary.block} block ccopies the key-value pairs from one dictionary into another, overwriting any keys in the target dictionary.
 
 ***
-### list by walking key path
+### list by walking key path   {#list-by-walking-key-path}
 
 ![](images/dictionaries/walk-tree.png)
 
@@ -245,14 +255,14 @@ You can use the following blocks to get a list of the names of the rooms on the 
 ![](images/dictionaries/walk-tree-xml.png)
 
 ***
-### walk all at level
+### walk all at level   {#walk-all-at-level}
 
 ![](images/dictionaries/walk-all.png)
 
 The `walk all at level`{:.dictionary.block} block is a specialized block that can be used in the key path of a `list by walking key path`{:.dictionary.block}. When encountered during a walk, it causes every item at that level to be explored. For dictionaries, this means that every value is visited. For lists, each item in the list is visited. This can be used to aggregate information from a list of items in a dictionary, such as the first name of every person in a database represented by JSON objects. See the [`list by walking key path`{:.dictionary.block}](#list-by-walking-key-path) block for examples.
 
 ***
-### 对象是否是字典？
+### 是否为字典？   {#is-a-dictionary}
 
 ![](images/dictionaries/is-dict.png)
 

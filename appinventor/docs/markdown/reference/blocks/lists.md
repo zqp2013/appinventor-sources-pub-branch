@@ -26,6 +26,7 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 * [CSV表转换为列表](#listfromcsvtable)
 * [在键值对中查找](#lookuppairs)
 * [分隔符拼接成文本](#joinwithseparator)
+* [*案例分享1：*去除列表重复项](#uniquekeylist)
 
 *需要额外的帮助来理解列表吗？请查看“概念”页面上的[制作列表](../concepts/lists.html)。*
 
@@ -212,3 +213,16 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 ![](images/lists/joinwithseparator.png)
 
 按指定分隔符连接指定列表中的所有元素，结果生成文本。
+
+***
+### 案例分享1：去除列表重复项   {#uniquekeylist}
+
+![去除列表重复项](images/lists/去除列表重复项.png)
+
+* 去除列表重复项的原理：新建一个列表，将原列表项逐一添加，添加时判断该项是否已存在，如果不存在才添加，最终的返回结果就是已去除重复的列表。
+
+* 测试代码如下：
+
+  ![去除列表项测试](images/lists/去除列表项测试.png)
+
+* 测试结果为：`[1, 2, 3, 4]`

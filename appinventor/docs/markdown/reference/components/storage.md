@@ -663,7 +663,7 @@ MIT官方的功能很单一，目前国内也有免费的网络微数据库，�
 
 [https://tinywebdb.cn/](https://tinywebdb.cn/)
 
-[https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   经过测试，单个键值的大小不可超过9000字节，否则不能保存成功。
+[https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   *经过测试，单个键值的大小不可超过9000字节，否则可能保存失败。*
 
 
 ### 属性  {#TinyWebDB-Properties}
