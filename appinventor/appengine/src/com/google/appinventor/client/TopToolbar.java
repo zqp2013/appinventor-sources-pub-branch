@@ -267,17 +267,17 @@ public class TopToolbar extends Composite {
         new ExportProjectAction()));
     fileItems.add(new DropDownItem(WIDGET_NAME_EXPORTALLPROJECTS, MESSAGES.exportAllProjectsMenuItem(),
         new ExportAllProjectsAction()));
-    //fileItems.add(null);
-    //if (!isReadOnly) {
-    //  fileItems.add(new DropDownItem(WIDGET_NAME_UPLOAD_KEYSTORE, MESSAGES.uploadKeystoreMenuItem(),
-    //      new UploadKeystoreAction()));
-    //}
-    //fileItems.add(new DropDownItem(WIDGET_NAME_DOWNLOAD_KEYSTORE, MESSAGES.downloadKeystoreMenuItem(),
-    //    new DownloadKeystoreAction()));
-    //if (!isReadOnly) {
-    //  fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_KEYSTORE, MESSAGES.deleteKeystoreMenuItem(),
-    //      new DeleteKeystoreAction()));
-    //}
+    fileItems.add(null);
+    if (!isReadOnly) {
+      fileItems.add(new DropDownItem(WIDGET_NAME_UPLOAD_KEYSTORE, MESSAGES.uploadKeystoreMenuItem(),
+          new UploadKeystoreAction()));
+    }
+    fileItems.add(new DropDownItem(WIDGET_NAME_DOWNLOAD_KEYSTORE, MESSAGES.downloadKeystoreMenuItem(),
+        new DownloadKeystoreAction()));
+    if (!isReadOnly) {
+      fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_KEYSTORE, MESSAGES.deleteKeystoreMenuItem(),
+          new DeleteKeystoreAction()));
+    }
     refreshMenu(fileDropDown, fileItems);
   }
 
