@@ -5,7 +5,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 ---
 
 [&laquo; 返回首页](index.html)
-# 绘画动画组件
+# <i class="mdi mdi-draw">绘画动画组件
 
 目录：
 

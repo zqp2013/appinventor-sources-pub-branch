@@ -5,7 +5,7 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 ---
 
 [&laquo; 返回首页](index.html)
-# 社交应用组件
+# <i class="mdi mdi-share-variant-outline">社交应用组件
 
 目录：
 

@@ -5,7 +5,7 @@ description: 地图组件参考文档：包括圆、特征集合、线段、地�
 ---
 
 [&laquo; 返回首页](index.html)
-# 地图组件
+# <i class="mdi mdi-map-outline">地图组件
 
 目录：
 

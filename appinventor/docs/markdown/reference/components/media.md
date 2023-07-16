@@ -5,7 +5,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 ---
 
 [&laquo; 返回首页](index.html)
-# 多媒体组件
+# <i class="mdi mdi-movie-open-outline">多媒体组件
 
 目录：
 
