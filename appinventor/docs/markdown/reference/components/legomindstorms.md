@@ -5,7 +5,7 @@ description: 乐高机器人®组件参考文档。
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-toy-brick-outline">乐高机器人®组件
+# <i class="mdi mdi-toy-brick-outline"/>&nbsp;&nbsp;乐高机器人®组件
 
 目录：
 

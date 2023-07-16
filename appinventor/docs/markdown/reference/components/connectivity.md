@@ -5,7 +5,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-access-point">通信连接组件
+# <i class="mdi mdi-access-point"/>&nbsp;&nbsp;通信连接组件
 
 目录：
 

@@ -5,7 +5,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-memory">传感器组件
+# <i class="mdi mdi-memory"/>&nbsp;&nbsp;传感器组件
 
 目录：
 
