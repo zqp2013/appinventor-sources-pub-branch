@@ -6,7 +6,7 @@ description: App Inventor 2 TaifunImage 拓展，图像高级处理，剪裁，�
 
 [&laquo; 返回首页](index.html)
 
-## ![logo](TaifunImage/logo.png)TaifunImage [*拓展*](https://puravidaapps.com/image.php)  {#TaifunImage}
+## ![logo](TaifunImage/logo.png)  TaifunImage [*拓展*](https://puravidaapps.com/image.php)  {#TaifunImage}
 
 * .aix 拓展下载：
 [com.puravidaapps.TaifunImage.aix](TaifunImage/com.puravidaapps.TaifunImage.aix)
