@@ -225,7 +225,14 @@ public class TopToolbar extends Composite {
   }
 
   private DropDownButton makeButton(String id, String text) {
-    DropDownButton button = new DropDownButton(id, text, new ArrayList<DropDownItem>(), false);
+    DropDownButton button = null;
+    // Add by 中文网：样式按钮
+    if (text.startsWith("<")) {
+      button = new DropDownButton(id, "", new ArrayList<DropDownItem>(), false);
+      button.setHTML(text + " \u25BE ");
+    } else {
+      button = new DropDownButton(id, text, new ArrayList<DropDownItem>(), false);
+    }
     button.setStyleName("ode-TopPanelButton");
     return button;
   }
@@ -386,8 +393,8 @@ public class TopToolbar extends Composite {
     }
 
     // Add by 中文网
-    helpItems.add(new DropDownItem("参考文档", "参考文档", new WindowOpenAction("https://www.fun123.cn/reference/?f=help")));
-    helpItems.add(new DropDownItem("拓展文档", "拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
+    helpItems.add(new DropDownItem("参考文档", "<i class=\"mdi mdi-bookmark-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;参考文档", new WindowOpenAction("https://www.fun123.cn/reference/?f=help")));
+    helpItems.add(new DropDownItem("拓展文档", "<i class=\"mdi mdi-puzzle-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
 
     String tutorialsUrl = config.getTutorialsUrl();
     if (!Strings.isNullOrEmpty(tutorialsUrl)) {
@@ -415,8 +422,8 @@ public class TopToolbar extends Composite {
         new AboutCompanionAction()));
     helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONUPDATE, MESSAGES.companionUpdate(),
         new CompanionUpdateAction()));
-    //helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
-    //    new ShowSplashAction()));
+    helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
+        new ShowSplashAction()));
     refreshMenu(helpDropDown, helpItems);
   }
 

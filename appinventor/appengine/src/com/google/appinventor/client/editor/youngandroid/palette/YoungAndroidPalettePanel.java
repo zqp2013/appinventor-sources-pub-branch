@@ -219,7 +219,7 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
         String title = ComponentCategory.EXTENSION.equals(category) ?
           MESSAGES.extensionComponentPallette() :
           ComponentsTranslation.getCategoryName(category.getName());
-        stackPalette.add(categoryPanel, title);
+        stackPalette.add(categoryPanel, title, true); //最后一个参数为true表示HTML格式，add by 中文网
       }
     }
 

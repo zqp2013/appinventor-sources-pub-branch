@@ -148,7 +148,14 @@ public class Toolbar extends Composite {
    *                   {@code false} if left-aligned
    */
   protected void addButton(final ToolbarItem item, boolean rightAlign) {
-    TextButton button = new TextButton(item.caption);
+    TextButton button = null;
+    // Add by 中文网：样式按钮
+    if (item.caption.startsWith("<")) {
+      button = new TextButton("");
+      button.setHTML(item.caption);
+    } else {
+      button = new TextButton(item.caption);
+    }
     button.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
@@ -170,7 +177,14 @@ public class Toolbar extends Composite {
    * @param top special styling if the button is on the top.
    */
   protected void addButton(final ToolbarItem item, boolean rightAlign, boolean top) {
-    TextButton button = new TextButton(item.caption);
+    TextButton button = null;
+    // Add by 中文网：样式按钮
+    if (item.caption.startsWith("<")) {
+      button = new TextButton("");
+      button.setHTML(item.caption);
+    } else {
+      button = new TextButton(item.caption);
+    }
     button.setStyleName("ode-TopPanelDropDownButton");
     button.addClickHandler(new ClickHandler() {
       @Override

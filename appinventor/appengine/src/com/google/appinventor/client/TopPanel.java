@@ -146,6 +146,7 @@ public class TopPanel extends Composite {
     // My Projects Link
     TextButton myProjects = new TextButton(MESSAGES.myProjectsTabName());
     myProjects.setStyleName("ode-TopPanelButton");
+    myProjects.setHTML("<i class=\"mdi mdi-format-list-bulleted-square\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + myProjects.getText());
 
     myProjects.addClickHandler(new ClickHandler() {
       @Override
@@ -173,6 +174,7 @@ public class TopPanel extends Composite {
     String guideUrl = config.getGuideUrl();
     if (!Strings.isNullOrEmpty(guideUrl)) {
       TextButton guideLink = new TextButton(MESSAGES.guideTabName());
+      guideLink.setHTML("<i class=\"mdi mdi-school-outline\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + guideLink.getText());
       guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
       guideLink.setStyleName("ode-TopPanelButton hot");
       links.add(guideLink);
@@ -182,6 +184,7 @@ public class TopPanel extends Composite {
     String feedbackUrl = config.getForumsUrl();
     if (!Strings.isNullOrEmpty(feedbackUrl)) {
       TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
+      feedbackLink.setHTML("<i class=\"mdi mdi-progress-question\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + feedbackLink.getText());
       feedbackLink.addClickHandler(
         new WindowOpenClickHandler(feedbackUrl));
       feedbackLink.setStyleName("ode-TopPanelButton");
@@ -205,7 +208,7 @@ public class TopPanel extends Composite {
     if (Ode.getInstance().getUser().getUserEmail() != "test@fun123.cn") {
       //修改密码
       String cpwStr = "密码修改";
-      userItems.add(new DropDownItem(cpwStr, cpwStr, new ChangePwdAction(), "ode-ContextMenuItem"));
+      userItems.add(new DropDownItem(cpwStr, "<i class=\"mdi mdi-pencil-lock-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;" + cpwStr, new ChangePwdAction(), "ode-ContextMenuItem"));
 
       //VIP到期日
       Date expired = Ode.getInstance().getUser().getExpired();
@@ -213,7 +216,7 @@ public class TopPanel extends Composite {
       if (expired != null) {
         expiredStr += expiredFormat.format(expired);
       }
-      userItems.add(new DropDownItem(expiredStr, expiredStr, new VipInfoAction(), "ode-ContextMenuItem hot"));
+      userItems.add(new DropDownItem(expiredStr, "<i class=\"mdi mdi-calendar-range\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;" + expiredStr, new VipInfoAction(), "ode-ContextMenuItem hot"));
     }
 
     // if we are allowed to delete accounts
@@ -244,6 +247,7 @@ public class TopPanel extends Composite {
     String nativeDisplayName = getDisplayName(currentLang);
     languageDropDown = new DropDownButton(WIDGET_NAME_LANGUAGE, nativeDisplayName, languageItems, true);
     languageDropDown.setStyleName("ode-TopPanelButton");
+    languageDropDown.setHTML("<i class=\"mdi mdi-translate\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + nativeDisplayName + " \u25BE ");
 
     account.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
     account.add(links);
@@ -306,6 +310,7 @@ public class TopPanel extends Composite {
    */
   public void showUserEmail(String email) {
     accountButton.setCaption(email);
+    accountButton.setHTML("<i class=\"mdi mdi-account\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + email + " \u25BE ");
   }
 
   /**

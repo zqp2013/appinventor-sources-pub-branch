@@ -106,7 +106,7 @@ public class DeleteFileCommand extends ChainableCommand {
       formName = node.getFormName();
 
       setStylePrimaryName("ode-DialogBox");
-      setText(MESSAGES.removeFormButton());
+      setHTML(MESSAGES.removeFormButton());
 
       Button cancelButton = new Button(MESSAGES.cancelButton());
       cancelButton.addClickHandler(new ClickHandler() {
