@@ -5,7 +5,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-database"/>&nbsp;&nbsp;数据存储组件
+# <i class="mdi mdi-database"></i>  数据存储组件
 
 目录：
 

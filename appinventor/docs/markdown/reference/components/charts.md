@@ -5,7 +5,7 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-chart-line"/>&nbsp;&nbsp;图表组件
+# <i class="mdi mdi-chart-line"></i>  图表组件
 
 目录：
 

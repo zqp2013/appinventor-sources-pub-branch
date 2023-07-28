@@ -5,7 +5,7 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-view-split-horizontal"/>&nbsp;&nbsp;界面布局组件
+# <i class="mdi mdi-layers-outline"></i>  界面布局组件
 
 目录：
 

@@ -5,7 +5,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 ---
 
 [&laquo; 返回首页](index.html)
-# <i class="mdi mdi-math-compass"/>&nbsp;&nbsp;用户界面（UI）组件
+# <i class="mdi mdi-view-split-horizontal"></i>  用户界面（UI）组件
 
 目录：
 
