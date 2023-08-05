@@ -220,6 +220,21 @@ public class DropDownButton extends TextButton {
   }
 
   public void removeItem(String itemName) {
+    // Add by 中文网：样式按钮
+    if (itemName.startsWith("<")) {
+      int idx = itemName.lastIndexOf(";");
+      itemName = itemName.substring(idx + 1);
+
+      for (MenuItem item : items) {
+        if (item.getHTML().endsWith(itemName)) { //获取出来的html或许转义等与原始不一致，因此用这个
+          menu.removeItem(item);
+          items.remove(item);
+          break;
+        }
+      }
+      return;
+    }
+    
     for (MenuItem item : items) {
       if (item.getText().equals(itemName)) {
         menu.removeItem(item);
@@ -243,6 +258,20 @@ public class DropDownButton extends TextButton {
   }
 
   public void setItemEnabled(String itemName, boolean enabled) {
+    // Add by 中文网：样式按钮
+    if (itemName.startsWith("<")) {
+      int idx = itemName.lastIndexOf(";");
+      itemName = itemName.substring(idx + 1);
+
+      for (MenuItem item : items) {
+        if (item.getHTML().endsWith(itemName)) { //获取出来的html或许转义等与原始不一致，因此用这个
+          item.setEnabled(enabled);
+          break;
+        }
+      }
+      return;
+    }
+
     for (MenuItem item : items) {
       if (item.getText().equals(itemName)) {
         item.setEnabled(enabled);
@@ -252,6 +281,25 @@ public class DropDownButton extends TextButton {
   }
 
   public void setItemVisible(String itemName, boolean enabled) {
+    // Add by 中文网：样式按钮
+    if (itemName.startsWith("<")) {
+      int idx = itemName.lastIndexOf(";");
+      itemName = itemName.substring(idx + 1);
+
+      for (MenuItem item : items) {
+        if (item.getHTML().endsWith(itemName)) { //获取出来的html或许转义等与原始不一致，因此用这个
+          if (enabled == true) {
+          item.setVisible(true);
+          }
+          else{
+          item.setVisible(false);
+          }
+          break;
+        }
+      }
+      return;
+    }
+
     for (MenuItem item : items) {
       if (item.getText().equals(itemName)) {
         if (enabled == true) {

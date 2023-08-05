@@ -411,6 +411,10 @@ public class TopToolbar extends Composite {
       helpItems.add(new DropDownItem(WIDGET_NAME_FORUMS, MESSAGES.forumsMenuItem(),
           new WindowOpenAction(forumsUrl)));
     }
+
+    // Add by 中文网
+    helpItems.add(new DropDownItem("iOS 版进展", "<i class=\"mdi mdi-apple\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;iOS 版进展", new WindowOpenAction("http://doesappinventorrunonios.com/")));
+    
     helpItems.add(null);
     String feedbackUrl = config.getFeedbackUrl();
     if (!Strings.isNullOrEmpty(feedbackUrl)) {
