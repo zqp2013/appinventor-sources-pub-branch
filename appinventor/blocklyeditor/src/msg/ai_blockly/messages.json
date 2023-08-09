@@ -1366,6 +1366,16 @@
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_FIREBASE_EVENTS_HELPURL": "/reference/components/experimental.html#FirebaseDB",
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_FIREBASE_METHODS_HELPURL": "/reference/components/experimental.html#FirebaseDB",
 
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_CHATBOT_HELPURL": "/reference/components/experimental.html#ChatBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_CHATBOT_PROPERTIES_HELPURL": "/reference/components/experimental.html#ChatBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_CHATBOT_EVENTS_HELPURL": "/reference/components/experimental.html#ChatBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_CHATBOT_METHODS_HELPURL": "/reference/components/experimental.html#ChatBot",
+
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_IMAGEBOT_HELPURL": "/reference/components/experimental.html#ImageBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_IMAGEBOT_PROPERTIES_HELPURL": "/reference/components/experimental.html#ImageBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_IMAGEBOT_EVENTS_HELPURL": "/reference/components/experimental.html#ImageBot",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_IMAGEBOT_METHODS_HELPURL": "/reference/components/experimental.html#ImageBot",
+
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_GAMECLIENT_HELPURL": "/reference/components/internal.html#GameClient",
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_GAMECLIENT_PROPERTIES_HELPURL": "/reference/components/internal.html#GameClient",
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_GAMECLIENT_EVENTS_HELPURL": "/reference/components/internal.html#GameClient",
