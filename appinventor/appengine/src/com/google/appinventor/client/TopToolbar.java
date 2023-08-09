@@ -441,7 +441,7 @@ public class TopToolbar extends Composite {
     adminItems.add(new DropDownItem(WIDGET_NAME_SWITCH_TO_DEBUG,
         MESSAGES.switchToDebugMenuItem(), new SwitchToDebugAction()));
     adminItems.add(new DropDownItem(WIDGET_NAME_USER_ADMIN,
-        "用户管理", new SwitchToUserAdminAction()));
+        "<i class=\"mdi mdi-table-account\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;用户管理", new SwitchToUserAdminAction()));
     refreshMenu(adminDropDown, adminItems);
   }
 
