@@ -1,7 +1,7 @@
 ---
 layout: documentation
-title: 试验组件
-description: 试验组件参考文档：包括Firebase数据库。
+title: App Inventor 2 试验组件
+description: App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI ChatGPT聊天机器人），Firebase数据库，ImageBot（OpenAI 绘图机器人）。
 ---
 
 [&laquo; 返回首页](index.html)
@@ -9,8 +9,60 @@ description: 试验组件参考文档：包括Firebase数据库。
 
 目录：
 
+* [ChatBot](#ChatBot)
 * [Firebase数据库](#FirebaseDB)
+* [ImageBot](#ImageBot)
 
+***
+## ChatBot（OpenAI ChatGPT聊天机器人）  {#ChatBot}
+
+ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此版本使用 MIT 运行的代理，该代理又使用 ChatGPT 生成大语言模型。
+
+
+### 属性  {#ChatBot-Properties}
+
+{:.properties}
+
+{:id="ChatBot.ApiKey" .text .bo} *ApiKey*
+: ChatGPT 的 ApiKey，由用户提供。如果提供，我们将使用它来代替聊天代理服务中的 API 密钥。
+
+  注意：我们不将其作为属性在“界面设计”视图中提供，应在“程序设计”视图中使用代码块设置。最好使用`文本块`中的[`模糊文本`](../blocks/text.html#obfuscatetext)对嵌入在打包应用程序中的密钥提供一些保护（但不是完美的保护）。
+
+{:id="ChatBot.Model" .text} *模型*
+: 设置要使用的模型的名称。请参阅 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解当前支持的模型列表，留空将使用提供商设置的默认模型。
+
+{:id="ChatBot.Provider" .text} *提供商*
+: 设置要使用的提供商的名称，如`chatgpt`。请参阅 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解当前支持的提供商列表。
+
+{:id="ChatBot.System" .text} *系统值*
+: 赋予 ChatGPT 的系统值，它用于设定对话的基调，例如：`“你是一个有趣的人。”`
+
+{:id="ChatBot.Token" .text .wo} *访问令牌*
+: 要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
+
+### 事件  {#ChatBot-Events}
+
+{:.events}
+
+{:id="ChatBot.ErrorOccurred"} 出现错误(*响应代码*{:.number},*响应文本*{:.text})
+: 当执行期间发生错误时，将运行 `出现错误` 事件处理，例如是否超过使用配额，或者某些ChatGPT 或 PaLM 发出的其他错误。
+  
+  看 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解最新信息。
+
+{:id="ChatBot.GotResponse"} 获取响应(*响应文本*{:.text})
+: 指示请求已完成并已返回数据的事件（来自 ChatBot 的输出）。
+
+### 方法  {#ChatBot-Methods}
+
+{:.methods}
+
+{:id="ChatBot.Converse" class="method"} <i/> 对话(*question*{:.text})
+: 向聊天机器人询问问题，连续的对话将记住先前对话中的信息，使用 [重置对话](#ChatBot.ResetConversation) 方法重置开始新的对话。
+
+{:id="ChatBot.ResetConversation" class="method"} <i/> 重置对话()
+: 重置当前对话，聊天机器人在回复时会忘记之前的任何对话。
+
+***
 ## Firebase数据库  {#FirebaseDB}
 
 The Firebase component communicates with a Web service to store
@@ -107,3 +159,51 @@ The Firebase component communicates with a Web service to store
    This function permits us to unauthenticate, which tosses the cached
  credentials. The next time authentication is needed we will use our
  current FirebaseToken and get fresh credentials.
+
+
+***
+## ImageBot（OpenAI 绘图机器人）  {#ImageBot}
+
+ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。你必须通过在块中设置其 ApiKey 属性，为此组件提供您自己的 OpenAI API 密钥。
+
+### 属性  {#ImageBot-Properties}
+
+{:.properties}
+
+{:id="ImageBot.ApiKey" .text .wo .bo} *ApiKey*
+: 指定用于向 ImageBot 进行身份验证的 ApiKey。
+
+{:id="ImageBot.InvertMask" .boolean} *反转遮罩*
+: 指定用于编辑的蒙版是否应反转其 Alpha 通道。
+
+{:id="ImageBot.Size" .number} *图像大小*
+: 指定生成图像的大小。 可以是 256、512 或 1024 之一。
+
+{:id="ImageBot.Token" .text .wo} *访问令牌*
+: 要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
+
+### 事件  {#ImageBot-Events}
+
+{:.events}
+
+{:id="ImageBot.ErrorOccurred"} 出现错误(*responseCode*{:.number},*responseText*{:.text})
+: 该事件将在处理过程中发生错误时运行，例如：忘记提供 API 密钥或服务器过载等。
+
+{:id="ImageBot.ImageCreated"} 图像创建完成(*fileName*{:.text})
+: 当 ImageBot 成功创建图像时，将运行此事件。
+
+{:id="ImageBot.ImageEdited"} 图像编辑完成(*fileName*{:.text})
+: 当 ImageBot 成功编辑图像时，将运行此事件。
+
+### 方法  {#ImageBot-Methods}
+
+{:.methods}
+
+{:id="ImageBot.CreateImage" class="method"} <i/> 创建图像(*description*{:.text})
+: 使用给定的描述创建图像。
+
+{:id="ImageBot.EditImage" class="method"} <i/> 编辑图像(*source*{:.any},*description*{:.text})
+: 使用给定的描述编辑源图像。图像的可编辑区域应具有透明的Alpha值，源可以是 Canvas 组件、Image 组件或字符串代表文件的路径。
+
+{:id="ImageBot.EditImageWithMask" class="method"} <i/> 使用遮罩编辑图像(*imageSource*{:.any},*遮罩源*{:.any},*提示*{:.text})
+: 使用给定的描述编辑 `遮罩源`。图像的可编辑区域应该是由 `遮罩源` 指示。源可以是画布、图像或字符串代表文件的路径。
