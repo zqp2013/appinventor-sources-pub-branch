@@ -13,4 +13,5 @@ public interface TokenAuthService extends RemoteService{
 
     String getCloudDBToken();
     String getTranslateToken();
+    String getChatBotToken();
 }

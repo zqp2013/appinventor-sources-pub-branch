@@ -168,6 +168,7 @@
     <property name="clouddb.uuid.secret" value="changeme!"/>
     <property name="clouddb.secret" value="changeme too!" />
     <property name="translator.secret" value="changeme too!" />
+    <property name="chatbot.secret" value="changeme too!" />
 
     <!-- This appears to be needed after a suspected change in how
          POSTs work with URLFetch around 09/20/2018 -->
