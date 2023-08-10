@@ -490,7 +490,7 @@ body {
 }
 /*VIP活动标记*/
 .vip:after {
-    content: "优惠";
+    content: "底价";
     position: absolute;
     font-size: 12px;
     top: -9px;
