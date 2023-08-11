@@ -4,6 +4,8 @@ layout: documentation
 description: 概念页面下的制作列表参考文档。
 ---
 
+[&laquo; 返回首页](index.html)
+
 # 什么是列表？
 
 很多应用程序需要使用数据列表。例如，一款游戏可能会保存一份高分列表，社交应用会保存一份好友列表。

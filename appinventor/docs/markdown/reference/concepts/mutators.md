@@ -4,6 +4,8 @@ layout: documentation
 description: 块扩展参考文档及用法示例。
 ---
 
+[&laquo; 返回首页](index.html)
+
 App Inventor 2 引入了一项新功能，允许某些块扩展、收缩甚至更改其功能。
 
 ![块扩展图标](images/mutatoricon.png)

@@ -9,4 +9,5 @@ App Inventor 2 参考文档分为四大类：内置块参考文档、组件参�
 * [内置块参考文档](blocks/)
 * [组件参考文档](components/)
 * [拓展参考文档](extensions/)
+* [概念参考文档](concepts/)
 * [技术和其他指南](other/)

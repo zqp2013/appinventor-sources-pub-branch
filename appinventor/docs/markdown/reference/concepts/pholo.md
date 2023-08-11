@@ -4,6 +4,8 @@ layout: documentation
 description: 概念页面下的功能列表运算符参考文档。
 ---
 
+[&laquo; 返回首页](index.html)
+
 Functional programming is a programming paradigm where programs are constructed by composing pure functions, avoiding shared state, mutable data, and side effects.
 Many operators in functional programming are commonly used to make code more concise, and less complex.
 
