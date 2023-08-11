@@ -1,45 +1,37 @@
 ---
 title: 访问图像和声音
 layout: documentation
-description: 
+description: 使用 App Inventor 2 构建的应用程序可以从三种不同的位置访问声音、图像和视频源。
 ---
 
-Applications built with App Inventor can access sound, image, and video sources from three different kinds of locations:
+[&laquo; 返回首页](index.html)
 
-Application assets
+使用 App Inventor 构建的应用程序可以从三种不同的位置访问声音、图像和视频源：
 
-: The sources labeled *Media* shown in the designer — part of the application's *assets* — are packaged with the application. Anyone who installs your application will have them, as part of the application. You also specify them in the designer, which is convenient. You can also specify these in programs by their file name: just use the file name without any special prefix. For example, if you have an image asset named *kitty.png*, you can use it as an image: just set the `Picture` property of an image component to the text *kitty.png*. You can similarly use files names for sound (Sound or Player) or video (VideoPlayer).
+应用程序资产
 
-  Assets are the most convenient to use, but the space for them is limited to a few megabytes, because they must be packaged with the application. They are good for small images and short audio selections. Bit you would probably not use them for complete songs or videos.
+: “界面设计”视图中显示的标记为 *媒体* 的源（应用程序的 *assets* 的一部分）与应用程序打包在一起。 安装你的应用程序的任何人都将拥有它们，作为应用程序的一部分。 你还可以在设计器中指定它们，这很方便。 你还可以通过文件名在程序中指定它们：只需使用不带任何特殊前缀的文件名。 例如，如果你有一个名为 *kitty.png* 的图像资源，则可以将其用作图像：只需将图像组件的“Picture”属性设置为文本 *kitty.png*。 你可以类似地使用声音（声音或播放器）或视频（视频播放器）的文件名。
 
-The device storage
+   资产使用起来最方便，但它们的空间仅限于几兆字节，因为它们必须与应用程序一起打包。 它们适合小图像和短音频选择，你可能不会将它们用于完整的歌曲或视频。
 
-: You can access files on your phone's SD (secure digital) card using file names that begin with */sdcard*. You could play a song on your SDCard by setting the source of a `Player` component to
+设备存储
 
-  /sdcard/Music/Blondie/The Best of Blondie/Heart of Glass.mp3
+: 你可以使用以 */sdcard* 开头的文件名访问手机 SD（安全数字）卡上的文件。 你可以通过将“Player”组件的源设置为来播放 SDCard 上的歌曲`/sdcard/Music/Heart of Glass.mp3`，并启动“音频播放器”（当然，假设歌曲文件位于 SDCard 上），确保指定完整的文件名，包括“mp3”。
 
-  and starting the `Player` (assuming of course, that the song file is on the SDCard). Make sure to specify the complete file name, including the "mp3".
+   Android系统还包括另一种将SDCard文件设计为URL的方法。 在这里，你可以使用 *file:///sdcard* 作为文件名前缀，并对特殊字符使用“URL 编码”。 例如，空格是“%20”。 因此，你可以通过将播放器源设置为来指定相同的文件：`file:///sdcard/Music/Heart%20of%20Glass.mp3`，请注意，你需要为此使用“音频播放器”组件，而不是“音效”组件。 像这样的完整歌曲对于“Sound”来说太大了，无法处理。
 
-  The Android system also includes an alternative way to designe SDCard files as URLs. Here you prefix the file name with *file:///sdcard* and use "URL encoding" for special characters. For example, a space is "%20". So you could designate the same file by setting the player source to
+   图像和视频可以类似地指定。
 
-  file:///sdcard/Music/Blondie/The%20Best%20of%20Blondie/Heart%20of%20Glass.mp3
+   App Inventor（尚）不包含任何在 SD 卡上存储文件的方法。 它还不包括列出 SDCard 上文件的方法。 为此，你必须使用其他应用程序或 Android 手机文件管理器。
 
-  Note that you'll want to use a `Player` component for this, not `Sound`. A complete song like this is too large for `Sound` to handle.
+   与尝试将内容打包为资产相比，使用 SD 卡可以为媒体提供更多空间。 缺点是用户不会通过安装你的应用程序自动获得它们。
 
-  Images and videos can be designated similarly.
+URL 和 Web
 
-  App Inventor doesn't (yet) include any way to store files on the SD card. It also doesn't (yet) include a way to list the files on the SDCard. You'll have to use other applications or the Android phone file manager for that.
+: 可以使用以 *http://* 开头的 URL 来访问 Web 上的文件，例如将图像的图片属性设置为：http://www.google.com/images/srpr/nav_logo14.png
 
-  Using the SD Card provides a lot more space for media than trying to package things as assets. The drawback is that users won't automatically get them by installing your application.
+   音乐和视频也是如此，确保使用指向实际文件的链接，而不是指向文件播放器的链接，这在网络上更为常见，尤其是音乐和视频。
 
-URLs and the Web
+其他内容 URL
 
-: You can access files on Web using URLs, starting with *http://*, for example, setting the picture property of an image to
-
-  http://www.google.com/images/srpr/nav_logo14.png
-
-  and similarly for music and videos. Make sure you use the link that points to the actual file, not to players for the files, which is much more common on the Web, especially for music and videos.
-
-Other content URLs
-
-: The Android system also uses URLs to access various places that media is stored on the phone. For example, the images in the photo gallery can be accessed with file names beginning *content://media/external/images/media*, as you can see by using the `ImagePicker` and examining the resulting image path.
+: Android 系统还使用 URL 来访问手机上存储媒体的各个位置。 例如，可以使用以 *content://media/external/images/media* 开头的文件名来访问照片库中的图像，正如你通过使用“图像选择器”组件并检查生成的图像路径所看到的那样。
