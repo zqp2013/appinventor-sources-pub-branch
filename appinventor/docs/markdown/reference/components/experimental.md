@@ -20,6 +20,9 @@ ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此�
 
 注：此组件对AI伴侣要求最低版本为2.67 ([点此下载](https://www.fun123.cn/reference/info/2.67/MITAI2Companion.apk))，编译为apk则没有限制均能正常运行。
 
+* demo程序下载：
+[chatgpt.aia](demo/chatgpt.aia)
+
 ### 属性  {#ChatBot-Properties}
 
 {:.properties}
