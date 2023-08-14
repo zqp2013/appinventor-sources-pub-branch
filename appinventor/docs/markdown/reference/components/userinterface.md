@@ -1105,6 +1105,8 @@ Top-level component containing all other components in the program.
    * [`最大值`](#Slider.MaxValue) = 50
    * [`滑块位置`](#Slider.ThumbPosition) = 30
 
+   **中文网注**：根据会员的反馈，假设值区间设置为 `0 ~ 300`，这时，滑动一个位置变化值是`3`，而`非1`。通过研究源码，因为滑块改变是一个进度整型值控制，它的范围是整数`[0 ~ 100]`，也就是说滑块的**最小控制粒度**是 `1 / 100`，暂时无法实现更高的粒度控制。感谢会员的研究及反馈。
+
 ### 属性  {#Slider-Properties}
 
 {:.properties}
