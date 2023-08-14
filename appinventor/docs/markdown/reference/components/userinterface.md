@@ -1094,25 +1094,16 @@ Top-level component containing all other components in the program.
 : Hide the soft keyboard
 
 ***
-## 滑动条  {#Slider}
+## ![Example Slider icon](images/slider.png)  滑动条  {#Slider}
 
-This class is used to display a `Slider`.
+滑动条是一个添加可拖动滑块的进度条，你可以触摸它并向左右拖动设置滑块的位置。当滑块滑块被拖动时，它将触发[`位置被改变`](#Slider.PositionChanged) 事件，报告 `滑动条` 的滑块位置数值，
+  这个数值可用于动态更新另一个组件属性，例如 `文本输入框` 的 [`字体大小`](#TextBox.FontSize) 或 `球形精灵` 的 [半径](animation.html#Ball.Radius)。
 
- ![Example Slider icon](images/slider.png)
+  `滑动条` 使用以下默认值，但这些值在“界面设计”和“程序设计”视图中都可以修改：
 
- A `Slider` is a progress bar that adds a draggable thumb. You can touch the thumb and drag left
- or right to set the slider thumb position. As the Slider thumb is dragged, it will trigger the
- [`PositionChanged`](#Slider.PositionChanged) event, reporting the position of the `Slider` thumb. The
- reported position of the thumb can be used to dynamically update another component attribute,
- such as the [`TextBox`'s `FontSize`](#TextBox.FontSize) of a `TextBox` or the
- [Radius](animation.html#Ball.Radius) of a `Ball`.
-
- The `Slider` uses the following default values. However these values can be changed through the
- Designer or Blocks editor:
-
-  * [`MinValue`](#Slider.MinValue) = 10
-  * [`MaxValue`](#Slider.MaxValue) = 50
-  * [`ThumbPosition`](#Slider.ThumbPosition) = 30
+   * [`最小值`](#Slider.MinValue) = 10
+   * [`最大值`](#Slider.MaxValue) = 50
+   * [`滑块位置`](#Slider.ThumbPosition) = 30
 
 ### 属性  {#Slider-Properties}
 
@@ -1132,26 +1123,21 @@ This class is used to display a `Slider`.
 : Specifies the `Slider`'s vertical height as a percentage
  of the [`屏幕高度`](userinterface.html#Screen.Height).
 
-{:id="Slider.MaxValue" .number} *MaxValue*
-: Sets the maximum value of slider. If the new maximum is less than the
- current minimum, then minimum and maximum will both be set to this value.
- Setting `MaxValue` resets the thumb position to halfway between [`MinValue`](#Slider.MinValue)
- and `MaxValue` and signals the [`PositionChanged`](#Slider.PositionChanged)` event.
+{:id="Slider.MaxValue" .number} *最大值*
+: 设置滑块的最大值。如果新的最大值小于当前最小值，则最小值和最大值都将设置为该值。
+  
+  设置最大值会将滑块位置重置为 [`最小值`](#Slider.MinValue) 和 [`最大值`](#Slider.MaxValue) 之间的位置，并触发 [`位置被改变`](#Slider.PositionChanged)` 事件。
 
-{:id="Slider.MinValue" .number} *MinValue*
-: Sets the minimum value of slider. If the new minimum is greater than the
- current maximum, then minimum and maximum will both be set to this value.
- Setting `MinValue` resets the thumb position to halfway between `MinValue`
- and [`MaxValue`](#Slider.MaxValue) and signals the [`PositionChanged`](#Slider.PositionChanged)`
- event.
+{:id="Slider.MinValue" .number} *最小值*
+: 设置滑块的最小值。如果新的最小值大于当前最大值，则最小值和最大值都将设置为该值。
+  
+  设置最小值会将滑块位置重置为 [`最小值`](#Slider.MinValue) 和 [`最大值`](#Slider.MaxValue) 之间的位置，并触发 [`位置被改变`](#Slider.PositionChanged)` 事件。
 
-{:id="Slider.ThumbEnabled" .boolean} *ThumbEnabled*
-: Whether or not the slider thumb is being be shown.
+{:id="Slider.ThumbEnabled" .boolean} *接受滑动*
+: 是否显示滑块以允许滑动。
 
-{:id="Slider.ThumbPosition" .number} *ThumbPosition*
-: Sets the position of the slider thumb. If this value is greater than [`MaxValue`](#Slider.MaxValue),
- then it will be set to same value as [`MaxValue`](#Slider.MaxValue). If this value is less than
- [`MinValue`](#Slider.MinValue), then it will be set to same value as [`MinValue`](#Slider.MinValue).
+{:id="Slider.ThumbPosition" .number} *滑块位置*
+: 设置滑块滑块的位置。如果该值大于 [`最大值`](#Slider.MaxValue)，那么它将被设置为与 [`最大值`](#Slider.MaxValue) 相同的值；如果该值小于[`最小值`](#Slider.MinValue)，那么它将被设置为与 [`最小值`](#Slider.MinValue) 相同的值。
 
 {:id="Slider.Visible" .boolean} *可见性*
 : Specifies whether the `Slider` should be visible on the screen.  Value is `真`{:.logic.block}
@@ -1168,8 +1154,8 @@ This class is used to display a `Slider`.
 
 {:.events}
 
-{:id="Slider.PositionChanged"} PositionChanged(*thumbPosition*{:.number})
-: Indicates that position of the slider thumb has changed.
+{:id="Slider.PositionChanged"} 位置被改变(*滑块位置*{:.number})
+: 指示滑块的位置已改变。
 
 ### 方法  {#Slider-Methods}
 
