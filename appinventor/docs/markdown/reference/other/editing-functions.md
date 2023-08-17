@@ -1,49 +1,56 @@
 ---
 title: 编辑你的应用（复制和粘贴）
 layout: documentation
-description: 
+description: 使用 App Inventor 2 编辑你的应用（复制和粘贴）
 ---
 
-Beginning with version nb184, App Inventor has included the capability to cut, copy, and paste parts of your app design. This document explains this functionality.
+[&laquo; 返回首页](index.html)
 
-## Manipulating Components
+从 nb184 版本开始，App Inventor 包含剪切、复制和粘贴应用程序部分设计的功能。本文档解释了此功能。
 
-Your app design is made up of one or more components in a tree structure that starts at the Screen. You can add components by dragging them in from the Palette panel to the left of the designer. You can customize components by changing their properties in the Properties panel to the right of the designer.
+***
+## 操作组件
 
-### Selecting Components
+你的应用程序设计由从屏幕开始的树形结构中的一个或多个组件组成。你可以通过将组件从组件面板拖入“界面设计”视图左侧来添加组件。你可以通过在“界面设计”视图右侧的“属性”面板中更改组件的属性来自定义组件。
 
-You select components by clicking on them. Starting with release nb182, you can select multiple components by holding a platform specific key (Ctrl on Windows/Linux, Command on macOS) and clicking on additional components. This feature is sometimes referred to in App Inventor as multiselect. When you select multiple components, the properties panel will update to only show common properties among the selected components. Changing a property in this mode will change it for all of the selected components.
+### 选择组件
 
-### Copying Components
+你可以通过单击组件来选择它们。 从 nb182 版本开始，你可以通过按住平台特定键（Windows/Linux 上的 Ctrl，macOS 上的 Command）并单击其他组件来选择多个组件。 此功能有时在 App Inventor 中称为多选。 当你选择多个组件时，属性面板将更新为仅显示所选组件之间的公共属性。 在此模式下更改属性将更改所有选定组件的属性。
 
-Once you have selected one or more elements, use the standard keyboard shortcut for your platform to copy them (Ctrl+C on Windows/Linux, ⌘C on macOS). This places the contents of the selection onto your system's clipboard.
+### 复制组件
 
-You can also use the Cut shortcut (Ctrl+X on Windows/Linux, ⌘X on macOS) to copy elements to the clipboard and immediately delete them, so that they can be pasted elsewhere.
+选择一个或多个元素后，请使用适合你平台的标准键盘快捷键来复制它们（Windows/Linux 上为 Ctrl+C，macOS 上为 ⌘C）。 这会将选择的内容放置到系统的剪贴板上。
 
-### Pasting Components
+你还可以使用“剪切”快捷键（Windows/Linux 上为 Ctrl+X，macOS 上为 ⌘X）将元素复制到剪贴板并立即删除它们，以便将它们粘贴到其他地方。
 
-Once you have copied components to the clipboard, you can press the paste shortcut key (Ctrl+V on Windows/Linux, ⌘V on macOS) to paste them. When copying and pasting components, the default behavior is to copy both the design as well as the behavior (i.e., the blocks). If you would prefer to only paste the component without copying its behavior, hold the shift key while pressing the paste key combination. App Inventor will skip pasting the blocks if the shift key is held.
+### 粘贴组件
 
-When pasting, App Inventor will rename the pasted components if there is a collision with existing components in the project. It does this by computing a fresh name for each colliding name. The renaming algorithm works by either adding a numeric suffix to the name, or by incrementing the numeric suffix of the name until the collision is resolved. For example, if you copy a component named `ResetButton`, the first copy will be called `ResetButton1`, the second will be called `ResetButton2`, and so forth. These new names are also subsituted into the copied blocks code, if any.
+将组件复制到剪贴板后，你可以按粘贴快捷键（Windows/Linux 上为 Ctrl+V，macOS 上为 ⌘V）来粘贴它们。 复制和粘贴组件时，默认行为是复制设计和行为（即块）。 如果你希望仅粘贴组件而不复制其行为，请在按住 Shift 键的同时按粘贴组合键。 如果按住 Shift 键，App Inventor 将跳过粘贴块。
 
-## Manipulating Blocks
+粘贴时，如果与项目中的现有组件发生冲突，App Inventor 将重命名粘贴的组件。 它通过为每个冲突名称计算一个新名称来实现这一点。 重命名算法的工作原理是在名称中添加数字后缀，或者增加名称的数字后缀，直到解决冲突。 例如，如果复制名为“ResetButton”的组件，第一个副本将称为“ResetButton1”，第二个副本将称为“ResetButton2”，依此类推。 这些新名称也会替换到复制的块代码（如果有）中。
 
-The blocks editor is where you provide the behavior for your app. Like the designer, it supports copying and pasting blocks. You can also use the [backpack](backpack.html) to transfer blocks between projects, or [download blocks as images](download-pngs.html) that you can share with others.
+***
+## 操作代码块
 
-### Copying Blocks
+块编辑器是你为应用程序提供行为的地方。 与设计器一样，它支持复制和粘贴块。 你还可以使用[背包](backpack.html)在项目之间传输块，或[将块下载为图像](download-pngs.html)以便与他人共享。
 
-To copy a block, first select the block. You can copy the block by either pressing the copy shortcut for your platform (Ctrl+C for Windows/Linux, ⌘C for macOS). The copy action is also available on the context menu by right clicking (Ctrl+clicking on macOS) the block.
+### 复制代码块
 
-### Paste Blocks
+要复制块，请首先选择该块。 你可以通过按适合你平台的复制快捷键（对于 Windows/Linux 为 Ctrl+C，对于 macOS 为 ⌘C）来复制块。 通过右键单击（在 macOS 上按住 Ctrl 键并单击）块，也可以在上下文菜单中执行复制操作。
 
-To paste a block, press the paste shortcut for your platofmr (Ctrl+V for Windows/Linux, ⌘V on macOS). The paste action is also available on the context menu by right clicking (Ctrl+clicking on macOS) the workspace.
+### 粘贴代码块
 
-## Copying Screens
+要粘贴块，请按平台的粘贴快捷键（Windows/Linux 为 Ctrl+V，macOS 上为 ⌘V）。 通过右键单击（在 macOS 上按住 Ctrl 键并单击）工作区，也可以在上下文菜单中执行粘贴操作。
 
-App Inventor allows you to copy and paste the content of a screen, effectively allowing you to copy screens.
+***
+## 复制屏幕
 
-To copy a screen, select the screen either by clicking its background or selecting it in the structure tree. Press the copy shortcut key to copy it. Next, create a new screen. Press the paste shortcut key in this new screen to paste the contents copied from the previous screen.
+App Inventor 允许你复制和粘贴屏幕内容，从而有效地允许你复制屏幕。
 
-## Sharing Designs
+要复制屏幕，请通过单击其背景或在结构树中选择它来选择屏幕。按复制快捷键即可复制，接下来，创建一个新屏幕，在这个新屏幕中按粘贴快捷键可以粘贴从上一屏幕复制的内容。
 
-Because the copy functionality puts the content of your selection onto the clipboard, it is possible to share the content in a text form although the format is somewhat complex. For example, you can copy a component and paste its textual representation into a text document or email. Someone can select the text, copy it, and then paste it into App Inventor to recreate the component's representation. This can help you build a collection of design elements for your apps.
+***
+## 分享设计
+
+由于复制功能会将你选择的内容放入剪贴板，因此可以以文本形式共享内容，尽管格式有些复杂。 例如，你可以复制组件并将其文本表示粘贴到文本文档或电子邮件中。 有人可以选择文本，复制它，然后将其粘贴到 App Inventor 中以重新创建组件的表示。 这可以帮助你为你的应用程序构建设计元素的集合。
+
