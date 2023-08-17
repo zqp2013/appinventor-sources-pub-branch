@@ -10,7 +10,7 @@ description: 以便携式网络图形 (PNG) 图像格式导出单个块。此功
 
 要导出代码块，请右键点击代码块以显示菜单，然后单击“将代码块保存PNG图像”菜单项：
 
-![右键点击代码块，将代码块保存为PNG菜单项](download-blocks-menu.png)
+![右键点击代码块，将代码块保存为PNG菜单项](images/download-blocks-menu.png)
 
 选择此菜单项后，浏览器会提示您下载名为 blocks.png 的文件。
 

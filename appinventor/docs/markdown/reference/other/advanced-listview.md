@@ -18,7 +18,7 @@ Example: Main Text 1, Main Text 2, Main Text 3
 
 Would display in the device as:
 
-![ListView elements for layout MainText](ListView-maintext.png)
+![ListView elements for layout MainText](images/ListView-maintext.png)
 
 ## ListViewLayout and ListData
 
@@ -28,27 +28,27 @@ The layout is selected from a list of options in the ListViewLayout property. El
 
 The ListData property editor is a pop-up window that allows the user to define Main Text, Detail Text, and Image, depending on which layout has been selected. The Image is selected from a list of images uploaded to media.
 
-![ListData editor displaying all field options](ListView-ListData.png)
+![ListData editor displaying all field options](images/ListView-ListData.png)
 
 Current layout options with examples:
 
 ### MainText
 
-![ListView elements for layout MainText](ListView-maintext.png)
+![ListView elements for layout MainText](images/ListView-maintext.png)
 
 ### Main,DetailText(vertical)
 
-![ListView elements for layout MainText,DetailText(vertical)](ListView-maindetail-vert.png)
+![ListView elements for layout MainText,DetailText(vertical)](images/ListView-maindetail-vert.png)
 
 ### MainText,DetailText(horizontal)
 
-![ListView elements for layout MainText,DetailText(horizontal)](ListView-maindetail-horiz.png)
+![ListView elements for layout MainText,DetailText(horizontal)](images/ListView-maindetail-horiz.png)
 
 ### Image, MainText
 
-![ListView elements for layout Image,MainText](Listview-mainimage.png)
+![ListView elements for layout Image,MainText](images/Listview-mainimage.png)
 
 ### Image,MainText,DetailText
 
-![ListView elements for layout Image,MainText,DetailText](ListView-maindetailimage.png)
+![ListView elements for layout Image,MainText,DetailText](images/ListView-maindetailimage.png)
 

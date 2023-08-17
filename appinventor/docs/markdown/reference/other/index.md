@@ -17,7 +17,7 @@ description: 其他参考资料：包括编辑你的应用、使用Activity Star
 * [指定组件的大小](sizes.html)
 * [访问图像和声音](media.html)
 * [在App Inventor中使用图像](usingImages.html)
-* [将App Inventor项目连接到外部传感器](https://docs.google.com/document/d/1HuWW8C3Ghz-pO-tWRpod2znM5wD7RfK10b2J37ftf2E/pub)
+* [将App Inventor项目连接到外部传感器](external-sensor.html)
 * [构建具有多个屏幕的应用程序](manyscreens.html)
 * [使用 JSON 和 Web API](json-web-apis.html)
 * [使用 XML 和 Web 服务](xml.html)
