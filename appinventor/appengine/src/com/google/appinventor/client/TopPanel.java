@@ -52,6 +52,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Frame;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 import java.util.List;
@@ -137,6 +138,12 @@ public class TopPanel extends Composite {
 
     // VIP提醒
     if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
+      // 广告
+      Frame adFrame = new Frame("https://www.fun123.cn/reference/info/vip.html");
+      adFrame.setStyleName("ode-AdFrame");
+      links.add(adFrame);
+
+
       Label vipTip = new Label("升级VIP会员");
       vipTip.addClickHandler(new WindowOpenClickHandler("https://www.fun123.cn/reference/info/vip.html?f=top"));
       vipTip.setStyleName("ode-TopPanelButton vip");
@@ -176,20 +183,20 @@ public class TopPanel extends Composite {
       TextButton guideLink = new TextButton(MESSAGES.guideTabName());
       guideLink.setHTML("<i class=\"mdi mdi-school-outline\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + guideLink.getText());
       guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
-      guideLink.setStyleName("ode-TopPanelButton hot");
+      guideLink.setStyleName("ode-TopPanelButton");
       links.add(guideLink);
     }
 
     // Feedback Link
-    String feedbackUrl = config.getForumsUrl();
-    if (!Strings.isNullOrEmpty(feedbackUrl)) {
-      TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
-      feedbackLink.setHTML("<i class=\"mdi mdi-progress-question\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + feedbackLink.getText());
-      feedbackLink.addClickHandler(
-        new WindowOpenClickHandler(feedbackUrl));
-      feedbackLink.setStyleName("ode-TopPanelButton");
-      links.add(feedbackLink);
-    }
+    // String feedbackUrl = config.getForumsUrl();
+    // if (!Strings.isNullOrEmpty(feedbackUrl)) {
+    //   TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
+    //   feedbackLink.setHTML("<i class=\"mdi mdi-progress-question\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + feedbackLink.getText());
+    //   feedbackLink.addClickHandler(
+    //     new WindowOpenClickHandler(feedbackUrl));
+    //   feedbackLink.setStyleName("ode-TopPanelButton");
+    //   links.add(feedbackLink);
+    // }
 
     // Create the Account Information
     rightPanel = new VerticalPanel();

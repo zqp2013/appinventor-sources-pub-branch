@@ -505,6 +505,12 @@ body {
     color: #FFF;
     overflow: hidden;
 }
+/*试用账户广告*/
+.ode-AdFrame {
+  border:none;
+  overflow:hidden;
+  max-height: 37px;
+}
 
 .userCount{
   padding:4px;
