@@ -7,8 +7,8 @@ description: 其他参考资料：包括编辑你的应用、使用Activity Star
 此文档提供了关于App Inventor 2一些主题更详细的参考资料。
 
 * [编辑你的应用（复制和粘贴）](editing-functions.html)
-* [使用Activity Starter](activitystarter.html)
-* [将你的应用程序上传到 Google Play](appstoplay.html)
+* [使用Activity启动器组件](activitystarter.html)
+<!--* [将你的应用程序上传到 Google Play](appstoplay.html)-->
 * [创建自定义 TinyWebDB 服务](tinywebdb.html)
 * [实时开发、测试和调试工具](testing.html)
 * [使用模拟器构建应用程序](emulator.html)

@@ -54,3 +54,8 @@ App Inventor 允许你复制和粘贴屏幕内容，从而有效地允许你复�
 
 由于复制功能会将你选择的内容放入剪贴板，因此可以以文本形式共享内容，尽管格式有些复杂。 例如，你可以复制组件并将其文本表示粘贴到文本文档或电子邮件中。 有人可以选择文本，复制它，然后将其粘贴到 App Inventor 中以重新创建组件的表示。 这可以帮助你为你的应用程序构建设计元素的集合。
 
+组件粘贴文本的例子如下：
+
+```
+{"$components":[{"$Name":"图像选择框1","$Type":"ImagePicker","$Version":"5","Text":"图像选择框1文本","Uuid":"-508973047"}],"$blocks":["<xml><block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"component_method\" id=\"GmGlUkU9@dyl:S~lv+8,\" x=\"-826\" y=\"-81\"><mutation component_type=\"ImagePicker\" method_name=\"Open\" is_generic=\"false\" instance_name=\"图像选择框1\"></mutation><field name=\"COMPONENT_SELECTOR\">图像选择框1</field></block></xml>"]}
+```
