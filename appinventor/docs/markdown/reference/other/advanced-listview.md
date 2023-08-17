@@ -4,6 +4,8 @@ title: 使用ListViewLayout和ElementsFromString的ListView布局
 description: 
 ---
 
+[&laquo; 返回首页](index.html)
+
 The ListView component supports two methods for defining elements: ElementsFromString and ListViewLayout.
 
 ElementsFromtString is the legacy method. It supports elements consisting of a single string.

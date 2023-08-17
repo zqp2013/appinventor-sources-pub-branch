@@ -4,6 +4,8 @@ layout: documentation
 description: 
 ---
 
+[&laquo; 返回首页](index.html)
+
 TinyWebDB is an App Inventor component that allows you to store data persistently in a database on the web. Because the data is stored on the web instead of a particular phone, TinyWebDB can be used to facilitate communication between phones and apps (e.g., multi-player games).
 
 By default, the TinyWebDB component stores data on a test service provided by App Inventor, http://tinywebdb.appinventor.mit.edu/ . This service is helpful for testing, but it is shared by all App Inventor users, and it has a limit of 1000 entries. If you use it, your data will be overwritten eventually.
@@ -13,7 +15,7 @@ For most apps you write, you'll want to create a custom web service that isn't s
 To create your own web service, follow these instructions:
 
 * Download App Engine for Python at http://code.google.com/appengine/ . After installing it, run the GoogleAppEngineLauncher by clicking its icon.
-* Download this [sample code](tinywebdbassets/customtinywebdb.zip). It is a zip file containg the source code for your custom tinywebdb web service
+* Download this [sample code](images/customtinywebdb.zip). It is a zip file containg the source code for your custom tinywebdb web service
 * Unzip the downloaded zip file. It will create a folder named customtinywebdb . You can rename it if you want.
 * In the GoogleAppEngineLauncher, choose File | Add Existing Application . Browse to set the Path to the customtinywebdb folder you just unzipped. Then click the Run button. This will launch a test web service that runs on your local machine.
 * You can test the service by opening a browser and entering "localhost:8080" as the URL. You'll see the web page interface to your web service. The end-goal of this service is to communicate with a mobile app created with App Inventor. But the service provides a web page interface to the service to help programmers with debugging. You can invoke the get and store operations by hand, view the existing entries, and also delete individual entries

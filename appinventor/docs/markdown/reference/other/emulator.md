@@ -1,8 +1,10 @@
 ---
 title: 使用模拟器构建应用程序
 layout: documentation
-description: 
+description: App Inventor 2 使用模拟器构建应用程序
 ---
+
+[&laquo; 返回首页](index.html)
 
 App Inventor includes an emulator for the phone. The emulator lets you develop and test apps using a virtual phone instead of a real phone. Instead of connecting a phone to the USB port, just start the emulator program. When you click Connect to Phone in the Blocks Editor, your app will appear in the emulator.
 

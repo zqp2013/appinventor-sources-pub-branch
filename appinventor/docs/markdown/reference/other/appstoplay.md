@@ -1,8 +1,10 @@
 ---
 title: 将你的应用程序上传到 Google Play
 layout: documentation
-description: 
+description: 将你的应用程序上传到 Google Play
 ---
+
+[&laquo; 返回首页](index.html)
 
 [Click here for a version of this page on which you can comment.](https://docs.google.com/document/d/1H8oLfSV5yZkAOrhQ5JZkVJFPFA03jX1rXbQ0MTQMG9g/edit)
 

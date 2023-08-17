@@ -1,8 +1,10 @@
 ---
 title: 使用位置传感器
 layout: documentation
-description: 
+description: App Inventor 2 使用位置传感器
 ---
+
+[&laquo; 返回首页](index.html)
 
 *This tutorial was developed by [Professor David Wolber](http://appinventorblog.com/) at The University of San Francisco.*
 

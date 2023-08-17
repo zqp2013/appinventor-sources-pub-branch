@@ -10,22 +10,18 @@ description: App Inventor 2 项目合并工具 AIMerge
 
 ![](images/merger-image3.png)
 
-This documentation was originally written for AI Classic by Kate Feeney of Mills College.  The program is discussed in her thesis, [Encouraging Collaboration through App Inventor](http://appinventor.mit.edu/explore/sites/all/files/Resources/EncouragingCollaborationFeeneyThesis.pdf).
+本文档最初由米尔斯学院（Mills College）的 Kate Feeney 为 AI Classic 编写。该计划在她的论文[通过 App Inventor 鼓励协作](http://appinventor.mit.edu/explore/sites/all/files/Resources/EncourageCollaborationFeeneyThesis.pdf) 中进行了讨论。
 
-The tool runs outside of App Inventor, as a Java program.   You’ll need to have Java installed on your computer to use it.
+该工具作为 Java 程序在 App Inventor 外部运行，需要在计算机上安装 Java 才能使用它。
 
-Updated images and instructions were created by Nathan Nolte, a Project Lead The Way Computer Science Teacher.
+### 如何使用 App Inventor 合并工具进行团队开发
 
-The original software and this documentation were updated by Arezu Esmaili of MIT.
+在团队内开发应用程序时，App Inventor 合并工具非常有用。该工具允许多个开发人员在应用程序的不同屏幕上工作，然后将它们合并在一起。请记住，整个组合应用程序仍然受到 App Inventor 建议的总共最多 10 个屏幕的限制。
 
+本文档概述了使用 App Inventor 合并工具在团队环境中开发应用程序的过程。它将使用由两个不同开发人员开发的简单双屏应用程序的示例来演示此过程。
 
-How To use the App Inventor Merger for Development as a Team
-
-The App Inventor Merger tool can be very useful when developing an app within a team.  The tool allows for multiple developers to work on different screens of the app and then merge them together.  Remember that the overall combined app is still subject to App Inventor’s recommended limit of at most 10 screens in total.
-
-This document outlines the process of using the App Inventor Merger to develop an app in a team environment.  It will use the example of a simple two-screen app developed by two different developers to demonstrate this process.
-
-Overview
+***
+概述
 
 Dividing Work
 
