@@ -1,8 +1,10 @@
 ---
 title: 使用App Inventor扩展实现多点触控：Scale Detector
 layout: documentation
-description: 
+description: 使用App Inventor扩展实现多点触控：Scale Detector
 ---
+
+[&laquo; 返回首页](index.html)
 
 ***
 草稿（9 月 13 日）：构建扩展需要 App Inventor Extensions 功能，该功能尚未合并到 App Inventor 版本中。 但是你可以使用我们的扩展测试服务器尝试下面描述的一些步骤：
