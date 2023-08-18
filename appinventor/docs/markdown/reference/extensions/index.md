@@ -15,6 +15,6 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 * [KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
 * [MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 * [ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
-* [BlueToothLE 拓展：低功耗蓝牙]
+* [BlueToothLE 拓展：低功耗蓝牙](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)
 * [SQLite 拓展：超流行兼容主流SQL的迷你本地数据库引擎]
 * [TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)

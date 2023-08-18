@@ -158,6 +158,9 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:.events}
 无
 
+**中文网注：**
+
+蓝牙客户端没有“当收到数据时”的事件（即收到服务端数据后触发的事件），只能通过定时器定期轮询接收数据，可以考虑使用BluetoothLE低功耗蓝牙[拓展](../extensions/index.html)，它拥有这个事件。
 
 ### 方法  {#BluetoothClient-Methods}
 
@@ -273,6 +276,10 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 {:id="BluetoothServer.ConnectionAccepted"} 接受连接()
 : 表示已接受蓝牙连接。
+
+**中文网注：**
+
+蓝牙服务端没有“当收到数据时”的事件（即收到客户端数据后触发的事件），只能通过定时器定期轮询接收数据，可以考虑使用BluetoothLE低功耗蓝牙[拓展](../extensions/index.html)，它拥有这个事件。
 
 ### 方法  {#BluetoothServer-Methods}
 
