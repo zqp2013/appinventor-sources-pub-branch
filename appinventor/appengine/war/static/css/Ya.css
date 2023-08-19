@@ -506,10 +506,13 @@ body {
     overflow: hidden;
 }
 /*试用账户广告*/
-.ode-AdFrame {
+.ode-FreeFrame {
   border:none;
   overflow:hidden;
-  max-height: 37px;
+  max-height: 36px;
+  width: 360px;
+  min-width: 300px;
+  margin-right: 10px;
 }
 
 .userCount{

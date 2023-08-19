@@ -125,7 +125,6 @@ public class ObjectifyStorageIo implements  StorageIo {
   private static final long MOTD_ID = 1;
   private static final long ALLOWEDURL_ID = 1;
   private static final long SPLASHDATA_ID = 1;
-  private static final long SPLASHDATA_ID_FREE = 2; //Add By中文网
 
   // TODO(user): need a way to modify this. Also, what is really a good value?
   private static final int MAX_JOB_RETRIES = 10;
@@ -2489,37 +2488,19 @@ public class ObjectifyStorageIo implements  StorageIo {
       runJobWithRetries(new JobRetryHelper() {
           @Override
           public void run(Objectify datastore) {
-
-            if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
-              // 免费用户
-              SplashData sd = datastore.find(SplashData.class, SPLASHDATA_ID_FREE);
-              if (sd == null) {   // If we don't have Splash Data, create it
-                SplashData firstSd = new SplashData(); // We do this so cacheing works
-                firstSd.id = SPLASHDATA_ID_FREE;
-                firstSd.version = 0;                   // on future calls
-                firstSd.content = "<iframe src=\"https://appinventor.mit.edu/ai2/splash-screen\" width=\"800\" height=\"600\"></iframe>";
-                firstSd.width = 800;
-                firstSd.height = 600;
-                datastore.put(firstSd);
-                result.t = new SplashConfig(0, firstSd.width, firstSd.height, firstSd.content);
-              } else {
-                result.t = new SplashConfig(sd.version, sd.width, sd.height, sd.content);
-              }
+            // Fixed key because only one record
+            SplashData sd = datastore.find(SplashData.class, SPLASHDATA_ID);
+            if (sd == null) {   // If we don't have Splash Data, create it
+              SplashData firstSd = new SplashData(); // We do this so cacheing works
+              firstSd.id = SPLASHDATA_ID;
+              firstSd.version = 0;                   // on future calls
+              firstSd.content = "<iframe src=\"https://www.fun123.cn/reference/info/splash-screen\" width=\"800\" height=\"600\"></iframe>";
+              firstSd.width = 800;
+              firstSd.height = 600;
+              datastore.put(firstSd);
+              result.t = new SplashConfig(0, firstSd.width, firstSd.height, firstSd.content);
             } else {
-              // Fixed key because only one record
-              SplashData sd = datastore.find(SplashData.class, SPLASHDATA_ID);
-              if (sd == null) {   // If we don't have Splash Data, create it
-                SplashData firstSd = new SplashData(); // We do this so cacheing works
-                firstSd.id = SPLASHDATA_ID;
-                firstSd.version = 0;                   // on future calls
-                firstSd.content = "<iframe src=\"https://appinventor.mit.edu/ai2/splash-screen\" width=\"800\" height=\"600\"></iframe>";
-                firstSd.width = 800;
-                firstSd.height = 600;
-                datastore.put(firstSd);
-                result.t = new SplashConfig(0, firstSd.width, firstSd.height, firstSd.content);
-              } else {
-                result.t = new SplashConfig(sd.version, sd.width, sd.height, sd.content);
-              }
+              result.t = new SplashConfig(sd.version, sd.width, sd.height, sd.content);
             }
 
           }
