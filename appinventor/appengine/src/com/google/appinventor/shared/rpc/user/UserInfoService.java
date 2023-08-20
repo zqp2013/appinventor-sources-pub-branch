@@ -94,4 +94,6 @@ public interface UserInfoService extends RemoteService {
 
   public String modifyPassword(String userid, String orignal_pwd, String new_pwd);
 
+  public String updateSplashData();
+
 }

@@ -270,4 +270,10 @@ public class UserInfoServiceImpl extends OdeRemoteServiceServlet implements User
     return "恭喜，密码修改成功，请注销后重新登录！";
   }
 
+  @Override
+  public String updateSplashData() {
+    storageIo.updateSplashData();
+    return "恭喜，SplashData更新成功！";
+  }
+
 }

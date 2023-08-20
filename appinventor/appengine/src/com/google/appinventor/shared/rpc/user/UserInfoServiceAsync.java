@@ -82,4 +82,10 @@ public interface UserInfoServiceAsync {
    */
 
    void modifyPassword(String userid, String orignal_pwd, String new_pwd, AsyncCallback<String> callback);
+
+   /**
+   * @see UserInfoService#updateSplashData()
+   */
+
+   void updateSplashData(AsyncCallback<String> callback);
 }

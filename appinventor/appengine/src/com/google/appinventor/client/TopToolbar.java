@@ -113,6 +113,7 @@ public class TopToolbar extends Composite {
 
   private static final String WIDGET_NAME_ADMIN = "Admin";
   private static final String WIDGET_NAME_USER_ADMIN = "UserAdmin";
+  private static final String WIDGET_NAME_SPLASH_ADMIN = "SplashAdmin";
   private static final String WIDGET_NAME_DOWNLOAD_USER_SOURCE = "DownloadUserSource";
   private static final String WIDGET_NAME_SWITCH_TO_DEBUG = "SwitchToDebugPane";
   private static final String WINDOW_OPEN_FEATURES = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
@@ -440,6 +441,10 @@ public class TopToolbar extends Composite {
         MESSAGES.downloadUserSourceMenuItem(), new DownloadUserSourceAction()));
     adminItems.add(new DropDownItem(WIDGET_NAME_SWITCH_TO_DEBUG,
         MESSAGES.switchToDebugMenuItem(), new SwitchToDebugAction()));
+    adminItems.add(new DropDownItem(WIDGET_NAME_SPLASH_ADMIN,
+        "<i class=\"mdi mdi-application-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;更新欢迎弹窗", new UpdateSplashAction()));
+
+    adminItems.add(null);
     adminItems.add(new DropDownItem(WIDGET_NAME_USER_ADMIN,
         "<i class=\"mdi mdi-table-account\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;用户管理", new SwitchToUserAdminAction()));
     refreshMenu(adminDropDown, adminItems);
@@ -1333,6 +1338,25 @@ public class TopToolbar extends Composite {
     @Override
     public void execute() {
       Ode.getInstance().switchToUserAdminPanel();
+    }
+  }
+
+  private static class UpdateSplashAction implements Command {
+    @Override
+    public void execute() {
+      Ode.getInstance().getUserInfoService().updateSplashData(
+        new OdeAsyncCallback<String>("SplashData更新失败！") {
+          @Override
+          public void onSuccess(String reusltStr) {
+            Window.alert(reusltStr);
+          }
+          @Override
+          public void onFailure(Throwable error) {
+            OdeLog.xlog(error);
+            super.onFailure(error);
+          }
+        });
+
     }
   }
 

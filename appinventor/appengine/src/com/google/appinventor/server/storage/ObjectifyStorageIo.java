@@ -2510,6 +2510,33 @@ public class ObjectifyStorageIo implements  StorageIo {
     }
     return result.t;
   }
+  
+  @Override
+  public void updateSplashData() {
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+        @Override
+        public void run(Objectify datastore) {
+          SplashData sd = datastore.find(SplashData.class, SPLASHDATA_ID);
+          if (sd == null) {   // If we don't have Splash Data, create it
+            SplashData firstSd = new SplashData(); // We do this so cacheing works
+            firstSd.id = SPLASHDATA_ID;
+            firstSd.version = 0;                   // on future calls
+            firstSd.content = "<iframe src=\"https://www.fun123.cn/reference/info/splash-screen\" width=\"800\" height=\"600\"></iframe>";
+            firstSd.width = 800;
+            firstSd.height = 600;
+            datastore.put(firstSd);
+          } else {
+            // Add by 中文网，更新版本号，每次更新后，用户会自动弹出启动窗口，勾选“不再显示”后当前版本不再显示，更新后又再次显示。
+            sd.version++;
+            datastore.put(sd);
+          }
+        }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
 
   private boolean isTrue(Boolean b) {
     if (b != null && b) {

@@ -102,6 +102,9 @@ public interface StorageIo {
    */
   void setUserPassword(String userId, String password);
 
+  // Add by 中文网
+  void updateSplashData();
+
   /**
    * Returns a string with the user's settings.
    *
