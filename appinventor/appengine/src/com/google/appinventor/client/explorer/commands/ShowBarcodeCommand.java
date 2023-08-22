@@ -24,6 +24,9 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.appinventor.shared.settings.SettingsConstants;
+import java.util.Date;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
 
@@ -38,6 +41,8 @@ public class ShowBarcodeCommand extends ChainableCommand {
   // The build target
   private String target;
   private boolean isAab;
+  // Date Time Formatter
+  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
 
   /**
    * Creates a new command for showing a barcode for the target of a project.
@@ -164,6 +169,13 @@ public class ShowBarcodeCommand extends ChainableCommand {
       contentPanel.add(buttonPanel);
 
       add(contentPanel);
+
+      // Add by 中文网，更新该用户编译的冷却时间
+      if (!Ode.getInstance().isReadOnly()) {
+        Ode.getInstance().getUserSettings().getSettings(SettingsConstants.USER_GENERAL_SETTINGS)
+          .changePropertyValue(SettingsConstants.USER_AUTOLOAD_PROJECT, dateTimeFormat.format(new Date()));
+        Ode.getInstance().getUserSettings().saveSettings(null);
+      }
     }
   }
 }

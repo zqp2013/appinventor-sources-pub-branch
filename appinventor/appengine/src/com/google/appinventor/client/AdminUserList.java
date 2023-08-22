@@ -433,7 +433,7 @@ public class AdminUserList extends Composite {
     final Label fromLabel = new Label("来源");
     final TextBox from = new TextBox();
     final Label expiredLabel = new Label("到期日");
-    final Label expired7DayLabel = new Label("7天");
+    final Label expired6MonthLabel = new Label("+6月");
     final Label expiredMonthLabel = new Label("+1月");
     final TextBox expired = new TextBox();
     final Label remarkLabel = new Label("备注");
@@ -443,16 +443,25 @@ public class AdminUserList extends Composite {
     userInfo.setWidget(3, 0, expiredLabel);
     userInfo.setWidget(3, 1, expired);
     userInfo.setWidget(3, 2, expiredMonthLabel);
-    userInfo.setWidget(3, 3, expired7DayLabel);
+    userInfo.setWidget(3, 3, expired6MonthLabel);
     userInfo.setWidget(4, 0, remarkLabel);
     userInfo.setWidget(4, 1, remark);
 
-    // 点击当前日期加7天
-    expired7DayLabel.addClickListener(new ClickListener() {
+    // 点击当前日期加6月
+    expired6MonthLabel.addClickListener(new ClickListener() {
       @Override
       public void onClick(Widget sender) {
         Date now = new Date();
-        now.setTime(now.getTime() + 1000*60*60*24*7);
+        //now.setTime(now.getTime() + 1000*60*60*24*7);
+        if (!expired.getText().equals("")) {
+          try {
+            now = expiredFormat.parse(expired.getText());
+          } catch (Exception e) {
+            message.setHTML("<font color=red>到期日格式不对！格式例如：2023/01/01</font>");
+            return;
+          }
+        }
+        now.setMonth(now.getMonth()+6);
         expired.setText(expiredFormat.format(now));
       }
     });

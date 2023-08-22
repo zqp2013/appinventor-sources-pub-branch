@@ -29,6 +29,8 @@ public class SettingsConstants {
   public static final String USER_LAST_LOCALE = "LastLocale";
   public static final String USER_DYSLEXIC_FONT = "DyslexicFont";
   public static final String USER_AUTOLOAD_PROJECT = "AutoloadLastProject";
+  public static final String USER_LAST_BUILD_TIME = "LastBuildTime";// Add by 中文网
+  public static final String USER_THEME = "Theme";// Add by 中文网
 
   public static final String SPLASH_SETTINGS = "SplashSettings";
 

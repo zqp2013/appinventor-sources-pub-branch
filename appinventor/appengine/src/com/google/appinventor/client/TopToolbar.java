@@ -54,6 +54,8 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.appinventor.shared.settings.SettingsConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,6 +122,9 @@ public class TopToolbar extends Composite {
   private static final String WINDOW_OPEN_LOCATION = "_blank";
 
   private static final boolean iamChromebook = isChromeBook();
+
+  // Date Time Formatter
+  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
 
   private DropDownButton fileDropDown;
   private DropDownButton connectDropDown;
@@ -670,6 +675,31 @@ public class TopToolbar extends Composite {
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
         showVip();
         return;
+      }
+
+      // 检查该用户编译的冷却时间
+      if (!Ode.getInstance().isReadOnly()) {
+        Date last = new Date();
+        last.setTime(last.getTime() - 1000*60*60*24); //往前推一天
+
+        String last_build_time = Ode.getInstance().getUserSettings().getSettings(SettingsConstants.USER_GENERAL_SETTINGS)
+          .getPropertyValue(SettingsConstants.USER_LAST_BUILD_TIME);
+        if (!last_build_time.equals("")) {
+          try {
+            last = dateTimeFormat.parse(last_build_time);
+          } catch (Exception e) {
+            
+          }
+        }
+
+        Date now = new Date();
+        int interval_minutes = (int)((now.getTime() - last.getTime()) / (60 * 1000));
+        // 默认冷却时间10分钟，todo:qpzhou 待配置化
+        int left_minutes = 10 - interval_minutes;
+        if (left_minutes > 0) {
+          Window.alert("您需要在 " + left_minutes + " 分钟后才能再次执行编译操作！");
+          return;
+        }
       }
 
       ProjectRootNode projectRootNode = Ode.getInstance().getCurrentYoungAndroidProjectRootNode();
