@@ -42,7 +42,7 @@ public class ShowBarcodeCommand extends ChainableCommand {
   private String target;
   private boolean isAab;
   // Date Time Formatter
-  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
+  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getFormat("yyyyMMddHHmmss");
 
   /**
    * Creates a new command for showing a barcode for the target of a project.
@@ -173,7 +173,7 @@ public class ShowBarcodeCommand extends ChainableCommand {
       // Add by 中文网，更新该用户编译的冷却时间
       if (!Ode.getInstance().isReadOnly()) {
         Ode.getInstance().getUserSettings().getSettings(SettingsConstants.USER_GENERAL_SETTINGS)
-          .changePropertyValue(SettingsConstants.USER_AUTOLOAD_PROJECT, dateTimeFormat.format(new Date()));
+          .changePropertyValue(SettingsConstants.USER_LAST_BUILD_TIME, dateTimeFormat.format(new Date()));
         Ode.getInstance().getUserSettings().saveSettings(null);
       }
     }

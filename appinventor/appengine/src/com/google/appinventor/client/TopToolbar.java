@@ -124,7 +124,7 @@ public class TopToolbar extends Composite {
   private static final boolean iamChromebook = isChromeBook();
 
   // Date Time Formatter
-  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getMediumDateTimeFormat();
+  static final DateTimeFormat dateTimeFormat = DateTimeFormat.getFormat("yyyyMMddHHmmss");
 
   private DropDownButton fileDropDown;
   private DropDownButton connectDropDown;
