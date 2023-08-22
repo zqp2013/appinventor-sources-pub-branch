@@ -8,48 +8,54 @@ description: 使用 App Inventor 2 构建具有多个屏幕的应用程序
 
 ## 构建具有多个屏幕的应用程序
 
-App Inventor makes it easy to add more screens to an app, but you’ll need to be cautious about adding too many screens.   App Inventor’s design makes it expensive in terms of computing resources to have an app with multiple screens, and it is easy to exceed App Inventor’s limitations.   As a rule of thumb, you should not have more than 10 screens in any single app, and App Inventor will warn you when you attempt to exceed this limit.
+App Inventor 可以轻松地向应用程序添加更多屏幕，但最好也不要添加太多屏幕，因为多个屏幕的应用程序将非常消耗计算资源，并且很容易超出 App Inventor 的限制。
+
+根据经验，任何单个应用程序中的**屏幕不应超过 10 个**，当你尝试超过此限制时，App Inventor 会警告你。
 
 
-Before adding additional screens to your app, consider using “virtual” screens created by using vertical or horizontal arrangements on Screen1 and managing their visibility in much the same way you would “switch screens”
+在向应用程序添加其他屏幕之前，可以考虑使用通过在 Screen1 上使用垂直或水平排列创建的“虚拟”屏幕，并以与“切换屏幕”大致相同的方式管理其可见性。
 
 
-**“Virtual” Screens**
+**“虚拟”屏幕**
 
-Rather than building an app with actual multiple screens, you can use a single screen and show and hide the buttons (by means of the Visible property) when the screen image changes.  
+你可以使用单个屏幕，并在屏幕图像更改时显示和隐藏按钮（通过 ”可见性“ 属性），而不是构建具有实际多个屏幕的应用程序。
 
-
-Here’s an example of an app that has one view that has four buttons, and different view that has a label and an image.    Rather than using two screens, there is a single screen with two  vertical arrangements, which are alternately make visible and hidden.
+下面是一个应用程序的示例，该应用程序的一个视图包含四个按钮，另一个视图包含一个标签和一张图像。不是使用两个屏幕，而是一个具有两个垂直排列的屏幕，它们交替可见和隐藏。
 
 ![](images/manyscreens-image1.png)
 
-All this, of course, comes at the price of increased program complexity in the blocks that handle the view switching -- it’s much simpler to add a new “virtual” screen for each new view and not have to worry about screen switching logic.  You can work this way for any number of “virtual” screens.
+当然，所有这些都是以增加处理视图切换的块中的程序复杂性为代价的 —— 为每个新视图添加一个新的“虚拟”屏幕要简单得多，而不必担心屏幕切换逻辑。你可以通过这种方式处理任意数量的“虚拟”屏幕。
 
 
-**Many screens: Proceed with caution**
+**多屏幕：请谨慎！**
 
-App Inventor will not prevent you from creating an app with more than 10 screens.  But be aware that if you do that, you are in danger of exceeding the processing and memory limitations of most Android devices as well as your browser.   The precise limit depends on several different factors such as the size of your app, the storage taken up by sounds and images, the speed of your network connection, and the configuration of your Web browser.  But as you keep adding screens, you’ll run across one or more of these factors, and the consequences could be very unpleasant.  This could include the Blocks editor running more and more slowly, and the inability of App Inventor to build your project.  In extreme cases, you could exceed the capacity of App Inventor to save or load your project: you would be stuck with no way to view or even fix your project and you’d have to ask for help on the forum, and even the people there might be unable to help.
+App Inventor 不会阻止你创建具有超过 10 个屏幕的应用程序。 但请注意，如果你这样做，你将面临超出大多数 Android 设备以及浏览器的处理和内存限制的危险。 
 
+精确的限制取决于几个不同的因素，例如应用程序的大小、声音和图像占用的存储空间、网络连接的速度以及 Web 浏览器的配置。 但当你不断添加屏幕时，你会遇到一个或多个这些因素，而后果可能会非常令人不快。 这可能包括：
 
-If you’re building an app with more than 10 screens, save your project (aia file) to your local computer -- not just the App Inventor server -- each time you make a significant change.   It’s a good idea to save the versions of the project under different names, like MyAppV1, MyAppV2, and so on.   That way, if you do run into a problem, you have a history of versions to examine.  Be especially careful if you add a lot of screens to a project at once.  That’s a likely time to run into problems.
+* 块编辑器运行越来越慢，
+* 以及 App Inventor 无法构建你的项目。 
+* 在极端情况下，你可能会超出 App Inventor 保存或加载项目的能力：你将无法查看甚至无法修复你的项目，你必须在论坛上寻求帮助，甚至向人们寻求帮助 可能无法提供帮助。
 
+如果你正在构建具有超过 10 个屏幕的应用程序，请在每次进行重大更改时将项目（aia 文件）保存到本地计算机（而不仅仅是 App Inventor 服务器）。 最好将项目的版本保存在不同的名称下，例如 MyAppV1、MyAppV2 等。 这样，如果你确实遇到问题，你就可以检查版本的历史记录。 **如果你一次向项目添加大量屏幕，请特别小心，这很可能会遇到问题**。
 
-Making a series of backups like this is a good idea, not only in the case of multiple screens, but any time you are working on large and complex projects.   There is always a risk of losing your work, and it’s worth the effort to make backups as a precaution.
+进行一系列这样的备份是一个好主意，不仅在多个屏幕的情况下，而且在你处理大型复杂项目时也是如此。
 
+总是存在丢失工作的风险，因此值得努力进行备份作为预防措施。
 
-**Designing your apps to limit the number of screens**
+**设计你的应用程序以限制屏幕数量**
 
-If it seems that your app requires a large number of screens, you might think about redesigning it to not use so many.   For example, suppose your app has to show several different screen images all with the same functionality but each image having a different background.  One way to code this would be to use a different App Inventor screen for each image, each screen with its own background image.  With that method,  you’d need as many screens as there are images.   But another way to code this is to have only a single screen and change the screen background.
+如果你的应用程序需要大量屏幕，你可能会考虑重新设计它以不使用这么多屏幕。 例如，假设你的应用程序必须显示多个具有相同功能的不同屏幕图像，但每个图像具有不同的背景。 对此进行编码的一种方法是为每个图像使用不同的 App Inventor 屏幕，每个屏幕都有自己的背景图像。 使用这种方法，你需要的屏幕数量与图像数量一样多。 但另一种编码方法是只有一个屏幕并更改屏幕背景。
 
-Similar ideas apply to other kinds of elements:  If each screen image has a label with its own text message, then rather than having multiple screens, each with its own label, you could have a single screen and a single label, and just change label’s text. For example:
+类似的想法适用于其他类型的元素：如果每个屏幕图像都有一个带有自己的文本消息的标签，那么你可以拥有一个屏幕和一个标签，而不是拥有多个屏幕，每个屏幕都有自己的标签，只需更改标签的 文本。 例如：
 
-**DON’T DESIGN YOUR APP LIKE THIS:**
+**不要这样设计你的应用程序：**
 
 ![](images/manyscreens-image2.png)
 
 
-**INSTEAD DESIGN IT LIKE THIS:**
+**而是像这样设计：**
 
 ![](images/manyscreens-image3.png)
 
-Perhaps someday we’ll make App Inventor smart enough to handle the view switching logic automatically, or increase the power of the system and relax the constraints on numbers of screens.   But for now, please be aware of the limitations on apps with large numbers of screens and be prepared to deal with the limitations.
+也许有一天我们会让 App Inventor 足够智能，能够自动处理视图切换逻辑，或者增强系统的功能并放宽对屏幕数量的限制。 但目前，请注意具有大量屏幕的应用程序的限制，并准备好应对这些限制。
