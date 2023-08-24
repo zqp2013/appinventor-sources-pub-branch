@@ -18,7 +18,7 @@ description: App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI Ch
 
 ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此版本使用 MIT 运行的代理，该代理又使用 ChatGPT 生成大语言模型。
 
-注：此组件对AI伴侣要求最低版本为2.67 ([点此下载](https://www.fun123.cn/reference/info/2.67/MITAI2Companion.apk))，编译为apk则没有限制均能正常运行。
+注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
 
 * demo程序下载：
 [chatgpt.aia](demo/chatgpt.aia)
@@ -170,7 +170,7 @@ The Firebase component communicates with a Web service to store
 
 ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。你必须通过在块中设置其 ApiKey 属性，为此组件提供您自己的 OpenAI API 密钥。
 
-注：此组件对AI伴侣要求最低版本为2.67 ([点此下载](https://www.fun123.cn/reference/info/2.67/MITAI2Companion.apk))，编译为apk则没有限制均能正常运行。
+注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
 
 ### 属性  {#ImageBot-Properties}
 
