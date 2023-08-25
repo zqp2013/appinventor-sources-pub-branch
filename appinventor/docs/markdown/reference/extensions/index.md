@@ -8,13 +8,13 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 ![拓展](images/拓展.png)
 
-* [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
-* [FileTools 拓展：提供额外的更强大的文件相关操作](../components/storage.html#FileTools)
-* [![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
-* [SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
-* [KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
-* [MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
-* [ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
-* [BlueToothLE 拓展：低功耗蓝牙](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)
-* [SQLite 拓展：超流行兼容主流SQL的迷你本地数据库引擎]
-* [TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)
+1. [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
+1. [FileTools 拓展：提供额外的更强大的文件相关操作](../components/storage.html#FileTools)
+1. [![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
+1. [SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
+1. [KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
+1. [MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
+1. [ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
+1. [BlueToothLE 拓展：低功耗蓝牙](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)
+1. [SQLite 拓展：超流行兼容主流SQL的迷你本地数据库引擎]
+1. [TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)

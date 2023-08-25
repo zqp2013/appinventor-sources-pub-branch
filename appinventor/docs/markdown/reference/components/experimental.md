@@ -9,12 +9,12 @@ description: App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI Ch
 
 目录：
 
-* [ChatBot](#ChatBot)
-* [Firebase数据库](#FirebaseDB)
-* [ImageBot](#ImageBot)
+1. <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACq0lEQVR42p1VPUiyURR+B1fHXFobJRQaKnSKBmc1si0kyrSwSI1agn7oZykjKn/IvyEoRSKwhnAwiCCiQQjEwcGCoKExK32+75zvuxc1i77vgcO97/He5zz33HOuCn7j/PwcfX190Gq16Ozs5FGv16OtrQ1TU1N4enqiZfj4+EC1WuWRrBWUs7MzKIqCkZER+P1+bG5uYnt7G1tbW9jb28Py8jKurq7wFWrVWiNhb28vxsfHWy5+fX1FOp3mIKurq1hbW8P6+jpWVlZwenoq15FqSUjqAoEAf7y9veH9/Z3nDw8PUKlUrL6npwfd3d1sJMBgMLB/fn5eEokUMOHu7m5DjgiLi4u8qVwuSxW1Wk1uPD4+5t9nZ2flHhqZkHJVH4Vgs9n4QpohNmezWSYkm5mZ4WBS4f7+/ifCwcFBTExMSD9tIKO0EMRlCvN6vd8TWq1WTE5Ofkq6UFIqlTA9PQ2fzwePxwPB89+EzaBKUKvV/0YoxpeXF67ThYUFPD8/sy8YDIrjt76UekJSVa/y4OCAm4BI6NgEKr0fE4raJNLDw0Mkk0n+vr29xcDAAM9DodAfQjr3zs7Ot4SESqWC4eFh7pRwOIyTkxPu+fv7e/6dRDFhR0eHVEibBClFdrlcsgWHhoa4Lm9ubri3NRoN8vm8DChzaDQa4XA4Pt2a2WyW/o2NDRmU+pmUFotFKaIhh5lMhid2u50TvbS0hEKhgNHRUfYRqL0SiQTu7u5wdHTU0L/isv7WIBRR9f39/ejq6mJnLpeD2+2G0+nkxY+PjxgbG4PFYsH19bV8SIhMdI68lOY+FTkkApPJhJ+CukWn00FprjHRCZeXlxyRjh6PxxGJRBCLxbgGaYxGo3I+NzfHa1OpVKNC8QAI0ouLC/4rqH8EWll7ezs/Z4RfAarSWV1mICUAAAAASUVORK5CYII=" width="16" height="16">  [ChatBot](#ChatBot)
+1. <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADD0lEQVR42m1TfUzMYRx/iP6wMfNy6tR5iWtdijKsrPOLcBjXpd8Vd9wS4RQtruyuOcqa0fhDa6nMeZlexBhZLZOXESVxRmdI10UvNmzy0v1+18dzna52890+z77PnufzeZ7P9/s8hLhiNHHHOF9C/KU0SaTYTsj4ZOLtwxIyKZLOJw/vI6PISPKSIL+5hPjdNu4Q9zWUhuDllWi01cWj/oIc+1OisEoqwaqogG+EiMrpAcKR3H+nz7h9PT8MeDIbeCMHvhj4Bxfl/IZIAU+IwEHXES8Lwvk8CZhF/mVOBssSLwK4rrKMCa7/0ywDmufbObMS6DGitnIbcnWrcfrQCpzJZQbumKL6+5rE2KvyrXNyBrlDAkqZqA7mxcArGce3KDDQqgI+7QM69cDHA8CHXUC7goMlEDuVwrtuAaNxyMK0cnNVMGBTcbDupWSKz+lAFxXozAKse4COOO73MxEU0VNvuQVYlvVyToJDxMXJO1bilD6KqzUl4vW93Wh/no4Pj1JhqUtCY1UsLh0L4w5nxSBiaeh1J8doNI4mcA40FoX4XbM2qKjvLdyJPDWOGLcgK5NFRrocWboNyMuJR5VJzVufqKHZKG5yN7PSWcnBXggr7C/mA91qDh0Z1IoBDic6M6kdg6sWXck8LGLELfd57hZgGDLGlfkVmK/RGrzbaMdHLSVRYs9BoJfWoYfmNh3wfjPfVjMHgbOFD0cIMIMCy6WS0yePJyAtKcJemLMGVYVKVJ9LQLVJgatFChQdlSF160L+eB4LxfrwxmELla4iBoqmlHxtiUfbUy1Xc1WLCtMunC3chpKCrbhYrMHNsu1ovZ/C/zArsGmtyEIpLuu0jUMWSvtb5tErJ/6i7XOgWz+A3uwBfNFR0Lxb70CXph+vZmGddLqVEIm3Rw2EydVFC9DXEgfH29300VDPtkzXe7AdgON9Bl1LQMPlUEwW+NeQ/4cgduK0mTe06vB3ORnM93xDzJ/8bMaeq1v2M02z+HNIUMBjetNDhMyZ4PkjPWMshQ9FAAX9pUREMcFjzyD5L3bts9I+U7jyAAAAAElFTkSuQmCC" width="16" height="16">  [Firebase数据库](#FirebaseDB)
+1. <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="16" height="16">  [ImageBot](#ImageBot)
 
 ***
-## ChatBot（OpenAI ChatGPT聊天机器人）  {#ChatBot}
+## <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACq0lEQVR42p1VPUiyURR+B1fHXFobJRQaKnSKBmc1si0kyrSwSI1agn7oZykjKn/IvyEoRSKwhnAwiCCiQQjEwcGCoKExK32+75zvuxc1i77vgcO97/He5zz33HOuCn7j/PwcfX190Gq16Ozs5FGv16OtrQ1TU1N4enqiZfj4+EC1WuWRrBWUs7MzKIqCkZER+P1+bG5uYnt7G1tbW9jb28Py8jKurq7wFWrVWiNhb28vxsfHWy5+fX1FOp3mIKurq1hbW8P6+jpWVlZwenoq15FqSUjqAoEAf7y9veH9/Z3nDw8PUKlUrL6npwfd3d1sJMBgMLB/fn5eEokUMOHu7m5DjgiLi4u8qVwuSxW1Wk1uPD4+5t9nZ2flHhqZkHJVH4Vgs9n4QpohNmezWSYkm5mZ4WBS4f7+/ifCwcFBTExMSD9tIKO0EMRlCvN6vd8TWq1WTE5Ofkq6UFIqlTA9PQ2fzwePxwPB89+EzaBKUKvV/0YoxpeXF67ThYUFPD8/sy8YDIrjt76UekJSVa/y4OCAm4BI6NgEKr0fE4raJNLDw0Mkk0n+vr29xcDAAM9DodAfQjr3zs7Ot4SESqWC4eFh7pRwOIyTkxPu+fv7e/6dRDFhR0eHVEibBClFdrlcsgWHhoa4Lm9ubri3NRoN8vm8DChzaDQa4XA4Pt2a2WyW/o2NDRmU+pmUFotFKaIhh5lMhid2u50TvbS0hEKhgNHRUfYRqL0SiQTu7u5wdHTU0L/isv7WIBRR9f39/ejq6mJnLpeD2+2G0+nkxY+PjxgbG4PFYsH19bV8SIhMdI68lOY+FTkkApPJhJ+CukWn00FprjHRCZeXlxyRjh6PxxGJRBCLxbgGaYxGo3I+NzfHa1OpVKNC8QAI0ouLC/4rqH8EWll7ezs/Z4RfAarSWV1mICUAAAAASUVORK5CYII=" width="20" height="20">  ChatBot（OpenAI ChatGPT聊天机器人）  {#ChatBot}
 
 ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此版本使用 MIT 运行的代理，该代理又使用 ChatGPT 生成大语言模型。
 
@@ -67,16 +67,11 @@ ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此�
 : 重置当前对话，聊天机器人在回复时会忘记之前的任何对话。
 
 ***
-## Firebase数据库  {#FirebaseDB}
+## <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADD0lEQVR42m1TfUzMYRx/iP6wMfNy6tR5iWtdijKsrPOLcBjXpd8Vd9wS4RQtruyuOcqa0fhDa6nMeZlexBhZLZOXESVxRmdI10UvNmzy0v1+18dzna52890+z77PnufzeZ7P9/s8hLhiNHHHOF9C/KU0SaTYTsj4ZOLtwxIyKZLOJw/vI6PISPKSIL+5hPjdNu4Q9zWUhuDllWi01cWj/oIc+1OisEoqwaqogG+EiMrpAcKR3H+nz7h9PT8MeDIbeCMHvhj4Bxfl/IZIAU+IwEHXES8Lwvk8CZhF/mVOBssSLwK4rrKMCa7/0ywDmufbObMS6DGitnIbcnWrcfrQCpzJZQbumKL6+5rE2KvyrXNyBrlDAkqZqA7mxcArGce3KDDQqgI+7QM69cDHA8CHXUC7goMlEDuVwrtuAaNxyMK0cnNVMGBTcbDupWSKz+lAFxXozAKse4COOO73MxEU0VNvuQVYlvVyToJDxMXJO1bilD6KqzUl4vW93Wh/no4Pj1JhqUtCY1UsLh0L4w5nxSBiaeh1J8doNI4mcA40FoX4XbM2qKjvLdyJPDWOGLcgK5NFRrocWboNyMuJR5VJzVufqKHZKG5yN7PSWcnBXggr7C/mA91qDh0Z1IoBDic6M6kdg6sWXck8LGLELfd57hZgGDLGlfkVmK/RGrzbaMdHLSVRYs9BoJfWoYfmNh3wfjPfVjMHgbOFD0cIMIMCy6WS0yePJyAtKcJemLMGVYVKVJ9LQLVJgatFChQdlSF160L+eB4LxfrwxmELla4iBoqmlHxtiUfbUy1Xc1WLCtMunC3chpKCrbhYrMHNsu1ovZ/C/zArsGmtyEIpLuu0jUMWSvtb5tErJ/6i7XOgWz+A3uwBfNFR0Lxb70CXph+vZmGddLqVEIm3Rw2EydVFC9DXEgfH29300VDPtkzXe7AdgON9Bl1LQMPlUEwW+NeQ/4cgduK0mTe06vB3ORnM93xDzJ/8bMaeq1v2M02z+HNIUMBjetNDhMyZ4PkjPWMshQ9FAAX9pUREMcFjzyD5L3bts9I+U7jyAAAAAElFTkSuQmCC" width="20" height="20">  Firebase数据库  {#FirebaseDB}
 
-The Firebase component communicates with a Web service to store
- and retrieve information.  The component has methods to
- store a value under a tag and to retrieve the value associated with
- the tag. It also possesses a listener to fire events when stored
- values are changed.
+Firebase 组件与 Web 服务通信以存储并获取数据。 该组件可以在标签下存储值并检索与标签关联的值。 它还拥有一个监听器，可以在存储值改变时触发事件。
 
- [Additional Information](../other/firebaseIntro.html)
-
+ [更多信息](../other/firebaseIntro.html)
 
 
 ### 属性  {#FirebaseDB-Properties}
@@ -166,7 +161,7 @@ The Firebase component communicates with a Web service to store
 
 
 ***
-## ImageBot（OpenAI 绘图机器人）  {#ImageBot}
+## <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="20" height="20">  ImageBot（OpenAI 绘图机器人）  {#ImageBot}
 
 ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。你必须通过在块中设置其 ApiKey 属性，为此组件提供您自己的 OpenAI API 密钥。
 

@@ -8,12 +8,12 @@ description: 内置块参考文档：包括控制块、逻辑块、数学块、�
 
 ![内置块列表的屏幕截图](images/builtin.png){:style="float:right;border:3px;padding-right:40px;"}
 
-* [控制块](control.html)
-* [逻辑块](logic.html)
-* [数学块](math.html)
-* [文本块](text.html)
-* [列表块](lists.html)
-* [字典块](dictionaries.html)
-* [颜色块](colors.html)
-* [变量块](variables.html)
-* [过程块](procedures.html)
+1. [控制块](control.html)
+1. [逻辑块](logic.html)
+1. [数学块](math.html)
+1. [文本块](text.html)
+1. [列表块](lists.html)
+1. [字典块](dictionaries.html)
+1. [颜色块](colors.html)
+1. [变量块](variables.html)
+1. [过程块](procedures.html)
