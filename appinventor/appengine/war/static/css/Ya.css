@@ -490,7 +490,7 @@ body {
 }
 /*VIP活动标记*/
 .vip:after {
-    content: "底价";
+    content: "开学季";
     position: absolute;
     font-size: 12px;
     top: -9px;
