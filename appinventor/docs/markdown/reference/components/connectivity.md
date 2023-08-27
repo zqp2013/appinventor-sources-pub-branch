@@ -49,6 +49,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
     * 调用百度地图的uri参考地址：[https://lbsyun.baidu.com/index.php?title=uri/api/web](https://lbsyun.baidu.com/index.php?title=uri/api/web)
   * 打开系统照相机（比[照相机](media.html#Camera)组件打开的界面会丰富一些）
     * `Action`: `android.media.action.STILL_IMAGE_CAMERA`
+  * 可选取多个文件（图片、音频、视频等）：
+    * `Action`: `android.intent.action.GET_CONTENT`
 
 
 ### 属性  {#ActivityStarter-Properties}

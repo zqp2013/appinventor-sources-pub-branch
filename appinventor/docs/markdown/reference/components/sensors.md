@@ -27,19 +27,15 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 ***
 ## 加速度传感器  {#AccelerometerSensor}
 
-Non-visible component that can detect shaking and measure acceleration approximately in three
- dimensions using SI units (m/s<sup>2</sup>). The components are:
+不可见组件，可检测震动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
 
- - **xAccel**: 0 when the phone is at rest on a flat surface, positive when the phone is tilted
-   to the right (i.e., its left side is raised), and negative when the phone is tilted to the
-   left (i.e., its right size is raised).
- - **yAccel**: 0 when the phone is at rest on a flat surface, positive when its bottom is raised,
-   and negative when its top is raised.
- - **zAccel**: Equal to -9.8 (earth's gravity in meters per second per second when the device is
-   at rest parallel to the ground with the display facing up, 0 when perpendicular to the ground,
-   and +9.8 when facing down. The value can also be affected by accelerating it with or against
-   gravity.
+  - **xAccel**：当手机静止在平坦表面上时为 0，当手机倾斜时为正向右（即左侧抬起），当手机倾斜到右侧时为负向左（即，其右侧尺寸升高）。
 
+  - **yAccel**：当手机静止在平坦表面上时为0，当底部抬起时为正，当其顶部升起时为负。
+
+  - **zAccel**：等于 -9.8（当设备处于每秒状态时，地球重力以米每秒为单位）
+    
+    静止时与地面平行且显示屏朝上，0 时垂直于地面，面朝下时+9.8。 该值也可能受到加速或反对的影响重力。
 
 
 ### 属性  {#AccelerometerSensor-Properties}
@@ -97,36 +93,31 @@ Non-visible component that can detect shaking and measure acceleration approxima
 ***
 ## 条码扫描器  {#BarcodeScanner}
 
-Component for scanning a QR code and getting back the resulting string.
-
-
+用于扫描 QR 码并返回结果字符串的组件。
 
 ### 属性  {#BarcodeScanner-Properties}
 
 {:.properties}
 
-{:id="BarcodeScanner.Result" .text .ro .bo} *Result*
-: Gets the text result of the previous scan.
+{:id="BarcodeScanner.Result" .text .ro .bo} *结果*
+: 获取上次扫描的文本结果。
 
-{:id="BarcodeScanner.UseExternalScanner" .boolean} *UseExternalScanner*
-: Set whether or not you wish to use an External Scanning program such as
- Bar Code Scanner. If false a version of ZXing integrated into App Inventor
- will be used.
+{:id="BarcodeScanner.UseExternalScanner" .boolean} *使用外部扫描仪*
+: 设置是否要使用外部扫描程序，例如扫码机。 如果为 `假`，则将会使用已集成到 App Inventor 中的 ZXing 的某个版本（注：ZXing是一个开源Java类库用于解析多种格式的1D/2D条形码）。
 
 ### 事件  {#BarcodeScanner-Events}
 
 {:.events}
 
-{:id="BarcodeScanner.AfterScan"} AfterScan(*result*{:.text})
-: Indicates that the scanner has read a (text) result and provides the result
+{:id="BarcodeScanner.AfterScan"} 扫描结束(*返回结果*{:.text})
+: 表示扫描仪已读取（文本）结果并提供结果。
 
 ### 方法  {#BarcodeScanner-Methods}
 
 {:.methods}
 
-{:id="BarcodeScanner.DoScan" class="method"} <i/> DoScan()
-: Begins a barcode scan, using the camera. When the scan is complete, the
- AfterScan event will be raised.
+{:id="BarcodeScanner.DoScan" class="method"} <i/> 执行扫描()
+: 使用相机开始扫描条形码。扫描完成后，将触发 [扫描结束](#BarcodeScanner.AfterScan) 事件。
 
 ***
 ## 气压传感器  {#Barometer}
