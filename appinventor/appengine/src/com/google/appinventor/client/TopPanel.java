@@ -139,7 +139,7 @@ public class TopPanel extends Composite {
     // VIP提醒
     if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn") {
       // 广告
-      Frame adFrame = new Frame("https://www.fun123.cn/reference/info/free/");
+      Frame adFrame = new Frame("https://www.fun123.cn/reference/info/free/?" + (new Date()).getTime());
       adFrame.setStyleName("ode-FreeFrame");
       links.add(adFrame);
 

@@ -2528,6 +2528,7 @@ public class ObjectifyStorageIo implements  StorageIo {
             datastore.put(firstSd);
           } else {
             // Add by 中文网，更新版本号，每次更新后，用户会自动弹出启动窗口，勾选“不再显示”后当前版本不再显示，更新后又再次显示。
+            sd.content = "<iframe src=\"https://www.fun123.cn/reference/info/splash-screen?" + (new Date()).getTime() + "\" width=\"800\" height=\"600\"></iframe>";
             sd.version++;
             datastore.put(sd);
           }
