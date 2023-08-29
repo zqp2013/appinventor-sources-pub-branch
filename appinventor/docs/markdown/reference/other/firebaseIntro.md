@@ -114,9 +114,13 @@ In contrast, other apps cannot access those variables. A different app that uses
 Here’s another example by Hossein Amerkashi that shows how to use Firebase to combine chat with a drawing program for collaborative sketching: Firebase Chat with Interactive Drawing.
 
 
-### FirebaseDB versus TinyWebDB
+### FirebaseDB vs TinyWebDB {#FirebaseDB_vs_TinyWebDB}
 
-If you are familiar with App Inventor’s TinyWebDB component, you’ll see that the StoreValue, GetValue, and GotValue methods for FirebaseDB work almost the same as the corresponding methods for TinyWebDB.  The difference between the two components, other than FireBaseDB’s DataChanged event, is whether the variables from different apps can interfere. With TinyWebDB, MIT App Inventor provides a single demonstration data storage that is used by all App Inventor apps. If you use that storage, then any App Inventor app can change your values, provided it uses the same tag. If you want more isolation than that, you’ll need to deploy a custom TinyWebDB service, as explained in the MIT App Inventor Documentation. With FirebaseDB, each app has its individual data store so that variables from other apps cannot interfere. The isolation is provided by the Firebase Web service.
+如果你熟悉 App Inventor 的 TinyWebDB 组件，你会发现 FirebaseDB 的 StoreValue、GetValue 和 GotValue 方法的工作方式几乎与 TinyWebDB 的相应方法相同。 **除了 FireBaseDB 的 DataChanged 事件之外，这两个组件之间的区别在于来自不同应用程序的变量是否会干扰**。 
+
+  * 借助 TinyWebDB，MIT App Inventor 提供了可供所有 App Inventor 应用程序使用的单一演示数据存储。 如果你使用该存储，则任何 App Inventor 应用程序都可以更改你的值，前提是它使用相同的标签。 如果你想要更多的隔离，则需要[部署自定义 TinyWebDB 服务](./tinywebdb.html)。
+
+  * 使用 FirebaseDB，每个应用程序都有其单独的数据存储，因此其他应用程序的`变量不会干扰`。 隔离由 Firebase Web 服务提供。
 
 ### More general sharing
 

@@ -73,6 +73,8 @@ Firebase 组件与 Web 服务通信以存储并获取数据。 该组件可以�
 
  [更多信息](../other/firebaseIntro.html)
 
+ [FirebaseDB vs TinyWebDB 区别](../other/firebaseIntro.html#FirebaseDB_vs_TinyWebDB)
+
 
 ### 属性  {#FirebaseDB-Properties}
 
@@ -166,6 +168,9 @@ Firebase 组件与 Web 服务通信以存储并获取数据。 该组件可以�
 ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。你必须通过在块中设置其 ApiKey 属性，为此组件提供您自己的 OpenAI API 密钥。
 
 注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
+
+* demo程序下载：
+[AI绘图.aia](demo/AI绘图.aia)
 
 ### 属性  {#ImageBot-Properties}
 

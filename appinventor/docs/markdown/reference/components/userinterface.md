@@ -325,16 +325,22 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:.properties}
 
-{:id="Image.AlternateText" .text .wo} *AlternateText*
-: A written description of what the image looks like.
+{:id="Image.AlternateText" .text .wo} *替代文本*
+: 对图像的描述文本，当无法正确加载图片时，这段文本描述将会被显示。（同HTML中 `alt` 属性 ```<img src="" alt="图片无法正常显示时，显示该文字描述" />```）。
 
-{:id="Image.Animation" .text .wo .bo} *Animation*
-: This is a limited form of animation that can attach a small number of motion types to images.
- The allowable motions are `ScrollRightSlow`, `ScrollRight`, `ScrollRightFast`,
- `ScrollLeftSlow`, `ScrollLeft`, `ScrollLeftFast`, and `Stop`.
+{:id="Image.Animation" .text .wo .bo} *动画形式*
+: 一种简单的动画形式，可以将少量动画效果附加到图像上。包括：
 
-{:id="Image.Clickable" .boolean} *Clickable*
-: Specifies whether the image should be clickable or not.
+  * 向右慢移：`ScrollRightSlow`
+  * 向右移动：`ScrollRight`
+  * 向右快移：`ScrollRightFast`
+  * 向左慢移：`ScrollLeftSlow`
+  * 向左移动：`ScrollLeft`
+  * 向左快移：`ScrollLeftFast`
+  * 停止移动：`Stop`
+
+{:id="Image.Clickable" .boolean} *可点击*
+: 设置`图像`是否可点击（即是否触发[`被点击`](#Image.Click)事件，默认不触发）。
 
 {:id="Image.Height" .number .bo} *高度*
 : 设置`图像`的垂直高度，以像素px为单位。
@@ -342,17 +348,20 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="Image.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`图像`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Image.Picture" .text} *Picture*
-: Specifies the path of the `Image`'s `Picture`.
+{:id="Image.Picture" .text} *图片*
+: 设置`图像`的图片路径。
 
-{:id="Image.RotationAngle" .number} *RotationAngle*
-: The angle at which the image picture appears rotated. This rotation does not appear on the designer screen, only on the device.
+{:id="Image.RotationAngle" .number} *旋转角度*
+: `图像`显示图片的角度发生了旋转。此旋转不会出现在“界面设计”视图的屏幕上，只会出现在设备上。
 
-{:id="Image.ScalePictureToFit" .boolean .wo} *ScalePictureToFit*
-: Specifies whether the image should be resized to match the size of the ImageView.
+{:id="Image.ScalePictureToFit" .boolean .wo} *自动缩放图片*
+: 设置是否应自动调整图片大小以匹配`图像`组件的大小。
 
-{:id="Image.Scaling" .number .bo} *Scaling*
-: This property determines how the picture scales according to the Height or Width of the Image. Scale proportionally (0) preserves the picture aspect ratio. Scale to fit (1) matches the Image area, even if the aspect ratio changes.
+{:id="Image.Scaling" .number .bo} *缩放模式*
+: 此属性确定图片如何根据图像的高度或宽度进行缩放。
+
+  * 比例缩放(0)：可保留图片的宽高比例。
+  * 自动缩放(1)：自动调整图片的宽高，与`图像`组件区域匹配。
 
 {:id="Image.Visible" .boolean} *可见性*
 : 设置`图像`是否显示在屏幕上，值是`真`{:.logic.block}则`图像`显示，`假`{:.logic.block}则隐藏。
@@ -367,8 +376,8 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:.events}
 
-{:id="Image.Click"} Click()
-: An event that occurs when an image is clicked.
+{:id="Image.Click"} 被点击()
+: 单击图像时触发该事件。**注意：**必须将[`可点击`](#Image.Clickable)属性勾上，或设置属性值为`真`，才能触发此事件！！
 
 ### 方法  {#Image-Methods}
 
