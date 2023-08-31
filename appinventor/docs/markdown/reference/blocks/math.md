@@ -1,13 +1,13 @@
 ---
 title: App Inventor 2 数学代码块
 layout: documentation
-description: 数学代码块参考文档。
+description: 数学代码块参考文档，包括：基础数字块,进制数字块...
 ---
 
-* [0 (basic number block)](#number)
-* [0 (radix number block)](#number-radix)
-* [=](#=)
-* [≠](#not=)
+* [0 (基础数字块)](#number)
+* [0 (进制数字块)](#number-radix)
+* [=](#eq)
+* [≠](#ne)
 * [>](#gt)
 * [≥](#gte)
 * [<](#lt)
@@ -49,111 +49,111 @@ description: 数学代码块参考文档。
 * [bitwise or (inclusive)](#bitwise_ior)
 * [bitwise or (exclusive)](#bitwise_xor)
 
-*Can't find the math block you're looking for in the built-in blocks?*
+*内置块中找不到你要查找的数学代码块？*
 
-Some math blocks are dropdowns which means that they can be converted into different blocks. Here's a list of what is included in each dropdown.
+一些数学代码块是下拉列表，它们可以转换为不同的块。以下是每个下拉列表中包含的内容的列表：
 
-=, ≠, >, ≥, <, ≤
+* =, ≠, >, ≥, <, ≤
 
 ![](images/math/equals.gif)
 
-min, max
+* min, max
 
 ![](images/math/minmax.gif)
 
-sqrt, abs, -, log, e^, round, ceiling, floor
+* sqrt, abs, -, log, e^, round, ceiling, floor
 
 ![](images/math/sqrt.gif)
 
-modulo of, remainder of, quotient of
+* modulo of, remainder of, quotient of
 
 ![](images/math/modulo.gif)
 
-sin, cos, tan, asin, acos, atan
+* sin, cos, tan, asin, acos, atan
 
 ![](images/math/sin.gif)
 
-convert radians to degrees, convert degrees to radians
+* convert radians to degrees, convert degrees to radians
 
 ![](images/math/convert.gif)
 
 ***
-### Basic Number Block   {#number}
+### 基础数字块   {#number}
 
 ![](images/math/number.png)
 
-Can be used as any positive or negative number. Clicking on the "0" in the block will allow you to change the number.
+可用作任何正数或负数，单击该块中的“0”将允许更改数字。
 
-The block supports normal base-10 numbers (for example: 2, 12, and 2.12), as well as C-like prefixes for other number bases. It supports:
-* Base-2 (binary) numbers, e.g. 0b10 (decimal 2)
-* Base-8 (octal) numbers, e.g. 0o14 (decimal 12)
-* Base-16 (hexadecimal) numbers, e.g. 0xd4 (decimal 212)
+该块支持普通的 10 进制（例如：2、12 和 2.12），以及带前缀的其他机制数字，包括：
+* Base-2（`二进制`）数字，例如 `0b`10（等于十进制 2）
+* Base-8（`八进制`）数字，例如 `0o`14（等于十进制 12）
+* Base-16（`十六进制`）数字，例如 `0x`d4（等于十进制 212）
 
 ***
-### Radix Number Block {#number-radix}
+### 进制数字块 {#number-radix}
 
 ![](images/math/numberradix.png)
 
-Represents a base-10 number. Clicking on the "0" will allow you to change the number.
+默认表示 10 进制的数字，单击“0”将允许更改数字。点击下拉菜单可以切换 `二进制`、`八进制`、`十进制`、`十六进制` 数字。
 
-Clicking the dropdown will allow you to input a number in a different number base (aka radix). The number will then be "translated" into decimal (aka base-10).
-
-For example, these three blocks are equivalent:
+例如，这三个块是等效的：
 
 ![](images/math/numberradix_equivalent.png)
 
-The dropdown supports: decimal (base-10), binary (base-2), octal (base-8), and hexadecimal (base-16) input formats.
+下拉列表支持：十进制 (base-10)、二进制 (base-2)、八进制 (base-8) 和十六进制 (base-16) 输入格式。
 
-Decimal mode allows you to input any positive or negative number (e.g. 2, -12, 2.12). The other modes only allow you to input a whole number (aka any positive number, or zero).
+十进制模式允许输入任何正数或负数（例如 2、-12、2.12）。其他模式仅允许您输入整数（也称为任何正数或零）。
 
 ***
-### =   {#=}
+### =   {#eq}
 
 ![](images/math/equal.png)
 
-Tests whether two numbers are equal and returns true or false.
+测试两个数字是否相等并返回 `真` 或 `假`。
 
 ***
-### ≠   {#not=}
+### ≠   {#ne}
 
 ![](images/math/notequal.png)
 
-Tests whether two numbers are not equal and returns true or false.
+测试两个数字是否不相等并返回 `真` 或 `假`。
 
 ***
 ### >   {#gt}
 
 ![](images/math/greater.png)
 
-Tests whether the first number is greater than the second number and returns true or false.
+测试第一个数字是否大于第二个数字并返回 `真` 或 `假`。
 
 ***
 ### ≥   {#gte}
 
 ![](images/math/greaterequal.png)
 
-Tests whether the first number is greater than or equal to the second number and returns true or false.
+测试第一个数字是否大于或等于第二个数字并返回 `真` 或 `假`。
 
 ***
 ### <   {#lt}
 
 ![](images/math/less.png)
 
-Tests whether the first number is less than the second number and returns true or false.
+测试第一个数字是否小于第二个数字并返回 `真` 或 `假`。
 
 ***
 ### ≤   {#lte}
 
 ![](images/math/lessequal.png)
 
-Tests whether the first number is less than or equal to the second number and returns true or false.
+测试第一个数字是否小于或等于第二个数字并返回 `真` 或 `假`。
 
 ***
 ### +   {#add}
 
 ![](images/math/plus.png)
 
-Returns the result of adding any amount of blocks that have a number value together. Blocks with a number value include the basic number block, length of list or text, variables with a number value, etc. This block is a [mutator](../concepts/mutators.html) and can be expanded to allow more numbers in the sum.
+返回将任意数量的具有数字值的块相加的结果。带有数字值的块包括基本数字块、列表或文本的长度、带有数字值的变量等。
+
+该块是一个[块拓展](../concepts/mutators.html)，可以扩展以允许更多数字相加。
 
 ![](images/math/plus.gif)
 
@@ -162,12 +162,16 @@ Returns the result of adding any amount of blocks that have a number value toget
 
 ![](images/math/minus.png)
 
+返回第一个数字减去第二个数字的结果。
+
 ***
 ### *   {#multiply}
 
 ![](images/math/multiply.png)
 
-Returns the result of multiplying any amount of blocks that have a number value together. It is a [mutator](../concepts/mutators.html) block and can be expanded to allow more numbers in the product.
+返回任意数量的具有数字值的块相乘的结果。
+
+它是一个 [块拓展](../concepts/mutators.html) 块，可以扩展以允许更多数字相乘。
 
 ![](images/math/multiply.gif)
 
@@ -176,28 +180,28 @@ Returns the result of multiplying any amount of blocks that have a number value 
 
 ![](images/math/divide.png)
 
-Returns the result of dividing the first number by the second.
+返回第一个数字除以第二个数字的结果。
 
 ***
 ### ^   {#exponent}
 
 ![](images/math/exponent.png)
 
-Returns the result of the first number raised to the power of the second.
+返回第一个数字的第二个数字次幂的结果。比如2^3 = 2*2*2 = 8
 
 ***
 ### random integer   {#randomint}
 
 ![](images/math/randomint.png)
 
-Returns a random integer value between the given values, inclusive. The order of the arguments doesn't matter.
+返回给定值之间（包含首尾）的随机整数值。参数的顺序不限。
 
 ***
 ### random fraction   {#randomfrac}
 
 ![](images/math/randomfrac.png)
 
-Returns a random value between 0 and 1.
+返回 0 到 1 之间的随机值。
 
 ***
 ### random set seed to   {#randomseed}
