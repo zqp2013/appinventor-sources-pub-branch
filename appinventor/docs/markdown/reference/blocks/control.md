@@ -8,7 +8,7 @@ description: 控制代码块参考文档。包括：如果、循环、跳出循�
 * [从范围循环(for each number from to)](#forrange)
 * [从列表循环（for each item in list）](#foreach)
 * [从字典循环(for each key with value in dictionary)](#foreachdict)
-* [while循环](#while)
+* [循环(while)](#while)
 * [如果 & 则 & 否则（if then else）](#choose)
 * [执行模块 & 返回结果（do with result）](#doreturn)
 * [求值但忽略结果（evaluate but ignore result）](#evaluate)
@@ -62,7 +62,7 @@ description: 控制代码块参考文档。包括：如果、循环、跳出循�
 使用给定的变量`key`{:.variable.block} 和`value`{:.variable.block} 来引用当前字典条目的键和值，当然也可以将名称 `key`{:.variable.block} 和 `value`{:.variable.block} 更改为其他名称。
 
 ***
-### while循环   {#while}
+### 循环(while)   {#while}
 
 ![](images/control/while.png)
 
@@ -167,6 +167,6 @@ App开发人员切勿关闭 Screen1 ，但可以使用此块返回到 Screen1。
 
 ![](images/control/break.png)
 
-当使用 [从范围循环](#forrange)、[从列表循环](#foreach) 或 [while循环](#while) 块进行循环时，有时能够提前退出循环是很有用的。
+当使用 [从范围循环](#forrange)、[从列表循环](#foreach) 或 [循环(while)](#while) 块进行循环时，有时能够提前退出循环是很有用的。
 
 `break`{:.control.block} 允许你跳出循环。 执行时，这将退出循环并继续执行应用程序块中循环之后发生的语句。

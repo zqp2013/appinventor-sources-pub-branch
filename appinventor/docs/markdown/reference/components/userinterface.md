@@ -13,8 +13,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 * [复选框（CheckBox）](#CheckBox)
 * [日期选择框（DatePicker）](#DatePicker)
 * [图像（Image）](#Image)
-* [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
-* [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
+  * [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
+  * [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
 * [标签（Label）](#Label)
 * [列表选择框（ListPicker）](#ListPicker)
 * [列表显示框（ListView）](#ListView)
@@ -459,8 +459,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 
 ***
-## 列表选择框  {#ListPicker}
-[详细用法示例](guide/ListPicker.html)
+## 列表选择框&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
 
 一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
   （例如，`选择1,选择2,选择3`）或在“程序设计”视图中设置[`元素`](#ListPicker.Elements)属性，是一个列表属性。

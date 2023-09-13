@@ -14,8 +14,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 * [蓝牙服务器](#BluetoothServer)
 * [串口通信器](#Serial)
 * [Web客户端](#Web)
-* [SimpleBase64 *拓展：图像Base64编解码传输*](#SimpleBase64)
-* [KIO4_Base64 *拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件*](../extensions/KIO4_Base64.html)
+  * [SimpleBase64 *拓展：图像Base64编解码传输*](#SimpleBase64)
+  * [KIO4_Base64 *拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件*](../extensions/KIO4_Base64.html)
 * [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
 * [Socket *拓展：TCP/IP传输协议*](#Socket)
 

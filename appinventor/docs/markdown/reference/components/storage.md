@@ -12,7 +12,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 * [云数据库](#CloudDB)
 * [数据文件](#DataFile)
 * [文件管理器](#File)
-* [FileTools *拓展*：提供额外的更强大的文件相关操作](#FileTools)
+    * [FileTools *拓展*：提供额外的更强大的文件相关操作](#FileTools)
 * [电子表格](#Spreadsheet)
 * [微数据库](#TinyDB)
 * [网络微数据库](#TinyWebDB)
