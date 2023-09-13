@@ -8,7 +8,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 * [合并字符串](#join)
 * [求长度](#length)
 * [是否为空](#isempty)
-* [字符串比较](#compare)
+* [字符串比较(Ascii码比较) < > = ≠](#compare)
 * [删除空格](#trim)
 * [大写](#upcase)
 * [小写](#downcase)
@@ -58,7 +58,7 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 返回字符串是否包含任何字符（包括空格），当字符串长度为 0 时，返回 `真`{:.logic.block}， 否则，返回 `假`{:.logic.block}。
 
 ***
-### 字符串比较 < > = ≠ {#compare}
+### 字符串比较(Ascii码比较) < > = ≠ &nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>Ascii码转换](../extensions/AsciiConversion.html?f=compare)  {#compare}
 
 ![](images/text/compare.gif)
 

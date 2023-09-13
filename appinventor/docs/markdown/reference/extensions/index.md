@@ -9,6 +9,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 ![拓展](images/拓展.png)
 
 1. [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
+1. [【ASCII编解码】<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA1klEQVR42mP4/5+BJESa6oHS8OMHG4Tx6RMPPg2bNnlPm5Z+7Zp6UtLsvXsd9uxxrKpqWbEidOHC2KlTM75940DXkJw8y8Nj67Fj5rm5Ezs7S0pKOoGCN26oFhd3FRb2fP7MhaLh7l2F8vK2rq6Sjo7SlpbKurr6ZcvCgeS8efETJ+YARb584UTR8PUr1MYvX7hu31b++ZMVyH70SObvX0agl75/Z//3b0jFAyENrxj+32b4/57h/3OG/y8Y/r9k+P8dvwagoksM/x8w/L8B1gkk31HVSQDpTO7uYTqjvQAAAABJRU5ErkJggg==" style="margin:-4px 5px 0 0">AsciiConversion 拓展](AsciiConversion.html)
 1. [【文件】FileTools 拓展：提供额外的更强大的文件相关操作](../components/storage.html#FileTools)
 1. [【图像】![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
 1. [【图像】SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
