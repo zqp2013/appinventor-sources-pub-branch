@@ -4,19 +4,19 @@ layout: documentation
 description: 数学代码块参考文档，包括：基础数字块,进制数字块...
 ---
 
-* [0 (基础数字块)](#number)
-* [0 (进制数字块)](#number-radix)
-* [=](#eq)
-* [≠](#ne)
-* [>](#gt)
-* [≥](#gte)
-* [<](#lt)
-* [≤](#lte)
-* [+](#add)
-* [-](#subtract)
-* [*](#multiply)
-* [/](#divide)
-* [^](#exponent)
+* [基础数字块 ( 0 )](#number)
+* [进制数字块 ( 0 )](#number-radix)
+* [等于 ( = )](#eq)
+* [不等于 ( ≠ )](#ne)
+* [大于 ( > )](#gt)
+* [大于等于 ( ≥ )](#gte)
+* [小于 ( < )](#lt)
+* [小于等于 ( ≤ )](#lte)
+* [加 ( + )](#add)
+* [减 ( - )](#subtract)
+* [乘 ( * )](#multiply)
+* [除 ( / )](#divide)
+* [幂运算 ( ^ )](#exponent)
 * [random integer](#randomint)
 * [random fraction](#randomfrac)
 * [random set seed to](#randomseed)
@@ -78,7 +78,7 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 ![](images/math/convert.gif)
 
 ***
-### 基础数字块   {#number}
+### 基础数字块 ( 0 )   {#number}
 
 ![](images/math/number.png)
 
@@ -90,7 +90,7 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 * Base-16（`十六进制`）数字，例如 `0x`d4（等于十进制 212）
 
 ***
-### 进制数字块 {#number-radix}
+### 进制数字块 ( 0 ) {#number-radix}
 
 ![](images/math/numberradix.png)
 
@@ -105,49 +105,49 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 十进制模式允许输入任何正数或负数（例如 2、-12、2.12）。其他模式仅允许您输入整数（也称为任何正数或零）。
 
 ***
-### =   {#eq}
+### 等于 ( = )   {#eq}
 
 ![](images/math/equal.png)
 
 测试两个数字是否相等并返回 `真` 或 `假`。
 
 ***
-### ≠   {#ne}
+### 不等于 ( ≠ )   {#ne}
 
 ![](images/math/notequal.png)
 
 测试两个数字是否不相等并返回 `真` 或 `假`。
 
 ***
-### >   {#gt}
+### 大于 ( > )   {#gt}
 
 ![](images/math/greater.png)
 
 测试第一个数字是否大于第二个数字并返回 `真` 或 `假`。
 
 ***
-### ≥   {#gte}
+### 大于等于 ( ≥ )   {#gte}
 
 ![](images/math/greaterequal.png)
 
 测试第一个数字是否大于或等于第二个数字并返回 `真` 或 `假`。
 
 ***
-### <   {#lt}
+### 小于 ( < )   {#lt}
 
 ![](images/math/less.png)
 
 测试第一个数字是否小于第二个数字并返回 `真` 或 `假`。
 
 ***
-### ≤   {#lte}
+### 小于等于 ( ≤ )   {#lte}
 
 ![](images/math/lessequal.png)
 
 测试第一个数字是否小于或等于第二个数字并返回 `真` 或 `假`。
 
 ***
-### +   {#add}
+### 加 ( + )   {#add}
 
 ![](images/math/plus.png)
 
@@ -158,14 +158,14 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 ![](images/math/plus.gif)
 
 ***
-### -   {#subtract}
+### 减 ( - )   {#subtract}
 
 ![](images/math/minus.png)
 
 返回第一个数字减去第二个数字的结果。
 
 ***
-### *   {#multiply}
+### 乘 ( * )   {#multiply}
 
 ![](images/math/multiply.png)
 
@@ -176,14 +176,14 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 ![](images/math/multiply.gif)
 
 ***
-### /   {#divide}
+### 除 ( / )   {#divide}
 
 ![](images/math/divide.png)
 
 返回第一个数字除以第二个数字的结果。
 
 ***
-### ^   {#exponent}
+### 幂运算 ( ^ )   {#exponent}
 
 ![](images/math/exponent.png)
 
