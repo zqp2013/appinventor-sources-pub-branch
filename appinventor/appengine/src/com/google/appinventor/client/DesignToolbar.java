@@ -176,7 +176,7 @@ public class DesignToolbar extends Toolbar {
     toolbar.insert(projectNameLabel, 0);
 
     // width of palette minus cellspacing/border of buttons
-    toolbar.setCellWidth(projectNameLabel, "222px");
+    //del by 中文网 toolbar.setCellWidth(projectNameLabel, "222px");
 
     addButton(new ToolbarItem(WIDGET_NAME_TUTORIAL_TOGGLE,
         MESSAGES.toggleTutorialButton(), new ToogleTutorialAction()));
@@ -200,6 +200,9 @@ public class DesignToolbar extends Toolbar {
         MESSAGES.switchToFormEditorButton(), new SwitchToFormEditorAction()), true);
     addButton(new ToolbarItem(WIDGET_NAME_SWITCH_TO_BLOCKS_EDITOR,
         MESSAGES.switchToBlocksEditorButton(), new SwitchToBlocksEditorAction()), true);
+
+    // Add by 中文网
+    toolbar.setCellHorizontalAlignment(leftButtons, HorizontalPanel.ALIGN_CENTER);
 
     // Gray out the Designer button and enable the blocks button
     toggleEditor(false);
