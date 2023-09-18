@@ -50,7 +50,7 @@ public class Toolbar extends Composite {
 
 
   protected final HorizontalPanel leftButtons;
-  private final HorizontalPanel rightButtons;
+  protected final HorizontalPanel rightButtons;
 
   /**
    * Initializes and assembles all commands into buttons in the toolbar.
