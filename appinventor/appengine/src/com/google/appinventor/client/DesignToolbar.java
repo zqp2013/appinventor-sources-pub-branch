@@ -176,7 +176,7 @@ public class DesignToolbar extends Toolbar {
     toolbar.insert(projectNameLabel, 0);
 
     // width of palette minus cellspacing/border of buttons
-    //del by 中文网 toolbar.setCellWidth(projectNameLabel, "222px");
+    toolbar.setCellWidth(projectNameLabel, "245px");
 
     addButton(new ToolbarItem(WIDGET_NAME_TUTORIAL_TOGGLE,
         MESSAGES.toggleTutorialButton(), new ToogleTutorialAction()));
@@ -203,6 +203,7 @@ public class DesignToolbar extends Toolbar {
 
     // Add by 中文网
     toolbar.setCellHorizontalAlignment(leftButtons, HorizontalPanel.ALIGN_CENTER);
+    toolbar.setCellWidth(rightButtons, "400px");
 
     // Gray out the Designer button and enable the blocks button
     toggleEditor(false);
