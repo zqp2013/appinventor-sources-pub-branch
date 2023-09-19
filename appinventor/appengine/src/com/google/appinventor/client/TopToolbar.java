@@ -694,8 +694,8 @@ public class TopToolbar extends Composite {
 
         Date now = new Date();
         int interval_minutes = (int)((now.getTime() - last.getTime()) / (60 * 1000));
-        // 默认冷却时间15分钟，todo:qpzhou 待配置化
-        int left_minutes = 15 - interval_minutes;
+        // 默认冷却时间30分钟，todo:qpzhou 待配置化
+        int left_minutes = 30 - interval_minutes;
         if (left_minutes > 0) {
           Window.alert("您需要在 " + left_minutes + " 分钟后才能再次执行编译操作！");
           return;

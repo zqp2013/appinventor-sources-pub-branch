@@ -347,7 +347,8 @@ public class DesignToolbar extends Toolbar {
     Screen screen = currentProject.screens.get(newScreenName);
     ProjectEditor projectEditor = screen.formEditor.getProjectEditor();
     currentProject.setCurrentScreen(newScreenName);
-    setDropDownButtonCaption(WIDGET_NAME_SCREENS_DROPDOWN, newScreenName);
+    // Add by 中文网：样式按钮
+    setDropDownButtonCaption(WIDGET_NAME_SCREENS_DROPDOWN, "<i class=\"mdi mdi-cellphone-screenshot\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + newScreenName);
     OdeLog.log("Setting currentScreen to " + newScreenName);
     if (currentView == View.FORM) {
       projectEditor.selectFileEditor(screen.formEditor);

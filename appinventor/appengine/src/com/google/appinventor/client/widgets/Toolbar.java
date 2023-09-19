@@ -315,6 +315,11 @@ public class Toolbar extends Composite {
    * @param caption the new caption
    */
   protected void setDropDownButtonCaption(String widgetName, String caption) {
-    dropDownButtonMap.get(widgetName).setText(caption + " " + DROP_DOWN_TRIANGLE);
+    // Add by 中文网：样式按钮
+    if (caption.startsWith("<")) {
+      dropDownButtonMap.get(widgetName).setHTML(caption + " " + DROP_DOWN_TRIANGLE);
+    } else {
+      dropDownButtonMap.get(widgetName).setText(caption + " " + DROP_DOWN_TRIANGLE);
+    }
   }
 }
