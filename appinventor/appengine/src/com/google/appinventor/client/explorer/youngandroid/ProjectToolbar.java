@@ -375,8 +375,12 @@ public class ProjectToolbar extends Toolbar {
       setButtonEnabled(WIDGET_NAME_NEW, false);
       setButtonEnabled(WIDGET_NAME_NEW_FOLDER, false);
       setButtonEnabled(WIDGET_NAME_MOVE, false);
-      setButtonEnabled(WIDGET_NAME_DELETE, false);
-      setButtonEnabled(WIDGET_NAME_RESTORE, false);
+      // del+add by 中文网：admin可以删除/恢复项目
+      //setButtonEnabled(WIDGET_NAME_DELETE, false);
+      //setButtonEnabled(WIDGET_NAME_RESTORE, false);
+      setButtonEnabled(WIDGET_NAME_DELETE, numSelectedProjects > 0);
+      setButtonEnabled(WIDGET_NAME_RESTORE, numSelectedProjects > 0);
+
       Ode.getInstance().getTopToolbar().updateMenuState(numSelectedProjects, numProjects);
       return;
     }

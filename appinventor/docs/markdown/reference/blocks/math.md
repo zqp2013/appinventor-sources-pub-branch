@@ -1,7 +1,8 @@
 ---
 title: App Inventor 2 数学代码块
 layout: documentation
-description: 数学代码块参考文档，包括：基础数字块,进制数字块...
+description: 数学代码块参考文档，包括：基础数字块,进制数字块,等于,不等于,大于,大于等于,小于,小于等于,加,减,乘,除,幂运算,随机整数,随机小数,设定随机数种子,最小值,最大值,平方根,绝对值,负数,对数,e^,四舍五入,上取整,下取整,求模,余数,商,正弦,余弦,正切,反正弦,反余弦,反正切,反正切2,将弧度转换为度数,将度数转换为弧度,数字转变为小数形式,是否为数字,进制转换,按位与,按位或,按位异或。
+
 ---
 
 * [基础数字块 ( 0 )](#number)
@@ -17,63 +18,63 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 * [乘 ( * )](#multiply)
 * [除 ( / )](#divide)
 * [幂运算 ( ^ )](#exponent)
-* [random integer](#randomint)
-* [random fraction](#randomfrac)
-* [random set seed to](#randomseed)
-* [min](#min)
-* [max](#max)
-* [square root](#sqrt)
-* [abs](#abs)
-* [neg](#neg)
-* [log](#log)
+* [随机整数 (random integer)](#randomint)
+* [随机小数 (random fraction)](#randomfrac)
+* [设定随机数种子 (random set seed to)](#randomseed)
+* [最小值 (min)](#min)
+* [最大值 (max)](#max)
+* [平方根 (square root)](#sqrt)
+* [绝对值 (abs)](#abs)
+* [负数 ( - )](#neg)
+* [对数 (log)](#log)
 * [e^](#e)
-* [round](#round)
-* [ceiling](#ceiling)
-* [floor](#floor)
-* [modulo](#modulo)
-* [remainder](#remainder)
-* [quotient](#quotient)
-* [sin](#sin)
-* [cos](#cos)
-* [tan](#tan)
-* [asin](#asin)
-* [acos](#acos)
-* [atan](#atan)
-* [atan2](#atan2)
-* [convert radians to degrees](#convertrad)
-* [convert degrees to radians](#convertdeg)
-* [format as a decimal](#format)
-* [is a number](#isnumber)
-* [convert number](#convertnumber)
-* [bitwise and](#bitwise_and)
-* [bitwise or (inclusive)](#bitwise_ior)
-* [bitwise or (exclusive)](#bitwise_xor)
+* [四舍五入 (round)](#round)
+* [上取整 (ceiling)](#ceiling)
+* [下取整 (floor)](#floor)
+* [求模 (modulo)](#modulo)
+* [余数 (remainder)](#remainder)
+* [商 (quotient)](#quotient)
+* [正弦 (sin)](#sin)
+* [余弦 (cos)](#cos)
+* [正切 (tan)](#tan)
+* [反正弦 (asin)](#asin)
+* [反余弦 (acos)](#acos)
+* [反正切 (atan)](#atan)
+* [反正切2 (atan2)](#atan2)
+* [将弧度转换为度数 (convert radians to degrees)](#convertrad)
+* [将度数转换为弧度 (convert degrees to radians)](#convertdeg)
+* [数字转变为小数形式 (format as a decimal)](#format)
+* [是否为数字 (is a number)](#isnumber)
+* [进制转换 (convert number)](#convertnumber)
+* [按位与 (bitwise and)](#bitwise_and)
+* [按位或 (bitwise or Inclusive)](#bitwise_ior)
+* [按位异或 (bitwise or Exclusive)](#bitwise_xor)
 
 *内置块中找不到你要查找的数学代码块？*
 
 一些数学代码块是下拉列表，它们可以转换为不同的块。以下是每个下拉列表中包含的内容的列表：
 
-* =, ≠, >, ≥, <, ≤
+* 等于 ( = ), 不等于 ( ≠ ), 大于 ( > ), 大于等于 ( ≥ ), 小于 ( < ), 小于等于 ( ≤ )
 
 ![](images/math/equals.gif)
 
-* min, max
+* 最小值 (min), 最大值 (max)
 
 ![](images/math/minmax.gif)
 
-* sqrt, abs, -, log, e^, round, ceiling, floor
+* 平方根 (square), 绝对值 (abs), 负数 ( - ), 对数 (log), e^, 四舍五入 (round), 上取整 (ceiling), 下取整 (floor)
 
 ![](images/math/sqrt.gif)
 
-* modulo of, remainder of, quotient of
+* 求模 (modulo), 余数 (remainder), 商 (quotient)
 
 ![](images/math/modulo.gif)
 
-* sin, cos, tan, asin, acos, atan
+* 正弦 (sin), 余弦 (cos), 正切 (tan), 反正弦 (asin), 反余弦 (acos), 反正切 (atan)
 
 ![](images/math/sin.gif)
 
-* convert radians to degrees, convert degrees to radians
+* 将弧度转换为度数 (convert radians to degrees), 将度数转换为弧度 (convert degrees to radians)
 
 ![](images/math/convert.gif)
 
@@ -190,63 +191,63 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 返回第一个数字的第二个数字次幂的结果。比如2^3 = 2*2*2 = 8
 
 ***
-### random integer   {#randomint}
+### 随机整数 (random integer)   {#randomint}
 
 ![](images/math/randomint.png)
 
 返回给定值之间（包含首尾）的随机整数值。参数的顺序不限。
 
 ***
-### random fraction   {#randomfrac}
+### 随机小数 (random fraction)   {#randomfrac}
 
 ![](images/math/randomfrac.png)
 
 返回 0 到 1 之间的随机值。
 
 ***
-### random set seed to   {#randomseed}
+### 设定随机数种子 (random set seed to)   {#randomseed}
 
 ![](images/math/randomseed.png)
 
 Use this block to generate repeatable sequences of random numbers. You can generate the same sequence of random numbers by first calling random set seed with the same value. This is useful for testing programs that involve random values.
 
 ***
-### min   {#min}
+### 最小值 (min)   {#min}
 
 ![](images/math/min.png)
 
 Returns the smallest value of a set of numbers. If there are unplugged sockets in the block, min will also consider 0 in its set of numbers. This block is a [mutator](../concepts/mutators.html) and a dropdown.
 
 ***
-### max   {#max}
+### 最大值 (max)   {#max}
 
 ![](images/math/max.png)
 
 Returns the largest value of a set of numbers. If there are unplugged sockets in the block, max will also consider 0 in its set of numbers. This block is a [mutator](../concepts/mutators.html) and a dropdown.
 
 ***
-### square root   {#sqrt}
+### 平方根 (square root)   {#sqrt}
 
 ![](images/math/sqrt.png)
 
 Returns the square root of the given number.
 
 ***
-### abs   {#abs}
+### 绝对值 (abs)   {#abs}
 
 ![](images/math/abs.png)
 
 Returns the absolute value of the given number.
 
 ***
-### neg   {#neg}
+### 负数 ( - )   {#neg}
 
 ![](images/math/neg.png)
 
-Returns the negative of a given number.
+返回给定数字的负数。
 
 ***
-### log   {#log}
+### 对数 (log)   {#log}
 
 ![](images/math/log.png)
 
@@ -260,35 +261,35 @@ Returns the natural logarithm of a given number, that is, the logarithm to the b
 Returns e (2.71828...) raised to the power of the given number.
 
 ***
-### round   {#round}
+### 四舍五入 (round)   {#round}
 
 ![](images/math/round.png)
 
 Returns the given number rounded to the closest integer. If the fractional part is < .5 it will be rounded down. It it is > .5 it will be rounded up. If it is exactly equal to .5, numbers with an even whole part will be rounded down, and numbers with an odd whole part will be rounded up. (This method is called round to even.)
 
 ***
-### ceiling   {#ceiling}
+### 上取整 (ceiling)   {#ceiling}
 
 ![](images/math/ceiling.png)
 
 Returns the smallest integer that's greater than or equal to the given number.
 
 ***
-### floor   {#floor}
+### 下取整 (floor)   {#floor}
 
 ![](images/math/floor.png)
 
 Returns the greatest integer that's less than or equal to the given number.
 
 ***
-### modulo   {#modulo}
+### 求模 (modulo)   {#modulo}
 
 ![](images/math/modulo.png)
 
 Modulo(a,b) is the same as remainder(a,b) when a and b are positive. More generally, modulo(a,b) is defined for any a and b so that (floor(a/b)× b) + modulo(a,b) = a. For example, modulo(11, 5) = 1, modulo(-11, 5) = 4, modulo(11, -5) = -4, modulo(-11, -5) = -1. Modulo(a,b) always has the same sign as b, while remainder(a,b) always has the same sign as a.
 
 ***
-### remainder   {#remainder}
+### 余数 (remainder)   {#remainder}
 
 ![](images/math/remainder.png)
 
@@ -306,98 +307,98 @@ In this case, <sup>1</sup>⁄<sub>5</sub> is the fractional part. We multiply th
 Other examples are remainder(-11, 5) = -1, remainder(11, -5) = 1, and remainder(-11, -5) = -1.
 
 ***
-### quotient   {#quotient}
+### 商 (quotient)   {#quotient}
 
 ![](images/math/quotient.png)
 
 Returns the result of dividing the first number by the second and discarding any fractional part of the result.
 
 ***
-### sin   {#sin}
+### 正弦 (sin)   {#sin}
 
 ![](images/math/sin.png)
 
 Returns the sine of the given number in degrees.
 
 ***
-### cos   {#cos}
+### 余弦 (cos)   {#cos}
 
 ![](images/math/cos.png)
 
 Returns the cosine of the given number in degrees.
 
 ***
-### tan   {#tan}
+### 正切 (tan)   {#tan}
 
 ![](images/math/tan.png)
 
 Returns the tangent of the given number in degrees.
 
 ***
-### asin   {#asin}
+### 反正弦 (asin)   {#asin}
 
 ![](images/math/asin.png)
 
 Returns the arcsine of the given number in degrees.
 
 ***
-### acos   {#acos}
+### 反余弦 (acos)   {#acos}
 
 ![](images/math/acos.png)
 
 Returns the arccosine of the given number in degrees.
 
 ***
-### atan   {#atan}
+### 反正切 (atan)   {#atan}
 
 ![](images/math/atan.png)
 
 Returns the arctangent of the given number in degrees.
 
 ***
-### atan2   {#atan2}
+### 反正切2 (atan2)   {#atan2}
 
 ![](images/math/atan2.png)
 
 Returns the arctangent of y/x, given y and x.
 
 ***
-### convert radians to degrees   {#convertrad}
+### 将弧度转换为度数 (convert radians to degrees)   {#convertrad}
 
 ![](images/math/convertrad.png)
 
 Returns the value in degrees of the given number in radians. The result will be an angle in the range [0, 360)
 
 ***
-### convert degrees to radians   {#convertdeg}
+### 将度数转换为弧度 (convert degrees to radians)   {#convertdeg}
 
 ![](images/math/convertdeg.png)
 
 Returns the value in radians of the given number in degrees. The result will be an angle in the range [-π , +π)
 
 ***
-### format as decimal   {#format}
+### 数字转变为小数形式 (format as a decimal)   {#format}
 
 ![](images/math/format.png)
 
 Formats a number as a decimal with a given number of places after the decimal point. The number of places must be a non-negative integer. The result is produced by rounding the number (if there were too many places) or by adding zeros on the right (if there were too few).
 
 ***
-### is a number?   {#isnumber}
+### 是否为数字 (is a number)   {#isnumber}
 
 ![](images/math/isnumber.png)
 
 Returns true if the given object is a number, and false otherwise.
 
 ***
-### convert number   {#convertnumber}
+### 进制转换 (convert number)   {#convertnumber}
 
 ![](images/math/convertnumber.png)
 
 Takes a text string that represents a positive integer in one base and returns a string that represents the same number is another base. For example, if the input string is 10, then converting from base 10 to binary will produce the string 1010; while if the input string is the same 10, then converting from binary to base 10 will produce the string 2. If the input string is the same 10, then converting from base 10 to hex will produce the string A.
 
 ***
-### Bitwise And   {#bitwise_and}
+### 按位与 (bitwise and)   {#bitwise_and}
 
 ![](images/math/bitwise_and.png)
 
@@ -412,7 +413,7 @@ Example:
 | Result: |       2 | 0 0 1 0 |
 
 ***
-### Bitwise Or (Inclusive)   {#bitwise_ior}
+### 按位或 (bitwise or Inclusive)   {#bitwise_ior}
 
 ![](images/math/bitwise_ior.png)
 
@@ -427,7 +428,7 @@ Example:
 | Result: |       7 | 0 1 1 1 |
 
 ***
-### bitwise Or (Exclusive)   {#bitwise_xor}
+### 按位异或 (bitwise or Exclusive)   {#bitwise_xor}
 
 ![](images/math/bitwise_xor.png)
 
