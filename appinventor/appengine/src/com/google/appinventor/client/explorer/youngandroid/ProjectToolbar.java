@@ -17,8 +17,12 @@ import com.google.appinventor.client.wizards.youngandroid.NewYoungAndroidProject
 import com.google.appinventor.shared.rpc.RpcResult;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
+import com.google.appinventor.client.wizards.NewFolderWizard;
+import com.google.appinventor.client.wizards.MoveProjectsWizard;
+import com.google.appinventor.client.explorer.folder.ProjectFolder;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
 
@@ -28,6 +32,8 @@ import static com.google.appinventor.client.Ode.MESSAGES;
  */
 public class ProjectToolbar extends Toolbar {
   private static final String WIDGET_NAME_NEW = "New";
+  private static final String WIDGET_NAME_NEW_FOLDER = "New Folder";
+  private static final String WIDGET_NAME_MOVE = "Move...";
   private static final String WIDGET_NAME_DELETE = "Delete";
   private static final String WIDGET_NAME_TRASH = "Trash";
   private static final String WIDGET_NAME_PROJECT= "Projects";
@@ -52,11 +58,16 @@ public class ProjectToolbar extends Toolbar {
 
     addButton(new ToolbarItem(WIDGET_NAME_NEW, MESSAGES.newProjectMenuItem(),
         new NewAction(this)));
+    
+    addButton(new ToolbarItem(WIDGET_NAME_NEW_FOLDER, MESSAGES.newProjectFolderButton(),
+        new NewFolderAction()));
+    addButton(new ToolbarItem(WIDGET_NAME_MOVE, MESSAGES.moveProjectButton(),
+        new MoveProjectsAction()));
 
     addButton(new ToolbarItem(WIDGET_NAME_DELETE, MESSAGES.deleteProjectButton(),
-        new MoveToTrashAction()));
+        new DeleteAction())); //MoveToTrashAction
     addButton(new ToolbarItem(WIDGET_NAME_TRASH,MESSAGES.trashButton(),
-        new TrashAction()));
+        new TrashAction()));    
     addButton(new ToolbarItem(WIDGET_NAME_PROJECT,MESSAGES.myProjectsButton(),
         new BackToProjectViewAction()));
     addButton(new ToolbarItem(WIDGET_NAME_RESTORE,MESSAGES.restoreProjectButton(),
@@ -85,7 +96,9 @@ public class ProjectToolbar extends Toolbar {
 
   public void setProjectTabButtonsVisible(boolean visible) {
     setButtonVisible(WIDGET_NAME_NEW, visible);
-    setButtonVisible(WIDGET_NAME_TRASH,visible);
+    setButtonVisible(WIDGET_NAME_NEW_FOLDER, visible);
+    setButtonVisible(WIDGET_NAME_MOVE,visible);
+    setButtonVisible(WIDGET_NAME_TRASH,visible);    
     setButtonVisible(WIDGET_NAME_DELETE,visible);
   }
 
@@ -112,37 +125,112 @@ public class ProjectToolbar extends Toolbar {
     }
   }
 
-  private static class MoveToTrashAction implements Command {
+  public class NewFolderAction implements Command {
+    @Override
+    public void execute() {
+      new NewFolderWizard();
+    }
+  }
+
+  public class MoveProjectsAction implements Command {
+    public void execute() {
+      new MoveProjectsWizard();
+    }
+  }
+
+  // private static class MoveToTrashAction implements Command {
+  //   @Override
+  //   public void execute() {
+  //     Ode.getInstance().getEditorManager().saveDirtyEditors(new Command() {
+  //       @Override
+  //       public void execute() {
+  //         List<Project> selectedProjects =
+  //             ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
+  //         if (selectedProjects.size() > 0) {
+  //           // Show one confirmation window for selected projects.
+  //           if (deleteConfirmation(selectedProjects)) {
+  //             for (Project project : selectedProjects) {
+  //               project.moveToTrash();
+  //             }
+  //             Ode.getInstance().switchToProjectsView();
+  //           }
+  //           Ode.getInstance().switchToProjectsView();
+  //         } else {
+  //           // The user can select a project to resolve the
+  //           // error.
+  //           ErrorReporter.reportInfo(MESSAGES.noProjectSelectedForDelete());
+  //         }
+  //       }
+  //     });
+  //   }
+
+  //   private boolean deleteConfirmation(List<Project> projects) {
+  //     String message;
+  //     if (projects.size() == 1) {
+  //       message = MESSAGES.confirmMoveToTrashSingleProject(projects.get(0).getProjectName());
+  //     } else {
+  //       StringBuilder sb = new StringBuilder();
+  //       String separator = "";
+  //       for (Project project : projects) {
+  //         sb.append(separator).append(project.getProjectName());
+  //         separator = ", ";
+  //       }
+  //       String projectNames = sb.toString();
+  //       message = MESSAGES.confirmMoveToTrash(projectNames);
+  //     }
+  //     return Window.confirm(message);
+  //   }
+  // }
+  /* merge by 中文网：上面删除，带folder的删除逻辑*/
+  public class DeleteAction implements Command {
     @Override
     public void execute() {
       Ode.getInstance().getEditorManager().saveDirtyEditors(new Command() {
         @Override
         public void execute() {
-          List<Project> selectedProjects =
-              ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
-          if (selectedProjects.size() > 0) {
-            // Show one confirmation window for selected projects.
-            if (deleteConfirmation(selectedProjects)) {
-              for (Project project : selectedProjects) {
-                project.moveToTrash();
+          if (Ode.getInstance().getCurrentView() == Ode.PROJECTS) {
+            List<Project> selectedProjects =
+                ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
+            List<ProjectFolder> selectedFolders = ProjectListBox.getProjectListBox().getProjectList().getSelectedFolders();
+            if (selectedProjects.size() > 0 || selectedFolders.size() > 0) {
+              List<Project> projectsToDelete = selectedProjects;
+              for (ProjectFolder f : selectedFolders) {
+                projectsToDelete.addAll(f.getNestedProjects());
               }
-              Ode.getInstance().switchToProjectsView();
+              // Show one confirmation window for selected projects.
+              if (deleteConfirmation(projectsToDelete)) {
+                for (Project project : projectsToDelete) {
+                  project.moveToTrash();
+                }
+                for (ProjectFolder f : selectedFolders) {
+                  f.getParentFolder().removeChildFolder(f);
+                }
+              }
+            } else {
+              // The user can select a project to resolve the
+              // error.
+              ErrorReporter.reportInfo(MESSAGES.noProjectSelectedForDelete());
             }
-            Ode.getInstance().switchToProjectsView();
-          } else {
-            // The user can select a project to resolve the
-            // error.
-            ErrorReporter.reportInfo(MESSAGES.noProjectSelectedForDelete());
+          } else { //We are deleting a project in the designer view
+            List<Project> selectedProjects = new ArrayList<Project>();
+            Project currentProject = Ode.getInstance().getProjectManager().getProject(Ode.getInstance().getCurrentYoungAndroidProjectId());
+            selectedProjects.add(currentProject);
+            if (deleteConfirmation(selectedProjects)) {
+              currentProject.moveToTrash();
+              //Add the command to stop this current project from saving
+            }
           }
+          Ode.getInstance().switchToProjectsView();
         }
       });
     }
-
+  
+  
     private boolean deleteConfirmation(List<Project> projects) {
       String message;
       if (projects.size() == 1) {
         message = MESSAGES.confirmMoveToTrashSingleProject(projects.get(0).getProjectName());
-      } else {
+      } else if (projects.size() < 10) {
         StringBuilder sb = new StringBuilder();
         String separator = "";
         for (Project project : projects) {
@@ -151,6 +239,8 @@ public class ProjectToolbar extends Toolbar {
         }
         String projectNames = sb.toString();
         message = MESSAGES.confirmMoveToTrash(projectNames);
+      } else {
+        message = MESSAGES.confirmMoveToTrashCount(Integer.toString(projects.size()));
       }
       return Window.confirm(message);
     }
@@ -283,11 +373,14 @@ public class ProjectToolbar extends Toolbar {
     int numSelectedProjects = projectList.getSelectedProjectsCount();
     if (isReadOnly) {           // If we are read-only, we disable all buttons
       setButtonEnabled(WIDGET_NAME_NEW, false);
+      setButtonEnabled(WIDGET_NAME_NEW_FOLDER, false);
+      setButtonEnabled(WIDGET_NAME_MOVE, false);
       setButtonEnabled(WIDGET_NAME_DELETE, false);
       setButtonEnabled(WIDGET_NAME_RESTORE, false);
       Ode.getInstance().getTopToolbar().updateMenuState(numSelectedProjects, numProjects);
       return;
     }
+    setButtonEnabled(WIDGET_NAME_MOVE, numSelectedProjects > 0);
     setButtonEnabled(WIDGET_NAME_DELETE, numSelectedProjects > 0);
     setButtonEnabled(WIDGET_NAME_DELETE_FROM_TRASH, numSelectedProjects > 0);
     setButtonEnabled(WIDGET_NAME_RESTORE, numSelectedProjects > 0);
