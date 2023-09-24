@@ -4,6 +4,9 @@ title: 通信连接组件
 description: 通信连接组件参考文档：包括Activity启动器、蓝牙客户端、蓝牙服务器、串口通信器、Web客户端、SimpleBase64拓展、MQTT拓展、ClientSocket拓展。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 # <i class="mdi mdi-access-point"></i>  通信连接组件
 

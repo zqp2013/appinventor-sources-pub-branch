@@ -4,6 +4,9 @@ layout: documentation
 description: App Inventor 2 TaifunImage 拓展，图像高级处理，剪裁，压缩，翻转等。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ## ![logo](TaifunImage/logo.png)  TaifunImage [*拓展*](https://puravidaapps.com/image.php)  {#TaifunImage}

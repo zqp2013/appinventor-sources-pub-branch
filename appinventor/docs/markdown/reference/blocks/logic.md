@@ -4,6 +4,9 @@ layout: documentation
 description: 逻辑代码块参考文档，包括真、假、非逻辑、=等于、≠不等于、与逻辑、或逻辑。
 ---
 
+* TOC
+{:toc}
+
 * [真](#true)
 * [假](#false)
 * [非](#not)

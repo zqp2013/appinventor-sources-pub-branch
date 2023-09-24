@@ -4,6 +4,9 @@ title: 图表组件
 description: 图表组件参考文档：包括图表、二维图表数据。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 # <i class="mdi mdi-chart-line"></i>  图表组件
 

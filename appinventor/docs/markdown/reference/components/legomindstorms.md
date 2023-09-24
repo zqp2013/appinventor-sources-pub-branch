@@ -4,6 +4,9 @@ title: 乐高机器人®组件
 description: 乐高机器人®组件参考文档。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 # <i class="mdi mdi-toy-brick-outline"></i>  乐高机器人®组件
 

@@ -4,6 +4,9 @@ layout: documentation
 description: 控制代码块参考文档。包括：如果、循环、跳出循环、执行模块、求值但忽略结果、打开另一屏幕、打开另一屏幕并传值、获取初始值、关闭屏幕、退出程序。
 ---
 
+* TOC
+{:toc}
+
 * [如果 & 则（if & else if）](#if)
 * [从范围循环(for each number from to)](#forrange)
 * [从列表循环（for each item in list）](#foreach)

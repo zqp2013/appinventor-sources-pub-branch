@@ -4,6 +4,9 @@ title: App Inventor 2 试验组件
 description: App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI ChatGPT聊天机器人），Firebase数据库，ImageBot（OpenAI 绘图机器人）。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 # <i class="mdi mdi-bug-outline"></i>  试验组件
 

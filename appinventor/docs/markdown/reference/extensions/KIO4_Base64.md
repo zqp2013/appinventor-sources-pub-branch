@@ -4,6 +4,9 @@ layout: documentation
 description: App Inventor 2 KIO4_Base64 拓展，更强大的图像Base64编解码工具，解码后的图像可写入到文件。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ## ![logo](KIO4_Base64/logo.png)  KIO4_Base64 [*拓展*](http://kio4.com/appinventor/277i_extension_imagen_string.htm)  {#KIO4_Base64}
