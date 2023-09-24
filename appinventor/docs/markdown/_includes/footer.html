@@ -1,61 +1,13 @@
-<link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-/*cndns-right*/
-.cndns-right{position:fixed;right:1px;top:60%;margin-top:-100px;z-index:100}
-.cndns-right i{font-style:normal;}
-.cndns-right a:hover{text-decoration:none;}
-.cndns-right-menu{position:relative;}
-.cndns-right-btn{
-	width: 48px;
-    height: 48px;
-    text-align: center;
-    display: block;
-    margin-bottom: 6px;
-    position: relative;
-    background-color: #fbfbfb;
-    border-radius: 30px;
-}
-.cndns-right-btn span{color:#848484;font-size:26px;line-height:50px;}
-.cndns-right-btn sup{display:block;min-width:24px;height:24px;text-align:center;line-height:24px;color:#fff;border-radius: 50%;background-color:#ff6800;position:absolute;left:-12px;top:-12px;}
-.cndns-right-btn p{color:#ff6800;font-size:14px;line-height:18px;padding-top:5px;display:none;}
-.cndns-right-menu:hover .cndns-right-btn span{display:none}
-.cndns-right-menu:hover .cndns-right-btn p{display:block;}
-.menu-top .cndns-right-btn span{font-size:12px;line-height:12px;padding-top:10px;display:block}
-.menu-top .cndns-right-btn span.fa-angle-up{font-size:28px;}
-.menu-top .cndns-right-btn i{display:block;color:#999;}
-.menu-top.cndns-right-menu:hover .cndns-right-btn{background-color:#ff6800}
-.menu-top.cndns-right-menu:hover .cndns-right-btn span{display:block;color:#fff} 
-.menu-top.cndns-right-menu:hover .cndns-right-btn i{color:#fff;}
-.cndns-right-box{position:absolute;top:-15px;right:48px;padding-right:25px;overflow:hidden;display:none;}
-.cndns-right-box .box-border{border:1px solid #ccc;border-top:4px solid #ff6800;padding:20px;background-color:#fff;-webkit-box-shadow: 0 3px 8px rgba(0,0,0,.15);-moz-box-shadow: 0 3px 8px rgba(0,0,0,.15);box-shadow: 0 3px 8px rgba(0,0,0,.15);position:relative;overflow:hidden;}
-.cndns-right-box .box-border .arrow-right{display:block;width:13px;height:16px;background:url(../images/arrow.png) no-repeat;position:absolute;right:-13px;top:26px;}
-.menu-sev .cndns-right-box .box-border{width:430px;}
-.menu-contact .cndns-right-box .box-border{width:250px;}
-.cndns-right-menu:hover .cndns-right-box{display:block}
-.menu-common .cndns-right-box{top:inherit;bottom:-35px;}
-.menu-common .cndns-right-box .box-border{text-align:center;border-top:1px solid #ccc;}
-.menu-common .cndns-right-box .box-border img{width:150px;height:150px;}
-.menu-common .cndns-right-box .box-border i{display:block;color:#f66e06;font-size:16px;line-height:16px;}
-.menu-common .cndns-right-box .box-border .arrow-right{top:inherit;bottom:50px;}
-/* width */
-::-webkit-scrollbar {
-	width: 10px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px grey;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: #ccc;/*skyblue;*/
-	border-radius: 10px;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: #FF8E21;
-}
-</style>
 <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				菜单
+			</p>
+		</a>
+	</div>
 	<div class="cndns-right-menu menu-common">
 		<a href="javascript:" class="cndns-right-btn">
 			<span class="fa fa-qrcode"></span>
@@ -132,73 +84,4 @@
 
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript">
-function animate(elem, sty, timeout, callback){
-	var f = j = 0,//j动画总数
-		tween = function(t,b,c,d) { return -c*(t/=d)*(t-2) + b; },
-		execution = function(key, val, px, t){
-			var s = (new Date()).getTime(),
-			d = t || 500,
-			b = parseInt(elem.style[key] || elem[key]) || 0,//当前值
-			c = val - b;					 				//变化差值
-			(function(){
-				var t = (new Date()).getTime() - s;
-				var styleAttr = (typeof(elem.style[key]) != 'undefined');
-				if(t > d)
-				{
-					t = d;
-					if (styleAttr)
-						elem.style[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
-					else
-						elem[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
-					++f==j && callback && callback.apply(elem);
-					return;
-				}
-				if (styleAttr)
-					elem.style[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
-				else
-					elem[key] = px ? (tween(t,b,c,d) + 'px') : tween(t,b,c,d);
-				setTimeout(arguments.callee, 10); //arguments.callee 匿名函数递归调用
-			})();
-		};
-	for(var i in sty)
-	{
-		j++;
-		execution(i, parseInt(sty[i]), sty[i].toString().indexOf('px') > 0, timeout);
-	}
-}
-function fadeIn(id){
-	if (document.getElementById(id) == null) return;
-	document.getElementById(id).style.display = 'block';
-	if (document.getElementById(id).style.opacity != 0) return;
-	animate(document.getElementById(id), {opacity: 1}, 700);
-}
-function fadeOut(id){
-	var obj = document.getElementById(id);
-	if (obj == null) return;
-	if (obj.style.opacity == '')
-		obj.style.opacity = 1;
-	if (obj.style.opacity != 1) return;
-	animate(obj, {opacity: 0}, 700);
-	setTimeout(function(){obj.style.display = 'none';}, 700);
-}
-window.onscroll = function (){
-	var d = document.body.scrollTop||document.documentElement.scrollTop;
-	if (d > 60) {
-		fadeIn('float_scrolltop');
-	} else {
-		fadeOut('float_scrolltop');
-	}
-};
-function scroll2Top(){
-	var ie = document.documentElement;
-	var chrome = document.body;
-	if (ie.scrollTop == 0 && chrome.scrollTop == 0)
-		return;
-	
-	animate(ie.scrollTop > chrome.scrollTop ? ie : chrome, {scrollTop: 0}, 700);
-}
-</script>
+
