@@ -131,6 +131,12 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothClient.AddressesAndNames" .list .ro .bo} *地址及名称*
 : 返回配对的蓝牙设备列表，返回的列表每个元素都是一个字符串，由设备地址、一个空格和设备的名称组成。
 
+  **蓝牙设备列表为空？**
+
+  你可能没有开启AI伴侣或编译后App的发现蓝牙权限，这里以AI伴侣为例，勾上即可：
+
+  ![开启发现蓝牙设备的权限](images/开启发现蓝牙设备的权限.png)
+
 {:id="BluetoothClient.Available" .boolean .ro .bo} *可用状态*
 : 如果设备上有蓝牙功能，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
@@ -370,17 +376,17 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 {:.properties}
 
-{:id="Serial.BaudRate" .number} *BaudRate*
-: Returns the current baud rate
+{:id="Serial.BaudRate" .number} *波特率*
+: 返回当前波特率。
 
-{:id="Serial.BufferSize" .number} *BufferSize*
-: Returns the buffer size in bytes
+{:id="Serial.BufferSize" .number} *缓冲区大小*
+: 返回缓冲区大小（以字节为单位）
 
-{:id="Serial.IsInitialized" .boolean .ro .bo} *IsInitialized*
-: Returns true when the Serial has been initialized.
+{:id="Serial.IsInitialized" .boolean .ro .bo} *是否已初始化*
+: 当串口已初始化时返回 `真`。
 
-{:id="Serial.IsOpen" .boolean .ro .bo} *IsOpen*
-: Returns true when the Serial connection is open.
+{:id="Serial.IsOpen" .boolean .ro .bo} *是否打开*
+: 当串口连接打开时返回 `真`。
 
 ### 事件  {#Serial-Events}
 
@@ -392,23 +398,23 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 {:.methods}
 
-{:id="Serial.CloseSerial" class="method returns boolean"} <i/> CloseSerial()
-: Closes serial connection. Returns true when closed.
+{:id="Serial.CloseSerial" class="method returns boolean"} <i/> 关闭串口()
+: 关闭串口连接。关闭时返回 `真`。
 
-{:id="Serial.InitializeSerial" class="method"} <i/> InitializeSerial()
-: Initializes serial connection.
+{:id="Serial.InitializeSerial" class="method"} <i/> 初始化串口()
+: 初始化串口连接。
 
-{:id="Serial.OpenSerial" class="method returns boolean"} <i/> OpenSerial()
-: Opens serial connection. Returns true when opened.
+{:id="Serial.OpenSerial" class="method returns boolean"} <i/> 打开串口()
+: 打开串口连接。 打开时返回 `真`。
 
-{:id="Serial.PrintSerial" class="method"} <i/> PrintSerial(*data*{:.text})
-: Writes given data to serial, and appends a new line at the end.
+{:id="Serial.PrintSerial" class="method"} <i/> 打印串口(*data*{:.text})
+: 将给定数据写入串口，并在末尾添加一个新行。
 
-{:id="Serial.ReadSerial" class="method returns text"} <i/> ReadSerial()
-: Reads data from serial.
+{:id="Serial.ReadSerial" class="method returns text"} <i/> 读取串口()
+: 从串口读取数据。
 
-{:id="Serial.WriteSerial" class="method"} <i/> WriteSerial(*data*{:.text})
-: Writes given data to serial.
+{:id="Serial.WriteSerial" class="method"} <i/> 写入串口(*data*{:.text})
+: 将给定数据写入串口。
 
 ***
 ## Web客户端  {#Web}
