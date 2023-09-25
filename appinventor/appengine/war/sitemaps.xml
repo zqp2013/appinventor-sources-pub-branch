@@ -214,6 +214,13 @@
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
 		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/creative/sim_sleep.html</loc>
+			<lastmod>2023-09-25</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
 		
 		<url>
 			<loc>https://www.fun123.cn/reference/other/</loc>
