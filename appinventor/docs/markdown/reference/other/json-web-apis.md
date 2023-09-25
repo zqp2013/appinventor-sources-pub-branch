@@ -4,6 +4,9 @@ title: 使用 JSON 和 Web API
 description: JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)进行交互，JSON提供了不同的数据类型，同样App Inventor也支持这些值。
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)进行交互，JSON提供了不同的数据类型，同样App Inventor也支持这些值。

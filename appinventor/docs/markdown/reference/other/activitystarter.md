@@ -4,6 +4,9 @@ layout: documentation
 description: App Inventor 2 使用Activity启动器组件
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ## 使用Activity启动器组件

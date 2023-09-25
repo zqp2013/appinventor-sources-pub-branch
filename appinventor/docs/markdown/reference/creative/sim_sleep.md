@@ -21,6 +21,8 @@ App Inventor 2 原生没有 sleep 及相关函数，需要模拟实现，经过�
 
 ![模拟sleep实现](images/sleep.png)
 
+代码原理非常简单，就是计算好要 sleep 到的时刻，然后一直循环等待到那个时刻为止。
+
 ### 测试方法如下：
 
 ![模拟sleep调用](images/call_sleep.png)
@@ -29,4 +31,4 @@ App Inventor 2 原生没有 sleep 及相关函数，需要模拟实现，经过�
 
 ### 代码快速导入技巧
 
-另外，如何将上面的代码快速导入我们的项目中，是有技巧的，无需自已动手一个个拖动哈，请看[这里](../other/download-pngs.html)。
+另外，如何将上面的代码快速导入我们的项目中，是有技巧的，无需自己动手一个个拖动哈，请看[这里](../other/download-pngs.html)。

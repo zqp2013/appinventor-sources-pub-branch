@@ -4,9 +4,12 @@ layout: documentation
 description: 使用 App Inventor 2 编辑你的应用（复制和粘贴）
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
-从 nb184 版本开始，App Inventor 包含剪切、复制和粘贴应用程序部分设计的功能。
+<!--从 nb184 版本开始，-->App Inventor 包含剪切、复制和粘贴应用程序部分设计的功能。
 
 ***
 ## 操作组件
