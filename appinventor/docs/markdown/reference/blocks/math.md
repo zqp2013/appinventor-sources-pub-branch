@@ -51,32 +51,33 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 * [按位与 (bitwise and)](#bitwise_and)
 * [按位或 (bitwise or Inclusive)](#bitwise_ior)
 * [按位异或 (bitwise or Exclusive)](#bitwise_xor)
+* [列表中出现次数最多的元素 (mode)](#mode)
 
 *内置块中找不到你要查找的数学代码块？*
 
 一些数学代码块是下拉列表，它们可以转换为不同的块。以下是每个下拉列表中包含的内容的列表：
 
-* 等于 ( = ), 不等于 ( ≠ ), 大于 ( > ), 大于等于 ( ≥ ), 小于 ( < ), 小于等于 ( ≤ )
+* [等于 ( = )](#eq), [不等于 ( ≠ )](#ne), [大于 ( > )](#gt), [大于等于 ( ≥ )](#gte), [小于 ( < )](#lt), [小于等于 ( ≤ )](#lte)
 
 ![](images/math/equals.gif)
 
-* 最小值 (min), 最大值 (max)
+* [最小值 (min)](#min), [最大值 (max)](#max)
 
 ![](images/math/minmax.gif)
 
-* 平方根 (square), 绝对值 (abs), 相反数 (neg), 对数 (log), e^, 四舍五入 (round), 上取整 (ceiling), 下取整 (floor)
+* [平方根 (square)](#sqrt), [绝对值 (abs)](#abs), [相反数 (neg)](#neg), [对数 (log)](#log), [e^](#e), [四舍五入 (round)](#round), [上取整 (ceiling)](#ceiling), [下取整 (floor)](#floor)
 
 ![](images/math/sqrt.gif)
 
-* 求模 (modulo), 余数 (remainder), 商 (quotient)
+* [求模 (modulo)](#modulo), [余数 (remainder)](#remainder), [商 (quotient)](#quotient)
 
 ![](images/math/modulo.gif)
 
-* 正弦 (sin), 余弦 (cos), 正切 (tan), 反正弦 (asin), 反余弦 (acos), 反正切 (atan)
+* [正弦 (sin)](#sin), [余弦 (cos)](#cos), [正切 (tan)](#tan), [反正弦 (asin)](#asin), [反余弦 (acos)](#acos), [反正切 (atan)](#atan)
 
 ![](images/math/sin.gif)
 
-* 将弧度转换为度数 (convert radians to degrees), 将度数转换为弧度 (convert degrees to radians)
+* [将弧度转换为度数 (convert radians to degrees)](#convertrad), [将度数转换为弧度 (convert degrees to radians)](#convertdeg)
 
 ![](images/math/convert.gif)
 
@@ -197,7 +198,7 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 
 ![](images/math/randomint.png)
 
-返回给定值之间（包含首尾）的随机整数值。参数的顺序不限。
+返回给定值之间（包含首尾）的随机整数值。参数的顺序不限，也就是 1~100 和 100~1 效果一样。
 
 ***
 ### 随机小数 (random fraction)   {#randomfrac}
@@ -211,35 +212,37 @@ description: 数学代码块参考文档，包括：基础数字块,进制数字
 
 ![](images/math/randomseed.png)
 
-Use this block to generate repeatable sequences of random numbers. You can generate the same sequence of random numbers by first calling random set seed with the same value. This is useful for testing programs that involve random values.
+使用此块生成可重复的随机数序列。你可以通过使用相同值调用随机集种子来生成相同的随机数序列，这对于测试涉及随机值的程序很有用。
+
+> 在科学技术和机器学习等其他算法相关任务中，我们经常需要用到随机数，为了把握随机数的生成特性，从随机数的随机无序中获得确定和秩序。我们可以利用 `随机数种子(random seed)` 来实现这一目标，随机数种子可以使得引入了随机数的整个程序，在多次运行中得到确定的、一致的结果。
 
 ***
 ### 最小值 (min)   {#min}
 
 ![](images/math/min.png)
 
-Returns the smallest value of a set of numbers. If there are unplugged sockets in the block, min will also consider 0 in its set of numbers. This block is a [mutator](../concepts/mutators.html) and a dropdown.
+返回一组数字的最小值。如果代码块中有未插入的槽，会被当做数字 0 进行计算。该块是一个 [块拓展](../concepts/mutators.html) ，有一个下拉列表。
 
 ***
 ### 最大值 (max)   {#max}
 
 ![](images/math/max.png)
 
-Returns the largest value of a set of numbers. If there are unplugged sockets in the block, max will also consider 0 in its set of numbers. This block is a [mutator](../concepts/mutators.html) and a dropdown.
+返回一组数字的最大值。如果代码块中有未插入的槽，会被当做数字 0 进行计算。该块是一个 [块拓展](../concepts/mutators.html) ，有一个下拉列表。
 
 ***
 ### 平方根 (square root)   {#sqrt}
 
 ![](images/math/sqrt.png)
 
-Returns the square root of the given number.
+返回给定数字的平方根。如：9 的平方根将返回 3。
 
 ***
 ### 绝对值 (abs)   {#abs}
 
 ![](images/math/abs.png)
 
-Returns the absolute value of the given number.
+返回给定数字的绝对值。如：-3.3 的绝对值是 3.3，5 的绝对值是 5，0 的绝对值是 0。
 
 ***
 ### 相反数 (neg)   {#neg}
@@ -253,194 +256,203 @@ Returns the absolute value of the given number.
 
 ![](images/math/log.png)
 
-Returns the natural logarithm of a given number, that is, the logarithm to the base e (2.71828...).
+返回给定数字的自然对数，即以 e (2.71828...) 为底的对数。
 
 ***
 ### e^   {#e}
 
 ![](images/math/e.png)
 
-Returns e (2.71828...) raised to the power of the given number.
+返回 e (2.71828...) 的给定数次方。
 
 ***
 ### 四舍五入 (round)   {#round}
 
 ![](images/math/round.png)
 
-Returns the given number rounded to the closest integer. If the fractional part is < .5 it will be rounded down. It it is > .5 it will be rounded up. If it is exactly equal to .5, numbers with an even whole part will be rounded down, and numbers with an odd whole part will be rounded up. (This method is called round to even.)
+返回给定数字四舍五入到最接近的整数。如果小数部分 < .5，则会向下舍入；如果 > .5，则会向上舍入。
+
+如果它恰好等于 0.5，则整数部分为偶数的数字将向下舍入，整数部分为奇数的数字将向上舍入（此方法称为舍入到偶数）。
 
 ***
 ### 上取整 (ceiling)   {#ceiling}
 
 ![](images/math/ceiling.png)
 
-Returns the smallest integer that's greater than or equal to the given number.
+返回大于或等于给定数字的最小整数。如：3.01 返回 4。
 
 ***
 ### 下取整 (floor)   {#floor}
 
 ![](images/math/floor.png)
 
-Returns the greatest integer that's less than or equal to the given number.
+返回小于或等于给定数字的最大整数。如：3.88 返回 3。
 
 ***
 ### 求模 (modulo)   {#modulo}
 
 ![](images/math/modulo.png)
 
-Modulo(a,b) is the same as remainder(a,b) when a and b are positive. More generally, modulo(a,b) is defined for any a and b so that (floor(a/b)× b) + modulo(a,b) = a. For example, modulo(11, 5) = 1, modulo(-11, 5) = 4, modulo(11, -5) = -4, modulo(-11, -5) = -1. Modulo(a,b) always has the same sign as b, while remainder(a,b) always has the same sign as a.
+当 a 和 b 为正数时，求模(a,b) 与 余数(a,b) 相同。
+
+更一般地，对任意 a 和 b 定义：求模(a,b)，使得 ( 下取整(a/b) × b ) + 求模(a,b) = a。
+
+例如，求模(11, 5) = 1、求模(-11, 5) = 4、求模(11, -5) = -4、求模(-11, -5) = -1。
+
+求模(a,b) 始终与 b 具有相同的符号，而 余数(a,b) 始终与 a 具有相同的符号。
 
 ***
 ### 余数 (remainder)   {#remainder}
 
 ![](images/math/remainder.png)
 
-Remainder(a,b) returns the result of dividing a by b and taking the remainder. The remainder is the fractional part of the result multiplied by b.
+余数(a,b) 返回 a 除以 b 并取余数的结果。余数是结果乘以 b 的小数部分。
 
-For example, remainder(11,5) = 1 because
+例如，余数(11,5) = 1，因为11 / 5 = 2 <sup>1</sup>⁄<sub>5</sub>，在本例中，<sup>1</sup>⁄<sub>5</sub> 是小数部分。我们将其乘以 b（在本例中为 5），得到余数 1。
 
-
-11 / 5 = 2 <sup>1</sup>⁄<sub>5</sub>
-
-
-In this case, <sup>1</sup>⁄<sub>5</sub> is the fractional part. We multiply this by b, in this case 5 and we get 1, our remainder.
-
-
-Other examples are remainder(-11, 5) = -1, remainder(11, -5) = 1, and remainder(-11, -5) = -1.
+其他示例包括余数(-11, 5) = -1、余数(11, -5) = 1 和余数(-11, -5) = -1。
 
 ***
 ### 商 (quotient)   {#quotient}
 
 ![](images/math/quotient.png)
 
-Returns the result of dividing the first number by the second and discarding any fractional part of the result.
+返回第一个数字除以第二个数字的结果并丢弃结果全部的小数部分。
 
 ***
 ### 正弦 (sin)   {#sin}
 
 ![](images/math/sin.png)
 
-Returns the sine of the given number in degrees.
+返回给定数字的正弦值（以度为单位）。
 
 ***
 ### 余弦 (cos)   {#cos}
 
 ![](images/math/cos.png)
 
-Returns the cosine of the given number in degrees.
+返回给定数字的余弦（以度为单位）。
 
 ***
 ### 正切 (tan)   {#tan}
 
 ![](images/math/tan.png)
 
-Returns the tangent of the given number in degrees.
+返回给定数字的正切值（以度为单位）。
 
 ***
 ### 反正弦 (asin)   {#asin}
 
 ![](images/math/asin.png)
 
-Returns the arcsine of the given number in degrees.
+返回给定数字的反正弦值（以度为单位）。
 
 ***
 ### 反余弦 (acos)   {#acos}
 
 ![](images/math/acos.png)
 
-Returns the arccosine of the given number in degrees.
+返回给定数字的反余弦值（以度为单位）。
 
 ***
 ### 反正切 (atan)   {#atan}
 
 ![](images/math/atan.png)
 
-Returns the arctangent of the given number in degrees.
+返回给定数字的反正切值（以度为单位）。
 
 ***
 ### 反正切2 (atan2)   {#atan2}
 
 ![](images/math/atan2.png)
 
-Returns the arctangent of y/x, given y and x.
+给定 y 和 x，返回 y/x 的反正切值。
 
 ***
 ### 将弧度转换为度数 (convert radians to degrees)   {#convertrad}
 
 ![](images/math/convertrad.png)
 
-Returns the value in degrees of the given number in radians. The result will be an angle in the range [0, 360)
+返回给定数字（以弧度表示）的度数值。结果将是 [0, 360) 范围内的角度。
 
 ***
 ### 将度数转换为弧度 (convert degrees to radians)   {#convertdeg}
 
 ![](images/math/convertdeg.png)
 
-Returns the value in radians of the given number in degrees. The result will be an angle in the range [-π , +π)
+返回给定数字（以度为单位）的弧度值。结果将是 [-π , +π) 范围内的角度。
 
 ***
 ### 数字转变为小数形式 (format as a decimal)   {#format}
 
 ![](images/math/format.png)
 
-Formats a number as a decimal with a given number of places after the decimal point. The number of places must be a non-negative integer. The result is produced by rounding the number (if there were too many places) or by adding zeros on the right (if there were too few).
+将数字格式化为小数，小数点后指定位数。位数必须是非负整数，如果位置太多结果是通过对数字进行四舍五入生成的；如果位置太少，则右侧补零。
 
 ***
 ### 是否为数字 (is a number)   {#isnumber}
 
 ![](images/math/isnumber.png)
 
-Returns true if the given object is a number, and false otherwise.
+如果给定对象是数字，则返回 `真`，否则返回 `假`。
 
 ***
 ### 进制转换 (convert number)   {#convertnumber}
 
 ![](images/math/convertnumber.png)
 
-Takes a text string that represents a positive integer in one base and returns a string that represents the same number is another base. For example, if the input string is 10, then converting from base 10 to binary will produce the string 1010; while if the input string is the same 10, then converting from binary to base 10 will produce the string 2. If the input string is the same 10, then converting from base 10 to hex will produce the string A.
+获取一个表示一个基数的正整数的文本字符串，并返回一个表示另一个基数的相同数字的字符串。
+
+例如，如果输入字符串为 10，则从 10 进制转换为二进制将产生字符串 1010； 如果输入字符串相同为 10，则从二进制转换为基数 10 将生成字符串 2。如果输入字符串相同为 10，则从基数 10 转换为十六进制将生成字符串 A。
 
 ***
 ### 按位与 (bitwise and)   {#bitwise_and}
 
 ![](images/math/bitwise_and.png)
 
-Takes two numbers and compares each pair of bits. Each bit of the result is 1 only if the corresponding bits of both operands are 1.
+对两个数字每一位进行 `与操作`。仅当两个操作数的相应位都为 1 时，结果的每一位才为 1。
 
-Example:
+例子：
 
-|         | Decimal | Binary (internal representation)  |
+|         | 十进制   | 二进制 (内部展示)  |
 |---------|---------|---------|
 |         |       6 | 0 1 1 0 |
 |         |       3 | 0 0 1 1 |
-| Result: |       2 | 0 0 1 0 |
+| 结果:   |       2 | 0 0 1 0 |
 
 ***
 ### 按位或 (bitwise or Inclusive)   {#bitwise_ior}
 
 ![](images/math/bitwise_ior.png)
 
-Takes two numbers and compares each pair of bits. Each bit of the result is 1 if either of the corresponding bits in each operand is 1.
+对两个数字每一位进行 `或操作`。如果每个操作数中的任一对应位为 1，则结果的每个位为 1。
 
-Example:
+例子：
 
-|         | Decimal | Binary (internal representation)  |
+|         | 十进制  | 二进制 (内部展示)  |
 |---------|---------|---------|
 |         |       6 | 0 1 1 0 |
 |         |       3 | 0 0 1 1 |
-| Result: |       7 | 0 1 1 1 |
+| 结果:   |       7 | 0 1 1 1 |
 
 ***
 ### 按位异或 (bitwise or Exclusive)   {#bitwise_xor}
 
 ![](images/math/bitwise_xor.png)
 
-Takes two numbers and compares each pair of bits. Each bit of the result is 1 only if one corresponding bit in the operands is 1 and the other is 0.
+对两个数字每一位进行 `异或操作`。仅当操作数中对应的一位为 1、另一位为 0 时，结果的每一位才为 1。
 
-Example:
+例子：
 
-|         | Decimal | Binary (internal representation)  |
+|         | 十进制  | 二进制 (内部展示)  |
 |---------|---------|---------|
 |         |       6 | 0 1 1 0 |
 |         |       3 | 0 0 1 1 |
-| Result: |       5 | 0 1 0 1 |
+| 结果:   |       5 | 0 1 0 1 |
 
+***
+### 列表中出现次数最多的元素 (mode)   {#mode}
+
+![](images/math/mode.png)
+
+返回列表中出现次数最多的元素。

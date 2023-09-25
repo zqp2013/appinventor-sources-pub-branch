@@ -53,7 +53,14 @@
 	background: #FF8E21;
 }
 
-
+/*引用*/
+article blockquote {
+  color: #999;
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: rgb(235, 239, 247);
+  padding-left:12px;
+}
 
 /*toc*/
 #markdown-toc {

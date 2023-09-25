@@ -30,7 +30,7 @@ description: 字典代码块参考文档：包括创建空字典、创建字典�
 * [walk all at level](#walk-all-at-level)
 * [是否为字典？](#is-a-dictionary)
 
-## 介绍   {#dictionaries}
+### 介绍   {#dictionaries}
 
 Dictionaries, called in other languages terms such as maps, associative arrays or lists, are data structures that associate one value, often called the key, with another value. A common way of displaying dictionaries is using the JavaScript Object Notation (JSON), for example:
 
