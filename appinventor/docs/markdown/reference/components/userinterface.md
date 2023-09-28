@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 用户界面（UI）组件
-description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择框、列表显示框、通知器、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
+description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择框、列表显示框、对话框（通知器）、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
 ---
 
 * TOC
@@ -12,909 +12,28 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 目录：
 
-* [按钮（Button）](#Button)
-* [复选框（CheckBox）](#CheckBox)
-* [日期选择框（DatePicker）](#DatePicker)
-* [图像（Image）](#Image)
+1. ![icon](images/Screen.png)  [屏幕（Screen）](#Screen)
+1. ![icon](images/Button.png)  [按钮（Button）](#Button)
+1. ![icon](images/CheckBoxIcon.png)  [复选框（CheckBox）](#CheckBox)
+1. ![icon](images/DatePicker.png)   [日期选择框（DatePicker）](#DatePicker)
+1. ![icon](images/ImageIcon.png)  [图像（Image）](#Image)
   * [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
   * [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
-* [标签（Label）](#Label)
-* [列表选择框（ListPicker）](#ListPicker)
-* [列表显示框（ListView）](#ListView)
-* [通知器（Notifier）](#Notifier)
-* [密码输入框（PasswordTextBox）](#PasswordTextBox)
-* [屏幕（Screen）](#Screen)
-* [滑动条（Slider）](#Slider)
-* [下拉框（Spinner）](#Spinner)
-* [切换开关（Switch）](#Switch)
-* [文本输入框（TextBox）](#TextBox)
-* [时间选择框（TimePicker）](#TimePicker)
-* [Web浏览框（WebViewer）](#WebViewer)
-
-***
-## 按钮（Button）  {#Button}
-
-按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”视图或“程序设计”视图中修改其属性。
-
-### 属性  {#Button-Properties}
-
-{:.properties}
-
-{:id="Button.BackgroundColor" .color} *背景颜色*
-: 设置`按钮`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#Button.Image)属性，则不能显示背景颜色直到删除[`图像`](#Button.Image)属性为止。
-
-{:id="Button.Enabled" .boolean} *启用*
-: 设置`按钮`是否可以被点击。
-
-{:id="Button.FontBold" .boolean} *粗体*
-: 设置`按钮`的显示字体是否是粗体。（注：有些字体不支持粗体）。
-
-{:id="Button.FontItalic" .boolean} *斜体*
-: 设置`按钮`的显示字体是否是斜体。（注：有些字体不支持斜体）。
-
-{:id="Button.FontSize" .number} *字体大小*
-: 设置`按钮`的字体大小，以像素px为单位。
-
-{:id="Button.FontTypeface" .number .do} *字体*
-: 设置`按钮`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="Button.Height" .number .bo} *高度*
-: 设置`按钮`的垂直高度，以像素px为单位。
-
-{:id="Button.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`按钮`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="Button.Image" .text} *图像*
-: 设置`按钮`图像的路径，如果同时设置了`图像`和[`背景颜色`](#Button.BackgroundColor)，则仅`图像`可见。
-
-{:id="Button.Shape" .number .do} *形状*
-: 设置`按钮`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
-
-{:id="Button.ShowFeedback" .boolean} *显示反馈*
-: 设置`按钮`指定 [`图像`](#Button.Image)后被按压是否显示视觉反馈。
-
-{:id="Button.Text" .text} *文本*
-: 设置`按钮`的显示文本。
-
-{:id="Button.TextAlignment" .number .do} *文本对齐*
-: 设置`按钮`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
-
-{:id="Button.TextColor" .color} *文本颜色*
-: 设置`按钮`的文本颜色，使用RGBA数值表示。
-
-{:id="Button.Visible" .boolean} *可见性*
-: 设置`按钮`是否显示在屏幕上，值是`真`{:.logic.block}则`按钮`显示，`假`{:.logic.block}则隐藏。
-
-{:id="Button.Width" .number .bo} *宽度*
-: 设置`按钮`的水平宽度，以像素px为单位。
-
-{:id="Button.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`按钮`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#Button-Events}
-
-{:.events}
-
-{:id="Button.Click"} 被点击()
-: 表示用户点击并放开了`按钮`。
-
-{:id="Button.GotFocus"} 获得焦点()
-: 表示光标移到`按钮`上了，因此现在可以单击它。
-
-{:id="Button.LongClick"} 被慢点击()
-: 表示用户按住了`按钮`。
-
-{:id="Button.LostFocus"} 失去焦点()
-: 表示光标从`按钮`移开，因此现在无法再单击它。
-
-{:id="Button.TouchDown"} 被按压()
-: 表示`按钮`被按下。
-
-{:id="Button.TouchUp"} 被松开()
-: 表示按下的`按钮`已被放开。
-
-### 方法  {#Button-Methods}
-
-{:.methods}
-无
-
-***
-## 复选框  {#CheckBox}
-
-![复选框示例](images/checkbox.png)
-
- `复选框`组件可以检测用户点击，并更改其布尔状态。
-
- 当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”视图或“程序设计”视图中进行设置。
-
-### 属性  {#CheckBox-Properties}
-
-{:.properties}
-
-{:id="CheckBox.BackgroundColor" .color} *背景颜色*
-: 设置`复选框`的背景颜色，使用RGBA数值表示。
-
-{:id="CheckBox.Checked" .boolean} *选中*
-: 设置`复选框`是否处于选中状态，值是`真`{:.logic.block}则`复选框`选中，`假`{:.logic.block}则未选中。
-
-{:id="CheckBox.Enabled" .boolean} *启用*
-: 设置`复选框`是否可以被点击。
-
-{:id="CheckBox.FontBold" .boolean .do} *粗体*
-: 设置`复选框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
-
-{:id="CheckBox.FontItalic" .boolean .do} *斜体*
-: 设置`复选框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
-
-{:id="CheckBox.FontSize" .number} *字体大小*
-: 设置`复选框`的字体大小，以像素px为单位。
-
-{:id="CheckBox.FontTypeface" .number .do} *字体*
-: 设置`复选框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="CheckBox.Height" .number .bo} *高度*
-: 设置`复选框`的垂直高度，以像素px为单位。
-
-{:id="CheckBox.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`复选框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="CheckBox.Text" .text} *文本*
-: 设置`复选框`的显示文本。
-
-{:id="CheckBox.TextColor" .color} *文本颜色*
-: 设置`复选框`的文本颜色，使用RGBA数值表示。
-
-{:id="CheckBox.Visible" .boolean} *可见性*
-: 设置`复选框`是否显示在屏幕上，值是`真`{:.logic.block}则`复选框`显示，`假`{:.logic.block}则隐藏。
-
-{:id="CheckBox.Width" .number .bo} *宽度*
-: 设置`复选框`的水平宽度，以像素px为单位。
-
-{:id="CheckBox.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`复选框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#CheckBox-Events}
-
-{:.events}
-
-{:id="CheckBox.Changed"} Changed()
-: 用户点击，`复选框`选中状态发生改变时触发该事件。
-
-{:id="CheckBox.GotFocus"} GotFocus()
-: `复选框`获得焦点时，触发该事件。
-
-{:id="CheckBox.LostFocus"} LostFocus()
-: `复选框`失去焦点时，触发该事件。
-
-### 方法  {#CheckBox-Methods}
-
-{:.methods}
-无
+1. ![icon](images/Label.png)  [标签（Label）](#Label)
+1. ![icon](images/ListPicker.png)  [列表选择框（ListPicker）](#ListPicker)
+1. ![icon](images/ListView.png)  [列表显示框（ListView）](#ListView)
+1. ![icon](images/Notifier.png)  [对话框（Notifier）](#Notifier)
+1. ![icon](images/PasswordTextBoxIcon.png)  [密码输入框（PasswordTextBox）](#PasswordTextBox)
+1. ![icon](images/slider.png)  [滑动条（Slider）](#Slider)
+1. ![icon](images/Spinner.png)  [下拉框（Spinner）](#Spinner)
+1. ![icon](images/Switch.png)  [切换开关（Switch）](#Switch)
+1. ![icon](images/TextBoxIcon.png)  [文本输入框（TextBox）](#TextBox)
+1. ![icon](images/TimePicker.png)  [时间选择框（TimePicker）](#TimePicker)
+1. ![icon](images/WebViewer.png)  [Web浏览框（WebViewer）](#WebViewer)
 
 
 ***
-## 日期选择框  {#DatePicker}
-
-单击一个按钮弹出对话框以允许用户选择日期(公历)。
-
-  注意：日期和时间可使用 [计时器](sensors.html#Clock) 组件中的方法进行操作。
-
-### 属性  {#DatePicker-Properties}
-
-{:.properties}
-
-{:id="DatePicker.BackgroundColor" .color} *背景颜色*
-: 设置`日期选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#DatePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#DatePicker.Image)属性为止。
-
-{:id="DatePicker.Day" .number .ro .bo} *日期*
-: Returns the Day of the month that was last picked using the DatePicker.
-
-{:id="DatePicker.Enabled" .boolean} *启用*
-: 设置`日期选择框`是否可以被激活和点击。
-
-{:id="DatePicker.FontBold" .boolean} *粗体*
-: 设置`日期选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
-
-{:id="DatePicker.FontItalic" .boolean} *斜体*
-: 设置`日期选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
-
-{:id="DatePicker.FontSize" .number} *字体大小*
-: 设置`日期选择框`的字体大小，以像素px为单位。
-
-{:id="DatePicker.FontTypeface" .number .do} *字体*
-: 设置`日期选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="DatePicker.Height" .number .bo} *高度*
-: 设置`日期选择框`的垂直高度，以像素px为单位。
-
-{:id="DatePicker.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`日期选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="DatePicker.Image" .text} *图像*
-: 设置`日期选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#DatePicker.BackgroundColor)，则仅`图像`可见。
-
-{:id="DatePicker.Instant" .InstantInTime .ro .bo} *时刻*
-: Returns instant of the date that was last picked using the DatePicker.
-
-{:id="DatePicker.Month" .number .ro .bo} *月份*
-: Returns the number of the Month that was last picked using the DatePicker.
-
-{:id="DatePicker.MonthInText" .text .ro .bo} *月份名称*
-: Returns the name of the Month that was last picked using the DatePicker.
-
-{:id="DatePicker.Shape" .number .do} *形状*
-: 设置`日期选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#DatePicker.Image)，则`形状`将不可见。
-
-{:id="DatePicker.ShowFeedback" .boolean} *显示反馈*
-: 设置`日期选择框`指定 [`图像`](#DatePicker.Image)后被按压是否显示视觉反馈。
-
-{:id="DatePicker.Text" .text} *文本*
-: 设置`日期选择框`的显示文本。
-
-{:id="DatePicker.TextAlignment" .number .do} *文本对齐*
-: 设置`日期选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
-
-{:id="DatePicker.TextColor" .color} *文本颜色*
-: 设置`日期选择框`的文本颜色，使用RGBA数值表示。
-
-{:id="DatePicker.Visible" .boolean} *可见性*
-: 设置`日期选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`日期选择框`显示，`假`{:.logic.block}则隐藏。
-
-{:id="DatePicker.Width" .number .bo} *宽度*
-: 设置`日期选择框`的水平宽度，以像素px为单位。
-
-{:id="DatePicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`日期选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-{:id="DatePicker.Year" .number .ro .bo} *年度*
-: Returns the Year that was last picked using the DatePicker.
-
-### 事件  {#DatePicker-Events}
-
-{:.events}
-
-{:id="DatePicker.AfterDateSet"} AfterDateSet()
-: Event that runs after the user chooses a Date in the dialog.
-
-{:id="DatePicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `DatePicker` so it is now possible
- to click it.
-
-{:id="DatePicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `DatePicker` so it is now no
- longer possible to click it.
-
-{:id="DatePicker.TouchDown"} TouchDown()
-: Indicates that the `DatePicker` was pressed down.
-
-{:id="DatePicker.TouchUp"} TouchUp()
-: Indicates that the `DatePicker` has been released.
-
-### 方法  {#DatePicker-Methods}
-
-{:.methods}
-
-{:id="DatePicker.LaunchPicker" class="method"} <i/> LaunchPicker()
-: Launches the DatePicker dialog. The [`AfterDateSet`](#DatePicker.AfterDateSet) event will be run after the user
- confirms their selection.
-
-{:id="DatePicker.SetDateToDisplay" class="method"} <i/> SetDateToDisplay(*year*{:.number},*month*{:.number},*day*{:.number})
-: Allows the user to set the date to be displayed when the date picker opens.
-Valid values for the month field are 1-12 and 1-31 for the day field.
-
-{:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
-: Allows the user to set the date from the instant to be displayed when the date picker opens.
-
-***
-## 图像  {#Image}
-
-用于显示图像和基本动画的组件。要显示的图片以及图像外观的其他方面，可以在“界面设计”视图或“程序设计”视图中进行设置。
-
-### 属性  {#Image-Properties}
-
-{:.properties}
-
-{:id="Image.AlternateText" .text .wo} *替代文本*
-: 对图像的描述文本，当无法正确加载图片时，这段文本描述将会被显示。（同HTML中 `alt` 属性 ```<img src="" alt="图片无法正常显示时，显示该文字描述" />```）。
-
-{:id="Image.Animation" .text .wo .bo} *动画形式*
-: 一种简单的动画形式，可以将少量动画效果附加到图像上。包括：
-
-  * 向右慢移：`ScrollRightSlow`
-  * 向右移动：`ScrollRight`
-  * 向右快移：`ScrollRightFast`
-  * 向左慢移：`ScrollLeftSlow`
-  * 向左移动：`ScrollLeft`
-  * 向左快移：`ScrollLeftFast`
-  * 停止移动：`Stop`
-
-{:id="Image.Clickable" .boolean} *可点击*
-: 设置`图像`是否可点击（即是否触发[`被点击`](#Image.Click)事件，默认不触发）。
-
-{:id="Image.Height" .number .bo} *高度*
-: 设置`图像`的垂直高度，以像素px为单位。
-
-{:id="Image.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`图像`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="Image.Picture" .text} *图片*
-: 设置`图像`的图片路径。
-
-{:id="Image.RotationAngle" .number} *旋转角度*
-: `图像`显示图片的角度发生了旋转。此旋转不会出现在“界面设计”视图的屏幕上，只会出现在设备上。
-
-{:id="Image.ScalePictureToFit" .boolean .wo} *自动缩放图片*
-: 设置是否应自动调整图片大小以匹配`图像`组件的大小。
-
-{:id="Image.Scaling" .number .bo} *缩放模式*
-: 此属性确定图片如何根据图像的高度或宽度进行缩放。
-
-  * 比例缩放(0)：可保留图片的宽高比例。
-  * 自动缩放(1)：自动调整图片的宽高，与`图像`组件区域匹配。
-
-{:id="Image.Visible" .boolean} *可见性*
-: 设置`图像`是否显示在屏幕上，值是`真`{:.logic.block}则`图像`显示，`假`{:.logic.block}则隐藏。
-
-{:id="Image.Width" .number .bo} *宽度*
-: 设置`图像`的水平宽度，以像素px为单位。
-
-{:id="Image.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`图像`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#Image-Events}
-
-{:.events}
-
-{:id="Image.Click"} 被点击()
-: 单击图像时触发该事件。**注意：**必须将[`可点击`](#Image.Clickable)属性勾上，或设置属性值为`真`，才能触发此事件！！
-
-### 方法  {#Image-Methods}
-
-{:.methods}
-无
-
-
-***
-## 标签  {#Label}
-
-标签是用于显示文本的组件。
-
- ![标签示例](images/label.png)
-
-标签显示由 `文本` 属性指定的文本内容，其他属性可以在“界面设计”视图或“程序设计”视图中进行设置，控制文本的外观和位置等。
-
-### 属性  {#Label-Properties}
-
-{:.properties}
-
-{:id="Label.BackgroundColor" .color} *背景颜色*
-: 指定`标签`的背景颜色，使用RGBA数值表示。
-
-{:id="Label.FontBold" .boolean .do} *粗体*
-: 指定`标签`的文本是否为粗体（有些字体不支持粗体）。
-
-{:id="Label.FontItalic" .boolean .do} *斜体*
-: : 指定`标签`的文本是否为斜体（有些字体不支持斜体）。
-
-{:id="Label.FontSize" .number} *字号*
-: 指定`标签`文本的字体大小，以像素px为单位。
-
-{:id="Label.FontTypeface" .number .do} *字体*
-: 设置`标签`文本的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="Label.HTMLContent" .text .ro .bo} *HTML内容*
-: 在`HTML格式`为`真`{:.logic.block}时，以 HTML 形式返回`标签`的内容。
-
-{:id="Label.HTMLFormat" .boolean .do} *HTML格式*
-: 指定`标签`的文本格式是否是HTML格式。
-
-{:id="Label.HasMargins" .boolean} *具有外边距*
-: 指定`标签`是否有外边距。
-
-{:id="Label.Height" .number .bo} *高度*
-: 设置`标签`的垂直高度，以像素px为单位。
-
-{:id="Label.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`标签`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="Label.Text" .text} *文本*
-: 设置`标签`的显示文本。
-
-{:id="Label.TextAlignment" .number .do} *文本对齐*
-: 指定`标签`文本的对齐方式：居中、正常（例如，如果文本是从左到右书写的，则左对齐），或者相反（例如，如果文本是从左到右书写的，则右对齐）。
-
-{:id="Label.TextColor" .color} *文本颜色*
-: 设置`标签`的文本颜色，使用RGBA数值表示。
-
-{:id="Label.Visible" .boolean} *可见性*
-: 设置`标签`是否显示在屏幕上，值是`真`{:.logic.block}则`标签`显示，`假`{:.logic.block}则隐藏。
-
-{:id="Label.Width" .number .bo} *宽度*
-: 设置`标签`的水平宽度，以像素px为单位。
-
-{:id="Label.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`标签`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#Label-Events}
-
-{:.events}
-无
-
-
-### 方法  {#Label-Methods}
-
-{:.methods}
-无
-
-
-***
-## 列表选择框&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
-
-一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
-  （例如，`选择1,选择2,选择3`）或在“程序设计”视图中设置[`元素`](#ListPicker.Elements)属性，是一个列表属性。
-
-[`显示搜索框`](#ListPicker.ShowFilterBar)属性设置为 `真`{:.logic.block}，将生成可搜索列表，其他属性影响按钮的外观 ([`文本对齐`](#ListPicker.TextAlignment),
-  [`背景颜色`](#ListPicker.BackgroundColor)等) 以及是否可以被点击（[`启用`](#ListPicker.Enabled)）。
-
-### 属性  {#ListPicker-Properties}
-
-{:.properties}
-
-{:id="ListPicker.BackgroundColor" .color} *背景颜色*
-: 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
-
-{:id="ListPicker.Elements" .list .bo} *元素*
-: Specifies the list of choices to display.
-
-{:id="ListPicker.ElementsFromString" .text .wo} *元素字串*
-: Set the list of choices from a string of comma-separated values.
-
-{:id="ListPicker.Enabled" .boolean} *启用*
-: 设置`列表选择框`是否可以被激活和点击。
-
-{:id="ListPicker.FontBold" .boolean} *粗体*
-: 设置`列表选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
-
-{:id="ListPicker.FontItalic" .boolean} *斜体*
-: 设置`列表选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
-
-{:id="ListPicker.FontSize" .number} *字体大小*
-: 设置`列表选择框`的字体大小，以像素px为单位。
-
-{:id="ListPicker.FontTypeface" .number .do} *字体*
-: 设置`列表选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="ListPicker.Height" .number .bo} *高度*
-: 设置`列表选择框`的垂直高度，以像素px为单位。
-
-{:id="ListPicker.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`列表选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="ListPicker.Image" .text} *图像*
-: 设置`列表选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
-
-{:id="ListPicker.ItemBackgroundColor" .color} *ItemBackgroundColor*
-: The background color of the `ListPicker` items.
-
-{:id="ListPicker.ItemTextColor" .color} *ItemTextColor*
-: The text color of the ListPicker items.
-
-{:id="ListPicker.Selection" .text} *Selection*
-: The selected item. When directly changed by the programmer, the [`SelectionIndex`](#ListPicker.SelectionIndex)
- property is also changed to the first item in the [`ListPicker`](#ListPicker) with the given value.
- If the value is not in [`Elements`](#ListPicker.Elements), [`SelectionIndex`](#ListPicker.SelectionIndex) will be set to 0.
-
-{:id="ListPicker.SelectionIndex" .number .bo} *SelectionIndex*
-: Selection index property setter method.
-
-{:id="ListPicker.Shape" .number .do} *形状*
-: 设置`列表选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
-
-{:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
-: 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
-
-{:id="ListPicker.ShowFilterBar" .boolean} *显示搜索框*
-: If `真`{:.logic.block}, the ListPicker will show a search filter bar.
-
-{:id="ListPicker.Text" .text} *文本*
-: 设置`列表选择框`的显示文本。
-
-{:id="ListPicker.TextAlignment" .number .do} *文本对齐*
-: 设置`列表选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
-
-{:id="ListPicker.TextColor" .color} *文本颜色*
-: 设置`列表选择框`的文本颜色，使用RGBA数值表示。
-
-{:id="ListPicker.Title" .text} *标题*
-: 可选标题显示在选项列表的顶部。
-
-{:id="ListPicker.Visible" .boolean} *可见性*
-: 设置`列表选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表选择框`显示，`假`{:.logic.block}则隐藏。
-
-{:id="ListPicker.Width" .number .bo} *宽度*
-: 设置`列表选择框`的水平宽度，以像素px为单位。
-
-{:id="ListPicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`列表选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#ListPicker-Events}
-
-{:.events}
-
-{:id="ListPicker.AfterPicking"} AfterPicking()
-: Event to be raised after the `ListPicker` activity returns its
- result and the properties have been filled in.
-
-{:id="ListPicker.BeforePicking"} BeforePicking()
-: Event to raise when the `ListPicker` is clicked or the picker is shown
- using the [`Open`](#ListPicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
-
-{:id="ListPicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `ListPicker` so it is now possible
- to click it.
-
-{:id="ListPicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `ListPicker` so it is now no
- longer possible to click it.
-
-{:id="ListPicker.TouchDown"} TouchDown()
-: Indicates that the `ListPicker` was pressed down.
-
-{:id="ListPicker.TouchUp"} TouchUp()
-: Indicates that the `ListPicker` has been released.
-
-### 方法  {#ListPicker-Methods}
-
-{:.methods}
-
-{:id="ListPicker.Open" class="method"} <i/> Open()
-: Opens the `ListPicker`, as though the user clicked on it.
-
-***
-## 列表显示框  {#ListView}
-
-This is a visible component that displays a list of text and image elements in your [`Screen`](#Screen) to
- display. Simple lists of strings may be set using the [`ElementsFromString`](#ListView.ElementsFromString) property.
- More complex lists of elements containing multiple strings and/or images can be created using the
- [`ListData`](#ListView.ListData) and [`ListViewLayout`](#ListView.ListViewLayout) properties.
-
- [Information on Layouts](../other/advanced-listview.html)
-
-   Warning: This component will not work correctly on Screens that are scrollable if its
- [`Height`](#ListView.Height) is set to Fill Parent.
-
-
-
-### 属性  {#ListView-Properties}
-
-{:.properties}
-
-{:id="ListView.BackgroundColor" .color} *背景颜色*
-: 设置`列表显示框`的背景颜色。
-
-{:id="ListView.Elements" .list .bo} *Elements*
-: Specifies the list of choices to display.
-
-{:id="ListView.ElementsFromString" .text .wo} *ElementsFromString*
-: Set the list of choices specified as a string with the elements separated by commas
- such as: Cheese,Fruit,Bacon,Radish.
-
-{:id="ListView.FontSizeDetail" .number} *FontSizeDetail*
-: Specifies the `ListView` item's text font size
-
-{:id="ListView.FontTypeface" .number .do} *字体*
-: 设置`列表显示框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
-
-{:id="ListView.FontTypefaceDetail" .number .do} *FontTypefaceDetail*
-: Specifies the label's text's font face as default, serif, sans
- serif, or monospace.
-
-{:id="ListView.Height" .number .bo} *高度*
-: 设置`列表显示框`的垂直高度，以像素px为单位。
-
-{:id="ListView.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`列表显示框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="ListView.ImageHeight" .number} *ImageHeight*
-: Specifies the image height of ListView layouts containing images
-
-{:id="ListView.ImageWidth" .number} *ImageWidth*
-: Specifies the image width of ListView layouts containing images
-
-{:id="ListView.ListData" .text .do} *ListData*
-: Specifies data to be displayed in the ListView elements. This property sets the
- elements specified in [`ListViewLayout`](#ListView.ListViewLayout). For example, if the chosen
- layout is `Image,MainText` this property will allow any number of elements to be
- defined, each containing a filename for Image and a string for MainText.
- Designer only property.
-
-{:id="ListView.ListViewLayout" .number .do} *ListViewLayout*
-: Specifies type of layout for ListView row. Designer only property.
-
-{:id="ListView.Orientation" .number} *Orientation*
-: Specifies the layout's orientation. This may be: `Vertical`, which displays elements
- in rows one after the other; or `Horizontal`, which displays one element at a time and
- allows the user to swipe left or right to brows the elements.
-
-{:id="ListView.Selection" .text} *Selection*
-: Returns the text in the `ListView` at the position of [`SelectionIndex`](#ListView.SelectionIndex).
-
-{:id="ListView.SelectionColor" .color} *SelectionColor*
-: The color of the item when it is selected.
-
-{:id="ListView.SelectionDetailText" .text .ro .bo} *SelectionDetailText*
-: Returns the Secondary or Detail text in the ListView at the position set by SelectionIndex
-
-{:id="ListView.SelectionIndex" .number .bo} *SelectionIndex*
-: The index of the currently selected item, starting at `1`. If no item is selected, the value
- will be `0`. If an attempt is made to set this to a number less than `1` or greater than the
- number of items in the `ListView`, `SelectionIndex` will be set to `0`, and
- [`Selection`](#ListView.Selection) will be set to the empty text.
-
-{:id="ListView.ShowFilterBar" .boolean} *ShowFilterBar*
-: Sets visibility of the filter bar. `真`{:.logic.block} will show the bar,
- `假`{:.logic.block} will hide it.
-
-{:id="ListView.TextColor" .color} *文本颜色*
-:: 设置`列表显示框`的文本颜色，使用RGBA数值表示。
-
-{:id="ListView.TextColorDetail" .color} *TextColorDetail*
-: Specifies the color of the secondary text in a ListView layout
-
-{:id="ListView.TextSize" .number} *TextSize*
-: Specifies the `列表显示框` item's text font size
-
-{:id="ListView.Visible" .boolean} *可见性*
-: 设置`列表显示框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表显示框`显示，`假`{:.logic.block}则隐藏。
-
-{:id="ListView.Width" .number .bo} *宽度*
-: 设置`列表显示框`的水平宽度，以像素px为单位。
-
-{:id="ListView.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`列表显示框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#ListView-Events}
-
-{:.events}
-
-{:id="ListView.AfterPicking"} AfterPicking()
-: Simple event to be raised after the an element has been chosen in the list.
- The selected element is available in the [`Selection`](#ListView.Selection) property.
-
-### 方法  {#ListView-Methods}
-
-{:.methods}
-
-{:id="ListView.CreateElement" class="method returns dictionary"} <i/> CreateElement(*mainText*{:.text},*detailText*{:.text},*imageName*{:.text})
-: Creates a
-
-{:id="ListView.GetDetailText" class="method returns text"} <i/> GetDetailText(*listElement*{:.dictionary})
-: Get the Detail Text of a ListView element.
-
-{:id="ListView.GetImageName" class="method returns text"} <i/> GetImageName(*listElement*{:.dictionary})
-: Get the filename of the image of a ListView element that has been uploaded to Media.
-
-{:id="ListView.GetMainText" class="method returns text"} <i/> GetMainText(*listElement*{:.dictionary})
-: Get the Main Text of a ListView element.
-
-{:id="ListView.Refresh" class="method"} <i/> Refresh()
-: Reload the ListView to reflect any changes in the data.
-
-***
-## 通知器  {#Notifier}
-
-The Notifier component displays alert messages and creates Android log entries through
- an assortment of methods.
-
-### 属性  {#Notifier-Properties}
-
-{:.properties}
-
-{:id="Notifier.BackgroundColor" .color .wo} *背景颜色*
-: Specifies the background color for alerts (not dialogs).
-
-{:id="Notifier.NotifierLength" .number .do} *NotifierLength*
-: Specifies the length of time that the alert is shown -- either "short" or "long".
-
-{:id="Notifier.TextColor" .color} *文本颜色*
-: Specifies the text color for alerts (not dialogs).
-
-### 事件  {#Notifier-Events}
-
-{:.events}
-
-{:id="Notifier.AfterChoosing"} AfterChoosing(*choice*{:.text})
-: Event after the user has made a selection for
- [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
-
-{:id="Notifier.AfterTextInput"} AfterTextInput(*response*{:.text})
-: Event raised after the user has responded to [`ShowTextDialog`](#Notifier.ShowTextDialog).
-
-{:id="Notifier.ChoosingCanceled"} ChoosingCanceled()
-: Event raised when the user cancels choosing an option.
- [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
-
-{:id="Notifier.TextInputCanceled"} TextInputCanceled()
-: Event raised when the user cancels
- [`ShowPasswordDialog`](#Notifier.ShowPasswordDialog), or
- [`ShowTextDialog`](#Notifier.ShowTextDialog).
-
-### 方法  {#Notifier-Methods}
-
-{:.methods}
-
-{:id="Notifier.DismissProgressDialog" class="method"} <i/> DismissProgressDialog()
-: Dismisses the alert created by the ShowProgressDialog block
-
-{:id="Notifier.LogError" class="method"} <i/> LogError(*message*{:.text})
-: Writes an error message to the Android system log. See the Google Android documentation for
- how to access the log.
-
-{:id="Notifier.LogInfo" class="method"} <i/> LogInfo(*message*{:.text})
-: Writes an information message to the Android log.
-
-{:id="Notifier.LogWarning" class="method"} <i/> LogWarning(*message*{:.text})
-: Writes a warning message to the Android log. See the Google Android documentation for how to
- access the log.
-
-{:id="Notifier.ShowAlert" class="method"} <i/> ShowAlert(*notice*{:.text})
-: Display a temporary notification.
-
-{:id="Notifier.ShowChooseDialog" class="method"} <i/> ShowChooseDialog(*message*{:.text},*title*{:.text},*button1Text*{:.text},*button2Text*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box with two buttons, from which the user can choose. If `cancelable` is
- `真`{:.logic.block} there will be an additional CANCEL button. Pressing a button will raise
- the [`AfterChoosing`](#Notifier.AfterChoosing) event. The "choice" parameter to
- [`AfterChoosing`](#Notifier.AfterChoosing) will be the text on the button that was pressed, or "Cancel" if
- the CANCEL button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also
- run.
-
-{:id="Notifier.ShowMessageDialog" class="method"} <i/> ShowMessageDialog(*message*{:.text},*title*{:.text},*buttonText*{:.text})
-: Display an alert dialog with a single button that dismisses the alert.
-
-{:id="Notifier.ShowPasswordDialog" class="method"} <i/> ShowPasswordDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box where the user can enter password (input is masked), after which the
- [`AfterTextInput`](#Notifier.AfterTextInput) event will be raised. If `cancelable` is `真`{:.logic.block}
- there will be an additional CANCEL button. The [`AfterTextInput`](#Notifier.AfterTextInput) and
- [`TextInputCanceled`](#Notifier.TextInputCanceled) events behave the same way as described in
- [`ShowTextDialog`](#Notifier.ShowTextDialog).
-
-{:id="Notifier.ShowProgressDialog" class="method"} <i/> ShowProgressDialog(*message*{:.text},*title*{:.text})
-: Shows a dialog box with an optional title and message (use empty strings if they are not
- wanted). This dialog box contains a spinning artifact to indicate that the program is working.
- It cannot be canceled by the user but must be dismissed by the App Inventor Program by using
- the [`DismissProgressDialog`](#Notifier.DismissProgressDialog) method.
-
-{:id="Notifier.ShowTextDialog" class="method"} <i/> ShowTextDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box where the user can enter text, after which the
- [`AfterTextInput`](#Notifier.AfterTextInput)  event will be raised. If `cancelable` is `真`{:.logic.block}
- there will be an additional CANCEL button. Entering text will raise the
- [`AfterTextInput`](#Notifier.AfterTextInput) event. The "response" parameter to
- [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
- button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
-
-***
-## 密码输入框  {#PasswordTextBox}
-
-Users enter passwords in a password text box component, which hides the text that has been typed in it.
-
- ![Example of a PasswordTextBox](images/passwordtextbox.png)
-
- A password text box is the same as the ordinary [`TextBox`](#TextBox) component, except that it does
- not display the characters typed by the user.
-
- You can get or set the value of the text in the box with the [`Text`](#PasswordTextBox.Text) property. If
- [`Text`](#PasswordTextBox.Text) is blank, you can use the [`Hint`](#PasswordTextBox.Hint) property to provide the user
- with a suggestion of what to type. The [`Hint`](#PasswordTextBox.Hint) appears as faint text in the box.
-
- Password text box components are usually used with a [`Button`](#Button) component. The user taps the
- `Button` after entering text.
-
-### 属性  {#PasswordTextBox-Properties}
-
-{:.properties}
-
-{:id="PasswordTextBox.BackgroundColor" .color} *背景颜色*
-: The background color of the `PasswordTextBox``. You can choose a color by name in the Designer or in
- the Blocks Editor. The default background color is 'default' (shaded 3-D look).
-
-{:id="PasswordTextBox.Enabled" .boolean} *启用*
-: If set, user can enter text into the `PasswordTextBox`.
-
-{:id="PasswordTextBox.FontBold" .boolean .do} *粗体*
-: 设置`密码输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
-
-{:id="PasswordTextBox.FontItalic" .boolean .do} *斜体*
-: 设置`密码输入框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
-
-{:id="PasswordTextBox.FontSize" .number} *字体大小*
-: 设置`密码输入框`的字体大小，以像素px为单位。
-
-{:id="PasswordTextBox.FontTypeface" .number .do} *字体*
-: 设置`密码输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
-
-{:id="PasswordTextBox.Height" .number .bo} *高度*
-: 设置`密码输入框`的垂直高度，以像素px为单位。
-
-{:id="PasswordTextBox.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`密码输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
-
-{:id="PasswordTextBox.Hint" .text} *Hint*
-: `PasswordTextBox` hint for the user.
-
-{:id="PasswordTextBox.NumbersOnly" .boolean} *NumbersOnly*
-: If true, then this `PasswordTextBox`` accepts only numbers as keyboard input. Numbers can include a
- decimal point and an optional leading minus sign. This applies to keyboard input only. Even
- if `NumbersOnly` is true, you can set the text to anything at all using the
- [`Text`](#PasswordTextBox.Text) property.
-
-{:id="PasswordTextBox.PasswordVisible" .boolean .bo} *PasswordVisible*
-: Specifies whether the password is hidden (default) or shown.
-
-{:id="PasswordTextBox.Text" .text} *文本*
-: The text in the `PasswordTextBox`, which can be set by the programmer in the Designer or Blocks Editor,
- or it can be entered by the user (unless the [`Enabled`](#PasswordTextBox.Enabled) property is false).
-
-{:id="PasswordTextBox.TextAlignment" .number .do} *文本对齐*
-: 设置`密码输入框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
-
-{:id="PasswordTextBox.TextColor" .color} *文本颜色*
-: 设置`密码输入框`的文本颜色，使用RGBA数值表示。
-
-{:id="PasswordTextBox.Visible" .boolean} *可见性*
-: 设置`密码输入框`是否显示在屏幕上，值是`真`{:.logic.block}则`密码输入框`显示，`假`{:.logic.block}则隐藏。
-
-{:id="PasswordTextBox.Width" .number .bo} *宽度*
-: 设置`密码输入框`的水平宽度，以像素px为单位。
-
-{:id="PasswordTextBox.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`密码输入框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
-
-### 事件  {#PasswordTextBox-Events}
-
-{:.events}
-
-{:id="PasswordTextBox.GotFocus"} GotFocus()
-: Event raised when the `PasswordTextBox` is selected for input, such as by
- the user touching it.
-
-{:id="PasswordTextBox.LostFocus"} LostFocus()
-: Event raised when the `PasswordTextBox` is no longer selected for input, such
- as if the user touches a different text box.
-
-### 方法  {#PasswordTextBox-Methods}
-
-{:.methods}
-
-{:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
-: Request focus to current `PasswordTextBox`.
-
-***
-## 屏幕  {#Screen}
+## ![icon](images/Screen.png)  屏幕  {#Screen}
 
 Top-level component containing all other components in the program.
 
@@ -1106,7 +225,889 @@ Top-level component containing all other components in the program.
 : Hide the soft keyboard
 
 ***
-## ![Example Slider icon](images/slider.png)  滑动条  {#Slider}
+## ![icon](images/Button.png)  按钮（Button）  {#Button}
+
+按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”视图或“程序设计”视图中修改其属性。
+
+### 属性  {#Button-Properties}
+
+{:.properties}
+
+{:id="Button.BackgroundColor" .color} *背景颜色*
+: 设置`按钮`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#Button.Image)属性，则不能显示背景颜色直到删除[`图像`](#Button.Image)属性为止。
+
+{:id="Button.Enabled" .boolean} *启用*
+: 设置`按钮`是否可以被点击。
+
+{:id="Button.FontBold" .boolean} *粗体*
+: 设置`按钮`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+
+{:id="Button.FontItalic" .boolean} *斜体*
+: 设置`按钮`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+
+{:id="Button.FontSize" .number} *字体大小*
+: 设置`按钮`的字体大小，以像素px为单位。
+
+{:id="Button.FontTypeface" .number .do} *字体*
+: 设置`按钮`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="Button.Height" .number .bo} *高度*
+: 设置`按钮`的垂直高度，以像素px为单位。
+
+{:id="Button.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`按钮`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="Button.Image" .text} *图像*
+: 设置`按钮`图像的路径，如果同时设置了`图像`和[`背景颜色`](#Button.BackgroundColor)，则仅`图像`可见。
+
+{:id="Button.Shape" .number .do} *形状*
+: 设置`按钮`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
+
+{:id="Button.ShowFeedback" .boolean} *显示反馈*
+: 设置`按钮`指定 [`图像`](#Button.Image)后被按压是否显示视觉反馈。
+
+{:id="Button.Text" .text} *文本*
+: 设置`按钮`的显示文本。
+
+{:id="Button.TextAlignment" .number .do} *文本对齐*
+: 设置`按钮`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+{:id="Button.TextColor" .color} *文本颜色*
+: 设置`按钮`的文本颜色，使用RGBA数值表示。
+
+{:id="Button.Visible" .boolean} *可见性*
+: 设置`按钮`是否显示在屏幕上，值是`真`{:.logic.block}则`按钮`显示，`假`{:.logic.block}则隐藏。
+
+{:id="Button.Width" .number .bo} *宽度*
+: 设置`按钮`的水平宽度，以像素px为单位。
+
+{:id="Button.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`按钮`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#Button-Events}
+
+{:.events}
+
+{:id="Button.Click"} 被点击()
+: 表示用户点击并放开了`按钮`。
+
+{:id="Button.GotFocus"} 获得焦点()
+: 表示光标移到`按钮`上了，因此现在可以单击它。
+
+{:id="Button.LongClick"} 被慢点击()
+: 表示用户按住了`按钮`。
+
+{:id="Button.LostFocus"} 失去焦点()
+: 表示光标从`按钮`移开，因此现在无法再单击它。
+
+{:id="Button.TouchDown"} 被按压()
+: 表示`按钮`被按下。
+
+{:id="Button.TouchUp"} 被松开()
+: 表示按下的`按钮`已被放开。
+
+### 方法  {#Button-Methods}
+
+{:.methods}
+无
+
+***
+## ![icon](images/CheckBoxIcon.png)  复选框  {#CheckBox}
+
+![复选框示例](images/checkbox.png)
+
+ `复选框`组件可以检测用户点击，并更改其布尔状态。
+
+ 当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”视图或“程序设计”视图中进行设置。
+
+### 属性  {#CheckBox-Properties}
+
+{:.properties}
+
+{:id="CheckBox.BackgroundColor" .color} *背景颜色*
+: 设置`复选框`的背景颜色，使用RGBA数值表示。
+
+{:id="CheckBox.Checked" .boolean} *选中*
+: 设置`复选框`是否处于选中状态，值是`真`{:.logic.block}则`复选框`选中，`假`{:.logic.block}则未选中。
+
+{:id="CheckBox.Enabled" .boolean} *启用*
+: 设置`复选框`是否可以被点击。
+
+{:id="CheckBox.FontBold" .boolean .do} *粗体*
+: 设置`复选框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+
+{:id="CheckBox.FontItalic" .boolean .do} *斜体*
+: 设置`复选框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+
+{:id="CheckBox.FontSize" .number} *字体大小*
+: 设置`复选框`的字体大小，以像素px为单位。
+
+{:id="CheckBox.FontTypeface" .number .do} *字体*
+: 设置`复选框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="CheckBox.Height" .number .bo} *高度*
+: 设置`复选框`的垂直高度，以像素px为单位。
+
+{:id="CheckBox.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`复选框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="CheckBox.Text" .text} *文本*
+: 设置`复选框`的显示文本。
+
+{:id="CheckBox.TextColor" .color} *文本颜色*
+: 设置`复选框`的文本颜色，使用RGBA数值表示。
+
+{:id="CheckBox.Visible" .boolean} *可见性*
+: 设置`复选框`是否显示在屏幕上，值是`真`{:.logic.block}则`复选框`显示，`假`{:.logic.block}则隐藏。
+
+{:id="CheckBox.Width" .number .bo} *宽度*
+: 设置`复选框`的水平宽度，以像素px为单位。
+
+{:id="CheckBox.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`复选框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#CheckBox-Events}
+
+{:.events}
+
+{:id="CheckBox.Changed"} Changed()
+: 用户点击，`复选框`选中状态发生改变时触发该事件。
+
+{:id="CheckBox.GotFocus"} GotFocus()
+: `复选框`获得焦点时，触发该事件。
+
+{:id="CheckBox.LostFocus"} LostFocus()
+: `复选框`失去焦点时，触发该事件。
+
+### 方法  {#CheckBox-Methods}
+
+{:.methods}
+无
+
+
+***
+## ![icon](images/DatePicker.png)  日期选择框  {#DatePicker}
+
+单击一个按钮弹出对话框以允许用户选择日期(公历)。
+
+  注意：日期和时间可使用 [计时器](sensors.html#Clock) 组件中的方法进行操作。
+
+### 属性  {#DatePicker-Properties}
+
+{:.properties}
+
+{:id="DatePicker.BackgroundColor" .color} *背景颜色*
+: 设置`日期选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#DatePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#DatePicker.Image)属性为止。
+
+{:id="DatePicker.Day" .number .ro .bo} *日期*
+: Returns the Day of the month that was last picked using the DatePicker.
+
+{:id="DatePicker.Enabled" .boolean} *启用*
+: 设置`日期选择框`是否可以被激活和点击。
+
+{:id="DatePicker.FontBold" .boolean} *粗体*
+: 设置`日期选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+
+{:id="DatePicker.FontItalic" .boolean} *斜体*
+: 设置`日期选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+
+{:id="DatePicker.FontSize" .number} *字体大小*
+: 设置`日期选择框`的字体大小，以像素px为单位。
+
+{:id="DatePicker.FontTypeface" .number .do} *字体*
+: 设置`日期选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="DatePicker.Height" .number .bo} *高度*
+: 设置`日期选择框`的垂直高度，以像素px为单位。
+
+{:id="DatePicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`日期选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="DatePicker.Image" .text} *图像*
+: 设置`日期选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#DatePicker.BackgroundColor)，则仅`图像`可见。
+
+{:id="DatePicker.Instant" .InstantInTime .ro .bo} *时刻*
+: Returns instant of the date that was last picked using the DatePicker.
+
+{:id="DatePicker.Month" .number .ro .bo} *月份*
+: Returns the number of the Month that was last picked using the DatePicker.
+
+{:id="DatePicker.MonthInText" .text .ro .bo} *月份名称*
+: Returns the name of the Month that was last picked using the DatePicker.
+
+{:id="DatePicker.Shape" .number .do} *形状*
+: 设置`日期选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#DatePicker.Image)，则`形状`将不可见。
+
+{:id="DatePicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`日期选择框`指定 [`图像`](#DatePicker.Image)后被按压是否显示视觉反馈。
+
+{:id="DatePicker.Text" .text} *文本*
+: 设置`日期选择框`的显示文本。
+
+{:id="DatePicker.TextAlignment" .number .do} *文本对齐*
+: 设置`日期选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+{:id="DatePicker.TextColor" .color} *文本颜色*
+: 设置`日期选择框`的文本颜色，使用RGBA数值表示。
+
+{:id="DatePicker.Visible" .boolean} *可见性*
+: 设置`日期选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`日期选择框`显示，`假`{:.logic.block}则隐藏。
+
+{:id="DatePicker.Width" .number .bo} *宽度*
+: 设置`日期选择框`的水平宽度，以像素px为单位。
+
+{:id="DatePicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`日期选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+{:id="DatePicker.Year" .number .ro .bo} *年度*
+: Returns the Year that was last picked using the DatePicker.
+
+### 事件  {#DatePicker-Events}
+
+{:.events}
+
+{:id="DatePicker.AfterDateSet"} AfterDateSet()
+: Event that runs after the user chooses a Date in the dialog.
+
+{:id="DatePicker.GotFocus"} GotFocus()
+: Indicates the cursor moved over the `DatePicker` so it is now possible
+ to click it.
+
+{:id="DatePicker.LostFocus"} LostFocus()
+: Indicates the cursor moved away from the `DatePicker` so it is now no
+ longer possible to click it.
+
+{:id="DatePicker.TouchDown"} TouchDown()
+: Indicates that the `DatePicker` was pressed down.
+
+{:id="DatePicker.TouchUp"} TouchUp()
+: Indicates that the `DatePicker` has been released.
+
+### 方法  {#DatePicker-Methods}
+
+{:.methods}
+
+{:id="DatePicker.LaunchPicker" class="method"} <i/> LaunchPicker()
+: Launches the DatePicker dialog. The [`AfterDateSet`](#DatePicker.AfterDateSet) event will be run after the user
+ confirms their selection.
+
+{:id="DatePicker.SetDateToDisplay" class="method"} <i/> SetDateToDisplay(*year*{:.number},*month*{:.number},*day*{:.number})
+: Allows the user to set the date to be displayed when the date picker opens.
+Valid values for the month field are 1-12 and 1-31 for the day field.
+
+{:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
+: Allows the user to set the date from the instant to be displayed when the date picker opens.
+
+***
+## ![icon](images/ImageIcon.png)  图像  {#Image}
+
+用于显示图像和基本动画的组件。要显示的图片以及图像外观的其他方面，可以在“界面设计”视图或“程序设计”视图中进行设置。
+
+### 属性  {#Image-Properties}
+
+{:.properties}
+
+{:id="Image.AlternateText" .text .wo} *替代文本*
+: 对图像的描述文本，当无法正确加载图片时，这段文本描述将会被显示。（同HTML中 `alt` 属性 ```<img src="" alt="图片无法正常显示时，显示该文字描述" />```）。
+
+{:id="Image.Animation" .text .wo .bo} *动画形式*
+: 一种简单的动画形式，可以将少量动画效果附加到图像上。包括：
+
+  * 向右慢移：`ScrollRightSlow`
+  * 向右移动：`ScrollRight`
+  * 向右快移：`ScrollRightFast`
+  * 向左慢移：`ScrollLeftSlow`
+  * 向左移动：`ScrollLeft`
+  * 向左快移：`ScrollLeftFast`
+  * 停止移动：`Stop`
+
+{:id="Image.Clickable" .boolean} *可点击*
+: 设置`图像`是否可点击（即是否触发[`被点击`](#Image.Click)事件，默认不触发）。
+
+{:id="Image.Height" .number .bo} *高度*
+: 设置`图像`的垂直高度，以像素px为单位。
+
+{:id="Image.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`图像`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="Image.Picture" .text} *图片*
+: 设置`图像`的图片路径。
+
+{:id="Image.RotationAngle" .number} *旋转角度*
+: `图像`显示图片的角度发生了旋转。此旋转不会出现在“界面设计”视图的屏幕上，只会出现在设备上。
+
+{:id="Image.ScalePictureToFit" .boolean .wo} *自动缩放图片*
+: 设置是否应自动调整图片大小以匹配`图像`组件的大小。
+
+{:id="Image.Scaling" .number .bo} *缩放模式*
+: 此属性确定图片如何根据图像的高度或宽度进行缩放。
+
+  * 比例缩放(0)：可保留图片的宽高比例。
+  * 自动缩放(1)：自动调整图片的宽高，与`图像`组件区域匹配。
+
+{:id="Image.Visible" .boolean} *可见性*
+: 设置`图像`是否显示在屏幕上，值是`真`{:.logic.block}则`图像`显示，`假`{:.logic.block}则隐藏。
+
+{:id="Image.Width" .number .bo} *宽度*
+: 设置`图像`的水平宽度，以像素px为单位。
+
+{:id="Image.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`图像`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#Image-Events}
+
+{:.events}
+
+{:id="Image.Click"} 被点击()
+: 单击图像时触发该事件。**注意：**必须将[`可点击`](#Image.Clickable)属性勾上，或设置属性值为`真`，才能触发此事件！！
+
+### 方法  {#Image-Methods}
+
+{:.methods}
+无
+
+
+***
+## ![icon](images/Label.png)  标签  {#Label}
+
+标签是用于显示文本的组件。
+
+ ![标签示例](images/label.png)
+
+标签显示由 `文本` 属性指定的文本内容，其他属性可以在“界面设计”视图或“程序设计”视图中进行设置，控制文本的外观和位置等。
+
+### 属性  {#Label-Properties}
+
+{:.properties}
+
+{:id="Label.BackgroundColor" .color} *背景颜色*
+: 指定`标签`的背景颜色，使用RGBA数值表示。
+
+{:id="Label.FontBold" .boolean .do} *粗体*
+: 指定`标签`的文本是否为粗体（有些字体不支持粗体）。
+
+{:id="Label.FontItalic" .boolean .do} *斜体*
+: : 指定`标签`的文本是否为斜体（有些字体不支持斜体）。
+
+{:id="Label.FontSize" .number} *字号*
+: 指定`标签`文本的字体大小，以像素px为单位。
+
+{:id="Label.FontTypeface" .number .do} *字体*
+: 设置`标签`文本的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="Label.HTMLContent" .text .ro .bo} *HTML内容*
+: 在`HTML格式`为`真`{:.logic.block}时，以 HTML 形式返回`标签`的内容。
+
+{:id="Label.HTMLFormat" .boolean .do} *HTML格式*
+: 指定`标签`的文本格式是否是HTML格式。
+
+{:id="Label.HasMargins" .boolean} *具有外边距*
+: 指定`标签`是否有外边距。
+
+{:id="Label.Height" .number .bo} *高度*
+: 设置`标签`的垂直高度，以像素px为单位。
+
+{:id="Label.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`标签`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="Label.Text" .text} *文本*
+: 设置`标签`的显示文本。
+
+{:id="Label.TextAlignment" .number .do} *文本对齐*
+: 指定`标签`文本的对齐方式：居中、正常（例如，如果文本是从左到右书写的，则左对齐），或者相反（例如，如果文本是从左到右书写的，则右对齐）。
+
+{:id="Label.TextColor" .color} *文本颜色*
+: 设置`标签`的文本颜色，使用RGBA数值表示。
+
+{:id="Label.Visible" .boolean} *可见性*
+: 设置`标签`是否显示在屏幕上，值是`真`{:.logic.block}则`标签`显示，`假`{:.logic.block}则隐藏。
+
+{:id="Label.Width" .number .bo} *宽度*
+: 设置`标签`的水平宽度，以像素px为单位。
+
+{:id="Label.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`标签`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#Label-Events}
+
+{:.events}
+无
+
+
+### 方法  {#Label-Methods}
+
+{:.methods}
+无
+
+
+***
+## ![icon](images/ListPicker.png)  列表选择框&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
+
+一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
+  （例如，`选择1,选择2,选择3`）或在“程序设计”视图中设置[`元素`](#ListPicker.Elements)属性，是一个列表属性。
+
+[`显示搜索框`](#ListPicker.ShowFilterBar)属性设置为 `真`{:.logic.block}，将生成可搜索列表，其他属性影响按钮的外观 ([`文本对齐`](#ListPicker.TextAlignment),
+  [`背景颜色`](#ListPicker.BackgroundColor)等) 以及是否可以被点击（[`启用`](#ListPicker.Enabled)）。
+
+### 属性  {#ListPicker-Properties}
+
+{:.properties}
+
+{:id="ListPicker.BackgroundColor" .color} *背景颜色*
+: 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
+
+{:id="ListPicker.Elements" .list .bo} *元素*
+: Specifies the list of choices to display.
+
+{:id="ListPicker.ElementsFromString" .text .wo} *元素字串*
+: Set the list of choices from a string of comma-separated values.
+
+{:id="ListPicker.Enabled" .boolean} *启用*
+: 设置`列表选择框`是否可以被激活和点击。
+
+{:id="ListPicker.FontBold" .boolean} *粗体*
+: 设置`列表选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+
+{:id="ListPicker.FontItalic" .boolean} *斜体*
+: 设置`列表选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+
+{:id="ListPicker.FontSize" .number} *字体大小*
+: 设置`列表选择框`的字体大小，以像素px为单位。
+
+{:id="ListPicker.FontTypeface" .number .do} *字体*
+: 设置`列表选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="ListPicker.Height" .number .bo} *高度*
+: 设置`列表选择框`的垂直高度，以像素px为单位。
+
+{:id="ListPicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`列表选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="ListPicker.Image" .text} *图像*
+: 设置`列表选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
+
+{:id="ListPicker.ItemBackgroundColor" .color} *ItemBackgroundColor*
+: The background color of the `ListPicker` items.
+
+{:id="ListPicker.ItemTextColor" .color} *ItemTextColor*
+: The text color of the ListPicker items.
+
+{:id="ListPicker.Selection" .text} *Selection*
+: The selected item. When directly changed by the programmer, the [`SelectionIndex`](#ListPicker.SelectionIndex)
+ property is also changed to the first item in the [`ListPicker`](#ListPicker) with the given value.
+ If the value is not in [`Elements`](#ListPicker.Elements), [`SelectionIndex`](#ListPicker.SelectionIndex) will be set to 0.
+
+{:id="ListPicker.SelectionIndex" .number .bo} *SelectionIndex*
+: Selection index property setter method.
+
+{:id="ListPicker.Shape" .number .do} *形状*
+: 设置`列表选择框`的形状，此属性的有效值为：
+`0`（默认）、 
+`1` （圆形）、
+`2`（矩形）和
+`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
+
+{:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
+
+{:id="ListPicker.ShowFilterBar" .boolean} *显示搜索框*
+: If `真`{:.logic.block}, the ListPicker will show a search filter bar.
+
+{:id="ListPicker.Text" .text} *文本*
+: 设置`列表选择框`的显示文本。
+
+{:id="ListPicker.TextAlignment" .number .do} *文本对齐*
+: 设置`列表选择框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+{:id="ListPicker.TextColor" .color} *文本颜色*
+: 设置`列表选择框`的文本颜色，使用RGBA数值表示。
+
+{:id="ListPicker.Title" .text} *标题*
+: 可选标题显示在选项列表的顶部。
+
+{:id="ListPicker.Visible" .boolean} *可见性*
+: 设置`列表选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表选择框`显示，`假`{:.logic.block}则隐藏。
+
+{:id="ListPicker.Width" .number .bo} *宽度*
+: 设置`列表选择框`的水平宽度，以像素px为单位。
+
+{:id="ListPicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`列表选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#ListPicker-Events}
+
+{:.events}
+
+{:id="ListPicker.AfterPicking"} AfterPicking()
+: Event to be raised after the `ListPicker` activity returns its
+ result and the properties have been filled in.
+
+{:id="ListPicker.BeforePicking"} BeforePicking()
+: Event to raise when the `ListPicker` is clicked or the picker is shown
+ using the [`Open`](#ListPicker.Open) method.  This event occurs before the picker is displayed, and
+ can be used to prepare the picker before it is shown.
+
+{:id="ListPicker.GotFocus"} GotFocus()
+: Indicates the cursor moved over the `ListPicker` so it is now possible
+ to click it.
+
+{:id="ListPicker.LostFocus"} LostFocus()
+: Indicates the cursor moved away from the `ListPicker` so it is now no
+ longer possible to click it.
+
+{:id="ListPicker.TouchDown"} TouchDown()
+: Indicates that the `ListPicker` was pressed down.
+
+{:id="ListPicker.TouchUp"} TouchUp()
+: Indicates that the `ListPicker` has been released.
+
+### 方法  {#ListPicker-Methods}
+
+{:.methods}
+
+{:id="ListPicker.Open" class="method"} <i/> Open()
+: Opens the `ListPicker`, as though the user clicked on it.
+
+***
+## ![icon](images/ListView.png)  列表显示框  {#ListView}
+
+This is a visible component that displays a list of text and image elements in your [`Screen`](#Screen) to
+ display. Simple lists of strings may be set using the [`ElementsFromString`](#ListView.ElementsFromString) property.
+ More complex lists of elements containing multiple strings and/or images can be created using the
+ [`ListData`](#ListView.ListData) and [`ListViewLayout`](#ListView.ListViewLayout) properties.
+
+ [Information on Layouts](../other/advanced-listview.html)
+
+   Warning: This component will not work correctly on Screens that are scrollable if its
+ [`Height`](#ListView.Height) is set to Fill Parent.
+
+
+
+### 属性  {#ListView-Properties}
+
+{:.properties}
+
+{:id="ListView.BackgroundColor" .color} *背景颜色*
+: 设置`列表显示框`的背景颜色。
+
+{:id="ListView.Elements" .list .bo} *Elements*
+: Specifies the list of choices to display.
+
+{:id="ListView.ElementsFromString" .text .wo} *ElementsFromString*
+: Set the list of choices specified as a string with the elements separated by commas
+ such as: Cheese,Fruit,Bacon,Radish.
+
+{:id="ListView.FontSizeDetail" .number} *FontSizeDetail*
+: Specifies the `ListView` item's text font size
+
+{:id="ListView.FontTypeface" .number .do} *字体*
+: 设置`列表显示框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+{:id="ListView.FontTypefaceDetail" .number .do} *FontTypefaceDetail*
+: Specifies the label's text's font face as default, serif, sans
+ serif, or monospace.
+
+{:id="ListView.Height" .number .bo} *高度*
+: 设置`列表显示框`的垂直高度，以像素px为单位。
+
+{:id="ListView.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`列表显示框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="ListView.ImageHeight" .number} *ImageHeight*
+: Specifies the image height of ListView layouts containing images
+
+{:id="ListView.ImageWidth" .number} *ImageWidth*
+: Specifies the image width of ListView layouts containing images
+
+{:id="ListView.ListData" .text .do} *ListData*
+: Specifies data to be displayed in the ListView elements. This property sets the
+ elements specified in [`ListViewLayout`](#ListView.ListViewLayout). For example, if the chosen
+ layout is `Image,MainText` this property will allow any number of elements to be
+ defined, each containing a filename for Image and a string for MainText.
+ Designer only property.
+
+{:id="ListView.ListViewLayout" .number .do} *ListViewLayout*
+: Specifies type of layout for ListView row. Designer only property.
+
+{:id="ListView.Orientation" .number} *Orientation*
+: Specifies the layout's orientation. This may be: `Vertical`, which displays elements
+ in rows one after the other; or `Horizontal`, which displays one element at a time and
+ allows the user to swipe left or right to brows the elements.
+
+{:id="ListView.Selection" .text} *Selection*
+: Returns the text in the `ListView` at the position of [`SelectionIndex`](#ListView.SelectionIndex).
+
+{:id="ListView.SelectionColor" .color} *SelectionColor*
+: The color of the item when it is selected.
+
+{:id="ListView.SelectionDetailText" .text .ro .bo} *SelectionDetailText*
+: Returns the Secondary or Detail text in the ListView at the position set by SelectionIndex
+
+{:id="ListView.SelectionIndex" .number .bo} *SelectionIndex*
+: The index of the currently selected item, starting at `1`. If no item is selected, the value
+ will be `0`. If an attempt is made to set this to a number less than `1` or greater than the
+ number of items in the `ListView`, `SelectionIndex` will be set to `0`, and
+ [`Selection`](#ListView.Selection) will be set to the empty text.
+
+{:id="ListView.ShowFilterBar" .boolean} *ShowFilterBar*
+: Sets visibility of the filter bar. `真`{:.logic.block} will show the bar,
+ `假`{:.logic.block} will hide it.
+
+{:id="ListView.TextColor" .color} *文本颜色*
+:: 设置`列表显示框`的文本颜色，使用RGBA数值表示。
+
+{:id="ListView.TextColorDetail" .color} *TextColorDetail*
+: Specifies the color of the secondary text in a ListView layout
+
+{:id="ListView.TextSize" .number} *TextSize*
+: Specifies the `列表显示框` item's text font size
+
+{:id="ListView.Visible" .boolean} *可见性*
+: 设置`列表显示框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表显示框`显示，`假`{:.logic.block}则隐藏。
+
+{:id="ListView.Width" .number .bo} *宽度*
+: 设置`列表显示框`的水平宽度，以像素px为单位。
+
+{:id="ListView.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`列表显示框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#ListView-Events}
+
+{:.events}
+
+{:id="ListView.AfterPicking"} AfterPicking()
+: Simple event to be raised after the an element has been chosen in the list.
+ The selected element is available in the [`Selection`](#ListView.Selection) property.
+
+### 方法  {#ListView-Methods}
+
+{:.methods}
+
+{:id="ListView.CreateElement" class="method returns dictionary"} <i/> CreateElement(*mainText*{:.text},*detailText*{:.text},*imageName*{:.text})
+: Creates a
+
+{:id="ListView.GetDetailText" class="method returns text"} <i/> GetDetailText(*listElement*{:.dictionary})
+: Get the Detail Text of a ListView element.
+
+{:id="ListView.GetImageName" class="method returns text"} <i/> GetImageName(*listElement*{:.dictionary})
+: Get the filename of the image of a ListView element that has been uploaded to Media.
+
+{:id="ListView.GetMainText" class="method returns text"} <i/> GetMainText(*listElement*{:.dictionary})
+: Get the Main Text of a ListView element.
+
+{:id="ListView.Refresh" class="method"} <i/> Refresh()
+: Reload the ListView to reflect any changes in the data.
+
+***
+## ![icon](images/Notifier.png)  对话框  {#Notifier}
+
+The Notifier component displays alert messages and creates Android log entries through
+ an assortment of methods.
+
+### 属性  {#Notifier-Properties}
+
+{:.properties}
+
+{:id="Notifier.BackgroundColor" .color .wo} *背景颜色*
+: Specifies the background color for alerts (not dialogs).
+
+{:id="Notifier.NotifierLength" .number .do} *NotifierLength*
+: Specifies the length of time that the alert is shown -- either "short" or "long".
+
+{:id="Notifier.TextColor" .color} *文本颜色*
+: Specifies the text color for alerts (not dialogs).
+
+### 事件  {#Notifier-Events}
+
+{:.events}
+
+{:id="Notifier.AfterChoosing"} AfterChoosing(*choice*{:.text})
+: Event after the user has made a selection for
+ [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
+
+{:id="Notifier.AfterTextInput"} AfterTextInput(*response*{:.text})
+: Event raised after the user has responded to [`ShowTextDialog`](#Notifier.ShowTextDialog).
+
+{:id="Notifier.ChoosingCanceled"} ChoosingCanceled()
+: Event raised when the user cancels choosing an option.
+ [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
+
+{:id="Notifier.TextInputCanceled"} TextInputCanceled()
+: Event raised when the user cancels
+ [`ShowPasswordDialog`](#Notifier.ShowPasswordDialog), or
+ [`ShowTextDialog`](#Notifier.ShowTextDialog).
+
+### 方法  {#Notifier-Methods}
+
+{:.methods}
+
+{:id="Notifier.DismissProgressDialog" class="method"} <i/> DismissProgressDialog()
+: Dismisses the alert created by the ShowProgressDialog block
+
+{:id="Notifier.LogError" class="method"} <i/> LogError(*message*{:.text})
+: Writes an error message to the Android system log. See the Google Android documentation for
+ how to access the log.
+
+{:id="Notifier.LogInfo" class="method"} <i/> LogInfo(*message*{:.text})
+: Writes an information message to the Android log.
+
+{:id="Notifier.LogWarning" class="method"} <i/> LogWarning(*message*{:.text})
+: Writes a warning message to the Android log. See the Google Android documentation for how to
+ access the log.
+
+{:id="Notifier.ShowAlert" class="method"} <i/> ShowAlert(*notice*{:.text})
+: Display a temporary notification.
+
+{:id="Notifier.ShowChooseDialog" class="method"} <i/> ShowChooseDialog(*message*{:.text},*title*{:.text},*button1Text*{:.text},*button2Text*{:.text},*cancelable*{:.boolean})
+: Shows a dialog box with two buttons, from which the user can choose. If `cancelable` is
+ `真`{:.logic.block} there will be an additional CANCEL button. Pressing a button will raise
+ the [`AfterChoosing`](#Notifier.AfterChoosing) event. The "choice" parameter to
+ [`AfterChoosing`](#Notifier.AfterChoosing) will be the text on the button that was pressed, or "Cancel" if
+ the CANCEL button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also
+ run.
+
+{:id="Notifier.ShowMessageDialog" class="method"} <i/> ShowMessageDialog(*message*{:.text},*title*{:.text},*buttonText*{:.text})
+: Display an alert dialog with a single button that dismisses the alert.
+
+{:id="Notifier.ShowPasswordDialog" class="method"} <i/> ShowPasswordDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
+: Shows a dialog box where the user can enter password (input is masked), after which the
+ [`AfterTextInput`](#Notifier.AfterTextInput) event will be raised. If `cancelable` is `真`{:.logic.block}
+ there will be an additional CANCEL button. The [`AfterTextInput`](#Notifier.AfterTextInput) and
+ [`TextInputCanceled`](#Notifier.TextInputCanceled) events behave the same way as described in
+ [`ShowTextDialog`](#Notifier.ShowTextDialog).
+
+{:id="Notifier.ShowProgressDialog" class="method"} <i/> ShowProgressDialog(*message*{:.text},*title*{:.text})
+: Shows a dialog box with an optional title and message (use empty strings if they are not
+ wanted). This dialog box contains a spinning artifact to indicate that the program is working.
+ It cannot be canceled by the user but must be dismissed by the App Inventor Program by using
+ the [`DismissProgressDialog`](#Notifier.DismissProgressDialog) method.
+
+{:id="Notifier.ShowTextDialog" class="method"} <i/> ShowTextDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
+: Shows a dialog box where the user can enter text, after which the
+ [`AfterTextInput`](#Notifier.AfterTextInput)  event will be raised. If `cancelable` is `真`{:.logic.block}
+ there will be an additional CANCEL button. Entering text will raise the
+ [`AfterTextInput`](#Notifier.AfterTextInput) event. The "response" parameter to
+ [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
+ button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
+
+***
+## ![icon](images/PasswordTextBoxIcon.png)  密码输入框  {#PasswordTextBox}
+
+Users enter passwords in a password text box component, which hides the text that has been typed in it.
+
+ ![Example of a PasswordTextBox](images/passwordtextbox.png)
+
+ A password text box is the same as the ordinary [`TextBox`](#TextBox) component, except that it does
+ not display the characters typed by the user.
+
+ You can get or set the value of the text in the box with the [`Text`](#PasswordTextBox.Text) property. If
+ [`Text`](#PasswordTextBox.Text) is blank, you can use the [`Hint`](#PasswordTextBox.Hint) property to provide the user
+ with a suggestion of what to type. The [`Hint`](#PasswordTextBox.Hint) appears as faint text in the box.
+
+ Password text box components are usually used with a [`Button`](#Button) component. The user taps the
+ `Button` after entering text.
+
+### 属性  {#PasswordTextBox-Properties}
+
+{:.properties}
+
+{:id="PasswordTextBox.BackgroundColor" .color} *背景颜色*
+: The background color of the `PasswordTextBox``. You can choose a color by name in the Designer or in
+ the Blocks Editor. The default background color is 'default' (shaded 3-D look).
+
+{:id="PasswordTextBox.Enabled" .boolean} *启用*
+: If set, user can enter text into the `PasswordTextBox`.
+
+{:id="PasswordTextBox.FontBold" .boolean .do} *粗体*
+: 设置`密码输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+
+{:id="PasswordTextBox.FontItalic" .boolean .do} *斜体*
+: 设置`密码输入框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+
+{:id="PasswordTextBox.FontSize" .number} *字体大小*
+: 设置`密码输入框`的字体大小，以像素px为单位。
+
+{:id="PasswordTextBox.FontTypeface" .number .do} *字体*
+: 设置`密码输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
+
+{:id="PasswordTextBox.Height" .number .bo} *高度*
+: 设置`密码输入框`的垂直高度，以像素px为单位。
+
+{:id="PasswordTextBox.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`密码输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="PasswordTextBox.Hint" .text} *Hint*
+: `PasswordTextBox` hint for the user.
+
+{:id="PasswordTextBox.NumbersOnly" .boolean} *NumbersOnly*
+: If true, then this `PasswordTextBox`` accepts only numbers as keyboard input. Numbers can include a
+ decimal point and an optional leading minus sign. This applies to keyboard input only. Even
+ if `NumbersOnly` is true, you can set the text to anything at all using the
+ [`Text`](#PasswordTextBox.Text) property.
+
+{:id="PasswordTextBox.PasswordVisible" .boolean .bo} *PasswordVisible*
+: Specifies whether the password is hidden (default) or shown.
+
+{:id="PasswordTextBox.Text" .text} *文本*
+: The text in the `PasswordTextBox`, which can be set by the programmer in the Designer or Blocks Editor,
+ or it can be entered by the user (unless the [`Enabled`](#PasswordTextBox.Enabled) property is false).
+
+{:id="PasswordTextBox.TextAlignment" .number .do} *文本对齐*
+: 设置`密码输入框`文本的对齐方式，有效值有： 
+`0`（正常；例如，如果文本从左到右书写，则左对齐）、
+`1`（居中）或
+`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+{:id="PasswordTextBox.TextColor" .color} *文本颜色*
+: 设置`密码输入框`的文本颜色，使用RGBA数值表示。
+
+{:id="PasswordTextBox.Visible" .boolean} *可见性*
+: 设置`密码输入框`是否显示在屏幕上，值是`真`{:.logic.block}则`密码输入框`显示，`假`{:.logic.block}则隐藏。
+
+{:id="PasswordTextBox.Width" .number .bo} *宽度*
+: 设置`密码输入框`的水平宽度，以像素px为单位。
+
+{:id="PasswordTextBox.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`密码输入框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#PasswordTextBox-Events}
+
+{:.events}
+
+{:id="PasswordTextBox.GotFocus"} GotFocus()
+: Event raised when the `PasswordTextBox` is selected for input, such as by
+ the user touching it.
+
+{:id="PasswordTextBox.LostFocus"} LostFocus()
+: Event raised when the `PasswordTextBox` is no longer selected for input, such
+ as if the user touches a different text box.
+
+### 方法  {#PasswordTextBox-Methods}
+
+{:.methods}
+
+{:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
+: Request focus to current `PasswordTextBox`.
+
+***
+## ![icon](images/slider.png)  滑动条  {#Slider}
 
 滑动条是一个添加可拖动滑块的进度条，你可以触摸它并向左右拖动设置滑块的位置。当滑块滑块被拖动时，它将触发[`位置被改变`](#Slider.PositionChanged) 事件，报告 `滑动条` 的滑块位置数值，
   这个数值可用于动态更新另一个组件属性，例如 `文本输入框` 的 [`字体大小`](#TextBox.FontSize) 或 `球形精灵` 的 [半径](animation.html#Ball.Radius)。
@@ -1177,7 +1178,7 @@ Top-level component containing all other components in the program.
 无
 
 ***
-## 下拉框  {#Spinner}
+## ![icon](images/Spinner.png)  下拉框  {#Spinner}
 
 A `Spinner` component that displays a dialog with a list of elements. These elements can be set
  in the Designer or Blocks Editor by setting the [`ElementsFromString`](#Spinner.ElementsFromString) property to
@@ -1239,7 +1240,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 : Displays the dropdown list for selection, same action as when the user clicks on the spinner.
 
 ***
-## 切换开关  {#Switch}
+## ![icon](images/Switch.png)  切换开关（Switch）   {#Switch}
 
 `Switch` components can detect user taps and can change their boolean state in response. They
  are identical to [`CheckBox`](#CheckBox)es except in appearance.
@@ -1324,7 +1325,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 无
 
 ***
-## 文本输入框  {#TextBox}
+## ![icon](images/TextBoxIcon.png)  文本输入框  {#TextBox}
 
 Users enter text in a text box component.
 
@@ -1443,7 +1444,7 @@ Users enter text in a text box component.
 : Request focus to current `TextBox`.
 
 ***
-## 时间选择框  {#TimePicker}
+## ![icon](images/TimePicker.png)  时间选择框  {#TimePicker}
 
 A button that, when clicked on, opens a dialog to allow the user to select a time.
 
@@ -1562,7 +1563,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
  components.
 
 ***
-## Web浏览框  {#WebViewer}
+## ![icon](images/WebViewer.png)  Web浏览框  {#WebViewer}
 
 Component for viewing Web pages.
 
