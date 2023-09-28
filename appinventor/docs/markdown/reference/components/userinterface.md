@@ -35,7 +35,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 ***
 ## ![icon](images/Screen.png)  屏幕  {#Screen}
 
-Top-level component containing all other components in the program.
+包含程序中所有其他组件的顶层组件。
 
 ### 属性  {#Screen-Properties}
 
