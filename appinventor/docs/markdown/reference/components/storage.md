@@ -12,16 +12,16 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
 目录：
 
-* [云数据库](#CloudDB)
-* [数据文件](#DataFile)
-* [文件管理器](#File)
+1. ![icon](images/CloudDB.png)  [云数据库](#CloudDB)
+1. ![icon](images/DataFile.png)  [数据文件](#DataFile)
+1. ![icon](images/File.png)  [文件管理器](#File)
     * [FileTools *拓展*：提供额外的更强大的文件相关操作](#FileTools)
-* [电子表格](#Spreadsheet)
-* [微数据库](#TinyDB)
-* [网络微数据库](#TinyWebDB)
+1. ![icon](images/Spreadsheet.png)  [电子表格](#Spreadsheet)
+1. ![icon](images/TinyDB.png)  [微数据库](#TinyDB)
+1. ![icon](images/TinyWebDB.png)  [网络微数据库](#TinyWebDB)
 
 ***
-## 云数据库  {#CloudDB}
+## ![icon](images/CloudDB.png)  云数据库  {#CloudDB}
 
 `云数据库`是一个不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置[`服务地址`](#CloudDB.RedisServer)属性和[`服务端口`](#CloudDB.RedisPort)属性以访问您自己的服务器。
 
@@ -103,7 +103,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
  `tag`{:.text.block}.
 
 ***
-## 数据文件  {#DataFile}
+## ![icon](images/DataFile.png)  数据文件  {#DataFile}
 
 不可见组件，用于读取 CSV 和 JSON 数据格式的文件，提供各个维度的列表数据，便于解析出我们想要的数据，也可以作为其他组件的数据源。
 
@@ -145,7 +145,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
   * 如果一个`文件名`{:.text.block} 不以 `/` 开头，打包的应用程序会从应用程序的私有存储读取，AI伴侣则是`/sdcard/AppInventor/data`目录。
 
 ***
-## 文件管理器  {#File}
+## ![icon](images/File.png)  文件管理器  {#File}
 
 不可见组件，用于写入或读取设备上的文件，外部文件的路径均由[`范围`](#File.Scope) 属性指定，不论应用程序是AI伴侣运行还是已编译、以及应用运行的 Android 版本。
 
@@ -424,7 +424,7 @@ FileTools demo程序下载：
     返回目录的总空间。注意：它使用绝对文件路径。
 
 ***
-## 电子表格（*依赖谷歌服务，国内无法使用*）  {#Spreadsheet}
+## ![icon](images/Spreadsheet.png)  电子表格（*依赖谷歌服务，国内无法使用*）  {#Spreadsheet}
 
 电子表格是一个不可见的组件，用于存储和接收来自使用 Google Sheets API 的 Google Sheets 文档。
 
@@ -614,7 +614,7 @@ FileTools demo程序下载：
  [`FinishedWriteRow`](#Spreadsheet.FinishedWriteRow) callback event.
 
 ***
-## 微数据库  {#TinyDB}
+## ![icon](images/TinyDB.png)  微数据库  {#TinyDB}
 
 `微数据库`是一个不可见的组件，用于存储应用程序的数据。
 
@@ -672,7 +672,7 @@ FileTools demo程序下载：
     测试结果是：2。说明**值取出后成功还原了列表**，也说明**列表是能够直接存储**进微数据库的。
 
 ***
-## 网络微数据库  {#TinyWebDB}
+## ![icon](images/TinyWebDB.png)  网络微数据库  {#TinyWebDB}
 
 `网络微数据库` 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，**但是非常有限**，主要是作为对那些想要创建自己的组件与 Web 对话的`Demo应用`。
 
