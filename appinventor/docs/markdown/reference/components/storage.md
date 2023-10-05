@@ -105,7 +105,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 ***
 ## 数据文件  {#DataFile}
 
-`数据文件`组件。
+不可见组件，用于读取 CSV 和 JSON 数据格式的文件，提供各个维度的列表数据，便于解析出我们想要的数据，也可以作为其他组件的数据源。
 
 ### 属性  {#DataFile-Properties}
 
@@ -207,73 +207,73 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
 {:.events}
 
-{:id="File.AfterFileSaved"} AfterFileSaved(*fileName*{:.text})
-: Event indicating that the contents of the file have been written.
+{:id="File.AfterFileSaved"} 文件存储完毕(*文件名*{:.text})
+: 当文件内容已被写入完成后，触发该事件。
 
-{:id="File.GotText"} GotText(*text*{:.text})
-: Event indicating that the contents from the file have been read.
+{:id="File.GotText"} 获得文本(*文本*{:.text})
+: 当文件内容已被读取完成后，触发该事件。
 
 ### 方法  {#File-Methods}
 
 {:.methods}
 
-{:id="File.AppendToFile" class="method"} <i/> AppendToFile(*text*{:.text},*fileName*{:.text})
-: Appends text to the end of a file. Creates the file if it does not already exist. See the help
- text under [`SaveFile`](#File.SaveFile) for information about where files are written.
- On success, the [`AfterFileSaved`](#File.AfterFileSaved) event will run.
+{:id="File.AppendToFile" class="method"} <i/> 追加内容(*文本*{:.text},*文件名*{:.text})
+: 将文本追加写入到文件末尾。如果文件不存在，则创建该文件。查看 [`保存文件`](#File.SaveFile) 了解有关文件写入位置的信息。
+
+  写入成功后，将触发 [`文件存储完毕`](#File.AfterFileSaved) 事件。
 
 {:id="File.CopyFile" class="method returns boolean"} <i/> 拷贝文件(*源范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
 : 将第一个文件的内容复制到第二个文件。
 
-{:id="File.Delete" class="method"} <i/> Delete(*fileName*{:.text})
-: Deletes a file from storage. Prefix the `fileName`{:.text.block} with `/` to delete a specific
- file in the SD card (for example, `/myFile.txt` will delete the file `/sdcard/myFile.txt`).
- If the `fileName`{:.text.block} does not begin with a `/`, then the file located in the
- program's private storage will be deleted. Starting the `fileName`{:.text.block} with `//` is
- an error because asset files cannot be deleted.
+{:id="File.Delete" class="method"} <i/> 删除(*文件名*{:.text})
+: 从存储中删除文件。
 
-{:id="File.Exists" class="method returns boolean"} <i/> Exists(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*path*{:.text})
-: Tests whether the path exists in the given scope.
+  1. `文件名`{:.text.block} 以 `/` 开头的是用来删除特定的SD卡中的文件（例如，`/myFile.txt` 将读取该文件`/sdcard/myFile.txt`)。 
 
-{:id="File.IsDirectory" class="method returns boolean"} <i/> IsDirectory(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*path*{:.text})
-: Tests whether the path named in the given scope is a directory.
+  1. `文件名`{:.text.block} 开头没有 `/`，则删除位于程序的私有存储中文件。
+  
+  1. 以`//`（双斜杠）开头的`文件名`{:.text.block} 是程序包资产文件，是只读的，无法删除会报错。
 
-{:id="File.ListDirectory" class="method returns list"} <i/> ListDirectory(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*directoryName*{:.text})
-: Get a list of files and directories in the given directory.
+{:id="File.Exists" class="method returns boolean"} <i/> 是否存在(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 测试在指定范围内给出的路径是否存在。
 
-{:id="File.MakeDirectory" class="method returns boolean"} <i/> MakeDirectory(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*directoryName*{:.text})
-: Create a new directory for storing files. The semantics of this method are such that it will
- return true if the directory exists at its completion. This can mean that the directory already
- existed prior to the call.
+{:id="File.IsDirectory" class="method returns boolean"} <i/> 是否是目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 测试在指定范围内给出的路径是否是目录。
 
-{:id="File.MakeFullPath" class="method returns text"} <i/> MakeFullPath(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*path*{:.text})
-: Converts the scope and path into a single string for other components.
+{:id="File.ListDirectory" class="method returns list"} <i/> 列出目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
+: 获取给定目录中的文件和目录列表。
 
-{:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*fromScope*{:.com.google.appinventor.components.common.FileScopeEnum},*fromFileName*{:.text},*toScope*{:.com.google.appinventor.components.common.FileScopeEnum},*toFileName*{:.text})
+{:id="File.MakeDirectory" class="method returns boolean"} <i/> 创建目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
+: 创建一个新目录，只要在完成时目录存在，就返回 `真`，也就是创建之前目录已经存在的话，也是返回 `真`。
+
+{:id="File.MakeFullPath" class="method returns text"} <i/> 制作完整路径(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 将范围和路径转换为单个字符串形式的完整路径，便于其他组件使用。
+
+{:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*源文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
 : 将文件从一个位置移动到另一个位置。
 
 {:id="File.ReadFrom" class="method"} <i/> 读取文件(*文件名*{:.text})
-: Reads text from a file in storage. Prefix the `fileName`{:.text.block} with `/` to read from a
- specific file on the SD card (for example, `/myFile.txt` will read the file
- `/sdcard/myFile.txt`). To read assets packaged with an application (also works for the
- Companion) start the `fileName`{:.text.block} with `//` (two slashes). If a
- `fileName`{:.text.block} does not start with a slash, it will be read from the application's
- private storage (for packaged apps) and from `/sdcard/AppInventor/data` for the Companion.
+: 从存储中的文件中读取文本。
+  
+  1. `文件名`{:.text.block} 以 `/` 开头的是用来读取 SD 卡上的特定文件（例如，`/myFile.txt` 将读取该文件`/sdcard/myFile.txt`)。 
+  
+  1. 以`//`（双斜杠）开头的`文件名`{:.text.block} 是读取应用程序打包的资源（也适用于AI伴侣）。
+  
+  1. `文件名`{:.text.block} 开头没有 `/`，它将从应用程序的私有存储中读取文件。
 
-{:id="File.RemoveDirectory" class="method returns boolean"} <i/> RemoveDirectory(*scope*{:.com.google.appinventor.components.common.FileScopeEnum},*directoryName*{:.text},*recursive*{:.boolean})
-: Remove a directory from the file system. If recursive is true, then everything is removed. If
- recursive is false, only the directory is removed and only if it is empty.
+{:id="File.RemoveDirectory" class="method returns boolean"} <i/> 删除目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text},*递归处理*{:.boolean})
+: 从文件系统中删除目录。如果递归为`真`，所有内容都将被删除；如果递归为`假`，则只有该目录为空时才能被删除。
 
 {:id="File.SaveFile" class="method"} <i/> 保存文件(*文本*{:.text},*文件名*{:.text})
-: Saves text to a file. If the `fileName`{:.text.block} begins with a slash (`/`) the file is
- written to the sdcard (for example, writing to `/myFile.txt` will write the file to
- `/sdcard/myFile.txt`). If the `fileName`{:.text.block} does not start with a slash, it will be
- written in the program's private data directory where it will not be accessible to other
- programs on the phone. There is a special exception for the AI Companion where these files are
- written to `/sdcard/AppInventor/data` to facilitate debugging.
+: 将文本保存到文件中。
 
-   Note that this block will overwrite a file if it already exists. If you want to add content
- to an existing file use the [`AppendToFile`](#File.AppendToFile) method.
+  1. `文件名`{:.text.block} 以 `/` 开头则该文件是写入 SD 卡（例如，写入 `/myFile.txt` 会将文件写入`/sdcard/myFile.txt`)。
+  
+  1. `文件名`{:.text.block} 开头没有 `/`，它将是写入程序的私有数据目录中，其他人无法访问该目录手机上的程序。
+  
+  1. AI伴侣较为特殊，它作为一个独立的App拥有一个私有目录，但是在测试多个项目时，由于这些App都是运行在AI伴侣的App上，因此会共用AI伴侣的私有目录，当这些程序编译后独立运行，则私有目录就各自独立，互不干扰了。
+
+  **请注意**：如果文件已存在，此块将覆盖该文件。如果你想给文件添加内容请使用 [`追加内容`](#File.AppendToFile) 方法添加到现有文件。
 
 ***
 ## FileTools [*拓展*](https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)  {#FileTools}
