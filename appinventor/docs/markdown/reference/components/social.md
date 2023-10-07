@@ -101,10 +101,16 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 
 {:id="ContactPicker.Shape" .number .do} *形状*
 : 设置`联系人选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#ContactPicker.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#ContactPicker.Image)，则`形状`将不可见。
 
 {:id="ContactPicker.ShowFeedback" .boolean} *显示反馈*
 : 设置`联系人选择框`指定 [`图像`](#ContactPicker.Image)后被按压是否显示视觉反馈。
@@ -114,9 +120,12 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 
 {:id="ContactPicker.TextAlignment" .number .do} *文本对齐*
 : 设置`联系人选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="ContactPicker.TextColor" .color} *文本颜色*
 : 设置`联系人选择框`的文本颜色，使用RGBA数值表示。
@@ -223,9 +232,12 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:id="EmailPicker.TextAlignment" .number .do} *文本对齐*
 : 设置`邮箱地址选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="EmailPicker.TextColor" .color} *文本颜色*
 : 设置`邮箱地址选择框`的文本颜色，使用RGBA数值表示。
@@ -398,10 +410,16 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:id="PhoneNumberPicker.Shape" .number .do} *形状*
 : 设置`电话号选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#PhoneNumberPicker.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#PhoneNumberPicker.Image)，则`形状`将不可见。
 
 {:id="PhoneNumberPicker.ShowFeedback" .boolean} *显示反馈*
 : 设置`电话号选择框`指定 [`图像`](#PhoneNumberPicker.Image)后被按压是否显示视觉反馈。
@@ -411,9 +429,12 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:id="PhoneNumberPicker.TextAlignment" .number .do} *文本对齐*
 : 设置`电话号选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="PhoneNumberPicker.TextColor" .color} *文本颜色*
 : 设置`电话号选择框`的文本颜色，使用RGBA数值表示。

@@ -127,10 +127,16 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:id="ImagePicker.Shape" .number .do} *形状*
 : 设置`图像选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#ImagePicker.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#ImagePicker.Image)，则`形状`将不可见。
 
 {:id="ImagePicker.ShowFeedback" .boolean} *显示交互效果*
 : 设置`图像选择框`指定 [`图像`](#ImagePicker.Image)后被按压是否显示视觉反馈。

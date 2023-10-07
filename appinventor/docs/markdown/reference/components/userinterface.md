@@ -262,10 +262,16 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="Button.Shape" .number .do} *形状*
 : 设置`按钮`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+
+  如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
 
 {:id="Button.ShowFeedback" .boolean} *显示反馈*
 : 设置`按钮`指定 [`图像`](#Button.Image)后被按压是否显示视觉反馈。
@@ -275,9 +281,12 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="Button.TextAlignment" .number .do} *文本对齐*
 : 设置`按钮`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="Button.TextColor" .color} *文本颜色*
 : 设置`按钮`的文本颜色，使用RGBA数值表示。
@@ -444,10 +453,16 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="DatePicker.Shape" .number .do} *形状*
 : 设置`日期选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#DatePicker.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#DatePicker.Image)，则`形状`将不可见。
 
 {:id="DatePicker.ShowFeedback" .boolean} *显示反馈*
 : 设置`日期选择框`指定 [`图像`](#DatePicker.Image)后被按压是否显示视觉反馈。
@@ -457,9 +472,12 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="DatePicker.TextAlignment" .number .do} *文本对齐*
 : 设置`日期选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="DatePicker.TextColor" .color} *文本颜色*
 : 设置`日期选择框`的文本颜色，使用RGBA数值表示。
@@ -628,7 +646,13 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 : 设置`标签`的显示文本。
 
 {:id="Label.TextAlignment" .number .do} *文本对齐*
-: 指定`标签`文本的对齐方式：居中、正常（例如，如果文本是从左到右书写的，则左对齐），或者相反（例如，如果文本是从左到右书写的，则右对齐）。
+: 指定`标签`文本的对齐方式，有效值有： 
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="Label.TextColor" .color} *文本颜色*
 : 设置`标签`的文本颜色，使用RGBA数值表示。
@@ -716,10 +740,16 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:id="ListPicker.Shape" .number .do} *形状*
 : 设置`列表选择框`的形状，此属性的有效值为：
-`0`（默认）、 
-`1` （圆形）、
-`2`（矩形）和
-`3`（椭圆形）。如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
+
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
 
 {:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
 : 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
@@ -732,9 +762,12 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 
 {:id="ListPicker.TextAlignment" .number .do} *文本对齐*
 : 设置`列表选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="ListPicker.TextColor" .color} *文本颜色*
 : 设置`列表选择框`的文本颜色，使用RGBA数值表示。
@@ -1071,9 +1104,12 @@ Users enter passwords in a password text box component, which hides the text tha
 
 {:id="PasswordTextBox.TextAlignment" .number .do} *文本对齐*
 : 设置`密码输入框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="PasswordTextBox.TextColor" .color} *文本颜色*
 : 设置`密码输入框`的文本颜色，使用RGBA数值表示。
@@ -1404,9 +1440,12 @@ Users enter text in a text box component.
 
 {:id="TextBox.TextAlignment" .number .do} *文本对齐*
 : 设置`文本输入框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="TextBox.TextColor" .color} *文本颜色*
 : 设置`文本输入框`的文本颜色，使用RGBA数值表示。
@@ -1509,9 +1548,12 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 
 {:id="TimePicker.TextAlignment" .number .do} *文本对齐*
 : 设置`时间选择框`文本的对齐方式，有效值有： 
-`0`（正常；例如，如果文本从左到右书写，则左对齐）、
-`1`（居中）或
-`2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="TimePicker.TextColor" .color} *文本颜色*
 : 设置`时间选择框`的文本颜色，使用RGBA数值表示。
