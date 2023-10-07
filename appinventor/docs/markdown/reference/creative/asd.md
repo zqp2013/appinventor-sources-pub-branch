@@ -33,12 +33,12 @@ Android存储系统概览图（图片模糊的话请在图片上右键 → 新�
 1. 外部存储
 
     外部存储的根目录是：
+    
+    `/storage/emulated/0/`    or  
 
-    ```
-        /storage/emulated/0/  or
-        file:///mnt/sdcard/ or
-        file:///storage/emulated/0/
-    ```
+    `file:///mnt/sdcard/`     or  
+
+    `file:///storage/emulated/0/`
 
     要访问外部存储，需要 `READ_` 或 `WRITE_EXTERNAL_STORAGE` 权限。
 
@@ -73,13 +73,13 @@ Android存储系统概览图（图片模糊的话请在图片上右键 → 新�
 
 1. 最重要的是，某些组件或 Android 版本需要 → 完整路径：`file:///storage/emulated/0/Android/data/<packageName>/files/`
 
-    我建议使用这些术语来区分路径，例如：
+    可以使用这些术语来区分路径，例如：
 
-    ```
-    相对路径: /Download
-    绝对路径: /storage/emulated/0/Download
-    完整路径: file:///storage/emulated/0/Download
-    ```
+    |     类型    | 路径  |
+    |---------|---------|
+    |     相对路径    |  `/Download` |
+    |     绝对路径    |  `/storage/emulated/0/Download` |
+    |     完整路径    |  `file:///storage/emulated/0/Download` |
 
 
 ### getASD代码实现
