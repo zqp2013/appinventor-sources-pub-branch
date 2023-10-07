@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 数据存储组件
-description: 数据存储组件参考文档：包括云数据库、数据文件、文件管理器、FileTools拓展、电子表格、微数据库、网络微数据库。
+description: 数据存储组件参考文档：包括云数据库、数据文件、文件管理器、FileTools拓展、电子表格、微数据库、网络微数据库、App特定目录、ASD(app specific directory)、getASD。
 ---
 
 * TOC
@@ -249,6 +249,8 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 {:id="File.MakeFullPath" class="method returns text"} <i/> 制作完整路径(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
 : 将范围和路径转换为单个字符串形式的完整路径，便于其他组件使用。
 
+  关于Android存储路径更深入请参考《[Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现](../creative/asd.md)》。
+
 {:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*源文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
 : 将文件从一个位置移动到另一个位置。
 
@@ -320,6 +322,8 @@ FileTools demo程序下载：
 1. ![5](extension/FileTools/5.png)
   
     如果应用程序特定目录不存在，则创建该目录。
+    
+    ASD(app specific directory)相关知识请参考《[Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现](../creative/asd.md)》。
 
 1. ![6](extension/FileTools/6.png)
   
