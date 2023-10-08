@@ -2587,6 +2587,8 @@ static java.text.SimpleDateFormat fmt_expired = new java.text.SimpleDateFormat("
               userData = datastore.find(userKey(user.getId()));
             }
             if (userData != null) {
+              boolean is_new_user = (userData.expired == null && userData.password == null); //有客户手机尝试登陆留下手机号的场景
+
               userData.email = user.getEmail();
               userData.emaillower = userData.email.toLowerCase();
               String password = user.getPassword();
@@ -2595,7 +2597,7 @@ static java.text.SimpleDateFormat fmt_expired = new java.text.SimpleDateFormat("
               }
               userData.isAdmin = user.getIsAdmin();
               userData.from = user.getFrom();
-              boolean date_new = user.getExpired().after(userData.expired);
+              boolean date_new = userData.expired == null ? true : user.getExpired().after(userData.expired);
               userData.expired = user.getExpired();
               userData.remark = user.getRemark();
               datastore.put(userData);
@@ -2606,7 +2608,13 @@ static java.text.SimpleDateFormat fmt_expired = new java.text.SimpleDateFormat("
                   //TimeZone.setDefault(TimeZone.getTimeZone("GMT+08"));
                   Date new_date = new Date();
                   new_date.setTime(user.getExpired().getTime() + 1000*60*60*24); //临时解决少一天的问题
-                  AliyunSendSms.Send_Renew(userData.email, fmt_expired.format(new_date));
+
+                  //兼容有客户手机尝试登陆留下手机号的场景
+                  if (is_new_user)
+                    AliyunSendSms.Send_Open(userData.email, ori_pwd, fmt_expired.format(new_date));
+                  else
+                    AliyunSendSms.Send_Renew(userData.email, fmt_expired.format(new_date));
+
                 } catch (Exception e) {
                   throw new ObjectifyException(e.toString());
                 }
