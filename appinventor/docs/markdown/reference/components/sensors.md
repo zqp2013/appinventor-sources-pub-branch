@@ -628,46 +628,38 @@ Component for MagneticFieldSensor
 ***
 ## NFC  {#NearField}
 
-Non-visible component to provide NFC capabilities. For now this component supports the reading
- and writing of text tags only (if supported by the device).
+提供 NFC 功能的不可见组件。目前该组件**仅支持读写文本标签**（如果设备支持）。
 
- In order to read and write text tags, the component must have its [`ReadMode`](#NearField.ReadMode)
- property set to `真`{:.logic.block} or `假`{:.logic.block} respectively.
+设置 [`启用读值模式`](#NearField.ReadMode) 属性为 `真`{:.logic.block} 是读取模式；设置 `假`{:.logic.block} 则是写入模式。
 
- **Note:** This component will only work on Screen1 of any App Inventor app.
-
+**注意：** 该组件仅适用于应用程序的 `Screen1` 主屏幕！！
 
 
 ### 属性  {#NearField-Properties}
 
 {:.properties}
 
-{:id="NearField.LastMessage" .text .ro .bo} *LastMessage*
-: Returns the content of the most recently received tag.
+{:id="NearField.LastMessage" .text .ro .bo} *最新消息*
+: 返回最近接收到的标签的内容。
 
-{:id="NearField.ReadMode" .boolean} *ReadMode*
-: Specifies whether the NFC hardware should operate in read mode (`真`{:.logic.block}) or
- write mode (`假`{:.logic.block}).
+{:id="NearField.ReadMode" .boolean} *启用读值模式*
+: 指定 NFC 硬件是否在读取模式下运行。读取模式 (`真`{:.logic.block}) 或 写入模式（`假`{:.logic.block}）。
 
-{:id="NearField.TextToWrite" .text .bo} *TextToWrite*
-: Specifies the content that will be written to the tag when in write mode. This method has no
- effect if [`ReadMode`](#NearField.ReadMode) is `真`{:.logic.block}.
+{:id="NearField.TextToWrite" .text .bo} *写入文本*
+: 指定在写入模式下将要写入标签的内容。如果没有设置 [`启用读值模式`](#NearField.ReadMode) 为`真`{:.logic.block}，则该方法没有效果。
 
-{:id="NearField.WriteType" .number .ro .bo} *WriteType*
-: Returns the write type for the NFC component. For this version of the component, it is always
- `1`.
+{:id="NearField.WriteType" .number .ro .bo} *写入类型*
+: 返回 NFC 组件的写入类型。对于此版本的组件，它始终是`1`。
 
 ### 事件  {#NearField-Events}
 
 {:.events}
 
-{:id="NearField.TagRead"} TagRead(*message*{:.text})
-: Indicates that a new tag has been detected.
- Currently this is only a plain text tag, as specified in the
- manifest.
+{:id="NearField.TagRead"} 读标签(*消息*{:.text})
+: 表示检测到新标签，目前只支持纯文本标签。
 
-{:id="NearField.TagWritten"} TagWritten()
-: Indicates that a tag has come into range of the NFC sensor and has been written.
+{:id="NearField.TagWritten"} 写标签()
+: 表示标签已进入 NFC 传感器的范围并已被写入。
 
 ### 方法  {#NearField-Methods}
 

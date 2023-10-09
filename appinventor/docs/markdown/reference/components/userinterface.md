@@ -821,17 +821,13 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 ***
 ## ![icon](images/ListView.png)  列表显示框  {#ListView}
 
-This is a visible component that displays a list of text and image elements in your [`Screen`](#Screen) to
- display. Simple lists of strings may be set using the [`ElementsFromString`](#ListView.ElementsFromString) property.
- More complex lists of elements containing multiple strings and/or images can be created using the
- [`ListData`](#ListView.ListData) and [`ListViewLayout`](#ListView.ListViewLayout) properties.
+可见组件，可在 [`屏幕`](#Screen) 上展示文本和图像元素的列表。
 
- [Information on Layouts](../other/advanced-listview.html)
+可以使用 [`元素字串`](#ListView.ElementsFromString) 属性设置简单的字符串列表。
 
-   Warning: This component will not work correctly on Screens that are scrollable if its
- [`Height`](#ListView.Height) is set to Fill Parent.
+可以使用 [`列表数据`](#ListView.ListData) 和 [`布局`](#ListView.ListViewLayout) 属性创建包含多个字符串和/或图像的更复杂的元素列表。[布局信息](../other/advanced-listview.html)
 
-
+**警告**：如果该组件 [`高度`](#ListView.Height) 设置为填充父级，则在可滚动的屏幕上将无法正常工作。
 
 ### 属性  {#ListView-Properties}
 
@@ -840,22 +836,21 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.BackgroundColor" .color} *背景颜色*
 : 设置`列表显示框`的背景颜色。
 
-{:id="ListView.Elements" .list .bo} *Elements*
+{:id="ListView.Elements" .list .bo} *元素*
 : Specifies the list of choices to display.
 
-{:id="ListView.ElementsFromString" .text .wo} *ElementsFromString*
+{:id="ListView.ElementsFromString" .text .wo} *元素字串*
 : Set the list of choices specified as a string with the elements separated by commas
  such as: Cheese,Fruit,Bacon,Radish.
 
-{:id="ListView.FontSizeDetail" .number} *FontSizeDetail*
-: Specifies the `ListView` item's text font size
+{:id="ListView.FontSizeDetail" .number} *列表项字体大小*
+: 设置`列表显示框`**列表项**的文本字体大小。
 
 {:id="ListView.FontTypeface" .number .do} *字体*
 : 设置`列表显示框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="ListView.FontTypefaceDetail" .number .do} *FontTypefaceDetail*
-: Specifies the label's text's font face as default, serif, sans
- serif, or monospace.
+{:id="ListView.FontTypefaceDetail" .number .do} *列表项字体*
+: 设置`列表显示框`**列表项**的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
 {:id="ListView.Height" .number .bo} *高度*
 : 设置`列表显示框`的垂直高度，以像素px为单位。
@@ -863,21 +858,21 @@ This is a visible component that displays a list of text and image elements in y
 {:id="ListView.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`列表显示框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="ListView.ImageHeight" .number} *ImageHeight*
-: Specifies the image height of ListView layouts containing images
+{:id="ListView.ImageHeight" .number} *图像高度*
+: 设置布局包含图像的`列表显示框`的图像高度。
 
-{:id="ListView.ImageWidth" .number} *ImageWidth*
-: Specifies the image width of ListView layouts containing images
+{:id="ListView.ImageWidth" .number} *图像宽度*
+: 设置布局包含图像的`列表显示框`的图像宽度。
 
-{:id="ListView.ListData" .text .do} *ListData*
+{:id="ListView.ListData" .text .do} *列表数据*
 : Specifies data to be displayed in the ListView elements. This property sets the
- elements specified in [`ListViewLayout`](#ListView.ListViewLayout). For example, if the chosen
+ elements specified in [`布局`](#ListView.ListViewLayout). For example, if the chosen
  layout is `Image,MainText` this property will allow any number of elements to be
  defined, each containing a filename for Image and a string for MainText.
  Designer only property.
 
-{:id="ListView.ListViewLayout" .number .do} *ListViewLayout*
-: Specifies type of layout for ListView row. Designer only property.
+{:id="ListView.ListViewLayout" .number .do} *布局*
+: 设置`列表显示框`行的布局类型。该属性仅可在“界面设计”视图设置。
 
 {:id="ListView.Orientation" .number} *Orientation*
 : Specifies the layout's orientation. This may be: `Vertical`, which displays elements
