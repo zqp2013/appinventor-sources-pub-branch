@@ -24,6 +24,16 @@
 
 <body class="login-page">
 
+    <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
+        <div style="float: right;padding: 15px 30px;">
+            <img src="/static/images/vip.png" width="14" height="14" style="margin-top: -4px;" />
+            <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/vip.html?f=pay" target="_blank" style="color:#9c6521;">查看 VIP 特权</a>
+            </span>
+        </div>
+    </div>
+
+
     <div class="page-wrap borderless">
 
         <div class="container navless-container">
