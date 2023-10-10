@@ -76,8 +76,8 @@ public class PayServlet extends HttpServlet {
     );
 
   // 回调url前缀
-  //private String CALLBACK_URL_PRE = "https://www.fun123.cn";
-  private String CALLBACK_URL_PRE = "http://192.168.1.11:8088"; //for dev
+  private String CALLBACK_URL_PRE = "https://www.fun123.cn";
+  //private String CALLBACK_URL_PRE = "http://192.168.1.11:8088"; //for dev
 
   public void init(ServletConfig config) throws ServletException {
     super.init(config);
@@ -224,7 +224,7 @@ public class PayServlet extends HttpServlet {
     req.setCharacterEncoding("UTF-8");
     if (userInfo != null) {
       User user = storageIo.getUser(userInfo.getUserId());
-      if (user != null) {
+      if (user != null && !user.getUserEmail().equals("test@fun123.cn")) {
         req.setAttribute("phone", user.getUserEmail());
       }
     }
@@ -337,6 +337,20 @@ public class PayServlet extends HttpServlet {
 
     if (iperiod <= 0 || iperiod > 96) {
       fail(req, resp, "Invalid period!");
+      return;
+    }
+
+    // 简单的金额检查，防止客户端篡改
+    double peramount = 0.0;
+    try {
+      peramount = Double.parseDouble(amount) / iperiod;
+    } catch (NumberFormatException e) {
+      fail(req, resp, "Invalid amount!");
+      return;
+    }
+
+    if (peramount < 12) {
+      fail(req, resp, "Invalid order !!!");
       return;
     }
 

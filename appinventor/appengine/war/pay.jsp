@@ -62,27 +62,46 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <label class="label-bold mb-1" for="user_password">开通时长：</label>
+                                                <label class="label-bold mb-1">开通/续期时长：</label>
                                                 
-                                                <input id="month" name="period" value="1" required type="radio" checked="true">
+                                                <input id="month" name="period" value="1" required type="radio" 
+                                                onclick="javascript:document.getElementById('amount').value=18;document.getElementById('amount_label').innerHTML=18;">
                                                 <label for="month">1个月</label>&nbsp;&nbsp;
 
-                                                <input id="halfyear" name="period" value="6" required type="radio">
+                                                <input id="halfyear" name="period" value="6" required type="radio" checked="true"
+                                                 onclick="javascript:document.getElementById('amount').value=88;document.getElementById('amount_label').innerHTML=88;">
                                                 <label for="halfyear">6个月</label>&nbsp;&nbsp;
                                                 
-                                                <input id="year" name="period" value="12" required type="radio">
+                                                <input id="year" name="period" value="12" required type="radio"
+                                                 onclick="javascript:document.getElementById('amount').value=158;document.getElementById('amount_label').innerHTML=158;">
                                                 <label for="year">1年</label>
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <label class="label-bold mb-1" for="user_password">支付金额：<span style="color:green">0.1</span></label>
-                                                <input type="hidden" name="amount" value="0.1">
+                                                <label class="label-bold mb-1">支付金额： <h1>¥ <span style="color:green" id="amount_label">88</span></h1></label>
+                                                <input type="hidden" id="amount" name="amount" value="88">
+
+                                                <div class="float-right">
+                                                    <span>免费赠送 <i>基础版</i>* <a href="https://www.fun123.cn/reference/info/#qa" target="_blank">技术支持服务</a></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group px-5">
+                                                <label class="label-bold mb-1">支付方式：<b style="color:#1574F7">支付宝</b></label>
+
+                                                <div class="float-right">
+                                                    <span>支付成功后即刻自动开通，请注意短信通知！</span>
+                                                </div>
                                             </div>
 
                                             <div class="submit-container move-submit-down px-5">
                                                 <button name="button" type="submit" class="button btn btn-block btn-confirm js-sign-in-button">立即支付</button>
-                                                </form>
+                                            </form>
+                                            <a href="/"><< 返回首页</a>
+                                            <div class="float-right">
+                                                <span style="color: #999;">* 不支持7天无理由退货&nbsp;&nbsp;</span>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -141,6 +160,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             </div>
         </div>
     </div>
+<script src="static/js/jquery-3.3.1.slim.min.js"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -149,6 +169,18 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+$(document).bind("contextmenu",function(){return false;});
+$(document).bind("selectstart",function(){return false;});
+$(document).keydown(function(){return key(arguments[0])});
+function key(e){
+    var keynum;
+    if(window.event){
+        keynum = e.keyCode;
+    }else if(e.which){
+        keynum = e.which;
+    }
+    if(keynum == 17){return false;}
+}
 </script>
 </body>
 

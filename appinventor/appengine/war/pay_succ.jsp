@@ -46,12 +46,14 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                         <div id="signin-container">
                             <div class="tab-content">
                                 <div class="login-box tab-pane active" id="login-pane">
-                                    <div class="login-body">
-                                        支付成功，会员已开通，请注意短信通知，感谢支持！
+                                    <div class="login-body" style="text-align: center;">
+                                        <h3 style="color:green;margin-top: 50px;">支付成功，会员已开通/续期，请注意短信通知，感谢您的支持！</h3>
                                     </div>
                                     </div>
                                 </div>
-
+                                <br/>
+                                <br/>
+                                <a href="/"><< 返回首页/登录</a>
                             </div>
                             
                             <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 50px;">
@@ -107,14 +109,27 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             </div>
         </div>
     </div>
+<script src="static/js/jquery-3.3.1.slim.min.js"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
 })();
+$(document).bind("contextmenu",function(){return false;});
+$(document).bind("selectstart",function(){return false;});
+$(document).keydown(function(){return key(arguments[0])});
+function key(e){
+    var keynum;
+    if(window.event){
+        keynum = e.keyCode;
+    }else if(e.which){
+        keynum = e.which;
+    }
+    if(keynum == 17){return false;}
+}
 </script>
 </body>
 

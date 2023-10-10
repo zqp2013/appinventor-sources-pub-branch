@@ -160,7 +160,7 @@
     <property name="release.notes.url" value="https://www.fun123.cn/reference/info/ReleaseNotes.html" />
     <property name="tos.url" value="/Ya_tos_form.html?f=index" />
     <property name="logo.url" value="https://www.fun123.cn" />
-    <property name="guide.url" value="https://www.fun123.cn/reference/info/" />
+    <property name="guide.url" value="https://www.fun123.cn/reference/info/#AppEntry" />
     <property name="reference.components.url" value="/reference/components/" />
 
     <!-- CloudDB secret keys -->
