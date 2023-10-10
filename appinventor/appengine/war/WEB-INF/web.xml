@@ -49,6 +49,15 @@
     <url-pattern>/login/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.google.appinventor.server.PayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/pay/*</url-pattern>
+  </servlet-mapping>
+
   <!-- Remote API -->
   <servlet>
     <display-name>Remote API Servlet</display-name>

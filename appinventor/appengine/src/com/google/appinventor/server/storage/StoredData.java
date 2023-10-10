@@ -266,6 +266,19 @@ public class StoredData {
     public Date timestamp;
   }
 
+  // Add by 中文网，订单信息
+  @Unindexed
+  public static final class PayOrderData {
+    @Id public String orderId;
+    public String userId; //开通后回填
+    public String phone;
+    public int period;
+    public String amount;
+    public String method; //开通后回填
+    public String status; //开通后回填
+    @Indexed public Date timestamp;
+  }
+
   @Unindexed
   static final class CorruptionRecord {
     @Id Long id;

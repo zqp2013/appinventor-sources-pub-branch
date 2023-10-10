@@ -15,6 +15,7 @@ import com.google.appinventor.shared.rpc.project.Project;
 import com.google.appinventor.shared.rpc.project.ProjectSourceZip;
 import com.google.appinventor.shared.rpc.project.UserProject;
 import com.google.appinventor.shared.rpc.user.User;
+import com.google.appinventor.shared.rpc.user.PayOrder;
 import com.google.appinventor.shared.rpc.user.SplashConfig;
 
 import java.io.InputStream;
@@ -573,6 +574,11 @@ public interface StorageIo {
 
   // Cleanup expired nonces
   void cleanupNonces();
+
+  // Add by 中文网
+  void storePayOrder(final PayOrder order);
+  PayOrder getPayOrder(final String orderId);
+  AdminUser getAdminUserFromEmail(String email);
 
   // Retrieve the current Splash Screen Version
   SplashConfig getSplashConfig();

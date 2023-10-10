@@ -32,6 +32,7 @@ import com.google.appinventor.server.storage.StoredData.FeedbackData;
 import com.google.appinventor.server.storage.StoredData.FileData;
 import com.google.appinventor.server.storage.StoredData.MotdData;
 import com.google.appinventor.server.storage.StoredData.NonceData;
+import com.google.appinventor.server.storage.StoredData.PayOrderData;
 import com.google.appinventor.server.storage.StoredData.ProjectData;
 import com.google.appinventor.server.storage.StoredData.PWData;
 import com.google.appinventor.server.storage.StoredData.SplashData;
@@ -57,6 +58,7 @@ import com.google.appinventor.shared.rpc.project.UserProject;
 import com.google.appinventor.shared.rpc.project.youngandroid.YoungAndroidProjectNode;
 import com.google.appinventor.shared.rpc.user.SplashConfig;
 import com.google.appinventor.shared.rpc.user.User;
+import com.google.appinventor.shared.rpc.user.PayOrder;
 import com.google.appinventor.shared.storage.StorageUtil;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -199,6 +201,7 @@ public class ObjectifyStorageIo implements  StorageIo {
     ObjectifyService.register(WhiteListData.class);
     ObjectifyService.register(FeedbackData.class);
     ObjectifyService.register(NonceData.class);
+    ObjectifyService.register(PayOrderData.class);
     ObjectifyService.register(CorruptionRecord.class);
     ObjectifyService.register(PWData.class);
     ObjectifyService.register(SplashData.class);
@@ -2192,6 +2195,83 @@ public class ObjectifyStorageIo implements  StorageIo {
     }
 
   }
+
+
+  //Add by 中文网
+  public void storePayOrder(final PayOrder order) {
+    if (order.orderId == null)
+      return;
+
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            PayOrderData podata = new PayOrderData();
+            podata.orderId = order.orderId;
+            podata.userId = order.userId;
+            podata.phone = order.phone;
+            podata.period = order.period;
+            podata.amount = order.amount;
+            podata.method = order.method;
+            podata.status = order.status;
+            podata.timestamp = new Date();
+            datastore.put(podata);
+          }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
+  public PayOrder getPayOrder(final String orderId) {
+    final Result<PayOrder> result = new Result<PayOrder>();
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            LOG.info("getPayOrder id:" + orderId);
+            PayOrderData podata = datastore.find(PayOrderData.class, orderId);
+            if (podata != null) {
+              PayOrder order = new PayOrder();
+              order.orderId = podata.orderId;
+              order.userId = podata.userId;
+              order.phone = podata.phone;
+              order.period = podata.period;
+              order.amount = podata.amount;
+              order.method = podata.method;
+              order.status = podata.status;
+              order.timestamp = podata.timestamp;
+              result.t = order;
+              LOG.info("find it:" + orderId);
+            }
+          }
+      }, false);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+    return result.t;
+  }
+  @Override
+  public AdminUser getAdminUserFromEmail(String email) {
+    String emaillower = email.toLowerCase();
+    Objectify datastore = ObjectifyService.begin();
+    String newId = UUID.randomUUID().toString();
+    // First try lookup using entered case (which will be the case for Google Accounts)
+    UserData user = datastore.query(UserData.class).filter("email", email).get();
+    if (user == null) {
+      LOG.info("getUserFromEmail: first attempt failed using " + email);
+      // Now try lower case version
+      user = datastore.query(UserData.class).filter("emaillower", emaillower).get();
+      if (user == null) {       // Finally, create it (in lower case)
+        LOG.info("getUserFromEmail: second attempt failed using " + emaillower);
+        user = createUser(datastore, newId, email);
+      }
+    }
+    AdminUser retUser = new AdminUser(user.id, user.name, user.email, user.tosAccepted,
+                          user.isAdmin, user.visited, user.from, user.expired, user.remark);
+    retUser.setPassword(user.password);
+    return retUser;
+  }
+
 
   @Override
   public PWData createPWData(final String email) {
