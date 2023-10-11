@@ -155,7 +155,9 @@ public class PayServlet extends HttpServlet {
         user = new AdminUser(null, phone, phone, false, false, null, null, null, null);
       }
 
-      user.setFrom("PCPay");
+      // 原有的来源，不覆盖
+      if (user.getFrom() == null || user.getFrom().equals(""))
+        user.setFrom("PCPay");
 
       // 原密码为空才设置初始密码，否则留空不修改密码
       if (user.getPassword() == null || user.getPassword().equals(""))
