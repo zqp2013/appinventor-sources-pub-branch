@@ -20,9 +20,23 @@
     <meta name="application-name" content="App Inventor 2 中文网" />
     <link rel="apple-touch-icon" href="/static/images/logo2.png" />
     <link rel="stylesheet" media="all" href="/static/css/login.css">
+    <style type="text/css">
+    .title {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem!important;
+        background-image: linear-gradient(to right,var(--tw-gradient-stops))!important;
+        --tw-gradient-from: #5D67E8 !important;
+        --tw-gradient-to: rgb(93 103 232 / 0) !important;
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+        --tw-gradient-to: #ef4444 !important;
+        font-size: 1.7rem!important;
+    }
+    </style>
 </head>
 
-<body class="login-page" style="background: url(/static/images/bgpay.svg);">
+<body class="login-page" style="overflow:hidden;background:url(/static/images/bgpay.svg) center/cover no-repeat;">
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
@@ -44,7 +58,7 @@
                 <div class="mt-3">
                     <div class="col-sm-12 text-center">
                         <a href="/"><img alt="fun123.cn" src="/static/images/logo.png?2" style="width: 179px; height: 57px;"></a>
-                        <h1 class="mb-3 font-size-h2">App Inventor 2 中文网 VIP</h1>
+                        <h1 class="mb-3 font-size-h2 title">App Inventor 2 中文网 VIP</h1>
 <% if (error != null) {
 out.println("<center><font color=red><b>" + error + "</b></font></center>");
    } %>
