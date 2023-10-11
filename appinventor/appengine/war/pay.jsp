@@ -75,8 +75,15 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <input type="hidden" name="subject" value="App Inventor 2 中文网 VIP 会员">
                                             <div class="form-group px-5 pt-5">
                                                 <label for="user_login" class="label-bold">手机号：</label>
+                                                <div class="float-right">
+                                                    <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
+                                                </div>
 
                                                 <input class="form-control form-input top js-username-field"
+            oninput="value=value.replace(/[^0-9.]/g,'')" 
+            onblur="javascript:if(value.length!=11){
+                    document.getElementById('paybtn').disabled = true;  document.getElementById('error_msg').style.visibility = 'visible';
+            } else {document.getElementById('paybtn').disabled = false; document.getElementById('error_msg').style.visibility = 'hidden'; } " 
         <% if (phone != null) {
             out.println("value=" + phone);
         } %>
@@ -119,7 +126,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="submit-container move-submit-down px-5">
-                                                <button name="button" type="submit" class="button btn btn-block btn-confirm js-sign-in-button">立即支付</button>
+                                                <button name="button" type="submit" class="button btn btn-block btn-confirm js-sign-in-button" id="paybtn">立即支付</button>
                                             </form>
                                             <a href="/"><< 返回首页</a>
                                             <div class="float-right">
