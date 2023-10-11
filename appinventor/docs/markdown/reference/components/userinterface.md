@@ -837,11 +837,10 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 : 设置`列表显示框`的背景颜色。
 
 {:id="ListView.Elements" .list .bo} *元素*
-: Specifies the list of choices to display.
+: 设置要显示的选项列表。将列表设置给元素属性，列表显示框即可展示列表内容，多次设置会刷新为最新的列表的内容。
 
 {:id="ListView.ElementsFromString" .text .wo} *元素字串*
-: Set the list of choices specified as a string with the elements separated by commas
- such as: Cheese,Fruit,Bacon,Radish.
+: 设置指定列表字符串作为选项列表，其中元素以英文逗号分隔，如：`奶酪,水果,培根,萝卜`。
 
 {:id="ListView.FontSizeDetail" .number} *列表项字体大小*
 : 设置`列表显示框`**列表项**的文本字体大小。
