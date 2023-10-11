@@ -114,7 +114,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <label class="label-bold mb-1">支付方式：<b style="color:#1574F7">支付宝</b></label>
 
                                                 <div class="float-right">
-                                                    <span>支付成功后即刻自动开通，请注意短信通知！</span>
+                                                    <span>支付成功后即刻自动开通/续期，且短信通知！</span>
                                                 </div>
                                             </div>
 
