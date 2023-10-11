@@ -22,13 +22,13 @@
     <link rel="stylesheet" media="all" href="/static/css/login.css">
 </head>
 
-<body class="login-page">
+<body class="login-page" style="background: url(/static/images/bgpay.svg);">
 
     <div class="page-wrap borderless">
 
         <div class="container navless-container">
             <div class="content">
-                <div class="flash-container flash-container-page sticky">
+                <div class="flash-container flash-container-page sticky" style="padding-bottom: 20px;">
                 </div>
 
                 <div class="mt-3">
@@ -56,7 +56,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                 <a href="/"><< 返回首页/登录</a>
                             </div>
                             
-                            <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 50px;">
+                            <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 30px;">
                                 官方平台
                             </div>
                             <div class="clearfix">
