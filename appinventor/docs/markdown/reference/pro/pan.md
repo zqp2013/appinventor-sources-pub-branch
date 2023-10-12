@@ -29,9 +29,14 @@ Signkey [暂时用不到]
 使用Web浏览框，里面要输入网盘用户名密码，成功后返回的url中拿出access_token
 
 `简单模式`必须走回调网页，在回调后的URL中拿出access_token，后面操作都需要
-http://openapi.baidu.com/oauth/2.0/authorize?response_type=token&client_id=[AppKey]&redirect_uri=oob&scope=basic,netdisk
+http://openapi.baidu.com/oauth/2.0/authorize?display=mobile&response_type=token&client_id=[AppKey]&redirect_uri=oob&scope=basic,netdisk
+
+请注意，手机的话，必须将 `display=mobile` 加上，以展示手机版的授权画面（电脑版极有可能在手机上不能完美展示）。
 
 access_token=[access_token]
+
+拿 access_token 的逻辑如下：
+
 
 ***
 ### 3、获取文件列表，返回JSON，拿出想要的文件的fsid 【Web客户端】

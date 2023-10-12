@@ -82,7 +82,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <input class="form-control form-input top js-username-field"
             oninput="value=value.replace(/[^0-9.]/g,'')" 
             onblur="javascript:if(value.length!=11){
-                    document.getElementById('paybtn').disabled = true;  document.getElementById('error_msg').style.visibility = 'visible';
+                    document.getElementById('paybtn').disabled = true;
+                    if (value.length > 0) document.getElementById('error_msg').style.visibility = 'visible';
             } else {document.getElementById('paybtn').disabled = false; document.getElementById('error_msg').style.visibility = 'hidden'; } " 
         <% if (phone != null) {
             out.println("value=" + phone);
@@ -96,20 +97,25 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <label class="label-bold mb-1">开通/续期时长：</label>
                                                 
                                                 <input id="month" name="period" value="1" required type="radio" 
-                                                onclick="javascript:document.getElementById('amount').value=18;document.getElementById('amount_label').innerHTML=18;">
+                                                onclick="javascript:document.getElementById('amount').value=18;document.getElementById('amount_label').innerHTML=18;document.getElementById('delprc').innerHTML=19;">
                                                 <label for="month">1个月</label>&nbsp;&nbsp;
 
                                                 <input id="halfyear" name="period" value="6" required type="radio" checked="true"
-                                                 onclick="javascript:document.getElementById('amount').value=88;document.getElementById('amount_label').innerHTML=88;">
+                                                 onclick="javascript:document.getElementById('amount').value=88;document.getElementById('amount_label').innerHTML=88;document.getElementById('delprc').innerHTML=99;">
                                                 <label for="halfyear">6个月</label>&nbsp;&nbsp;
                                                 
                                                 <input id="year" name="period" value="12" required type="radio"
-                                                 onclick="javascript:document.getElementById('amount').value=158;document.getElementById('amount_label').innerHTML=158;">
+                                                 onclick="javascript:document.getElementById('amount').value=158;document.getElementById('amount_label').innerHTML=158;document.getElementById('delprc').innerHTML=199;">
                                                 <label for="year">1年</label>
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <label class="label-bold mb-1">支付金额： <h1>¥ <span style="color:green" id="amount_label">88</span></h1></label>
+                                                <label class="label-bold mb-1">支付金额： 
+                                                    <div>
+                                                        <h1 style="float:left;">¥ <span style="color:green" id="amount_label">88</span></h1>
+                                                        <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">99</span></h3></del>
+                                                    </div>
+                                                </label>
                                                 <input type="hidden" id="amount" name="amount" value="88">
 
                                                 <div class="float-right">
