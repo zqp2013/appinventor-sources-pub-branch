@@ -433,6 +433,12 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 <img src="images/请求标头.png" alt="请求标头" style="border:1px solid #eee;margin-bottom:10px;"/>
 
+请求标头信息，格式为`包含双项子列表的列表`数据。其中，各子列表中第一项表示请求头的字段名，而第二项则表示对应的字段值，既可以是单个数值，也可以是包含多个数值的列表。
+
+设置案例如下：
+
+![请求标头设置](images/请求标头设置.png)
+
 {:id="Web.ResponseFileName" .text} *响应文件名称*
 : 指定保存响应数据的文件的名称，如果 [保存响应信息](#Web.SaveResponse) 为`真` 且 [响应文件名称](#Web.ResponseFileName) 为空，则自动创建一个新文件名。
 

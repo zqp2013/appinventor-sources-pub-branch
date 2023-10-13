@@ -26,6 +26,9 @@ Signkey [暂时用不到]
 
 [接入文档](https://pan.baidu.com/union/document/basic)
 
+https://pan.baidu.com/union/doc
+
+
 使用Web浏览框，里面要输入网盘用户名密码，成功后返回的url中拿出access_token
 
 `简单模式`必须走回调网页，在回调后的URL中拿出access_token，后面操作都需要
@@ -33,7 +36,7 @@ http://openapi.baidu.com/oauth/2.0/authorize?display=mobile&response_type=token&
 
 请注意，手机的话，必须将 `display=mobile` 加上，以展示手机版的授权画面（电脑版极有可能在手机上不能完美展示）。
 
-access_token=[access_token]
+access_token=[access_token]    有效期：根据文档，有效期大概30天
 
 拿 access_token 的逻辑如下：
 
