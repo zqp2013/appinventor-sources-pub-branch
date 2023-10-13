@@ -12,7 +12,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 ***
 ### 基础知识
 
-1. [【连接调试】AI伴侣、模拟器、USB这三种连接方式有什么区别？](https://bbs.tsingfun.com/thread-1094-1-1.html)  [【视频完整版】](https://www.bilibili.com/video/BV1Gs4y1u7D5/)
+1. [【连接调试】App Inventor 2 连接方式：AI伴侣、模拟器、USB](connect.html)
 1. [【连接调试】安裝 aiStarter 模拟器](https://bbs.tsingfun.com/thread-1004-1-4.html)
 1. [【存储】Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现](asd.html)
 1. [【视频】App Inventor 2基础组件使用](https://www.bilibili.com/video/BV1HY4y127rN/)
