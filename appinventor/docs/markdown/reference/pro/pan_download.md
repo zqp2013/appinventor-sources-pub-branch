@@ -1,7 +1,7 @@
 ---
-title: App Inventor 2 接入百度网盘API
+title: App Inventor 2 接入百度网盘API：文件下载篇
 layout: documentation
-description: App Inventor 2 接入百度网盘API，百度网盘开放平台接入。
+description: App Inventor 2 接入百度网盘API，百度网盘开放平台接入，百度网盘文件下载。
 ---
 
 * TOC
@@ -9,7 +9,7 @@ description: App Inventor 2 接入百度网盘API，百度网盘开放平台接�
 
 [&laquo; 返回首页](index.html)
 
-## App Inventor 2 接入百度网盘API
+## App Inventor 2 接入百度网盘API：文件下载
 
 ### 1、[申请应用](https://pan.baidu.com/union/doc/fl0hhnulu)
 
@@ -73,3 +73,7 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 ![文件dlink下载](images/文件dlink下载.png)
 
 <!--注意：dlink中需转义   \u0026  ->  &-->
+
+### 6、下载效果展示
+
+![百度网盘文件下载效果](images/百度网盘文件下载效果.png)
