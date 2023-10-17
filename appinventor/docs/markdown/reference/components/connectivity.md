@@ -516,7 +516,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
  denoted as \{a: b\} decodes to a dictionary with the key a and value b.
 
 {:id="Web.PatchFile" class="method"} <i/> 执行PATCH文件请求(*文件路径*{:.text})
-: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP PATCH 请求。
+: PATCH方式发送通用文件，用法类似 [执行POST文件请求](#Web.PostFile) 。
 
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
@@ -537,7 +537,13 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
 {:id="Web.PostFile" class="method"} <i/> 执行POST文件请求(*文件路径*{:.text})
-: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP POST 请求。
+: POST方式发送通用文件，同 curl -F 参数，可用于**二进制文件上传**，参考代码如下：
+
+  ![上传文件到服务器](images/上传文件到服务器.png)
+
+  文件上传服务器结果如下：
+  
+  ![文件上传服务器结果](images/文件上传服务器结果.png)
 
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
@@ -558,7 +564,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
 {:id="Web.PutFile" class="method"} <i/> 执行PUT文件请求(*文件路径*{:.text})
-: 使用指定文件中的 [URL网址](#Web.Url) 属性和数据，执行 HTTP PUT 请求。
+: PUT方式发送通用文件，用法类似 [执行POST文件请求](#Web.PostFile) 。
 
    * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
