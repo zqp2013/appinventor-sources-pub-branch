@@ -1,7 +1,7 @@
 ---
-title: App Inventor 2 接入百度网盘API：文件下载篇
+title: App Inventor 2 接入百度网盘API
 layout: documentation
-description: App Inventor 2 接入百度网盘API，百度网盘开放平台接入，百度网盘文件下载。
+description: App Inventor 2 接入百度网盘API，百度网盘开放平台接入，百度网盘文件下载，文件上传。
 ---
 
 * TOC
@@ -77,3 +77,44 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 ### 6、下载效果展示
 
 ![百度网盘文件下载效果](images/百度网盘文件下载效果.png)
+
+
+***
+## App Inventor 2 接入百度网盘API：文件上传
+
+申请应用及拿 access_token 同下载篇的步骤1 及 步骤2，必备步骤。
+
+***
+### 3、预上传
+
+> http://pan.baidu.com/rest/2.0/xpan/file?method=precreate&access_token=123.d06435633fc110d41fd1c5e3b3626849.YHyevRSw9WbP27auGiN0fOWFgwYIx436PbYmIAn.FqMcSA&path=/apps/appName/filename.jpg&size=2626327&isdir=0&autoinit=1&rtype=3&block_list=["60bac7b6464d84fed842955e6126826a"]&content-md5=60bac7b6464d84fed842955e6126826a&slice-md5=3c5c864d432cc2381b687f8d873e1429
+
+```
+rtype	int	 文件命名策略，默认0
+0 为不重命名，返回冲突
+1 为只要path冲突即重命名
+2 为path冲突且block_list不同才重命名
+3 为覆盖
+```
+
+### 4、文件上传
+
+> curl -F 'file=@/Downloads/filename.jpg' "https://d.pcs.baidu.com/rest/2.0/pcs/superfile2?method=upload&type=tmpfile&path=/apps/AppName/filename.jpg&partseq=0&access_token=&uploadid="
+
+![百度网盘文件上传出错](images/百度网盘文件上传出错.png)
+
+上传，发现 `Transfer-Encoding` 永远都是`trunked`，改了也无效，`Content-Length`也无法指定，导致百度网盘拒绝了我们的请求：**Transfer-Encoding can't be trunked.**
+
+而采用python或php自己写一个简单服务端是可以接受上传的文件的。
+
+采用图片base64方案，也只能自己写服务端，然后解码，恢复文件，百度网盘也无法采用这种方案。
+
+**直接用python或curl命令测试下来，是一点问题都没有**，就 App Inventor 2 搞不定，只能说ai2可发挥空间有限，默认采用了trunked协议，无法指定HTTP1.0，设置请求标头也修改不了，百度网盘把这个拦住了，**直接上传的方案行不通**。
+
+考虑换方案：
+
+1、用python写一个中转的服务端，服务端使用curl上传网盘，是可以完成的。
+
+2、考虑自己写一个拓展，使用java完成网盘接入。
+
+坑已经帮你踩了，剩下的就靠你自己了^_^
