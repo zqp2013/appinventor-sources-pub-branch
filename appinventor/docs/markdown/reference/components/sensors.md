@@ -12,20 +12,20 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 目录：
 
-* [加速度传感器](#AccelerometerSensor)
-* [条码扫描器](#BarcodeScanner)
-* [气压传感器](#Barometer)
-* [计时器](#Clock)
-* [陀螺仪传感器](#GyroscopeSensor)
-* [湿度传感器](#Hygrometer)
-* [光线传感器](#LightSensor)
-* [位置传感器](#LocationSensor)
-* [磁场传感器](#MagneticFieldSensor)
-* [NFC](#NearField)
-* [方向传感器](#OrientationSensor)
-* [计步器](#Pedometer)
-* [距离传感器](#ProximitySensor)
-* [温度传感器](#Thermometer)
+1. [加速度传感器](#AccelerometerSensor)
+1. [条码扫描器](#BarcodeScanner)
+1. [气压传感器](#Barometer)
+1. [计时器](#Clock)
+1. [陀螺仪传感器](#GyroscopeSensor)
+1. [湿度传感器](#Hygrometer)
+1. [光线传感器](#LightSensor)
+1. [位置传感器](#LocationSensor)
+1. [磁场传感器](#MagneticFieldSensor)
+1. [NFC](#NearField)
+1. [方向传感器](#OrientationSensor)
+1. [计步器](#Pedometer)
+1. [距离传感器](#ProximitySensor)
+1. [温度传感器](#Thermometer)
 
 ***
 ## 加速度传感器  {#AccelerometerSensor}
@@ -94,7 +94,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 无
 
 ***
-## 条码扫描器  {#BarcodeScanner}
+## ![icon](images/barcodescanner.png)  条码扫描器  {#BarcodeScanner}
 
 用于扫描 QR 码并返回结果字符串的组件。
 
@@ -162,17 +162,15 @@ Physical world component that can measure the ambient air pressure if
 无
 
 ***
-## 计时器  {#Clock}
-
-![Image of the Clock component](images/clock.png)
+## ![Image of the Clock component](images/clock.png) 计时器  {#Clock}
 
 不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。
 
 对日期和时间的操作，比如来自[`日期选择器`](userinterface.html#DatePicker)和[`时间选择器`](userinterface.html#TimePicker)，
 通过计时器的方法实现。日期和时间表示为“即时时间” 和“持续时间”。
 
-  - **即时时间**: 由 年、月、日、时、分、秒 组成。 即时时间可以使用 [`创建即时时间`](#Clock.MakeInstant)、[`毫秒创建即时时间`](#Clock.MakeInstantFromMillis)和
-  [`MakeInstantFromParts`](#Clock.MakeInstantFromParts)方法。
+  - **即时时间**: 由 年、月、日、时、分、秒 组成。 即时时间可以使用 [`由文本建时间点`](#Clock.MakeInstant)、[`由毫秒建时间点`](#Clock.MakeInstantFromMillis)和
+  [`由元件建时间点`](#Clock.MakeInstantFromParts)方法。
   - **持续时间**: 即时时间经过的时间（以毫秒为单位），持续时间可以通过[`持续时间`](#Clock.Duration) 方法获得。
 
 即时时间假定在设备的本地时区，当它们被创建就表示它是从1970年1月1日（UTC格林威治标准时间）开始到现在的毫秒数。
@@ -193,16 +191,15 @@ Physical world component that can measure the ambient air pressure if
 {:.properties}
 
 {:id="Clock.TimerAlwaysFires" .boolean} *一直计时*
-: Will fire even when application is not showing on the screen if true
+: 如果为 `真`，即使App未显示在屏幕上也会触发计时。
 
 {:id="Clock.TimerEnabled" .boolean} *启用计时*
-: Specifies whether the [`计时`](#Clock.Timer) event should run.
+: 指定是否运行计时器，触发 [`计时`](#Clock.Timer) 事件。
 
 {:id="Clock.TimerInterval" .number} *计时间隔（毫秒）*
-: Specifies the interval between subsequent [`计时`](#Clock.Timer) events.
+: 指定后续 [`计时`](#Clock.Timer) 事件之间的间隔毫秒数。
 
-   **注意：**: Drift may occur over time and that the system may not honor the
- timing specified here if the app or another process on the phone is busy.
+   **注意：**随着时间的推移可能会发生漂移，如果手机上的应用程序或其他进程**繁忙**，此处指定的时间间隔**系统可能会不遵守**。
 
 ### 事件  {#Clock-Events}
 
@@ -215,114 +212,115 @@ Physical world component that can measure the ambient air pressure if
 
 {:.methods}
 
-{:id="Clock.AddDays" class="method returns InstantInTime"} <i/> AddDays(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some days after the given instant.
+{:id="Clock.AddDays" class="method returns InstantInTime"} <i/> 增加日(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几天后的某个时刻。
 
-{:id="Clock.AddDuration" class="method returns InstantInTime"} <i/> AddDuration(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some duration after the argument
+{:id="Clock.AddDuration" class="method returns InstantInTime"} <i/> 增加时段(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回参数指定的一段时间后的时刻。
 
-{:id="Clock.AddHours" class="method returns InstantInTime"} <i/> AddHours(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some hours after the given instant.
+{:id="Clock.AddHours" class="method returns InstantInTime"} <i/> 增加时(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几小时后的时刻。
 
-{:id="Clock.AddMinutes" class="method returns InstantInTime"} <i/> AddMinutes(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some minutes after the given instant.
+{:id="Clock.AddMinutes" class="method returns InstantInTime"} <i/> 增加分(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几分钟后的时刻。
 
-{:id="Clock.AddMonths" class="method returns InstantInTime"} <i/> AddMonths(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some months after the given instant.
+{:id="Clock.AddMonths" class="method returns InstantInTime"} <i/> 增加月(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几个月后的时刻。
 
-{:id="Clock.AddSeconds" class="method returns InstantInTime"} <i/> AddSeconds(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some seconds after the given instant.
+{:id="Clock.AddSeconds" class="method returns InstantInTime"} <i/> 增加秒(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几秒后的时刻。
 
-{:id="Clock.AddWeeks" class="method returns InstantInTime"} <i/> AddWeeks(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns An instant in time some weeks after the given instant.
+{:id="Clock.AddWeeks" class="method returns InstantInTime"} <i/> 增加周(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几周后的时刻。
 
-{:id="Clock.AddYears" class="method returns InstantInTime"} <i/> AddYears(*instant*{:.InstantInTime},*quantity*{:.number})
-: Returns an instant in time some years after the given instant.
+{:id="Clock.AddYears" class="method returns InstantInTime"} <i/> 增加年(*时刻*{:.InstantInTime},*数量*{:.number})
+: 返回给定时刻几年后的时刻。
 
-{:id="Clock.DayOfMonth" class="method returns number"} <i/> DayOfMonth(*instant*{:.InstantInTime})
-: Returns the day of the month.
+{:id="Clock.DayOfMonth" class="method returns number"} <i/> 求日期(*时刻*{:.InstantInTime})
+: 返回该月的第几天。
 
-{:id="Clock.Duration" class="method returns number"} <i/> Duration(*start*{:.InstantInTime},*end*{:.InstantInTime})
-: Returns the milliseconds by which end follows start (+ or -)
+{:id="Clock.Duration" class="method returns number"} <i/> 持续时间(*开始时刻*{:.InstantInTime},*结束时刻*{:.InstantInTime})
+: 返回结束与开始之间的毫秒数（正数 或 负数）。
 
-{:id="Clock.DurationToDays" class="method returns number"} <i/> DurationToDays(*duration*{:.number})
-: Returns the duration converted from milliseconds to days.
+{:id="Clock.DurationToDays" class="method returns number"} <i/> 持续时间为天(*持续时间*{:.number})
+: 返回持续时间由毫秒转换为天的数值。
 
-{:id="Clock.DurationToHours" class="method returns number"} <i/> DurationToHours(*duration*{:.number})
-: Returns the duration converted from milliseconds to hours.
+{:id="Clock.DurationToHours" class="method returns number"} <i/> 持续时间为小时(*持续时间*{:.number})
+: 返回持续时间由毫秒转换为小时的数值。
 
-{:id="Clock.DurationToMinutes" class="method returns number"} <i/> DurationToMinutes(*duration*{:.number})
-: Returns the duration converted from milliseconds to minutes.
+{:id="Clock.DurationToMinutes" class="method returns number"} <i/> 持续时间为分钟(*持续时间*{:.number})
+: 返回持续时间由毫秒转换为分钟的数值。
 
-{:id="Clock.DurationToSeconds" class="method returns number"} <i/> DurationToSeconds(*duration*{:.number})
-: Returns the duration converted from milliseconds to seconds.
+{:id="Clock.DurationToSeconds" class="method returns number"} <i/> 持续时间为秒(*持续时间*{:.number})
+: 返回持续时间由毫秒转换为秒的数值。
 
-{:id="Clock.DurationToWeeks" class="method returns number"} <i/> DurationToWeeks(*duration*{:.number})
-: Returns the duration converted from milliseconds to weeks.
+{:id="Clock.DurationToWeeks" class="method returns number"} <i/> 持续时间为周(*持续时间*{:.number})
+: 返回持续时间由毫秒转换为周的数值。
 
-{:id="Clock.FormatDate" class="method returns text"} <i/> FormatDate(*instant*{:.InstantInTime},*pattern*{:.text})
-: Converts and formats an instant into a string of date with the specified pattern. To learn
- more about valid patterns, please see
- [SimpleDateFormat](https://developer.android.com/reference/java/text/SimpleDateFormat).
+{:id="Clock.FormatDate" class="method returns text"} <i/> 日期格式(*时刻*{:.InstantInTime},*格式*{:.text})
+: 将即时时间格式化为指定格式的日期字符串。有效的格式请查阅[简单日期格式](https://developer.android.com/reference/java/text/SimpleDateFormat).
 
-{:id="Clock.FormatDateTime" class="method returns text"} <i/> FormatDateTime(*instant*{:.InstantInTime},*pattern*{:.text})
-: Converts and formats an instant into a string of date and time with the specified pattern.
- To learn more about valid patterns, please see
- [SimpleDateFormat](https://developer.android.com/reference/java/text/SimpleDateFormat).
+{:id="Clock.FormatDateTime" class="method returns text"} <i/> 日期时间格式(*时刻*{:.InstantInTime},*格式*{:.text})
+: 将即时时间格式化为指定格式的日期时间字符串。有效的格式请查阅[简单日期格式](https://developer.android.com/reference/java/text/SimpleDateFormat).
 
-{:id="Clock.FormatTime" class="method returns text"} <i/> FormatTime(*instant*{:.InstantInTime})
-: Converts and formats the given instant into a string with the specified pattern. To learn
- more about valid patterns, please see
- [SimpleDateFormat](https://developer.android.com/reference/java/text/SimpleDateFormat).
+{:id="Clock.FormatTime" class="method returns text"} <i/> 时间格式(*时刻*{:.InstantInTime})
+: 将即时时间格式化为指定格式的时间字符串。有效的格式请查阅[简单日期格式](https://developer.android.com/reference/java/text/SimpleDateFormat).
 
-{:id="Clock.GetMillis" class="method returns number"} <i/> GetMillis(*instant*{:.InstantInTime})
-: Returns the instant in time measured as milliseconds since 1970.
+{:id="Clock.GetMillis" class="method returns number"} <i/> 获取毫秒数(*时刻*{:.InstantInTime})
+: 返回即时时间自 UTC（世界标准时间）1970年以来的毫秒数。
 
-{:id="Clock.Hour" class="method returns number"} <i/> Hour(*instant*{:.InstantInTime})
-: Returns the hours for the given date.
+{:id="Clock.Hour" class="method returns number"} <i/> 求小时(*时刻*{:.InstantInTime})
+: 返回给定时间中的小时数。
 
-{:id="Clock.MakeDate" class="method returns InstantInTime"} <i/> MakeDate(*year*{:.number},*month*{:.number},*day*{:.number})
-: Returns an instant in time specified by year, month, date in UTC.
-Valid values for the month field are 1-12 and 1-31 for the day field.
+{:id="Clock.MakeDate" class="method returns InstantInTime"} <i/> 创建日期(*年*{:.number},*月*{:.number},*日*{:.number})
+: 返回按 UTC（世界标准时间）格式的年、月、日指定的即时时间。月份字段的有效值为 1-12，日期字段的有效值为 1-31。
 
-{:id="Clock.MakeInstant" class="method returns InstantInTime"} <i/> MakeInstant(*from*{:.text})
-: Returns an instant in time specified by MM/dd/YYYY hh:mm:ss or MM/dd/YYYY or hh:mm.
+{:id="Clock.MakeInstant" class="method returns InstantInTime"} <i/> 由文本建时间点(*时间文本*{:.text})
+: 返回指定 `MM/dd/YYYY hh:mm:ss` 或 `MM/dd/YYYY` 或 `hh:mm` 格式时间文本的即时时间。
 
-{:id="Clock.MakeInstantFromMillis" class="method returns InstantInTime"} <i/> MakeInstantFromMillis(*millis*{:.number})
-: Returns an instant in time specified by the milliseconds since 1970 in UTC.
+  **注意：**时间文本不是以上3种格式的话，会报错：
 
-{:id="Clock.MakeInstantFromParts" class="method returns InstantInTime"} <i/> MakeInstantFromParts(*year*{:.number},*month*{:.number},*day*{:.number},*hour*{:.number},*minute*{:.number},*second*{:.number})
-: Returns an instant in time specified by year, month, date, hour, minute, second in UTC.
+  ![时间格式错误](images/时间格式错误.png)
 
-{:id="Clock.MakeTime" class="method returns InstantInTime"} <i/> MakeTime(*hour*{:.number},*minute*{:.number},*second*{:.number})
-: Returns an instant in time specified by hour, minute, second in UTC.
+{:id="Clock.MakeInstantFromMillis" class="method returns InstantInTime"} <i/> 由毫秒建时间点(*毫秒数*{:.number})
+: 返回 UTC（世界标准时间）1970年指定毫秒数之后的即时时间。
 
-{:id="Clock.Minute" class="method returns number"} <i/> Minute(*instant*{:.InstantInTime})
-: Returns the minutes for the given date.
+{:id="Clock.MakeInstantFromParts" class="method returns InstantInTime"} <i/> 由元件建时间点(*年*{:.number},*月*{:.number},*日*{:.number},*时*{:.number},*分*{:.number},*秒*{:.number})
+: 返回由指定的年、月、日、时、分、秒指定的 UTC（世界标准时间）即时时间。
 
-{:id="Clock.Month" class="method returns number"} <i/> Month(*instant*{:.InstantInTime})
-: Returns the number of the month for the given instant.
+{:id="Clock.MakeTime" class="method returns InstantInTime"} <i/> 创建时间(*时*{:.number},*分*{:.number},*秒*{:.number})
+: 返回按 UTC（世界标准时间）格式的时、分、秒指定的即时时间。
 
-{:id="Clock.MonthName" class="method returns text"} <i/> MonthName(*instant*{:.InstantInTime})
-: Returns the name of the month for the given instant.
+{:id="Clock.Minute" class="method returns number"} <i/> 求分钟(*时刻*{:.InstantInTime})
+: 返回给定日期中的分钟数。
 
-{:id="Clock.Now" class="method returns InstantInTime"} <i/> Now()
-: Returns the current instant in time read from phone's clock.
+{:id="Clock.Month" class="method returns number"} <i/> 求月份(*时刻*{:.InstantInTime})
+: 返回给定日期中的月份数。
 
-{:id="Clock.Second" class="method returns number"} <i/> Second(*instant*{:.InstantInTime})
-: Returns the seconds for the given instant.
+{:id="Clock.MonthName" class="method returns text"} <i/> 求月份名(*时刻*{:.InstantInTime})
+: 返回给定日期中的月份名称。如`“十月”`。
 
-{:id="Clock.SystemTime" class="method returns number"} <i/> SystemTime()
-: Returns the phone's internal time.
+{:id="Clock.Now" class="method returns InstantInTime"} <i/> 求当前时间()
+: 返回从`手机时钟`读取的当前时刻。
 
-{:id="Clock.Weekday" class="method returns number"} <i/> Weekday(*instant*{:.InstantInTime})
-: Returns the weekday for the given instant.
+{:id="Clock.Second" class="method returns number"} <i/> 求秒数(*时刻*{:.InstantInTime})
+: 返回给定日期中的秒数。
 
-{:id="Clock.WeekdayName" class="method returns text"} <i/> WeekdayName(*instant*{:.InstantInTime})
-: Returns the name of the weekday for the given instant.
+{:id="Clock.SystemTime" class="method returns number"} <i/> 求系统时间()
+: 返回`手机的内部时间`。
 
-{:id="Clock.Year" class="method returns number"} <i/> Year(*instant*{:.InstantInTime})
-: Returns the year of the given instant.
+{:id="Clock.Weekday" class="method returns number"} <i/> 求星期(*时刻*{:.InstantInTime})
+: 返回给定日期中的星期数。对应关系如下：
+
+  | 星期 | 日 | 一 | 二 | 三 | 四 | 五 | 六 |
+  |---------|---------|---------|---------|---------|---------|---------|---------|
+  | 数值 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+
+{:id="Clock.WeekdayName" class="method returns text"} <i/> 求星期名(*时刻*{:.InstantInTime})
+: 返回给定日期中的星期名称，如`“星期二”`。
+
+{:id="Clock.Year" class="method returns number"} <i/> 求年份(*时刻*{:.InstantInTime})
+: 返回给定日期中的年份数，如 `2023`。
 
 ***
 ## 陀螺仪传感器  {#GyroscopeSensor}
