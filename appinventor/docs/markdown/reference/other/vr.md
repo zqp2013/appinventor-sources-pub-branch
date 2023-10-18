@@ -269,7 +269,7 @@ Looking at this structure, we can see that it is pretty simple to create an appl
 
 For MITVRHelper, our PanoramaActivity extends the regular AppCompatActivity, and handles the incoming intent.
 
-```
+```java
 public class PanoramaActivity extends AppCompatActivity {
 
 
@@ -316,7 +316,7 @@ public class PanoramaActivity extends AppCompatActivity {
 
 To load the panorama into this view we should load and decode the png/jpeg panorama image and to pass it into the view object. We will use the AsyncTask for this to prevent UI lags. Image URI is obtained from the incoming intent. Here is the short snippet on how this is implemented:
 
-```
+```java
 options.inputType = Options.TYPE_STEREO_OVER_UNDER;
 
 
@@ -363,7 +363,7 @@ options.inputType = Options.TYPE_STEREO_OVER_UNDER;
 
 And of course, we shouldn’t forget about activity lifecycle, and the need to clean up our resources when the activity is destroyed: 
 
-```
+```java
 @Override
 
 protected void onPause() {
@@ -417,7 +417,7 @@ GvrActivity extends regular activity, handles android sensor sensor events (like
 
 GvrView is the ViewGroup that extends FrameLayout. Similar to VrPanoramaView it uses native NDK library to render 3d graphics. It contains CardboardViewApi interface backed by CardboardViewNativeImpl class. It contains CardboardGLSurfaceView that is extends GLSurfaceView, that is holds all the rendering. GvrActivity has some helper lifecycle callback to interact with the volume, nfc, and magnetic button. Our activity implements StereoRenderer callback used by native library to send the events. Here is the snippet on how this should be implemented:
 
-```
+```java
 public class VirtualActivity
 
       extends GvrActivity implements GvrView.StereoRenderer {
@@ -469,16 +469,15 @@ public class VirtualActivity
 }
 ```
 
-        The OpenGL scene is rendered within GvrActivity. GvrView components are used to build the scene, to handle the illumination on, and other 3d stuff. JMini3d engine uses a left-handed axes system, so in order to use it as regular OpenGL framework we call this method right after activity was created:
+The OpenGL scene is rendered within GvrActivity. GvrView components are used to build the scene, to handle the illumination on, and other 3d stuff. JMini3d engine uses a left-handed axes system, so in order to use it as regular OpenGL framework we call this method right after activity was created:
 
-
+```java
         JMini3d.useOpenglAxisSystem()
-
-        
+```
 
 After initializing 3d engine, we should care about parameters bundle that passed from the external application built using AI. It contains the path to 3d model (in the .obj format) and to the texture. Then we should initialize our VR view, which will load the scene using JMini3d:
 
-
+```java
 GvrView gvrView = (GvrView) findViewById(R.id.gvr_view);
 
 gvrView.setEGLConfigChooser(8, 8, 8, 8, 16, 8);
@@ -503,14 +502,14 @@ onBackPressed();
 }
 
 });
-
+```
 
 All the visible things in 3d software development are considered to be a ‘Scene’. JMini3d framework also implements this concept. So we have created the scene that contains all the environment, object, texture, lights, and animation.   These definitions are in the file scenes/ObjectScene.java.
 
 
 The Obj (Wavefront) file format contains only the object geometry, textures, animation and so on should be handled manually. To load obj file we execute next code:
 
-
+```java
         ObjLoader loader = new ObjLoader();
 
         try {
@@ -531,11 +530,11 @@ loader.load(ctx.getAssets().open("pikachu.obj"));
             e.printStackTrace();
 
         }
-
+```
 
 Material is the entity that handles how the object will look like. It can be plain color, mirrored, or textured. The scene environment is a cube. We are texturing cube sides to make the environment looks like panorama from the previous example. Of course, we can use VrPanoramaView along with the FrameLayout. This will make things much simpler than now, but we wanted to try another approach for this demo. Here is the code snipped that is responsible for initializing environment:
 
-
+```java
       CubeMapTexture envMap = new CubeMapTexture(new String[]{ "sea_posx.jpg", "sea_negx.jpg", "sea_posy.jpg", "sea_negy.jpg", "sea_posz.jpg", "sea_negz.jpg"});
 
       VariableGeometry boxGeometry = new SkyboxGeometry(300);
@@ -587,7 +586,7 @@ side.setAll(-1f * (float) Math.sin(angle), 0, 1f * (float) Math.cos(angle));
 
 
 object.setRotationMatrix(forward, up, side);
-
+```
 
 As the result we are seeing the sea panorama view, and the rotating Pikachu.
 

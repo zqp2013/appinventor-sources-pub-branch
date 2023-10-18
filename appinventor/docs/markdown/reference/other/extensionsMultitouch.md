@@ -66,7 +66,7 @@ ScaleGestureDemo 是缩放手势的简单演示，其中两根手指靠得更近
 
 在我们的实现中，我们为 ScaleDetector 组件创建了一个 onScale 块，它将 scaleFactor 作为回调参数，让 App Inventor 用户为缩放事件创建处理程序，如上面的 ScaleGestureDemo 所示：
 
-```
+```java
 @SimpleEvent
 public void Scale(double scaleFactor) {
 
@@ -77,7 +77,7 @@ public void Scale(double scaleFactor) {
 
 我们还创建了 SimpleOnScaleGestureListener 的适当子类。 这将覆盖 onScale 的默认事件处理，以调用块 Scale 事件处理程序：
 
-```
+```java
  public class MyOnScaleGestureListener extends SimpleOnScaleGestureListener {
     // 我们覆盖普通 SimpleOnScaleGestureListener 的事件处理
     // 在这种情况下，使 onScale 事件调用组件的 Scale 事件处理程序，其
@@ -94,7 +94,7 @@ public void Scale(double scaleFactor) {
 
 接下来，我们创建新的手势检测器类，它扩展了 SDK ScaleGestureDetector，用于添加到 Canvas。 它是从一个手势侦听器构建的，以及一个应该发生侦听的上下文：
 
-```
+```java
 public class ExtensionScaleDetector extends ScaleGestureDetector
          implements Canvas.ExtensionGestureDetector {
    public ExtensionScaleDetector(Context c, OnScaleGestureListener l ) {
@@ -105,14 +105,14 @@ public class ExtensionScaleDetector extends ScaleGestureDetector
 
 这里的一个关键步骤是将类声明为实现 Canvas.ExtensionDetector。 Canvas.ExtensionDetector 是 Canvas 提供的接口。 每个 Canvas 都有一个手势处理器列表，在触摸 Canvas 时调用这些处理器。 可以使用 Canvas.registerCustomGestureDetector 将实现 ExtensionDetector 接口的类添加到 Canvas 的列表中。 实现接口唯一需要的是实现类提供一个带有签名的方法
 
-```
+```java
 boolean onTouchEvent(MotionEvent event);
 ```
 
 在我们的例子中，我们的 ExtensionScaleDetector 类扩展了 ScaleGestureDetector，这一事实自动满足了这一要求。
 
 最后，我们实现将手势检测器添加到指定 Canvas 的块：
-```
+```java
 @SimpleFunction
   public void AddHanderToCanvas(Canvas myCanvas) {
         this.myCanvas = myCanvas;

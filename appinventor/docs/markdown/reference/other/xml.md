@@ -13,13 +13,13 @@ The Web.XMLTextDecode takes a given XML text string and decodes it to produce a 
 
 The list returned by XMLTextDecode contains one pair for each top-level tag-delimited structure in the input string.   For example, decoding
 
-```
+```xml
 <hello>123</hello>
 ```
 
 returns the list of one pair (hello, 123) and decoding
 
-```
+```xml
 <hello>123</hello>
 
 <goodbye>456</goodbye>
@@ -33,7 +33,7 @@ For each pair, the first element is the tag, and the second element is the decod
 
 Decoding
 
-```
+```xml
 <hello>everybody</hello>
 ```
 
@@ -42,7 +42,7 @@ produces the pair (hello, everybody).
 
 Decoding
 
-```
+```xml
 <hello>everybody out there</hello>
 ```
 
@@ -51,7 +51,7 @@ produces the pair (hello, everybody out there), where the second item in the pai
 
 Decoding
 
-```
+```xml
 <greet>
 
    <goodbye>nobody</goodbye>
@@ -67,7 +67,7 @@ produces the pair (greet, data) where data is a list containing the pair (goodby
 
 If the XML string contains both delimited and non-delimited items, then the non-delimited items will all be extracted processed as if they had been a sequence of items delimited by the tag “content”.  For example, decoding
 
-```
+```xml
 <greet>
 
      <goodbye>nobody</goodbye>
@@ -86,7 +86,7 @@ will produce a pair just as in the last example above, except that the list of p
 
 It is also possible that the XML contains elements with attributes, for example:
 
-```
+```xml
         <person firstname="John" lastname="Doe"></person>
 ```
 
@@ -117,7 +117,7 @@ Here are the blocks that perform this GET when a button (GetWeatherButton) is pr
 
 The main work is done by the procedure extractTemperature.  It processes the response from the Web service to extract the Temperature.   The Web service response is a complex XML structure like this:
 
-```
+```xml
 <response>
 
  <version>0.1</version>
@@ -150,7 +150,7 @@ The main work is done by the procedure extractTemperature.  It processes the res
 
 Decoding this with XMLTextDecode produces a list, where the sublists correspond to the delimited XML substrings.  Observe that the order of the sublists does not match the order in the XML text: it is now alphabetical by tag (case-sensitive order):
 
-```
+```xml
 ((response
 
    ((current_observation
