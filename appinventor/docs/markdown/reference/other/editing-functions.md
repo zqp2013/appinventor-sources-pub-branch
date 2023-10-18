@@ -89,6 +89,6 @@ App Inventor 允许你复制和粘贴屏幕内容，从而有效地允许你复�
 
 组件粘贴文本的例子如下：
 
-```
+```json
 {"$components":[{"$Name":"图像选择框1","$Type":"ImagePicker","$Version":"5","Text":"图像选择框1文本","Uuid":"-508973047"}],"$blocks":["<xml><block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"component_method\" id=\"GmGlUkU9@dyl:S~lv+8,\" x=\"-826\" y=\"-81\"><mutation component_type=\"ImagePicker\" method_name=\"Open\" is_generic=\"false\" instance_name=\"图像选择框1\"></mutation><field name=\"COMPONENT_SELECTOR\">图像选择框1</field></block></xml>"]}
 ```
