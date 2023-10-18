@@ -171,6 +171,47 @@ $().ready(function(){
     if ($("#markdown-toc").length > 0) {
         $('#float_menu_btn').show();
     }
+
+    //禁用鼠标右键
+    $(document).bind("contextmenu",function(){return false;});
+
+    //vip控制
+//--------------------VIP start------------------------
+    function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    }
+    return "";
+    }
+    function hasVip() {
+    var user = getCookie("auth");
+    if (user=="" || user=="591f53a4-62c5-43ff-893d-2acb2f76d3fe") {
+        return false;
+    } else {
+        return true;
+    }
+    }
+
+    //no vip
+    if (!hasVip()) {
+    var vipElems = document.getElementsByClassName('vip');
+    for (var i = vipElems.length - 1; i >= 0; i--) {
+        var newDiv = document.createElement("div");
+        newDiv.className = "locked";
+
+        var url = "https://www.fun123.cn/reference/info/vip.html?f=doc&url=" + window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+        var alertText = document.createElement("span");
+        alertText.innerHTML = '开通VIP会员后查看此处隐藏内容！ <a target="_blank" href="' + url + '">点此开通VIP</a>';
+        newDiv.appendChild(alertText);
+
+        $(newDiv).insertBefore(vipElems[i]);
+        $(newDiv).next().remove();
+    }
+    }
+//--------------------VIP end------------------------
 });
 
 //显示，隐藏菜单

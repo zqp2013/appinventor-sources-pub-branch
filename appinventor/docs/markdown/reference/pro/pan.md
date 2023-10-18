@@ -39,7 +39,7 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 
 拿 access_token 的逻辑如下：
 
-![获取access_token](images/获取access_token.png)
+![获取access_token](images/获取access_token.png){:.vip}
 
 ***
 ### 3、获取文件列表，返回JSON，拿出想要的文件的fsid 【使用Web客户端】
@@ -48,7 +48,7 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 
 参考代码如下：
 
-![获取文件fs_id](images/获取文件fs_id.png)
+![获取文件fs_id](images/获取文件fs_id.png){:.vip}
 
 **注意**：这里是限定显示第一页，每页 10 条，可以改请求参数拿更多的文件：`start=0&limit=10`，比如10改为1000等。
 
@@ -57,7 +57,7 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 
 > http://pan.baidu.com/rest/2.0/xpan/multimedia?access_token=[access_token]&method=filemetas&fsids=[1737895653506]&thumb=1&dlink=1&extra=1
 
-![获取文件下载地址dlink](images/获取文件下载地址dlink.png)
+![获取文件下载地址dlink](images/获取文件下载地址dlink.png){:.vip}
 
 ***
 ### 5、根据dlink下载 【Web客户端】
@@ -70,7 +70,7 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 
 参考代码如下：
 
-![文件dlink下载](images/文件dlink下载.png)
+![文件dlink下载](images/文件dlink下载.png){:.vip}
 
 <!--注意：dlink中需转义   \u0026  ->  &-->
 

@@ -1,13 +1,13 @@
 ---
-title: App Inventor 2 中文网付费内容
+title: App Inventor 2 中文网VIP专享内容
 layout: documentation
-description: App Inventor 2 中文网原创的付费专业技术文档，作品，技术文章，专业技术指导，问题解决思路等。
+description: App Inventor 2 中文网原创的专业技术文档，作品，技术文章，专业技术指导，问题解决思路等。
 ---
 
 * TOC
 {:toc}
 
-App Inventor 2 中文网原创的付费专业技术文档，专业作品源码，专业技术文章，专业技术指导，专业问题解决思路等。
+App Inventor 2 中文网原创的专业技术文档，专业作品源码，专业技术文章，专业技术指导，专业问题解决思路等。
 
 ***
 ### 第三方产品接入

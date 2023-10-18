@@ -186,3 +186,15 @@ table td {
 	border-color: #333;
 	background-color: #ffffff;
 }
+
+/*vip lock*/
+.locked {
+  max-width: 500px;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 17px 8px 16px 38px;
+  border: 2px dashed #9c6521;
+  background: #FFF url(/static/images/locked.gif) no-repeat 16px 50%;
+  font-size: 14px;
+  color:#9c6521;
+}

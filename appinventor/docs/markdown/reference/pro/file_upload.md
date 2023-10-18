@@ -33,6 +33,7 @@ description: App Inventor 2 实现上传文件到服务器全方案总结，包�
 ***
 php服务端代码参考：
 
+{:.vip}
 ```php
 <?php
 /* FileName: PicXfer.php
@@ -59,6 +60,7 @@ echo "\nBytes written: $fileStatus \nDuration: $dur";
 ***
 python服务端参考：
 
+{:.vip}
 ```python
 from flask_restful import Api, Resource
 from flask import Flask, request
