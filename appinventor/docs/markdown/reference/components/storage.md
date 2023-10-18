@@ -283,9 +283,13 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 提供一些额外的更加强大的文件相关的操作。是 [`文件管理器`](#File) 的加强拓展。
 
 .aix 拓展下载：
+
+{:.vip}
 [com.sunny.FileTools.aix](extension/com.sunny.FileTools.aix)
 
 FileTools demo程序下载：
+
+{:.vip}
 [FileTools.aia](extension/FileTools.aia)
 
 ### 属性  {#FileTools-Properties}

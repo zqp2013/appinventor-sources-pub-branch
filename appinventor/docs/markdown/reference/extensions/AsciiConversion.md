@@ -12,9 +12,13 @@ description: App Inventor 2 AsciiConversion 拓展，将 Ascii 代码(列表)转
 ## <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA1klEQVR42mP4/5+BJESa6oHS8OMHG4Tx6RMPPg2bNnlPm5Z+7Zp6UtLsvXsd9uxxrKpqWbEidOHC2KlTM75940DXkJw8y8Nj67Fj5rm5Ezs7S0pKOoGCN26oFhd3FRb2fP7MhaLh7l2F8vK2rq6Sjo7SlpbKurr6ZcvCgeS8efETJ+YARb584UTR8PUr1MYvX7hu31b++ZMVyH70SObvX0agl75/Z//3b0jFAyENrxj+32b4/57h/3OG/y8Y/r9k+P8dvwagoksM/x8w/L8B1gkk31HVSQDpTO7uYTqjvQAAAABJRU5ErkJggg==" style="margin:-4px 5px 0 0">AsciiConversion [*拓展*](https://community.appinventor.mit.edu/t/ascii-conversion-extension/80973)  {#AsciiConversion}
 
 * .aix 拓展下载：
+
+{:.vip}
 [AsciiConversion.aix](AsciiConversion/AsciiConversion.aix)
 
 * demo程序下载：
+
+{:.vip}
 [test_AsciiConversion.aia](AsciiConversion/test_AsciiConversion.aia)
 
 **此扩展允许用户将 Ascii 代码(列表)转换为相应的文本，也可以将指定的字符转换为相应的 Ascii 代码。**

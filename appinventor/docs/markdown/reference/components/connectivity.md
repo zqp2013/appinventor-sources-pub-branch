@@ -649,12 +649,14 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 ## SimpleBase64 *拓展*  {#SimpleBase64}
 
 SimpleBase64.aix 拓展下载：
-付费项目，请联系客服咨询！
-<!--[com.ghostfox.SimpleBase64.aix](com.ghostfox.SimpleBase64.aix)-->
+
+{:.vip}
+[com.ghostfox.SimpleBase64.aix](com.ghostfox.SimpleBase64.aix)
 
 SimpleBase64 demo程序下载：
-付费项目，请联系客服咨询！
-<!--[base64_demo.aia](base64_demo.aia)-->
+
+{:.vip}
+[base64_demo.aia](base64_demo.aia)
 
 提供图像的Base64编码及解码方法，便于图像文件的通信传输。此插件仅提供2个函数，使用非常方便，几乎没有学习成本。
 
