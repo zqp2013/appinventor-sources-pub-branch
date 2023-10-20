@@ -183,6 +183,14 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothClient.Connect" class="method returns boolean"} <i/> 连接(*地址*{:.text})
 : 连接到指定地址的蓝牙设备。
 
+  **连接报错？ Runtime Error: Need android.permission.BLUETOOTH_CONNECT ...**
+
+  ![BLUETOOTH_CONNECT_permission](images/BLUETOOTH_CONNECT_permission.png)
+
+  这时需要请求蓝牙连接权限，参考代码如下：
+
+  ![请求蓝牙连接权限](images/请求蓝牙连接权限.png)
+
 {:id="BluetoothClient.ConnectWithUUID" class="method returns boolean"} <i/> 连接指定设备(*地址*{:.text},*唯一编号*{:.text})
 : 连接到指定地址和UUID的蓝牙设备。
 

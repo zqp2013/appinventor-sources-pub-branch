@@ -445,23 +445,21 @@ Physical world component that can measure the light level.
 ***
 ## 位置传感器  {#LocationSensor}
 
-Non-visible component providing location information, including [`Latitude`](#LocationSensor.Latitude),
- [`Longitude`](#LocationSensor.Longitude), [`Altitude`](#LocationSensor.Altitude) (if supported by the device), speed (if supported by
- the device), and address. This can also perform "geocoding", converting a given address (not
- necessarily the current one) to a latitude (with the [`LatitudeFromAddress`](#LocationSensor.LatitudeFromAddress)
- method) and a longitude (with the [`LongitudeFromAddress`](#LocationSensor.LongitudeFromAddress) method).
+不可见组件，提供位置信息，包括：
+  
+  [`Latitude`](#LocationSensor.Latitude)， [`Longitude`](#LocationSensor.Longitude)、 [`Altitude`](#LocationSensor.Altitude)（如果设备支持）、速度（如果设备支持） 和地址。
+  
+  也可以执行“地理编码”，转换给定的地址（不限于当前地址）到纬度（使用 [`LatitudeFromAddress`](#LocationSensor.LatitudeFromAddress)方法）和经度（使用 [`LongitudeFromAddress`](#LocationSensor.LongitudeFromAddress) 方法）。
 
- In order to function, the component must have its [`Enabled`](#LocationSensor.Enabled) property set to
- `真`{:.logic.block}, and the device must have location sensing enabled through wireless
- networks or GPS satellites (if outdoors).
+  **中文网注：**如果获取不了经纬度，请尝试开启一下定位权限，参考代码如下：
 
- Location information might not be immediately available when an app starts. You'll have to wait
- a short time for a location provider to be found and used, or wait for the
- [`LocationChanged`](#LocationSensor.LocationChanged) event.
+  ![请求定位权限](images/请求定位权限.png)
 
- The emulator does not emulate sensors on all devices. Code should be tested on a physical device.
+  为了发挥作用，组件必须将其 [`启用`](#LocationSensor.Enabled) 属性设置为`真`{:.logic.block}，并且设备必须通过无线网络启用定位感应器 或 GPS 卫星（如果在室外）。
 
+  应用程序启动时，位置信息可能无法立即可用。你必须稍微等一下找到并使用位置提供商，或者等待[`LocationChanged`](#LocationSensor.LocationChanged) 事件。
 
+  模拟器并不模拟所有设备上的传感器，App应该在物理设备上进行测试。
 
 ### 属性  {#LocationSensor-Properties}
 
@@ -510,7 +508,7 @@ Non-visible component providing location information, including [`Latitude`](#Lo
    It is also useful to check against [`Accuracy`](#LocationSensor.Accuracy) when using this property. When your
  device is moving, the accuracy of the detected location is constantly changing.
 
-{:id="LocationSensor.Enabled" .boolean} *Enabled*
+{:id="LocationSensor.Enabled" .boolean} *启用*
 : If `真`{:.logic.block}, the `LocationSensor` will attempt to read location information from
  GPS, WiFi location, or other means available on the device. This setting does not control
  whether location information is actually available. Device location must be enabled or
