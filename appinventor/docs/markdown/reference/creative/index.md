@@ -35,6 +35,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 ***
 ### 技巧分享
 
+1. [【技巧】App Inventor 2在不同的屏幕之间传值](screen_communication.html)
 1. [【技巧】组件过多，屏幕显示不下，没有滚动条？](allow_scrolling.html)
 1. [【技巧】App Inventor 2 模拟sleep函数](sim_sleep.html)
 1. 【技巧】代码视图，搜索功能
@@ -46,7 +47,6 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【技巧】拷贝及分享功能](https://www.fun123.cn/reference/other/editing-functions.html)
 1. [【技巧】App Inventor 2分享你的App](https://bbs.tsingfun.com/thread-1021-1-1.html)
 1. [【技巧】网上免登陆找素材、处理素材技巧](https://bbs.tsingfun.com/thread-1027-1-1.html)
-1. [【技巧】App Inventor 2在不同的屏幕之间传递变量](https://bbs.tsingfun.com/thread-1053-1-1.html)
 1. [【技巧】App Inventor 2 连接网络打印机进行自定义打印的思路及方法](https://bbs.tsingfun.com/thread-1153-1-1.html)
 1. 【技巧】App Inventor 2 开发蓝牙App的思路及方法
 1. [【技巧】照相机定制个性化的文件名](https://bbs.tsingfun.com/thread-1167-1-1.html)

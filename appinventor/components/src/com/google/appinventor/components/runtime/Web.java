@@ -1530,6 +1530,12 @@ public class Web extends AndroidNonvisibleComponent implements Component,
    */
   private static Map<String, List<String>> processRequestHeaders(YailList list)
       throws InvalidRequestHeadersException {
+
+    // Add by 中文网：设置允许限制请求标头，测试通过，但是暂时不启用这个特性
+    //ref:https://www.cnblogs.com/skyaccross/archive/2012/12/22/2828986.html
+    //经过测试，发现AI伴侣以及编译服务器都是依赖这里同一份代码的，环境共用，包括拓展的开发
+    //System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+
     Map<String, List<String>> requestHeadersMap = Maps.newHashMap();
     for (int i = 0; i < list.size(); i++) {
       Object item = list.getObject(i);

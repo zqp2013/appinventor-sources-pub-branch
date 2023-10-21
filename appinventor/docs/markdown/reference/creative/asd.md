@@ -13,7 +13,7 @@ description: Android存储系统基础知识：内部存储，外部存储，App
 
 [英文原版链接→](https://community.kodular.io/t/some-basics-on-android-storage-system/69074)
 
-Android存储系统概览图（图片模糊的话请在图片上右键 → 新标签页打开）：
+Android存储系统概览图（图片模糊的话请拖动图片至新标签页打开）：
 
 ![Android存储系统概览](images/Android存储系统概览.jpeg)
 
