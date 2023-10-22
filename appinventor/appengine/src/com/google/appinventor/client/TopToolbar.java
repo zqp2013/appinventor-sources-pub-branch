@@ -585,6 +585,19 @@ public class TopToolbar extends Composite {
   private class RefreshCompanionAction implements Command {
     @Override
     public void execute() {
+
+      // VIP到期
+      if (getLeftDays() <= 0 && !Ode.getInstance().isReadOnly()) {
+        checkVip(-1);
+        return;
+      }
+
+      // VIP检查
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        showVip();
+        return;
+      }
+      
       if (Ode.getInstance().okToConnect()) {
         replUpdate();
         Tracking.trackEvent(Tracking.CONNECT_EVENT, Tracking.CONNECT_ACTION_RESEND);

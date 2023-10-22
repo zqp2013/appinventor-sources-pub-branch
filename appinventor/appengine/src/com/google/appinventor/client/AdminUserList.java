@@ -22,6 +22,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -323,7 +324,14 @@ public class AdminUserList extends Composite {
       } else {
         expiredLabel = new Label(expiredFormat.format(expired));
       }
-      remarkLabel = new Label(user.getRemark());
+
+      // 防止显示过长的备注
+      String disp_remark = user.getRemark();
+      if (disp_remark == null)
+        disp_remark = "";
+      if (disp_remark.length() > 100)
+        disp_remark = disp_remark.substring(0, 100) + "...";
+      remarkLabel = new Label(disp_remark);
       nameLabel.addMouseDownHandler(new MouseDownHandler() {
           @Override
           public void onMouseDown(MouseDownEvent e) {
@@ -437,7 +445,9 @@ public class AdminUserList extends Composite {
     final Label expiredMonthLabel = new Label("+1月");
     final TextBox expired = new TextBox();
     final Label remarkLabel = new Label("备注");
-    final TextBox remark = new TextBox();
+    final TextArea remark = new TextArea();
+    remark.setCharacterWidth(23);
+    remark.setVisibleLines(2);
     userInfo.setWidget(2, 0, fromLabel);
     userInfo.setWidget(2, 1, from);
     userInfo.setWidget(3, 0, expiredLabel);

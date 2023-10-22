@@ -87,9 +87,9 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 ***
 ### 3、预上传
 
-> http://pan.baidu.com/rest/2.0/xpan/file?method=precreate&access_token=123.d06435633fc110d41fd1c5e3b3626849.YHyevRSw9WbP27auGiN0fOWFgwYIx436PbYmIAn.FqMcSA&path=/apps/appName/filename.jpg&size=2626327&isdir=0&autoinit=1&rtype=3&block_list=["60bac7b6464d84fed842955e6126826a"]&content-md5=60bac7b6464d84fed842955e6126826a&slice-md5=3c5c864d432cc2381b687f8d873e1429
+> http://pan.baidu.com/rest/2.0/xpan/file?method=precreate&access_token=[access_token]&path=/apps/appName/filename.jpg&size=2626327&isdir=0&autoinit=1&rtype=3&block_list=["60bac7b6464d84fed842955e6126826a"]&content-md5=60bac7b6464d84fed842955e6126826a&slice-md5=3c5c864d432cc2381b687f8d873e1429
 
-```
+```config
 rtype	int	 文件命名策略，默认0
 0 为不重命名，返回冲突
 1 为只要path冲突即重命名
