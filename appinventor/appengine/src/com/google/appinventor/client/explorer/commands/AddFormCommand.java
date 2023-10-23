@@ -179,7 +179,7 @@ public final class AddFormCommand extends ChainableCommand {
 
     private boolean validate(String newFormName) {
       // Check that it meets the formatting requirements.
-      if (!TextValidators.isValidIdentifier(newFormName)) {
+      if (!TextValidators.isValidIdentifier_EN(newFormName)) {
         Window.alert(MESSAGES.malformedFormNameError());
         return false;
       }
