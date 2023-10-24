@@ -41,188 +41,193 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.properties}
 
-{:id="Screen.AboutScreen" .text} *AboutScreen*
-: Information about the screen. It appears when "About this Application" is selected from the
- system menu. Use it to tell users about your app. In multiple screen apps, each screen has its
- own `AboutScreen` info.
+{:id="Screen.AboutScreen" .text} *关于屏幕*
+: 有关屏幕的信息，系统菜单 -> “关于此应用程序”选中时出现。它用来向用户介绍你的应用程序，在多屏幕应用程序中，每个屏幕都拥有“关于屏幕”的信息。
 
-{:id="Screen.AccentColor" .color .do} *AccentColor*
-: This is the accent color used for highlights and other user interface accents in newer
- versions of Android. Components affected by this property include dialogs created by the
- [`Notifier`](#Notifier), the [`DatePicker`](#DatePicker), and others.
+{:id="Screen.AccentColor" .color .do} *交互性颜色*
+: 这是新版本Android中用于突出显示和其他用户界面交互的交互性颜色。受此属性影响的包括 [`对话框`](#Notifier)、[`日期选择框`](#DatePicker) 等组件**触发的弹出框**。
 
-{:id="Screen.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the screen are aligned horizontally. The choices are:
- `1` (left aligned), `3` (horizontally centered), `2` (right aligned).
+  > PrimaryColor：  主题颜色。app的主要颜色，即整个屏幕和所有控件的主要颜色，首选颜色。
+  >
+  > SecondaryColor：提示性颜色。这颜色一般比PrimaryColor亮一些或暗一些，取决于白天模式还是黑暗模式。一般用于提示相关动作或信息，提示性颜色。
+  >
+  > AccentColor：   交互性颜色。这颜色一般用于交互性的控件颜色，比如FloatingButton、TextField、Cursor、ProgressBar、Selection、Links等具体交互性的颜色。
+  >
+  > 另外附上Android Material设计图的Color说明：
+  >
+  > ![Android_Color说明](images/Android_Color说明.png)
 
-{:id="Screen.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the arrangement are aligned vertically. The choices
- are: `1` (aligned at the top), `2` (vertically centered), `3` (aligned at the bottom). Vertical
- alignment has no effect if the screen is scrollable.
+{:id="Screen.PrimaryColor" .color .do} *主题颜色*
+: 这是用作 Android 主题部分的主要颜色，包括“屏幕”标题栏颜色。
 
-{:id="Screen.AppName" .text .wo .do} *AppName*
-: This is the display name of the installed application in the phone. If the `AppName` is blank,
- it will be set to the name of the project when the project is built.
+{:id="Screen.PrimaryColorDark" .color .do} *深色主题颜色*
+: 这是当 [`主题`](#Screen.Theme) 属性指定为 `深色` 时使用的主要颜色。它适用于许多元素，包括“屏幕”的标题栏。
+
+{:id="Screen.AlignHorizontal" .number} *水平对齐*
+: 表示屏幕内容如何水平对齐的数字，含义如下：
+
+  `1` （左对齐）
+
+  `2` （右对齐）
+
+  `3` （水平居中）
+
+{:id="Screen.AlignVertical" .number} *垂直对齐*
+: 表示屏幕内容如何垂直对齐的数字，含义如下：
+
+  `1` （顶部对齐）
+
+  `2` （垂直居中）
+
+  `3` （底部对齐）
+  
+  如果屏幕可滚动，垂直对齐将没有效果。
+
+{:id="Screen.AppName" .text .wo .do} *应用名称*
+: 这是手机中安装的应用程序的显示名称。如果“应用名称”为空，则当项目构建时，它将被设置为项目的名称。
 
 {:id="Screen.BackgroundColor" .color} *背景颜色*
 : 设置`屏幕`的背景颜色，使用RGBA数值表示，如果设置了[`背景图像`](#Screen.BackgroundImage)属性，则不能显示背景颜色直到删除[`背景图像`](#Screen.BackgroundImage)属性为止。
 
 {:id="Screen.BackgroundImage" .text} *背景图像*
-: Specifies the path of the `Screen`'s background image. If there is both an `BackgroundImage`
- and a [`BackgroundColor`](#Screen.BackgroundColor) specified, only the `BackgroundImage` will be visible.
+: 设置`屏幕`背景图像的路径，如果同时设置了 `背景图像` 和 `背景颜色`，则只有 `背景图像` 可见。
 
-{:id="Screen.BigDefaultText" .boolean} *BigDefaultText*
-: When checked, all default size text will be increased in size.
+{:id="Screen.BigDefaultText" .boolean} *文本变大*
+: 选中（或设置`真`）后，所有默认大小的文本都会增加大小。
 
-{:id="Screen.BlocksToolkit" .text .wo .do} *BlocksToolkit*
-: A JSON string representing the subset for the screen. Authors of template apps can use this to control what components, designer properties, and blocks are available in the project.
+{:id="Screen.BlocksToolkit" .text .wo .do} *块工具包*
+: 表示屏幕子集的 JSON 字符串。模板应用程序的作者可以使用它来控制项目中可用的组件、设计器属性和代码块。
 
-{:id="Screen.CloseScreenAnimation" .text} *CloseScreenAnimation*
-: Sets the animation type for the transition of this form closing and returning
- to a form behind it in the activity stack.
+{:id="Screen.OpenScreenAnimation" .text} *开屏动画*
+: 设置此表单打开的过渡动画类型。
 
-{:id="Screen.DefaultFileScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *DefaultFileScope*
-: Specifies the default scope used when components access files. Note that the [`File`](#File)
- component has its own property for controlling file scopes.
+{:id="Screen.CloseScreenAnimation" .text} *关屏动画*
+: 设置表单关闭和返回到后面表单的过渡动画类型。
 
-{:id="Screen.Height" .number .ro .bo} *高度*
-: Returns the Screen height in pixels (y-size).
-
-{:id="Screen.HighContrast" .boolean} *HighContrast*
-: When checked, there will be high contrast mode turned on.
-
-{:id="Screen.Icon" .text .wo .do} *Icon*
-: The image used for your App's display icon should be a square png or jpeg image with dimensions
- up to 1024x1024 pixels. Larger images may cause compiling or installing the app to fail.
- The build server will generate images of standard dimensions for Android devices.
-
-{:id="Screen.OpenScreenAnimation" .text} *OpenScreenAnimation*
-: Sets the animation type for the transition of this form opening.
-
-{:id="Screen.Platform" .text .ro .bo} *Platform*
-: Gets the name of the underlying platform running the app. Currently, this is the text
- "Android". Other platforms may be supported in the future.
-
-{:id="Screen.PlatformVersion" .text .ro .bo} *PlatformVersion*
-: Gets the version number of the platform running the app. This is typically a dotted version
- number, such as 10.0. Any value can be returned, however, so you should take care to handle
- unexpected data. If the platform version is unavailable, the empty text will be returned.
-
-{:id="Screen.PrimaryColor" .color .do} *PrimaryColor*
-: This is the primary color used as part of the Android theme, including coloring the `Screen`'s
- title bar.
-
-{:id="Screen.PrimaryColorDark" .color .do} *PrimaryColorDark*
-: This is the primary color used when the Theme property is specified to be Dark. It applies to
- a number of elements, including the `Screen`'s title bar.
-
-{:id="Screen.ScreenOrientation" .text} *ScreenOrientation*
-: Declares the requested screen orientation, specified as a text value. Commonly used values are
- `landscape`, `portrait`, `sensor`, `user` and `unspecified`. See the Android developer
- documentation for the complete list of possible
- [options](https://developer.android.com/reference/android/R.attr.html#screenOrientation).
-
-{:id="Screen.Scrollable" .boolean} *Scrollable*
-: When checked, there will be a vertical scrollbar on the screen, and the height of the
- application can exceed the physical height of the device. When unchecked, the application
- height is constrained to the height of the device.
-
-{:id="Screen.ShowListsAsJson" .boolean .do} *ShowListsAsJson*
-: If `真`{:.logic.block} (the default), lists will be shown as strings in JSON/Python notation
- for example [1, "a", true]. If `假`{:.logic.block}, lists will be shown in the LISP
- notation, for example (1 a true).
-
-   **Note:** This property appears only in Screen1 and the value for Screen1 determines the
- behavior for all screens in the app.
-
-{:id="Screen.ShowStatusBar" .boolean} *ShowStatusBar*
-: The status bar is the topmost bar on the screen. This property reports whether the status bar
- is visible.
-
-{:id="Screen.Sizing" .text .wo .do} *Sizing*
-: If set to responsive (the default), screen layouts will use the actual resolution of the
- device. See the [documentation on responsive design](../other/responsiveDesign.html) in App
- Inventor for more information.
- If set to fixed, screen layouts will be created for a single fixed-size screen and autoscaled.
-
-   **Note:** This property appears on Screen1 only and controls the sizing for all screens in
- the app.
-
-{:id="Screen.Theme" .text .wo .do} *Theme*
-: Selects the theme for the application. Theme can only be set at compile time and the Companion
- will approximate changes during live development. Possible options are:
-
-   * `Classic`, which is the same as older versions of App Inventor;
-   * `Device Default`, which gives the same theme as the version of Android running on the
-     device and uses PrimaryColor for the Action Bar and has light buttons;
-   * `Black Title Text`, which is the `Device Default` theme but with black title text; and
-   * `Dark`, which is a dark version of the `Device Default` theme using `PrimaryColorDark` and
-     having dark grey components.
-
-{:id="Screen.Title" .text} *Title*
-: Title property setter method: sets a new caption for the form in the
- form's title bar.
-
-{:id="Screen.TitleVisible" .boolean} *TitleVisible*
-: The title bar is the top gray bar on the screen. This property reports whether the title bar
- is visible.
-
-{:id="Screen.TutorialURL" .text .wo .do} *TutorialURL*
-: A URL which will be opened on the left side panel (which can be toggled once it is open). This
- is intended for projects that have an in-line tutorial as part of the project. For security
- reasons, only tutorials hosted on http://appinventor.mit.edu or linked to from our URL
- shortener (http://appinv.us) may be used here. Other URLs will be silently ignored.
-
-{:id="Screen.VersionCode" .number .wo .do} *VersionCode*
-: An integer value which must be incremented each time a new Android Application Package File
- (APK) is created for the Google Play Store.
-
-{:id="Screen.VersionName" .text .wo .do} *VersionName*
-: A string which can be changed to allow Google Play Store users to distinguish between
- different versions of the App.
+{:id="Screen.DefaultFileScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认文件范围*
+: 设置组件访问文件时使用的默认范围。注意 [`文件管理器`](../storage.html#File) 组件有自己的属性来控制文件范围。
 
 {:id="Screen.Width" .number .ro .bo} *宽度*
-: Returns the Screen width in pixels (x-size).
+:返回屏幕宽度（以像素px为单位）（x 尺寸）。
+
+{:id="Screen.Height" .number .ro .bo} *高度*
+: 返回屏幕高度（以像素px为单位）（y 尺寸）。
+
+{:id="Screen.HighContrast" .boolean} *高对比度*
+: 选中（或设置`真`）后，将打开高对比度模式。
+
+{:id="Screen.Icon" .text .wo .do} *图标*
+: 设置图像，用于应用程序图标显示，需是方形尺寸 png 或 jpeg 图像，最大分辨率 1024 x 1024 像素。
+
+  **较大的图像可能会导致编译或安装应用程序失败**。
+  
+  构建服务器将为 Android 设备生成标准尺寸的图像。
+
+{:id="Screen.Platform" .text .ro .bo} *平台*
+: 获取运行应用程序的底层平台的名称。目前，这是文本`Android`，将来可能会支持其他平台。
+
+{:id="Screen.PlatformVersion" .text .ro .bo} *平台版本*
+: 获取运行应用程序的平台的版本号。这通常是带点的版本数字，例如 10.0，但是，它可以返回任何值，因此需要考虑处理意外的数据。如果平台版本不可用，将返回空文本。
+
+{:id="Screen.ScreenOrientation" .text} *屏幕方向*
+: 指定屏幕方向，为文本值。常用的值为：
+
+  * 横向 (`landscape`)
+
+  * 纵向 (`portrait`)
+
+  * 传感器 (`sensor`)
+
+  * 用户 (`user`)
+
+  * 未指定 (`unspecified`)
+
+  查看 Android 开发者可能的完整列表的文档[选项](https://developer.android.com/reference/android/R.attr.html#screenOrientation)。
+
+{:id="Screen.Scrollable" .boolean} *允许滚动*
+: 勾选（或设置`真`）后，屏幕上会出现一个垂直滚动条，应用程序高度能超出设备的物理高度。未选中时，应用程序高度受限于设备的高度。
+
+{:id="Screen.ShowListsAsJson" .boolean .do} *以JSON格式显示列表*
+: 如果为`真`{:.logic.block}（默认值），列表将显示为 JSON/Python 表示法中的字符串，例如 `[1, "a", true]`。
+
+  如果为`假`{:.logic.block}，则列表将显示在 LISP 中表示法，例如 `(1 a true)`。
+
+    **注意：** 该属性仅出现在 Screen1 中，Screen1 的值决定了应用程序中所有屏幕的行为。
+
+{:id="Screen.ShowStatusBar" .boolean} *显示状态栏*
+: 状态栏是屏幕最上面的栏，该属性设置状态栏是否是可见的。
+
+{:id="Screen.Sizing" .text .wo .do} *屏幕大小*
+: 如果设置为响应式（默认），屏幕布局将使用设备的实际分辨率。请参阅App中的[响应式设计文档](../other/responsiveDesign.html)了解更多信息。
+
+  如果设置为`固定大小`，将为单个固定尺寸屏幕创建屏幕布局并自动缩放。
+
+    **注意：** 此属性仅出现在 Screen1 上，并控制该应用程序中所有屏幕的大小。
+
+{:id="Screen.Theme" .text .wo .do} *主题*
+: 选择应用程序的主题，主题只能在编译时设置，与AI伴侣在实时开发期间会有细微的差别。可选项有：
+
+    * `Classic`（经典），与旧版本的 App Inventor 相同
+
+    * `Device Default`（设备默认），与当前运行的 Android 设备主题一致，可通过[“主题颜色”](#Screen.PrimaryColor)设置。
+
+    * `Black Title Text`（黑色标题），这也是“设备默认”主题，但标题文本为黑色
+    
+    * `Dark`（深色主题），这是“设备默认”主题的深色版本，可通过[“深色主题颜色”](#Screen.PrimaryColorDark)设置。
+
+{:id="Screen.Title" .text} *标题*
+: 设置标题属性，在表单的标题栏为表单设置新的标题。
+
+{:id="Screen.TitleVisible" .boolean} *标题展示*
+: 标题栏是屏幕顶部的灰色栏，该属性设置标题栏是否是可见的。
+
+{:id="Screen.TutorialURL" .text .wo .do} *侧边栏教程网址*
+: 设置侧边栏中文教程URL地址。
+
+{:id="Screen.VersionCode" .number .wo .do} *版本编号*
+: 每次为应用商店创建新的 Android 应用程序包文件(APK)时都必须递增的整数值。
+
+{:id="Screen.VersionName" .text .wo .do} *版本名称*
+: 可以更改的字符串，以允许应用商店用户区分不同版本的应用程序。
 
 ### 事件  {#Screen-Events}
 
 {:.events}
 
-{:id="Screen.BackPressed"} BackPressed()
-: Device back button pressed.
+{:id="Screen.BackPressed"} 回退时()
+: 设备后退按钮已按下。
 
-{:id="Screen.ErrorOccurred"} ErrorOccurred(*component*{:.component},*functionName*{:.text},*errorNumber*{:.number},*message*{:.text})
-: Event raised when an error occurs. Only some errors will raise this condition.  For those errors, the system will show a notification by default.  You can use this event handler to prescribe an error behavior different than the default.
+{:id="Screen.ErrorOccurred"} 出现错误时(*组件*{:.component},*函数名称*{:.text},*错误编号*{:.number},*消息*{:.text})
+: 发生错误时触发该事件。只有某些错误才会触发，对于这些错误，系统将默认显示通知，可以使用此事件来定制错误处理逻辑。
 
-{:id="Screen.Initialize"} Initialize()
-: The Initialize event is run when the Screen starts and is only run once per screen.
+{:id="Screen.Initialize"} 初始化()
+: 初始化事件在屏幕启动时运行，并且每个屏幕**仅运行一次**。
 
-{:id="Screen.OtherScreenClosed"} OtherScreenClosed(*otherScreenName*{:.text},*result*{:.any})
-: Event raised when another screen has closed and control has returned to this screen.
+{:id="Screen.OtherScreenClosed"} 关闭其他屏幕时(*其他屏幕名称*{:.text},*返回结果*{:.any})
+: 当另一个屏幕关闭并且控制权返回到此屏幕时触发该事件。
 
-{:id="Screen.PermissionDenied"} PermissionDenied(*component*{:.component},*functionName*{:.text},*permissionName*{:.text})
-: Event to handle when the app user has denied a needed permission.
+{:id="Screen.PermissionDenied"} 权限被拒绝时(*组件*{:.component},*函数名称*{:.text},*权限名称*{:.text})
+: 当请求所需权限被用户拒绝时要处理的事件。
 
-{:id="Screen.PermissionGranted"} PermissionGranted(*permissionName*{:.text})
-: Event to handle when the app user has granted a needed permission. This event is only run when permission is
- granted in response to the [`请求权限`](#Screen.AskForPermission) method.
+{:id="Screen.PermissionGranted"} 权限被授予时(*权限名称*{:.text})
+: 当请求所需权限被用户授予时要处理的事件。该事件仅在获得许可时运行，是 [`请求权限`](#Screen.AskForPermission) 方法的响应。
 
-{:id="Screen.ScreenOrientationChanged"} ScreenOrientationChanged()
-: Screen orientation changed
+{:id="Screen.ScreenOrientationChanged"} 屏幕方向改变时()
+: 屏幕方向已改变时触发此事件。
 
 ### 方法  {#Screen-Methods}
 
 {:.methods}
 
 {:id="Screen.AskForPermission" class="method"} <i/> 请求权限(*权限名称*{:.text})
-: 要求用户授予对敏感权限的访问权限，例如`精确定位`权限。
+: 请求用户授予对敏感权限的访问权限，例如`精确定位`权限。
 
- 如果用户许可了授权，[`权限被授予时`](#Screen.PermissionGranted) 事件将被触发；如果用户拒绝授权，[`权限被拒绝时`](#Screen.PermissionDenied)事件将被触发。
+  如果用户许可了授权，[`权限被授予时`](#Screen.PermissionGranted) 事件将被触发；如果用户拒绝授权，[`权限被拒绝时`](#Screen.PermissionDenied)事件将被触发。
 
    **注意：** 最佳做法是仅在需要时请求权限，App Inventor组件将在必要时执行。不建议在[`初始化`](#Screen.Initialize) 事件中使用`请求权限`，除非访问该权限对你的应用是预先需要的，例如导航应用需要定位服务。
 
-{:id="Screen.HideKeyboard" class="method"} <i/> HideKeyboard()
-: Hide the soft keyboard
+{:id="Screen.HideKeyboard" class="method"} <i/> 隐藏键盘()
+: 隐藏软键盘。
 
 ***
 ## ![icon](images/Button.png)  按钮（Button）  {#Button}
