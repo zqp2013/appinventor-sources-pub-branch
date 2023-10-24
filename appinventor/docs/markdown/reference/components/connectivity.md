@@ -439,13 +439,13 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="Web.RequestHeaders" .list .bo} *请求标头*
 : 设置请求标头。以下是一个请求标头示例截图：
 
-<img src="images/请求标头.png" alt="请求标头" style="border:1px solid #eee;margin-bottom:10px;"/>
+  <img src="images/请求标头.png" alt="请求标头" style="border:1px solid #eee;margin-bottom:10px;"/>
 
-请求标头信息，格式为`包含双项子列表的列表`数据。其中，各子列表中第一项表示请求头的字段名，而第二项则表示对应的字段值，既可以是单个数值，也可以是包含多个数值的列表。
+  请求标头信息，格式为`包含双项子列表的列表`数据。其中，各子列表中第一项表示请求头的字段名，而第二项则表示对应的字段值，既可以是单个数值，也可以是包含多个数值的列表。
 
-设置案例如下：
+  设置案例如下：
 
-![请求标头设置](images/请求标头设置.png)
+  ![请求标头设置](images/请求标头设置.png)
 
 {:id="Web.ResponseFileName" .text} *响应文件名称*
 : 指定保存响应数据的文件的名称，如果 [保存响应信息](#Web.SaveResponse) 为`真` 且 [响应文件名称](#Web.ResponseFileName) 为空，则自动创建一个新文件名。
@@ -552,6 +552,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   文件上传服务器结果如下：
   
   ![文件上传服务器结果](images/文件上传服务器结果.png)
+
+  服务器代码请参考[《App Inventor 2 实现上传文件到服务器全方案总结》](../pro/file_upload.html)。
 
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为真，则响应数据将保存在文件中，并且 [获得文件](#Web.GotFile) 事件被触发。[响应文件名称](#Web.ResponseFileName) 属性可用于指定文件的名称。
 
@@ -692,6 +694,8 @@ SimpleBase64 demo程序下载：
 ## MqttClient [*拓展*](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)  {#Mqtt}
 
 .aix 拓展及demo程序打包下载：
+
+{:.vip}
 [UrsAI2Paho.zip](extension/UrsAI2Paho.zip)
 
 `MQTT`是机器对机器(M2M)/物联网(IoT)连接协议。它被设计为一个极其轻量级的发布/订阅消息传输协议。
@@ -713,9 +717,13 @@ SimpleBase64 demo程序下载：
 ## ClientSocket [*拓展*](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)  {#Socket}
 
 .aix 拓展下载：
+
+{:.vip}
 [com.gmail.at.moicjarod.aix](extension/com.gmail.at.moicjarod.aix)
 
 demo程序下载：
+
+{:.vip}
 [TestSocket.aia](extension/TestSocket.aia)
 
 提供TCP/IP连接及通信功能。
