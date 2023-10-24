@@ -108,7 +108,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 设置组件访问文件时使用的默认范围。注意 [`文件管理器`](../storage.html#File) 组件有自己的属性来控制文件范围。
 
 {:id="Screen.Width" .number .ro .bo} *宽度*
-:返回屏幕宽度（以像素px为单位）（x 尺寸）。
+: 返回屏幕宽度（以像素px为单位）（x 尺寸）。
 
 {:id="Screen.Height" .number .ro .bo} *高度*
 : 返回屏幕高度（以像素px为单位）（y 尺寸）。
@@ -903,7 +903,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
  `假`{:.logic.block} will hide it.
 
 {:id="ListView.TextColor" .color} *文本颜色*
-:: 设置`列表显示框`的文本颜色，使用RGBA数值表示。
+: 设置`列表显示框`的文本颜色，使用RGBA数值表示。
 
 {:id="ListView.TextColorDetail" .color} *TextColorDetail*
 : Specifies the color of the secondary text in a ListView layout
