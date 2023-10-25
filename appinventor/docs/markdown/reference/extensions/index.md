@@ -4,9 +4,9 @@ layout: documentation
 description: 拓展参考文档：包括如何从.aia项目文件中提取.aix拓展包文件、FileTools 拓展、TaifunImage 拓展、SimpleBase64 拓展、MqttClient 拓展、ClientSocket 拓展等。
 ---
 
-本文档描述您在使用App Inventor 2构建应用程序时所能用到的拓展，以打造界面更加酷炫、功能更加强大的App。
+&nbsp;&nbsp;&nbsp;&nbsp;本文档描述您在使用App Inventor 2构建应用程序时所能用到的拓展，以打造界面更加酷炫、功能更加强大的App。
 
-![拓展](images/拓展.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![拓展](images/拓展.png)
 
 1. [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
 1. [【ASCII编解码】<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA1klEQVR42mP4/5+BJESa6oHS8OMHG4Tx6RMPPg2bNnlPm5Z+7Zp6UtLsvXsd9uxxrKpqWbEidOHC2KlTM75940DXkJw8y8Nj67Fj5rm5Ezs7S0pKOoGCN26oFhd3FRb2fP7MhaLh7l2F8vK2rq6Sjo7SlpbKurr6ZcvCgeS8efETJ+YARb584UTR8PUr1MYvX7hu31b++ZMVyH70SObvX0agl75/Z//3b0jFAyENrxj+32b4/57h/3OG/y8Y/r9k+P8dvwagoksM/x8w/L8B1gkk31HVSQDpTO7uYTqjvQAAAABJRU5ErkJggg==" style="margin:-4px 5px 0 0">AsciiConversion 拓展](AsciiConversion.html)

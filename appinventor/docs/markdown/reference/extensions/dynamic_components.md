@@ -12,7 +12,7 @@ description: App Inventor 2 DynamicComponents 拓展：动态创建AI2组件对�
 ## <img src="DynamicComponents/icon.png" style="width:16px;margin:-4px 5px 0 0">DynamicComponents 拓展  {#DynamicComponents}
 <!--(https://community.kodular.io/t/f-os-dynamic-components-extension-for-every-component-2-2-2/50789,https://github.com/ysfchn/DynamicComponents-AI2)-->
 
-* .aix 拓展下载：
+.aix 拓展下载：
 
 {:.vip}
 [com.yusufcihan.DynamicComponents.aix](DynamicComponents/com.yusufcihan.DynamicComponents.aix)
@@ -20,13 +20,15 @@ description: App Inventor 2 DynamicComponents 拓展：动态创建AI2组件对�
 
 **完全支持 App Inventor 2 的动态组件扩展。它基于 Java 的反射功能，因此只需键入类名称即可搜索类来创建组件。因此，它对特定组件的支持不受限制，因为它支持添加到 App Inventor 发行版中的每个组件！**
 
-此扩展可以根据你的选择异步或同步创建组件。如果你不想在创建一堆组件期间阻止主应用程序，请转到设计视图（导入扩展后）并在“UI”（异步）和“Main”（同步）之间进行选择。
+此扩展可以根据你的选择异步或同步创建组件。
+
+如果你不想在创建一堆组件期间阻止主应用程序，请转到设计视图（导入扩展后）并在“UI”（异步）和“Main”（同步）之间进行选择。
 
 
 <table style="width:100%">
     <tr>
-        <th width="30%">Block</th>
-        <th>Description</th>
+        <th width="30%">代码块</th>
+        <th>描述</th>
     </tr>
     <!-- CREATE  -->
     <tr>
@@ -50,21 +52,20 @@ description: App Inventor 2 DynamicComponents 拓展：动态创建AI2组件对�
             </table>
         </td>-->
         <td>
-            Creates a new dynamic component. It supports all component that added to your current AI2 distribution.
-            <code>componentName</code> parameter can have these values:
-            <br><br>
+            创建一个新的动态组件，它支持添加到当前 AI2 发行版的所有组件。
+            <code>组件名称</code> 参数可以是以下值：<br/>
             <table>
                 <tr>
                     <td><img src="DynamicComponents/other/text.png"></td>
-                    <td><b>Name of the component.</b><br>✅ Doesn't require to add existing component.<br> ❌ Only components can be created.</td>
+                    <td><b>组件的名称。</b><br>✅ 不需要添加现有组件。<br> ❌ 只能创建组件。</td>
                 </tr>
                 <tr>
                     <td><img src="DynamicComponents/other/component_block.png"></td>
-                    <td><b>Block of existing component to create new one from it.</b><br>❌ Requires a existing component.<br>✅ Extensions can be created also.</td>
+                    <td><b>现有组件块。</b><br>❌ 需要现有组件。<br>✅ 还可以创建扩展。</td>
                 </tr>
                 <tr>
                     <td><img src="DynamicComponents/other/class_text.png" href="DynamicComponents/other/class_text_full.png"></td></td>
-                    <td><b>Full class name of the component.</b><br>✅ Doesn't require to add existing component.<br>✅ Extensions can be created also.<br><br>To learn the class name of the component use <code>GetName</code> block.</td>
+                    <td><b>组件的完整类名。</b><br>✅ 不需要添加现有组件。<br>✅ 还可以创建扩展。<br><br>要了解组件的类名，请使用 <code>GetName</code> 代码块。</td>
                 </tr>
             </table>
         </td>
@@ -434,68 +435,87 @@ description: App Inventor 2 DynamicComponents 拓展：动态创建AI2组件对�
 
 
 ## FAQ
-* How can I set the properties for the blocks?
 
-  You have two options and both does the same job:
+* 如何设置块的属性？
 
-`SetProperty`
-![](DynamicComponents/1.png)
+  有两种选择，效果一样：
 
-or `Any Component`
+  `SetProperty`
+  
+  ![](DynamicComponents/1.png)
 
-![](DynamicComponents/2.png)
+  或 `Any Component`
 
-How can I delete all components?
-Use a for-each loop for that.
+  ![](DynamicComponents/2.png)
 
-![](DynamicComponents/3.png)
+* 如何删除所有组件？
 
-How can I make my own Schema template?
-Thanks for being interested in making a JSON template for the extension. You can go to the Wiki section of Dynamic Component’s repository to learn how to create yours.
-[Creating Templates - DynamicComponents-AI2 Wiki](https://github.com/ysfchn/DynamicComponents-AI2/wiki/Creating-Templates)
+  使用 for-each 循环：
 
-Is extension works asynchronously, or synchronously?
-It works synchronously. I explained why it works synchronously in this post.
-Now you can toggle between asynchronously or synchronously with the Thread property!
+  ![](DynamicComponents/3.png)
 
-App takes a lot of time to create components that use Image components, how can I fix it?
-Replace your existing set Image.Picture components with the Image Utilities component.
-If you don’t use Kodular, you can use an extension to load images asynchronously.
+* 如何制作自己的架构模板？
 
-How much time it takes to create components?
-I created more than 10 000 components and calculated how many seconds will it take to finish creating. [Here are the benchmark results.](https://community.kodular.io/t/free-open-source-dynamic-components-extension-for-every-component/50789/945)
+  为扩展制作 JSON 模板：你可以访问动态组件存储库的 Wiki 部分，了解如何创建动态组件。
 
-## Test
+  [创建模板 - DynamicComponents-AI2 Wiki](https://github.com/ysfchn/DynamicComponents-AI2/wiki/Creating-Templates)
 
-Just made an test app that creates a lot of Button components with a loop and calculates the execution time with Clock.
+* 扩展是异步工作还是同步工作？
 
-Test 1
-Platform: Companion / Kodular
-Measured with: inbuilt Clock component
-Created: “Button” component with default properties
+  它是同步工作的。我在这篇文章中解释了为什么它同步工作。
 
-Component Count	Created in (as seconds)	Created in (as milliseconds)
-100	0 sec	535 ms
-200	1 sec	1387 ms
-500	3 secs	3718 ms
-1000	6 secs	6992 ms
-2000	12 secs	12748 ms
-5000	36 secs	36925 ms
-10000	73 secs	73849 ms
+  现在你可以使用 Thread 属性在异步或同步之间切换！
 
-Test 2
-Platform: Exported App / Kodular
-Measured with: inbuilt Clock component
-Created: “Button” component with default properties
+* 应用程序需要花费大量时间来创建使用 `图像` 组件的组件，我该如何修复它？
 
-Component Count	Created in (as seconds)	Created in (as milliseconds)
-100	0 sec	593 ms
-200	1 sec	1079 ms
-500	2 secs	2427 ms
-1000	6 secs	6023 ms
-2000	12 secs	12009 ms
-5000	25 secs	25092 ms
-10000	64 secs	64520 ms
+  将现有的 Image.Picture 组件替换为 Image Utilities 组件。可以使用扩展来异步加载图像。
 
-Note
-Of course, the current running apps, available memory at the moment, device type etc can affect the execution time. It is just an amateur benchmark.
+* 创建组件需要多少时间？
+
+  我创建了 10000 多个组件，并计算了需要多少秒才能完成创建。
+  
+  [以下是基准测试结果。](https://community.kodular.io/t/free-open-source-dynamic-components-extension-for-every-component/50789/945)
+
+## 基准测试结果
+
+制作了一个测试应用程序，它创建了许多带循环的 Button 组件，并使用 Clock 计算执行时间。
+
+测试1
+
+平台：Companion / Kodular
+
+测量方式：内置时钟组件
+
+创建：具有默认属性的“按钮”组件
+
+|元件数量|	创建时间（以秒为单位）	|创建时间（以毫秒为单位）|
+|---------|---------|---------|
+|100	|0 sec	|535 ms|
+|200	|1 sec	|1387 ms|
+|500	|3 secs	|3718 ms|
+|1000	|6 secs	|6992 ms|
+|2000	|12 secs	|12748 ms|
+|5000	|36 secs	|36925 ms|
+|10000	|73 secs	|73849 ms|
+
+测试2
+
+平台：导出应用程序/Kodular
+
+测量方式：内置时钟组件
+
+创建：具有默认属性的“按钮”组件
+
+|元件数量|	创建时间（以秒为单位）	|创建时间（以毫秒为单位）|
+|---------|---------|---------|
+|100	|0 sec	|593 ms|
+|200	|1 sec	|1079 ms|
+|500	|2 secs	|2427 ms|
+|1000	|6 secs	|6023 ms|
+|2000	|12 secs	|12009 ms|
+|5000	|25 secs	|25092 ms|
+|10000	|64 secs	|64520 ms|
+
+**注意：**
+
+当然，当前运行的应用程序、当前可用内存、设备类型等都会影响执行时间。这只是一个大致的基准测试。
