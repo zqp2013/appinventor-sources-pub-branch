@@ -364,8 +364,8 @@ h1 { color: white; }
 
 .documentation a { color: #0969DA; }
 .documentation h1, .documentation h2, .documentation h3, .documentation h4, .documentation h5, .documentation h6 { padding: 6pt 0; color: #1F2328; }
-.documentation h1 { font-size: 2em;   margin-top: 1rem; border-bottom: 1px solid #D8DEE4; }
-.documentation h2 { font-size: 1.5em; margin-top: 1.6rem; border-bottom: 1px solid #D8DEE4; }
+.documentation h1 { font-size: 2em;   margin-top: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #D8DEE4; }
+.documentation h2 { font-size: 1.5em; margin-top: 1.6rem; margin-bottom: 1rem; border-bottom: 1px solid #D8DEE4; }
 .documentation h3 { font-size: 1.25em;}
 .documentation h4 { font-size: 1em;   }
 .documentation h5 { font-size: .875em;}
