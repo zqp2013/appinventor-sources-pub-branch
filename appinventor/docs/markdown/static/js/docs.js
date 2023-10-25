@@ -175,6 +175,13 @@ $().ready(function(){
     //禁用鼠标右键
     $(document).bind("contextmenu",function(){return false;});
 
+    //图片url化，SEO需要
+    var imgElems = document.getElementsByTagName('img');
+    for (var i = imgElems.length - 1; i >= 0; i--) {
+        var seoURL = imgElems[i].src;
+        imgElems[i].src = seoURL;
+    }
+
     //vip控制
 //--------------------VIP start------------------------
     function getCookie(cname) {
