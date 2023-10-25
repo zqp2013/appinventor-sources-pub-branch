@@ -133,8 +133,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
   **蓝牙设备列表为空？**
 
-  你可能没有开启AI伴侣或编译后App的发现蓝牙权限，这里以AI伴侣为例，勾上即可：
-
+  {:.vip}
+  你可能没有开启AI伴侣或编译后App的发现蓝牙权限，这里以AI伴侣为例，勾上即可：<br/>
   ![开启发现蓝牙设备的权限](images/开启发现蓝牙设备的权限.png)
 
 {:id="BluetoothClient.Available" .boolean .ro .bo} *可用状态*
@@ -187,8 +187,8 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
   ![BLUETOOTH_CONNECT_permission](images/BLUETOOTH_CONNECT_permission.png)
 
-  这时需要请求蓝牙连接权限，参考代码如下：
-
+  {:.vip}
+  这时需要请求蓝牙连接权限，参考代码如下：<br/>
   ![请求蓝牙连接权限](images/请求蓝牙连接权限.png)
 
 {:id="BluetoothClient.ConnectWithUUID" class="method returns boolean"} <i/> 连接指定设备(*地址*{:.text},*唯一编号*{:.text})
