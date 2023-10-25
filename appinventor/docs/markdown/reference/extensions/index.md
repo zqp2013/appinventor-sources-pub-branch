@@ -21,3 +21,4 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【数据库】SQLite 拓展：超流行兼容主流SQL的迷你本地数据库引擎](https://github.com/frdfsnlght/aix-SQLite)
 1. [【数据库】TaifunSQLite 拓展：SQLite数据库引擎](http://puravidaapps.com/sqlite.php)
 1. [【UI】NotificatioStyle 拓展：个性化通知栏样式](https://github.com/jarlisson2/NotificationStyleAIX)
+1. [【动态创建】<img src="DynamicComponents/icon.png" style="width:16px;margin:-4px 5px 0 0">DynamicComponents 拓展：动态创建AI2组件对象](dynamic_components.html)
