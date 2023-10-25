@@ -9,8 +9,8 @@ description: App Inventor 2 中文网原创的技术文档，作品，技术文�
 
 App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子，问答，技术指导，问题解决思路等。
 
-***
-### 基础知识
+
+## 基础知识
 
 1. [【连接调试】App Inventor 2 连接方式：AI伴侣、模拟器、USB](connect.html)
 1. [【连接调试】安裝 aiStarter 模拟器](https://bbs.tsingfun.com/thread-1004-1-4.html)
@@ -21,8 +21,8 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【算法】如何计算1加到100的总和？（经典循环的写法）](https://bbs.tsingfun.com/thread-1113-1-2.html)
 1. [【算法】App Inventor 2 算法之二分算法（Binary Search）实现，快速查找定位](https://mp.weixin.qq.com/s?__biz=MzA5NTE5OTg1MA==&mid=2247483756&idx=1&sn=21240e0a86d0f000085491d98b96c9f5&chksm=9043b669a7343f7f06af82dc7251752c390d01b9a3d81e52f64e9828d33dc401793147a380c7&token=270925767&lang=zh_CN#rd)
 
-***
-### 组件用法
+
+## 组件用法
 
 1. [【微数据库】每次打开app时保持上一次关闭时的状态](https://bbs.tsingfun.com/thread-1127-1-2.html)
 1. [【微数据库】App Inventor 2数据存储组件之：微数据库](https://bbs.tsingfun.com/thread-1129-1-1.html)
@@ -32,8 +32,8 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【文本块】App Inventor 2 文本块使用方法2 - 打字机效果（2）](https://www.bilibili.com/video/BV1RX4y1d7Sk/)
 1. [【计时器】App Inventor 2 计时器+效果实现 - 打字机效果（3）](https://www.bilibili.com/video/BV1ns4y1U7wH/)
 
-***
-### 技巧分享
+
+## 技巧分享
 
 1. [【技巧】App Inventor 2在不同的屏幕之间传值](screen_communication.html)
 1. [【技巧】组件过多，屏幕显示不下，没有滚动条？](allow_scrolling.html)
@@ -52,16 +52,16 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. 【技巧】App Inventor 2 开发蓝牙App的思路及方法
 1. [【技巧】照相机定制个性化的文件名](https://bbs.tsingfun.com/thread-1167-1-1.html)
 
-***
-### 问题解决
+
+## 问题解决
 
 1. [【解决】“请从下拉列表中选择合适项”错误解决方法](https://bbs.tsingfun.com/thread-1098-1-2.html)
 1. [【解决】App Inventor 2连接模拟器一直失败的问题](https://bbs.tsingfun.com/thread-1005-1-1.html)
 1. [【解决】Error 908: The permission RECORD_AUDIO has been denied. Please enable it in the Settings app.](https://bbs.tsingfun.com/thread-1159-1-2.html)
 1. [【解决】App Inventor 2 手机AI伴侣进行测试时，为啥进度条卡在10%就一直不动？](https://bbs.tsingfun.com/thread-1165-1-1.html)
 
-***
-### 教程分享
+
+## 教程分享
 
 1. [【教程】利用 App Inventor 2 开发ChatGPT应用](https://www.tsingfun.com/it/ai2/app_inventor_2_chatgpt.html)
 1. [【福利】利用 App Inventor 2 开发AI绘图应用，无门槛免费使用OpenAI绘图](https://www.bilibili.com/video/BV1vu4y1D7W9/)

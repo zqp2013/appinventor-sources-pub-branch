@@ -28,7 +28,6 @@ description: 乐高机器人®组件参考文档。
 * [Nxt接触传感器](#NxtTouchSensor)
 * [Nxt超声波传感器](#NxtUltrasonicSensor)
 
-***
 ## EV3颜色传感器  {#Ev3ColorSensor}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -109,7 +108,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3ColorSensor.GetLightLevel" class="method returns number"} <i/> GetLightLevel()
 : It returns the light level in percentage.
 
-***
+
 ## EV3指令发送器  {#Ev3Commands}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -161,7 +160,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3Commands.KeepAlive" class="method"} <i/> KeepAlive(*minutes*{:.number})
 : Keep the EV3 brick from shutdown for a period of time.
 
-***
+
 ## EV3陀螺仪传感器  {#Ev3GyroSensor}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -204,7 +203,7 @@ description: 乐高机器人®组件参考文档。
 : Returns the current angle or rotation speed based on current mode,
  or -1 if the value cannot be read from sensor.
 
-***
+
 ## EV3马达  {#Ev3Motors}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -287,7 +286,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3Motors.ToggleDirection" class="method"} <i/> ToggleDirection()
 : Toggle the direction of motors.
 
-***
+
 ## EV3声音  {#Ev3Sound}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -321,7 +320,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3Sound.StopSound" class="method"} <i/> StopSound()
 : Stop any sound on the robot.
 
-***
+
 ## EV3接触传感器  {#Ev3TouchSensor}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -368,7 +367,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3TouchSensor.IsPressed" class="method returns boolean"} <i/> IsPressed()
 : Returns true if the touch sensor is pressed.
 
-***
+
 ## EV3绘图  {#Ev3UI}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -414,7 +413,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3UI.FillScreen" class="method"} <i/> FillScreen(*color*{:.number})
 : Fill the screen with a color.
 
-***
+
 ## EV3超声波传感器  {#Ev3UltrasonicSensor}
 
 ![EV3 component icon](images/legoMindstormsEv3.png)
@@ -479,7 +478,7 @@ description: 乐高机器人®组件参考文档。
 {:id="Ev3UltrasonicSensor.GetDistance" class="method returns number"} <i/> GetDistance()
 : Returns the current distance in centimeters as a value between 0 and 254, or -1 if the distance can not be read.
 
-***
+
 ## Nxt颜色传感器  {#NxtColorSensor}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -563,7 +562,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtColorSensor.GetLightLevel" class="method returns number"} <i/> GetLightLevel()
 : Returns the current light level as a value between 0 and 1023, or -1 if the light level can not be read or if the DetectColor property is set to True.
 
-***
+
 ## Nxt指令发送器  {#NxtDirectCommands}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -669,7 +668,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtDirectCommands.StopSoundPlayback" class="method"} <i/> StopSoundPlayback()
 : Stop sound playback.
 
-***
+
 ## Nxt电机驱动器  {#NxtDrive}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -727,7 +726,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtDrive.TurnCounterClockwiseIndefinitely" class="method"} <i/> TurnCounterClockwiseIndefinitely(*power*{:.number})
 : Turn the robot counterclockwise indefinitely, with the specified percentage of maximum power, by powering the right drive motor forward and the left drive motor backward.
 
-***
+
 ## Nxt光线传感器  {#NxtLightSensor}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -792,7 +791,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtLightSensor.GetLightLevel" class="method returns number"} <i/> GetLightLevel()
 : Returns the current light level as a value between 0 and 1023, or -1 if the light level can not be read.
 
-***
+
 ## Nxt声音传感器  {#NxtSoundSensor}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -854,7 +853,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtSoundSensor.GetSoundLevel" class="method returns number"} <i/> GetSoundLevel()
 : Returns the current sound level as a value between 0 and 1023, or -1 if the sound level can not be read.
 
-***
+
 ## Nxt接触传感器  {#NxtTouchSensor}
 
 ![NXT component icon](images/legoMindstormsNxt.png)
@@ -901,7 +900,7 @@ description: 乐高机器人®组件参考文档。
 {:id="NxtTouchSensor.IsPressed" class="method returns boolean"} <i/> IsPressed()
 : Returns true if the touch sensor is pressed.
 
-***
+
 ## Nxt超声波传感器  {#NxtUltrasonicSensor}
 
 ![NXT component icon](images/legoMindstormsNxt.png)

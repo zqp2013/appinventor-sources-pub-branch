@@ -20,7 +20,7 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 * [短信收发器](#Texting)
 * [推特客户端](#Twitter)
 
-***
+
 ## 联系人选择框  {#ContactPicker}
 
 A button that, when clicked on, displays a list of the contacts to choose among. After the user
@@ -176,7 +176,7 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
 : Opens the selected contact's entry in the device's default Contacts app.
 
-***
+
 ## 邮箱地址选择框  {#EmailPicker}
 
 An `EmailPicker` is a kind of text box. If the user begins entering the name or email address of
@@ -270,7 +270,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 {:id="EmailPicker.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `EmailPicker`.
 
-***
+
 ## 电话拨号器  {#PhoneCall}
 
 ![PhoneCall component icon](images/phonecall.png)
@@ -333,7 +333,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
  bypassing user interaction to start the call. **Most apps should use
  [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead, which requires no permissions.**
 
-***
+
 ## 电话号选择框  {#PhoneNumberPicker}
 
 A button that, when clicked on, displays a list of the contacts' phone numbers to choose among.
@@ -485,7 +485,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
 : Opens the selected contact's entry in the device's default Contacts app.
 
-***
+
 ## 信息分享器  {#Sharing}
 
 ![信息分享器图标](images/sharing.png)
@@ -538,7 +538,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 <img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;"/>
 
-***
+
 ## 短信收发器  {#Texting}
 
 ![Texting component icon](images/texting.png)
@@ -620,7 +620,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  [dangerous permissions](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
  that will require additional approval if your app is submitted to the Google Play Store.**
 
-***
+
 ## 推特客户端（*国内无法使用*）  {#Twitter}
 
 A non-visible component that enables communication with [Twitter](https://twitter.com). Once a

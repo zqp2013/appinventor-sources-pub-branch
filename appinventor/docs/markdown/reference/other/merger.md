@@ -184,7 +184,6 @@ Figure 9: The My Projects page where you will upload the merged project file.
 
 A dialog box will appear.  Select Choose File. A file browsing window will appear.  Find and select the .aia file that was just created by the App Inventor Merger and then click Open followed by OK.  Your new project will now appear in your list of projects and will open in the App Inventor window.
 
-***
 ## Extras
 ### Universal Assets and Databases {#Universal-Assets-and-Databases}
 

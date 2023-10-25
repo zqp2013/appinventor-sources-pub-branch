@@ -22,7 +22,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 * [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
 * [Socket *拓展：TCP/IP传输协议*](#Socket)
 
-***
 ## Activity启动器  {#ActivityStarter}
 
 使用`启动Activity`方法启动一个Activity（活动）的组件。
@@ -116,7 +115,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="ActivityStarter.StartActivity" class="method"} <i/> 启动活动对象()
 : 启动这个 `Activity启动器` 对应的Activity活动。
 
-***
 ## 蓝牙客户端  {#BluetoothClient}
 
 使用 `蓝牙客户端` 通过蓝牙将您的设备连接到其他设备。这个组件使用串行端口配置文件 (SPP) 进行通信。 
@@ -256,7 +254,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothClient.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : 将指定文本转换为字节并将它们写入到输出流。
 
-***
 ## 蓝牙服务器  {#BluetoothServer}
 
 使用 `蓝牙服务器` 组件将您的设备变成接收来自其他使用 `蓝牙客户端` 组件的应用程序连接的服务器。
@@ -375,7 +372,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothServer.StopAccepting" class="method"} <i/> 停止接受连接()
 : 停止接受传入连接。
 
-***
 ## 串口通信器  {#Serial}
 
 串口通信组件。
@@ -424,7 +420,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="Serial.WriteSerial" class="method"} <i/> 写入串口(*data*{:.text})
 : 将给定数据写入串口。
 
-***
 ## Web客户端  {#Web}
 
 为 HTTP GET、POST、PUT 和 DELETE 请求提供功能的非可视组件。
@@ -655,7 +650,6 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
  `$attributes` dictionary. In addition to these special keys, there will also be `"ex:title"`
  and `"ex:author"` to allow lookups faster than having to traverse the `$content` list.
 
-***
 ## SimpleBase64 *拓展*  {#SimpleBase64}
 
 SimpleBase64.aix 拓展下载：
@@ -689,8 +683,6 @@ SimpleBase64 demo程序下载：
 * EncodeImage
 * DecodeImage
 
-
-***
 ## MqttClient [*拓展*](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)  {#Mqtt}
 
 .aix 拓展及demo程序打包下载：
@@ -713,7 +705,6 @@ SimpleBase64 demo程序下载：
   * 1字节固定报头，2字节心跳报文，最小化传输开销和协议交换，有效减少网络流量。
   * 消息QoS支持，可靠传输保证
 
-***
 ## ClientSocket [*拓展*](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)  {#Socket}
 
 .aix 拓展下载：

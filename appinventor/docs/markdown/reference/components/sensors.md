@@ -27,7 +27,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 1. [距离传感器](#ProximitySensor)
 1. [温度传感器](#Thermometer)
 
-***
+
 ## 加速度传感器  {#AccelerometerSensor}
 
 不可见组件，可检测震动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
@@ -93,7 +93,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 {:.methods}
 无
 
-***
+
 ## ![icon](images/barcodescanner.png)  条码扫描器  {#BarcodeScanner}
 
 用于扫描 QR 码并返回结果字符串的组件。
@@ -122,7 +122,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 {:id="BarcodeScanner.DoScan" class="method"} <i/> 执行扫描()
 : 使用相机开始扫描条形码。扫描完成后，将触发 [扫描结束](#BarcodeScanner.AfterScan) 事件。
 
-***
+
 ## 气压传感器  {#Barometer}
 
 Physical world component that can measure the ambient air pressure if
@@ -161,7 +161,7 @@ Physical world component that can measure the ambient air pressure if
 {:.methods}
 无
 
-***
+
 ## ![Image of the Clock component](images/clock.png) 计时器  {#Clock}
 
 不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。
@@ -322,7 +322,7 @@ Physical world component that can measure the ambient air pressure if
 {:id="Clock.Year" class="method returns number"} <i/> 求年份(*时刻*{:.InstantInTime})
 : 返回给定日期中的年份数，如 `2023`。
 
-***
+
 ## 陀螺仪传感器  {#GyroscopeSensor}
 
 Component providing data from the device's gyroscope sensor.
@@ -360,7 +360,7 @@ Component providing data from the device's gyroscope sensor.
 {:.methods}
 无
 
-***
+
 ## 湿度传感器  {#Hygrometer}
 
 Physical world component that can measure the relative ambient air 
@@ -400,7 +400,7 @@ Physical world component that can measure the relative ambient air
 {:.methods}
 无
 
-***
+
 ## 光线传感器  {#LightSensor}
 
 Physical world component that can measure the light level.
@@ -442,7 +442,7 @@ Physical world component that can measure the light level.
 {:.methods}
 无
 
-***
+
 ## 位置传感器  {#LocationSensor}
 
 不可见组件，提供位置信息，包括：
@@ -577,7 +577,7 @@ Physical world component that can measure the light level.
 {:id="LocationSensor.LongitudeFromAddress" class="method returns number"} <i/> LongitudeFromAddress(*locationName*{:.text})
 : Derives longitude from the given `locationName`.
 
-***
+
 ## 磁场传感器  {#MagneticFieldSensor}
 
 Component for MagneticFieldSensor
@@ -621,7 +621,7 @@ Component for MagneticFieldSensor
 {:.methods}
 无
 
-***
+
 ## NFC  {#NearField}
 
 提供 NFC 功能的不可见组件。目前该组件**仅支持读写文本标签**（如果设备支持）。
@@ -662,7 +662,7 @@ Component for MagneticFieldSensor
 {:.methods}
 无
 
-***
+
 ## 方向传感器  {#OrientationSensor}
 
 ![Example of the OrientationSensor icon](images/orientationsensor.png)
@@ -731,7 +731,7 @@ Component for MagneticFieldSensor
 {:.methods}
 无
 
-***
+
 ## 计步器  {#Pedometer}
 
 该组件使用 [加速度传感器](#AccelerometerSensor) 来记录步数。
@@ -786,7 +786,7 @@ Component for MagneticFieldSensor
 {:id="Pedometer.Stop" class="method"} <i/> Stop()
 : Stops the pedometer.
 
-***
+
 ## 距离传感器  {#ProximitySensor}
 
 用于测量物体相对于设备屏幕距离（以cm厘米为单位）的传感器组件。该传感器通常用于检测手机听筒是否处于耳边接听状态。
@@ -826,7 +826,7 @@ Component for MagneticFieldSensor
 {:.methods}
 无
 
-***
+
 ## 温度传感器  {#Thermometer}
 
 可以测量环境空气温度的物理组件（如果硬件支持）。

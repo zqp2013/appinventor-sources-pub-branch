@@ -50,7 +50,7 @@ Invoking the activity starter's StartActivity method will start HelloPurr. When 
 
 If you are going to start another App Inventor app, make sure you use the correct package name. For example, if someone posts the source code (aia file) for an app, and you repackage that app, you'll end up with a different package name than the original.
 
-***
+
 ## Starting a Built-in Android Application from your App Inventor App
 Apps that come built in with the Android device can be invoked “explicitly” by using package names and class names, as above.   They can also be started “implicitly” by specifying an Action, in which case the Android operating system can figure out which actual application to start.  The information used to start an app is called an intent, and the process for determining which application to start is called intent resolution.  You can find information about intents in the Android system documentation on intents and intent filters.
 
@@ -190,7 +190,7 @@ For the case of two App Inventor apps, it’s simpler to design the combination 
 
 If your app tries to start other apps, you'll want to check that those other apps are available on your user's phone before trying to start them. You can determine this using the ActivityStarter.ResolveActivity , which returns the name of the Activity that would be started by ActivityStarter.StartActivity, given the package or other information you've provided. If this name is blank, then the required application is not present, and you can make your app alert the user.
 
-***
+
 ## Appendix:  Technical information  for Android developers who are designing external apps for use with  App Inventor apps
 
 If you build Android apps using the Android SDK, you can design external apps that start App Inventor apps and you can also design apps can be started by App Inventor apps.  You can also arrange to pass values between the App Inventor apps and the external apps.

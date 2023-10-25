@@ -62,7 +62,6 @@ Another way to debug your program is to use the Notifier component. If you want 
 ### Labels
 In the same manner as above, you can have debugging labels set up in your app. You can add blocks to set the label text to a message, or variable value so that you can track changes when they occur. When you have debugged your app and you are sure it works as desired, you can either make the label invisible in the Designer, and/or you can disable the blocks that set the text values. You can also remove the labels altogether, if you are sure you won’t need them again.
 
-***
 ## System Logs
 Besides the debugging tools in the Blocks editor, you can sometimes get information from various logs. This is generally for advanced users only.
 

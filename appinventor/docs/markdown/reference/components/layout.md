@@ -18,7 +18,6 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 1. ![icon](images/VerticalArrangement.png)  [垂直布局](#VerticalArrangement)
 1. ![icon](images/VerticalScrollArrangement.png)  [垂直滚动条布局](#VerticalScrollArrangement)
 
-***
 ## ![icon](images/HorizontalArrangement.png)  水平布局  {#HorizontalArrangement}
 
  使用水平布局组件来展示一组从左到右排列的组件，你可以在其中从左到右放置应该显示的组件。如果你想让组件显示在另一个上面，使用 [`垂直布局`](#VerticalArrangement) 代替。
@@ -92,7 +91,6 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 {:.methods}
 无
 
-***
 ## ![icon](images/HorizontalScrollArrangement.png)  水平滚动条布局  {#HorizontalScrollArrangement}
 
 一个格式化元素、用于放置应从左到右显示的组件。
@@ -149,7 +147,6 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 {:.methods}
 无
 
-***
 ## ![icon](images/TableArrangement.png)  表格布局  {#TableArrangement}
 
 Use a table arrangement component to display a group of components in a tabular fashion.
@@ -211,7 +208,6 @@ Use a table arrangement component to display a group of components in a tabular 
 {:.methods}
 无
 
-***
 ## ![icon](images/VerticalArrangement.png)  垂直布局  {#VerticalArrangement}
 
  Use a `VerticalArrangement` component to display a group of components laid out from top to
@@ -289,7 +285,6 @@ Use a table arrangement component to display a group of components in a tabular 
 {:.methods}
 无
 
-***
 ## ![icon](images/VerticalScrollArrangement.png)  垂直滚动条布局  {#VerticalScrollArrangement}
 
 A formatting element in which to place components that should be displayed one below another.

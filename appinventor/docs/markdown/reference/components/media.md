@@ -23,7 +23,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 * [翻译器](#Translator)
 * [视频播放器](#VideoPlayer)
 
-***
+
 ## 摄像机  {#Camcorder}
 
 ![Camcorder icon](images/camcorder.png)
@@ -52,7 +52,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="Camcorder.RecordVideo" class="method"} <i/> 开始录制()
 : 录制视频，然后触发[`录制完成`](#Camcorder.AfterRecording)事件。
 
-***
+
 ## 照相机  {#Camera}
 
 ![照相机图标](images/camera.png)
@@ -83,7 +83,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="Camera.TakePicture" class="method"} <i/> 拍照()
 : 拍照，然后触发 [`拍摄完成`](#Camera.AfterPicture) 事件。
 
-***
+
 ## 图像选择框  {#ImagePicker}
 
 ![图像选择框图标](images/imagepicker.png)
@@ -191,7 +191,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="ImagePicker.Open" class="method"} <i/> 打开选框()
 : 打开 `图像选择框`，就像用户点击它一样。
 
-***
+
 ## 音频播放器  {#Player}
 
 ![音频播放器图标](images/player.png)
@@ -253,7 +253,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="Player.Vibrate" class="method"} <i/> Vibrate(*milliseconds*{:.number})
 : Vibrates for specified number of milliseconds.
 
-***
+
 ## 音效  {#Sound}
 
 ![音效图标](images/sound.png)
@@ -303,7 +303,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="Sound.Vibrate" class="method"} <i/> Vibrate(*millisecs*{:.number})
 : Vibrates for the specified number of milliseconds.
 
-***
+
 ## 录音机  {#SoundRecorder}
 
 ![录音机图标](images/soundRecorder.png)
@@ -408,7 +408,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
  This function works only when the [`UseLegacy`](#SpeechRecognizer.UseLegacy) property is
  set to `假`{:.logic.block}.
 
-***
+
 ## 文本朗读器  {#TextToSpeech}
 
 ![文本朗读器图标](images/texttospeech.png)
@@ -486,7 +486,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="TextToSpeech.Speak" class="method"} <i/> Speak(*message*{:.text})
 : Speaks the given message.
 
-***
+
 ## 翻译器  {#Translator}
 
 ![翻译器图标](images/translator.png)
@@ -531,7 +531,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
  prepending it to the language translation, e.g., es-ru will specify Spanish to Russian
  translation.
 
-***
+
 ## 视频播放器  {#VideoPlayer}
 
 ![视频播放器图标](images/videoplayer.png)

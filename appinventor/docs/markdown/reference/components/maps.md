@@ -21,7 +21,7 @@ description: 地图组件参考文档：包括圆、特征集合、线段、地�
 * [多边形](#Polygon)
 * [矩形](#Rectangle)
 
-***
+
 ## 圆  {#Circle}
 
 The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius), in meters,
@@ -145,7 +145,7 @@ The `Circle` component visualizes a circle of a given [`Radius`](#Circle.Radius)
 : Shows the info box for the `Circle` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Circle.EnableInfobox) is false.
 
-***
+
 ## 特征集合  {#FeatureCollection}
 
 A `FeatureCollection` groups one or more map features together. Any events that occur on a
@@ -262,7 +262,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
  the [`LoadError`](#FeatureCollection.LoadError) event will be raised with any applicable HTTP
  response code and error message.
 
-***
+
 ## 线段  {#LineString}
 
 `LineString` is a component for drawing an open, continuous sequence of lines on a `Map`. To add
@@ -363,7 +363,7 @@ A `FeatureCollection` groups one or more map features together. Any events that 
 : Shows the info box for the `LineString` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#LineString.EnableInfobox) is false.
 
-***
+
 ## 地图  {#Map}
 
 A two-dimensional container that renders map tiles in the background and allows for multiple
@@ -603,7 +603,7 @@ A two-dimensional container that renders map tiles in the background and allows 
 {:id="Map.Save" class="method"} <i/> Save(*path*{:.text})
 : Saves the features on the `Map` as a GeoJSON file at the specified path.
 
-***
+
 ## 标记  {#Marker}
 
 The `Marker` component indicates points on a [`Map`](#Map), such as buildings or other points of
@@ -749,7 +749,7 @@ The `Marker` component indicates points on a [`Map`](#Map), such as buildings or
 : Shows the info box for the `Marker` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Marker.EnableInfobox) is false.
 
-***
+
 ## 导航  {#Navigation}
 
 The Navigation component generates directions between two locations using a service called
@@ -824,7 +824,7 @@ The Navigation component generates directions between two locations using a serv
  error occurs, the error will be reported via the
  [`Screen's ErrorOccurred`](userinterface.html#Screen.ErrorOccurred) event.
 
-***
+
 ## 多边形  {#Polygon}
 
 `Polygon` encloses an arbitrary 2-dimensional area on a [`Map`](#Map). `Polygon`s can be used for
@@ -945,7 +945,7 @@ The Navigation component generates directions between two locations using a serv
 : Shows the info box for the `Polygon` if it is not visible. Otherwise, this method has no effect.
  This method can be used to show the info box even if [`EnableInfobox`](#Polygon.EnableInfobox) is false.
 
-***
+
 ## 矩形  {#Rectangle}
 
 `Rectangle`s are polygons with fixed latitudes and longitudes for the north, south, east, and

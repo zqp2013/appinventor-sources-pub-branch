@@ -32,7 +32,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 1. ![icon](images/WebViewer.png)  [Web浏览框（WebViewer）](#WebViewer)
 
 
-***
+
 ## ![icon](images/Screen.png)  屏幕  {#Screen}
 
 包含程序中所有其他组件的顶层组件。
@@ -229,7 +229,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Screen.HideKeyboard" class="method"} <i/> 隐藏键盘()
 : 隐藏软键盘。
 
-***
+
 ## ![icon](images/Button.png)  按钮（Button）  {#Button}
 
 按钮具有检测点击的功能，它的外观可以被改变，比如是否可点击 (`启用`)，可以在“界面设计”视图或“程序设计”视图中修改其属性。
@@ -332,7 +332,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.methods}
 无
 
-***
+
 ## ![icon](images/CheckBoxIcon.png)  复选框  {#CheckBox}
 
 ![复选框示例](images/checkbox.png)
@@ -406,7 +406,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 无
 
 
-***
+
 ## ![icon](images/DatePicker.png)  日期选择框  {#DatePicker}
 
 单击一个按钮弹出对话框以允许用户选择日期(公历)。
@@ -535,7 +535,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
 : Allows the user to set the date from the instant to be displayed when the date picker opens.
 
-***
+
 ## ![icon](images/ImageIcon.png)  图像  {#Image}
 
 用于显示图像和基本动画的组件。要显示的图片以及图像外观的其他方面，可以在“界面设计”视图或“程序设计”视图中进行设置。
@@ -604,7 +604,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 无
 
 
-***
+
 ## ![icon](images/Label.png)  标签  {#Label}
 
 标签是用于显示文本的组件。
@@ -683,7 +683,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 无
 
 
-***
+
 ## ![icon](images/ListPicker.png)  列表选择框&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
 
 一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
@@ -823,7 +823,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="ListPicker.Open" class="method"} <i/> Open()
 : Opens the `ListPicker`, as though the user clicked on it.
 
-***
+
 ## ![icon](images/ListView.png)  列表显示框  {#ListView}
 
 可见组件，可在 [`屏幕`](#Screen) 上展示文本和图像元素的列表。
@@ -947,7 +947,7 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 {:id="ListView.Refresh" class="method"} <i/> Refresh()
 : Reload the ListView to reflect any changes in the data.
 
-***
+
 ## ![icon](images/Notifier.png)  对话框  {#Notifier}
 
 The Notifier component displays alert messages and creates Android log entries through
@@ -1039,7 +1039,7 @@ The Notifier component displays alert messages and creates Android log entries t
  [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
  button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
 
-***
+
 ## ![icon](images/PasswordTextBoxIcon.png)  密码输入框  {#PasswordTextBox}
 
 Users enter passwords in a password text box component, which hides the text that has been typed in it.
@@ -1141,7 +1141,7 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `PasswordTextBox`.
 
-***
+
 ## ![icon](images/slider.png)  滑动条  {#Slider}
 
 滑动条是一个添加可拖动滑块的进度条，你可以触摸它并向左右拖动设置滑块的位置。当滑块滑块被拖动时，它将触发[`位置被改变`](#Slider.PositionChanged) 事件，报告 `滑动条` 的滑块位置数值，
@@ -1212,7 +1212,7 @@ Users enter passwords in a password text box component, which hides the text tha
 {:.methods}
 无
 
-***
+
 ## ![icon](images/Spinner.png)  下拉框  {#Spinner}
 
 A `Spinner` component that displays a dialog with a list of elements. These elements can be set
@@ -1274,7 +1274,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Spinner.DisplayDropdown" class="method"} <i/> DisplayDropdown()
 : Displays the dropdown list for selection, same action as when the user clicks on the spinner.
 
-***
+
 ## ![icon](images/Switch.png)  切换开关（Switch）   {#Switch}
 
 `Switch` components can detect user taps and can change their boolean state in response. They
@@ -1359,7 +1359,7 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:.methods}
 无
 
-***
+
 ## ![icon](images/TextBoxIcon.png)  文本输入框  {#TextBox}
 
 Users enter text in a text box component.
@@ -1481,7 +1481,7 @@ Users enter text in a text box component.
 {:id="TextBox.RequestFocus" class="method"} <i/> RequestFocus()
 : Request focus to current `TextBox`.
 
-***
+
 ## ![icon](images/TimePicker.png)  时间选择框  {#TimePicker}
 
 A button that, when clicked on, opens a dialog to allow the user to select a time.
@@ -1603,7 +1603,7 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
  Instants are used in [`Clock`](sensors.html#Clock), [`DatePicker`](#DatePicker), and [`TimePicker`](#TimePicker)
  components.
 
-***
+
 ## ![icon](images/WebViewer.png)  Web浏览框  {#WebViewer}
 
 Component for viewing Web pages.

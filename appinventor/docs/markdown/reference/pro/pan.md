@@ -79,7 +79,6 @@ access_token=[access_token]    有效期：根据文档，有效期大概30天
 ![百度网盘文件下载效果](images/百度网盘文件下载效果.png)
 
 
-***
 ## App Inventor 2 接入百度网盘API：文件上传
 
 申请应用及拿 access_token 同下载篇的步骤1 及 步骤2，必备步骤。
