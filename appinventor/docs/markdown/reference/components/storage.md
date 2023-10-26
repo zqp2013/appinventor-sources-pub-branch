@@ -274,7 +274,8 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
   **请注意**：如果文件已存在，此块将覆盖该文件。如果你想给文件添加内容请使用 [`追加内容`](#File.AppendToFile) 方法添加到现有文件。
 
-## FileTools [*拓展*](https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)  {#FileTools}
+## FileTools 拓展  {#FileTools}
+<!--(https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)-->
 
 提供一些额外的更加强大的文件相关的操作。是 [`文件管理器`](#File) 的加强拓展。
 

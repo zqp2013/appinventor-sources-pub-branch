@@ -9,7 +9,8 @@ description: App Inventor 2 KIO4_Base64 拓展，更强大的图像Base64编解�
 
 [&laquo; 返回首页](index.html)
 
-## ![logo](KIO4_Base64/logo.png)  KIO4_Base64 [*拓展*](http://kio4.com/appinventor/277i_extension_imagen_string.htm)  {#KIO4_Base64}
+## ![logo](KIO4_Base64/logo.png)  KIO4_Base64 拓展  {#KIO4_Base64}
+<!--(http://kio4.com/appinventor/277i_extension_imagen_string.htm)-->
 
 * .aix 拓展下载：
 

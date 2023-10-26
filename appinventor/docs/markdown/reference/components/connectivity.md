@@ -683,7 +683,8 @@ SimpleBase64 demo程序下载：
 * EncodeImage
 * DecodeImage
 
-## MqttClient [*拓展*](http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)  {#Mqtt}
+## MqttClient 拓展  {#Mqtt}
+<!--(http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)-->
 
 .aix 拓展及demo程序打包下载：
 
@@ -705,7 +706,8 @@ SimpleBase64 demo程序下载：
   * 1字节固定报头，2字节心跳报文，最小化传输开销和协议交换，有效减少网络流量。
   * 消息QoS支持，可靠传输保证
 
-## ClientSocket [*拓展*](https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)  {#Socket}
+## ClientSocket 拓展  {#Socket}
+<!--(https://community.appinventor.mit.edu/t/tcp-ip-extension/7142)-->
 
 .aix 拓展下载：
 
