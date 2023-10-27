@@ -31,7 +31,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【文本块】App Inventor 2 文本块使用方法  - 打字机效果（1）](https://www.bilibili.com/video/BV1424y1x77h/)
 1. [【文本块】App Inventor 2 文本块使用方法2 - 打字机效果（2）](https://www.bilibili.com/video/BV1RX4y1d7Sk/)
 1. [【计时器】App Inventor 2 计时器+效果实现 - 打字机效果（3）](https://www.bilibili.com/video/BV1ns4y1U7wH/)
-
+1. [【PDF】App Inventor 2 PDF文档预览](pdf.html)
 
 ## 技巧分享
 
