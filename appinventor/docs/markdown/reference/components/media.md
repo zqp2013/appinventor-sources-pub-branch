@@ -12,21 +12,19 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 目录：
 
-* [摄像机](#Camcorder)
-* [照相机](#Camera)
-* [图像选择框](#ImagePicker)
-* [音频播放器](#Player)
-* [音效](#Sound)
-* [录音机](#SoundRecorder)
-* [语音识别器](#SpeechRecognizer)
-* [文本朗读器](#TextToSpeech)
-* [翻译器](#Translator)
-* [视频播放器](#VideoPlayer)
+1. ![Camcorder icon](images/camcorder.png)  [摄像机](#Camcorder)
+1. ![照相机图标](images/camera.png)  [照相机](#Camera)
+1. ![图像选择框图标](images/imagepicker.png)  [图像选择框](#ImagePicker)
+1. ![音频播放器图标](images/player.png)  [音频播放器](#Player)
+1. ![音效图标](images/sound.png)  [音效](#Sound)
+1. ![录音机图标](images/soundRecorder.png)  [录音机](#SoundRecorder)
+1. ![语音识别器图标](images/speechrecognizer.png)  [语音识别器](#SpeechRecognizer)
+1. ![文本朗读器图标](images/texttospeech.png)  [文本朗读器](#TextToSpeech)
+1. ![翻译器图标](images/translator.png)  [翻译器](#Translator)
+1. ![视频播放器图标](images/videoplayer.png)  [视频播放器](#VideoPlayer)
 
 
-## 摄像机  {#Camcorder}
-
-![Camcorder icon](images/camcorder.png)
+## ![Camcorder icon](images/camcorder.png)  摄像机  {#Camcorder}
 
  使用设备的摄像机录制视频的组件。录制视频后，手机上包含剪辑的文件的名称可作为参数提供给 [`录制完成`](#Camcorder.AfterRecording) 事件。
  例如，可以使用文件名来设置源 [`视频播放器`](#VideoPlayer) 组件的属性。
@@ -53,9 +51,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : 录制视频，然后触发[`录制完成`](#Camcorder.AfterRecording)事件。
 
 
-## 照相机  {#Camera}
-
-![照相机图标](images/camera.png)
+## ![照相机图标](images/camera.png)  照相机  {#Camera}
 
  使用相机组件在手机上拍照。
 
@@ -84,9 +80,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : 拍照，然后触发 [`拍摄完成`](#Camera.AfterPicture) 事件。
 
 
-## 图像选择框  {#ImagePicker}
-
-![图像选择框图标](images/imagepicker.png)
+## ![图像选择框图标](images/imagepicker.png)  图像选择框  {#ImagePicker}
 
 当用户点击 `图像选择框` 时，打开设备的图片库，用户可以选择图像。选取图像后，[`选中项`](#ImagePicker.Selection) 属性返回选中图像的文件名称。
 最多返回10个图像，超过则删除之前旧的图像，按时间从旧到新的顺序排列。
@@ -192,9 +186,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : 打开 `图像选择框`，就像用户点击它一样。
 
 
-## 音频播放器  {#Player}
-
-![音频播放器图标](images/player.png)
+## ![音频播放器图标](images/player.png)  音频播放器  {#Player}
 
 播放音频和控制手机振动的多媒体组件。多媒体文件名称在[`源文件`](#Player.Source) 属性中指定，在界面设计和程序设计视图中都可以进行设置。
 振动的时长只能在程序设计视图中指定，单位是ms毫秒（千分之一秒）。
@@ -254,9 +246,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : Vibrates for specified number of milliseconds.
 
 
-## 音效  {#Sound}
-
-![音效图标](images/sound.png)
+## ![音效图标](images/sound.png)  音效  {#Sound}
 
 一种多媒体组件，可播放声音文件并根据播放次数选择振动几ms毫秒（千分之一秒），在程序设计视图中指定。声音文件的名称可以在界面设计或程序设计视图中指定。
 
@@ -304,13 +294,9 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : Vibrates for the specified number of milliseconds.
 
 
-## 录音机  {#SoundRecorder}
-
-![录音机图标](images/soundRecorder.png)
+## ![录音机图标](images/soundRecorder.png)  录音机  {#SoundRecorder}
 
  Multimedia component that records audio.
-
-
 
 ### 属性  {#SoundRecorder-Properties}
 
@@ -345,9 +331,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="SoundRecorder.Stop" class="method"} <i/> Stop()
 : Stops recording.
 
-## 语音识别器  {#SpeechRecognizer}
-
-![语音识别器图标](images/speechrecognizer.png)
+## ![语音识别器图标](images/speechrecognizer.png)  语音识别器  {#SpeechRecognizer}
 
  使用 `语音识别器` 组件来收听用户说话并转换语音，使用设备的语音识别功能转换为文本。
 
@@ -409,9 +393,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
  set to `假`{:.logic.block}.
 
 
-## 文本朗读器  {#TextToSpeech}
-
-![文本朗读器图标](images/texttospeech.png)
+## ![文本朗读器图标](images/texttospeech.png)  文本朗读器  {#TextToSpeech}
 
 `文本朗读器` 组件会大声朗读给定的文本，你可以设置音高和语速。
 
@@ -487,9 +469,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 : Speaks the given message.
 
 
-## 翻译器  {#Translator}
-
-![翻译器图标](images/translator.png)
+## ![翻译器图标](images/translator.png)  翻译器  {#Translator}
 
 使用此组件在不同的语言之间翻译单词和句子。该组件需要 Internet 访问，因为它将从麻省理工学院（MIT）的服务器请求翻译（也可切换成请求商业翻译服务）。
 
@@ -532,9 +512,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
  translation.
 
 
-## 视频播放器  {#VideoPlayer}
-
-![视频播放器图标](images/videoplayer.png)
+## ![视频播放器图标](images/videoplayer.png)  视频播放器  {#VideoPlayer}
 
 能够播放视频的多媒体组件。当应用程序运行时，`视频播放器`将在屏幕上显示为一个矩形。
 

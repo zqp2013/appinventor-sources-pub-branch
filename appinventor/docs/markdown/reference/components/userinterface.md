@@ -335,8 +335,6 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 ## ![icon](images/CheckBoxIcon.png)  复选框  {#CheckBox}
 
-![复选框示例](images/checkbox.png)
-
  `复选框`组件可以检测用户点击，并更改其布尔状态。
 
  当用户点击`复选框`组件时会触发事件，有很多属性可以影响其外观，可以在“界面设计”视图或“程序设计”视图中进行设置。
@@ -420,9 +418,6 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="DatePicker.BackgroundColor" .color} *背景颜色*
 : 设置`日期选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#DatePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#DatePicker.Image)属性为止。
 
-{:id="DatePicker.Day" .number .ro .bo} *日期*
-: Returns the Day of the month that was last picked using the DatePicker.
-
 {:id="DatePicker.Enabled" .boolean} *启用*
 : 设置`日期选择框`是否可以被激活和点击。
 
@@ -448,13 +443,19 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 设置`日期选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#DatePicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="DatePicker.Instant" .InstantInTime .ro .bo} *时刻*
-: Returns instant of the date that was last picked using the DatePicker.
+: 返回上次使用 `日期选择框` 选择的日期的时间对象。
+
+{:id="DatePicker.Year" .number .ro .bo} *年度*
+: 返回上次使用 `日期选择框` 选择的年份。
 
 {:id="DatePicker.Month" .number .ro .bo} *月份*
-: Returns the number of the Month that was last picked using the DatePicker.
+: 返回上次使用 `日期选择框` 选择的月份数。
 
 {:id="DatePicker.MonthInText" .text .ro .bo} *月份名称*
-: Returns the name of the Month that was last picked using the DatePicker.
+: 返回上次使用 `日期选择框` 选择的月份名称。
+
+{:id="DatePicker.Day" .number .ro .bo} *日期*
+: 返回上次使用 `日期选择框` 选择的日期数字。
 
 {:id="DatePicker.Shape" .number .do} *形状*
 : 设置`日期选择框`的形状，此属性的有效值为：
@@ -496,45 +497,41 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="DatePicker.WidthPercent" .number .wo .bo} *宽度百分比*
 : 设置`日期选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
-{:id="DatePicker.Year" .number .ro .bo} *年度*
-: Returns the Year that was last picked using the DatePicker.
-
 ### 事件  {#DatePicker-Events}
 
 {:.events}
 
-{:id="DatePicker.AfterDateSet"} AfterDateSet()
-: Event that runs after the user chooses a Date in the dialog.
+{:id="DatePicker.AfterDateSet"} 完成日期设定()
+: 用户在对话框中选择日期后运行的事件。
 
-{:id="DatePicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `DatePicker` so it is now possible
- to click it.
+{:id="DatePicker.GotFocus"} 获得焦点()
+: 表示光标已经移到`日期选择框`上，因此现在可以点击它。
 
-{:id="DatePicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `DatePicker` so it is now no
- longer possible to click it.
+{:id="DatePicker.LostFocus"} 失去焦点()
+: 表示光标已从`日期选择框`移开，因此现在不能点击它了。
 
-{:id="DatePicker.TouchDown"} TouchDown()
-: Indicates that the `DatePicker` was pressed down.
+{:id="DatePicker.TouchDown"} 被按压()
+: 表示`日期选择框`按钮被按下。
 
-{:id="DatePicker.TouchUp"} TouchUp()
-: Indicates that the `DatePicker` has been released.
+{:id="DatePicker.TouchUp"} 被松开()
+: 表示`日期选择框`按钮被松开。
 
 ### 方法  {#DatePicker-Methods}
 
 {:.methods}
 
-{:id="DatePicker.LaunchPicker" class="method"} <i/> LaunchPicker()
-: Launches the DatePicker dialog. The [`AfterDateSet`](#DatePicker.AfterDateSet) event will be run after the user
- confirms their selection.
+{:id="DatePicker.LaunchPicker" class="method"} <i/> 打开选择框()
+: 启动日期选择器对话框。在用户确认选择后，[`完成日期设定`](#DatePicker.AfterDateSet) 事件将被触发。
 
-{:id="DatePicker.SetDateToDisplay" class="method"} <i/> SetDateToDisplay(*year*{:.number},*month*{:.number},*day*{:.number})
-: Allows the user to set the date to be displayed when the date picker opens.
-Valid values for the month field are 1-12 and 1-31 for the day field.
+{:id="DatePicker.SetDateToDisplay" class="method"} <i/> 设置日期显示(*年*{:.number},*月*{:.number},*日*{:.number})
+: 允许用户设置日期选择器打开时显示的日期。
 
-{:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> SetDateToDisplayFromInstant(*instant*{:.InstantInTime})
-: Allows the user to set the date from the instant to be displayed when the date picker opens.
+  月份字段的有效值为 1-12，日期字段的有效值为 1-31。
 
+{:id="DatePicker.SetDateToDisplayFromInstant" class="method"} <i/> 设置显示某时刻的日期(*时刻*{:.InstantInTime})
+: 选择器打开时允许用户设置显示指定时刻的日期。
+
+  时刻用于 [`计时器`](sensors.html#Clock)、[`日期选择框`](#DatePicker) 和 [`时间选择框`](#TimePicker) 组件。
 
 ## ![icon](images/ImageIcon.png)  图像  {#Image}
 
@@ -608,8 +605,6 @@ Valid values for the month field are 1-12 and 1-31 for the day field.
 ## ![icon](images/Label.png)  标签  {#Label}
 
 标签是用于显示文本的组件。
-
- ![标签示例](images/label.png)
 
 标签显示由 `文本` 属性指定的文本内容，其他属性可以在“界面设计”视图或“程序设计”视图中进行设置，控制文本的外观和位置等。
 
@@ -1484,18 +1479,19 @@ Users enter text in a text box component.
 
 ## ![icon](images/TimePicker.png)  时间选择框  {#TimePicker}
 
-A button that, when clicked on, opens a dialog to allow the user to select a time.
+点击该按钮会打开一个对话框以允许用户选择时间。
 
- Note: Date and time are manipulated using methods in the [`Clock`](sensors.html#Clock) component.
+  注意：日期和时间是使用 [`计时器`](sensors.html#Clock) 组件中的方法进行操作的。
 
 ### 属性  {#TimePicker-Properties}
 
 {:.properties}
 
 {:id="TimePicker.BackgroundColor" .color} *背景颜色*
-: Specifies the `TimePicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#TimePicker.Image) has been set, the color
- change will not be visible until the [`Image`](#TimePicker.Image) is removed.
+: 设置`时间选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#TimePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#TimePicker.Image)属性为止。
+
+{:id="TimePicker.Image" .text} *图像*
+: 设置`时间选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#TimePicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="TimePicker.Enabled" .boolean} *启用*
 : 设置`时间选择框`是否可以被激活和点击。
@@ -1518,29 +1514,32 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 {:id="TimePicker.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`时间选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="TimePicker.Hour" .number .ro .bo} *Hour*
-: Returns the hour of the time that was last picked using the `TimePicker``.
- The time returned is always in the 24hour format.
+{:id="TimePicker.Instant" .InstantInTime .ro .bo} *时刻*
+: 返回上次使用`时间选择框`选取的时刻。
 
-{:id="TimePicker.Image" .text} *Image*
-: Specifies the path of the `TimePicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#TimePicker.BackgroundColor) specified, only the `Image` will be visible.
+{:id="TimePicker.Hour" .number .ro .bo} *时*
+: 返回上次使用`时间选择框`选取时间的小时。
 
-{:id="TimePicker.Instant" .InstantInTime .ro .bo} *Instant*
-: Returns the instant in time that was last picked using the `TimePicker`.
+  返回的时间**始终采用 24 小时制**。
 
-{:id="TimePicker.Minute" .number .ro .bo} *Minute*
-: Returns the hour of the time that was last picked using the `TimePicker`.
- The time returned is always in the 24hour format.
+{:id="TimePicker.Minute" .number .ro .bo} *分*
+: 返回上次使用`时间选择框`选取时间的分钟。
 
-{:id="TimePicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `TimePicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#TimePicker.Image) is used.
+{:id="TimePicker.Shape" .number .do} *形状*
+: 设置`时间选择框`的形状，此属性的有效值为：
 
-{:id="TimePicker.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `TimePicker` with an assigned
- [`Image`](#TimePicker.Image) is pressed.
+  `0`（默认）
+
+  `1` （圆形）
+
+  `2`（矩形）
+
+  `3`（椭圆形）。
+  
+  如果设置了[`图像`](#TimePicker.Image)，则`形状`将不可见。
+
+{:id="TimePicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`时间选择框`指定 [`图像`](#TimePicker.Image)后被按压是否显示视觉反馈。
 
 {:id="TimePicker.Text" .text} *文本*
 : 设置`时间选择框`的显示文本。
@@ -1570,45 +1569,41 @@ A button that, when clicked on, opens a dialog to allow the user to select a tim
 
 {:.events}
 
-{:id="TimePicker.AfterTimeSet"} AfterTimeSet()
-: This event is run when a user has set the time in the popup dialog.
+{:id="TimePicker.AfterTimeSet"} 完成时间设定()
+: 用户在对话框中选择时间后运行的事件。
 
-{:id="TimePicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `TimePicker` so it is now possible
- to click it.
+{:id="TimePicker.GotFocus"} 获得焦点()
+: 表示光标已经移到`时间选择框`上，因此现在可以点击它。
 
-{:id="TimePicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `TimePicker` so it is now no
- longer possible to click it.
+{:id="TimePicker.LostFocus"} 失去焦点()
+: 表示光标已从`时间选择框`移开，因此现在不能点击它了。
 
-{:id="TimePicker.TouchDown"} TouchDown()
-: Indicates that the `TimePicker` was pressed down.
+{:id="TimePicker.TouchDown"} 被按下()
+: 表示`时间选择框`按钮被按下。
 
-{:id="TimePicker.TouchUp"} TouchUp()
-: Indicates that the `TimePicker` has been released.
+{:id="TimePicker.TouchUp"} 被松开()
+: 表示`时间选择框`按钮被松开。
 
 ### 方法  {#TimePicker-Methods}
 
 {:.methods}
 
-{:id="TimePicker.LaunchPicker" class="method"} <i/> LaunchPicker()
-: Launches the `TimePicker` dialog.
+{:id="TimePicker.LaunchPicker" class="method"} <i/> 打开选择框()
+: 启动时间选择器对话框。在用户确认选择后，[完成时间设定](#TimePicker.AfterTimeSet) 事件将被触发。
 
-{:id="TimePicker.SetTimeToDisplay" class="method"} <i/> SetTimeToDisplay(*hour*{:.number},*minute*{:.number})
-: Allows the user to set the time to be displayed when the `TimePicker` opens. Valid values for
- the hour field are 0-23 and 0-59 for the second field.
+{:id="TimePicker.SetTimeToDisplay" class="method"} <i/> 设置时间显示(*时*{:.number},*分*{:.number})
+: 允许用户设置`时间选择框`打开时显示的时间。
 
-{:id="TimePicker.SetTimeToDisplayFromInstant" class="method"} <i/> SetTimeToDisplayFromInstant(*instant*{:.InstantInTime})
-: Allows the instant to set the hour and minute to be displayed when the `TimePicker` opens.
- Instants are used in [`Clock`](sensors.html#Clock), [`DatePicker`](#DatePicker), and [`TimePicker`](#TimePicker)
- components.
+  小时字段的有效值为 0-23，分钟的有效值为 0-59。
 
+{:id="TimePicker.SetTimeToDisplayFromInstant" class="method"} <i/> 设置显示某时刻的时间(*时刻*{:.InstantInTime})
+: 选择器打开时允许用户设置显示指定时刻的时间。
+
+  时刻用于 [`计时器`](sensors.html#Clock)、[`日期选择框`](#DatePicker) 和 [`时间选择框`](#TimePicker) 组件。
 
 ## ![icon](images/WebViewer.png)  Web浏览框  {#WebViewer}
 
 Component for viewing Web pages.
-
- ![WebViewer icon](images/webviewer.png)
 
  The [`HomeUrl`](#WebViewer.HomeUrl) can be specified in the Designer or in the Blocks Editor. The view can be
  set to follow links when they are tapped, and users can fill in Web forms.

@@ -12,11 +12,11 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 
 目录：
 
-* [球形精灵](#Ball)
-* [画布](#Canvas)
-* [图像精灵](#ImageSprite)
+1. ![icon](images/ball.png)  [球形精灵](#Ball)
+1. ![icon](images/canvas.png)  [画布](#Canvas)
+1. ![icon](images/imagesprite.png)  [图像精灵](#ImageSprite)
 
-## 球形精灵  {#Ball}
+## ![icon](images/ball.png)  球形精灵  {#Ball}
 
 可以放置在 [`画布`](#Canvas) 上的圆形“精灵”，它可以对触摸和拖动做出反应，
 与其他精灵（[`图像精灵`](#ImageSprite) 和其他 `球形精灵`）及`画布`的边缘进行交互，并根据其属性值移动。
@@ -160,7 +160,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 : Turns this `Ball` to point towards a given `target` sprite. The new heading will be parallel
  to the line joining the centerpoints of the two sprites.
 
-## 画布  {#Canvas}
+## ![icon](images/canvas.png)  画布  {#Canvas}
 
 A two-dimensional touch-sensitive rectangular panel on which drawing can
  be done and sprites can be moved.
@@ -330,7 +330,7 @@ A two-dimensional touch-sensitive rectangular panel on which drawing can
 : Sets the color of the given pixel.  This has no effect if the
  coordinates are out of bounds.
 
-## 图像精灵  {#ImageSprite}
+## ![icon](images/imagesprite.png)  图像精灵  {#ImageSprite}
 
 A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to touches and drags,
  interact with other sprites ([`Ball`](#Ball)s and other `ImageSprite`s) and the edge of the

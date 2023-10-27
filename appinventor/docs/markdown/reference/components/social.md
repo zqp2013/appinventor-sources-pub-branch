@@ -12,16 +12,16 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 
 目录：
 
-* [联系人选择框](#ContactPicker)
-* [邮箱地址选择框](#EmailPicker)
-* [电话拨号器](#PhoneCall)
-* [电话号选择框](#PhoneNumberPicker)
-* [信息分享器](#Sharing)
-* [短信收发器](#Texting)
-* [推特客户端](#Twitter)
+1. ![icon](images/contactpicker.png)  [联系人选择框](#ContactPicker)
+1. ![icon](images/emailpicker.png)  [邮箱地址选择框](#EmailPicker)
+1. ![icon](images/phonecall.png)  [电话拨号器](#PhoneCall)
+1. ![icon](images/phonenumberpicker.png)  [电话号选择框](#PhoneNumberPicker)
+1. ![icon](images/sharing.png)  [信息分享器](#Sharing)
+1. ![icon](images/texting.png)  [短信收发器](#Texting)
+1. ![icon](images/twitter.png)  [推特客户端](#Twitter)
 
 
-## 联系人选择框  {#ContactPicker}
+## ![icon](images/contactpicker.png)  联系人选择框  {#ContactPicker}
 
 A button that, when clicked on, displays a list of the contacts to choose among. After the user
  has made a selection, the following properties will be set to information about the chosen
@@ -177,7 +177,7 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 : Opens the selected contact's entry in the device's default Contacts app.
 
 
-## 邮箱地址选择框  {#EmailPicker}
+## ![icon](images/emailpicker.png)  邮箱地址选择框  {#EmailPicker}
 
 An `EmailPicker` is a kind of text box. If the user begins entering the name or email address of
  a contact, the phone will show a dropdown menu of choices that complete the entry. If there are
@@ -271,7 +271,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 : Request focus to current `EmailPicker`.
 
 
-## 电话拨号器  {#PhoneCall}
+## ![icon](images/phonecall.png)  电话拨号器  {#PhoneCall}
 
 ![PhoneCall component icon](images/phonecall.png)
 
@@ -334,7 +334,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
  [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead, which requires no permissions.**
 
 
-## 电话号选择框  {#PhoneNumberPicker}
+## ![icon](images/phonenumberpicker.png)  电话号选择框  {#PhoneNumberPicker}
 
 A button that, when clicked on, displays a list of the contacts' phone numbers to choose among.
  After the user has made a selection, the following properties will be set to information about
@@ -486,9 +486,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 : Opens the selected contact's entry in the device's default Contacts app.
 
 
-## 信息分享器  {#Sharing}
-
-![信息分享器图标](images/sharing.png)
+## ![icon](images/sharing.png)  信息分享器  {#Sharing}
 
 `信息分享器`是一个不可见的组件，可以让App和设备上其他App之间共享数据或文件。
 该组件将显示已安装的可处理所提供信息的App列表，并允许用户选择一个App来共享内容，例如邮件App、社交网络App、短信App等。
@@ -539,9 +537,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 <img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;"/>
 
 
-## 短信收发器  {#Texting}
-
-![Texting component icon](images/texting.png)
+## ![icon](images/texting.png)  短信收发器  {#Texting}
 
 当调用组件 [`发送消息`](#Texting.SendMessage) 方法时，将启动设备的首选短信应用程序将属性中指定的短信内容发送到 [`电话号码`](#Texting.PhoneNumber) 属性中指定的电话中。
   
@@ -621,7 +617,7 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
  that will require additional approval if your app is submitted to the Google Play Store.**
 
 
-## 推特客户端（*国内无法使用*）  {#Twitter}
+## ![icon](images/twitter.png)  推特客户端（*国内无法使用*）  {#Twitter}
 
 A non-visible component that enables communication with [Twitter](https://twitter.com). Once a
  user has logged into their Twitter account (and the authorization has been confirmed successful

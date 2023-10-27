@@ -12,17 +12,17 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 目录：
 
-* [Activity启动器](#ActivityStarter)
-* [蓝牙客户端](#BluetoothClient)
-* [蓝牙服务器](#BluetoothServer)
-* [串口通信器](#Serial)
-* [Web客户端](#Web)
+1. ![icon](images/activitystarter.png)  [Activity启动器](#ActivityStarter)
+1. ![icon](images/bluetoothclient.png)  [蓝牙客户端](#BluetoothClient)
+1. ![icon](images/bluetoothserver.png)  [蓝牙服务器](#BluetoothServer)
+1. ![icon](images/serial.png)  [串口通信器](#Serial)
+1. ![icon](images/web.png)  [Web客户端](#Web)
   * [SimpleBase64 *拓展：图像Base64编解码传输*](#SimpleBase64)
   * [KIO4_Base64 *拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件*](../extensions/KIO4_Base64.html)
-* [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
-* [Socket *拓展：TCP/IP传输协议*](#Socket)
+1. [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
+1. [Socket *拓展：TCP/IP传输协议*](#Socket)
 
-## Activity启动器  {#ActivityStarter}
+## ![icon](images/activitystarter.png)  Activity启动器  {#ActivityStarter}
 
 使用`启动Activity`方法启动一个Activity（活动）的组件。
 
@@ -115,7 +115,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="ActivityStarter.StartActivity" class="method"} <i/> 启动活动对象()
 : 启动这个 `Activity启动器` 对应的Activity活动。
 
-## 蓝牙客户端  {#BluetoothClient}
+## ![icon](images/bluetoothclient.png)  蓝牙客户端  {#BluetoothClient}
 
 使用 `蓝牙客户端` 通过蓝牙将您的设备连接到其他设备。这个组件使用串行端口配置文件 (SPP) 进行通信。 
 
@@ -254,7 +254,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothClient.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : 将指定文本转换为字节并将它们写入到输出流。
 
-## 蓝牙服务器  {#BluetoothServer}
+## ![icon](images/bluetoothserver.png)  蓝牙服务器  {#BluetoothServer}
 
 使用 `蓝牙服务器` 组件将您的设备变成接收来自其他使用 `蓝牙客户端` 组件的应用程序连接的服务器。
 
@@ -372,7 +372,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothServer.StopAccepting" class="method"} <i/> 停止接受连接()
 : 停止接受传入连接。
 
-## 串口通信器  {#Serial}
+## ![icon](images/serial.png)  串口通信器  {#Serial}
 
 串口通信组件。
 
@@ -420,7 +420,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="Serial.WriteSerial" class="method"} <i/> 写入串口(*data*{:.text})
 : 将给定数据写入串口。
 
-## Web客户端  {#Web}
+## ![icon](images/web.png)  Web客户端  {#Web}
 
 为 HTTP GET、POST、PUT 和 DELETE 请求提供功能的非可视组件。
 

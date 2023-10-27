@@ -12,23 +12,23 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 目录：
 
-1. [加速度传感器](#AccelerometerSensor)
-1. [条码扫描器](#BarcodeScanner)
-1. [气压传感器](#Barometer)
-1. [计时器](#Clock)
-1. [陀螺仪传感器](#GyroscopeSensor)
-1. [湿度传感器](#Hygrometer)
-1. [光线传感器](#LightSensor)
-1. [位置传感器](#LocationSensor)
-1. [磁场传感器](#MagneticFieldSensor)
-1. [NFC](#NearField)
-1. [方向传感器](#OrientationSensor)
-1. [计步器](#Pedometer)
-1. [距离传感器](#ProximitySensor)
-1. [温度传感器](#Thermometer)
+1. ![icon](images/accelerometersensor.png)  [加速度传感器](#AccelerometerSensor)
+1. ![icon](images/barcodescanner.png)  [条码扫描器](#BarcodeScanner)
+1. ![icon](images/barometer.png)  [气压传感器](#Barometer)
+1. ![icon](images/clock.png) 计时器  [计时器](#Clock)
+1. ![icon](images/gyroscopesensor.png)  [陀螺仪传感器](#GyroscopeSensor)
+1. ![icon](images/hygrometer.png)  [湿度传感器](#Hygrometer)
+1. ![icon](images/lightsensor.png)  [光线传感器](#LightSensor)
+1. ![icon](images/locationsensor.png)  [位置传感器](#LocationSensor)
+1. ![icon](images/magneticfieldsensor.png)  [磁场传感器](#MagneticFieldSensor)
+1. ![icon](images/nearfield.png)  [NFC](#NearField)
+1. ![icon](images/orientationsensor.png)  [方向传感器](#OrientationSensor)
+1. ![icon](images/pedometer.png)  [计步器](#Pedometer)
+1. ![icon](images/proximitysensor.png)  [距离传感器](#ProximitySensor)
+1. ![icon](images/thermometer.png)  [温度传感器](#Thermometer)
 
 
-## 加速度传感器  {#AccelerometerSensor}
+## ![icon](images/accelerometersensor.png)  加速度传感器  {#AccelerometerSensor}
 
 不可见组件，可检测震动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
 
@@ -123,7 +123,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 : 使用相机开始扫描条形码。扫描完成后，将触发 [扫描结束](#BarcodeScanner.AfterScan) 事件。
 
 
-## 气压传感器  {#Barometer}
+## ![icon](images/barometer.png)  气压传感器  {#Barometer}
 
 Physical world component that can measure the ambient air pressure if
  supported by the hardware.
@@ -162,7 +162,7 @@ Physical world component that can measure the ambient air pressure if
 无
 
 
-## ![Image of the Clock component](images/clock.png) 计时器  {#Clock}
+## ![icon](images/clock.png) 计时器  {#Clock}
 
 不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。
 
@@ -323,7 +323,7 @@ Physical world component that can measure the ambient air pressure if
 : 返回给定日期中的年份数，如 `2023`。
 
 
-## 陀螺仪传感器  {#GyroscopeSensor}
+## ![icon](images/gyroscopesensor.png)  陀螺仪传感器  {#GyroscopeSensor}
 
 Component providing data from the device's gyroscope sensor.
 
@@ -361,7 +361,7 @@ Component providing data from the device's gyroscope sensor.
 无
 
 
-## 湿度传感器  {#Hygrometer}
+## ![icon](images/hygrometer.png)  湿度传感器  {#Hygrometer}
 
 Physical world component that can measure the relative ambient air 
  humidity if supported by the hardware.
@@ -401,7 +401,7 @@ Physical world component that can measure the relative ambient air
 无
 
 
-## 光线传感器  {#LightSensor}
+## ![icon](images/lightsensor.png)  光线传感器  {#LightSensor}
 
 Physical world component that can measure the light level.
 
@@ -443,7 +443,7 @@ Physical world component that can measure the light level.
 无
 
 
-## 位置传感器  {#LocationSensor}
+## ![icon](images/locationsensor.png)  位置传感器  {#LocationSensor}
 
 不可见组件，提供位置信息，包括：
   
@@ -578,7 +578,7 @@ Physical world component that can measure the light level.
 : Derives longitude from the given `locationName`.
 
 
-## 磁场传感器  {#MagneticFieldSensor}
+## ![icon](images/magneticfieldsensor.png)  磁场传感器  {#MagneticFieldSensor}
 
 Component for MagneticFieldSensor
 
@@ -622,7 +622,7 @@ Component for MagneticFieldSensor
 无
 
 
-## NFC  {#NearField}
+## ![icon](images/nearfield.png)  NFC  {#NearField}
 
 提供 NFC 功能的不可见组件。目前该组件**仅支持读写文本标签**（如果设备支持）。
 
@@ -663,7 +663,7 @@ Component for MagneticFieldSensor
 无
 
 
-## 方向传感器  {#OrientationSensor}
+## ![icon](images/orientationsensor.png)  方向传感器  {#OrientationSensor}
 
 ![Example of the OrientationSensor icon](images/orientationsensor.png)
 
@@ -732,7 +732,7 @@ Component for MagneticFieldSensor
 无
 
 
-## 计步器  {#Pedometer}
+## ![icon](images/pedometer.png)  计步器  {#Pedometer}
 
 该组件使用 [加速度传感器](#AccelerometerSensor) 来记录步数。
 
@@ -787,7 +787,7 @@ Component for MagneticFieldSensor
 : Stops the pedometer.
 
 
-## 距离传感器  {#ProximitySensor}
+## ![icon](images/proximitysensor.png)  距离传感器  {#ProximitySensor}
 
 用于测量物体相对于设备屏幕距离（以cm厘米为单位）的传感器组件。该传感器通常用于检测手机听筒是否处于耳边接听状态。
 大多数设备返回绝对距离（以cm厘米为单位），但也有些设备仅返回近值和远值，在这个情况下，传感器通常报告其在远距离状态下的最大范围值 和 近距离状态下较小的值。
@@ -827,7 +827,7 @@ Component for MagneticFieldSensor
 无
 
 
-## 温度传感器  {#Thermometer}
+## ![icon](images/thermometer.png)  温度传感器  {#Thermometer}
 
 可以测量环境空气温度的物理组件（如果硬件支持）。
 
