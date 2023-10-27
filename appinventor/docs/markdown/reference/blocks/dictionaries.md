@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 字典代码块
 layout: documentation
-description: 字典代码块参考文档：包括创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目...。
+description: 字典代码块参考文档：包括什么情况下需要使用字典、创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目...。
 ---
 
 * TOC
@@ -22,17 +22,23 @@ description: 字典代码块参考文档：包括创建空字典、创建字典�
 * [获取值列表](#get-values)
 * [键是否在字典中？](#is-key-in-dictionary)
 * [字典的长度](#size-of-dictionary)
-* [list of pairs to dictionary](#list-of-pairs-to-dictionary)
-* [dictionary to list of pairs](#dictionary-to-list-of-pairs)
-* [复制字典](#copy-dictionary)
-* [merge into dictionary](#merge-into-dictionary)
-* [list by walking key path](#list-by-walking-key-path)
-* [walk all at level](#walk-all-at-level)
+* [键值对列表转换为字典](#list-of-pairs-to-dictionary)
+* [字典转换为键值对列表](#dictionary-to-list-of-pairs)
+* [复制字典（深拷贝）](#copy-dictionary)
+* [合并字典](#merge-into-dictionary)
+* [在此层级遍历](#walk-all-at-level)
+* [遍历键路径列表](#list-by-walking-key-path)
 * [是否为字典？](#is-a-dictionary)
 
 ### 介绍   {#dictionaries}
 
-Dictionaries, called in other languages terms such as maps, associative arrays or lists, are data structures that associate one value, often called the key, with another value. A common way of displaying dictionaries is using the JavaScript Object Notation (JSON), for example:
+字典在其他语言中称为映射、关联数组或列表，是一种将一个值（通常称为键）与另一个值关联的数据结构。
+
+**Q：App Inventor 2 什么情况下需要使用字典？**
+
+**A：**列表能完成字典的绝大部分功能，不过字典具有**比列表更好的查找性能**，因此如果要对数据结构执行大量的操作，建议优先使用字典。
+
+显示字典的常见方法是使用 JavaScript 对象表示法 (JSON)，例如：
 
 ```json
 {
@@ -46,39 +52,47 @@ Dictionaries, called in other languages terms such as maps, associative arrays o
 }
 ```
 
-The above example shows that in JSON the keys (quoted text before the `:`) can map to different types of values. The allowed types are number, text, other dictionaries, booleans, and lists. In the blocks language, you can bulid this dictionary as follows:
+上面的示例显示，在 JSON 中，键（在 `:` 之前引用的文本）可以映射到不同类型的值。
 
-![A blocks representation of the dictionary shown above](images/dictionaries/example-dictionary-blocks.png)
+允许的类型包括数字、文本、其他字典、布尔值和列表。在块语言中，可以按如下方式构建该字典：
 
-**Figure 1**: A blocks representation of the JSON code snippet shown above.
+![字典的块表示](images/dictionaries/example-dictionary-blocks.png)
+
+**图 1**：上面显示的 JSON 代码片段的块表示
 
 ***
 ### 创建空字典   {#create-empty-dictionary}
 
 ![](images/dictionaries/create-with.png)
 
-The `create empty dictionary`{:.dictionary.block} block creates a dictionary without any key-value pairs. Entries can be added to the empty dictionary using the `set value for key`{:.dictionary.block} block. The `create empty dictionary`{:.dictionary.block} block can also be turned into a `make a dictionary`{:.dictionary.block} block by using the blue mutator button to add `pair`{:.dictionary.block} entries.
+`创建空字典`{:.dictionary.block} 块创建一个没有任何键值对的字典。
+
+可以使用 [设置键的值](#set-value-for-key) 块将条目添加到空字典中。
+
+通过使用蓝色块拓展![块扩展图标](../concepts/images/mutatoricon.png)按钮添加`键值对`{:.dictionary.block}。
+
+`创建空字典`{:.dictionary.block} 块也可以作为 `创建字典`{:.dictionary.block} 块的条目。
 
 ***
 ### 创建字典   {#make-a-dictionary}
 
 ![](images/dictionaries/make-a-dictionary.png)
 
-The `make a dictionary`{:.dictionary.block} is used to create a dictionary with a set of `pair`{:.dictionary.block}s known in advance. Additional entries can be added using `set value for key`{:.dictionary.block}.
+用于创建一个预先带有一组已知 `键值对`{:.dictionary.block} 的字典，可以使用 [设置键的值](#set-value-for-key) 添加其他条目。
 
 ***
 ### 键值对   {#pair}
 
 ![](images/dictionaries/pair.png)
 
-The `pair`{:.dictionary.block} block is a special purpose block used for constructing dictionaries.
+`键值对` 块是用于构造字典项的特殊块。
 
 ***
 ### 获取键的值   {#get-value-for-key}
 
 ![](images/dictionaries/get-value-for-key2.png)
 
-`获取键的值`{:.dictionary.block} 块检查字典是否包含给定键的对应值，如果是，则返回该值；否则，返回“未找到”参数的值。
+`获取键的值` 块检查字典是否包含给定键的对应值，如果是，则返回该值；否则，返回“未找到”参数的值。
 
 此代码块的行为类似于[`列表`](lists.html)的 [`在键值对中查找`{:.list.block}](lists.html#lookupinpairs) 。
 
@@ -87,14 +101,16 @@ The `pair`{:.dictionary.block} block is a special purpose block used for constru
 
 ![](images/dictionaries/set-value-for-key.png)
 
-The `set value for key`{:.dictionary.block} block sets the corresponding value for the given `key` in the `dictionary` to `value`. If no mapping exists for `key`, a new one will be created. Otherwise, the existing value is replaced by the new value.
+将 `字典` 中给定 `键` 的对应值设置为 `值`。
+
+**如果`键`不存在映射，则会创建一个新映射；否则，现有值将被新值替换。**
 
 ***
 ### 删除键的条目   {#delete-entry-for-key}
 
 ![](images/dictionaries/delete-value-for-key.png)
 
-The `delete entry for key`{:.dictionary.block} block removes the key-value mapping in the dictionary for the given key. If no entry for the key exists in the dictionary, the dictionary is not modified.
+`删除键的条目` 块删除字典中给定键的键值映射。如果字典中不存在该键的条目，则不会修改字典。
 
 ***
 ### 获取键路径的值   {#get-value-at-key-path}
@@ -113,6 +129,7 @@ The `delete entry for key`{:.dictionary.block} block removes the key-value mappi
 
 **不明白？看例子最直观！**
 
+{:.vip}
 ```json
 {
   "id":  1,
@@ -142,21 +159,25 @@ The `delete entry for key`{:.dictionary.block} block removes the key-value mappi
 
 ![](images/dictionaries/set-value-for-key-path.png)
 
-The `set value for key path`{:.dictionary.block} block updates the value at a specific `key path` in a data structure. It is the mirror of `get value for key path`{:.dictionary.block}, which retrieves a value at a specific `key path`. The path **must be valid**, except for the last key, which if a mapping does not exist will create a mapping to the new value. Otherwise, the existing value is replaced with the new value.
+`设置键路径的值` 块更新数据结构中特定 `键路径` 处的值。
+
+它是 [获取键路径的值](#set-value-at-key-path) 的镜像，它检索特定 `键路径` 处的值。路径**必须有效**，最后一个键除外，如果映射不存在，则将创建到新值的映射。否则，现有值将替换为新值。
 
 ***
 ### 获取键列表   {#get-keys}
 
 ![](images/dictionaries/get-keys.png)
 
-The `get keys`{:.dictionary.block} returns a list of keys in the dictionary.
+返回字典中的键列表，是一个`列表`{:.list.block}对象。
 
 ***
 ### 获取值列表   {#get-values}
 
 ![](images/dictionaries/get-values.png)
 
-The `get values`{:.dictionary.block} returns a list containing the values in the dictionary. Modifying the contents of a value in the list will also modify it in the dictionary.
+返回一个包含字典中的值的列表，是一个`列表`{:.list.block}对象。
+
+**修改值列表中值的内容也会修改字典中的值。**
 
 ***
 ### 键是否在字典中？   {#is-key-in-dictionary}
@@ -173,47 +194,62 @@ The `get values`{:.dictionary.block} returns a list containing the values in the
 `字典的长度`{:.dictionary.block} 块返回字典中存在的键值对的数量。
 
 ***
-### list of pairs to dictionary   {#list-of-pairs-to-dictionary}
+### 键值对列表转换为字典   {#list-of-pairs-to-dictionary}
 
 ![](images/dictionaries/alist-to-dict.png)
 
-The `list of pairs to dictionary`{:.dictionary.block} block converts an associative list of the form `((key1 value1) (key2 value2) ...)` into a dictionary mapping the keys to their values.
-Because dictionaries provide better lookup performance than associative lists, if you want to perform many operations on a data structure it is advisable to use this block to convert the associative list into a dictionary first.
+将`((key1 value1) (key2 value2) ...)`形式的键值对列表转换为键映射到其值的字典。
+
+由于字典具有比键值对列表更好的查找性能，因此如果要对数据结构执行大量的操作，建议首先使用此块将键值对列表转换为字典。
 
 ***
-### dictionary to list of pairs   {#dictionary-to-list-of-pairs}
+### 字典转换为键值对列表   {#dictionary-to-list-of-pairs}
 
 ![](images/dictionaries/dict-to-alist.png)
 
-The `dictionary to list of pairs`{:.dictionary.block} converts a dictionary into an associative list.
-This block reverses the conversion performed by the [`list of pairs to dictionary`{:.list.block}](#list-of-pairs-to-dictionary) block.
+将字典转换为键值对列表。此块执行 [键值对列表转换为字典](#list-of-pairs-to-dictionary) 相反的操作。
 
 ![Example of how the dictionary to list of pairs block reverses the list of pairs to dictionary block](images/dictionaries/alist-dict-reversability.png)
 
 ***
-### copy dictionary   {#copy-dictionary}
+### 复制字典（深拷贝）   {#copy-dictionary}
 
 ![](images/dictionaries/copy-dict.png)
 
-The `copy dictionary`{:.dictionary.block} makes a deep copy of the given dictionary. This means that all of the values are copied recursively and that changing a value in the copy will not change it in the original.
+`复制字典`{:.dictionary.block} 制作给定字典的深层副本（深拷贝），也即是所有值都会递归复制，并且更改副本中的值不会更改原始值。
 
 ***
-### merge into dictionary   {#merge-into-dictionary}
+### 合并字典   {#merge-into-dictionary}
 
 ![](images/dictionaries/combine-dicts.png)
 
-The `merge into dictionary from dictionary`{:.dictionary.block} block ccopies the key-value pairs from one dictionary into another, overwriting any keys in the target dictionary.
+该块将键值对从一个字典复制到另一个字典中，覆盖目标字典中的任何键。
 
 ***
-### list by walking key path   {#list-by-walking-key-path}
+### 在此层级遍历   {#walk-all-at-level}
+
+![](images/dictionaries/walk-all.png)
+
+该块是一个专用块，可以在 `遍历键路径列表`{:.dictionary.block} 的键路径中使用。
+
+当在遍历中遇到时，它会导致该级别的每个项目都被探索。对于字典来说，这意味着每个值都会被访问；对于列表，将访问列表中的每个项目。
+
+这可用于聚合字典中的项目列表项数据，例如数据库中由 JSON 对象表示的每个人的名字。有关示例，请参阅 [`遍历键路径列表`{:.dictionary.block}](#list-by-walking-key-path) 块。
+
+***
+### 遍历键路径列表   {#list-by-walking-key-path}
 
 ![](images/dictionaries/walk-tree.png)
 
-The `list by walking key path`{:.dictionary.block} block works similarly to the `get value at key path`{:.dictionary.block}, but creates a list of values rather than returning a single value. It works by starting at the given dictionary and walking down the tree of objects following the given path. Unlike the `get value at key path`{:.dictionary.block} though, its path can be composed of three major types: dictionary keys, list indices, and the [`walk all at level`{:.dictionary.block}](#walk-all-at-level) block. If a key or index is provided, the specific path is taken at that point in the tree. If the `walk all at level`{:.dictionary.block} is specified, every value at that point is followed in succession (breadth-first), at which point the walk continues from the next element in the path. Any element that matches the whole path is added to the output list.
+`遍历键路径列表`{:.dictionary.block} 块的工作方式与 [获取键路径的值](#get-value-at-key-path) 类似，但会创建一个值列表，而不是返回单个值。
 
-**Examples**
+它的工作原理是从给定的字典开始，沿着给定的路径沿着对象树走下去。但与 [获取键路径的值](#get-value-at-key-path) 不同，它的路径可以由三种主要类型组成：`字典键`、`列表索引` 和 [`在此层级遍历`{:.dictionary.block} ](#walk-all-at-level) 块。
 
-Consider the following JSON and blocks:
+如果提供了键或索引，则在树中的该点采用特定路径。如果指定了 [`在此层级遍历`{:.dictionary.block} ](#walk-all-at-level)，则将连续跟踪该点的每个值（广度优先），此时从路径中的下一个元素继续遍历。与整个路径匹配的任何元素都会添加到输出列表中。
+
+**例子**
+
+参考以下 JSON 和块：
 
 ```json
 {
@@ -232,13 +268,19 @@ Consider the following JSON and blocks:
 
 ![](images/dictionaries/walk-tree-example.png)
 
-If `global data`{:.variable.block} contains a dictionary represented by the JSON, then the `list by walking key path`{:.dictionary.block} block will produce the list `["Tim", "Beaver"]`{:.list.block}. First, the value of the `"people"`{:.text.block} tag, that is the list of people, is chosen. Next, the first element in the list is chosen. Lastly, the walk all at level block selects the values in the object at that point, that is, the values `"Tim"`{:.text.block} and `"Beaver"`{:.text.block}.
+如果 `global data`{:.variable.block} 包含由 JSON 表示的字典，则 `遍历键路径列表`{:.dictionary.block} 块将生成列表 `["Tim", "Beaver" ]`{:.list.block}。
 
-You can also use `walk all at level`{:.dictionary.block} at a level containing a list. For example, the following block selects the first names of all of the people in the structure, i.e., `["Tim", "John", "Jane"]`{:.list.block}.
+首先，选择`“people”`{:.text.block} 标记的值，即人员列表。接下来，选择列表中的第一个元素。
+
+最后，`在此层级遍历` 块选择该点对象中的值，即值 `"Tim"`{:.text.block} 和 `"Beaver"`{:.text.block}。
+
+还可以在包含列表的层级中使用 `在此层级遍历`{:.dictionary.block}。例如，以下块选择结构中所有人员的名字，即 `["Tim", "John", "Jane"]`{:.list.block}。
 
 ![](images/dictionaries/walk-tree-example2.png)
 
-This block can also be used with XML parsed using the [`Web.XMLTextDecodeAsDictionary`{:.method.block}](/reference/components/connectivity.html#Web.XMLTextDecodeAsDictionary) block. Consider the following XML document:
+此块还可以与使用 [`Web.XMLTextDecodeAsDictionary`{:.method.block}](/reference/components/connectivity.html#Web.XMLTextDecodeAsDictionary) 块解析的 XML 一起使用。
+
+参考以下 XML 文档：
 
 ```xml
 <schedule>
@@ -253,20 +295,13 @@ This block can also be used with XML parsed using the [`Web.XMLTextDecodeAsDicti
 </schedule>
 ```
 
-You can use the following blocks to get a list of the names of the rooms on the first day, i.e. `["Hewlitt", "Bleil"]`{:.list.block}.
+可以使用以下块来获取第一天的房间名称列表，即`["Hewlitt", "Bleil"]`{:.list.block}。
 
 ![](images/dictionaries/walk-tree-xml.png)
-
-***
-### walk all at level   {#walk-all-at-level}
-
-![](images/dictionaries/walk-all.png)
-
-The `walk all at level`{:.dictionary.block} block is a specialized block that can be used in the key path of a `list by walking key path`{:.dictionary.block}. When encountered during a walk, it causes every item at that level to be explored. For dictionaries, this means that every value is visited. For lists, each item in the list is visited. This can be used to aggregate information from a list of items in a dictionary, such as the first name of every person in a database represented by JSON objects. See the [`list by walking key path`{:.dictionary.block}](#list-by-walking-key-path) block for examples.
 
 ***
 ### 是否为字典？   {#is-a-dictionary}
 
 ![](images/dictionaries/is-dict.png)
 
-The `is a dictionary?`{:.dictionary.block} block tests to see whether the `thing` given to it is a dictionary or not. It will return `真`{:.logic.block} if the `thing` is a dictionary and `假`{:.logic.block} otherwise.
+该块测试给它的 `对象` 是否是一个字典。如果`对象`是字典，它将返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。

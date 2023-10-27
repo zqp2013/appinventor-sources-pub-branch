@@ -41,6 +41,7 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 1. [*案例：*判断一个列表是否等于另一个列表（**列表比较**）](#list_compare)
 1. [*案例：*清理列表（ClearList）](#list_clear)
 1. [**二维列表、多维列表**](#multidlist)
+1. [*案例：*解析天气预报结果JSON数据](#weather)
 
 *需要额外的帮助来理解列表吗？请查看“概念”页面上的[制作列表](../concepts/lists.html)。*
 
@@ -285,4 +286,85 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 1. 获取对象在二维列表中的索引（位置），同 [求对象在列表中的位置](#indexinlist)。
 
 1. 读取二维列表中的值，同 [选择列表中索引值对应的列表项](#selectlistitem)。
+
+***
+### 案例：解析天气预报结果JSON数据（ClearList）    {#weather}
+
+未来7天天气数据返回结果JSON参考数据（这里只截取2天）：
+
+```json
+{
+	"code": "200",
+	"updateTime": "2023-10-27T16:35+08:00",
+	"fxLink": "https://www.qweather.com/weather/beijing-101010100.html",
+	"daily": [{
+		"fxDate": "2023-10-27",
+		"sunrise": "06:36",
+		"sunset": "17:22",
+		"moonrise": "16:34",
+		"moonset": "04:34",
+		"moonPhase": "盈凸月",
+		"moonPhaseIcon": "803",
+		"tempMax": "23",
+		"tempMin": "7",
+		"iconDay": "100",
+		"textDay": "晴",
+		"iconNight": "150",
+		"textNight": "晴",
+		"wind360Day": "-1",
+		"windDirDay": "无持续风向",
+		"windScaleDay": "1-3",
+		"windSpeedDay": "16",
+		"wind360Night": "-1",
+		"windDirNight": "无持续风向",
+		"windScaleNight": "1-3",
+		"windSpeedNight": "16",
+		"humidity": "30",
+		"precip": "0.0",
+		"pressure": "1011",
+		"vis": "25",
+		"cloud": "0",
+		"uvIndex": "2"
+	}, {
+		"fxDate": "2023-10-28",
+		"sunrise": "06:37",
+		"sunset": "17:21",
+		"moonrise": "16:59",
+		"moonset": "05:47",
+		"moonPhase": "盈凸月",
+		"moonPhaseIcon": "803",
+		"tempMax": "23",
+		"tempMin": "9",
+		"iconDay": "100",
+		"textDay": "晴",
+		"iconNight": "150",
+		"textNight": "晴",
+		"wind360Day": "-1",
+		"windDirDay": "无持续风向",
+		"windScaleDay": "1-3",
+		"windSpeedDay": "16",
+		"wind360Night": "-1",
+		"windDirNight": "无持续风向",
+		"windScaleNight": "1-3",
+		"windSpeedNight": "16",
+		"humidity": "71",
+		"precip": "0.0",
+		"pressure": "1011",
+		"vis": "25",
+		"cloud": "0",
+		"uvIndex": "3"
+	}],
+	"refer": {
+		"sources": ["QWeather"],
+		"license": ["CC BY-SA 4.0"]
+	}
+}
+```
+
+<!--未来7天天气请求代码参考：![天气预报请求数据](images/lists/天气预报请求数据.png)-->
+
+天气预报结果JSON数据解析代码，主要用到列表的 [在键值对中查找](#lookuppairs) 代码块：
+
+{:.vip}
+![天气预报结果数据解析](images/lists/天气预报结果数据解析.png)
 
