@@ -68,6 +68,10 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                 <br/>
                                 <br/>
                                 <a href="/"><< 返回首页/登录</a>
+
+                                <div class="float-right">
+                                    <a href="javascript:alert('如您未收到短信通知（可能受“免打扰”模式影响），请先使用手机号作为用户名登录，初始密码手机号后六位。感谢您的支持！');">没有收到短信通知？</a>
+                                </div>
                             </div>
                             
                             <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 30px;">

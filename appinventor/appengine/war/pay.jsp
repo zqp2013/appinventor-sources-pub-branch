@@ -88,7 +88,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
         <% if (phone != null) {
             out.println("value=" + phone);
         } %>
-                                                    autofocus="autofocus" autocapitalize="off" autocorrect="off"
+                                                    autofocus="autofocus" autocapitalize="off" autocorrect="off" placeholder="请输入手机号码，作为登录账号，接收短信通知"
                                                     required="required" title="该字段是必填字段。" type="text" name="phone" id="phone">
                                                 <p class="field-error hidden">该字段是必填字段。</p>
                                             </div>
