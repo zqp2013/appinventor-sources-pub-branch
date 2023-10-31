@@ -14,7 +14,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【图像】![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
 1. [【图像】SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
 1. [【图像】KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
-1. [【连接】MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
+1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 1. [【连接】ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
 1. [【WIFI】TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)
 1. [【蓝牙】BlueToothLE 拓展：低功耗蓝牙](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)

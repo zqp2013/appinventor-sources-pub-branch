@@ -19,7 +19,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 1. ![icon](images/web.png)  [Web客户端](#Web)
   * [SimpleBase64 *拓展：图像Base64编解码传输*](#SimpleBase64)
   * [KIO4_Base64 *拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件*](../extensions/KIO4_Base64.html)
-1. [MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
+1. <img src="../extensions/images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">[MQTT *拓展：轻量级物联网传输协议*](#Mqtt)
 1. [Socket *拓展：TCP/IP传输协议*](#Socket)
 
 ## ![icon](images/activitystarter.png)  Activity启动器  {#ActivityStarter}
@@ -683,7 +683,7 @@ SimpleBase64 demo程序下载：
 * EncodeImage
 * DecodeImage
 
-## MqttClient 拓展  {#Mqtt}
+## <img src="../extensions/images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展  {#Mqtt}
 <!--(http://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)-->
 
 .aix 拓展及demo程序打包下载：
