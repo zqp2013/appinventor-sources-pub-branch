@@ -15,7 +15,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 1. ![icon](images/accelerometersensor.png)  [加速度传感器](#AccelerometerSensor)
 1. ![icon](images/barcodescanner.png)  [条码扫描器](#BarcodeScanner)
 1. ![icon](images/barometer.png)  [气压传感器](#Barometer)
-1. ![icon](images/clock.png) 计时器  [计时器](#Clock)
+1. ![icon](images/clock.png)  [计时器](#Clock)
 1. ![icon](images/gyroscopesensor.png)  [陀螺仪传感器](#GyroscopeSensor)
 1. ![icon](images/hygrometer.png)  [湿度传感器](#Hygrometer)
 1. ![icon](images/lightsensor.png)  [光线传感器](#LightSensor)
