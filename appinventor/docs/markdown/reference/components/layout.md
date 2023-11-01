@@ -20,47 +20,50 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 
 ## ![icon](images/HorizontalArrangement.png)  水平布局  {#HorizontalArrangement}
 
- 使用水平布局组件来展示一组从左到右排列的组件，你可以在其中从左到右放置应该显示的组件。如果你想让组件显示在另一个上面，使用 [`垂直布局`](#VerticalArrangement) 代替。
+  使用水平布局组件来展示一组从左到右排列的组件，你可以在其中从左到右放置应该显示的组件。如果你想让组件显示在另一个上面，使用 [`垂直布局`](#VerticalArrangement) 代替。
  
- 在`水平布局`中，组件沿水平轴排列，垂直居中对齐。
+  在`水平布局`中，组件沿水平轴排列，垂直居中对齐。
 
- If a `水平布局`'s [`Height`](#HorizontalArrangement.Height) property is set to `Automatic`, the actual
- height of the arrangement is determined by the tallest component in the arrangement whose
- [`Height`](#HorizontalArrangement.Height) property is not set to `Fill Parent`. If a `HorizontalArrangment`'s
- [`Height`](#HorizontalArrangement.Height) property is set to `Automatic` and it contains only components whose `Height`
- properties are set to `Fill Parent`, the actual height of the arrangement is calculated using
- the automatic heights of the components. If a `水平布局`'s [`Height`](#HorizontalArrangement.Height)
- property is set to `Automatic` and it is empty, the [`Height`](#HorizontalArrangement.Height) will be 100.
+  * 如果`水平布局`的 [`高度`](#HorizontalArrangement.Height) 属性设置为`自动`，则实际布局的高度由布局中 未设置[`高度`](#HorizontalArrangement.Height) 属性为`填充父级`的最高的组件决定。 
+  
+  * 如果`水平布局`的 [`高度`](#HorizontalArrangement.Height) 属性设置为 `自动`，并且它仅包含 `高度`属性设置为`填充父级` 的组件，布局的实际高度是使用组件的自动高度计算的。
+  
+  * 如果`水平布局`的 [`高度`](#HorizontalArrangement.Height) 属性设置为`自动`且其中没有任何组件，则 [`高度`](#HorizontalArrangement.Height) 将是 100%。
 
- If a `水平布局`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, the actual width
- of the arrangement is determined by the sum of the widths of the components. **If a
- `水平布局`'s [`Width`](#HorizontalArrangement.Width) property is set to `Automatic`, any components whose
- [`Width`](#HorizontalArrangement.Width) properties are set to `Fill Parent` will behave as if they were set to
- `Automatic`.**
+  * 如果`水平布局`的 [`宽度`](#HorizontalArrangement.Width) 属性设置为`自动`，则实际布局的宽度由组件的宽度之和确定。 
+  
+  * **如果一个 `水平布局` 的 [`宽度`](#HorizontalArrangement.Width) 属性设置为 `自动`，任何组件[`宽度`](#HorizontalArrangement.Width) 属性设置为`填充父级`的，就类似它们自己的宽度设为`自动`。**
 
- If a `水平布局`'s [`Width`](#HorizontalArrangement.Width) properties are set to `Fill Parent` will equally
- take up the width not occupied by other components.
-
-
+  * 如果`水平布局`的 [`宽度`](#HorizontalArrangement.Width) 属性设置为`填充父级`，将占用其他组件未占用的宽度。
 
 ### 属性  {#HorizontalArrangement-Properties}
 
 {:.properties}
 
-{:id="HorizontalArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `水平布局` are aligned horizontally. The choices
- are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `水平布局`'s [`Width`](#HorizontalArrangement.Width) is `Automatic`.
+{:id="HorizontalArrangement.AlignHorizontal" .number} *水平对齐*
+: 一个数字，用于表示`水平布局`的内容如何水平对齐。选择分别是：
 
-{:id="HorizontalArrangement.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the `水平布局` are aligned vertically. The choices
- are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `水平布局`'s [`Height`](#HorizontalArrangement.Height) is `Automatic`.
+  `1` （左对齐）
+  
+  `2` （右对齐）
+  
+  `3` （水平居中）
+  
+  如果`水平布局`的[`宽度`](#HorizontalArrangement.Width)是`自动`，则对齐方式无效。
 
-{:id="HorizontalArrangement.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the HorizontalArrangement as an alpha-red-green-blue
- integer.  If an Image has been set, the color change will not be visible
- until the Image is removed.
+{:id="HorizontalArrangement.AlignVertical" .number} *垂直对齐*
+: 一个数字，用于表示`水平布局`的内容如何垂直对齐。 选择分别是：
+
+  `1` （顶部对齐）
+  
+  `2` （垂直居中）
+  
+  `3` （底部对齐）
+
+  如果`水平布局`的[`高度`](#HorizontalArrangement.Height)是`自动`，则对齐方式无效。
+
+{:id="HorizontalArrangement.BackgroundColor" .color} *背景颜色*
+: 设置`水平布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#HorizontalArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#HorizontalArrangement.Image)属性为止。
 
 {:id="HorizontalArrangement.Height" .number .bo} *高度*
 : 设置`水平布局`的垂直高度，以像素px为单位。
@@ -103,20 +106,30 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 
 {:.properties}
 
-{:id="HorizontalScrollArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `水平滚动条布局` are aligned horizontally. The choices
- are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `水平滚动条布局`'s [`Width`](#HorizontalScrollArrangement.Width) is `Automatic`.
+{:id="HorizontalScrollArrangement.AlignHorizontal" .number} *水平对齐*
+: 一个数字，用于表示`水平滚动条布局`的内容如何水平对齐。选择分别是：
 
-{:id="HorizontalScrollArrangement.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the `HorizontalScrollArrangement` are aligned vertically. The choices
- are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `水平滚动条布局`'s [`Height`](#HorizontalScrollArrangement.Height) is `Automatic`.
+  `1` （左对齐）
+  
+  `2` （右对齐）
+  
+  `3` （水平居中）
+  
+  如果`水平滚动条布局`的[`宽度`](#HorizontalScrollArrangement.Width)是`自动`，则对齐方式无效。
 
-{:id="HorizontalScrollArrangement.BackgroundColor" .color} *BackgroundColor*
-: Specifies the background color of the HorizontalScrollArrangement as an alpha-red-green-blue
- integer.  If an Image has been set, the color change will not be visible
- until the Image is removed.
+{:id="HorizontalScrollArrangement.AlignVertical" .number} *垂直对齐*
+: 一个数字，用于表示`水平滚动条布局`的内容如何垂直对齐。 选择分别是：
+
+  `1` （顶部对齐）
+  
+  `2` （垂直居中）
+  
+  `3` （底部对齐）
+
+  如果`水平滚动条布局`的[`高度`](#HorizontalScrollArrangement.Height)是`自动`，则对齐方式无效。
+
+{:id="HorizontalScrollArrangement.BackgroundColor" .color} *背景颜色*
+: 设置`水平布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#HorizontalScrollArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#HorizontalScrollArrangement.Image)属性为止。
 
 {:id="HorizontalScrollArrangement.Height" .number .bo} *高度*
 : 设置`水平滚动条布局`的垂直高度，以像素px为单位。
@@ -149,35 +162,24 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
 
 ## ![icon](images/TableArrangement.png)  表格布局  {#TableArrangement}
 
-Use a table arrangement component to display a group of components in a tabular fashion.
+  使用表格排列组件，以表格方式显示一组组件。
 
- This component is a formatting element in which you place components that should be displayed
- in tabular form.
+  * 该组件是一个格式化元素，你可以以表格形式在其中放置需要显示的组件。
 
- In a `TableArrangement`, components are arranged in a grid of rows and columns, with not more
- than one component visible in each cell. **If multiple components occupy the same cell, only the
- last one will be visible.**
+  * 在`表格布局`中，组件排列在行和列的网格中，每个单元格中可见的组件不超过一个。**如果多个组件占据同一个单元格，则只有最后一个可见。**
 
- Within each row, components are vertically center-aligned.
+  * 在每一行中，组件垂直居中对齐。
+  
+  * 列的宽度由该列中最宽的组件确定。 计算列宽时，自动宽度用于 [`宽度`](#TableArrangement.Width) 属性设置为 `填充父级` 的组件。**但是，每个组件将始终填充其占据的列的整个宽度。**
 
- The width of a column is determined by the widest component in that column. When calculating
- column width, the automatic width is used for components whose [`Width`](#TableArrangement.Width) property is set
- to `Fill Parent`. **However, each component will always fill the full width of the column that it
- occupies.**
-
- The height of a row is determined by the tallest component in that row whose [`Height`](#TableArrangement.Height)
- property is not set to `Fill Parent`. If a row contains only components whose [`Height`](#TableArrangement.Height)
- properties are set to `Fill Parent`, the height of the row is calculated using the automatic
- heights of the components.
-
-
+  * 行的高度由该行中[`高度`](#TableArrangement.Height) 属性未设置为 `填充父级`的最高的组件决定。如果行仅包含 [`高度`](#TableArrangement.Height) 属性设置为 `填充父级` 的组件，则使用组件的自动高度计算行的高度。
 
 ### 属性  {#TableArrangement-Properties}
 
 {:.properties}
 
-{:id="TableArrangement.Columns" .number .do} *Columns*
-: Determines the number of columns in the table.
+{:id="TableArrangement.Columns" .number .do} *列数*
+: 确定表中的列数。
 
 {:id="TableArrangement.Height" .number .bo} *高度*
 : 设置`表格布局`的垂直高度，以像素px为单位。
@@ -185,8 +187,8 @@ Use a table arrangement component to display a group of components in a tabular 
 {:id="TableArrangement.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`表格布局`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="TableArrangement.Rows" .number .do} *Rows*
-: Determines the number of rows in the table.
+{:id="TableArrangement.Rows" .number .do} *行数*
+: 确定表中的行数。
 
 {:id="TableArrangement.Visible" .boolean} *可见性*
 : 设置`表格布局`是否显示在屏幕上，值是`真`{:.logic.block}则`表格布局`显示，`假`{:.logic.block}则隐藏。
@@ -210,48 +212,48 @@ Use a table arrangement component to display a group of components in a tabular 
 
 ## ![icon](images/VerticalArrangement.png)  垂直布局  {#VerticalArrangement}
 
- Use a `VerticalArrangement` component to display a group of components laid out from top to
- bottom, left-aligned.
+  使用垂直布局组件来显示一组从上到下、左对齐的组件。该组件是一种格式设置元素，你可以在其中放置应逐个显示的组件。 第一个子组件存储在顶部，第二个子组件存储在其下面，依此类推。
+  如果你希望组件彼此相邻显示，请使用 [`水平布局`](#HorizontalArrangement)。
+ 
+  在`垂直布局`中，组件沿垂直轴左对齐排列。
 
- This component is a formatting element in which you place components that should be displayed
- one below another. The first child component is stored on top, the second beneath it, and so on.
- If you want to have components displayed next to one another, use [`HorizontalArrangement`](#HorizontalArrangement)
- instead.
+  * 如果`垂直布局`的 [`宽度`](#VerticalArrangement.Width) 属性设置为`自动`，则实际布局的宽度由布局中 未设置[`宽度`](#VerticalArrangement.Width) 属性为`填充父级`的最宽的组件决定。 
+  
+  * 如果`垂直布局`的 [`宽度`](#VerticalArrangement.Width) 属性设置为 `自动`，并且它仅包含 `宽度`属性设置为`填充父级` 的组件，布局的实际宽度是使用组件的自动宽度计算的。
+  
+  * 如果`垂直布局`的 [`宽度`](#VerticalArrangement.Width) 属性设置为`自动`且其中没有任何组件，则 [`宽度`](#VerticalArrangement.Width) 将是 100%。
 
- In a `VerticalArrangement`, components are arranged along the vertical axis, left-aligned.
+  * 如果`垂直布局`的 [`高度`](#VerticalArrangement.Height) 属性设置为`自动`，则实际布局的高度由组件的高度之和确定。 
+  
+  * **如果一个 `垂直布局` 的 [`高度`](#VerticalArrangement.Height) 属性设置为 `自动`，任何组件[`高度`](#VerticalArrangement.Width) 属性设置为`填充父级`的，就类似它们自己的高度设为`自动`。**
 
- If a `VerticalArrangement`'s [`Width`](#VerticalArrangement.Width) property is set to `Automatic`, the actual width
- of the arrangement is determined by the widest component in the arrangement whose
- [`Width`](#VerticalArrangement.Width) property is not set to `Fill Parent`. If a `VerticalArrangement`'s
- [`Width`](#VerticalArrangement.Width) property is set to `Automatic` and it contains only components whose
- [`Width`](#VerticalArrangement.Width) properties are set to `Fill Parent`, the actual width of the arrangement is
- calculated using the automatic widths of the components. If a `VerticalArrangement`'s
- [`Width`](#VerticalArrangement.Width) property is set to `Automatic` and it is empty, the width will be 100.
-
- If a `VerticalArrangement`'s [`Height`](#VerticalArrangement.Height) property is set to `Automatic`, the actual height
- of the arrangement is determined by the sum of the heights of the components. **If a
- `VerticalArrangement`'s [`Height`](#VerticalArrangement.Height) property is set to `Automatic`, any components whose
- `Height` properties are set to `Fill Parent` will behave as if they were set to `Automatic`.**
-
- If a `VerticalArrangement`'s [`Height`](#VerticalArrangement.Height) property is set to `Fill Parent` or specified in
- pixels, any components whose Height properties are set to `Fill Parent` will equally take up the
- height not occupied by other components.
-
-
+  * 如果`垂直布局`的 [`高度`](#VerticalArrangement.Height) 属性设置为`填充父级`，将占用其他组件未占用的高度。
 
 ### 属性  {#VerticalArrangement-Properties}
 
 {:.properties}
 
-{:id="VerticalArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `VerticalArrangement` are aligned horizontally. The choices
- are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `VerticalArrangement`'s [`Width`](#VerticalArrangement.Width) is `Automatic`.
+{:id="VerticalArrangement.AlignHorizontal" .number} *水平对齐*
+: 一个数字，用于表示`垂直布局`的内容如何水平对齐。选择分别是：
 
-{:id="VerticalArrangement.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the `VerticalArrangement` are aligned vertically. The choices
- are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `VerticalArrangement`'s [`Height`](#VerticalArrangement.Height) is `Automatic`.
+  `1` （左对齐）
+  
+  `2` （右对齐）
+  
+  `3` （水平居中）
+  
+  如果`垂直布局`的[`宽度`](#VerticalArrangement.Width)是`自动`，则对齐方式无效。
+
+{:id="VerticalArrangement.AlignVertical" .number} *垂直对齐*
+: 一个数字，用于表示`垂直布局`的内容如何垂直对齐。 选择分别是：
+
+  `1` （顶部对齐）
+  
+  `2` （垂直居中）
+  
+  `3` （底部对齐）
+
+  如果`垂直布局`的[`高度`](#VerticalArrangement.Height)是`自动`，则对齐方式无效。
 
 {:id="VerticalArrangement.BackgroundColor" .color} *背景颜色*
 : 设置`垂直布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#VerticalArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#VerticalArrangement.Image)属性为止。
@@ -287,27 +289,37 @@ Use a table arrangement component to display a group of components in a tabular 
 
 ## ![icon](images/VerticalScrollArrangement.png)  垂直滚动条布局  {#VerticalScrollArrangement}
 
-A formatting element in which to place components that should be displayed one below another.
- (The first child component is stored on top, the second beneath it, etc.) If you wish to have
- components displayed next to one another, use [`HorizontalScrollArrangement`](#HorizontalScrollArrangement) instead.
-
- This version is scrollable.
-
-
+  一种格式元素，用于放置应逐个显示的组件。（第一个子组件在顶部，第二个子组件在其下面，依此类推）
+  
+  如果希望相邻显示的组件，请改用 [`水平滚动条布局`](#HorizontalScrollArrangement)。
+  
+  这个组件是可滚动的。
 
 ### 属性  {#VerticalScrollArrangement-Properties}
 
 {:.properties}
 
-{:id="VerticalScrollArrangement.AlignHorizontal" .number} *AlignHorizontal*
-: A number that encodes how contents of the `VerticalScrollArrangement` are aligned horizontally. The choices
- are: `1` = left aligned, `2` = right aligned, `3` = horizontally centered. Alignment has no
- effect if the `VerticalScrollArrangement`'s [`Width`](#VerticalScrollArrangement.Width) is `Automatic`.
+{:id="VerticalScrollArrangement.AlignHorizontal" .number} *水平对齐*
+: 一个数字，用于表示`垂直滚动条布局`的内容如何水平对齐。选择分别是：
 
-{:id="VerticalScrollArrangement.AlignVertical" .number} *AlignVertical*
-: A number that encodes how the contents of the `VerticalScrollArrangement` are aligned vertically. The choices
- are: `1` = aligned at the top, `2` = vertically centered, `3` = aligned at the bottom.
- Alignment has no effect if the `VerticalScrollArrangement`'s [`Height`](#VerticalScrollArrangement.Height) is `Automatic`.
+  `1` （左对齐）
+  
+  `2` （右对齐）
+  
+  `3` （水平居中）
+  
+  如果`垂直滚动条布局`的[`宽度`](#VerticalScrollArrangement.Width)是`自动`，则对齐方式无效。
+
+{:id="VerticalScrollArrangement.AlignVertical" .number} *垂直对齐*
+: 一个数字，用于表示`垂直滚动条布局`的内容如何垂直对齐。 选择分别是：
+
+  `1` （顶部对齐）
+  
+  `2` （垂直居中）
+  
+  `3` （底部对齐）
+
+  如果`垂直滚动条布局`的[`高度`](#VerticalScrollArrangement.Height)是`自动`，则对齐方式无效。
 
 {:id="VerticalScrollArrangement.BackgroundColor" .color} *背景颜色*
 : 设置`垂直滚动条布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#VerticalScrollArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#VerticalScrollArrangement.Image)属性为止。

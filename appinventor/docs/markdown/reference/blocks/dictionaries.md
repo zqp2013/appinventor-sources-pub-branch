@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 字典代码块
 layout: documentation
-description: 字典代码块参考文档：包括什么情况下需要使用字典、创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目...字典遍历,遍历字典。
+description: 字典代码块参考文档：包括什么情况下需要使用字典、创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目、获取键路径的值、设置键路径的值、获取键列表、获取值列表、键是否在字典中？、字典的长度、键值对列表转换为字典、字典转换为键值对列表、复制字典（深拷贝）、合并字典、在此层级遍历、遍历键路径列表、是否为字典？、字典遍历,遍历字典。
 ---
 
 * TOC
@@ -71,13 +71,13 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 
 ![](images/dictionaries/create-with.png)
 
-`创建空字典`{:.dictionary.block} 块创建一个没有任何键值对的字典。
+`创建空字典` 块创建一个没有任何键值对的字典。
 
 可以使用 [设置键的值](#set-value-for-key) 块将条目添加到空字典中。
 
 通过使用蓝色块拓展![块扩展图标](../concepts/images/mutatoricon.png)按钮添加`键值对`{:.dictionary.block}。
 
-`创建空字典`{:.dictionary.block} 块也可以作为 `创建字典`{:.dictionary.block} 块的条目。
+`创建空字典` 块也可以作为 `创建字典` 块的条目。
 
 ***
 ### 创建字典   {#make-a-dictionary}
@@ -121,9 +121,9 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 ***
 ### 获取键路径的值   {#get-value-at-key-path}
 
-`获取键路径的值`{:.dictionary.block} 块是 `获取键的值`{:.dictionary.block} 块的`更高级版本`，它不是获取特定键的值，而是逐层遍历路径，逐层深入数据结构获取值。
+`获取键路径的值` 块是 `获取键的值` 块的`更高级版本`，它不是获取特定键的值，而是逐层遍历路径，逐层深入数据结构获取值。
 
-`获取键的值`{:.dictionary.block} 块等同于`获取键路径的值`{:.dictionary.block} 块路径长度为 1。
+`获取键的值` 块等同于`获取键路径的值` 块路径长度为 1。
 
 例如，以下两个块将返回 `"Tim the Beaver"`{:.text.block}：
 
@@ -148,11 +148,11 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 }
 ```
 
-例如，给定上面的 JSON 字典，以下使用 `获取键路径的值`{:.dictionary.block} 将产生结果 `"Massachusetts Institute of Technology"`{:.text.block}。
+例如，给定上面的 JSON 字典，以下使用 `获取键路径的值` 将产生结果 `"Massachusetts Institute of Technology"`{:.text.block}。
 
 ![](images/dictionaries/get-value-for-key-path2.png)
 
-`获取键路径的值`{:.dictionary.block} 允许路径包含表示混合字典和列表时要遍历的元素索引的数字。
+`获取键路径的值` 允许路径包含表示混合字典和列表时要遍历的元素索引的数字。
 
 例如，如果我们想知道 Tim 正在上的第二堂课，我们可以执行以下操作：
 
@@ -190,14 +190,14 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 
 ![](images/dictionaries/is-key-in.png)
 
-`键是否在字典中？`{:.dictionary.block} 测试字典中是否存在该键，如果存在则返回 `真`{:.logic.block}，否则返回 `假`{:.logic.block}。
+`键是否在字典中？` 测试字典中是否存在该键，如果存在则返回 `真`{:.logic.block}，否则返回 `假`{:.logic.block}。
 
 ***
 ### 字典的长度   {#size-of-dictionary}
 
 ![](images/dictionaries/size.png)
 
-`字典的长度`{:.dictionary.block} 块返回字典中存在的键值对的数量。
+`字典的长度` 块返回字典中存在的键值对的数量。
 
 ***
 ### 键值对列表转换为字典   {#list-of-pairs-to-dictionary}
@@ -222,7 +222,7 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 
 ![](images/dictionaries/copy-dict.png)
 
-`复制字典`{:.dictionary.block} 制作给定字典的深层副本（深拷贝），也即是所有值都会递归复制，并且更改副本中的值不会更改原始值。
+`复制字典` 制作给定字典的深层副本（深拷贝），也即是所有值都会递归复制，并且更改副本中的值不会更改原始值。
 
 ***
 ### 合并字典   {#merge-into-dictionary}
@@ -236,22 +236,22 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 
 ![](images/dictionaries/walk-all.png)
 
-该块是一个专用块，可以在 `遍历键路径列表`{:.dictionary.block} 的键路径中使用。
+该块是一个专用块，可以在 `遍历键路径列表` 的键路径中使用。
 
 当在遍历中遇到时，它会导致该级别的每个项目都被探索。对于字典来说，这意味着每个值都会被访问；对于列表，将访问列表中的每个项目。
 
-这可用于聚合字典中的项目列表项数据，例如数据库中由 JSON 对象表示的每个人的名字。有关示例，请参阅 [`遍历键路径列表`{:.dictionary.block}](#list-by-walking-key-path) 块。
+这可用于聚合字典中的项目列表项数据，例如数据库中由 JSON 对象表示的每个人的名字。有关示例，请参阅 [`遍历键路径列表`](#list-by-walking-key-path) 块。
 
 ***
 ### 遍历键路径列表   {#list-by-walking-key-path}
 
 ![](images/dictionaries/walk-tree.png)
 
-`遍历键路径列表`{:.dictionary.block} 块的工作方式与 [获取键路径的值](#get-value-at-key-path) 类似，但会创建一个值列表，而不是返回单个值。
+`遍历键路径列表` 块的工作方式与 [获取键路径的值](#get-value-at-key-path) 类似，但会创建一个值列表，而不是返回单个值。
 
-它的工作原理是从给定的字典开始，沿着给定的路径沿着对象树走下去。但与 [获取键路径的值](#get-value-at-key-path) 不同，它的路径可以由三种主要类型组成：`字典键`、`列表索引` 和 [`在此层级遍历`{:.dictionary.block} ](#walk-all-at-level) 块。
+它的工作原理是从给定的字典开始，沿着给定的路径沿着对象树走下去。但与 [获取键路径的值](#get-value-at-key-path) 不同，它的路径可以由三种主要类型组成：`字典键`、`列表索引` 和 [`在此层级遍历`](#walk-all-at-level) 块。
 
-如果提供了键或索引，则在树中的该点采用特定路径。如果指定了 [`在此层级遍历`{:.dictionary.block} ](#walk-all-at-level)，则将连续跟踪该点的每个值（广度优先），此时从路径中的下一个元素继续遍历。与整个路径匹配的任何元素都会添加到输出列表中。
+如果提供了键或索引，则在树中的该点采用特定路径。如果指定了 [`在此层级遍历`](#walk-all-at-level)，则将连续跟踪该点的每个值（广度优先），此时从路径中的下一个元素继续遍历。与整个路径匹配的任何元素都会添加到输出列表中。
 
 **例子**
 
@@ -274,13 +274,13 @@ description: 字典代码块参考文档：包括什么情况下需要使用字�
 
 ![](images/dictionaries/walk-tree-example.png)
 
-如果 `global data`{:.variable.block} 包含由 JSON 表示的字典，则 `遍历键路径列表`{:.dictionary.block} 块将生成列表 `["Tim", "Beaver" ]`{:.list.block}。
+如果 `global data`{:.variable.block} 包含由 JSON 表示的字典，则 `遍历键路径列表` 块将生成列表 `["Tim", "Beaver" ]`{:.list.block}。
 
 首先，选择`“people”`{:.text.block} 标记的值，即人员列表。接下来，选择列表中的第一个元素。
 
 最后，`在此层级遍历` 块选择该点对象中的值，即值 `"Tim"`{:.text.block} 和 `"Beaver"`{:.text.block}。
 
-还可以在包含列表的层级中使用 `在此层级遍历`{:.dictionary.block}。例如，以下块选择结构中所有人员的名字，即 `["Tim", "John", "Jane"]`{:.list.block}。
+还可以在包含列表的层级中使用 `在此层级遍历`。例如，以下块选择结构中所有人员的名字，即 `["Tim", "John", "Jane"]`{:.list.block}。
 
 ![](images/dictionaries/walk-tree-example2.png)
 
