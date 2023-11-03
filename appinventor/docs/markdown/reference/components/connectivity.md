@@ -234,22 +234,22 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothClient.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 2 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 4 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
 : 从指定列表中取出每个元素，将其转换为字符串，字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothClient.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : 将指定文本转换为字节并将它们写入到输出流。
@@ -349,22 +349,22 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="BluetoothServer.Send1ByteNumber" class="method"} <i/> 发送单字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 1 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.Send2ByteNumber" class="method"} <i/> 发送双字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 2 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 2 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.Send4ByteNumber" class="method"} <i/> 发送四字节数字(*数值*{:.text})
 : 将指定的`数值`字符串转换成整数，并将其作为 4 个字节写入到输出流。
 
-    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果`数值`无法转换为整数，或转换的整数 4 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.SendBytes" class="method"} <i/> 发送字节数组(*列表*{:.list})
 : 从指定列表中取出每个元素，将其转换为字符串，字符串转换成整数，并将其作为 1 个字节写入到输出流。
 
-    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，就会触发 Screen 的 ErrorOccurred 事件，然后方法直接返回，不会向输出流中写入任何字节。
+    如果一个元素无法转换为整数，或转换的整数 1 个字节不够表达，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件，然后方法直接返回，不会向输出流中写入任何字节。
 
 {:id="BluetoothServer.SendText" class="method"} <i/> 发送文本(*文本*{:.text})
 : 将指定文本转换为字节并将它们写入到输出流。
@@ -492,31 +492,34 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   * 如果 [保存响应数据](#Web.SaveResponse) 属性为假，[获得文本](#Web.GotText) 事件将触发。
 
 {:id="Web.HtmlTextDecode" class="method returns text"} <i/> 解码HTML文本(*HTML文本*{:.text})
-: Decodes the given HTML text value.
-
-   HTML Character Entities such as `&amp;`, `&lt;`, `&gt;`, `&apos;`, and `&quot;` are
- changed to `&`, `<`, `>`, `'`, and `"`.
- Entities such as `&#xhhhh;`, and `&#nnnn;` are changed to the appropriate characters.
+: 解码给定的 HTML 文本值。例如：
+  
+  | HTML字符 | —> 解码后文本 |
+  |--|--|
+  |`&amp;`|`&`|
+  |`&lt;`|`<`|
+  |`&gt;`|`>`|
+  |`&apos;`|`'` （单引号）|
+  |`&quot;`|`"` （双引号）|
+  |`&#xhhhh;`|`&#xhhhh;`|
+  |`&#nnnn;`|`&#nnnn;`|
 
 {:id="Web.JsonObjectEncode" class="method returns text"} <i/> 编码JSON对象(*JSON对象*{:.any})
-: Returns the value of a built-in type (i.e., boolean, number, text, list, dictionary)
- in its JavaScript Object Notation representation. If the value cannot be
- represented as JSON, the Screen's ErrorOccurred event will be run, if any,
- and the Web component will return the empty string.
-
+: 以 JavaScript 对象表示形式返回内置类型（即布尔值、数字、文本、列表、字典）的值。 
+  
+  如果该值不能表示为 JSON，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件（如果有），并且 Web 组件将返回空字符串。
+  
 {:id="Web.JsonTextDecode" class="method returns any"} <i/> 解码JSON文本(*JSON文本*{:.text})
-: Decodes the given JSON encoded value to produce a corresponding AppInventor value.
- A JSON list `[x, y, z]` decodes to a list `(x y z)`,  A JSON object with key A and value B,
- (denoted as `{A:B}`) decodes to a list `((A B))`, that is, a list containing the two-element
- list `(A B)`.
+: 解码给定的 JSON 编码值以生成相应的 AppInventor 值。
 
-   Use the method [JsonTextDecodeWithDictionaries](#Web.JsonTextDecodeWithDictionaries) if you
- would prefer to get back dictionary objects rather than lists-of-lists in the result.
+  JSON 列表 `[x, y, z]` 解码为列表 `(x y z)`，具有键 A 和值 B 的 JSON 对象（表示为 `{A:B}`）解码为列表 `(( A B))`，即包含二元素列表`(A B)`的列表。
 
-{:id="Web.JsonTextDecodeWithDictionaries" class="method returns any"} <i/> JsonTextDecodeWithDictionaries(*JSON文本*{:.text})
-: Decodes the given JSON encoded value to produce a corresponding App Inventor value.
- A JSON list [x, y, z] decodes to a list (x y z). A JSON Object with name A and value B,
- denoted as \{a: b\} decodes to a dictionary with the key a and value b.
+  如果你希望返回字典对象而不是结果中列表的列表，请使用方法 [JSON文本解码为字典](#Web.JsonTextDecodeWithDictionaries)。
+
+{:id="Web.JsonTextDecodeWithDictionaries" class="method returns any"} <i/> JSON文本解码为字典(*JSON文本*{:.text})
+: 解码给定的 JSON 编码值以生成相应的 App Inventor 值。
+
+  JSON 列表 `[x, y, z]` 解码为列表 `(x y z)`，具有名称 A 和值 B 的 JSON 对象（表示为 \{a: b\}）解码为具有键 a 和值 b 的字典。
 
 {:id="Web.PatchFile" class="method"} <i/> 执行PATCH文件请求(*文件路径*{:.text})
 : PATCH方式发送通用文件，用法类似 [执行POST文件请求](#Web.PostFile) 。
@@ -598,40 +601,34 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 * 空格不能用于URL网址中，需要编码成`%20`，中文也是一样，要编码成UTF-8格式。
 
 {:id="Web.XMLTextDecode" class="method returns any"} <i/> 解码XML文本(*XML文本*{:.text})
-: Decodes the given XML string to produce a list structure. `<tag>string</tag>` decodes to
- a list that contains a pair of tag and string.  More generally, if obj1, obj2, ...
- are tag-delimited XML strings, then `<tag>obj1 obj2 ...</tag>` decodes to a list
- that contains a pair whose first element is tag and whose second element is the
- list of the decoded obj's, ordered alphabetically by tags.
+: 解码给定的 XML 字符串以生成列表对象。
+  
+  `<tag>string</tag>` 解码为包含一个标签和字符串键值对的列表。
+  
+  更一般地，如果 obj1, obj2, ... 是标记分隔的 XML 字符串，则 `<tag>obj1 obj2 ...</tag>` 解码为一个列表，其中包含第一个元素是 tag 且第二个元素的对 是已解码 obj 的列表，按标签按字母顺序排序。
 
-   Examples:
-   * `<foo><123/foo>` decodes to a one-item list containing the pair `(foo 123)`
-   * `<foo>1 2 3</foo>` decodes to a one-item list containing the pair `(foo "1 2 3")`
-   * `<a><foo>1 2 3</foo><bar>456</bar></a>` decodes to a list containing the pair `(a X)`
-     where X is a 2-item list that contains the pair `(bar 123)` and the pair `(foo "1 2 3")`.
+  例如：
 
-   If the sequence of obj's mixes tag-delimited and non-tag-delimited items, then the
- non-tag-delimited items are pulled out of the sequence and wrapped with a "content" tag.
- For example, decoding `<a><bar>456</bar>many<foo>1 2 3</foo>apples<a></code>`
- is similar to above, except that the list X is a 3-item list that contains the additional pair
- whose first item is the string "content", and whose second item is the list (many, apples).
- This method signals an error and returns the empty list if the result is not well-formed XML.
+  * `<foo>123</foo>` 解码为包含一个键值对 `(foo 123)` 的单项列表
+  * `<foo>1 2 3</foo>` 解码为包含一个键值对 `(foo "1 2 3")` 的单项列表
+  * `<a> <bar>456</bar> <foo>1 2 3</foo> </a>` 解码为包含对 `(a X)` 的列表，其中 X 是一个包含 2 项的列表，分别是键值对`(bar 456)`和键值对`(foo "1 2 3")`。
 
-{:id="Web.XMLTextDecodeAsDictionary" class="method returns any"} <i/> XMLTextDecodeAsDictionary(*XmlText*{:.text})
-: Decodes the given XML string to produce a dictionary structure. The dictionary includes the
- special keys `$tag`, `$localName`, `$namespace`, `$namespaceUri`, `$attributes`, and `$content`,
- as well as a key for each unique tag for every node, which points to a list of elements of
- the same structure as described here.
+  如果 obj 的序列混合了标记分隔和非标记分隔的项目，则非标记分隔的项目将从序列中拉出并用“content”标记包装。
 
-   The `$tag` key is the full tag name, e.g., foo:bar. The `$localName` is the local portion of
- the name (everything after the colon `:` character). If a namespace is given (everything before
- the colon `:` character), it is provided in `$namespace` and the corresponding URI is given
- in `$namespaceUri`. The attributes are stored in a dictionary in `$attributes` and the
- child nodes are given as a list under `$content`.
+  例如 `<a> <bar>456</bar> many <foo>1 2 3</foo> apples<a> </code>`  解码与上面类似，除了列表 X 是一个 3项 包含额外键值对的项目列表，其第一项是字符串 “content”，第二项是列表 (many, apples)。
+
+  如果结果不是格式良好的 XML，此方法会发出错误信号并返回空列表。
+
+{:id="Web.XMLTextDecodeAsDictionary" class="method returns any"} <i/> XML文本解码为字典(*XML文本*{:.text})
+: 解码给定的 XML 字符串以生成字典对象。
+
+  该字典包括特殊键 `$tag`, `$localName`, `$namespace`, `$namespaceUri`, `$attributes`, 和 `$content`，以及指向与此处描述的结构相同的元素列表的每个节点的唯一标签。
+
+  `$tag` 键是完整的标签名称，例如 foo:bar。 `$localName` 是名称的本地部分（`:` 字符之后的所有内容）。如果给出了命名空间（`:` 字符之前的所有内容），则在`$namespace`中提供该命名空间，并在`$namespaceUri`中给出相应的 URI。 属性存储在 `$attributes` 的字典中，子节点以列表形式给出在 `$content` 下。
 
    **有关特殊Keys的更多信息**
 
-   Consider the following XML document:
+   给出以下 XML 文档：
 
    ```xml
      <ex:Book xmlns:ex="http://example.com/">
@@ -640,15 +637,23 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
      </ex:Book>
    ```
 
-   When parsed, the `$tag` key will be `"ex:Book"`, the `$localName` key will be `"Book"`, the
- `$namespace` key will be `"ex"`, `$namespaceUri` will be `"http://example.com/"`, the
- `$attributes` key will be a dictionary `{}` (xmlns is removed for the namespace), and the
- `$content` will be a list of two items representing the decoded `<ex:title>` and `<ex:author>`
- elements. The first item, which corresponds to the `<ex:title>` element, will have an
- `$attributes` key containing the dictionary `{"xml:lang": "en"}`. For each `name=value`
- attribute on an element, a key-value pair mapping `name` to `value` will exist in the
- `$attributes` dictionary. In addition to these special keys, there will also be `"ex:title"`
- and `"ex:author"` to allow lookups faster than having to traverse the `$content` list.
+  解析时：
+  
+  * `$tag` 键将是 `"ex:Book"`
+  
+  * `$localName` 键将是 `"Book"`
+  
+  * `$namespace` 键将是 `"ex"`
+  
+  * `$namespaceUri ` 将是 `"http://example.com/"`
+  
+  * `$attributes` 键将是一个字典 `{}`（命名空间中删除了 xmlns）
+  
+  * `$content` 将是一个列表，包含解码后的`<ex:title>`和`<ex:author>`元素的两个项，第一项对应于 `<ex:title>` 元素，将有一个包含字典 `{"xml:lang": "en"}` 的 `$attributes` 键。
+  
+  对于元素上的每个`name=value`属性，将`name`映射到`value`的键值对将存在于`$attributes`字典中。
+  
+  除了这些特殊键之外，还有`ex:title`和`ex:author`，以允许比遍历`$content`列表更快的查找速度。
 
 ## SimpleBase64 *拓展*  {#SimpleBase64}
 
