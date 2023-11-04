@@ -135,6 +135,11 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   你可能没有开启AI伴侣或编译后App的发现蓝牙权限，这里以AI伴侣为例，勾上即可：<br/>
   ![开启发现蓝牙设备的权限](images/开启发现蓝牙设备的权限.png)
 
+  **需要过滤蓝牙设备列表？**
+
+  {:.vip}
+  请参考[《App Inventor 2 过滤蓝牙设备列表》](../creative/filter_devicelist.html)。
+
 {:id="BluetoothClient.Available" .boolean .ro .bo} *可用状态*
 : 如果设备上有蓝牙功能，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 

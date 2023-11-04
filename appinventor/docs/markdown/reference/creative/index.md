@@ -39,6 +39,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【技巧】组件过多，屏幕显示不下，没有滚动条？](allow_scrolling.html)
 1. [【技巧】App Inventor 2 如何去掉顶部标题栏实现全屏？](fullscreen.html)
 1. [【技巧】App Inventor 2 模拟sleep函数](sim_sleep.html)
+1. [【技巧】App Inventor 2 过滤蓝牙设备列表](filter_devicelist.html)
 1. 【技巧】代码视图，搜索功能
 1. 【代码简洁之道】Any代码块
 1. [【技巧】代码块导出图像，以及还原](https://mp.weixin.qq.com/s?__biz=MzA5NTE5OTg1MA==&mid=2247483897&idx=1&sn=de0a12d3b132bab30e8c51f6d27c1da2&chksm=9043b6fca7343feaeed30d24c73e9d1d5673993db459d871c4707da47f6f0d5a41dbcae79942&token=270925767&lang=zh_CN#rd)
