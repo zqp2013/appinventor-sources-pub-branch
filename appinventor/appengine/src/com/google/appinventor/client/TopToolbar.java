@@ -996,6 +996,13 @@ public class TopToolbar extends Composite {
   private class EnableAutoloadAction implements Command {
     @Override
     public void execute() {
+
+      // VIP检查
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        showVip();
+        return;
+      }
+      
       Ode.getInstance().setUserAutoloadProject(true);
       createSettingsMenu();
     }
@@ -1419,6 +1426,13 @@ public class TopToolbar extends Composite {
         public void execute() {
           List<Project> deletedProjects = ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
           if (deletedProjects.size() > 0) {
+
+            // Add by 中文网：保险起见，每次删除项目不得超过5个，防止非预期的CPU过高及偶发服务崩溃
+            if (deletedProjects.size() > 5) {
+              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过5个！！");
+              return;
+            }
+
             // Show one confirmation window for selected projects.
             if (deleteConfirmation(deletedProjects)) {
               for (Project project : deletedProjects) {
