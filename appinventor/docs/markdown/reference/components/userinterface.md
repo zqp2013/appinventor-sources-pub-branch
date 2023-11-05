@@ -621,7 +621,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Label.FontItalic" .boolean .do} *斜体*
 : : 指定`标签`的文本是否为斜体（有些字体不支持斜体）。
 
-{:id="Label.FontSize" .number} *字号*
+{:id="Label.FontSize" .number} *字体大小*
 : 指定`标签`文本的字体大小，以像素px为单位。
 
 {:id="Label.FontTypeface" .number .do} *字体*
@@ -903,7 +903,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="ListView.TextColorDetail" .color} *TextColorDetail*
 : Specifies the color of the secondary text in a ListView layout
 
-{:id="ListView.TextSize" .number} *TextSize*
+{:id="ListView.TextSize" .number} *文本大小*
 : Specifies the `列表显示框` item's text font size
 
 {:id="ListView.Visible" .boolean} *可见性*

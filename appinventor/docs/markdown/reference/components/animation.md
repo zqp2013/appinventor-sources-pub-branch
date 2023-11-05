@@ -41,7 +41,6 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 
  ![方向含义](images/direction.jpg)
 
-
 {:id="Ball.Interval" .number} *间隔*
 : 更新`球形精灵`位置的时间间隔（以毫秒为单位）。例如，如果`间隔` 为 50，[`速度`](#Ball.Speed) 为 10，则`球形精灵`将每50毫秒移动10个像素。
 
@@ -77,72 +76,62 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 
 {:.events}
 
-{:id="Ball.CollidedWith"} 被碰撞时(*other*{:.component})
-: Event handler called when two enabled sprites ([`Ball`](#Ball)s or [`ImageSprite`](#ImageSprite)s)
- collide. Note that checking for collisions with a rotated `ImageSprite` currently
- checks against its unrotated position. Therefore, collision
- checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.
+{:id="Ball.CollidedWith"} 被碰撞时(*其他精灵*{:.component})
+: 事件将在两个启用的精灵（[`球形精灵`](#Ball)或[`图像精灵`](#ImageSprite)）碰撞时触发。
 
-{:id="Ball.Dragged"} 被拖动时(*startX*{:.number},*startY*{:.number},*prevX*{:.number},*prevY*{:.number},*currentX*{:.number},*currentY*{:.number})
-: Event handler for Dragged events.  On all calls, the starting coordinates
- are where the screen was first touched, and the "current" coordinates
- describe the endpoint of the current line segment.  On the first call
- within a given drag, the "previous" coordinates are the same as the
- starting coordinates; subsequently, they are the "current" coordinates
- from the prior call. Note that the `Ball` won't actually move
- anywhere in response to the Dragged event unless
- [`MoveTo`](#Ball.MoveTo) is specifically called.
+  *请注意，检查与旋转的`图像精灵`碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。*
 
-{:id="Ball.EdgeReached"} 达到边界时(*edge*{:.number})
-: Event handler called when the `Ball` reaches an `edge`{:.variable.block} of the screen.
- If [`Bounce`](#Ball.Bounce) is then called with that edge, the sprite will appear to bounce off
- of the edge it reached. Edge here is represented as an integer that indicates one of eight
- directions north(1), northeast(2), east(3), southeast(4), south (-1), southwest(-2), west(-3),
- and northwest(-4).
+{:id="Ball.Dragged"} 被拖动时(*起点X坐标*{:.number},*起点Y坐标*{:.number},*前点X坐标*{:.number},*前点Y坐标*{:.number},*当前X坐标*{:.number},*当前Y坐标*{:.number})
+: 拖动事件的处理程序。在所有调用中，“起始”坐标是第一次触摸屏幕的位置，“当前”坐标描述当前线段的端点。
 
-{:id="Ball.Flung"} 被划动时(*x*{:.number},*y*{:.number},*speed*{:.number},*heading*{:.number},*xvel*{:.number},*yvel*{:.number})
-: When a fling gesture (quick swipe) is made on the sprite: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling's vector.
+  在给定拖动中的第一次调用时，“前一个”坐标与起始坐标相同；随后，它们是先前调用的“当前”坐标。
+  
+  请注意，除非专门调用 [`移动到指定位置`](#Ball.MoveTo)，否则 `球形精灵` 实际上不会移动到任何地方以响应 `被拖动` 事件。
 
-{:id="Ball.NoLongerCollidingWith"} 结束碰撞时(*other*{:.component})
-: Event indicating that a pair of sprites are no longer colliding.
+{:id="Ball.EdgeReached"} 到达边缘时(*边缘数值*{:.number})
+: 当`球形精灵`到达屏幕的边缘时调用事件处理程序。
 
-{:id="Ball.TouchDown"} 被按压时(*x*{:.number},*y*{:.number})
-: When the user begins touching the sprite (places finger on sprite and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas
+  如果随后使用该边缘数值调用 [`反弹`](#Ball.Bounce)方法，则精灵将从它到达的边缘开始反弹。
+  
+  这里的边缘表示为一个整数，表示八个方向之一：
 
-{:id="Ball.TouchUp"} 被松开时(*x*{:.number},*y*{:.number})
-: When the user stops touching the sprite (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas.
+  | -4：西北 | 1：北 | 2：东北 |
+  | -3：西  | **边缘数值** | 3：东 |
+  | -2：西南 | -1：南 | 4：东南 |
 
-{:id="Ball.Touched"} 被触碰时(*x*{:.number},*y*{:.number})
-: When the user touches the sprite and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.
+{:id="Ball.Flung"} 被划动时(*x坐标*{:.number},*y坐标*{:.number},*速度*{:.number},*方向*{:.number},*速度X分量*{:.number},*速度Y分量*{:.number})
+: 当在精灵上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
+
+  该方法还提供投射的速度（每毫秒像素数）和[方向](#Ball.Heading)（0-360 度），以及投射矢量的 x 速度和 y 速度分量。
+
+{:id="Ball.NoLongerCollidingWith"} 结束碰撞时(*其他精灵*{:.component})
+: 该事件表示一对精灵不再发生碰撞。
+
+{:id="Ball.TouchDown"} 被按压时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="Ball.TouchUp"} 被松开时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户停止触摸精灵时（在 `被按压` 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="Ball.Touched"} 被触碰时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。
 
 ### 方法  {#Ball-Methods}
 
 {:.methods}
 
 {:id="Ball.Bounce" class="method"} <i/> 反弹(*边缘数值*{:.number})
-: Makes this `Ball` bounce, as if off a wall. For normal bouncing, the `edge` argument should
- be the one returned by [`EdgeReached`](#Ball.EdgeReached).
+: 使这个`球形精灵`弹起，就像从墙上弹起来一样。对于正常反弹，`边缘数值`参数应该是 [`到达边缘时`](#Ball.EdgeReached) 返回的参数。
 
 {:id="Ball.CollidingWith" class="method returns boolean"} <i/> 碰撞检测(*其他精灵*{:.component})
-: Indicates whether a collision has been registered between this `Ball`
- and the passed `other` sprite.
+: 表示此`球形精灵`和传递的`其他精灵`之间是否已发生碰撞，如发生则返回`真`。
 
 {:id="Ball.MoveIntoBounds" class="method"} <i/> 移动到边界()
-: Moves the sprite back in bounds if part of it extends out of bounds,
- having no effect otherwise. If the sprite is too wide to fit on the
- canvas, this aligns the left side of the sprite with the left side of the
- canvas. If the sprite is too tall to fit on the canvas, this aligns the
- top side of the sprite with the top side of the canvas.
+: 如果精灵的一部分超出边界，则将精灵移回到边界内，否则没有任何效果。
+
+  * 如果精灵太宽而无法适应画布，则会将精灵的左侧与画布的左侧对齐。
+  
+  * 如果精灵太高而无法适应画布，则会将精灵的顶部与画布的顶部对齐。
 
 {:id="Ball.MoveTo" class="method"} <i/> 移动到指定位置(*x坐标*{:.number},*y坐标*{:.number})
 : 设置`球形精灵`的 x 和 y 坐标。如果 [`中心坐标`](#Ball.OriginAtCenter) 为 `真`，则 `球形精灵` 的中心将放置在这里；否则，`球形精灵`的左上角将放置在指定的坐标处。
@@ -150,12 +139,11 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Ball.MoveToPoint" class="method"} <i/> 移动到坐标(*坐标*{:.list})
 : 移动球，使其原点位于指定的 x 和 y 坐标处。（与上面方法效果没有区别，仅参数形式差异）
 
-{:id="Ball.PointInDirection" class="method"} <i/> 转向指定位置(*x*{:.number},*y*{:.number})
-: Turns this `Ball` to point toward the point with the coordinates `(x, y)`.
+{:id="Ball.PointInDirection" class="method"} <i/> 转向指定位置(*x坐标*{:.number},*y坐标*{:.number})
+: 转动此`球形精灵`方向以指向坐标为 (x, y) 的点。
 
-{:id="Ball.PointTowards" class="method"} <i/> 转向目标对象(*target*{:.component})
-: Turns this `Ball` to point towards a given `target` sprite. The new heading will be parallel
- to the line joining the centerpoints of the two sprites.
+{:id="Ball.PointTowards" class="method"} <i/> 转向指定对象(*目标精灵*{:.component})
+: 转动此`球形精灵`方向以指向给定的`目标精灵`。新的方向将平行于连接两个精灵中心点的线。
 
 ## ![icon](images/canvas.png)  画布  {#Canvas}
 
@@ -175,16 +163,15 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:.properties}
 
 {:id="Canvas.BackgroundColor" .color} *背景颜色*
-: Specifies the Canvas's background color as an alpha-red-green-blue
- integer, i.e., `0xAARRGGBB`.  An alpha of `00`
- indicates fully transparent and `FF` means opaque.
- The background color only shows if there is no background image.
+: 将画布的背景颜色指定为 alpha-red-green-blue 整数，即`0xAARRGGBB`。
+
+  alpha`00`表示完全透明，`FF`表示不透明。仅当没有背景图像时才显示背景颜色，即背景图像显示优先于。
 
 {:id="Canvas.BackgroundImage" .text} *背景图像*
-: Specifies the name of a file containing the background image for the `Canvas`.
+: 指定`画布`背景图像的文件名称。
 
 {:id="Canvas.BackgroundImageinBase64" .text .wo .bo} *背景Base64图像*
-: Set the background image in Base64 format. This requires API level >= 8. For devices with API level less than 8, setting this will end up with an empty background.
+: 设置Base64格式的背景图片。这需要 API 级别 >= 8。对于 API 级别低于 8 的设备，设置此选项最终会得到空白背景。
 
 {:id="Canvas.ExtendMovesOutsideCanvas" .boolean} *可移动到画布外*
 : 确定是否可以移动超出画布边界。默认为 `假`，通常应该是 `假`，提供该属性是为了向后兼容。
@@ -198,24 +185,25 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Canvas.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`画布`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Canvas.LineWidth" .number} *LineWidth*
-: Specifies the width of lines drawn on the Canvas.
+{:id="Canvas.LineWidth" .number} *线宽*
+: 指定在画布上绘制的线条的宽度。
 
 {:id="Canvas.PaintColor" .color} *填充色*
-: Specifies the paint color as an alpha-red-green-blue integer,
- i.e., `0xAARRGGBB`.  An alpha of `00` indicates fully
- transparent and `FF` means opaque.
+: 将绘画颜色指定为 alpha-red-green-blue 整数，即`0xAARRGGBB`。
+
+  alpha`00`表示完全透明，`FF`表示不透明。
 
 {:id="Canvas.TapThreshold" .number} *点击阈值*
 : 指定区分拖动和点击的移动阈值。
 
 {:id="Canvas.TextAlignment" .number} *文本对齐*
-: Specifies the alignment of the canvas's text: center, normal
- (starting at the specified point in [`DrawText`](#Canvas.DrawText) or
- [`DrawTextAtAngle`](#Canvas.DrawTextAtAngle)),
- or opposite (ending at the specified point in
- [`DrawText`](#Canvas.DrawText) or
- [`DrawTextAtAngle`](#Canvas.DrawTextAtAngle)).
+: 指定画布文本的对齐方式：
+
+  * 居中
+  
+  * 正常（从 [`绘制文本`](#Canvas.DrawText) 或 [`沿角度绘制文本`](#Canvas.DrawTextAtAngle) 中的指定点开始）
+  
+  * 相反（从 [`绘制文本`](#Canvas.DrawText) 或 [`沿角度绘制文本`](#Canvas.DrawTextAtAngle) 中的指定点结束）
 
 {:id="Canvas.Visible" .boolean} *可见性*
 : 设置`画布`是否显示在屏幕上，值是`真`{:.logic.block}则`画布`显示，`假`{:.logic.block}则隐藏。
@@ -230,34 +218,26 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 
 {:.events}
 
-{:id="Canvas.Dragged"} 被拖动时(*起点X坐标*{:.number},*起点Y坐标*{:.number},*前点X坐标*{:.number},*前点Y坐标*{:.number},*当前X坐标*{:.number},*当前Y坐标*{:.number},*任意被拖拽的精灵*{:.boolean})
-: When the user does a drag from one point (prevX, prevY) to
- another (x, y).  The pair (startX, startY) indicates where the
- user first touched the screen, and "draggedAnySprite" indicates whether a
- sprite is being dragged.
+{:id="Canvas.Dragged"} 被拖动时(*起点X坐标*{:.number},*起点Y坐标*{:.number},*前点X坐标*{:.number},*前点Y坐标*{:.number},*当前X坐标*{:.number},*当前Y坐标*{:.number},*有精灵被拖动*{:.boolean})
+: 当用户从一个点（前点X坐标，前点Y坐标）拖动到另一点（当前X坐标，当前Y坐标）时。坐标（起点X坐标，起点Y坐标）指示用户第一次触摸屏幕的位置，`有精灵被拖动`表示当前有一个精灵正在被拖动（`假`则表示当前没有精灵正在被拖动）。
 
-{:id="Canvas.Flung"} 被划动时(*x*{:.number},*y*{:.number},*speed*{:.number},*heading*{:.number},*xvel*{:.number},*yvel*{:.number},*flungSprite*{:.boolean})
-: When a fling gesture (quick swipe) is made on the canvas: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling's vector. The value "flungSprite" is true if a sprite
- was located near the the starting point of the fling gesture.
+{:id="Canvas.Flung"} 被划动时(*x坐标*{:.number},*y坐标*{:.number},*速度*{:.number},*方向*{:.number},*速度X分量*{:.number},*速度Y分量*{:.number},*有精灵被划动*{:.boolean})
+: 当在画布上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
 
-{:id="Canvas.TouchDown"} 被按压时(*x*{:.number},*y*{:.number})
-: When the user begins touching the canvas (places finger on canvas and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas
+  该方法还提供投射的速度（每毫秒像素数）和[方向](#Ball.Heading)（0-360 度），以及投射矢量的 x 速度和 y 速度分量。
 
-{:id="Canvas.TouchUp"} 被松开时(*x*{:.number},*y*{:.number})
-: When the user stops touching the canvas (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas
+  如果精灵位于猛击手势的起始点附近，则值`有精灵被划动`为 `真`。
 
-{:id="Canvas.Touched"} 被触碰时(*x*{:.number},*y*{:.number},*touchedAnySprite*{:.boolean})
-: When the user touches the canvas and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.  TouchedAnySprite
- is true if the same touch also touched a sprite, and false otherwise.
+{:id="Canvas.TouchDown"} 被按压时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="Canvas.TouchUp"} 被松开时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户停止触摸精灵时（在 `被按压` 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="Canvas.Touched"} 被触碰时(*x坐标*{:.number},*y坐标*{:.number},*有精灵被触碰*{:.boolean})
+: 当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+  如果同时也触摸到了精灵，则 `有精灵被触碰` 为 `真`，否则为 `假`。
 
 ### 方法  {#Canvas-Methods}
 
@@ -266,15 +246,19 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Canvas.Clear" class="method"} <i/> 清除画布()
 : 清除画布，但不删除背景图像（如果设置了的话）。
 
-{:id="Canvas.DrawArc" class="method"} <i/> 画弧线(*左*{:.number},*top*{:.number},*right*{:.number},*bottom*{:.number},*startAngle*{:.number},*sweepAngle*{:.number},*useCenter*{:.boolean},*填充*{:.boolean})
-: Draw an arc on Canvas, by drawing an arc from a specified oval (specified by left, top, right & bottom).
- Start angle is 0 when heading to the right, and increase when rotate clockwise.
- When useCenter is true, a sector will be drawed instead of an arc.
- When fill is true, a filled arc (or sector) will be drawed instead of just an outline.
+{:id="Canvas.DrawArc" class="method"} <i/> 画弧线(*左*{:.number},*顶*{:.number},*右*{:.number},*底*{:.number},*起始角度*{:.number},*圆心角*{:.number},*包含圆心*{:.boolean},*填充*{:.boolean})
+: 通过从指定椭圆（由左、上、右和下指定）绘制圆弧，在画布上绘制圆弧。
 
-{:id="Canvas.DrawCircle" class="method"} <i/> 画圆(*centerX*{:.number},*centerY*{:.number},*半径*{:.number},*填充*{:.boolean})
-: Draws a circle (filled in) with the given radius centered at the given coordinates on the
- Canvas.
+  向右旋转时起始角度为0，顺时针旋转时起始角度增大。
+  
+  当 `包含圆心` 为 `真` 时，将绘制扇形而不是圆弧。
+  
+  当 `填充` 为 `真` 时，将绘制填充弧（或扇形），而不仅仅是轮廓。
+
+  <!--https://www.cnblogs.com/tjudzj/p/4387145.html-->
+
+{:id="Canvas.DrawCircle" class="method"} <i/> 画圆(*圆心x坐标*{:.number},*圆心y坐标*{:.number},*半径*{:.number},*填充*{:.boolean})
+: 在画布上以给定坐标为中心绘制一个具有给定半径的圆（`填充`参数指定是否填充）。
 
 {:id="Canvas.DrawLine" class="method"} <i/> 画直线(*x1坐标*{:.number},*y1坐标*{:.number},*x2坐标*{:.number},*y2坐标*{:.number})
 : 在画布上给定坐标之间(从x1,y1点到x2,y2点)绘制一条线。
@@ -284,7 +268,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
   ![画布画线](images/画布画线.png)
 
 {:id="Canvas.DrawPoint" class="method"} <i/> 画点(*x坐标*{:.number},*y坐标*{:.number})
-: Draws a point at the given coordinates on the canvas.
+: 在画布上给定坐标处绘制一个点。
 
 {:id="Canvas.DrawShape" class="method"} <i/> 画多边形(*坐标点列表*{:.list},*填充*{:.boolean})
 : 在画布上绘制多边形。
@@ -294,20 +278,16 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
   第一个点和最后一个点不需要相同。例如 ((x1 y1) (x2 y2) (x3 y3)) 当 `填充` 为 `真` 时，形状将被填充颜色。
 
 {:id="Canvas.DrawText" class="method"} <i/> 绘制文本(*文本*{:.text},*x坐标*{:.number},*y坐标*{:.number})
-: Draws the specified text relative to the specified coordinates
- using the values of the [`FontSize`](#Canvas.FontSize) and
- [`TextAlignment`](#Canvas.TextAlignment) properties.
+: 使用 [`字体大小`](#Canvas.FontSize) 和 [`文本对齐`](#Canvas.TextAlignment) 属性的值绘制相对于指定坐标的指定文本。
 
 {:id="Canvas.DrawTextAtAngle" class="method"} <i/> 沿角度绘制文本(*文本*{:.text},*x坐标*{:.number},*y坐标*{:.number},*angle*{:.number})
-: Draws the specified text starting at the specified coordinates
- at the specified angle using the values of the [`FontSize`](#Canvas.FontSize) and
- [`TextAlignment`](#Canvas.TextAlignment) properties.
+: 使用 [`字体大小`](#Canvas.FontSize) 和 [`文本对齐`](#Canvas.TextAlignment) 属性的值从指定坐标开始以**指定角度**绘制指定文本。
 
 {:id="Canvas.GetBackgroundPixelColor" class="method returns color"} <i/> 获取背景像素色值(*x坐标*{:.number},*y坐标*{:.number})
-: Gets the color of the given pixel, ignoring sprites.
+: 获取给定坐标处像素的颜色，不包括精灵。
 
 {:id="Canvas.GetPixelColor" class="method returns color"} <i/> 获取像素色值(*x坐标*{:.number},*y坐标*{:.number})
-: Gets the color of the given pixel, including sprites.
+: 获取给定坐标处像素的颜色，包括精灵。
 
 {:id="Canvas.Save" class="method returns text"} <i/> 保存()
 : 将此画布的图片（包括背景图像和绘制内容）保存到设备的外部存储(file:///)中。如果发生错误，将触发[屏幕](userinterface.html#Screen)的 [出现错误时](userinterface.html#Screen.ErrorOccurred) 事件。
@@ -317,154 +297,138 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Canvas.SaveAs" class="method returns text"} <i/> 另存为...(*文件名*{:.text})
 : 将此画布的图片以指定的文件名保存到设备的外部存储文件中，文件名必须以“.jpg”、“.jpeg”或“.png”之一结尾（文件类型：JPEG 或 PNG）。
 
-{:id="Canvas.SetBackgroundPixelColor" class="method"} <i/> SetBackgroundPixelColor(*x*{:.number},*y*{:.number},*color*{:.color})
-: Sets the color of the given pixel.  This has no effect if the
- coordinates are out of bounds.
+{:id="Canvas.SetBackgroundPixelColor" class="method"} <i/> 设置背景像素色值(*x坐标*{:.number},*y坐标*{:.number},*颜色*{:.color})
+: 设置给定像素的颜色。如果坐标超出范围，则不会生效。
 
 ## ![icon](images/imagesprite.png)  图像精灵  {#ImageSprite}
 
-A 'sprite' that can be placed on a [`Canvas`](#Canvas), where it can react to touches and drags,
- interact with other sprites ([`Ball`](#Ball)s and other `ImageSprite`s) and the edge of the
- `Canvas`, and move according to its property values. Its appearance is that of the image
- specified in its [`Picture`](#ImageSprite.Picture) property (unless its [`Visible`](#ImageSprite.Visible) property is
- `假`{:.logic.block}.
+  可以放置在 [`画布`](#Canvas) 上的“精灵”，它可以对触摸和拖动做出反应，与其他精灵（[`球形精灵`](#Ball) 和其他 `图像精灵` 进行交互） ) 和 `画布` 的边缘，并根据其属性值移动。
 
- To have an `ImageSprite` move 10 pixels to the left every 1000 milliseconds (one second), for
- example, you would set the [`Speed`](#ImageSprite.Speed) property to 10 [pixels], the [`Interval`](#ImageSprite.Interval)
- property to 1000 [milliseconds], the [`Heading`](#ImageSprite.Heading) property to 180 [degrees], and the
- [`Enabled`](#ImageSprite.Enabled) property to `真`{:.logic.block}. A sprite whose [`Rotates`](#ImageSprite.Rotates)
- property is `真`{:.logic.block} will rotate its image as the sprite's heading changes.
- *Checking for collisions with a rotated sprite currently checks the sprite's unrotated position
- so that collision checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.* Any of the sprite properties can be changed at any time under program control.
+  它的外观是其 [`图片`](#ImageSprite.Picture) 属性中指定的图像的外观（除非其 [`可见性`](#ImageSprite.Visible) 属性是 `假`{:.logic.block}）。
 
-
+  例如，要让`图像精灵`每 1000 毫秒（一秒）向左移动 10 个像素，可以将 [`速度`](#ImageSprite.Speed) 属性设置为 10 (pixels)，[`间隔` ](#ImageSprite.Interval) 属性设置为 1000 (毫秒)，[`方向`](#ImageSprite.Heading) 属性设置为 180 (度)，[`启用`](#ImageSprite.Enabled) 属性设置为 `真 `{:.logic.block}。
+  
+  [`旋转`](#ImageSprite.Rotates) 属性为 `真`{:.logic.block} 的精灵将随着精灵方向的变化而旋转其图像。
+  
+  *检查与旋转精灵的碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。*
+  
+  任何精灵属性都可以通过程序控制随时修改。
 
 ### 属性  {#ImageSprite-Properties}
 
 {:.properties}
 
-{:id="ImageSprite.Enabled" .boolean} *Enabled*
-: Controls whether the `ImageSprite` moves when its speed is non-zero.
+{:id="ImageSprite.Enabled" .boolean} *启用*
+: 控制`图像精灵`在其速度非零时是否移动。
 
-{:id="ImageSprite.Heading" .number} *Heading*
-: The `ImageSprite`'s heading in degrees above the positive x-axis. Zero degrees is toward the right
- of the screen; 90 degrees is toward the top of the screen.
+{:id="ImageSprite.Heading" .number} *方向*
+: `图像精灵` 在 x 轴方向上以度数表示的方向，图示如下：
 
-{:id="ImageSprite.Height" .number .bo} *Height*
-: The height of the ImageSprite in pixels.
+ ![方向含义](images/direction.jpg)
 
-{:id="ImageSprite.Interval" .number} *Interval*
-: The interval in milliseconds at which the `ImageSprite`'s position is updated. For example, if the
- `Interval` is 50 and the [`Speed`](#ImageSprite.Speed) is 10, then the `ImageSprite` will move 10 pixels
- every 50 milliseconds.
+{:id="ImageSprite.Height" .number .bo} *高度*
+: `图像精灵` 的高度（以像素px为单位）。
 
-{:id="ImageSprite.Picture" .text} *Picture*
-: Specifies the path of the sprite's picture.
+{:id="ImageSprite.Interval" .number} *间隔*
+: 更新`图像精灵`位置的时间间隔（以毫秒为单位）。例如，如果`间隔` 为 50，[`速度`](#ImageSprite.Speed) 为 10，则`图像精灵`将每50毫秒移动10个像素。
 
-{:id="ImageSprite.Rotates" .boolean} *Rotates*
-: If true, the sprite image rotates to match the sprite's heading. If false, the sprite image
- does not rotate when the sprite changes heading. The sprite rotates around its centerpoint.
+{:id="ImageSprite.Picture" .text} *图片*
+: 指定精灵图片的路径。
 
-{:id="ImageSprite.Speed" .number} *Speed*
-: The speed at which the `ImageSprite` moves. The `ImageSprite` moves this many pixels every
- [`Interval`](#ImageSprite.Interval) milliseconds if [`Enabled`](#ImageSprite.Enabled) is `真`{:.logic.block}.
+{:id="ImageSprite.Rotates" .boolean} *旋转*
+: 如果为 `真`，则精灵图像将旋转以匹配精灵的方向。
 
-{:id="ImageSprite.Visible" .boolean} *Visible*
-: Sets whether sprite should be visible.
+  如果为 `假`，则当精灵改变方向时，精灵图像不会旋转。
+  
+  精灵围绕其中心点旋转。
 
-{:id="ImageSprite.Width" .number .bo} *Width*
-: The width of the ImageSprite in pixels.
+{:id="ImageSprite.Speed" .number} *速度*
+: `图像精灵`移动的速度。如果 [`启用`](#ImageSprite.Enabled) 是`真`{:.logic.block}，`图像精灵`每隔[`间隔`](#ImageSprite.Interval)毫秒移动的像素数量。
 
-{:id="ImageSprite.X" .number} *X*
-: The horizontal coordinate of the left edge of the ImageSprite, increasing as the ImageSprite moves right.
+{:id="ImageSprite.Visible" .boolean} *可见性*
+: 设置精灵是否可见。
 
-{:id="ImageSprite.Y" .number} *Y*
-: The vertical coordinate of the top edge of the ImageSprite, increasing as the ImageSprite moves down.
+{:id="ImageSprite.Width" .number .bo} *宽度*
+: `图像精灵` 的宽度（以像素px为单位）。
 
-{:id="ImageSprite.Z" .number} *Z*
-: How the ImageSprite should be layered relative to other Balls and ImageSprites, with higher-numbered layers in front of lower-numbered layers.
+{:id="ImageSprite.X" .number} *X坐标*
+: `图像精灵` 左边缘的水平坐标，随着 `图像精灵` 向右移动而增加。
+
+{:id="ImageSprite.Y" .number} *Y坐标*
+: `图像精灵` 上边缘的垂直坐标，随着 `图像精灵` 向下移动而增加。
+
+{:id="ImageSprite.Z" .number} *Z坐标*
+: `图像精灵`应如何相对于其他`球形精灵`和`图像精灵`分层，编号较高的层位于编号较低的层之前。
 
 ### 事件  {#ImageSprite-Events}
 
 {:.events}
 
-{:id="ImageSprite.CollidedWith"} CollidedWith(*other*{:.component})
-: Event handler called when two enabled sprites ([`Ball`](#Ball)s or [`ImageSprite`](#ImageSprite)s)
- collide. Note that checking for collisions with a rotated `ImageSprite` currently
- checks against its unrotated position. Therefore, collision
- checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.
+{:id="ImageSprite.CollidedWith"} 被碰撞时(*其他精灵*{:.component})
+: 事件将在两个启用的精灵（[`球形精灵`](#Ball)或[`图像精灵`](#ImageSprite)）碰撞时触发。
 
-{:id="ImageSprite.Dragged"} Dragged(*startX*{:.number},*startY*{:.number},*prevX*{:.number},*prevY*{:.number},*currentX*{:.number},*currentY*{:.number})
-: Event handler for Dragged events.  On all calls, the starting coordinates
- are where the screen was first touched, and the "current" coordinates
- describe the endpoint of the current line segment.  On the first call
- within a given drag, the "previous" coordinates are the same as the
- starting coordinates; subsequently, they are the "current" coordinates
- from the prior call. Note that the `ImageSprite` won't actually move
- anywhere in response to the Dragged event unless
- [`MoveTo`](#ImageSprite.MoveTo) is specifically called.
+  *请注意，检查与旋转的`图像精灵`碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。*
 
-{:id="ImageSprite.EdgeReached"} EdgeReached(*edge*{:.number})
-: Event handler called when the `ImageSprite` reaches an `edge`{:.variable.block} of the screen.
- If [`Bounce`](#ImageSprite.Bounce) is then called with that edge, the sprite will appear to bounce off
- of the edge it reached. Edge here is represented as an integer that indicates one of eight
- directions north(1), northeast(2), east(3), southeast(4), south (-1), southwest(-2), west(-3),
- and northwest(-4).
+{:id="ImageSprite.Dragged"} 被拖动时(*起点X坐标*{:.number},*起点Y坐标*{:.number},*前点X坐标*{:.number},*前点Y坐标*{:.number},*当前X坐标*{:.number},*当前Y坐标*{:.number})
+: 拖动事件的处理程序。在所有调用中，“起始”坐标是第一次触摸屏幕的位置，“当前”坐标描述当前线段的端点。
 
-{:id="ImageSprite.Flung"} Flung(*x*{:.number},*y*{:.number},*speed*{:.number},*heading*{:.number},*xvel*{:.number},*yvel*{:.number})
-: When a fling gesture (quick swipe) is made on the sprite: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling's vector.
+  在给定拖动中的第一次调用时，“前一个”坐标与起始坐标相同；随后，它们是先前调用的“当前”坐标。
+  
+  请注意，除非专门调用 [`移动到指定位置`](#ImageSprite.MoveTo)，否则 `图像精灵` 实际上不会移动到任何地方以响应 `被拖动` 事件。
 
-{:id="ImageSprite.NoLongerCollidingWith"} NoLongerCollidingWith(*other*{:.component})
-: Event indicating that a pair of sprites are no longer colliding.
+{:id="ImageSprite.EdgeReached"} 到达边缘时(*边缘数值*{:.number})
+: 当`图像精灵`到达屏幕的边缘时调用事件处理程序。
 
-{:id="ImageSprite.TouchDown"} TouchDown(*x*{:.number},*y*{:.number})
-: When the user begins touching the sprite (places finger on sprite and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas
+  如果随后使用该边缘数值调用 [`反弹`](#ImageSprite.Bounce)方法，则精灵将从它到达的边缘开始反弹。
+  
+  这里的边缘表示为一个整数，表示八个方向之一：
 
-{:id="ImageSprite.TouchUp"} TouchUp(*x*{:.number},*y*{:.number})
-: When the user stops touching the sprite (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas.
+  | -4：西北 | 1：北 | 2：东北 |
+  | -3：西  | **边缘数值** | 3：东 |
+  | -2：西南 | -1：南 | 4：东南 |
 
-{:id="ImageSprite.Touched"} Touched(*x*{:.number},*y*{:.number})
-: When the user touches the sprite and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.
+{:id="ImageSprite.Flung"} 被划动时(*x坐标*{:.number},*y坐标*{:.number},*速度*{:.number},*方向*{:.number},*速度X分量*{:.number},*速度Y分量*{:.number})
+: 当在精灵上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
+
+  该方法还提供投射的速度（每毫秒像素数）和[方向](#ImageSprite.Heading)（0-360 度），以及投射矢量的 x 速度和 y 速度分量。
+
+{:id="ImageSprite.NoLongerCollidingWith"} 结束碰撞时(*其他精灵*{:.component})
+: 该事件表示一对精灵不再发生碰撞。
+
+{:id="ImageSprite.TouchDown"} 被按压时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="ImageSprite.TouchUp"} 被松开时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户停止触摸精灵时（在 `被按压` 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+{:id="ImageSprite.Touched"} 被触碰时(*x坐标*{:.number},*y坐标*{:.number})
+: 当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。
 
 ### 方法  {#ImageSprite-Methods}
 
 {:.methods}
 
-{:id="ImageSprite.Bounce" class="method"} <i/> Bounce(*edge*{:.number})
-: Makes this `ImageSprite` bounce, as if off a wall. For normal bouncing, the `edge` argument should
- be the one returned by [`EdgeReached`](#ImageSprite.EdgeReached).
+{:id="ImageSprite.Bounce" class="method"} <i/> 反弹(*边缘数值*{:.number})
+: 使这个`图像精灵`弹起，就像从墙上弹起来一样。对于正常反弹，`边缘数值`参数应该是 [`到达边缘时`](#ImageSprite.EdgeReached) 返回的参数。
 
-{:id="ImageSprite.CollidingWith" class="method returns boolean"} <i/> CollidingWith(*other*{:.component})
-: Indicates whether a collision has been registered between this `ImageSprite`
- and the passed `other` sprite.
+{:id="ImageSprite.CollidingWith" class="method returns boolean"} <i/> 碰撞检测(*其他精灵*{:.component})
+: 表示此`图像精灵`和传递的`其他精灵`之间是否已发生碰撞，如发生则返回`真`。
 
-{:id="ImageSprite.MoveIntoBounds" class="method"} <i/> MoveIntoBounds()
-: Moves the sprite back in bounds if part of it extends out of bounds,
- having no effect otherwise. If the sprite is too wide to fit on the
- canvas, this aligns the left side of the sprite with the left side of the
- canvas. If the sprite is too tall to fit on the canvas, this aligns the
- top side of the sprite with the top side of the canvas.
+{:id="ImageSprite.MoveIntoBounds" class="method"} <i/> 移动到边界()
+: 如果精灵的一部分超出边界，则将精灵移回到边界内，否则没有任何效果。
 
-{:id="ImageSprite.MoveTo" class="method"} <i/> MoveTo(*x*{:.number},*y*{:.number})
-: Moves the ImageSprite so that its left top corner is at the specified `x` and `y` coordinates.
+  * 如果精灵太宽而无法适应画布，则会将精灵的左侧与画布的左侧对齐。
+  
+  * 如果精灵太高而无法适应画布，则会将精灵的顶部与画布的顶部对齐。
 
-{:id="ImageSprite.MoveToPoint" class="method"} <i/> MoveToPoint(*coordinates*{:.list})
-: Moves the ImageSprite so that its origin is at the specified x and y coordinates.
+{:id="ImageSprite.MoveTo" class="method"} <i/> 移动到指定位置(*x坐标*{:.number},*y坐标*{:.number})
+: 移动`图像精灵`使其左上角位于指定的 (x,y) 坐标处。
 
-{:id="ImageSprite.PointInDirection" class="method"} <i/> PointInDirection(*x*{:.number},*y*{:.number})
-: Turns this `ImageSprite` to point toward the point with the coordinates `(x, y)`.
+{:id="ImageSprite.MoveToPoint" class="method"} <i/> 移动到坐标(*坐标*{:.list})
+: 移动`图像精灵`使其原点位于指定的 (x,y) 坐标处。（与上面方法效果没有区别，仅参数形式差异）
 
-{:id="ImageSprite.PointTowards" class="method"} <i/> PointTowards(*target*{:.component})
-: Turns this `ImageSprite` to point towards a given `target` sprite. The new heading will be parallel
- to the line joining the centerpoints of the two sprites.
+{:id="ImageSprite.PointInDirection" class="method"} <i/> 转向指定位置(*x坐标*{:.number},*y坐标*{:.number})
+: 转动此`图像精灵`方向以指向坐标为 (x, y) 的点。
+
+{:id="ImageSprite.PointTowards" class="method"} <i/> 转向指定对象(*目标精灵*{:.component})
+: 转动此`图像精灵`方向以指向给定的`目标精灵`。新的方向将平行于连接两个精灵中心点的线。
