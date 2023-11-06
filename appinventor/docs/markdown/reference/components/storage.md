@@ -655,16 +655,18 @@ FileTools demo程序下载：
 {:id="TinyDB.ClearTag" class="method"} <i/> 清除标签数据(*标签*{:.text})
 : 清除指定 `标签`{:.text.block} 下的数据。
 
-{:id="TinyDB.GetTags" class="method returns any"} <i/> 获取标签数据()
+{:id="TinyDB.GetTags" class="method returns any"} <i/> 获取标签列表()
 : 返回数据存储中所有标签的列表（是一个列表对象）。
 
-{:id="TinyDB.GetValue" class="method returns any"} <i/> 获取数值(*标签*{:.text},*无标签时返回值*{:.any})
+{:id="TinyDB.GetValue" class="method returns any"} <i/> 获取值(*标签*{:.text},*无标签时返回值*{:.any})
 : 获取指定 `标签`{:.text.block} 下的数据，如果没有该标签，则返回 `无标签时返回值`{:.variable.block} 中指定的值。
 
-{:id="TinyDB.StoreValue" class="method"} <i/> 保存数值(*tag*{:.text},*存储值*{:.any})
+{:id="TinyDB.StoreValue" class="method"} <i/> 保存值(*tag*{:.text},*存储值*{:.any})
 : 将 `存储值`{:.variable.block} 保存到指定 `标签`{:.text.block} 下，当应用程序重新启动时，存储仍然存在于手机上。
  
-: `存储值`可以是文本，也可以是数字。重复保存同一个标签的话，第二次会覆盖第一次的值，即以最新存储的值为准。
+: `存储值`可以是文本，也可以是数字，**还可以是列表**。
+
+  重复保存同一个标签的话，第二次会覆盖第一次的值，即以最新存储的值为准。
 
 **拓展**
 
@@ -678,7 +680,7 @@ FileTools demo程序下载：
 
 `网络微数据库` 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，**但是非常有限**，主要是作为对那些想要创建自己的组件与 Web 对话的`Demo应用`。
 
-随附的 Web 服务位于 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。该组件有方法[保存数值](#TinyWebDB.StoreValue) 和[获取数值](#TinyWebDB.GetValue) ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。
+随附的 Web 服务位于 [http://tinywebdb.appinventor.mit.edu](http://tinywebdb.appinventor.mit.edu)。该组件有方法[保存值](#TinyWebDB.StoreValue) 和[获取值](#TinyWebDB.GetValue) ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。
 
 **中文网注：**
 
@@ -700,23 +702,23 @@ MIT官方的功能很单一，目前国内也有免费的网络微数据库，�
 
 {:.events}
 
-{:id="TinyWebDB.GotValue"} GotValue(*网络微数据库标签*{:.text},*网络微数据库数值*{:.any})
-: [`获取数值`](#TinyWebDB.GetValue) 请求服务器执行成功时触发该事件。
+{:id="TinyWebDB.GotValue"} 已获得值时(*网络微数据库标签*{:.text},*网络微数据库值*{:.any})
+: [`获取值`](#TinyWebDB.GetValue) 请求服务器执行成功时触发该事件。
 
-{:id="TinyWebDB.ValueStored"} 数值存储完毕()
-: [`保存数值`](#TinyWebDB.StoreValue) 请求服务器执行成功时触发该事件。
+{:id="TinyWebDB.ValueStored"} 值存储完毕时()
+: [`保存值`](#TinyWebDB.StoreValue) 请求服务器执行成功时触发该事件。
 
-{:id="TinyWebDB.WebServiceError"} 发生Web服务故障(*消息*{:.text})
+{:id="TinyWebDB.WebServiceError"} 发生Web服务故障时(*消息*{:.text})
 : 与Web服务器的通信发出错误信号时触发该事件。
 
 ### 方法  {#TinyWebDB-Methods}
 
 {:.methods}
 
-{:id="TinyWebDB.GetValue" class="method"} <i/> 获取数值(*标签*{:.text})
-: `获取数值` 请求Web服务获取存储在指定 `标签`{:.text.block} 下的值，如果 `标签`{:.text.block} 下没有存储值，则返回什么取决于Web服务。
+{:id="TinyWebDB.GetValue" class="method"} <i/> 获取值(*标签*{:.text})
+: `获取值` 请求Web服务获取存储在指定 `标签`{:.text.block} 下的值，如果 `标签`{:.text.block} 下没有存储值，则返回什么取决于Web服务。
 
-  该组件接受返回任何内容，然后 [`获取数值`](#TinyWebDB.GotValue) 事件将在完成时触发。
+  该组件接受返回任何内容，然后 [`获取值`](#TinyWebDB.GotValue) 事件将在完成时触发。
 
-{:id="TinyWebDB.StoreValue" class="method"} <i/> 保存数值(*标签*{:.text},*待存储值*{:.any})
-: 向Web服务发送请求，将给定的 `待存储值`{:.variable.block} 存储在指定的 `标签`{:.text.block} 下，[`数值存储完成`](#TinyWebDB.ValueStored) 事件将在完成时触发。
+{:id="TinyWebDB.StoreValue" class="method"} <i/> 保存值(*标签*{:.text},*待存储值*{:.any})
+: 向Web服务发送请求，将给定的 `待存储值`{:.variable.block} 存储在指定的 `标签`{:.text.block} 下，[`值存储完成`](#TinyWebDB.ValueStored) 事件将在完成时触发。

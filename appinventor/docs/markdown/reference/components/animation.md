@@ -246,16 +246,16 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Canvas.Clear" class="method"} <i/> 清除画布()
 : 清除画布，但不删除背景图像（如果设置了的话）。
 
-{:id="Canvas.DrawArc" class="method"} <i/> 画弧线(*左*{:.number},*顶*{:.number},*右*{:.number},*底*{:.number},*起始角度*{:.number},*圆心角*{:.number},*包含圆心*{:.boolean},*填充*{:.boolean})
+{:id="Canvas.DrawArc" class="method"} <i/> 画弧(*左*{:.number},*顶*{:.number},*右*{:.number},*底*{:.number},*起始角度*{:.number},*扫过角度*{:.number},*是否包含圆心*{:.boolean},*填充*{:.boolean})
 : 通过从指定椭圆（由左、上、右和下指定）绘制圆弧，在画布上绘制圆弧。
 
   向右旋转时起始角度为0，顺时针旋转时起始角度增大。
   
-  当 `包含圆心` 为 `真` 时，将绘制扇形而不是圆弧。
+  当 `是否包含圆心` 为 `真` 时，将绘制扇形而不是圆弧。
   
   当 `填充` 为 `真` 时，将绘制填充弧（或扇形），而不仅仅是轮廓。
 
-  <!--https://www.cnblogs.com/tjudzj/p/4387145.html-->
+  详细用法请参考[《App Inventor 2 绘图之画布画弧(DrawArc)函数的用法》](../creative/DrawArc.html)。
 
 {:id="Canvas.DrawCircle" class="method"} <i/> 画圆(*圆心x坐标*{:.number},*圆心y坐标*{:.number},*半径*{:.number},*填充*{:.boolean})
 : 在画布上以给定坐标为中心绘制一个具有给定半径的圆（`填充`参数指定是否填充）。

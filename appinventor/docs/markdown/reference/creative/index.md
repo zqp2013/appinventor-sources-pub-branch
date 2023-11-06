@@ -28,6 +28,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【微数据库】App Inventor 2数据存储组件之：微数据库](https://bbs.tsingfun.com/thread-1129-1-1.html)
 1. [【游戏入门】App Inventor 2 翻水果游戏开发，你也来试试吧！](https://www.bilibili.com/video/BV1C54y1T7w2/)
 1. [【游戏入门】App Inventor 2 绘图动画组件使用，游戏App开发最佳入门](https://www.bilibili.com/video/BV1bM4y1C7pn/)
+1. [【绘图画弧】App Inventor 2 绘图之画布画弧(DrawArc)函数的用法](DrawArc.html)
 1. [【文本块】App Inventor 2 文本块使用方法  - 打字机效果（1）](https://www.bilibili.com/video/BV1424y1x77h/)
 1. [【文本块】App Inventor 2 文本块使用方法2 - 打字机效果（2）](https://www.bilibili.com/video/BV1RX4y1d7Sk/)
 1. [【计时器】App Inventor 2 计时器+效果实现 - 打字机效果（3）](https://www.bilibili.com/video/BV1ns4y1U7wH/)
