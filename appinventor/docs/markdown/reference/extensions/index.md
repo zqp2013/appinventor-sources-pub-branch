@@ -4,7 +4,7 @@ layout: documentation
 description: 拓展参考文档：包括如何从.aia项目文件中提取.aix拓展包文件、FileTools 拓展、TaifunImage 拓展、SimpleBase64 拓展、MqttClient 拓展、ClientSocket 拓展等。
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp;本文档描述您在使用App Inventor 2构建应用程序时所能用到的拓展，以打造界面更加酷炫、功能更加强大的App。
+&nbsp;&nbsp;&nbsp;&nbsp;本文档描述您在使用App Inventor 2构建应用程序时所能用到的拓展，以打造界面更加酷炫、功能更加强大的App。更多拓展请移步至[《原版最全拓展一览》](https://puravidaapps.com/extensions.php)。
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![拓展](images/拓展.png)
 
