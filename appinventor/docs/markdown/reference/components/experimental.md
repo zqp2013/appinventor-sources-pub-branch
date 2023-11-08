@@ -46,6 +46,8 @@ ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此�
 {:id="ChatBot.Token" .text .wo} *访问令牌*
 : 要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
 
+  默认情况下，令牌是无法访问MIT代理服务器的，如需有效令牌请参照[《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》](../creative/token.html)。
+
 ### 事件  {#ChatBot-Events}
 
 {:.events}
@@ -186,6 +188,8 @@ ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。�
 
 {:id="ImageBot.Token" .text .wo} *访问令牌*
 : 要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
+
+  默认情况下，令牌是无法访问MIT代理服务器的，如需有效令牌请参照[《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》](../creative/token.html)。
 
 ### 事件  {#ImageBot-Events}
 

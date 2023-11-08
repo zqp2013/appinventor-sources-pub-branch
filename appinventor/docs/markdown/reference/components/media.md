@@ -487,8 +487,9 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:.properties}
 
 {:id="Translator.ApiKey" .text .wo} *ApiKey*
-: The API Key to use. MIT App Inventor will automatically fill this
- value in. You should not need to change it.
+: 要使用的API密钥，默认会自动填写此内容值，不需要更改它。
+
+  默认情况下无法访问MIT代理服务器，如需有效API密钥请参照[《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》](../creative/token.html)。
 
 ### 事件  {#Translator-Events}
 
