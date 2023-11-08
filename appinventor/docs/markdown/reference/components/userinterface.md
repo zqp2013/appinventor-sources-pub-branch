@@ -1037,30 +1037,25 @@ The Notifier component displays alert messages and creates Android log entries t
 
 ## ![icon](images/PasswordTextBoxIcon.png)  密码输入框  {#PasswordTextBox}
 
-Users enter passwords in a password text box component, which hides the text that has been typed in it.
+用户在`密码输入框`组件中输入密码，该组件会隐藏已在其中键入的文本。
 
  ![Example of a PasswordTextBox](images/passwordtextbox.png)
 
- A password text box is the same as the ordinary [`TextBox`](#TextBox) component, except that it does
- not display the characters typed by the user.
+  `密码输入框`与普通的 [`文本输入框`](#TextBox) 组件相同，只是它不明文显示用户键入的字符。
 
- You can get or set the value of the text in the box with the [`Text`](#PasswordTextBox.Text) property. If
- [`Text`](#PasswordTextBox.Text) is blank, you can use the [`Hint`](#PasswordTextBox.Hint) property to provide the user
- with a suggestion of what to type. The [`Hint`](#PasswordTextBox.Hint) appears as faint text in the box.
+  可以使用 [`文本`](#PasswordTextBox.Text) 属性获取或设置框中文本的值。 如果 [`文本`](#PasswordTextBox.Text) 为空，可以使用 [`提示`](#PasswordTextBox.Hint) 属性向用户提供输入内容的建议。 [`提示`](#PasswordTextBox.Hint) 在框中显示为浅淡色文本。
 
- Password text box components are usually used with a [`Button`](#Button) component. The user taps the
- `Button` after entering text.
+  密码文本框组件通常与 [`按钮`](#Button) 组件一起使用。 用户输入文本后点击“按钮”。
 
 ### 属性  {#PasswordTextBox-Properties}
 
 {:.properties}
 
 {:id="PasswordTextBox.BackgroundColor" .color} *背景颜色*
-: The background color of the `PasswordTextBox``. You can choose a color by name in the Designer or in
- the Blocks Editor. The default background color is 'default' (shaded 3-D look).
+: 设置`密码输入框`的背景颜色。所有视图中均可设置，默认背景颜色为“默认”（阴影 3D 外观）。
 
 {:id="PasswordTextBox.Enabled" .boolean} *启用*
-: If set, user can enter text into the `PasswordTextBox`.
+: 设置`密码输入框`是否可以接受用户输入。
 
 {:id="PasswordTextBox.FontBold" .boolean .do} *粗体*
 : 设置`密码输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
@@ -1080,21 +1075,21 @@ Users enter passwords in a password text box component, which hides the text tha
 {:id="PasswordTextBox.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`密码输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="PasswordTextBox.Hint" .text} *Hint*
-: `PasswordTextBox` hint for the user.
+{:id="PasswordTextBox.Hint" .text} *提示*
+: 设置`密码输入框`的提示信息，如果 [`文本`](#PasswordTextBox.Text) 为空，则该提示信息在框中显示为浅淡色文本。
 
-{:id="PasswordTextBox.NumbersOnly" .boolean} *NumbersOnly*
-: If true, then this `PasswordTextBox`` accepts only numbers as keyboard input. Numbers can include a
- decimal point and an optional leading minus sign. This applies to keyboard input only. Even
- if `NumbersOnly` is true, you can set the text to anything at all using the
- [`Text`](#PasswordTextBox.Text) property.
+{:id="PasswordTextBox.NumbersOnly" .boolean} *仅限数字*
+: 如果为 `真`，则此`密码输入框`仅接受数字作为键盘输入。
 
-{:id="PasswordTextBox.PasswordVisible" .boolean .bo} *PasswordVisible*
-: Specifies whether the password is hidden (default) or shown.
+  数字可以包含小数点和可选的前导减号（负数）。这仅适用于键盘输入（不可粘贴）。
+  
+  即便“仅限数字”属性为 `真`，也可使用 [`文本`](#PasswordTextBox.Text) 属性将文本设置为任何内容。
+
+{:id="PasswordTextBox.PasswordVisible" .boolean .bo} *显示密码*
+: 指定密码是隐藏（默认）还是显示。
 
 {:id="PasswordTextBox.Text" .text} *文本*
-: The text in the `PasswordTextBox`, which can be set by the programmer in the Designer or Blocks Editor,
- or it can be entered by the user (unless the [`Enabled`](#PasswordTextBox.Enabled) property is false).
+: `密码输入框`中的文本，所有视图中均可进行设置，也可以由用户输入（除非 [`启用`](#PasswordTextBox.Enabled) 属性为 `假`）。
 
 {:id="PasswordTextBox.TextAlignment" .number .do} *文本对齐*
 : 设置`密码输入框`文本的对齐方式，有效值有： 
@@ -1121,20 +1116,18 @@ Users enter passwords in a password text box component, which hides the text tha
 
 {:.events}
 
-{:id="PasswordTextBox.GotFocus"} GotFocus()
-: Event raised when the `PasswordTextBox` is selected for input, such as by
- the user touching it.
+{:id="PasswordTextBox.GotFocus"} 获得焦点()
+: 选择`密码输入框`进行输入（例如用户触摸它）时引发的事件。
 
-{:id="PasswordTextBox.LostFocus"} LostFocus()
-: Event raised when the `PasswordTextBox` is no longer selected for input, such
- as if the user touches a different text box.
+{:id="PasswordTextBox.LostFocus"} 失去焦点()
+: 当不再选择`密码输入框`进行输入时引发事件，例如用户触摸其他的输入框。
 
 ### 方法  {#PasswordTextBox-Methods}
 
 {:.methods}
 
-{:id="PasswordTextBox.RequestFocus" class="method"} <i/> RequestFocus()
-: Request focus to current `PasswordTextBox`.
+{:id="PasswordTextBox.RequestFocus" class="method"} <i/> 焦点请求()
+: 请求焦点到当前的`密码输入框`。
 
 
 ## ![icon](images/slider.png)  滑动条  {#Slider}
@@ -1357,40 +1350,31 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 ## ![icon](images/TextBoxIcon.png)  文本输入框  {#TextBox}
 
-Users enter text in a text box component.
+用户可在`文本输入框`组件中输入文本。
 
  ![Example of a TextBox](images/textbox.png)
+  
+  `文本输入框`组件中的初始或用户输入的文本值位于 [`文本`](#TextBox.Text) 属性中。 如果 [`文本`](#TextBox.Text) 为空，可以使用 [`提示`](#TextBox.Hint) 属性向用户提供输入内容的建议。 [`提示`](#TextBox.Hint) 在框中显示为浅淡色文本。
 
- The initial or user-entered text value in a text box component is in the [`Text`](#TextBox.Text)
- property. If [`Text`](#TextBox.Text) is blank, you can use the [`Hint`](#TextBox.Hint) property to provide
- the user with a suggestion of what to type. The [`Hint`](#TextBox.Hint) appears as faint text in the box.
+  * [`允许多行`](#TextBox.MultiLine) 属性确定文本是否可以有多于一行。对于单行文本框，当用户按完成键时键盘将自动关闭；要关闭多行文本框的键盘，需要使用 [`隐藏键盘`](#TextBox.HideKeyboard) 方法或依赖用户按返回键。
 
- The [`MultiLine`](#TextBox.MultiLine) property determines if the text can have more than one line.
- For a single line text box, the keyboard will close automatically when the user presses the Done
- key. To close the keyboard for multiline text boxes, the app should use the
- [`HideKeyboard`](#TextBox.HideKeyboard) method or rely on the user to press the Back key.
+  * [`仅限数字`](#TextBox.NumbersOnly) 属性限制键盘仅接受数字输入。
 
- The [`NumbersOnly`](#TextBox.NumbersOnly) property restricts the keyboard to accept numeric input only.
+  * 其他属性影响文本框的外观（[`文本对齐`](#TextBox.TextAlignment)、[`背景颜色`](#TextBox.BackgroundColor)等）以及是否可以接受用户输入([`启用`](#TextBox.Enabled))。
 
- Other properties affect the appearance of the text box
- ([`TextAlignment`](#TextBox.TextAlignment), [`BackgroundColor`](#TextBox.BackgroundColor), etc.) and whether it can be used
- ([`Enabled`](#TextBox.Enabled)).
+  文本框通常与 [`按钮`](#Button) 组件一起使用，用户在文本输入完成后单击按钮。
 
- Text boxes are usually used with the [`Button`](#Button) component, with the user clicking on the
- `Button` when text entry is complete.
-
- If the text entered by the user should not be displayed, use [`PasswordTextBox`](#PasswordTextBox) instead.
+  如果不应显示用户输入的文本，请改用[密码输入框](#PasswordTextBox)。
 
 ### 属性  {#TextBox-Properties}
 
 {:.properties}
 
 {:id="TextBox.BackgroundColor" .color} *背景颜色*
-: The background color of the `TextBox``. You can choose a color by name in the Designer or in
- the Blocks Editor. The default background color is 'default' (shaded 3-D look).
+: 设置`文本输入框`的背景颜色。所有视图中均可设置，默认背景颜色为“默认”（阴影 3D 外观）。
 
 {:id="TextBox.Enabled" .boolean} *启用*
-: If set, user can enter text into the `TextBox`.
+: 设置`文本输入框`是否可以接受用户输入。
 
 {:id="TextBox.FontBold" .boolean .do} *粗体*
 : 设置`文本输入框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
@@ -1410,27 +1394,28 @@ Users enter text in a text box component.
 {:id="TextBox.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`文本输入框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="TextBox.Hint" .text} *Hint*
-: `TextBox` hint for the user.
+{:id="TextBox.Hint" .text} *提示*
+: 设置`文本输入框`的提示信息，如果 [`文本`](#TextBox.Text) 为空，则该提示信息在框中显示为浅淡色文本。
 
-{:id="TextBox.MultiLine" .boolean} *MultiLine*
-: If true, then this `TextBox` accepts multiple lines of input, which are entered using the
- return key. For single line text boxes there is a Done key instead of a return key, and
- pressing Done hides the keyboard. The app should call the HideKeyboard method to hide the
- keyboard for a mutiline text box.
+{:id="TextBox.MultiLine" .boolean} *允许多行*
+: 如果为 `真`，则此`文本输入框`接受多行输入（使用换行键）。
 
-{:id="TextBox.NumbersOnly" .boolean} *NumbersOnly*
-: If true, then this `TextBox`` accepts only numbers as keyboard input. Numbers can include a
- decimal point and an optional leading minus sign. This applies to keyboard input only. Even
- if `NumbersOnly` is true, you can set the text to anything at all using the
- [`Text`](#TextBox.Text) property.
+  对于单行文本框，有一个“完成”键（没有“返回”键），并且按“完成”会隐藏键盘。
+  
+  多行文本框的键盘需要调用[`隐藏键盘`](#TextBox.HideKeyboard) 方法来隐藏。
 
-{:id="TextBox.ReadOnly" .boolean} *ReadOnly*
-: Whether the TextBox is read-only. By default, this is `真`{:.logic.block}.
+{:id="TextBox.NumbersOnly" .boolean} *仅限数字*
+: 如果为 `真`，则此`文本输入框`仅接受数字作为键盘输入。
+
+  数字可以包含小数点和可选的前导减号（负数）。这仅适用于键盘输入（不可粘贴）。
+  
+  即便“仅限数字”属性为 `真`，也可使用 [`文本`](#TextBox.Text) 属性将文本设置为任何内容。
+
+{:id="TextBox.ReadOnly" .boolean} *只读*
+: `文本输入框`是否是只读的。
 
 {:id="TextBox.Text" .text} *文本*
-: The text in the `TextBox`, which can be set by the programmer in the Designer or Blocks Editor,
- or it can be entered by the user (unless the [`Enabled`](#TextBox.Enabled) property is false).
+: `文本输入框`中的文本，所有视图中均可进行设置，也可以由用户输入（除非 [`启用`](#TextBox.Enabled) 属性为 `假`）。
 
 {:id="TextBox.TextAlignment" .number .do} *文本对齐*
 : 设置`文本输入框`文本的对齐方式，有效值有： 
@@ -1457,24 +1442,21 @@ Users enter text in a text box component.
 
 {:.events}
 
-{:id="TextBox.GotFocus"} GotFocus()
-: Event raised when the `TextBox` is selected for input, such as by
- the user touching it.
+{:id="TextBox.GotFocus"} 获得焦点()
+: 选择`文本输入框`进行输入（例如用户触摸它）时引发的事件。
 
-{:id="TextBox.LostFocus"} LostFocus()
-: Event raised when the `TextBox` is no longer selected for input, such
- as if the user touches a different text box.
+{:id="TextBox.LostFocus"} 失去焦点()
+: 当不再选择`文本输入框`进行输入时引发事件，例如用户触摸其他的输入框。
 
 ### 方法  {#TextBox-Methods}
 
 {:.methods}
 
-{:id="TextBox.HideKeyboard" class="method"} <i/> HideKeyboard()
-: Hide the keyboard. Only multiline text boxes need this. Single line text boxes close the
- keyboard when the users presses the Done key.
+{:id="TextBox.HideKeyboard" class="method"} <i/> 隐藏键盘()
+: 隐藏键盘。只有**多行文本框**需要用到这个方法；当用户按下“完成”键时，单行文本框会自动关闭键盘。
 
-{:id="TextBox.RequestFocus" class="method"} <i/> RequestFocus()
-: Request focus to current `TextBox`.
+{:id="TextBox.RequestFocus" class="method"} <i/> 焦点请求()
+: 请求焦点到当前的`文本输入框`。
 
 
 ## ![icon](images/TimePicker.png)  时间选择框  {#TimePicker}
