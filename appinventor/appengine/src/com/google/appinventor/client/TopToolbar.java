@@ -711,7 +711,7 @@ public class TopToolbar extends Composite {
         // 默认冷却时间30分钟，todo:qpzhou 待配置化
         int left_minutes = 30 - interval_minutes;
         if (left_minutes > 0) {
-          Window.alert("您需要在 " + left_minutes + " 分钟后才能再次执行编译操作！");
+          Window.alert("您需要在 " + left_minutes + " 分钟后才能再次执行编译操作！（请优先使用AI伴侣进行常规测试，编译仅作为最终发布验证）");
           return;
         }
       }
