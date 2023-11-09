@@ -14,6 +14,7 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 
 1. [【百度网盘】App Inventor 2 接入百度网盘API](pan.html)
 1. [【文件上传】App Inventor 2 实现上传文件到服务器全方案总结](file_upload.html)
+1. [【MySQL】App Inventor 2 如何连接MySQL数据库（阿里云数据库）](mysql.html)
 1. [【云图片】利用网络微数据库实现图片上传至云端及从云端下载]
 1. [【AI云识图】利用云API进行AI识图]
 

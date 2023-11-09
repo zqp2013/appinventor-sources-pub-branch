@@ -59,24 +59,24 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
  `值`{:.variable.block} is the object that was the first in the list, and which is now
  removed.
 
-{:id="CloudDB.GotValue"} GotValue(*tag*{:.text},*value*{:.any})
+{:id="CloudDB.GotValue"} GotValue(*标签*{:.text},*值*{:.any})
 : Indicates that a [`GetValue`](#CloudDB.GetValue) request has succeeded.
 
 {:id="CloudDB.TagList"} TagList(*value*{:.list})
 : Event triggered when we have received the list of known tags. Run in response to a call to the
  [`GetTagList`](#CloudDB.GetTagList) function.
 
-{:id="CloudDB.UpdateDone"} UpdateDone(*tag*{:.text},*operation*{:.text})
+{:id="CloudDB.UpdateDone"} UpdateDone(*标签*{:.text},*operation*{:.text})
 : Indicates that operations that store data to CloudDB have completed.
 
 ### 方法  {#CloudDB-Methods}
 
 {:.methods}
 
-{:id="CloudDB.AppendValueToList" class="method"} <i/> AppendValueToList(*tag*{:.text},*itemToAdd*{:.any})
+{:id="CloudDB.AppendValueToList" class="method"} <i/> AppendValueToList(*标签*{:.text},*itemToAdd*{:.any})
 : Append a value to the end of a list atomically. If two devices use this function simultaneously, both will be appended and no data lost.
 
-{:id="CloudDB.ClearTag" class="method"} <i/> ClearTag(*tag*{:.text})
+{:id="CloudDB.ClearTag" class="method"} <i/> ClearTag(*标签*{:.text})
 : Remove the tag from CloudDB.
 
 {:id="CloudDB.CloudConnected" class="method returns boolean"} <i/> CloudConnected()
@@ -87,17 +87,17 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 : Asks `CloudDB` to retrieve all the tags belonging to this project. The
  resulting list is returned in the event [`TagList`](#CloudDB.TagList).
 
-{:id="CloudDB.GetValue" class="method"} <i/> GetValue(*tag*{:.text},*valueIfTagNotThere*{:.any})
+{:id="CloudDB.GetValue" class="method"} <i/> GetValue(*标签*{:.text},*valueIfTagNotThere*{:.any})
 : `GetValue` asks `CloudDB` to get the value stored under the given tag.
  It will pass the result to the [`GotValue`](#CloudDB.GotValue) will be given.
 
-{:id="CloudDB.RemoveFirstFromList" class="method"} <i/> RemoveFirstFromList(*tag*{:.text})
+{:id="CloudDB.RemoveFirstFromList" class="method"} <i/> RemoveFirstFromList(*标签*{:.text})
 : Obtain the first element of a list and atomically remove it. If two devices use this function
  simultaneously, one will get the first element and the the other will get the second element,
  or an error if there is no available element. When the element is available, the
  [`FirstRemoved`](#CloudDB.FirstRemoved) event will be triggered.
 
-{:id="CloudDB.StoreValue" class="method"} <i/> StoreValue(*tag*{:.text},*valueToStore*{:.any})
+{:id="CloudDB.StoreValue" class="method"} <i/> StoreValue(*标签*{:.text},*valueToStore*{:.any})
 : Asks `CloudDB` to store the given `value`{:.variable.block} under the given
  `tag`{:.text.block}.
 
@@ -661,7 +661,7 @@ FileTools demo程序下载：
 {:id="TinyDB.GetValue" class="method returns any"} <i/> 获取值(*标签*{:.text},*无标签时返回值*{:.any})
 : 获取指定 `标签`{:.text.block} 下的数据，如果没有该标签，则返回 `无标签时返回值`{:.variable.block} 中指定的值。
 
-{:id="TinyDB.StoreValue" class="method"} <i/> 保存值(*tag*{:.text},*存储值*{:.any})
+{:id="TinyDB.StoreValue" class="method"} <i/> 保存值(*标签*{:.text},*存储值*{:.any})
 : 将 `存储值`{:.variable.block} 保存到指定 `标签`{:.text.block} 下，当应用程序重新启动时，存储仍然存在于手机上。
  
 : `存储值`可以是文本，也可以是数字，**还可以是列表**。
