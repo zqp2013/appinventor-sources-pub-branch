@@ -571,7 +571,7 @@ body {
 }
 /*VIP活动标记*/
 .vip:after {
-    content: "11.11";
+    content: "活动";
     position: absolute;
     font-size: 12px;
     top: -9px;

@@ -40,6 +40,7 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
+            <a href="https://www.fun123.cn/reference/info/#AppEntry?f=pay" target="_blank">专享教程</a> & <a href="https://www.fun123.cn/reference/?f=pay" target="_blank">文档</a>&nbsp;&nbsp;&nbsp;
             <img src="/static/images/vip.png" width="14" height="14" style="margin-top: -4px;" />
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/vip.html?f=pay" target="_blank" style="color:#9c6521;">查看 VIP 特权</a>
@@ -74,7 +75,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <form action="/pay" method="post">
                                             <input type="hidden" name="subject" value="App Inventor 2 中文网 VIP 会员">
                                             <div class="form-group px-5 pt-5">
-                                                <label for="user_login" class="label-bold">手机号：</label>
+                                                <label class="label-bold">手机号：</label>
                                                 <div class="float-right">
                                                     <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
                                                 </div>
@@ -97,27 +98,27 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <label class="label-bold mb-1">开通/续期时长：</label>
                                                 
     <input id="month" name="period" value="1" required type="radio" 
-    onclick="javascript:document.getElementById('amount').value=17.11;document.getElementById('amount_label').innerHTML=17.11;document.getElementById('delprc').innerHTML=19;">
+    onclick="javascript:document.getElementById('amount').value=29.98;document.getElementById('amount_label').innerHTML=29.98;document.getElementById('perday').innerHTML=(29.98/30).toFixed(2);document.getElementById('delprc').innerHTML=39;">
     <label for="month">1个月</label>&nbsp;&nbsp;
 
     <input id="halfyear" name="period" value="6" required type="radio" checked="true"
-        onclick="javascript:document.getElementById('amount').value=85.11;document.getElementById('amount_label').innerHTML=85.11;document.getElementById('delprc').innerHTML=99;">
+        onclick="javascript:document.getElementById('amount').value=89.98;document.getElementById('amount_label').innerHTML=89.98;document.getElementById('perday').innerHTML=(89.98/180).toFixed(2);document.getElementById('delprc').innerHTML=199;">
     <label for="halfyear">6个月</label>&nbsp;&nbsp;
     
     <input id="year" name="period" value="12" required type="radio"
-        onclick="javascript:document.getElementById('amount').value=151.11;document.getElementById('amount_label').innerHTML=151.11;document.getElementById('delprc').innerHTML=199;">
+        onclick="javascript:document.getElementById('amount').value=169.98;document.getElementById('amount_label').innerHTML=169.98;document.getElementById('perday').innerHTML=(169.98/365).toFixed(2);document.getElementById('delprc').innerHTML=299;">
     <label for="year">1年</label>
                                             </div>
 
                                             <div class="form-group px-5">
                                                 <label class="label-bold mb-1">支付金额： 
                                                     <div>
-                                                        <h1 style="float:left;">¥ <span style="color:green" id="amount_label">85.11</span></h1>
-                                                        <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">99</span></h3></del>
-                                                        <span style="position: absolute;color:#FF8E21;float:left;margin-top: 35px;margin-left: 20px;">11.11 限时立减，全年最低！</span>
+                                                        <h1 style="float:left;">¥ <span style="color:green" id="amount_label">89.98</span></h1>
+                                                        <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">199</span></h3></del>
+                                                        <span style="position: absolute;color:#FF8E21;float:left;margin-top: 36px;margin-left: 20px;">低至 <span id="perday">0.5</span> 元/天！</span>
                                                     </div>
                                                 </label>
-                                                <input type="hidden" id="amount" name="amount" value="85.11">
+                                                <input type="hidden" id="amount" name="amount" value="89.98">
 
                                                 <div class="float-right">
                                                     <span>免费赠送 <i>基础版</i>* <a href="https://www.fun123.cn/reference/info/#qa" target="_blank">技术支持服务</a></span>
