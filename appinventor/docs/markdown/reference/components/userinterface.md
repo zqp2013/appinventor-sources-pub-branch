@@ -389,13 +389,13 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.events}
 
-{:id="CheckBox.Changed"} Changed()
+{:id="CheckBox.Changed"} 状态被改变()
 : 用户点击，`复选框`选中状态发生改变时触发该事件。
 
-{:id="CheckBox.GotFocus"} GotFocus()
+{:id="CheckBox.GotFocus"} 获得焦点()
 : `复选框`获得焦点时，触发该事件。
 
-{:id="CheckBox.LostFocus"} LostFocus()
+{:id="CheckBox.LostFocus"} 失去焦点()
 : `复选框`失去焦点时，触发该事件。
 
 ### 方法  {#CheckBox-Methods}
@@ -694,11 +694,11 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="ListPicker.BackgroundColor" .color} *背景颜色*
 : 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
 
-{:id="ListPicker.Elements" .list .bo} *元素*
-: Specifies the list of choices to display.
+{:id="ListPicker.Elements" .list .bo} *元素列表*
+: 指定要显示的选项列表。
 
 {:id="ListPicker.ElementsFromString" .text .wo} *元素字串*
-: Set the list of choices from a string of comma-separated values.
+: 将一串英文逗号分隔字符串设置为选项列表，列表项分别是逗号分割后的每一项。
 
 {:id="ListPicker.Enabled" .boolean} *启用*
 : 设置`列表选择框`是否可以被激活和点击。
@@ -724,19 +724,19 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="ListPicker.Image" .text} *图像*
 : 设置`列表选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
 
-{:id="ListPicker.ItemBackgroundColor" .color} *ItemBackgroundColor*
-: The background color of the `ListPicker` items.
+{:id="ListPicker.ItemBackgroundColor" .color} *项背景色*
+: `列表选择框`项的背景颜色。
 
-{:id="ListPicker.ItemTextColor" .color} *ItemTextColor*
-: The text color of the ListPicker items.
+{:id="ListPicker.ItemTextColor" .color} *项文本色*
+: `列表选择框`项的文本颜色。
 
-{:id="ListPicker.Selection" .text} *Selection*
-: The selected item. When directly changed by the programmer, the [`SelectionIndex`](#ListPicker.SelectionIndex)
- property is also changed to the first item in the [`ListPicker`](#ListPicker) with the given value.
- If the value is not in [`Elements`](#ListPicker.Elements), [`SelectionIndex`](#ListPicker.SelectionIndex) will be set to 0.
+{:id="ListPicker.Selection" .text} *选中项*
+: 返回当前选中的列表项。
 
-{:id="ListPicker.SelectionIndex" .number .bo} *SelectionIndex*
-: Selection index property setter method.
+  当程序修改它时，[`选中项索引`](#ListPicker.SelectionIndex) 属性也会更改为 [`列表选择框`](#ListPicker) 中具有给定值的第一项。如果该值不在 [`元素列表`](#ListPicker.Elements) 中，则 [`选中项索引`](#ListPicker.SelectionIndex) 将设置为 0。
+
+{:id="ListPicker.SelectionIndex" .number .bo} *选中项索引*
+: 获取/设置当前选中项的索引。
 
 {:id="ListPicker.Shape" .number .do} *形状*
 : 设置`列表选择框`的形状，此属性的有效值为：
@@ -788,36 +788,32 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.events}
 
-{:id="ListPicker.AfterPicking"} AfterPicking()
-: Event to be raised after the `ListPicker` activity returns its
- result and the properties have been filled in.
+{:id="ListPicker.AfterPicking"} 选择完成()
+: 在`列表选择框`选框返回其选择结果且属性已设置后，触发该事件。
 
-{:id="ListPicker.BeforePicking"} BeforePicking()
-: Event to raise when the `ListPicker` is clicked or the picker is shown
- using the [`Open`](#ListPicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
+{:id="ListPicker.BeforePicking"} 准备选择()
+: 单击`列表选择框` 或使用 [打开选框](#ListPicker.Open) 方法显示选择器时引发的事件。
 
-{:id="ListPicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `ListPicker` so it is now possible
- to click it.
+  此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。
 
-{:id="ListPicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `ListPicker` so it is now no
- longer possible to click it.
+{:id="ListPicker.GotFocus"} 获得焦点()
+: 表示光标移到`列表选择框`上，因此现在可以单击它。
 
-{:id="ListPicker.TouchDown"} TouchDown()
-: Indicates that the `ListPicker` was pressed down.
+{:id="ListPicker.LostFocus"} 失去焦点()
+: 表示光标已离开`列表选择框`，因此现在无法再单击它。
 
-{:id="ListPicker.TouchUp"} TouchUp()
-: Indicates that the `ListPicker` has been released.
+{:id="ListPicker.TouchDown"} 被按压()
+: 表示`列表选择框`被按下。
+
+{:id="ListPicker.TouchUp"} 被松开()
+: 表示`列表选择框`按压已释放。
 
 ### 方法  {#ListPicker-Methods}
 
 {:.methods}
 
-{:id="ListPicker.Open" class="method"} <i/> Open()
-: Opens the `ListPicker`, as though the user clicked on it.
-
+{:id="ListPicker.Open" class="method"} <i/> 打开选框()
+: 打开`列表选择框`，就像用户单击它一样。
 
 ## ![icon](images/ListView.png)  列表显示框  {#ListView}
 
@@ -864,38 +860,38 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 设置布局包含图像的`列表显示框`的图像宽度。
 
 {:id="ListView.ListData" .text .do} *列表数据*
-: Specifies data to be displayed in the ListView elements. This property sets the
- elements specified in [`布局`](#ListView.ListViewLayout). For example, if the chosen
- layout is `Image,MainText` this property will allow any number of elements to be
- defined, each containing a filename for Image and a string for MainText.
- Designer only property.
+: 指定要在 `列表显示框` 元素中显示的数据。
+
+  此属性设置 [`布局`](#ListView.ListViewLayout) 中指定的元素。例如，如果选择的布局是“Image,MainText”，则此属性将允许定义任意数量的元素，每个元素包含 Image 的文件名和 MainText 的字符串。
+
+  “界面视图”专属属性。
 
 {:id="ListView.ListViewLayout" .number .do} *布局*
 : 设置`列表显示框`行的布局类型。该属性仅可在“界面设计”视图设置。
 
-{:id="ListView.Orientation" .number} *Orientation*
-: Specifies the layout's orientation. This may be: `Vertical`, which displays elements
- in rows one after the other; or `Horizontal`, which displays one element at a time and
- allows the user to swipe left or right to brows the elements.
+{:id="ListView.Orientation" .number} *方向*
+: 指定布局的方向。可以是：
 
-{:id="ListView.Selection" .text} *Selection*
-: Returns the text in the `ListView` at the position of [`SelectionIndex`](#ListView.SelectionIndex).
+  * 1：“垂直”，逐行显示元素。
 
-{:id="ListView.SelectionColor" .color} *SelectionColor*
-: The color of the item when it is selected.
+  * 2：“水平”，一次显示一个元素，并允许用户向左或向右滑动以浏览元素。
 
-{:id="ListView.SelectionDetailText" .text .ro .bo} *SelectionDetailText*
-: Returns the Secondary or Detail text in the ListView at the position set by SelectionIndex
+{:id="ListView.Selection" .text} *选中项*
+: 返回 `列表显示框` 中 [`选中项索引`](#ListView.SelectionIndex) 位置处的文本。
 
-{:id="ListView.SelectionIndex" .number .bo} *SelectionIndex*
-: The index of the currently selected item, starting at `1`. If no item is selected, the value
- will be `0`. If an attempt is made to set this to a number less than `1` or greater than the
- number of items in the `ListView`, `SelectionIndex` will be set to `0`, and
- [`Selection`](#ListView.Selection) will be set to the empty text.
+{:id="ListView.SelectionColor" .color} *选中项颜色*
+: 选中项的文本颜色。
 
-{:id="ListView.ShowFilterBar" .boolean} *ShowFilterBar*
-: Sets visibility of the filter bar. `真`{:.logic.block} will show the bar,
- `假`{:.logic.block} will hide it.
+{:id="ListView.SelectionDetailText" .text .ro .bo} *选中项详细文本*
+: 返回 `列表显示框` 中由 [`选中项索引`](#ListView.SelectionIndex) 设置的位置处的辅助文本或详细文本。
+
+{:id="ListView.SelectionIndex" .number .bo} *选中项索引*
+: 当前所选项目的索引，从“1”开始。 如果未选择任何项目，则该值为“0”。
+
+  如果尝试将其设置为小于“1”或大于`列表显示框` 中项目数的数字，则“选中项索引”将设置为“0”，并且 [选中项](#ListView. Selection) 将被设置为空文本。
+
+{:id="ListView.ShowFilterBar" .boolean} *显示搜索框*
+: 设置搜索框的可见性。
 
 {:id="ListView.TextColor" .color} *文本颜色*
 : 设置`列表显示框`的文本颜色，使用RGBA数值表示。
@@ -919,29 +915,27 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.events}
 
-{:id="ListView.AfterPicking"} AfterPicking()
-: Simple event to be raised after the an element has been chosen in the list.
- The selected element is available in the [`Selection`](#ListView.Selection) property.
+{:id="ListView.AfterPicking"} 选择完成()
+: 在列表中选择元素后触发的简单事件。所选元素可通过 [`选中项`](#ListView.Selection) 属性获取。
 
 ### 方法  {#ListView-Methods}
 
 {:.methods}
 
-{:id="ListView.CreateElement" class="method returns dictionary"} <i/> CreateElement(*mainText*{:.text},*detailText*{:.text},*imageName*{:.text})
-: Creates a
+{:id="ListView.CreateElement" class="method returns dictionary"} <i/> 创建列表元素(*主文本*{:.text},*详细文本*{:.text},*图像文件名*{:.text})
+: 创建一个列表元素（列表项），其中主文本为必填项，详细文本及图像文件名则为可选项。
 
-{:id="ListView.GetDetailText" class="method returns text"} <i/> GetDetailText(*listElement*{:.dictionary})
-: Get the Detail Text of a ListView element.
+{:id="ListView.GetDetailText" class="method returns text"} <i/> 获取详细文本(*列表元素*{:.dictionary})
+: 获取`列表显示框`某个元素的详细文本。
 
-{:id="ListView.GetImageName" class="method returns text"} <i/> GetImageName(*listElement*{:.dictionary})
-: Get the filename of the image of a ListView element that has been uploaded to Media.
+{:id="ListView.GetImageName" class="method returns text"} <i/> 获取图像文件名(*列表元素*{:.dictionary})
+: 获取已上传到媒体的 `列表显示框` 元素的图像的文件名。
 
-{:id="ListView.GetMainText" class="method returns text"} <i/> GetMainText(*listElement*{:.dictionary})
-: Get the Main Text of a ListView element.
+{:id="ListView.GetMainText" class="method returns text"} <i/> 获取主文本(*列表元素*{:.dictionary})
+: 获取 `列表显示框` 元素的主文本。
 
-{:id="ListView.Refresh" class="method"} <i/> Refresh()
-: Reload the ListView to reflect any changes in the data.
-
+{:id="ListView.Refresh" class="method"} <i/> 刷新()
+: 重新加载 `列表显示框` 以反映数据中的任何更改。
 
 ## ![icon](images/Notifier.png)  对话框  {#Notifier}
 
