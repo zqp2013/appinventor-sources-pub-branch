@@ -896,11 +896,11 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="ListView.TextColor" .color} *文本颜色*
 : 设置`列表显示框`的文本颜色，使用RGBA数值表示。
 
-{:id="ListView.TextColorDetail" .color} *TextColorDetail*
-: Specifies the color of the secondary text in a ListView layout
+{:id="ListView.TextColorDetail" .color} *详细文本的颜色*
+: 指定 `列表显示框` 布局中详细文本的颜色
 
 {:id="ListView.TextSize" .number} *文本大小*
-: Specifies the `列表显示框` item's text font size
+: 指定 `列表显示框` 项目的文本字体大小
 
 {:id="ListView.Visible" .boolean} *可见性*
 : 设置`列表显示框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表显示框`显示，`假`{:.logic.block}则隐藏。
@@ -939,94 +939,86 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 ## ![icon](images/Notifier.png)  对话框  {#Notifier}
 
-The Notifier component displays alert messages and creates Android log entries through
- an assortment of methods.
+通过各种方法显示弹出消息、创建Android日志的通知组件。
 
 ### 属性  {#Notifier-Properties}
 
 {:.properties}
 
 {:id="Notifier.BackgroundColor" .color .wo} *背景颜色*
-: Specifies the background color for alerts (not dialogs).
+: 指定警告信息（不是对话框）的背景颜色。比如指定橙色背景属性后：
 
-{:id="Notifier.NotifierLength" .number .do} *NotifierLength*
-: Specifies the length of time that the alert is shown -- either "short" or "long".
+  * 警告信息背景颜色生效：
+
+    ![背景颜色警告信息生效](images/背景颜色警告信息生效.png)
+
+  * 对话框背景颜色不生效：
+
+    ![背景颜色对话框不生效](images/背景颜色对话框不生效.png)
+
+{:id="Notifier.NotifierLength" .number .do} *显示时长*
+: 指定警告信息显示的时长——“短延时”或“长延时”。
 
 {:id="Notifier.TextColor" .color} *文本颜色*
-: Specifies the text color for alerts (not dialogs).
+: 指定警告信息（不是对话框）的文本颜色。
 
 ### 事件  {#Notifier-Events}
 
 {:.events}
 
-{:id="Notifier.AfterChoosing"} AfterChoosing(*choice*{:.text})
-: Event after the user has made a selection for
- [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
+{:id="Notifier.AfterChoosing"} 选择完成(*选择值*{:.text})
+: 用户选择 [`显示选择对话框`](#Notifier.ShowChooseDialog) 后触发的事件。
 
-{:id="Notifier.AfterTextInput"} AfterTextInput(*response*{:.text})
-: Event raised after the user has responded to [`ShowTextDialog`](#Notifier.ShowTextDialog).
+{:id="Notifier.AfterTextInput"} 输入完成(*响应*{:.text})
+: 用户响应 [`显示文本对话框`](#Notifier.ShowTextDialog) 后触发的事件。
 
-{:id="Notifier.ChoosingCanceled"} ChoosingCanceled()
-: Event raised when the user cancels choosing an option.
- [`ShowChooseDialog`](#Notifier.ShowChooseDialog).
+{:id="Notifier.ChoosingCanceled"} 选择取消()
+: 当用户取消选择[`显示选择对话框`](#Notifier.ShowChooseDialog)选项时触发的事件。
 
-{:id="Notifier.TextInputCanceled"} TextInputCanceled()
-: Event raised when the user cancels
- [`ShowPasswordDialog`](#Notifier.ShowPasswordDialog), or
- [`ShowTextDialog`](#Notifier.ShowTextDialog).
+{:id="Notifier.TextInputCanceled"} 输入取消()
+: 用户取消[`显示密码对话框`](#Notifier.ShowPasswordDialog) 或 [`显示文本对话框`](#Notifier.ShowTextDialog)时触发的事件。
 
 ### 方法  {#Notifier-Methods}
 
 {:.methods}
 
-{:id="Notifier.DismissProgressDialog" class="method"} <i/> DismissProgressDialog()
-: Dismisses the alert created by the ShowProgressDialog block
+{:id="Notifier.DismissProgressDialog" class="method"} <i/> 关闭进程对话框()
+: 关闭由 [显示进程对话框](#Notifier.ShowProgressDialog) 块创建的警告信息弹窗。
 
-{:id="Notifier.LogError" class="method"} <i/> LogError(*message*{:.text})
-: Writes an error message to the Android system log. See the Google Android documentation for
- how to access the log.
+{:id="Notifier.LogError" class="method"} <i/> 错误日志(*消息*{:.text})
+: 将错误基本的消息写入 Android 系统日志。 有关如何访问日志的信息，请参阅 Google Android 文档。
 
-{:id="Notifier.LogInfo" class="method"} <i/> LogInfo(*message*{:.text})
-: Writes an information message to the Android log.
+{:id="Notifier.LogInfo" class="method"} <i/> 信息日志(*消息*{:.text})
+: 将信息级别的消息写入 Android 日志。
 
-{:id="Notifier.LogWarning" class="method"} <i/> LogWarning(*message*{:.text})
-: Writes a warning message to the Android log. See the Google Android documentation for how to
- access the log.
+{:id="Notifier.LogWarning" class="method"} <i/> 警告日志(*消息*{:.text})
+: 将警告级别的消息写入 Android 日志。 有关如何访问日志的信息，请参阅 Google Android 文档。
 
-{:id="Notifier.ShowAlert" class="method"} <i/> ShowAlert(*notice*{:.text})
-: Display a temporary notification.
+{:id="Notifier.ShowAlert" class="method"} <i/> 显示警告信息(*notice*{:.text})
+: 显示临时通知信息的弹窗。
 
-{:id="Notifier.ShowChooseDialog" class="method"} <i/> ShowChooseDialog(*message*{:.text},*title*{:.text},*button1Text*{:.text},*button2Text*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box with two buttons, from which the user can choose. If `cancelable` is
- `真`{:.logic.block} there will be an additional CANCEL button. Pressing a button will raise
- the [`AfterChoosing`](#Notifier.AfterChoosing) event. The "choice" parameter to
- [`AfterChoosing`](#Notifier.AfterChoosing) will be the text on the button that was pressed, or "Cancel" if
- the CANCEL button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also
- run.
+{:id="Notifier.ShowChooseDialog" class="method"} <i/> 显示选择对话框(*消息*{:.text},*标题*{:.text},*按钮1文本*{:.text},*按钮2文本*{:.text},*允许撤销*{:.boolean})
+: 显示一个带有两个按钮的对话框，用户可以从中进行选择。
 
-{:id="Notifier.ShowMessageDialog" class="method"} <i/> ShowMessageDialog(*message*{:.text},*title*{:.text},*buttonText*{:.text})
-: Display an alert dialog with a single button that dismisses the alert.
+  如果 `允许撤销` 是 `真`{:.logic.block}，将会有一个额外的 `取消` 按钮。 按下按钮将引发 [`选择完成`](#Notifier.AfterChoosing) 事件。 [`选择完成`](#Notifier.AfterChoosing) 的“选择值”参数将是按下的按钮上的文本，如果按下了“取消”按钮，则为“取消”。 如果取消，[`输入取消`](#Notifier.TextInputCanceled) 事件也将触发。
 
-{:id="Notifier.ShowPasswordDialog" class="method"} <i/> ShowPasswordDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box where the user can enter password (input is masked), after which the
- [`AfterTextInput`](#Notifier.AfterTextInput) event will be raised. If `cancelable` is `真`{:.logic.block}
- there will be an additional CANCEL button. The [`AfterTextInput`](#Notifier.AfterTextInput) and
- [`TextInputCanceled`](#Notifier.TextInputCanceled) events behave the same way as described in
- [`ShowTextDialog`](#Notifier.ShowTextDialog).
+{:id="Notifier.ShowMessageDialog" class="method"} <i/> 显示消息对话框(*消息*{:.text},*标题*{:.text},*按钮文本*{:.text})
+: 显示一个消息提醒的对话框，其中包含一个可消除提醒的按钮。
 
-{:id="Notifier.ShowProgressDialog" class="method"} <i/> ShowProgressDialog(*message*{:.text},*title*{:.text})
-: Shows a dialog box with an optional title and message (use empty strings if they are not
- wanted). This dialog box contains a spinning artifact to indicate that the program is working.
- It cannot be canceled by the user but must be dismissed by the App Inventor Program by using
- the [`DismissProgressDialog`](#Notifier.DismissProgressDialog) method.
+{:id="Notifier.ShowPasswordDialog" class="method"} <i/> 显示密码对话框(*消息*{:.text},*标题*{:.text},*允许撤销*{:.boolean})
+: 显示一个对话框，用户可以在其中输入密码（输入被屏蔽），之后将触发 [`输入完成`](#Notifier.AfterTextInput) 事件。
 
-{:id="Notifier.ShowTextDialog" class="method"} <i/> ShowTextDialog(*message*{:.text},*title*{:.text},*cancelable*{:.boolean})
-: Shows a dialog box where the user can enter text, after which the
- [`AfterTextInput`](#Notifier.AfterTextInput)  event will be raised. If `cancelable` is `真`{:.logic.block}
- there will be an additional CANCEL button. Entering text will raise the
- [`AfterTextInput`](#Notifier.AfterTextInput) event. The "response" parameter to
- [`AfterTextInput`](#Notifier.AfterTextInput)  will be the text that was entered, or "Cancel" if the CANCEL
- button was pressed. If canceled, the [`TextInputCanceled`](#Notifier.TextInputCanceled) event will also run.
+  如果 `允许撤销` 是 `真`{:.logic.block}，将会有一个额外的 取消 按钮。 [`输入完成`](#Notifier.AfterTextInput) 和 [`输入取消`](#Notifier.TextInputCanceled) 事件的行为方式与 [`显示文本对话框`](#Notifier.ShowTextDialog) 中描述的相同。
+
+{:id="Notifier.ShowProgressDialog" class="method"} <i/> 显示进程对话框(*消息*{:.text},*标题*{:.text})
+: 显示一个带有可选标题和消息的对话框（如果不需要，可以使用空字符串）。
+
+  该对话框包含一个旋转的表示加载中的图片，表明程序正在运行。用户无法取消它，必须由程序调用 [`关闭进程对话框`](#Notifier.DismissProgressDialog) 方法将其关闭。
+
+{:id="Notifier.ShowTextDialog" class="method"} <i/> 显示文本对话框(*消息*{:.text},*标题*{:.text},*允许撤销*{:.boolean})
+: 显示一个对话框，用户可以在其中输入文本，然后将触发 [`输入完成`](#Notifier.AfterTextInput) 事件。
+
+  如果 `允许撤销` 是 `真`{:.logic.block}，将会有一个额外的 取消 按钮。 输入文本将引发 [`输入完成`](#Notifier.AfterTextInput) 事件。 [`输入完成`](#Notifier.AfterTextInput) 的“响应”参数将是输入的文本，如果按下“取消”按钮，则为“取消”。 如果取消，[`输入取消`](#Notifier.TextInputCanceled) 事件也将触发。
 
 
 ## ![icon](images/PasswordTextBoxIcon.png)  密码输入框  {#PasswordTextBox}
@@ -1141,19 +1133,14 @@ The Notifier component displays alert messages and creates Android log entries t
 
 {:.properties}
 
-{:id="Slider.ColorLeft" .color} *ColorLeft*
-: Specifies the color of the slider bar to the left of the thumb as an alpha-red-green-blue
- integer, i.e., `0xAARRGGBB`.  An alpha of `00`
- indicates fully transparent and `FF` means opaque.
+{:id="Slider.ColorLeft" .color} *左侧颜色*
+: 将`滑动条`左侧滑块的颜色指定为 alpha-red-green-blue 整数，即“0xAARRGGBB”。 alpha“00”表示完全透明，“FF”表示不透明。
 
-{:id="Slider.ColorRight" .color} *ColorRight*
-: Specifies the color of the slider bar to the right of the thumb as an alpha-red-green-blue
- integer, i.e., `0xAARRGGBB`.  An alpha of `00`
- indicates fully transparent and `FF` means opaque.
+{:id="Slider.ColorRight" .color} *右侧颜色*
+: 将`滑动条`右侧滑块的颜色指定为 alpha-red-green-blue 整数，即“0xAARRGGBB”。 alpha“00”表示完全透明，“FF”表示不透明。
 
 {:id="Slider.HeightPercent" .number .wo .bo} *高度百分比*
-: Specifies the `Slider`'s vertical height as a percentage
- of the [`屏幕高度`](userinterface.html#Screen.Height).
+: 将 `滑动条` 的垂直高度指定为 [` 屏幕高度`](userinterface.html#Screen.Height) 的百分比。
 
 {:id="Slider.MaxValue" .number} *最大值*
 : 设置滑块的最大值。如果新的最大值小于当前最小值，则最小值和最大值都将设置为该值。
@@ -1172,15 +1159,13 @@ The Notifier component displays alert messages and creates Android log entries t
 : 设置滑块滑块的位置。如果该值大于 [`最大值`](#Slider.MaxValue)，那么它将被设置为与 [`最大值`](#Slider.MaxValue) 相同的值；如果该值小于[`最小值`](#Slider.MinValue)，那么它将被设置为与 [`最小值`](#Slider.MinValue) 相同的值。
 
 {:id="Slider.Visible" .boolean} *可见性*
-: Specifies whether the `Slider` should be visible on the screen.  Value is `真`{:.logic.block}
- if the `Slider` is showing and `假`{:.logic.block} if hidden.
+: 指定`滑动条`是否应在屏幕上可见。
 
 {:id="Slider.Width" .number .bo} *宽度*
-: Specifies the horizontal width of the `Slider`, measured in pixels.
+: 指定`滑动条`的水平宽度，以像素px为单位。
 
 {:id="Slider.WidthPercent" .number .wo .bo} *宽度百分比*
-: Specifies the horizontal width of the `Slider` as a percentage
- of the [`屏幕宽度`](userinterface.html#Screen.Width).
+: 将`滑动条`的水平宽度指定为[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Slider-Events}
 
@@ -1197,22 +1182,20 @@ The Notifier component displays alert messages and creates Android log entries t
 
 ## ![icon](images/Spinner.png)  下拉框  {#Spinner}
 
-A `Spinner` component that displays a dialog with a list of elements. These elements can be set
- in the Designer or Blocks Editor by setting the [`ElementsFromString`](#Spinner.ElementsFromString) property to
- a comma-separated list of values (for example, `choice 1, choice 2, choice 3`) or by setting the
- [`Elements`](#Spinner.Elements) property to a List in the Blocks editor. Spinners are created with
- the first item already selected, so selecting it does not generate an
- [`AfterSelecting`](#Spinner.AfterSelecting) event. Consequently it's useful to make the first `Spinner` item
- be a non-choice like "Select from below...".
+下拉框组件用于显示带有元素列表的对话框。
+
+  可以通过将 [`元素字串`](#Spinner.ElementsFromString) 属性设置为以英文逗号分隔的值列表（例如“选择1,选择2,选择3”）或通过将 [`元素列表`](#Spinner.Elements) 属性设置为块编辑器中的列表。
+  
+  `下拉框`是在已选择第一个项目的情况下创建的，因此选择它不会触发 [`选择完成`](#Spinner.AfterSelecting) 事件。因此，将第一个`下拉框`项目设为非选择项（例如“从下面选择...”）会很有用。
 
 ### 属性  {#Spinner-Properties}
 
 {:.properties}
 
-{:id="Spinner.Elements" .list .bo} *Elements*
+{:id="Spinner.Elements" .list .bo} *元素列表*
 : Specifies the list of choices to display.
 
-{:id="Spinner.ElementsFromString" .text .wo} *ElementsFromString*
+{:id="Spinner.ElementsFromString" .text .wo} *元素字串*
 : Set the list of choices from a string of comma-separated values.
 
 {:id="Spinner.Height" .number .bo} *高度*
@@ -1221,13 +1204,13 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 {:id="Spinner.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`下拉框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Spinner.Prompt" .text} *Prompt*
+{:id="Spinner.Prompt" .text} *提示*
 : Specifies the text used for the title of the Spinner window.
 
-{:id="Spinner.Selection" .text} *Selection*
+{:id="Spinner.Selection" .text} *选中项*
 : Specifies the current selected item in the `Spinner`.
 
-{:id="Spinner.SelectionIndex" .number .bo} *SelectionIndex*
+{:id="Spinner.SelectionIndex" .number .bo} *选中项索引*
 : Set the `Spinner` selection to the element at the given index.
  If an attempt is made to set this to a number less than `1` or greater than the number of
  items in the `Spinner`, `SelectionIndex` will be set to `0`, and [`Selection`](#Spinner.Selection)
@@ -1246,16 +1229,15 @@ A `Spinner` component that displays a dialog with a list of elements. These elem
 
 {:.events}
 
-{:id="Spinner.AfterSelecting"} AfterSelecting(*selection*{:.text})
+{:id="Spinner.AfterSelecting"} 选择完成(*selection*{:.text})
 : Event called after the user selects an item from the dropdown list.
 
 ### 方法  {#Spinner-Methods}
 
 {:.methods}
 
-{:id="Spinner.DisplayDropdown" class="method"} <i/> DisplayDropdown()
-: Displays the dropdown list for selection, same action as when the user clicks on the spinner.
-
+{:id="Spinner.DisplayDropdown" class="method"} <i/> 显示列表()
+: 显示下拉列表供用户选择，与用户单击下拉框的操作相同。
 
 ## ![icon](images/Switch.png)  切换开关（Switch）   {#Switch}
 
