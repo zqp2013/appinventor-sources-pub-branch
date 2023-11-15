@@ -24,11 +24,11 @@ description: App Inventor 2 OCR 图片文字识别全方案总结，包括使用
 
 .aix 拓展下载：
 
-[com.NMD.Ocr.aix.aix](ocr/com.NMD.Ocr.aix.aix)
+[com.NMD.Ocr.aix](ocr/com.NMD.Ocr.aix)
 
 demo 下载：
 
-[OcrTestExample.aia.aia](ocr/OcrTestExample.aia.aia)
+[OcrTestExample.aia](ocr/OcrTestExample.aia)
 
 
 ### [> OCRSpace 官网](https://community.appinventor.mit.edu/t/ocr-space-extension/63873)

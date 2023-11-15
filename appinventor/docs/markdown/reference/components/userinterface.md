@@ -1193,10 +1193,10 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.properties}
 
 {:id="Spinner.Elements" .list .bo} *元素列表*
-: Specifies the list of choices to display.
+: 指定要显示的选项列表。
 
 {:id="Spinner.ElementsFromString" .text .wo} *元素字串*
-: Set the list of choices from a string of comma-separated values.
+: 将一串英文逗号分隔字符串设置为选项列表，列表项分别是逗号分割后的每一项。
 
 {:id="Spinner.Height" .number .bo} *高度*
 : 设置`下拉框`的垂直高度，以像素px为单位。
@@ -1205,16 +1205,15 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 设置`下拉框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Spinner.Prompt" .text} *提示*
-: Specifies the text used for the title of the Spinner window.
+: 指定用于下拉框窗口标题的文本。
 
 {:id="Spinner.Selection" .text} *选中项*
-: Specifies the current selected item in the `Spinner`.
+: 指定`下拉框`中当前选定的项目。
 
 {:id="Spinner.SelectionIndex" .number .bo} *选中项索引*
-: Set the `Spinner` selection to the element at the given index.
- If an attempt is made to set this to a number less than `1` or greater than the number of
- items in the `Spinner`, `SelectionIndex` will be set to `0`, and [`Selection`](#Spinner.Selection)
- will be set to the empty text.
+: 将`下拉框`选择设置为给定索引处的元素。
+
+  如果尝试将其设置为小于“1”或大于`下拉框`中项目数的数字，则“选中项索引”将设置为“0”，并且 [选中项](#Spinner.Selection) 将被设置为空文本。
 
 {:id="Spinner.Visible" .boolean} *可见性*
 : 设置`下拉框`是否显示在屏幕上，值是`真`{:.logic.block}则`下拉框`显示，`假`{:.logic.block}则隐藏。
@@ -1230,7 +1229,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.events}
 
 {:id="Spinner.AfterSelecting"} 选择完成(*selection*{:.text})
-: Event called after the user selects an item from the dropdown list.
+: 用户从下拉列表中选择一个项目后触发该事件。
 
 ### 方法  {#Spinner-Methods}
 
@@ -1241,11 +1240,9 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 ## ![icon](images/Switch.png)  切换开关（Switch）   {#Switch}
 
-`Switch` components can detect user taps and can change their boolean state in response. They
- are identical to [`CheckBox`](#CheckBox)es except in appearance.
+`切换开关`组件可以检测用户点击，并可以更改其布尔状态作为响应。除了外观之外，它与 [`复选框`](#CheckBox) 相同。
 
- Switches have an on (true) state and an off (false) state. A `Switch` component raises an event
- when the user taps it to toggle between states.
+  开关具有打开（真）状态和关闭（假）状态。当用户点击`切换开关`组件在状态之间切换时，它会触发[状态被改变](#Switch.Changed)事件。
 
 ### 属性  {#Switch-Properties}
 
@@ -1275,8 +1272,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Switch.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`切换开关`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="Switch.On" .boolean} *On*
-: True if the switch is in the On state, false otherwise.
+{:id="Switch.On" .boolean} *已打开*
+: 如果开关处于打开状态，则为 真，否则为 假。
 
 {:id="Switch.Text" .text} *文本*
 : 设置`切换开关`的显示文本。
@@ -1284,17 +1281,17 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Switch.TextColor" .color} *文本颜色*
 : 设置`切换开关`的文本颜色，使用RGBA数值表示。
 
-{:id="Switch.ThumbColorActive" .color} *ThumbColorActive*
-: Specifies the `Switch`'s thumb color when switch is in the On state.
+{:id="Switch.ThumbColorActive" .color} *打开时滑块颜色*
+: 指定`切换开关`处于打开状态时开关滑块的颜色。
 
-{:id="Switch.ThumbColorInactive" .color} *ThumbColorInactive*
-: Specifies the `Switch`'s thumb color when switch is in the Off state.
+{:id="Switch.ThumbColorInactive" .color} *关闭时滑块颜色*
+: 指定`切换开关`处于关闭状态时开关滑块的颜色。
 
-{:id="Switch.TrackColorActive" .color} *TrackColorActive*
-: Specifies the `Switch`'s track color when in the On state.
+{:id="Switch.TrackColorActive" .color} *打开时轨道颜色*
+: 指定`切换开关`处于打开状态时的轨道颜色。
 
-{:id="Switch.TrackColorInactive" .color} *TrackColorInactive*
-: Specifies the `Switch`'s track color when in the Off state.
+{:id="Switch.TrackColorInactive" .color} *关闭时轨道颜色*
+: 指定`切换开关`处于关闭状态时的轨道颜色。
 
 {:id="Switch.Visible" .boolean} *可见性*
 : 设置`切换开关`是否显示在屏幕上，值是`真`{:.logic.block}则`切换开关`显示，`假`{:.logic.block}则隐藏。
@@ -1309,14 +1306,14 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.events}
 
-{:id="Switch.Changed"} Changed()
-: User change the state of the `Switch` from On to Off or back.
+{:id="Switch.Changed"} 状态被改变()
+: 用户将“开关”的状态从 “开”更改为“关” 或 “关”更改为“开” 时触发该事件。
 
-{:id="Switch.GotFocus"} GotFocus()
-: `Switch` became the focused component.
+{:id="Switch.GotFocus"} 获得焦点()
+: `切换开关`成为焦点组件时触发该事件。
 
-{:id="Switch.LostFocus"} LostFocus()
-: `Switch` stopped being the focused component.
+{:id="Switch.LostFocus"} 失去焦点()
+: `切换开关`不再是焦点组件时触发该事件。
 
 ### 方法  {#Switch-Methods}
 
@@ -1561,60 +1558,61 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 ## ![icon](images/WebViewer.png)  Web浏览框  {#WebViewer}
 
-Component for viewing Web pages.
+用于查看网页的组件。
 
- The [`HomeUrl`](#WebViewer.HomeUrl) can be specified in the Designer or in the Blocks Editor. The view can be
- set to follow links when they are tapped, and users can fill in Web forms.
+ 可以在界面设计视图或程序设计视图中指定 [`首页地址`](#WebViewer.HomeUrl)。可以将视图设置为在点击链接时跟踪链接，并且用户可以填写 Web 表单。
 
- **Warning:** This is not a full browser. For example, pressing the phone's hardware Back key
- will exit the app, rather than move back in the browser history.
+ **警告：** 这不是一个完整的浏览器。例如，按下手机的硬件后退键将退出应用程序，而不是在浏览器历史记录中返回。
 
- You can use the [`WebViewString`](#WebViewer.WebViewString) property to communicate between your app and
- Javascript code running in the `WebViewer` page. In the app, you get and set
- [`WebViewString`](#WebViewer.WebViewString). In the `WebViewer`, you include Javascript that references the
- `window.AppInventor` object, using the methods `getWebViewString()` and `setWebViewString(text)`.
+ 你可以使用 [`页面交换字串`](#WebViewer.WebViewString) 属性在你的App和`Web浏览框`页面中运行的 Javascript 代码之间进行通信。在App中，可以获取或设置 [`页面交换字串`](#WebViewer.WebViewString)。
 
- For example, if the `WebViewer` opens to a page that contains the Javascript command
+ 在`Web浏览框`中，可以使用 `getWebViewString()` 和 `setWebViewString(text)` 方法操作 `window.AppInventor` 的Javascript对象。
+
+ **> 例如：**如果`Web浏览框`打开包含 Javascript 命令的页面：
+
  ```javascript
- document.write("The answer is" + window.AppInventor.getWebViewString());
+ document.write("在WEB页面Javascript中输出AppInventor设置的交换字串：" + window.AppInventor.getWebViewString());
  ```
- and if you set [`WebViewString`](#WebViewer.WebViewString) to "hello", then the web page will show
- ```
- The answer is hello.
- ```
- And if the Web page contains Javascript that executes the command
- ```javascript
- windowAppInventor.setWebViewString("hello from Javascript"),
- ```
- then the value of the [`WebViewString`](#WebViewer.WebViewString) property will be
- ```
- hello from Javascript.
- ```
- Calling `setWebViewString` from JavaScript will also run the [`WebViewStringChange`](#WebViewer.WebViewStringChange)
- event so that the blocks can handle when the [`WebViewString`](#WebViewer.WebViewString) property changes.
 
- Beginning with release nb184a, you can specify a HomeUrl beginning with `http://localhost/`
- to reference assets both in the Companion and in compiled apps. Previously, apps needed to use
- `file:///android_asset/` in compiled apps and `/sdcard/AppInventor/assets/` in the Companion.
- Both of these options will continue to work but the `http://localhost/` approach will work in
- both scenarios. You may also use "file:///appinventor_asset/" which provides more security by
- preventing the use of asynchronous requests from JavaScript in your assets from going out to the
- web.
+ 如果你将 [`页面交换字串`](#WebViewer.WebViewString) 设置为“你好！”，则网页将显示：
+
+ ```text
+ 在WEB页面Javascript中输出AppInventor设置的交换字串：你好！
+ ```
+
+ 如果网页包含执行命令的 Javascript：
+
+ ```javascript
+ windowAppInventor.setWebViewString("使用Javascript设置AppInventor交换字串内容"),
+ ```
+
+ 那么 [`页面交换字串`](#WebViewer.WebViewString) 属性的值将是：
+
+ ```text
+ 使用Javascript设置AppInventor交换字串内容
+ ```
+
+ 从 JavaScript 调用 `setWebViewString` 还将运行 [`WebViewStringChange`](#WebViewer.WebViewStringChange) 事件，以便块可以在 [`页面交换字串`](#WebViewer.WebViewString) 属性更改时进行处理。
+
+ 从版本 nb184a 开始，你可以指定以 `http://localhost/` 开头的 `首页地址` 来引用 AI伴侣 和已编译应用程序中的资源。以前，应用程序需要在编译的应用程序中使用 `file:///android_asset/`，并在 AI伴侣 中使用 `/sdcard/AppInventor/assets/`。
+
+ 这两个选项都将继续有效，但 `http://localhost/` 方法将在这两种情况下都有效。 你还可以使用 `file:///appinventor_asset/`，它通过防止在你的资产中使用来自 JavaScript 的异步请求访问网络来提供更高的安全性。
 
 ### 属性  {#WebViewer-Properties}
 
 {:.properties}
 
-{:id="WebViewer.CurrentPageTitle" .text .ro .bo} *CurrentPageTitle*
+{:id="WebViewer.CurrentPageTitle" .text .ro .bo} *当前页标题*
 : Returns the title of the page currently being viewed
 
-{:id="WebViewer.CurrentUrl" .text .ro .bo} *CurrentUrl*
+{:id="WebViewer.CurrentUrl" .text .ro .bo} *当前网址*
 : Returns the URL currently being viewed. This could be different from the [`HomeUrl`](#WebViewer.HomeUrl)
  if new pages were visited by following links.
 
-{:id="WebViewer.FollowLinks" .boolean} *FollowLinks*
-: Determines whether to follow links when they are tapped in the `WebViewer`. If you follow
- links, you can use [`GoBack`](#WebViewer.GoBack) and [`GoForward`](#WebViewer.GoForward) to navigate the browser history.
+{:id="WebViewer.FollowLinks" .boolean} *允许链接跳转*
+: 设置在`Web浏览框`中点击链接时是否跟随链接。
+
+  如果点击链接，则可以使用 [`后退`](#WebViewer.GoBack) 和 [`前进`](#WebViewer.GoForward) 导航浏览器历史记录。
 
 {:id="WebViewer.Height" .number .bo} *高度*
 : 设置`Web浏览框`的垂直高度，以像素px为单位。
@@ -1643,7 +1641,7 @@ Component for viewing Web pages.
 {:id="WebViewer.Visible" .boolean} *可见性*
 : 设置`Web浏览框`是否显示在屏幕上，值是`真`{:.logic.block}则`Web浏览框`显示，`假`{:.logic.block}则隐藏。
 
-{:id="WebViewer.WebViewString" .text .bo} *WebViewString*
+{:id="WebViewer.WebViewString" .text .bo} *页面交换字串*
 : Gets the `WebView`'s String, which is viewable through Javascript in the `WebView` as the
  `window.AppInventor` object.
 
@@ -1698,10 +1696,10 @@ Component for viewing Web pages.
   As the permissions interface is not available on phones older then
   Eclair, this function is a no-op on older phones.
 
-{:id="WebViewer.GoBack" class="method"} <i/> GoBack()
+{:id="WebViewer.GoBack" class="method"} <i/> 后退()
 : Go back to the previous page in the history list. Does nothing if there is no previous page.
 
-{:id="WebViewer.GoForward" class="method"} <i/> GoForward()
+{:id="WebViewer.GoForward" class="method"} <i/> 前进()
 : Go forward to the next page in the history list. Does nothing if there is no next page.
 
 {:id="WebViewer.GoHome" class="method"} <i/> GoHome()

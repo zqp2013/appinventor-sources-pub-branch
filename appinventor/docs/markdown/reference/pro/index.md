@@ -18,6 +18,7 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 1. [【云图片】利用网络微数据库实现图片上传至云端及从云端下载]
 1. [【AI云识图】利用云API进行AI识图]
 1. [【OCR识别】App Inventor 2 OCR 图片文字识别全方案总结](ocr.html)
+1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](ftp.html)
 
 
 ## 产品级技巧
