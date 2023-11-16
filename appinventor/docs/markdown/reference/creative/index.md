@@ -38,6 +38,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 
 1. [【技巧】App Inventor 2在不同的屏幕之间传值](screen_communication.html)
 1. [【技巧】组件过多，屏幕显示不下，没有滚动条？](allow_scrolling.html)
+1. [【技巧】组件过多，水平/垂直布局显示不下，需要一个滚动条？](allow_scrolling.html#Layout)
 1. [【技巧】App Inventor 2 如何去掉顶部标题栏实现全屏？](fullscreen.html)
 1. [【技巧】App Inventor 2 模拟sleep函数](sim_sleep.html)
 1. [【技巧】App Inventor 2 过滤蓝牙设备列表](filter_devicelist.html)
