@@ -1603,11 +1603,10 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.properties}
 
 {:id="WebViewer.CurrentPageTitle" .text .ro .bo} *当前页标题*
-: Returns the title of the page currently being viewed
+: 返回当前正在查看的页面的标题。
 
 {:id="WebViewer.CurrentUrl" .text .ro .bo} *当前网址*
-: Returns the URL currently being viewed. This could be different from the [`HomeUrl`](#WebViewer.HomeUrl)
- if new pages were visited by following links.
+: 返回当前正在查看的 URL。如果已通过链接跳转访问新页面，就可能与 [`首页地址`](#WebViewer.HomeUrl) 不同。
 
 {:id="WebViewer.FollowLinks" .boolean} *允许链接跳转*
 : 设置在`Web浏览框`中点击链接时是否跟随链接。
@@ -1620,30 +1619,27 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="WebViewer.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`Web浏览框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="WebViewer.HomeUrl" .text} *HomeUrl*
-: Specifies the URL of the page the `WebViewer` should initially open to. Setting this will
- load the page.
+{:id="WebViewer.HomeUrl" .text} *首页地址*
+: 设置`Web浏览框`最初应打开的页面的 URL。设置此属性后将加载该页面。
 
-{:id="WebViewer.IgnoreSslErrors" .boolean} *IgnoreSslErrors*
-: Determine whether or not to ignore SSL errors. Set to `真`{:.logic.block} to ignore errors.
- Use this to accept self signed certificates from websites.
+{:id="WebViewer.IgnoreSslErrors" .boolean} *忽略ssl错误*
+: 设置是否忽略 SSL 错误，默认为`假`。
 
-{:id="WebViewer.PromptforPermission" .boolean} *PromptforPermission*
-: Determine if the user should be prompted for permission to use the geolocation API while in
- the `WebViewer`. If `真`{:.logic.block}, prompt the user of the `WebViewer` to give
- permission to access the geolocation API. If `假`{:.logic.block}, assume permission is
- granted.
+  设置为 `真`{:.logic.block} 以忽略错误，使用它接受来自网站的自签名证书。
 
-{:id="WebViewer.UsesLocation" .boolean .wo .do} *UsesLocation*
-: Specifies whether or not this `WebViewer` can access the JavaScript
- geolocation API.
+{:id="WebViewer.PromptforPermission" .boolean} *开启授权提示*
+: 设置是否应提示用户在`Web浏览框`中使用地理定位 API 的权限。
+
+  如果为`真`{:.logic.block}，则提示`Web浏览框`的用户授予访问地理定位 API 的权限；如果为`假`{:.logic.block}，则默认已授予权限。
+
+{:id="WebViewer.UsesLocation" .boolean .wo .do} *允许使用定位*
+: 设置`Web浏览框`是否可以访问 JavaScript 地理定位 API。
 
 {:id="WebViewer.Visible" .boolean} *可见性*
 : 设置`Web浏览框`是否显示在屏幕上，值是`真`{:.logic.block}则`Web浏览框`显示，`假`{:.logic.block}则隐藏。
 
 {:id="WebViewer.WebViewString" .text .bo} *页面交换字串*
-: Gets the `WebView`'s String, which is viewable through Javascript in the `WebView` as the
- `window.AppInventor` object.
+: 获取`Web浏览框`的字符串，可以通过`Web浏览框`中的 Javascript 作为 `window.AppInventor` 对象查看该字符串。
 
 {:id="WebViewer.Width" .number .bo} *宽度*
 : 设置`Web浏览框`的水平宽度，以像素px为单位。
@@ -1655,65 +1651,58 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:.events}
 
-{:id="WebViewer.BeforePageLoad"} BeforePageLoad(*url*{:.text})
-: When a page is about to load this event is run.
+{:id="WebViewer.BeforePageLoad"} 页面即将加载时(*URL网址*{:.text})
+: 当页面即将加载时，触发此事件。
 
-{:id="WebViewer.ErrorOccurred"} ErrorOccurred(*errorCode*{:.number},*description*{:.text},*failingUrl*{:.text})
-: When an error occurs this event is run.
+{:id="WebViewer.ErrorOccurred"} 出现错误时(*错误码*{:.number},*错误描述*{:.text},*出错网址*{:.text})
+: 当发生错误时，将触发此事件。
 
-{:id="WebViewer.PageLoaded"} PageLoaded(*url*{:.text})
-: When a page is finished loading this event is run.
+{:id="WebViewer.PageLoaded"} 页面加载完成时(*URL网址*{:.text})
+: 当页面加载完成时，将触发此事件。
 
-{:id="WebViewer.WebViewStringChange"} WebViewStringChange(*value*{:.text})
-: Event that runs when the `AppInventor.setWebViewString` method is called from JavaScript.
- The new [`WebViewString`](#WebViewer.WebViewString) is given by the `value`{:.variable.block} parameter.
+{:id="WebViewer.WebViewStringChange"} 页面交换字串改变时(*新字串值*{:.text})
+: 从 JavaScript 调用 `AppInventor.setWebViewString` 方法时触发该事件。
+
+  新的 [`页面交换字串`](#WebViewer.WebViewString) 由 `新字串值`{:.variable.block} 参数给出。
 
 ### 方法  {#WebViewer-Methods}
 
 {:.methods}
 
-{:id="WebViewer.CanGoBack" class="method returns boolean"} <i/> CanGoBack()
-: Returns true if the WebViewer can go back in the history list.
+{:id="WebViewer.CanGoBack" class="method returns boolean"} <i/> 能否后退()
+: 如果`Web浏览框`可从历史记录列表中后退，则返回 `真`。
 
-{:id="WebViewer.CanGoForward" class="method returns boolean"} <i/> CanGoForward()
-: Returns true if the WebViewer can go forward in the history list.
+{:id="WebViewer.CanGoForward" class="method returns boolean"} <i/> 能否前进()
+: 如果`Web浏览框`可从历史记录列表中前进，则返回 `真`。
 
-{:id="WebViewer.ClearCaches" class="method"} <i/> ClearCaches()
-: Clear the internal webview cache, both ram and disk. This is useful
- when using the `WebViewer` to poll a page that may not be sending
- appropriate cache control headers.
+{:id="WebViewer.ClearCaches" class="method"} <i/> 清除缓存()
+: 清除内部Web浏览器的缓存，包括内存和磁盘。当使用`Web浏览框`轮询没有缓存标头控制的页面时，会非常有用。
 
-{:id="WebViewer.ClearCookies" class="method"} <i/> ClearCookies()
-: Clear the webview's cookies. This is useful if you want to
- sign the user out of a website that uses them to store logins.
+{:id="WebViewer.ClearCookies" class="method"} <i/> 清除Cookies()
+: 清除内部Web浏览器的Cookie。 Cookie会记录一些已登录的账户信息等，如果你想让用户退出网站登录，会非常有用。
 
-{:id="WebViewer.ClearLocations" class="method"} <i/> ClearLocations()
-: Clear Stored Location permissions. When the geolocation API is used in
- the `WebViewer`, the end user is prompted on a per URL basis for whether
- or not permission should be granted to access their location. This
- function clears this information for all locations.
+{:id="WebViewer.ClearLocations" class="method"} <i/> 清除位置信息()
+: 清除已存储的位置权限。当在`Web浏览框`中使用地理定位API时，系统会根据每个URL提示最终用户是否应授予访问其位置的权限。此功能会清除所有位置的此信息。
 
-  As the permissions interface is not available on phones older then
-  Eclair, this function is a no-op on older phones.
+  由于权限界面在较旧的手机上不可用，因此该功能在较旧的手机上是无效的。
 
 {:id="WebViewer.GoBack" class="method"} <i/> 后退()
-: Go back to the previous page in the history list. Does nothing if there is no previous page.
+: 返回历史列表中的上一页。如果没有上一页，则不执行任何操作。
 
 {:id="WebViewer.GoForward" class="method"} <i/> 前进()
-: Go forward to the next page in the history list. Does nothing if there is no next page.
+: 前进到历史列表中的下一页。 如果没有下一页，则不执行任何操作。
 
-{:id="WebViewer.GoHome" class="method"} <i/> GoHome()
-: Loads the  page from the home URL.  This happens automatically when
- home URL is changed.
+{:id="WebViewer.GoHome" class="method"} <i/> 回首页()
+: 从首页 URL 加载页面。当首页URL 更改时，会自动切换并访问新的首页地址。
 
-{:id="WebViewer.GoToUrl" class="method"} <i/> GoToUrl(*url*{:.text})
-: Load the page at the given URL.
+{:id="WebViewer.GoToUrl" class="method"} <i/> 访问网址(*URL网址*{:.text})
+: 加载给定 URL网址 的页面。
 
-{:id="WebViewer.Reload" class="method"} <i/> Reload()
-: Reload the current page.
+{:id="WebViewer.Reload" class="method"} <i/> 重新加载()
+: 重新加载当前页面。
 
-{:id="WebViewer.RunJavaScript" class="method"} <i/> RunJavaScript(*js*{:.text})
-: Run JavaScript in the current page.
+{:id="WebViewer.RunJavaScript" class="method"} <i/> 执行JavaScript代码(*js代码文本*{:.text})
+: 在当前页面中执行 JavaScript 代码。
 
-{:id="WebViewer.StopLoading" class="method"} <i/> StopLoading()
-: Stop loading a page.
+{:id="WebViewer.StopLoading" class="method"} <i/> 停止加载()
+: 停止加载当前页面。
