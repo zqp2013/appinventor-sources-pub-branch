@@ -54,52 +54,44 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 {:id="CloudDB.DataChanged"} 数据发生变化(*标签*{:.text},*值*{:.any})
 : 表示云数据库项目中的数据发生了变化，事件触发时`标签`{:.text.block}已被更新成最新的`值`{:.variable.block}。
 
-{:id="CloudDB.FirstRemoved"} FirstRemoved(*值*{:.any})
-: Event triggered by the [`RemoveFirstFromList`](#CloudDB.RemoveFirstFromList) function. The argument
- `值`{:.variable.block} is the object that was the first in the list, and which is now
- removed.
+{:id="CloudDB.FirstRemoved"} 第一项已删除(*值*{:.any})
+: 由 [`从列表中删除第一项`](#CloudDB.RemoveFirstFromList) 方法触发的事件。参数 `值`{:.variable.block} 是列表中第一个对象，现在已被删除。
 
-{:id="CloudDB.GotValue"} GotValue(*标签*{:.text},*值*{:.any})
-: Indicates that a [`GetValue`](#CloudDB.GetValue) request has succeeded.
+{:id="CloudDB.GotValue"} 已获得值(*标签*{:.text},*值*{:.any})
+: 指示 [`获取值`](#CloudDB.GetValue) 请求已成功。
 
-{:id="CloudDB.TagList"} TagList(*value*{:.list})
-: Event triggered when we have received the list of known tags. Run in response to a call to the
- [`GetTagList`](#CloudDB.GetTagList) function.
+{:id="CloudDB.TagList"} 收到标签列表(*值*{:.list})
+: 当收到已知标签列表时触发事件，是对 [`获取标签列表`](#CloudDB.GetTagList) 方法调用的响应。
 
-{:id="CloudDB.UpdateDone"} UpdateDone(*标签*{:.text},*operation*{:.text})
-: Indicates that operations that store data to CloudDB have completed.
+{:id="CloudDB.UpdateDone"} 更新完成(*标签*{:.text},*operation*{:.text})
+: 表示将数据存储到云数据库的操作已完成。
 
 ### 方法  {#CloudDB-Methods}
 
 {:.methods}
 
-{:id="CloudDB.AppendValueToList" class="method"} <i/> AppendValueToList(*标签*{:.text},*itemToAdd*{:.any})
-: Append a value to the end of a list atomically. If two devices use this function simultaneously, both will be appended and no data lost.
+{:id="CloudDB.AppendValueToList" class="method"} <i/> 追加值到列表(*标签*{:.text},*待添加项*{:.any})
+: 以原子(Atomic)方式将值附加到列表末尾。如果两个设备同时使用此功能，两个设备都会被追加并且不会丢失数据。
 
-{:id="CloudDB.ClearTag" class="method"} <i/> ClearTag(*标签*{:.text})
-: Remove the tag from CloudDB.
+{:id="CloudDB.ClearTag" class="method"} <i/> 清除标签(*标签*{:.text})
+: 从云数据库中删除标签。
 
-{:id="CloudDB.CloudConnected" class="method returns boolean"} <i/> CloudConnected()
-: Returns `真`{:.logic.block} if we are on the network and will likely be able to connect to
- the `CloudDB` server.
+{:id="CloudDB.CloudConnected" class="method returns boolean"} <i/> 云服务已连接()
+: 如果在网络上并且能够连接到云数据库服务器，则返回`真`{:.logic.block}。
 
-{:id="CloudDB.GetTagList" class="method"} <i/> GetTagList()
-: Asks `CloudDB` to retrieve all the tags belonging to this project. The
- resulting list is returned in the event [`TagList`](#CloudDB.TagList).
+{:id="CloudDB.GetTagList" class="method"} <i/> 获取标签列表()
+: 要求云数据库检索属于该项目的所有标签。 结果列表在事件 [`收到标签列表`](#CloudDB.TagList) 中返回。
 
-{:id="CloudDB.GetValue" class="method"} <i/> GetValue(*标签*{:.text},*valueIfTagNotThere*{:.any})
-: `GetValue` asks `CloudDB` to get the value stored under the given tag.
- It will pass the result to the [`GotValue`](#CloudDB.GotValue) will be given.
+{:id="CloudDB.GetValue" class="method"} <i/> 获取值(*标签*{:.text},*无标签时返回值*{:.any})
+: 要求云数据库获取存储在给定标签下的值。
+  
+  它将结果传递给 [`已获得值`](#CloudDB.GotValue) 中给出。
 
-{:id="CloudDB.RemoveFirstFromList" class="method"} <i/> RemoveFirstFromList(*标签*{:.text})
-: Obtain the first element of a list and atomically remove it. If two devices use this function
- simultaneously, one will get the first element and the the other will get the second element,
- or an error if there is no available element. When the element is available, the
- [`FirstRemoved`](#CloudDB.FirstRemoved) event will be triggered.
+{:id="CloudDB.RemoveFirstFromList" class="method"} <i/> 从列表中删除第一项(*标签*{:.text})
+: 获取列表的第一个元素并自动删除它。 如果两个设备同时使用此功能，一个将获取第一个元素，另一个将获取第二个元素，如果没有可用元素，则会出现错误。 当元素可用时，将触发 [`第一项已删除`](#CloudDB.FirstRemoved) 事件。
 
-{:id="CloudDB.StoreValue" class="method"} <i/> StoreValue(*标签*{:.text},*valueToStore*{:.any})
-: Asks `CloudDB` to store the given `value`{:.variable.block} under the given
- `tag`{:.text.block}.
+{:id="CloudDB.StoreValue" class="method"} <i/> 保存值(*标签*{:.text},*待存储值*{:.any})
+: 要求云数据库将给定的 `待存储值`{:.variable.block} 存储在给定的 `标签`{:.text.block} 下。
 
 ## ![icon](images/DataFile.png)  数据文件  {#DataFile}
 
