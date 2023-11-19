@@ -193,57 +193,54 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 有关支持的音频格式，请参阅[Android支持的媒体格式](//developer.android.com/guide/appendix/media-formats.html)。
 
-`音频播放器`组件尤其适合时间较长的声音文件（例如歌曲）；而[`音效`](#Sound) 组件播放时间较短的声音文件则更高效（例如音效）。
+`音频播放器`组件尤其**适合时间较长的声音文件**（例如歌曲）；而[`音效`](#Sound) 组件播放时间较短的声音文件则更高效（例如音效）。
 
 ### 属性  {#Player-Properties}
 
 {:.properties}
 
-{:id="Player.IsPlaying" .boolean .ro .bo} *IsPlaying*
-: Reports whether the media is playing.
+{:id="Player.IsPlaying" .boolean .ro .bo} *播放状态*
+: 报告`音频播放器`是否正在播放。正在播放返回`真`，没有在播放则返回`假`。
 
-{:id="Player.Loop" .boolean} *Loop*
-: If true, the `Player` will loop when it plays. Setting `Loop` while the player is playing will
- affect the current playing.
+{:id="Player.Loop" .boolean} *循环播放*
+: 如果为 `真`，则`音频播放器`播放时将循环播放。正在播放时设置“循环播放”直接对当前播放生效。
 
-{:id="Player.PlayOnlyInForeground" .boolean} *PlayOnlyInForeground*
-: If true, the `Player` will pause playing when leaving the current screen; if false
- (default option), the `Player` continues playing whenever the current screen is displaying or
- not.
+{:id="Player.PlayOnlyInForeground" .boolean} *只能在前台运行*
+: 如果为 `真`，则`音频播放器`在离开当前屏幕时将暂停播放； 如果为 `假`（默认选项），则无论当前屏幕是否显示，`音频播放器`都会继续播放。
 
-{:id="Player.Source" .text} *Source*
-: Sets the audio source.
+{:id="Player.Source" .text} *源文件*
+: 设置音频源文件。
 
-{:id="Player.Volume" .number .wo} *Volume*
-: Sets the volume property to a number between 0 and 100.
+{:id="Player.Volume" .number .wo} *音量*
+: 将音量属性设置为 0 到 100 之间的数字。小于 0 的值将被视为 0，大于 100 的值将被视为 100。
 
 ### 事件  {#Player-Events}
 
 {:.events}
 
-{:id="Player.Completed"} Completed()
-: Indicates that the media has reached the end
+{:id="Player.Completed"} 已播放完成时()
+: 表示媒体播放已结束。
 
-{:id="Player.OtherPlayerStarted"} OtherPlayerStarted()
-: This event is signaled when another player has started (and the current player is playing or
- paused, but not stopped).
+{:id="Player.OtherPlayerStarted"} 其他播放器启动时()
+: 当另一个播放器开始播放时（并且当前播放器正在播放或暂停，但未停止），会触发此事件。
 
 ### 方法  {#Player-Methods}
 
 {:.methods}
 
-{:id="Player.Pause" class="method"} <i/> Pause()
-: Suspends playing the media if it is playing.
+{:id="Player.Pause" class="method"} <i/> 暂停()
+: 如果媒体正在播放，则暂停播放。
 
-{:id="Player.Start" class="method"} <i/> Start()
-: Plays the media.  If it was previously paused, the playing is resumed.
- If it was previously stopped, it starts from the beginning.
+{:id="Player.Start" class="method"} <i/> 开始()
+: 播放媒体。如果之前暂停，则恢复播放。
+  
+  如果之前已停止，则从头开始播放。
 
-{:id="Player.Stop" class="method"} <i/> Stop()
-: Stops playing the media and seeks to the beginning of the song.
+{:id="Player.Stop" class="method"} <i/> 停止()
+: 停止播放媒体，播放进度清零（即下次从头开始播放）。
 
-{:id="Player.Vibrate" class="method"} <i/> Vibrate(*milliseconds*{:.number})
-: Vibrates for specified number of milliseconds.
+{:id="Player.Vibrate" class="method"} <i/> 震动(*毫秒数*{:.number})
+: 手机震动指定的毫秒数。
 
 
 ## ![音效图标](images/sound.png)  音效  {#Sound}
@@ -252,21 +249,21 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 有关支持的声音文件格式，请参阅[Android支持的媒体格式](//developer.android.com/guide/appendix/media-formats.html)。
 
-`音效`组件适合播放短声音文件（例如音效）；而[`音频播放器`](#Player)组件播放较长的声音文件更高效（例如歌曲）。
+`音效`组件**适合播放短声音文件**（例如音效）；而[`音频播放器`](#Player)组件播放较长的声音文件更高效（例如歌曲）。
 
 ### 属性  {#Sound-Properties}
 
 {:.properties}
 
-{:id="Sound.MinimumInterval" .number} *MinimumInterval*
-: Specifies the minimum interval required between calls to [`Play`](#Sound.Play), in
- milliseconds.
- Once the sound starts playing, all further [`Play`](#Sound.Play) calls will be ignored
- until the interval has elapsed.
+{:id="Sound.MinimumInterval" .number} *最小间隔（毫秒）*
+: 指定调用 [`播放`](#Sound.Play) 之间所需的最小间隔（以毫秒为单位）。
+  
+  一旦声音开始播放，所有后续的 [`播放`](#Sound.Play) 调用都将被忽略，直到间隔结束。
 
-{:id="Sound.Source" .text} *Source*
-: The name of the sound file. Only certain formats are supported.
- See http://developer.android.com/guide/appendix/media-formats.html.
+{:id="Sound.Source" .text} *源文件*
+: 声音文件的名称。
+
+  仅支持某些格式，请参阅[http://developer.android.com/guide/appendix/media-formats.html](http://developer.android.com/guide/appendix/media-formats.html)。
 
 ### 事件  {#Sound-Events}
 
@@ -278,58 +275,57 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.methods}
 
-{:id="Sound.Pause" class="method"} <i/> Pause()
-: Pauses playing the sound if it is being played.
+{:id="Sound.Pause" class="method"} <i/> 暂停()
+: 如果正在播放声音，则暂停播放。
 
-{:id="Sound.Play" class="method"} <i/> Play()
-: Plays the sound.
+{:id="Sound.Play" class="method"} <i/> 播放()
+: 播放声音。
 
-{:id="Sound.Resume" class="method"} <i/> Resume()
-: Resumes playing the sound after a pause.
+{:id="Sound.Resume" class="method"} <i/> 恢复()
+: 暂停后继续播放声音。
 
-{:id="Sound.Stop" class="method"} <i/> Stop()
-: Stops playing the sound if it is being played.
+{:id="Sound.Stop" class="method"} <i/> 停止()
+: 如果正在播放声音，则停止播放。
 
-{:id="Sound.Vibrate" class="method"} <i/> Vibrate(*millisecs*{:.number})
-: Vibrates for the specified number of milliseconds.
+{:id="Sound.Vibrate" class="method"} <i/> 震动(*毫秒数*{:.number})
+: 手机震动指定的毫秒数。
 
 
 ## ![录音机图标](images/soundRecorder.png)  录音机  {#SoundRecorder}
 
- Multimedia component that records audio.
+ 录制音频的多媒体组件。
 
 ### 属性  {#SoundRecorder-Properties}
 
 {:.properties}
 
-{:id="SoundRecorder.SavedRecording" .text} *SavedRecording*
-: Specifies the path to the file where the recording should be stored. If this property is the
- empty string, then starting a recording will create a file in an appropriate location. If the
- property is not the empty string, it should specify a complete path to a file in an existing
- directory, including a file name with the extension .3gp.
+{:id="SoundRecorder.SavedRecording" .text} *录音文件路径*
+: 指定应存储录音文件的路径。
+
+  如果此属性为空字符串，则开始录制将在适当的位置创建一个文件；如果该属性不是空字符串，则应指定现有目录中文件的完整路径，包括扩展名如 .3gp 的文件名。
 
 ### 事件  {#SoundRecorder-Events}
 
 {:.events}
 
-{:id="SoundRecorder.AfterSoundRecorded"} AfterSoundRecorded(*sound*{:.text})
-: Provides the location of the newly created sound.
+{:id="SoundRecorder.AfterSoundRecorded"} 录制完成时(*录音文件路径*{:.text})
+: 表示新创建的录音已完成，`录音文件路径`提供录音文件的存储路径。
 
-{:id="SoundRecorder.StartedRecording"} StartedRecording()
-: Indicates that the recorder has started, and can be stopped.
+{:id="SoundRecorder.StartedRecording"} 开始录制时()
+: 表示录音机已启动，可以停止。
 
-{:id="SoundRecorder.StoppedRecording"} StoppedRecording()
-: Indicates that the recorder has stopped, and can be started again.
+{:id="SoundRecorder.StoppedRecording"} 停止录制时()
+: 表示录音机已停止，可以重新启动。
 
 ### 方法  {#SoundRecorder-Methods}
 
 {:.methods}
 
-{:id="SoundRecorder.Start" class="method"} <i/> Start()
-: Starts recording.
+{:id="SoundRecorder.Start" class="method"} <i/> 开始()
+: 开始录音。
 
-{:id="SoundRecorder.Stop" class="method"} <i/> Stop()
-: Stops recording.
+{:id="SoundRecorder.Stop" class="method"} <i/> 停止()
+: 停止录音。
 
 ## ![语音识别器图标](images/speechrecognizer.png)  语音识别器  {#SpeechRecognizer}
 
@@ -355,7 +351,7 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="SpeechRecognizer.Result" .text .ro .bo} *结果*
 : 返回识别器生成的最后一个文本。
 
-{:id="SpeechRecognizer.UseLegacy" .boolean} *UseLegacy*
+{:id="SpeechRecognizer.UseLegacy" .boolean} *使用兼容模式*
 : 如果为真，则使用单独的对话框来识别语音（默认）；如果为假，则语音在后台识别，并在识别新的内容时更新。
   
   `部分结果` 设置为 `真`{:.logic.block} 时，[`识别完成`](#SpeechRecognizer.AfterGettingText) 可能会触发多次。
@@ -369,9 +365,9 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="SpeechRecognizer.AfterGettingText"} 识别完成(*返回结果*{:.text},*部分结果*{:.boolean})
 : 在 `语音识别器` 识别语音后触发该事件。
   
-  如果 [`UseLegacy`](#SpeechRecognizer.UseLegacy) 是`真`{:.logic.block}，那么这个事件在识别的最后只会触发一次；
+  如果 [`使用兼容模式`](#SpeechRecognizer.UseLegacy) 是`真`{:.logic.block}，那么这个事件在识别的最后只会触发一次；
   
-  如果 [`UseLegacy`](#SpeechRecognizer.UseLegacy) 是`假`{:.logic.block}，那么这个事件将触发多次，因为 `语音识别器` 会逐渐识别语音，在这种情况下，`部分结果` 将是 `真`{:.logic.block} 。
+  如果 [`使用兼容模式`](#SpeechRecognizer.UseLegacy) 是`假`{:.logic.block}，那么这个事件将触发多次，因为 `语音识别器` 会逐渐识别语音，在这种情况下，`部分结果` 将是 `真`{:.logic.block} 。
   
   直至语音识别已完成（例如，用户已停止说话），在这种情况下，`部分结果`将是 `假`{:.logic.block}。
 
@@ -382,15 +378,13 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.methods}
 
-{:id="SpeechRecognizer.GetText" class="method"} <i/> GetText()
-: Asks the user to speak, and converts the speech to text. Signals the
- [`AfterGettingText`](#SpeechRecognizer.AfterGettingText) event when the result is available.
+{:id="SpeechRecognizer.GetText" class="method"} <i/> 识别语音()
+: 要求用户说话，并将语音转换为文本。当结果可用时，将触发 [`识别完成`](#SpeechRecognizer.AfterGettingText) 事件。
 
-{:id="SpeechRecognizer.Stop" class="method"} <i/> Stop()
-: Function used to forcefully stop listening speech in cases where
- SpeechRecognizer cannot stop automatically.
- This function works only when the [`UseLegacy`](#SpeechRecognizer.UseLegacy) property is
- set to `假`{:.logic.block}.
+{:id="SpeechRecognizer.Stop" class="method"} <i/> 停止()
+: 用于在 `语音识别器` 无法自动停止的情况下强制停止收听语音的功能。
+
+  仅当 [`使用兼容模式`](#SpeechRecognizer.UseLegacy) 属性设置为 `假`{:.logic.block} 时，此函数才有效。
 
 
 ## ![文本朗读器图标](images/texttospeech.png)  文本朗读器  {#TextToSpeech}
@@ -413,61 +407,51 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.properties}
 
-{:id="TextToSpeech.AvailableCountries" .list .ro .bo} *AvailableCountries*
-: List of the country codes available on this device for use with TextToSpeech.  Check the Android developer documentation under supported languages to find the meanings of these abbreviations.
+{:id="TextToSpeech.AvailableCountries" .list .ro .bo} *支持的国家*
+: 此设备上可用于 `语音识别器` 的国家/地区代码列表。参考 Android 开发文档以查找这些支持国家缩写的含义。
 
-{:id="TextToSpeech.AvailableLanguages" .list .ro .bo} *AvailableLanguages*
-: List of the languages available on this device for use with TextToSpeech.  Check the Android developer documentation under supported languages to find the meanings of these abbreviations.
+{:id="TextToSpeech.AvailableLanguages" .list .ro .bo} *支持的语言*
+: 此设备上可用于 `语音识别器` 的语言列表。参考 Android 开发文档以查找这些支持语言缩写的含义。
 
-{:id="TextToSpeech.Country" .text} *Country*
-: Country code to use for speech generation. This can affect the pronunciation. For example,
- British English (GBR) will sound different from US English (USA). Not every country code will
- affect every language.
+{:id="TextToSpeech.Country" .text} *国家*
+: 用于语音生成的国家/地区代码，这会影响发音。例如，英国英语 (GBR) 听起来与美国英语 (USA) 不同。并非每个国家/地区代码都会影响每种语言。
 
-{:id="TextToSpeech.Language" .text} *Language*
-: Sets the language for TextToSpeech. This changes the way that words are pronounced, not the
- actual language that is spoken. For example, setting the language to French and speaking
- English text will sound like someone speaking English with a French accent.
+{:id="TextToSpeech.Language" .text} *语言*
+: 设置 `语音识别器` 的语言。这改变了单词的发音方式，而不是实际所说的语言。例如，将语言设置为法语并说英语文本听起来就像有人说带有法国口音的英语。
 
-{:id="TextToSpeech.Pitch" .number} *Pitch*
-: Sets the speech pitch for the TextToSpeech.
+{:id="TextToSpeech.Pitch" .number} *音调*
+: 设置 `语音识别器` 的语音音高。
 
-   The values should be between 0 and 2 where lower values lower the tone of synthesized voice
- and greater values raise it.
+    这些值应介于 0 和 2 之间，其中较小的值会降低合成语音的音调，较大的值会提高合成语音的音调。
 
-   The default value is 1.0 for normal pitch.
+    正常音高的默认值为 1.0。
 
-{:id="TextToSpeech.Result" .boolean .ro .bo} *Result*
-: Returns `真`{:.logic.block} if the text was successfully converted to
- speech, otherwise `假`{:.logic.block}.
+{:id="TextToSpeech.Result" .boolean .ro .bo} *结果*
+: 如果文本成功转换为语音，则返回`真`{:.logic.block}，否则返回`假`{:.logic.block}。
 
-{:id="TextToSpeech.SpeechRate" .number} *SpeechRate*
-: Sets the SpeechRate for TextToSpeech.
+{:id="TextToSpeech.SpeechRate" .number} *语速*
+: 设置 `语音识别器` 的语音语速。
 
-   The values should be between 0 and 2 where lower values slow down the pitch and greater
- values accelerate it.
+    这些值应介于 0 和 2 之间，较低的值会减慢音调，较大的值会加快音调。
 
-   The default value is 1.0 for normal speech rate.
+    正常语速的默认值为 1.0。
 
 ### 事件  {#TextToSpeech-Events}
 
 {:.events}
 
-{:id="TextToSpeech.AfterSpeaking"} AfterSpeaking(*result*{:.boolean})
-: Event to raise after the message is spoken. The `result`{:.variable.block} will be
- `真`{:.logic.block} if the message is spoken successfully, otherwise it will be
- `假`{:.logic.block}.
+{:id="TextToSpeech.AfterSpeaking"} 念读结束时(*返回结果*{:.boolean})
+: 念读消息后触发该事件。如果消息被成功读出，则`返回结果`{:.variable.block}将为`true`{:.logic.block}，否则将为`假`{:.logic.block}。
 
-{:id="TextToSpeech.BeforeSpeaking"} BeforeSpeaking()
-: Event to raise when Speak is invoked, before the message is spoken.
+{:id="TextToSpeech.BeforeSpeaking"} 开始念读时()
+: 在调用 `文本朗读器` 念读消息之前触发该事件。
 
 ### 方法  {#TextToSpeech-Methods}
 
 {:.methods}
 
-{:id="TextToSpeech.Speak" class="method"} <i/> Speak(*message*{:.text})
-: Speaks the given message.
-
+{:id="TextToSpeech.Speak" class="method"} <i/> 念读(*消息*{:.text})
+: 念读给定的消息。
 
 ## ![翻译器图标](images/translator.png)  翻译器  {#Translator}
 
@@ -495,22 +479,17 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.events}
 
-{:id="Translator.GotTranslation"} GotTranslation(*responseCode*{:.text},*translation*{:.text})
-: Event indicating that a request has finished and has returned data (translation).
+{:id="Translator.GotTranslation"} 获得译文(*响应代码*{:.text},*译文*{:.text})
+: 请求已完成并已返回数据（翻译）时触发该事件。
 
 ### 方法  {#Translator-Methods}
 
 {:.methods}
 
-{:id="Translator.RequestTranslation" class="method"} <i/> RequestTranslation(*languageToTranslateTo*{:.text},*textToTranslate*{:.text})
-: By providing a target language to translate to (for instance, 'es' for Spanish, 'en' for
- English, or 'ru' for Russian), and a word or sentence to translate, this method will request
- a translation. Once the text is translated by the external
- service, the event [`GotTranslation`](#Translator.GotTranslation) will be executed.
+{:id="Translator.RequestTranslation" class="method"} <i/> 请求翻译(*待翻译至语言*{:.text},*待翻译文本*{:.text})
+: 通过提供要翻译的目标语言（例如，西班牙语的“es”、英语的“en”或俄语的“ru”）以及要翻译的单词或句子，此方法将请求翻译。一旦外部服务翻译了文本，事件 [`获得译文`](#Translator.GotTranslation) 将被触发。
 
-   **Note:** Translator will attempt to detect the source language. You can also specify
- prepending it to the language translation, e.g., es-ru will specify Spanish to Russian
- translation.
+  **注意：** 翻译器将尝试检测源语言。你还可以指定将其添加到语言翻译之前，例如 es-ru 将指定西班牙语到俄语的翻译。
 
 
 ## ![视频播放器图标](images/videoplayer.png)  视频播放器  {#VideoPlayer}
@@ -532,8 +511,8 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.properties}
 
-{:id="VideoPlayer.FullScreen" .boolean .bo} *FullScreen*
-: Sets whether the video should be shown in fullscreen or not.
+{:id="VideoPlayer.FullScreen" .boolean .bo} *全屏模式*
+: 设置视频是否应全屏显示。
 
 {:id="VideoPlayer.Height" .number .bo} *高度*
 : 设置`视频播放器`的垂直高度，以像素px为单位。
@@ -541,16 +520,14 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="VideoPlayer.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`视频播放器`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="VideoPlayer.Source" .text .wo} *Source*
-: Sets the "path" to the video. Usually, this will be the name of the video file, which should be
- added in the Designer.
+{:id="VideoPlayer.Source" .text .wo} *源文件*
+: 设置视频文件的路径。通常，在程序包资源中这将是视频文件的名称。
 
 {:id="VideoPlayer.Visible" .boolean} *可见性*
 : 设置`视频播放器`是否显示在屏幕上，值是`真`{:.logic.block}则`视频播放器`显示，`假`{:.logic.block}则隐藏。
 
-{:id="VideoPlayer.Volume" .number .wo} *Volume*
-: Sets the volume property to a number between 0 and 100. Values less than 0
- will be treated as 0, and values greater than 100 will be treated as 100.
+{:id="VideoPlayer.Volume" .number .wo} *音量*
+: 将音量属性设置为 0 到 100 之间的数字。小于 0 的值将被视为 0，大于 100 的值将被视为 100。
 
 {:id="VideoPlayer.Width" .number .bo} *宽度*
 : 设置`视频播放器`的水平宽度，以像素px为单位。
@@ -562,25 +539,26 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.events}
 
-{:id="VideoPlayer.Completed"} Completed()
-: Indicates that the video has reached the end
+{:id="VideoPlayer.Completed"} 已播放完成时()
+: 表示视频播放已结束。
 
 ### 方法  {#VideoPlayer-Methods}
 
 {:.methods}
 
-{:id="VideoPlayer.GetDuration" class="method returns number"} <i/> GetDuration()
-: Returns duration of the video in milliseconds.
+{:id="VideoPlayer.GetDuration" class="method returns number"} <i/> 取时长()
+: 返回视频的持续时间（以毫秒为单位）。
 
-{:id="VideoPlayer.Pause" class="method"} <i/> Pause()
-: Pauses playback of the video.  Playback can be resumed at the same location by calling the
- [`Start`](#VideoPlayer.Start) method.
+{:id="VideoPlayer.Pause" class="method"} <i/> 暂停()
+: 暂停视频播放。可以通过调用 [`开始`](#VideoPlayer.Start) 方法在同一位置恢复播放。
 
-{:id="VideoPlayer.SeekTo" class="method"} <i/> SeekTo(*ms*{:.number})
-: Seeks to the requested time (specified in milliseconds) in the video. If the video is paused, the frame shown will not be updated by the seek. The player can jump only to key frames in the video, so seeking to times that differ by short intervals may not actually move to different frames.
+{:id="VideoPlayer.SeekTo" class="method"} <i/> 跳转到(*毫秒数*{:.number})
+: 跳转到视频中的指定时间（以毫秒为单位）。
 
-{:id="VideoPlayer.Start" class="method"} <i/> Start()
-: Plays the media specified by the [`Source`](#VideoPlayer.Source).
+  如果视频暂停，则显示的帧将不会通过搜索进行更新。播放器只能跳转到视频中的关键帧，因此跳转间隔较短的时间可能实际上不会移动到不同的帧。
 
-{:id="VideoPlayer.Stop" class="method"} <i/> Stop()
-: Resets to start of video and pauses it if video was playing.
+{:id="VideoPlayer.Start" class="method"} <i/> 开始()
+: 播放 [`源文件`](#VideoPlayer.Source) 指定的媒体。
+
+{:id="VideoPlayer.Stop" class="method"} <i/> 停止()
+: 重置为视频开始位置，如果视频正在播放则暂停。
