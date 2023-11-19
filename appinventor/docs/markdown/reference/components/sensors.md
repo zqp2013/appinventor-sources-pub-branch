@@ -30,7 +30,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 ## ![icon](images/accelerometersensor.png)  加速度传感器  {#AccelerometerSensor}
 
-不可见组件，可检测震动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
+不可见组件，可检测振动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
 
   - **xAccel**：当手机静止在平坦表面上时为 0，当手机倾斜时为正向右（即左侧抬起），当手机倾斜到右侧时为负向左（即，其右侧尺寸升高）。
 
@@ -45,36 +45,36 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 {:.properties}
 
-{:id="AccelerometerSensor.Available" .boolean .ro .bo} *Available*
+{:id="AccelerometerSensor.Available" .boolean .ro .bo} *可用状态*
 : Returns whether the `AccelerometerSensor` hardware is available on the device.
 
-{:id="AccelerometerSensor.Enabled" .boolean} *Enabled*
+{:id="AccelerometerSensor.Enabled" .boolean} *启用*
 : Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated even if the device is accelerated or shaken.
 
-{:id="AccelerometerSensor.LegacyMode" .boolean .wo .do} *LegacyMode*
+{:id="AccelerometerSensor.LegacyMode" .boolean .wo .do} *兼容模式*
 : Prior to the release that added this property the AccelerometerSensor component passed through sensor values directly as received from the Android system. However these values do not compensate for tablets that default to Landscape mode, requiring the MIT App Inventor programmer to compensate. However compensating would result in incorrect results in Portrait mode devices such as phones. We now detect Landscape mode tablets and perform the compensation. However if your project is already compensating for the change, you will now get incorrect results. Although our preferred solution is for you to update your project, you can also just set this property to “true” and our compensation code will be deactivated. Note: We recommend that you update your project as we may remove this property in a future release.
 
-{:id="AccelerometerSensor.MinimumInterval" .number} *MinimumInterval*
+{:id="AccelerometerSensor.MinimumInterval" .number} *最小间隔（毫秒）*
 : Specifies the minimum interval required between back-to-back [`Shaking`](#AccelerometerSensor.Shaking) events,
  in milliseconds.
  Once the phone starts being shaken, all further [`Shaking`](#AccelerometerSensor.Shaking) events will be ignored
  until the interval has elapsed.
 
-{:id="AccelerometerSensor.Sensitivity" .number} *Sensitivity*
+{:id="AccelerometerSensor.Sensitivity" .number} *敏感度*
 : Specifies the sensitivity of the accelerometer. Valid values are: `1` (weak), `2` (moderate),
  and `3` (strong).
 
-{:id="AccelerometerSensor.XAccel" .number .ro .bo} *XAccel*
+{:id="AccelerometerSensor.XAccel" .number .ro .bo} *X分量*
 : Returns the acceleration in the X-dimension in SI units (m/s²).
  The sensor must be enabled to return meaningful values.
 
-{:id="AccelerometerSensor.YAccel" .number .ro .bo} *YAccel*
+{:id="AccelerometerSensor.YAccel" .number .ro .bo} *Y分量*
 : Returns the acceleration in the Y-dimension in SI units (m/s²).
  The sensor must be enabled to return meaningful values.
 
-{:id="AccelerometerSensor.ZAccel" .number .ro .bo} *ZAccel*
+{:id="AccelerometerSensor.ZAccel" .number .ro .bo} *Z分量*
 : Returns the acceleration in the Z-dimension in SI units (m/s²).
  The sensor must be enabled to return meaningful values.
 
@@ -82,10 +82,10 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 {:.events}
 
-{:id="AccelerometerSensor.AccelerationChanged"} AccelerationChanged(*xAccel*{:.number},*yAccel*{:.number},*zAccel*{:.number})
-: Indicates the acceleration changed in the X, Y, and/or Z dimensions.
+{:id="AccelerometerSensor.AccelerationChanged"} 加速度变化时(*X分量*{:.number},*Y分量*{:.number},*Z分量*{:.number})
+: 指示 X、Y 和/或 Z 维度上的加速度变化。
 
-{:id="AccelerometerSensor.Shaking"} Shaking()
+{:id="AccelerometerSensor.Shaking"} 被晃动时()
 : Indicates the device started being shaken or continues to be shaken.
 
 ### 方法  {#AccelerometerSensor-Methods}
@@ -134,27 +134,27 @@ Physical world component that can measure the ambient air pressure if
 
 {:.properties}
 
-{:id="Barometer.AirPressure" .number .ro .bo} *AirPressure*
+{:id="Barometer.AirPressure" .number .ro .bo} *气压*
 : The atmospheric pressure in hPa (millibar), if the sensor is available 
  and enabled.
 
-{:id="Barometer.Available" .boolean .ro .bo} *Available*
+{:id="Barometer.Available" .boolean .ro .bo} *可用状态*
 : Specifies whether or not the device has the hardware to support the `Barometer` component.
 
-{:id="Barometer.Enabled" .boolean} *Enabled*
+{:id="Barometer.Enabled" .boolean} *启用*
 : Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
-{:id="Barometer.RefreshTime" .number} *RefreshTime*
-: The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
+{:id="Barometer.RefreshTime" .number} *刷新时间*
+: 所请求的读数变化之间的最短时间（以毫秒为单位）。
 
 ### 事件  {#Barometer-Events}
 
 {:.events}
 
-{:id="Barometer.AirPressureChanged"} AirPressureChanged(*pressure*{:.number})
-: Called when a change is detected in the air pressure (provided in hPa).
+{:id="Barometer.AirPressureChanged"} 气压改变时(*气压值*{:.number})
+: 当检测到气压（以 hPa 为单位）发生变化时触发该事件。
 
 ### 方法  {#Barometer-Methods}
 
@@ -333,26 +333,26 @@ Component providing data from the device's gyroscope sensor.
 
 {:.properties}
 
-{:id="GyroscopeSensor.Available" .boolean .ro .bo} *Available*
+{:id="GyroscopeSensor.Available" .boolean .ro .bo} *可用状态*
 : Indicates whether a gyroscope sensor is available.
 
-{:id="GyroscopeSensor.Enabled" .boolean} *Enabled*
+{:id="GyroscopeSensor.Enabled" .boolean} *启用*
 : Enabled property getter method.
 
-{:id="GyroscopeSensor.XAngularVelocity" .number .ro .bo} *XAngularVelocity*
+{:id="GyroscopeSensor.XAngularVelocity" .number .ro .bo} *X分量角速度*
 : The angular velocity around the X axis, in degrees per second.
 
-{:id="GyroscopeSensor.YAngularVelocity" .number .ro .bo} *YAngularVelocity*
+{:id="GyroscopeSensor.YAngularVelocity" .number .ro .bo} *Y分量角速度*
 : The angular velocity around the Y axis, in degrees per second.
 
-{:id="GyroscopeSensor.ZAngularVelocity" .number .ro .bo} *ZAngularVelocity*
+{:id="GyroscopeSensor.ZAngularVelocity" .number .ro .bo} *Z分量角速度*
 : The angular velocity around the Z axis, in degrees per second.
 
 ### 事件  {#GyroscopeSensor-Events}
 
 {:.events}
 
-{:id="GyroscopeSensor.GyroscopeChanged"} GyroscopeChanged(*xAngularVelocity*{:.number},*yAngularVelocity*{:.number},*zAngularVelocity*{:.number},*timestamp*{:.number})
+{:id="GyroscopeSensor.GyroscopeChanged"} 陀螺仪状态改变时(*x分量角速度*{:.number},*y分量角速度*{:.number},*z分量角速度*{:.number},*时间戳*{:.number})
 : Indicates that the gyroscope sensor data has changed. The timestamp parameter is the time in nanoseconds at which the event occurred.
 
 ### 方法  {#GyroscopeSensor-Methods}
@@ -372,27 +372,27 @@ Physical world component that can measure the relative ambient air
 
 {:.properties}
 
-{:id="Hygrometer.Available" .boolean .ro .bo} *Available*
+{:id="Hygrometer.Available" .boolean .ro .bo} *可用状态*
 : Specifies whether or not the device has the hardware to support the `Hygrometer` component.
 
-{:id="Hygrometer.Enabled" .boolean} *Enabled*
+{:id="Hygrometer.Enabled" .boolean} *启用*
 : Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
-{:id="Hygrometer.Humidity" .number .ro .bo} *Humidity*
+{:id="Hygrometer.Humidity" .number .ro .bo} *湿度*
 : Returns the relative ambient humidity as a percentage.
  The sensor must be enabled and available 
  to return meaningful values.
 
-{:id="Hygrometer.RefreshTime" .number} *RefreshTime*
+{:id="Hygrometer.RefreshTime" .number} *刷新时间*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
 ### 事件  {#Hygrometer-Events}
 
 {:.events}
 
-{:id="Hygrometer.HumidityChanged"} HumidityChanged(*humidity*{:.number})
+{:id="Hygrometer.HumidityChanged"} 湿度改变时(*湿度值*{:.number})
 : Indicates the relative humidity changed.
 
 ### 方法  {#Hygrometer-Methods}
@@ -411,30 +411,30 @@ Physical world component that can measure the light level.
 
 {:.properties}
 
-{:id="LightSensor.Available" .boolean .ro .bo} *Available*
+{:id="LightSensor.Available" .boolean .ro .bo} *可用状态*
 : Specifies whether or not the device has the hardware to support the `LightSensor` component.
 
-{:id="LightSensor.AverageLux" .number .ro .bo} *AverageLux*
+{:id="LightSensor.AverageLux" .number .ro .bo} *平均照度*
 : Returns the brightness in lux by averaging the previous 10 measured values.
  The sensor must be enabled and available to return meaningful values.
 
-{:id="LightSensor.Enabled" .boolean} *Enabled*
+{:id="LightSensor.Enabled" .boolean} *启用*
 : Specifies whether the sensor should generate events.  If `真`{:.logic.block},
  the sensor will generate events.  Otherwise, no events are
  generated.
 
-{:id="LightSensor.Lux" .number .ro .bo} *Lux*
+{:id="LightSensor.Lux" .number .ro .bo} *照度*
 : Returns the last measured brightness in lux.
  The sensor must be enabled and available to return meaningful values.
 
-{:id="LightSensor.RefreshTime" .number} *RefreshTime*
+{:id="LightSensor.RefreshTime" .number} *刷新时间*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
 ### 事件  {#LightSensor-Events}
 
 {:.events}
 
-{:id="LightSensor.LightChanged"} LightChanged(*lux*{:.number})
+{:id="LightSensor.LightChanged"} 光线变化时(*照度值*{:.number})
 : Indicates the light level changed.
 
 ### 方法  {#LightSensor-Methods}
@@ -588,32 +588,32 @@ Component for MagneticFieldSensor
 
 {:.properties}
 
-{:id="MagneticFieldSensor.AbsoluteStrength" .number .ro .bo} *AbsoluteStrength*
-: Indicates the absolute strength of the field.
+{:id="MagneticFieldSensor.AbsoluteStrength" .number .ro .bo} *绝对强度*
+: 表示磁场的绝对强度。
 
-{:id="MagneticFieldSensor.Available" .boolean .ro .bo} *Available*
+{:id="MagneticFieldSensor.Available" .boolean .ro .bo} *可用状态*
 : Indicates that there is a magnetic field sensor in the device and it is available.
 
-{:id="MagneticFieldSensor.Enabled" .boolean} *Enabled*
+{:id="MagneticFieldSensor.Enabled" .boolean} *启用*
 : Indicates whether or not the magnetic field sensor is enabled and working.
 
-{:id="MagneticFieldSensor.MaximumRange" .number .ro .bo} *MaximumRange*
-: Indicates the maximum range the magnetic sensor can reach.
+{:id="MagneticFieldSensor.MaximumRange" .number .ro .bo} *最大范围*
+: 指示磁传感器可以达到的最大范围。
 
-{:id="MagneticFieldSensor.XStrength" .number .ro .bo} *XStrength*
+{:id="MagneticFieldSensor.XStrength" .number .ro .bo} *X分量强度*
 : Indicates the field's strength in the X-axis.
 
-{:id="MagneticFieldSensor.YStrength" .number .ro .bo} *YStrength*
+{:id="MagneticFieldSensor.YStrength" .number .ro .bo} *Y分量强度*
 : Indicates the field's strength in the Y-axis.
 
-{:id="MagneticFieldSensor.ZStrength" .number .ro .bo} *ZStrength*
+{:id="MagneticFieldSensor.ZStrength" .number .ro .bo} *Z分量强度*
 : Indicates the field's strength in the Z-axis.
 
 ### 事件  {#MagneticFieldSensor-Events}
 
 {:.events}
 
-{:id="MagneticFieldSensor.MagneticChanged"} MagneticChanged(*xStrength*{:.number},*yStrength*{:.number},*zStrength*{:.number},*absoluteStrength*{:.number})
+{:id="MagneticFieldSensor.MagneticChanged"} 磁场改变时(*xStrength*{:.number},*yStrength*{:.number},*zStrength*{:.number},*absoluteStrength*{:.number})
 : Triggers when magnetic field has changed, setting the new values in parameters.
 
 ### 方法  {#MagneticFieldSensor-Methods}
@@ -846,7 +846,7 @@ Component for MagneticFieldSensor
 {:id="Thermometer.RefreshTime" .number} *RefreshTime*
 : The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
 
-{:id="Thermometer.Temperature" .number .ro .bo} *Temperature*
+{:id="Thermometer.Temperature" .number .ro .bo} *温度*
 : Returns the temperature in degrees Celsius.
  The sensor must be enabled and available 
  to return meaningful values.
@@ -855,7 +855,7 @@ Component for MagneticFieldSensor
 
 {:.events}
 
-{:id="Thermometer.TemperatureChanged"} TemperatureChanged(*temperature*{:.number})
+{:id="Thermometer.TemperatureChanged"} 温度改变时(*温度值*{:.number})
 : Indicates a change of temperature, provided in degrees Celsius.
 
 ### 方法  {#Thermometer-Methods}

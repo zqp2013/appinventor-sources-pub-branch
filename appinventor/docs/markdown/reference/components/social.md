@@ -324,11 +324,11 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:.methods}
 
-{:id="PhoneCall.MakePhoneCall" class="method"} <i/> MakePhoneCall()
+{:id="PhoneCall.MakePhoneCall" class="method"} <i/> 拨打电话()
 : Launches the default dialer app set to start a phone call using the number in the
  [`PhoneNumber`](#PhoneCall.PhoneNumber) property.
 
-{:id="PhoneCall.MakePhoneCallDirect" class="method"} <i/> MakePhoneCallDirect()
+{:id="PhoneCall.MakePhoneCallDirect" class="method"} <i/> 直接拨打电话()
 : Directly initiates a phone call using the number in the [`PhoneNumber`](#PhoneCall.PhoneNumber) property,
  bypassing user interaction to start the call. **Most apps should use
  [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead, which requires no permissions.**
