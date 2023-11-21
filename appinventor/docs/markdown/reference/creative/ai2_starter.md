@@ -9,12 +9,12 @@ description: App Inventor 2 Ai2 Starter模拟器下载及安装，AI伴侣升级
 ## Ai2 Starter模拟器下载
 <!--https://ai2-starter.software.informer.com/download/-->
 
-Ai2 Starter目前的最新版本为v4.6，内含AI伴侣版本为v2.47，提供安装版、绿色免安装版、绿色免安装升级版（升级v2.67版AI伴侣），如下：
+Ai2 Starter目前的最新版本为v4.6，内含AI伴侣版本为v2.46，提供安装版、绿色免安装版、绿色免安装升级版（升级v2.67版AI伴侣），如下：
 
 |   版本    | 文件类型 | 极速下载地址	  | 特点  |
 |---------|---------|---------|
-|  Ai2 Starter v4.6 安装版（AI伴侣v2.47版本）	| .exe<br/>96MB  |   [点此下载](https://nchc.dl.sourceforge.net/project/ai2u/ai2u%204.6/Installer/AI2%20Starter%204.6.exe){:.vip}	 | Windows安装包，安装后启动菜单有快捷方式。 |
-|    绿色免安装版（AI伴侣v2.47版本）<br/> ![AI2Starter](images/AI2Starter.png)   | .zip<br/>106MB |    [点此下载](https://sourceforge.net/projects/ai2u/files/ai2u%204.6/Portable/AI2Starter46.zip/download){:.vip}      |   绿色免安装版，解压后即可使用。<br/>相比安装版多了一个管理界面，用于模拟器的启动管理。<br/>AI伴侣需自行升级。      |
+|  Ai2 Starter v4.6 安装版（AI伴侣v2.46版本）	| .exe<br/>96MB  |   [点此下载](https://nchc.dl.sourceforge.net/project/ai2u/ai2u%204.6/Installer/AI2%20Starter%204.6.exe){:.vip}	 | Windows安装包，安装后启动菜单有快捷方式。 |
+|    绿色免安装版（AI伴侣v2.46版本）<br/> ![AI2Starter](images/AI2Starter.png)   | .zip<br/>106MB |    [点此下载](https://sourceforge.net/projects/ai2u/files/ai2u%204.6/Portable/AI2Starter46.zip/download){:.vip}      |   绿色免安装版，解压后即可使用。<br/>相比安装版多了一个管理界面，用于模拟器的启动管理。<br/>AI伴侣需自行升级。      |
 |    绿色免安装**升级版**（升级v2.67版AI伴侣）  | .zip<br/>106MB  |  付费下载<br/>联系客服 | 以上绿色版基础上，升级了内置**AI伴侣版本至最新版**。<br/>此版本需付费下载，非会员￥19.9，会员优惠价￥9.9。 |
 
 ## Ai2 Starter模拟器连接一直失败？
