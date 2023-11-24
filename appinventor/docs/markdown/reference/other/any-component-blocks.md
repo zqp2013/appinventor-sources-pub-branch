@@ -23,13 +23,13 @@ description: 编写应用程序时的一个常见概念是“不要重复自己�
 ![隐藏列表中所有按钮](images/loop-example.png)
 
 {:.caption}
-**Figure 1.** 使用循环隐藏列表中所有按钮的例子
+**图 1.** 使用循环隐藏列表中所有按钮的例子
 
-Each of the three major component block types, i.e., events, methods, and properties, have corresponding "any component" blocks.
+三种主要组件块类型（即事件、方法和属性）中的每一种都具有相应的“任何组件”块。
 
-## Properties
+## 属性
 
-The "any component" blocks for properties are the simplest versions of any component blocks. Property getters, like the one shown below, take a single component and return the value of the named property for that component. Property setters take an additional argument, which is the new value of the property.
+属性的“任何组件”块是任何组件块的最简单版本。 属性 getter（如下所示）采用单个组件并返回该组件的命名属性的值。 属性设置器采用一个附加参数，即属性的新值。
 
 {:.figure}
 ![Getter block to get the Text property of a button called ExampleButton](images/getter.png)
@@ -37,98 +37,98 @@ The "any component" blocks for properties are the simplest versions of any compo
 ![Setter block to set the Enabled property of a button called ExampleButton to false](images/setter.png)
 
 {:.caption}
-**Figure 2.** Example blocks for the any property getters and setters.
+**图 2.** 任何属性 getter 和 setter 的示例块。
 
-## Methods
+## 方法
 
-Any component method blocks function similar to the property getters and setters. For any given method on a component, the corresponding any component block will take a component and all of the parameters needed by the method. The block will have the same output as the specific method block (if any). For example, below is a method block to compute the distance from a Marker to the user's current location on a Map.
+任何组件方法块的功能都类似于属性 getter 和 setter。 对于组件上的任何给定方法，相应的任何组件块将采用组件和该方法所需的所有参数。 该块将具有与特定方法块（如果有）相同的输出。 例如，下面是一个方法块，用于计算从标记到用户在地图上的当前位置的距离。
 
 {:.figure}
 ![Computes the distance from the user's current location to a marker provided in the variable called feature](images/method.png)
 
 {:.caption}
-**Figure 3.** Example use of a method block that takes any marker and computes the distance to it from the user's current location.
+**图 3.** 使用方法块的示例，该方法块采用任何标记并计算从用户当前位置到该标记的距离。
 
-## Events
+## 事件
 
-Any component events are the most complex form of an any component block. For any given event, the corresponding any component event adds two more parameters, <span class="variable block">component</span> and <span class="variable block">notAlreadyHandled</span>, to the existing list of event parameters, if any. The <span class="variable block">component</span> parameter will be the component that triggered the event, such as <span class="component block">Button</span>. The <span class="variable block">notAlreadyHandled</span> parameter is <span class="logic block">true</span> if no other event block specifically handles the event for <span class="variable block">component</span>.
+任何组件事件是任何组件块的最复杂形式。 对于任何给定事件，相应的任何组件事件都会向现有列表中添加两个参数：<span class="variable block">component</span> 和 <span class="variable block">notAlreadyHandled</span> 事件参数（如果有）。 <span class="variable block">component</span> 参数将是触发事件的组件，例如 <span class="component block">Button</span>。 如果没有其他事件块专门处理 <span class="variable block"> 的事件，则 <span class="variable block">notAlreadyHandled</span> 参数为 <span class="logic block">true</span> 组件。
 
-Consider the following pseudocode for event handling to see how this works:
+考虑以下事件处理伪代码，看看它是如何工作的：
 
-1. An event occurs, such as the user clicks a button called Button1.
-2. <span class="variable block">component</span> is initialized to <span class="getter block">Button1</span>.
-3. <span class="variable block">notAlreadyHandled</span> is initialized to <span class="logic block">true</span>.
-4. App Inventor checks to see if <span class="event block">when Button1.Click</span> exists.
-5. If the event block is found:
-    1. The event block code is run.
-    2. <span class="variable block">notAlreadyHandled</span> is set to <span class="logic block">false</span>.
-6. App Inventor checks to see if <span class="event block">when any Button.Click</span> exists.
-7. If the any event block is found, the event block code is run with <span class="variable block">component</span> and <span class="variable block">notAlreadyHandled</span> passed to it.
+1. 发生一个事件，例如用户单击名为 Button1 的按钮。
+2. <span class="variable block">组件</span>被初始化为<span class="getter block">Button1</span>。
+3. <span class="variable block">notAlreadyHandled</span> 初始化为<span class="logic block">true</span>。
+4. App Inventor 检查 <span class="event block">when Button1.Click</span> 是否存在。
+5. 如果找到事件块：
+     1. 运行事件块代码。
+     2. <span class="variable block">notAlreadyHandled</span> 设置为 <span class="logic block">false</span>。
+6. App Inventor 检查<span class="event block">何时任何 Button.Click</span> 是否存在。
+7. 如果找到任何事件块，则运行事件块代码，并传递给它的 <span class="variable block">组件</span> 和 <span class="variable block">notAlreadyHandled</span>。
 
 
-## Tips & Tricks
+## 提示与技巧
 
-There are a number of things you can do with any component blocks. Here are some tips and tricks to get the most out of any component blocks.
+您可以使用任何组件块执行许多操作。 以下是一些充分利用组件块的提示和技巧。
 
-### Lists of Components
+### 组件列表
 
-You can <span class="list block">make a list</span> of components using global variables. This makes it easy to reference large sets of components through a single list and apply changes using the <span class="control block">for-each</span> block.
+您可以使用全局变量<span class="list block">创建组件列表</span>。 这样可以轻松地通过单个列表引用大量组件，并使用 <span class="control block">for-each</span> 块应用更改。
 
 {:.figure}
 ![Creates a variable called listOfButtons with Button1 through Button5 added](images/list-of-components.png)
 
 {:.caption}
-**Figure 4.** The global variable <span class="variable block">listOfButtons</span> is set to a list of button components.
+**图 4.** 全局变量 <span class="variable block">listOfButtons</span> 设置为按钮组件列表。
 
-### Swap Blocks
+### 交换块
 
-You can swap between a block for a specific component and the equivalent any component block through the "Make Generic" and "Make Specific" menu items in a block's right click (context) menu. "Make Generic" will convert a block for a specific component, e.g., <span class="setter block">set Button1.Enabled to</span>, into a any component block, e.g., <span class="setter block">set Button.Enabled of component</span> with the corresponding component block, e.g., <span class="component block">Button1</span>. In order to use the "Make Specific" menu item, the "of component" slot must be filled with a specific component, e.g., <span class="component block">Button1</span>, and not another type of block. This feature is available for property setters, property getters, and methods.
+您可以通过块的右键单击（上下文）菜单中的“Make Generic”和“Make Specific”菜单项在特定组件的块和等效的任何组件块之间进行交换。 “Make Generic”会将特定组件的块（例如 <span class="setter block">set Button1.Enabled to</span>）转换为任何组件块，例如 <span class="setter block" >使用相应的组件块设置组件的Button.Enabled</span>，例如<span class="component block">Button1</span>。 为了使用“Make Specific”菜单项，“of component”槽必须填充特定的组件，例如 <span class="component block">Button1</span>，而不是其他类型的块。 此功能可用于属性设置器、属性获取器和方法。
 
 {:.figure}
 ![Right-click on a block to get the context menu, and select Make Generic to turn it into the equivalent any component blocks.](images/specific-block.png) ![The any component form of the previous block.](setter.png)
 
 {:.caption}
-**Figure 5.** A demonstration of how blocks can be transformed from a specific to generic versions using the right click (context) menu.
+**图 5.** 演示如何使用右键单击（上下文）菜单将块从特定版本转换为通用版本。
 
-### Any Component Events
+### 任何组件事件
 
-Unlike the operation to turn properties and methods into their any component versions, turning a component event handler into an any component event using "Make Generic" is a one-way operation (it can be undone using the Undo option, however). When using this feature, all references to the component will be replaced with any component versions.
+与将属性和方法转换为任意组件版本的操作不同，使用“Make Generic”将组件事件处理程序转换为任意组件事件是一种单向操作（但是可以使用“撤消”选项撤消该操作）。 使用此功能时，对组件的所有引用都将替换为任何组件版本。
 
 {:.figure}
 ![An event handler for Button1.Click that changes a number of properties of Button1](images/any-event-example-a.png)<br>
 ![A generic event handler for any Button.Click that performs the same operations as above, but to any Button not just Button1](images/any-event-example-b.png)
 
 {:.caption}
-**Figure 6.** Top: A <span class="event block">when Button1.Click</span> event that changes a number of Button1's properties. Bottom: After using the "Make Generic" menu option (bottom), the <span class="event block">when Button1.Click</span> event is replaced with a <span class="event block">when any Button.Click</span> event, and all blocks that reference Button1 are replaced with <span class="variable block">component</span>.
+**图 6.** 顶部：<span class="event block">when Button1.Click</span> 事件更改了 Button1 的多个属性。 底部：使用“Make Generic”菜单选项（底部）后，<span class="event block">when Button1.Click</span> 事件替换为 <span class="event block">when any Button .Click</span>事件，所有引用Button1的块都被替换为<span class="variable block">组件</span>。
 
-## Examples
+## 例子
 
-### Snow Globe
+### 雪球App
 
-In a snow globe app, you might use many Ball sprites on a Canvas to represent snowflakes in the snow globe. You may want them to disappear when they reach the edge of the screen. Previously, you would have to create a <span class="event block">when Ball_XX_.EdgeReached</span> for each snowflake to make this happen. With the <span class="event block">when any Ball.EdgeReached</span> event, you only need to write the code once:
+在雪球应用程序中，您可以在画布上使用许多球精灵来表示雪球中的雪花。 您可能希望它们在到达屏幕边缘时消失。 以前，您必须为每个雪花创建一个 <span class="event block">when Ball_XX_.EdgeReached</span> 才能实现此目的。 使用<span class="event block">当任何Ball.EdgeReached</span>事件时，您只需要编写一次代码：
 
 ![Old code with many event handlers all doing the same thing](images/snowglobe-specific.png){:.figure width="750px"}<br>
 ![New code with a single any ball edge reached handler replacing the repetitive code above](images/snowglobe-generic.png){:.figure}<br>
 
 {:.caption}
-**Figure 7.** Top: Repetitive event handlers before the use of the generic event handler. Bottom: All of the code reduces to a single event handler, saving space and time coding.
+**图 7.** 顶部：使用通用事件处理程序之前的重复事件处理程序。 底部：所有代码都简化为单个事件处理程序，从而节省了编码空间和时间。
 
-### Random Button Colors
+### 随机按钮颜色
 
-This event block demonstrates any component events and property setters.
+该事件块演示了所有组件事件和属性设置器。
 
 {:.figure}
 ![An event handler to change any button's background color when it is clicked](images/random-colors.png)
 
 {:.caption}
-**Figure 8.** An event handler to change any button's background color when it is clicked.
+**图 8.** 一个事件处理程序，用于在单击任何按钮时更改其背景颜色。
 
-### Distance to Nearest Feature
+### 到最近要素的距离
 
-Given a Map with a number of Markers, find the distance to the Marker nearest the user with the <span class="procedure block">call Marker.DistanceToPoint</span> block:
+给定一个包含多个标记的地图，使用 <span class="procedure block">call Marker.DistanceToPoint</span> 块查找到距离用户最近的标记的距离：
 
 {:.figure}
 ![Example code to determine the distance to the nearest Marker on a Map given the user's current location](images/method-example.png)
 
 {:.caption}
-**Figure 9.** An example of how to find the closest Marker on a Map to the user's current location.
+**图 9.** 如何在地图上查找距离用户当前位置最近的标记的示例。
