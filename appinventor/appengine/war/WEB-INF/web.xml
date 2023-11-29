@@ -58,6 +58,15 @@
     <url-pattern>/pay/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>AiaStoreServlet</servlet-name>
+    <servlet-class>com.google.appinventor.server.AiaStoreServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AiaStoreServlet</servlet-name>
+    <url-pattern>/aia-store/*</url-pattern>
+  </servlet-mapping>
+
   <!-- Remote API -->
   <servlet>
     <display-name>Remote API Servlet</display-name>

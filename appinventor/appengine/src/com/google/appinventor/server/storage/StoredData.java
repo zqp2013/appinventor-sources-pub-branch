@@ -278,6 +278,38 @@ public class StoredData {
     public String status; //开通后回填
     @Indexed public Date timestamp;
   }
+  // Add by 中文网，aia商店信息
+  @Unindexed
+  public static final class AiaStoreData {
+    @Id public String asId;
+    public String title;
+    public String phone;
+    public String aia_path;
+    public String pics;
+    public String contents;
+    public String price;
+    public String app_status;//审核状态
+    public String ranking;//综合排名
+    public int num_screen;
+    public int num_blocks;
+    public String catalog;//aia分类
+    public String quality;//质量等级
+    public String score;//最新评分
+    //public List score_list; //评分历史
+    //public List comment_list; //评论历史
+    @Indexed public Date publish_time;
+  }
+  //aia商店购买信息
+  @Unindexed
+  public static final class AiaBuyData {
+    @Id Long id;
+    public String asId;
+    public String owner_phone; //发布者
+    public String buy_phone; //购买者
+    public String price;
+    public String commission;//佣金
+    @Indexed public Date buy_time;
+  }
 
   @Unindexed
   static final class CorruptionRecord {

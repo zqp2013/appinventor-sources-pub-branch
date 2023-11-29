@@ -33,6 +33,8 @@ import com.google.appinventor.server.storage.StoredData.FileData;
 import com.google.appinventor.server.storage.StoredData.MotdData;
 import com.google.appinventor.server.storage.StoredData.NonceData;
 import com.google.appinventor.server.storage.StoredData.PayOrderData;
+import com.google.appinventor.server.storage.StoredData.AiaStoreData;
+import com.google.appinventor.server.storage.StoredData.AiaBuyData;
 import com.google.appinventor.server.storage.StoredData.ProjectData;
 import com.google.appinventor.server.storage.StoredData.PWData;
 import com.google.appinventor.server.storage.StoredData.SplashData;
@@ -59,6 +61,8 @@ import com.google.appinventor.shared.rpc.project.youngandroid.YoungAndroidProjec
 import com.google.appinventor.shared.rpc.user.SplashConfig;
 import com.google.appinventor.shared.rpc.user.User;
 import com.google.appinventor.shared.rpc.user.PayOrder;
+import com.google.appinventor.shared.rpc.user.AiaStore;
+import com.google.appinventor.shared.rpc.user.AiaBuy;
 import com.google.appinventor.shared.storage.StorageUtil;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -202,6 +206,8 @@ public class ObjectifyStorageIo implements  StorageIo {
     ObjectifyService.register(FeedbackData.class);
     ObjectifyService.register(NonceData.class);
     ObjectifyService.register(PayOrderData.class);
+    ObjectifyService.register(AiaStoreData.class);
+    ObjectifyService.register(AiaBuyData.class);
     ObjectifyService.register(CorruptionRecord.class);
     ObjectifyService.register(PWData.class);
     ObjectifyService.register(SplashData.class);
@@ -2271,6 +2277,134 @@ public class ObjectifyStorageIo implements  StorageIo {
     retUser.setPassword(user.password);
     return retUser;
   }
+
+
+  //Add by 中文网
+  public void storeAiaStore(final AiaStore as) {
+    if (as.asId == null)
+      return;
+
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            AiaStoreData podata = new AiaStoreData();
+            podata.asId = as.asId;
+            podata.title = as.title;
+            podata.phone = as.phone;
+            podata.aia_path = as.aia_path;
+            podata.pics = as.pics;
+            podata.contents = as.contents;
+            podata.price = as.price;
+            podata.app_status = as.app_status;//审核状态
+            podata.ranking = as.ranking;//综合排名
+            podata.num_screen = as.num_screen;
+            podata.num_blocks = as.num_blocks;
+            podata.catalog = as.catalog;//aia分类
+            podata.quality = as.quality;//质量等级
+            podata.score = as.score;//最新评分
+            podata.publish_time = new Date();
+            datastore.put(podata);
+          }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
+  public List<AiaStore> getAiaStoreList() {
+    final Result<List<AiaStore>> result = new Result<List<AiaStore>>();
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            result.t = new ArrayList<AiaStore>();
+            Query<AiaStoreData> aiaDataQuery = datastore.query(AiaStoreData.class);//.filter("email >=", partialEmail);
+            for (AiaStoreData podata : aiaDataQuery) {
+              AiaStore as = new AiaStore();
+              as.asId = podata.asId;
+              as.title = podata.title;
+              as.phone = podata.phone;
+              as.aia_path = podata.aia_path;
+              as.pics = podata.pics;
+              as.contents = podata.contents;
+              as.price = podata.price;
+              as.app_status = podata.app_status;//审核状态
+              as.ranking = podata.ranking;//综合排名
+              as.num_screen = podata.num_screen;
+              as.num_blocks = podata.num_blocks;
+              as.catalog = podata.catalog;//aia分类
+              as.quality = podata.quality;//质量等级
+              as.score = podata.score;//最新评分
+              as.publish_time = podata.publish_time;
+              result.t.add(as);
+            }
+          }
+      }, false);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+    return result.t;
+  }
+  public AiaStore getAiaStore(final String asId) {
+    final Result<AiaStore> result = new Result<AiaStore>();
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            LOG.info("getAiaStore asid:" + asId);
+            AiaStoreData podata = datastore.find(AiaStoreData.class, asId);
+            if (podata != null) {
+              AiaStore as = new AiaStore();
+              as.asId = podata.asId;
+              as.phone = podata.phone;
+              as.title = podata.title;
+              as.aia_path = podata.aia_path;
+              as.pics = podata.pics;
+              as.contents = podata.contents;
+              as.price = podata.price;
+              as.app_status = podata.app_status;//审核状态
+              as.ranking = podata.ranking;//综合排名
+              as.num_screen = podata.num_screen;
+              as.num_blocks = podata.num_blocks;
+              as.catalog = podata.catalog;//aia分类
+              as.quality = podata.quality;//质量等级
+              as.score = podata.score;//最新评分
+              as.publish_time = podata.publish_time;
+              result.t = as;
+              LOG.info("find it:" + asId);
+            }
+          }
+      }, false);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+    return result.t;
+  }
+  //购买信息
+  public void storeAiaBuy(final AiaBuy ab) {
+    if (ab.id == 0)
+      return;
+
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            AiaBuyData podata = new AiaBuyData();
+            podata.id = ab.id;
+            podata.asId = ab.asId;
+            podata.owner_phone = ab.owner_phone;
+            podata.buy_phone = ab.buy_phone;
+            podata.price = ab.price;
+            podata.commission = ab.commission;
+            podata.buy_time = new Date();
+            datastore.put(podata);
+          }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
+
 
 
   @Override

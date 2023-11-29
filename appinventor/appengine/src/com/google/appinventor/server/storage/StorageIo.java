@@ -16,6 +16,8 @@ import com.google.appinventor.shared.rpc.project.ProjectSourceZip;
 import com.google.appinventor.shared.rpc.project.UserProject;
 import com.google.appinventor.shared.rpc.user.User;
 import com.google.appinventor.shared.rpc.user.PayOrder;
+import com.google.appinventor.shared.rpc.user.AiaStore;
+import com.google.appinventor.shared.rpc.user.AiaBuy;
 import com.google.appinventor.shared.rpc.user.SplashConfig;
 
 import java.io.InputStream;
@@ -579,6 +581,15 @@ public interface StorageIo {
   void storePayOrder(final PayOrder order);
   PayOrder getPayOrder(final String orderId);
   AdminUser getAdminUserFromEmail(String email);
+
+  // Add by 中文网
+  void storeAiaStore(final AiaStore as);
+  List<AiaStore> getAiaStoreList();
+  AiaStore getAiaStore(final String asId);
+  void storeAiaBuy(final AiaBuy ab);
+  //List<AiaBuy> getAiaBuy(final String asId);
+  //List<AiaBuy> getOwnerAiaBuy(final String owner_phone);
+  //List<AiaBuy> getBuyAiaBuy(final String buy_phone);
 
   // Retrieve the current Splash Screen Version
   SplashConfig getSplashConfig();

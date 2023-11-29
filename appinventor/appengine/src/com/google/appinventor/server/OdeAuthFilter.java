@@ -65,8 +65,8 @@ public class OdeAuthFilter implements Filter {
   @VisibleForTesting
   static final Flag<Boolean> useWhitelist = Flag.createFlag("use.whitelist", false);
   static final Flag<String> sessionKeyFile = Flag.createFlag("session.keyfile", "WEB-INF/authkey");
-  static final Flag<Integer> idleTimeout = Flag.createFlag("session.idletimeout", 120);
-  static final Flag<Integer> renewTime = Flag.createFlag("session.renew", 30);
+  static final Flag<Integer> idleTimeout = Flag.createFlag("session.idletimeout", 120); //多少分钟不动，弹窗“会话过期，重新登录”
+  static final Flag<Integer> renewTime = Flag.createFlag("session.renew", 30);    //(30)多少分钟后生成新的session，这个期间后同账号再次登录，前面的登录如果操作storage则提示下线
 
   private final LocalUser localUser = LocalUser.getInstance();
   private static final boolean DEBUG = Flag.createFlag("appinventor.debugging", false).get();
