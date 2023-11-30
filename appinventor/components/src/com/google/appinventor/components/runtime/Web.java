@@ -241,6 +241,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
 
   // Set of observers
   private HashSet<DataSourceChangeListener> dataSourceObservers = new HashSet<>();
+  private String responseTextEncoding = "UTF-8";
 
   /**
    * Creates a new Web component.
@@ -284,6 +285,25 @@ public class Web extends AndroidNonvisibleComponent implements Component,
   @SimpleProperty
   public void Url(String url) {
     urlString = url;
+  }
+
+  /**
+   * Returns the Response Text Encoding.
+   */
+  @SimpleProperty(category = PropertyCategory.BEHAVIOR,
+      description = "User-specified character encoding for web response.")
+  public String ResponseTextEncoding() {
+    return responseTextEncoding;
+  }
+
+  /**
+   * Specifies the Response Text Encoding.
+   */
+  @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
+      defaultValue = "UTF-8")
+  @SimpleProperty
+  public void ResponseTextEncoding(String encoding) {
+    responseTextEncoding = encoding;
   }
 
   /**
@@ -1241,7 +1261,7 @@ public class Web extends AndroidNonvisibleComponent implements Component,
                 }
               });
           } else {
-            final String responseContent = getResponseContent(connection);
+            final String responseContent = getResponseContent(connection, responseTextEncoding);
 
             // Dispatch the event.
             activity.runOnUiThread(new Runnable() {
@@ -1431,11 +1451,15 @@ public class Web extends AndroidNonvisibleComponent implements Component,
     }
   }
 
-  private static String getResponseContent(HttpURLConnection connection) throws IOException {
+  private static String getResponseContent(HttpURLConnection connection, String encodingProperty) throws IOException {
     // Use the content encoding to convert bytes to characters.
     String encoding = connection.getContentEncoding();
     if (encoding == null) {
-      encoding = "UTF-8";
+      if (encodingProperty == null || encodingProperty.isEmpty()) {
+        encoding = "UTF-8";
+      } else {
+        encoding = encodingProperty;
+      }
     }
     InputStreamReader reader = new InputStreamReader(getConnectionStream(connection), encoding);
     try {
@@ -1530,12 +1554,10 @@ public class Web extends AndroidNonvisibleComponent implements Component,
    */
   private static Map<String, List<String>> processRequestHeaders(YailList list)
       throws InvalidRequestHeadersException {
-
     // Add by 中文网：设置允许限制请求标头，测试通过，但是暂时不启用这个特性
     //ref:https://www.cnblogs.com/skyaccross/archive/2012/12/22/2828986.html
     //经过测试，发现AI伴侣以及编译服务器都是依赖这里同一份代码的，环境共用，包括拓展的开发
     //System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
-
     Map<String, List<String>> requestHeadersMap = Maps.newHashMap();
     for (int i = 0; i < list.size(); i++) {
       Object item = list.getObject(i);
