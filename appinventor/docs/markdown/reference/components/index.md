@@ -14,7 +14,7 @@ description: 组件参考文档：包括用户界面（UI）组件、界面布�
 1. <i class="mdi mdi-draw" style="font-size: 18px;"/>&nbsp;&nbsp;[绘画动画组件](animation.html)
 1. <i class="mdi mdi-map-outline" style="font-size: 18px;"/>&nbsp;&nbsp;[地图组件](maps.html)
 1. <i class="mdi mdi-chart-line" style="font-size: 18px;"/>&nbsp;&nbsp;[图表组件](charts.html)
-* [Data Science](datascience.html)
+1. <i class="mdi mdi-function-variant" style="font-size: 18px;"/>&nbsp;&nbsp;[数据科学](datascience.html)
 1. <i class="mdi mdi-memory" style="font-size: 18px;"/>&nbsp;&nbsp;[传感器组件](sensors.html)
 1. <i class="mdi mdi-share-variant-outline" style="font-size: 18px;"/>&nbsp;&nbsp;[社交应用组件](social.html)
 1. <i class="mdi mdi-database" style="font-size: 18px;"/>&nbsp;&nbsp;[数据存储组件](storage.html)

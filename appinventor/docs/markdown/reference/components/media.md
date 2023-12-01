@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 多媒体组件
-description: 多媒体组件参考文档：包括摄像机、照相机、图像选择框、音频播放器、音效、录音机、语音识别器、文本朗读器、翻译器、视频播放器。
+description: 多媒体组件参考文档：包括摄像机、照相机、图像选择器、音频播放器、音效、录音机、语音识别器、文本朗读器、翻译器、视频播放器。
 ---
 
 * TOC
@@ -14,7 +14,8 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 1. ![Camcorder icon](images/camcorder.png)  [摄像机](#Camcorder)
 1. ![照相机图标](images/camera.png)  [照相机](#Camera)
-1. ![图像选择框图标](images/imagepicker.png)  [图像选择框](#ImagePicker)
+1. ![文件选择器图标](images/FilePicker.png)  [文件选择器](#FilePicker)
+1. ![图像选择器图标](images/imagepicker.png)  [图像选择器](#ImagePicker)
 1. ![音频播放器图标](images/player.png)  [音频播放器](#Player)
 1. ![音效图标](images/sound.png)  [音效](#Sound)
 1. ![录音机图标](images/soundRecorder.png)  [录音机](#SoundRecorder)
@@ -79,10 +80,137 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:id="Camera.TakePicture" class="method"} <i/> 拍照()
 : 拍照，然后触发 [`拍摄完成`](#Camera.AfterPicture) 事件。
 
+## ![文件选择器图标](images/FilePicker.png)  文件选择器  {#FilePicker}
 
-## ![图像选择框图标](images/imagepicker.png)  图像选择框  {#ImagePicker}
+`文件选择器`组件是一个类似按钮的组件。当用户单击该组件时，将提示他们从系统中选择一个文件。
+  
+  还可以通过调用其 [打开](#FilePicker.Open) 方法以编程方式打开选择器。
 
-当用户点击 `图像选择框` 时，打开设备的图片库，用户可以选择图像。选取图像后，[`选中项`](#ImagePicker.Selection) 属性返回选中图像的文件名称。
+  使用文件选择器组件需要 Android 4.4 或更高版本、iOS 11 或更高版本。要求AI伴侣v2.68及以上。
+
+### 属性  {#FilePicker-Properties}
+
+{:.properties}
+
+{:id="FilePicker.Action" .com.google.appinventor.components.common.FileActionEnum} *Action*
+: Sets the desired action for the FilePicker. One of:
+
+     - Pick Existing File: Open an existing file
+     - Pick Directory: Open an existing directory
+     - Pick New File: Create a new file for saving
+
+{:id="FilePicker.BackgroundColor" .color} *背景颜色*
+: Specifies the `FilePicker`'s background color as an alpha-red-green-blue
+ integer.  If an [`Image`](#FilePicker.Image) has been set, the color
+ change will not be visible until the [`Image`](#FilePicker.Image) is removed.
+
+{:id="FilePicker.Enabled" .boolean} *启用*
+: Specifies whether the `FilePicker` should be active and clickable.
+
+{:id="FilePicker.FontBold" .boolean} *FontBold*
+: Specifies whether the text of the `FilePicker` should be bold.
+ Some fonts do not support bold.
+
+{:id="FilePicker.FontItalic" .boolean} *FontItalic*
+: Specifies whether the text of the `FilePicker` should be italic.
+ Some fonts do not support italic.
+
+{:id="FilePicker.FontSize" .number} *FontSize*
+: Specifies the text font size of the `FilePicker`, measured in sp(scale-independent pixels).
+
+{:id="FilePicker.FontTypeface" .text .do} *FontTypeface*
+: Specifies the text font face of the `FilePicker` as default, serif, sans
+ serif, monospace, or custom font typeface. To add a custom typeface,
+ upload a .ttf file to the project's media.
+
+{:id="FilePicker.Height" .number .bo} *Height*
+: Specifies the `FilePicker`'s vertical height, measured in pixels.
+
+{:id="FilePicker.HeightPercent" .number .wo .bo} *HeightPercent*
+: Specifies the `FilePicker`'s vertical height as a percentage
+ of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+
+{:id="FilePicker.Image" .text} *Image*
+: Specifies the path of the `FilePicker`'s image. If there is both an `Image` and a
+ [`BackgroundColor`](#FilePicker.BackgroundColor) specified, only the `Image` will be visible.
+
+{:id="FilePicker.MimeType" .text} *MimeType*
+: Sets the desired MIME type for picking a file.
+
+{:id="FilePicker.Selection" .text .ro .bo} *Selection*
+: Returns the selected file, possibly as a content URI.
+
+{:id="FilePicker.Shape" .number .do} *Shape*
+: Specifies the shape of the `FilePicker`. The valid values for this property are `0` (default),
+ `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
+ [`Image`](#FilePicker.Image) is used.
+
+{:id="FilePicker.ShowFeedback" .boolean} *ShowFeedback*
+: Specifies if a visual feedback should be shown when a `FilePicker` with an assigned
+ [`Image`](#FilePicker.Image) is pressed.
+
+{:id="FilePicker.Text" .text} *Text*
+: Specifies the text displayed by the `FilePicker`.
+
+{:id="FilePicker.TextAlignment" .number .do} *TextAlignment*
+: Specifies the alignment of the `FilePicker`'s text. Valid values are:
+ `0` (normal; e.g., left-justified if text is written left to right),
+ `1` (center), or
+ `2` (opposite; e.g., right-justified if text is written left to right).
+
+{:id="FilePicker.TextColor" .color} *TextColor*
+: Specifies the text color of the `FilePicker` as an alpha-red-green-blue
+ integer.
+
+{:id="FilePicker.Visible" .boolean} *Visible*
+: Specifies whether the `FilePicker` should be visible on the screen.  Value is `true`{:.logic.block}
+ if the `FilePicker` is showing and `false`{:.logic.block} if hidden.
+
+{:id="FilePicker.Width" .number .bo} *Width*
+: Specifies the horizontal width of the `FilePicker`, measured in pixels.
+
+{:id="FilePicker.WidthPercent" .number .wo .bo} *WidthPercent*
+: Specifies the horizontal width of the `FilePicker` as a percentage
+ of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+
+### 事件  {#FilePicker-Events}
+
+{:.events}
+
+{:id="FilePicker.AfterPicking"} AfterPicking()
+: Event to be raised after the `FilePicker` activity returns its
+ result and the properties have been filled in.
+
+{:id="FilePicker.BeforePicking"} BeforePicking()
+: Event to raise when the `FilePicker` is clicked or the picker is shown
+ using the [`Open`](#FilePicker.Open) method.  This event occurs before the picker is displayed, and
+ can be used to prepare the picker before it is shown.
+
+{:id="FilePicker.GotFocus"} GotFocus()
+: Indicates the cursor moved over the `FilePicker` so it is now possible
+ to click it.
+
+{:id="FilePicker.LostFocus"} LostFocus()
+: Indicates the cursor moved away from the `FilePicker` so it is now no
+ longer possible to click it.
+
+{:id="FilePicker.TouchDown"} TouchDown()
+: Indicates that the `FilePicker` was pressed down.
+
+{:id="FilePicker.TouchUp"} TouchUp()
+: Indicates that the `FilePicker` has been released.
+
+### 方法  {#FilePicker-Methods}
+
+{:.methods}
+
+{:id="FilePicker.Open" class="method"} <i/> 打开()
+: 打开`文件选择器`，就像用户单击它一样。
+
+
+## ![图像选择器图标](images/imagepicker.png)  图像选择器  {#ImagePicker}
+
+当用户点击 `图像选择器` 时，打开设备的图片库，用户可以选择图像。选取图像后，[`选中项`](#ImagePicker.Selection) 属性返回选中图像的文件名称。
 最多返回10个图像，超过则删除之前旧的图像，按时间从旧到新的顺序排列。
 
 ### 属性  {#ImagePicker-Properties}
@@ -90,37 +218,37 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 {:.properties}
 
 {:id="ImagePicker.BackgroundColor" .color} *背景颜色*
-: 设置`图像选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ImagePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ImagePicker.Image)属性为止。
+: 设置`图像选择器`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ImagePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ImagePicker.Image)属性为止。
 
 {:id="ImagePicker.Enabled" .boolean} *启用*
-: 设置`图像选择框`是否可以被激活和点击。
+: 设置`图像选择器`是否可以被激活和点击。
 
 {:id="ImagePicker.FontBold" .boolean} *粗体*
-: 设置`图像选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+: 设置`图像选择器`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
 {:id="ImagePicker.FontItalic" .boolean} *斜体*
-: 设置`图像选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+: 设置`图像选择器`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
 {:id="ImagePicker.FontSize" .number} *字体大小*
-: 设置`图像选择框`的字体大小，以像素px为单位。
+: 设置`图像选择器`的字体大小，以像素px为单位。
 
 {:id="ImagePicker.FontTypeface" .number .do} *字体*
-: 设置`图像选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+: 设置`图像选择器`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
 {:id="ImagePicker.Height" .number .bo} *高度*
-: 设置`图像选择框`的垂直高度，以像素px为单位。
+: 设置`图像选择器`的垂直高度，以像素px为单位。
 
 {:id="ImagePicker.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`图像选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+: 设置`图像选择器`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="ImagePicker.Image" .text} *图像*
-: 设置`图像选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ImagePicker.BackgroundColor)，则仅`图像`可见。
+: 设置`图像选择器`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ImagePicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="ImagePicker.Selection" .text .ro .bo} *选中项*
 : 包含所选图像文件的路径。
 
 {:id="ImagePicker.Shape" .number .do} *形状*
-: 设置`图像选择框`的形状，此属性的有效值为：
+: 设置`图像选择器`的形状，此属性的有效值为：
 
   `0`（默认）
 
@@ -133,57 +261,57 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
   如果设置了[`图像`](#ImagePicker.Image)，则`形状`将不可见。
 
 {:id="ImagePicker.ShowFeedback" .boolean} *显示交互效果*
-: 设置`图像选择框`指定 [`图像`](#ImagePicker.Image)后被按压是否显示视觉反馈。
+: 设置`图像选择器`指定 [`图像`](#ImagePicker.Image)后被按压是否显示视觉反馈。
 
 {:id="ImagePicker.Text" .text} *文本*
-: 设置`图像选择框`的显示文本。
+: 设置`图像选择器`的显示文本。
 
 {:id="ImagePicker.TextAlignment" .number .do} *文本对齐方式*
-: 设置`图像选择框`文本的对齐方式，有效值有： 
+: 设置`图像选择器`文本的对齐方式，有效值有： 
 `0`（正常；例如，如果文本从左到右书写，则左对齐）、
 `1`（居中）或
 `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="ImagePicker.TextColor" .color} *文本颜色*
-: 设置`图像选择框`的文本颜色，使用RGBA数值表示。
+: 设置`图像选择器`的文本颜色，使用RGBA数值表示。
 
 {:id="ImagePicker.Visible" .boolean} *可见性*
-: 设置`图像选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`图像选择框`显示，`假`{:.logic.block}则隐藏。
+: 设置`图像选择器`是否显示在屏幕上，值是`真`{:.logic.block}则`图像选择器`显示，`假`{:.logic.block}则隐藏。
 
 {:id="ImagePicker.Width" .number .bo} *宽度*
-: 设置`图像选择框`的水平宽度，以像素px为单位。
+: 设置`图像选择器`的水平宽度，以像素px为单位。
 
 {:id="ImagePicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`图像选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+: 设置`图像选择器`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ImagePicker-Events}
 
 {:.events}
 
 {:id="ImagePicker.AfterPicking"} 选择完成()
-: 在 `图像选择框` 活动返回其结果和属性时触发该事件。
+: 在 `图像选择器` 活动返回其结果和属性时触发该事件。
 
 {:id="ImagePicker.BeforePicking"} 准备选择()
-: 单击 `图像选择框` 或使用 [`打开选框`](#ImagePicker.Open) 方法显示选择器时触发该事件，此事件发生在选择器显示之前。
+: 单击 `图像选择器` 或使用 [`打开选框`](#ImagePicker.Open) 方法显示选择器时触发该事件，此事件发生在选择器显示之前。
 
 {:id="ImagePicker.GotFocus"} 获得焦点()
-: 表示光标移动到 `图像选择框` 上，现在可以点击它。
+: 表示光标移动到 `图像选择器` 上，现在可以点击它。
 
 {:id="ImagePicker.LostFocus"} 失去焦点()
-: 表示光标从 `图像选择框` 移开，现在它不可再被点击。
+: 表示光标从 `图像选择器` 移开，现在它不可再被点击。
 
 {:id="ImagePicker.TouchDown"} 被按压()
-: 表示 `图像选择框` 被按下。
+: 表示 `图像选择器` 被按下。
 
 {:id="ImagePicker.TouchUp"} 被松开()
-: 表示 `图像选择框` 被松开。
+: 表示 `图像选择器` 被松开。
 
 ### 方法  {#ImagePicker-Methods}
 
 {:.methods}
 
 {:id="ImagePicker.Open" class="method"} <i/> 打开选框()
-: 打开 `图像选择框`，就像用户点击它一样。
+: 打开 `图像选择器`，就像用户点击它一样。
 
 
 ## ![音频播放器图标](images/player.png)  音频播放器  {#Player}

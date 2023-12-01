@@ -2934,3 +2934,9 @@ div.dropdiv p {
     left: 50%;
     display: block;
 }
+
+.components-tree-filter {
+  margin-top: 2px;
+  margin-left: 7px;
+  font-size: 12px;
+}
