@@ -2487,7 +2487,7 @@ public class Form extends AppInventorCompatActivity
 
   public void addExitButtonToMenu(Menu menu) {
     MenuItem stopApplicationItem = menu.add(Menu.NONE, Menu.NONE, Menu.FIRST,
-    "Stop this application")
+    "停止此应用程序")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
         showExitApplicationNotification();
@@ -2499,7 +2499,7 @@ public class Form extends AppInventorCompatActivity
 
   public void addAboutInfoToMenu(Menu menu) {
     MenuItem aboutAppItem = menu.add(Menu.NONE, Menu.NONE, 2,
-    "About this application")
+    "关于此应用程序")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
         showAboutApplicationNotification();
@@ -2520,11 +2520,10 @@ public class Form extends AppInventorCompatActivity
   }
 
   private void showExitApplicationNotification() {
-    String title = "Stop application?";
-    String message = "Stop this application and exit? You'll need to relaunch " +
-        "the application to use it again.";
-    String positiveButton = "Stop and exit";
-    String negativeButton = "Don't stop";
+    String title = "停止应用程序？";
+    String message = "停止该应用程序并退出？您需要重新启动该应用程序才能再次使用它。";
+    String positiveButton = "停止并退出";
+    String negativeButton = "不要停止";
     // These runnables are passed to twoButtonAlert.  They perform the corresponding actions
     // when the button is pressed.   Here there's nothing to do for "don't stop" and cancel
     Runnable stopApplication = new Runnable() {public void run () {closeApplicationFromMenu();}};
@@ -2542,12 +2541,12 @@ public class Form extends AppInventorCompatActivity
   }
 
   private void showAboutApplicationNotification() {
-    String title = "About this app";
-    String MITtagline = "<p><small><em>Invented with MIT App Inventor<br>appinventor.mit.edu</em></small></p>";
+    String title = "关于此应用程序";
+    String MITtagline = "<p><small><em>由 App Inventor 2 中文网提供支持。<br>https://www.fun123.cn</em></small></p>";
     // Users can hide the taglines by including an HTML open comment <!-- in the about screen message
     String message = aboutScreen + MITtagline;
     message = message.replaceAll("\\n", "<br>"); // Allow for line breaks in the string.
-    String buttonText ="Got it";
+    String buttonText ="知道了";
     Notifier.oneButtonAlert(this, message, title, buttonText);
   }
 

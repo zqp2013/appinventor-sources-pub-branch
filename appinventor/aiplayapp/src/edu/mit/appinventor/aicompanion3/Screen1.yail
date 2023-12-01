@@ -30,7 +30,7 @@ $Source $Yail
  (set-and-coerce-property! 'Screen1 'ShowListsAsJson #t 'boolean)
  (set-and-coerce-property! 'Screen1 'Sizing "Responsive" 'text)
  (set-and-coerce-property! 'Screen1 'Theme "AppTheme.Light.DarkActionBar" 'text)
- (set-and-coerce-property! 'Screen1 'Title "MIT App Inventor 2" 'text)
+ (set-and-coerce-property! 'Screen1 'Title "AI2伴侣 · App Inventor 2 中文网" 'text)
 )
 
 (define-event Screen1 Initialize()(set-this-form)
@@ -51,7 +51,7 @@ $Source $Yail
 (add-component SettingsPanel com.google.appinventor.components.runtime.Label settingsintro 
 (set-and-coerce-property! 'settingsintro 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'settingsintro 'Text "App Inventor Companion Settings" 'text)
+(set-and-coerce-property! 'settingsintro 'Text "AI2伴侣设置" 'text)
 
 )
 
@@ -65,7 +65,7 @@ $Source $Yail
 (add-component HorizontalArrangement4 com.google.appinventor.components.runtime.Label Label12 
 (set-and-coerce-property! 'Label12 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label12 'Text "Set Rendezvous Server: " 'text)
+(set-and-coerce-property! 'Label12 'Text "设置通信服务器：" 'text)
 
 )
 
@@ -84,7 +84,7 @@ $Source $Yail
 ;;; SetRenzvousServer
 
 (add-component HorizontalArrangement5 com.google.appinventor.components.runtime.Button SetRenzvousServer 
-(set-and-coerce-property! 'SetRenzvousServer 'Text "Set Rendezvous Server" 'text)
+(set-and-coerce-property! 'SetRenzvousServer 'Text "设置通信服务器" 'text)
 
 )
 
@@ -93,7 +93,7 @@ $Source $Yail
 ;;; ResetRendezvousServer
 
 (add-component HorizontalArrangement5 com.google.appinventor.components.runtime.Button ResetRendezvousServer 
-(set-and-coerce-property! 'ResetRendezvousServer 'Text "Reset to Default" 'text)
+(set-and-coerce-property! 'ResetRendezvousServer 'Text "恢复默认" 'text)
 
 )
 
@@ -232,7 +232,7 @@ $Source $Yail
 
 (set-and-coerce-property! 'CodeBox 'FontTypeface 1 'number)
 
-(set-and-coerce-property! 'CodeBox 'Hint "Six Character Code" 'text)
+(set-and-coerce-property! 'CodeBox 'Hint "输入或粘贴6位字符码" 'text)
 
 (set-and-coerce-property! 'CodeBox 'TextAlignment 1 'number)
 
@@ -311,7 +311,7 @@ $Source $Yail
 (add-component IPContainer com.google.appinventor.components.runtime.Label Label4 
 (set-and-coerce-property! 'Label4 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label4 'Text "Your IP Address is: " 'text)
+(set-and-coerce-property! 'Label4 'Text "IP地址：" 'text)
 
 )
 
@@ -338,7 +338,7 @@ $Source $Yail
 (add-component HorizontalArrangement3 com.google.appinventor.components.runtime.Label Label11 
 (set-and-coerce-property! 'Label11 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label11 'Text "Version: " 'text)
+(set-and-coerce-property! 'Label11 'Text "版本：" 'text)
 
 )
 
@@ -354,7 +354,7 @@ $Source $Yail
 ;;; CheckBox1
 
 (add-component MainPanel com.google.appinventor.components.runtime.CheckBox CheckBox1 
-(set-and-coerce-property! 'CheckBox1 'Text "Use Legacy Connection" 'text)
+(set-and-coerce-property! 'CheckBox1 'Text "使用兼容旧连接方式" 'text)
 
 )
 
@@ -375,7 +375,7 @@ $Source $Yail
 
 (set-and-coerce-property! 'SplashBox 'ReadOnly #t 'boolean)
 
-(set-and-coerce-property! 'SplashBox 'Text "This App is a helper Application for MIT App Inventor. It does not do anything by itself! Go to appinventor.mit.edu for more information." 'text)
+(set-and-coerce-property! 'SplashBox 'Text "此应用是 App Inventor 2 的辅助测试程序，请访问App Inventor 2 中文网（www.fun123.cn）获取更多信息！" 'text)
 
 (set-and-coerce-property! 'SplashBox 'Width -2 'number)
 

@@ -247,7 +247,7 @@ public class ReplForm extends Form {
 
   public void addSettingsButton(Menu menu) {
     MenuItem showSettingsItem = menu.add(Menu.NONE, Menu.NONE, 3,
-      "Settings").setOnMenuItemClickListener(new OnMenuItemClickListener() {
+      "设置").setOnMenuItemClickListener(new OnMenuItemClickListener() {
           @Override
           public boolean onMenuItemClick(MenuItem item) {
             PhoneStatus.doSettings();
