@@ -44,3 +44,8 @@ allowed to run on.
 The `execute` method in tasks receive the **`CompilerContext`** object, built back in `ProjectBuilder`, which tasks
 modify after applying changes. It contains critical information required for the build process to run, like paths for
 each file, components required, or needed libraries, for example.
+
+### AI2中文网
+
+build.xml 去MIT化
+
