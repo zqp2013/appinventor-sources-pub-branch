@@ -35,6 +35,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.TreeItem;
+import java.util.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,6 +52,8 @@ import java.util.Map;
  * browser too. All UI elements should be scaled to DP for buckets other than 'normal'.
  */
 public final class MockForm extends MockContainer {
+
+  private Integer view = 1;
 
   /*
    * Widget for the mock form title bar.
@@ -1338,7 +1341,18 @@ public final class MockForm extends MockContainer {
    * @return  tree showing the component hierarchy of the form
    */
   public TreeItem buildComponentsTree() {
-    return buildTree();
+    return buildComponentsTree(view);
+  }
+
+  /**
+   * Builds a tree of the component hierarchy of the form for display in the
+   * {@code SourceStructureExplorer}.
+   *
+   * @return  tree showing the component hierarchy of the form
+   */
+  public TreeItem buildComponentsTree(Integer view) {
+    this.view = view;
+    return buildTree(view);
   }
 
   // PropertyChangeListener implementation
