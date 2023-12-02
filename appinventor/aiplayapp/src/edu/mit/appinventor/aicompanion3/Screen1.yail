@@ -127,7 +127,7 @@ $Source $Yail
 (add-component EmulatorPanel com.google.appinventor.components.runtime.Label Label5 
 (set-and-coerce-property! 'Label5 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label5 'Text "Running using the emulator or USB,\u000awaiting to get blocks..." 'text)
+(set-and-coerce-property! 'Label5 'Text "使用模拟器或 USB 运行，\u000a正在等待运行指令..." 'text)
 
 )
 
