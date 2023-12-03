@@ -79,6 +79,8 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.FontTypeface" .number .do} *字体*
 : 设置`联系人选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="ContactPicker.Height" .number .bo} *高度*
 : 设置`联系人选择框`的垂直高度，以像素px为单位。
 
@@ -217,6 +219,8 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:id="EmailPicker.FontTypeface" .number .do} *字体*
 : 设置`邮箱地址选择框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="EmailPicker.Height" .number .bo} *高度*
 : 设置`邮箱地址选择框`的垂直高度，以像素px为单位。
@@ -387,6 +391,8 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:id="PhoneNumberPicker.FontTypeface" .number .do} *字体*
 : 设置`电话号选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="PhoneNumberPicker.Height" .number .bo} *高度*
 : 设置`电话号选择框`的垂直高度，以像素px为单位。

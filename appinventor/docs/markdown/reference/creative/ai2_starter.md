@@ -8,7 +8,7 @@ description: App Inventor 2 Ai2 Starter模拟器下载及安装，AI伴侣升级
 
 ## Ai2 Starter模拟器下载
 <!--https://ai2-starter.software.informer.com/download/-->
-<!--https://share.weiyun.com/od7jYBN1-->
+<!--https://share.weiyun.com/MYlivorr-->
 
 Ai2 Starter目前的最新版本为v4.6，内含AI伴侣版本为v2.46，提供安装版、绿色免安装版、绿色免安装升级版（升级最新版AI伴侣），如下：
 

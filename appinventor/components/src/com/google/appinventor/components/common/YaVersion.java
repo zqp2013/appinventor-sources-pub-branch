@@ -1637,7 +1637,7 @@ public class YaVersion {
   public static final String ACCEPTABLE_COMPANION_PACKAGE = "edu.mit.appinventor.aicompanion3";
 
   public static final String PREFERRED_COMPANION = "2.69";
-  public static final String EMULATOR_UPDATE_URL = ""; // Should be an APK
+  public static final String EMULATOR_UPDATE_URL = "/reference/info/Emulator.apk"; // Should be an APK
   public static final String COMPANION_UPDATE_URL = "/reference/info/AI2Companion.apk";
   public static final String COMPANION_UPDATE_URL1 = "/reference/info/AI2Companion.apk";
   public static final String COMPANION_UPDATE_EMULATOR_URL = "/reference/info/Emulator.apk";

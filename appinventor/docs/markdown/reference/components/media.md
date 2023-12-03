@@ -92,119 +92,117 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:.properties}
 
-{:id="FilePicker.Action" .com.google.appinventor.components.common.FileActionEnum} *Action*
-: Sets the desired action for the FilePicker. One of:
+{:id="FilePicker.Action" .com.google.appinventor.components.common.FileActionEnum} *操作*
+: 设置 `文件选择器` 所需的操作。有如下选项：
 
-     - Pick Existing File: Open an existing file
-     - Pick Directory: Open an existing directory
-     - Pick New File: Create a new file for saving
+  - 选择现有文件：打开现有文件
+  - 选择目录：打开现有目录
+  - 选择新文件：创建一个新文件进行保存
 
 {:id="FilePicker.BackgroundColor" .color} *背景颜色*
-: Specifies the `FilePicker`'s background color as an alpha-red-green-blue
- integer.  If an [`Image`](#FilePicker.Image) has been set, the color
- change will not be visible until the [`Image`](#FilePicker.Image) is removed.
+: 设置`文件选择器`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#FilePicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#FilePicker.Image)属性为止。
 
 {:id="FilePicker.Enabled" .boolean} *启用*
-: Specifies whether the `FilePicker` should be active and clickable.
+: 设置`文件选择器`是否可以被点击。
 
-{:id="FilePicker.FontBold" .boolean} *FontBold*
-: Specifies whether the text of the `FilePicker` should be bold.
- Some fonts do not support bold.
+{:id="FilePicker.FontBold" .boolean} *粗体*
+: 设置`文件选择器`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
-{:id="FilePicker.FontItalic" .boolean} *FontItalic*
-: Specifies whether the text of the `FilePicker` should be italic.
- Some fonts do not support italic.
+{:id="FilePicker.FontItalic" .boolean} *斜体*
+: 设置`文件选择器`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
-{:id="FilePicker.FontSize" .number} *FontSize*
-: Specifies the text font size of the `FilePicker`, measured in sp(scale-independent pixels).
+{:id="FilePicker.FontSize" .number} *字体大小*
+: 设置`文件选择器`的字体大小，以像素px为单位。
 
-{:id="FilePicker.FontTypeface" .text .do} *FontTypeface*
-: Specifies the text font face of the `FilePicker` as default, serif, sans
- serif, monospace, or custom font typeface. To add a custom typeface,
- upload a .ttf file to the project's media.
+{:id="FilePicker.FontTypeface" .text .do} *字体*
+: 设置`文件选择器`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
-{:id="FilePicker.Height" .number .bo} *Height*
-: Specifies the `FilePicker`'s vertical height, measured in pixels.
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
-{:id="FilePicker.HeightPercent" .number .wo .bo} *HeightPercent*
-: Specifies the `FilePicker`'s vertical height as a percentage
- of the [`Screen`'s `Height`](userinterface.html#Screen.Height).
+{:id="FilePicker.Height" .number .bo} *高度*
+: 设置`文件选择器`的垂直高度，以像素px为单位。
 
-{:id="FilePicker.Image" .text} *Image*
-: Specifies the path of the `FilePicker`'s image. If there is both an `Image` and a
- [`BackgroundColor`](#FilePicker.BackgroundColor) specified, only the `Image` will be visible.
+{:id="FilePicker.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`文件选择器`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="FilePicker.Image" .text} *图像*
+: 设置`文件选择器`图像的路径，如果同时设置了`图像`和[`背景颜色`](#FilePicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="FilePicker.MimeType" .text} *MimeType*
-: Sets the desired MIME type for picking a file.
+: 设置选择文件所需的 MIME 类型。
 
-{:id="FilePicker.Selection" .text .ro .bo} *Selection*
-: Returns the selected file, possibly as a content URI.
+{:id="FilePicker.Selection" .text .ro .bo} *选中项*
+: 返回选定文件的 URI 路径。
 
-{:id="FilePicker.Shape" .number .do} *Shape*
-: Specifies the shape of the `FilePicker`. The valid values for this property are `0` (default),
- `1` (rounded), `2` (rectangle), and `3` (oval). The `Shape` will not be visible if an
- [`Image`](#FilePicker.Image) is used.
+{:id="FilePicker.Shape" .number .do} *形状*
+: 设置`文件选择器`的形状，此属性的有效值为：
 
-{:id="FilePicker.ShowFeedback" .boolean} *ShowFeedback*
-: Specifies if a visual feedback should be shown when a `FilePicker` with an assigned
- [`Image`](#FilePicker.Image) is pressed.
+  `0`（默认）
 
-{:id="FilePicker.Text" .text} *Text*
-: Specifies the text displayed by the `FilePicker`.
+  `1` （圆形）
 
-{:id="FilePicker.TextAlignment" .number .do} *TextAlignment*
-: Specifies the alignment of the `FilePicker`'s text. Valid values are:
- `0` (normal; e.g., left-justified if text is written left to right),
- `1` (center), or
- `2` (opposite; e.g., right-justified if text is written left to right).
+  `2`（矩形）
 
-{:id="FilePicker.TextColor" .color} *TextColor*
-: Specifies the text color of the `FilePicker` as an alpha-red-green-blue
- integer.
+  `3`（椭圆形）。
 
-{:id="FilePicker.Visible" .boolean} *Visible*
-: Specifies whether the `FilePicker` should be visible on the screen.  Value is `true`{:.logic.block}
- if the `FilePicker` is showing and `false`{:.logic.block} if hidden.
+  如果设置了[`图像`](#FilePicker.Image)，则`形状`将不可见。
 
-{:id="FilePicker.Width" .number .bo} *Width*
-: Specifies the horizontal width of the `FilePicker`, measured in pixels.
+{:id="FilePicker.ShowFeedback" .boolean} *显示反馈*
+: 设置`文件选择器`指定 [`图像`](#FilePicker.Image)后被按压是否显示视觉反馈。
 
-{:id="FilePicker.WidthPercent" .number .wo .bo} *WidthPercent*
-: Specifies the horizontal width of the `FilePicker` as a percentage
- of the [`Screen`'s `Width`](userinterface.html#Screen.Width).
+{:id="FilePicker.Text" .text} *文本*
+: 设置`文件选择器`的显示文本。
+
+{:id="FilePicker.TextAlignment" .number .do} *文本对齐*
+: 设置`文件选择器`文本的对齐方式，有效值有： 
+
+  `0`（正常；例如，如果文本从左到右书写，则左对齐）
+
+  `1`（居中）
+
+  `2`（相反；例如，如果文本从左到右书写，则右对齐）。
+
+{:id="FilePicker.TextColor" .color} *文本颜色*
+: 设置`文件选择器`的文本颜色，使用RGBA数值表示。
+
+{:id="FilePicker.Visible" .boolean} *可见性*
+: 设置`文件选择器`是否显示在屏幕上，值是`真`{:.logic.block}则`文件选择器`显示，`假`{:.logic.block}则隐藏。
+
+{:id="FilePicker.Width" .number .bo} *宽度*
+: 设置`文件选择器`的水平宽度，以像素px为单位。
+
+{:id="FilePicker.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`文件选择器`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#FilePicker-Events}
 
 {:.events}
 
-{:id="FilePicker.AfterPicking"} AfterPicking()
-: Event to be raised after the `FilePicker` activity returns its
- result and the properties have been filled in.
+{:id="FilePicker.AfterPicking"} 选择完成()
+: 在`文件选择器`选框返回其选择结果且属性已设置后，触发该事件。
 
-{:id="FilePicker.BeforePicking"} BeforePicking()
-: Event to raise when the `FilePicker` is clicked or the picker is shown
- using the [`Open`](#FilePicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
+{:id="FilePicker.BeforePicking"} 准备选择()
+: 单击`文件选择器` 或使用 [打开选框](#FilePicker.Open) 方法显示选择器时引发的事件。
 
-{:id="FilePicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `FilePicker` so it is now possible
- to click it.
+  此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。
 
-{:id="FilePicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `FilePicker` so it is now no
- longer possible to click it.
+{:id="FilePicker.GotFocus"} 获得焦点()
+: 表示光标移到`文件选择器`按钮上了，因此现在可以单击它。
 
-{:id="FilePicker.TouchDown"} TouchDown()
-: Indicates that the `FilePicker` was pressed down.
+{:id="FilePicker.LostFocus"} 失去焦点()
+: 表示光标从`文件选择器`按钮上移开，因此现在无法再单击它。
 
-{:id="FilePicker.TouchUp"} TouchUp()
-: Indicates that the `FilePicker` has been released.
+{:id="FilePicker.TouchDown"} 被按压()
+: 表示`文件选择器`按钮被按下。
+
+{:id="FilePicker.TouchUp"} 被松开()
+: 表示按下的`文件选择器`按钮已被放开。
 
 ### 方法  {#FilePicker-Methods}
 
 {:.methods}
 
-{:id="FilePicker.Open" class="method"} <i/> 打开()
+{:id="FilePicker.Open" class="method"} <i/> 打开选框()
 : 打开`文件选择器`，就像用户单击它一样。
 
 
@@ -234,6 +232,8 @@ description: 多媒体组件参考文档：包括摄像机、照相机、图像�
 
 {:id="ImagePicker.FontTypeface" .number .do} *字体*
 : 设置`图像选择器`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="ImagePicker.Height" .number .bo} *高度*
 : 设置`图像选择器`的垂直高度，以像素px为单位。

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 用户界面（UI）组件
-description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择框、列表显示框、对话框（通知器）、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
+description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择器、列表显示框、对话框（通知器）、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
 ---
 
 * TOC
@@ -20,7 +20,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
   * [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
   * [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
 1. ![icon](images/Label.png)  [标签（Label）](#Label)
-1. ![icon](images/ListPicker.png)  [列表选择框（ListPicker）](#ListPicker)
+1. ![icon](images/ListPicker.png)  [列表选择器（ListPicker）](#ListPicker)
 1. ![icon](images/ListView.png)  [列表显示框（ListView）](#ListView)
 1. ![icon](images/Notifier.png)  [对话框（Notifier）](#Notifier)
 1. ![icon](images/PasswordTextBoxIcon.png)  [密码输入框（PasswordTextBox）](#PasswordTextBox)
@@ -256,6 +256,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Button.FontTypeface" .number .do} *字体*
 : 设置`按钮`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="Button.Height" .number .bo} *高度*
 : 设置`按钮`的垂直高度，以像素px为单位。
 
@@ -364,6 +366,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="CheckBox.FontTypeface" .number .do} *字体*
 : 设置`复选框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="CheckBox.Height" .number .bo} *高度*
 : 设置`复选框`的垂直高度，以像素px为单位。
 
@@ -432,6 +436,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="DatePicker.FontTypeface" .number .do} *字体*
 : 设置`日期选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="DatePicker.Height" .number .bo} *高度*
 : 设置`日期选择框`的垂直高度，以像素px为单位。
@@ -627,6 +633,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Label.FontTypeface" .number .do} *字体*
 : 设置`标签`文本的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="Label.HTMLContent" .text .ro .bo} *HTML内容*
 : 在`HTML格式`为`真`{:.logic.block}时，以 HTML 形式返回`标签`的内容。
 
@@ -679,7 +687,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 
 
-## ![icon](images/ListPicker.png)  列表选择框&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
+## ![icon](images/ListPicker.png)  列表选择器&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
 
 一个按钮，单击该按钮会显示文本列表，供用户选择。文本可以在“界面设计”视图或“程序设计”视图中使用[`元素字串`](#ListPicker.ElementsFromString) 属性指定，多个字符串使用**英文的逗号**(',')连接
   （例如，`选择1,选择2,选择3`）或在“程序设计”视图中设置[`元素`](#ListPicker.Elements)属性，是一个列表属性。
@@ -692,7 +700,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.properties}
 
 {:id="ListPicker.BackgroundColor" .color} *背景颜色*
-: 设置`列表选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
+: 设置`列表选择器`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ListPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ListPicker.Image)属性为止。
 
 {:id="ListPicker.Elements" .list .bo} *元素列表*
 : 指定要显示的选项列表。
@@ -701,45 +709,47 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 将一串英文逗号分隔字符串设置为选项列表，列表项分别是逗号分割后的每一项。
 
 {:id="ListPicker.Enabled" .boolean} *启用*
-: 设置`列表选择框`是否可以被激活和点击。
+: 设置`列表选择器`是否可以被激活和点击。
 
 {:id="ListPicker.FontBold" .boolean} *粗体*
-: 设置`列表选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+: 设置`列表选择器`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
 {:id="ListPicker.FontItalic" .boolean} *斜体*
-: 设置`列表选择框`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+: 设置`列表选择器`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
 {:id="ListPicker.FontSize" .number} *字体大小*
-: 设置`列表选择框`的字体大小，以像素px为单位。
+: 设置`列表选择器`的字体大小，以像素px为单位。
 
 {:id="ListPicker.FontTypeface" .number .do} *字体*
-: 设置`列表选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+: 设置`列表选择器`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="ListPicker.Height" .number .bo} *高度*
-: 设置`列表选择框`的垂直高度，以像素px为单位。
+: 设置`列表选择器`的垂直高度，以像素px为单位。
 
 {:id="ListPicker.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`列表选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+: 设置`列表选择器`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="ListPicker.Image" .text} *图像*
-: 设置`列表选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
+: 设置`列表选择器`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ListPicker.BackgroundColor)，则仅`图像`可见。
 
 {:id="ListPicker.ItemBackgroundColor" .color} *项背景色*
-: `列表选择框`项的背景颜色。
+: `列表选择器`项的背景颜色。
 
 {:id="ListPicker.ItemTextColor" .color} *项文本色*
-: `列表选择框`项的文本颜色。
+: `列表选择器`项的文本颜色。
 
 {:id="ListPicker.Selection" .text} *选中项*
 : 返回当前选中的列表项。
 
-  当程序修改它时，[`选中项索引`](#ListPicker.SelectionIndex) 属性也会更改为 [`列表选择框`](#ListPicker) 中具有给定值的第一项。如果该值不在 [`元素列表`](#ListPicker.Elements) 中，则 [`选中项索引`](#ListPicker.SelectionIndex) 将设置为 0。
+  当程序修改它时，[`选中项索引`](#ListPicker.SelectionIndex) 属性也会更改为 [`列表选择器`](#ListPicker) 中具有给定值的第一项。如果该值不在 [`元素列表`](#ListPicker.Elements) 中，则 [`选中项索引`](#ListPicker.SelectionIndex) 将设置为 0。
 
 {:id="ListPicker.SelectionIndex" .number .bo} *选中项索引*
 : 获取/设置当前选中项的索引。
 
 {:id="ListPicker.Shape" .number .do} *形状*
-: 设置`列表选择框`的形状，此属性的有效值为：
+: 设置`列表选择器`的形状，此属性的有效值为：
 
   `0`（默认）
 
@@ -752,16 +762,16 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
   如果设置了[`图像`](#Button.Image)，则`形状`将不可见。
 
 {:id="ListPicker.ShowFeedback" .boolean} *显示反馈*
-: 设置`列表选择框`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
+: 设置`列表选择器`指定 [`图像`](#ListPicker.Image)后被按压是否显示视觉反馈。
 
 {:id="ListPicker.ShowFilterBar" .boolean} *显示搜索框*
 : If `真`{:.logic.block}, the ListPicker will show a search filter bar.
 
 {:id="ListPicker.Text" .text} *文本*
-: 设置`列表选择框`的显示文本。
+: 设置`列表选择器`的显示文本。
 
 {:id="ListPicker.TextAlignment" .number .do} *文本对齐*
-: 设置`列表选择框`文本的对齐方式，有效值有： 
+: 设置`列表选择器`文本的对齐方式，有效值有： 
 
   `0`（正常；例如，如果文本从左到右书写，则左对齐）
 
@@ -770,50 +780,50 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
   `2`（相反；例如，如果文本从左到右书写，则右对齐）。
 
 {:id="ListPicker.TextColor" .color} *文本颜色*
-: 设置`列表选择框`的文本颜色，使用RGBA数值表示。
+: 设置`列表选择器`的文本颜色，使用RGBA数值表示。
 
 {:id="ListPicker.Title" .text} *标题*
 : 可选标题显示在选项列表的顶部。
 
 {:id="ListPicker.Visible" .boolean} *可见性*
-: 设置`列表选择框`是否显示在屏幕上，值是`真`{:.logic.block}则`列表选择框`显示，`假`{:.logic.block}则隐藏。
+: 设置`列表选择器`是否显示在屏幕上，值是`真`{:.logic.block}则`列表选择器`显示，`假`{:.logic.block}则隐藏。
 
 {:id="ListPicker.Width" .number .bo} *宽度*
-: 设置`列表选择框`的水平宽度，以像素px为单位。
+: 设置`列表选择器`的水平宽度，以像素px为单位。
 
 {:id="ListPicker.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`列表选择框`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+: 设置`列表选择器`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#ListPicker-Events}
 
 {:.events}
 
 {:id="ListPicker.AfterPicking"} 选择完成()
-: 在`列表选择框`选框返回其选择结果且属性已设置后，触发该事件。
+: 在`列表选择器`选框返回其选择结果且属性已设置后，触发该事件。
 
 {:id="ListPicker.BeforePicking"} 准备选择()
-: 单击`列表选择框` 或使用 [打开选框](#ListPicker.Open) 方法显示选择器时引发的事件。
+: 单击`列表选择器` 或使用 [打开选框](#ListPicker.Open) 方法显示选择器时引发的事件。
 
   此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。
 
 {:id="ListPicker.GotFocus"} 获得焦点()
-: 表示光标移到`列表选择框`上，因此现在可以单击它。
+: 表示光标移到`列表选择器`上，因此现在可以单击它。
 
 {:id="ListPicker.LostFocus"} 失去焦点()
-: 表示光标已离开`列表选择框`，因此现在无法再单击它。
+: 表示光标已离开`列表选择器`，因此现在无法再单击它。
 
 {:id="ListPicker.TouchDown"} 被按压()
-: 表示`列表选择框`被按下。
+: 表示`列表选择器`被按下。
 
 {:id="ListPicker.TouchUp"} 被松开()
-: 表示`列表选择框`按压已释放。
+: 表示`列表选择器`按压已释放。
 
 ### 方法  {#ListPicker-Methods}
 
 {:.methods}
 
 {:id="ListPicker.Open" class="method"} <i/> 打开选框()
-: 打开`列表选择框`，就像用户单击它一样。
+: 打开`列表选择器`，就像用户单击它一样。
 
 ## ![icon](images/ListView.png)  列表显示框  {#ListView}
 
@@ -844,8 +854,12 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="ListView.FontTypeface" .number .do} *字体*
 : 设置`列表显示框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="ListView.FontTypefaceDetail" .number .do} *列表项字体*
 : 设置`列表显示框`**列表项**的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="ListView.Height" .number .bo} *高度*
 : 设置`列表显示框`的垂直高度，以像素px为单位。
@@ -1054,6 +1068,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="PasswordTextBox.FontTypeface" .number .do} *字体*
 : 设置`密码输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="PasswordTextBox.Height" .number .bo} *高度*
 : 设置`密码输入框`的垂直高度，以像素px为单位。
@@ -1266,6 +1282,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Switch.FontTypeface" .number .do} *字体*
 : 设置`切换开关`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
+
 {:id="Switch.Height" .number .bo} *高度*
 : 设置`切换开关`的垂直高度，以像素px为单位。
 
@@ -1360,6 +1378,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="TextBox.FontTypeface" .number .do} *字体*
 : 设置`文本输入框`的字体，目前支持的字体有：`0` (default), `1` (serif), `2` (sansserif), 和 `3` (monospace)。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="TextBox.Height" .number .bo} *高度*
 : 设置`文本输入框`的垂直高度，以像素px为单位。
@@ -1462,6 +1482,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="TimePicker.FontTypeface" .number .do} *字体*
 : 设置`时间选择框`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+  要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="TimePicker.Height" .number .bo} *高度*
 : 设置`时间选择框`的垂直高度，以像素px为单位。
