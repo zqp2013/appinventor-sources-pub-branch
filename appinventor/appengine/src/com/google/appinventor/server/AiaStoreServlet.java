@@ -143,7 +143,7 @@ public class AiaStoreServlet extends HttpServlet {
       // 发布页
       String title = params.get("title");
       if (title == null || title.equals("")) {
-        fail(req, resp, "Invalid title!");
+        resp.sendRedirect("/aia_store/publish.jps?error=" + sanitizer.sanitize("Invalid title!"));
         return;
       }
 
@@ -204,12 +204,6 @@ public class AiaStoreServlet extends HttpServlet {
     for (int i = 0; i < components.length-1; i++)
       sb.append(components[i] + "/");
     return sb.toString();
-  }
-
-  private void fail(HttpServletRequest req, HttpServletResponse resp, String error) throws IOException {
-    String page = getPage(req);
-    resp.sendRedirect("/aia_store/" + page + "?error=" + sanitizer.sanitize(error));
-    return;
   }
 
 }
