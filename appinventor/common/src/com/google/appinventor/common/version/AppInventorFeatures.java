@@ -111,7 +111,8 @@ public final class AppInventorFeatures {
    * @return true to limit account use to one session at a time
    */
   public static boolean requireOneLogin() {
-    return false;
+    //Add by 中文网：同一个账户不允许多处登录
+    return true;
   }
 
   /**

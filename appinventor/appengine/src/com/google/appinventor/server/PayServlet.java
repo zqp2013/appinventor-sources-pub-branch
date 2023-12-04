@@ -351,7 +351,7 @@ public class PayServlet extends HttpServlet {
       return;
     }
 
-    if (peramount < 12) {
+    if (peramount < 6) {
       fail(req, resp, "Invalid order !!!");
       return;
     }

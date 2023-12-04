@@ -1914,7 +1914,7 @@ public class Ode implements EntryPoint {
     dialogBox.setStylePrimaryName("ode-DialogBox");
     dialogBox.setText(MESSAGES.invalidSessionDialogText());
     dialogBox.setHeight("200px");
-    dialogBox.setWidth("800px");
+    dialogBox.setWidth("510px");
     dialogBox.setGlassEnabled(true);
     dialogBox.setAnimationEnabled(true);
     dialogBox.center();
@@ -1938,14 +1938,15 @@ public class Ode implements EntryPoint {
         }
       });
     holder.add(reloadSession);
-    Button continueSession = new Button(MESSAGES.invalidSessionDialogButtonContinue());
+    // Del by 中文网：不让多点登录
+    /*Button continueSession = new Button(MESSAGES.invalidSessionDialogButtonContinue());
     continueSession.addClickListener(new ClickListener() {
         public void onClick(Widget sender) {
           dialogBox.hide();
           bashWarningDialog();
         }
       });
-    holder.add(continueSession);
+    holder.add(continueSession);*/
     DialogBoxContents.add(message);
     DialogBoxContents.add(holder);
     dialogBox.setWidget(DialogBoxContents);

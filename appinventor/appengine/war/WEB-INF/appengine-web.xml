@@ -138,7 +138,7 @@
     -->
 
     <property name="session.idletimeout" value="120" />
-    <property name="session.renew" value="30" />
+    <property name="session.renew" value="1" />
     <property name="session.noop" value="0" />
 
     <!-- Set this to true to enable the use of Wifi connections from the blocks editor to

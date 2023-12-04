@@ -798,6 +798,11 @@ public class ProjectServiceImpl extends OdeRemoteServiceServlet implements Proje
   }
 
   private void validateSessionId(String sessionId) throws InvalidSessionException {
+    //Add by 中文网：试用账户不检查session，允许多点登录
+    if ("test@fun123.cn".equals(userInfoProvider.getUserEmail())) {
+      return;
+    }
+
     String storedSessionId = userInfoProvider.getSessionId();
     if (DEBUG) {
       if (storedSessionId == null) {

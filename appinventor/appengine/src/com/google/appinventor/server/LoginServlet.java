@@ -126,7 +126,7 @@ public class LoginServlet extends HttpServlet {
     String newGalleryId = params.get("ng");
 
     if (DEBUG) {
-      LOG.info("locale = " + locale + " bundle: " + new Locale(locale));
+      LOG.info("locale = " + locale + " bundle: " + new Locale(locale == null ? "zh_CN" : locale));
     }
     ResourceBundle bundle;
     if (locale == null) {
