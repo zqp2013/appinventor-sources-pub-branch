@@ -54,7 +54,7 @@ public class UserInfoServiceImpl extends OdeRemoteServiceServlet implements User
     Config config = new Config();
     User user = userInfoProvider.getUser();
     user.setSessionId(sessionId);
-    storageIo.setUserSessionId(userInfoProvider.getUserId(), sessionId);
+    storageIo.setUserSessionId(userInfoProvider.getUserId(), user.isReadOnly() ? "force" : sessionId);//Modify by 中文网：管理员查看，不踢人
     Flag<String> rendezvousFlag = Flag.createFlag("use.rendezvousserver", "");
     if (!rendezvousFlag.get().equals("")) {
       config.setRendezvousServer(rendezvousFlag.get());

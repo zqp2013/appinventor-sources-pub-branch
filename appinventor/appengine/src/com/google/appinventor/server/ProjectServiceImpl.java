@@ -811,7 +811,7 @@ public class ProjectServiceImpl extends OdeRemoteServiceServlet implements Proje
         LOG.info("storedSessionId = " + storedSessionId);
       }
     }
-    if (sessionId.equals("force")) { // If we are forcing our way -- no check
+    if (sessionId.equals("force") || storedSessionId.equals("force")) { // If we are forcing our way -- no check //Modify by 中文网：管理员查看，不踢人
       return;
     }
     if (!storedSessionId.equals(sessionId))

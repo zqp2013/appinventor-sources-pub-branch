@@ -143,7 +143,7 @@ public class AiaStoreServlet extends HttpServlet {
       // 发布页
       String title = params.get("title");
       if (title == null || title.equals("")) {
-        resp.sendRedirect("/aia_store/publish.jps?error=" + sanitizer.sanitize("Invalid title!"));
+        resp.sendRedirect("/aia_store/publish.jsp?error=" + sanitizer.sanitize("Invalid title!"));
         return;
       }
 
