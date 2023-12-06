@@ -156,31 +156,20 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 
   如果 [`数据源键标识符`](#ChartData2D.DataSourceKey) 标识的数据在附加的数据源组件中更新，然后数据也会在图表数据组件中更新。
 
-{:id="ChartData2D.SpreadsheetUseHeaders" .boolean .wo .do} *SpreadsheetUseHeaders*
-: If checked, the first row of the spreadsheet will be used to interpret the x and y column
- values. Otherwise, the x and y columns should be a column reference, such as A or B.
+{:id="ChartData2D.SpreadsheetUseHeaders" .boolean .wo .do} *使用电子表格头*
+: 如果选中，[电子表格](storage.html#Spreadsheet)的第一行将用于解释 x 和 y 列值。 否则，x 和 y 列应该是列引用，例如 A 或 B。
 
-{:id="ChartData2D.SpreadsheetXColumn" .text .wo .do} *SpreadsheetXColumn*
-: Sets the column to parse from the attached Spreadsheet component for the x values. If a
- column is not specified, default values for the x values will be generated instead.
+{:id="ChartData2D.SpreadsheetXColumn" .text .wo .do} *电子表格X列*
+: 设置要从附加的[电子表格](storage.html#Spreadsheet)组件中解析 x 列的值。如果未指定列，则会生成 x 列值的默认值。
 
-{:id="ChartData2D.SpreadsheetYColumn" .text .wo .do} *SpreadsheetYColumn*
-: Sets the column to parse from the attached Spreadsheet component for the y values. If a
- column is not specified, default values for the y values will be generated instead.
+{:id="ChartData2D.SpreadsheetYColumn" .text .wo .do} *电子表格Y列*
+: 设置要从附加的[电子表格](storage.html#Spreadsheet)组件中解析 y 列的值。如果未指定列，则会生成 y 列值的默认值。
 
-{:id="ChartData2D.WebXColumn" .text .wo .do} *WebXColumn*
-: Value used when importing data from a Web component Source. The
- value represents the column to use from the Web for the x entries
- of the Data Series. For instance, if the contents of the Web are
- retrieved in JSON format, and an array with the "Time" tag exists,
- the "Time" column value can be specified to use that array.
+{:id="ChartData2D.WebXColumn" .text .wo .do} *Web客户端X列*
+: 从 [Web客户端](connectivity.html#Web) 组件源导入数据时使用的值。该值表示来自 [Web客户端](connectivity.html#Web) 的用于数据系列 x 条目的列。例如，如果以 JSON 格式检索 [Web客户端](connectivity.html#Web) 内容，并且存在带有“Time”标签的数组，则可以指定“Time”列值以使用该数组。
 
-{:id="ChartData2D.WebYColumn" .text .wo .do} *WebYColumn*
-: Value used when importing data from a Web component Source. The
- value represents the column to use from the Web for the y entries
- of the Data Series. For instance, if the contents of the Web are
- retrieved in JSON format, and an array with the "Temperature" tag exists,
- the "Temperature" column value can be specified to use that array.
+{:id="ChartData2D.WebYColumn" .text .wo .do} *Web客户端Y列*
+: 从 [Web客户端](connectivity.html#Web) 组件源导入数据时使用的值。该值表示来自 [Web客户端](connectivity.html#Web) 的用于数据系列 y 条目的列。 例如，如果以 JSON 格式检索 [Web客户端](connectivity.html#Web) 内容，并且存在带有“Temperature”标签的数组，则可以指定“Temperature”列值以使用该数组。
 
 ### 事件  {#ChartData2D-Events}
 
@@ -194,99 +183,92 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 {:.methods}
 
 {:id="ChartData2D.AddEntry" class="method"} <i/> 添加数据点(*x*{:.text},*y*{:.text})
-: Adds an entry with the specified x and y value. Values can be specified as text,
- or as numbers. For Line, Scatter, Area and Bar Charts, both values should represent a number.
- For Bar charts, the x value is rounded to the nearest integer.
- For Pie Charts, the x value is a text value.
+: 添加具有指定 x 和 y 值的条目。 值可以指定为文本或数字。 对于折线图、散点图、面积图和条形图，两个值都应代表数字。
+  
+  对于条形图，x 值四舍五入到最接近的整数。
+  
+  对于饼图，x 值是文本值。
+
+{:id="ChartData2D.RemoveEntry" class="method"} <i/> 删除数据点(*x*{:.text},*y*{:.text})
+: 删除具有指定 x 和 y 值的条目（前提是该条目存在）。
+  
+  有关有效条目值的说明，请参阅 [`添加数据点`](#ChartData2D.AddEntry)。
 
 {:id="ChartData2D.ChangeDataSource" class="method"} <i/> 改变数据源(*source*{:.component},*keyValue*{:.text})
-: Changes the Data Source of the component to the specified component Source with the
- specified key value. See the [`Source`](#ChartData2D.Source) property for
- applicable components. See the [`DataSourceKey`](#ChartData2D.DataSourceKey) property for the interpretation
- of the keyValue. In the case of the DataFile and Web components, the keyValue is expected to
- be a CSV formatted string, where the first value corresponds to the x column, and the second
- value corresponds to the y value.
+: 将组件的数据源更改为具有指定键值的指定组件源。 
+
+  请参阅 [`数据源`](#ChartData2D.Source) 属性了解适用的组件。
+  
+  请参阅 [`数据源键标识符`](#ChartData2D.DataSourceKey) 属性了解 keyValue 的解释。
+  
+  对于 [数据文件](storage.html#DataFile) 和 [Web客户端](connectivity.html#Web) 组件，keyValue 应为 CSV 格式的字符串，其中第一个值对应于 x 列，第二个值对应于 y 值。
 
 {:id="ChartData2D.Clear" class="method"} <i/> 清除数据序列()
-: Removes all the entries from the Data Series.
+: 从数据系列中删除所有条目。
 
 {:id="ChartData2D.DoesEntryExist" class="method returns boolean"} <i/> 数据点是否存在(*x*{:.text},*y*{:.text})
-: Returns a boolean value specifying whether an entry with the specified x and y
- values exists. The boolean value of true is returned if the value exists,
- and a false value otherwise. See [`AddEntry`](#ChartData2D.AddEntry)
- for an explanation of the valid entry values.
+: 返回一个布尔值，指定是否存在具有指定 x 和 y 值的条目。 如果该值存在，则返回布尔值 `真`，否则返回 `假`。
+
+  有关有效条目值的说明，请参阅 [`添加数据点`](#ChartData2D.AddEntry)。
 
 {:id="ChartData2D.GetAllEntries" class="method returns list"} <i/> 获取所有数据点()
-: Returns all entries of the data series.
- The returned value is a list, where each element of the list
- is a list containing the values of the entry in order.
+: 返回数据系列的所有条目。
+  
+  返回的值是一个列表，其中列表的每个元素都是按顺序包含条目值的列表。
 
 {:id="ChartData2D.GetEntriesWithXValue" class="method returns list"} <i/> 获取X值数据点(*x*{:.text})
-: Returns all entries of the data series matching the specified x value.
- For a description of the format of the returned List, see [`GetAllEntries`](#ChartData2D.GetAllEntries)
+: 返回与指定 x 值匹配的数据系列的所有条目。
+
+  有关返回列表格式的说明，请参阅 [`获取所有数据点`](#ChartData2D.GetAllEntries)
 
 {:id="ChartData2D.GetEntriesWithYValue" class="method returns list"} <i/> 获取Y值数据点(*y*{:.text})
-: Returns all entries of the data series matching the specified y value.
- For a description of the format of the returned List, see [`GetAllEntries`](#ChartData2D.GetAllEntries)
+: 返回与指定 y 值匹配的数据系列的所有条目。
+
+  有关返回列表格式的说明，请参阅 [`获取所有数据点`](#ChartData2D.GetAllEntries)
 
 {:id="ChartData2D.ImportFromCloudDB" class="method"} <i/> 从云数据库导入(*云数据库*{:.component},*标签*{:.text})
-: Imports data from the specified CloudDB component by taking the value
- identified by the specified tag value.
+: 通过获取指定标签值标识的值，从指定的 [云数据库](storage.html#CloudDB) 组件导入数据。
 
-   The expected CloudDB value is a list formatted in the same way as described in
- [`ImportFromList`](#ChartData2D.ImportFromList).
+  预期的 [云数据库](storage.html#CloudDB) 值是一个列表，其格式与 [`从列表导入`](#ChartData2D.ImportFromList) 中描述的相同。
 
-   Does not overwrite any data.
+  不覆盖任何数据。
 
-{:id="ChartData2D.ImportFromDataFile" class="method"} <i/> ImportFromDataFile(*dataFile*{:.component},*xValueColumn*{:.text},*yValueColumn*{:.text})
-: Imports data from the specified DataFile component by taking the specified x column
- for the x values, and the specified y column for the y values. The DataFile's source file
- is expected to be either a CSV or a JSON file.
+{:id="ChartData2D.ImportFromDataFile" class="method"} <i/> 从数据文件导入(*数据文件*{:.component},*x值列*{:.text},*y值列*{:.text})
+: 通过采用指定的 x 列作为 x 值以及指定的 y 列作为 y 值，从指定的 [数据文件](storage.html#DataFile) 组件导入数据。 [数据文件](storage.html#DataFile) 的源文件应为 CSV 或 JSON 文件。
 
-   Passing in empty test for any of the column parameters will result in the usage of
- default values which are the indices of the entries. For the first entry, the default
- value would be the 1, for the second it would be 2, and so on.
+  对任何列参数传递空测试将导致使用默认值，即条目的索引。对于第一个条目，默认值为 1，对于第二个条目，默认值为 2，依此类推。
 
-{:id="ChartData2D.ImportFromList" class="method"} <i/> ImportFromList(*list*{:.list})
-: Imports the data from the specified list parameter to the data series.
- The list is expected to contain element which are also lists. Each
- list element is expected to have 2 values, the first one being
- the x value, and the second one being the y value.
- Invalid list entries are simply skipped. Existing data are not cleared.
+{:id="ChartData2D.ImportFromList" class="method"} <i/> 从列表导入(*list*{:.list})
+: 将指定列表参数中的数据导入到数据序列中。
+  
+  该列表预计包含也是列表的元素。 每个列表元素预计有 2 个值，第一个是 x 值，第二个是 y 值。
+  
+  无效的列表条目将被简单地跳过。
+  
+  现有数据不会被清除。
 
-{:id="ChartData2D.ImportFromSpreadsheet" class="method"} <i/> ImportFromSpreadsheet(*sheet*{:.component},*xColumn*{:.text},*yColumn*{:.text},*useHeaders*{:.boolean})
-: Imports data from the specified Spreadsheet component by taking the specified x column
- for the x values, and the specified y column for the y values. Prior to calling this function,
- the Spreadsheet component's ReadSheet method has to be called to load the data. The usage of
- the GotSheet event in the Spreadsheet component is unnecessary.
+{:id="ChartData2D.ImportFromSpreadsheet" class="method"} <i/> 从电子表格导入(*sheet*{:.component},*xColumn*{:.text},*yColumn*{:.text},*useHeaders*{:.boolean})
+: 通过将指定的 x 列作为 x 值，将指定的 y 列作为 y 值，从指定的[电子表格](storage.html#Spreadsheet)组件导入数据。
 
-   Empty columns are filled with default values (1, 2, 3, ... for Entry 1, 2, 3, ...).
+  在调用此函数之前，必须调用电子表格组件的 ReadSheet 方法来加载数据。 不需要在电子表格组件中使用 GotSheet 事件。
 
-{:id="ChartData2D.ImportFromTinyDB" class="method"} <i/> ImportFromTinyDB(*tinyDB*{:.component},*tag*{:.text})
-: Imports data from the specified TinyDB component by taking the value
- identified by the specified tag value.
+  空列填充默认值（1、2、3、... 对于条目 1、2、3、...）。
 
-   The expected TinyDB value is a list formatted in the same way as described in
- [`ImportFromList`](#ChartData2D.ImportFromList).
+{:id="ChartData2D.ImportFromTinyDB" class="method"} <i/> 从微数据库导入(*tinyDB*{:.component},*tag*{:.text})
+: 通过获取指定标签值标识的值，从指定的 [微数据库](storage.html#TinyDB) 组件导入数据。
 
-   Does not overwrite any data.
+  预期的 [微数据库](storage.html#TinyDB) 值是一个列表，其格式与 [`从列表导入`](#ChartData2D.ImportFromList) 中描述的相同。
 
-{:id="ChartData2D.ImportFromWeb" class="method"} <i/> ImportFromWeb(*web*{:.component},*xValueColumn*{:.text},*yValueColumn*{:.text})
-: Imports data from the specified Web component by taking the specified x column
- for the x values, and the specified y column for the y values. Prior to calling this function,
- the Web component's Get method has to be called to load the data. The usage of the gotValue
- event in the Web component is unnecessary.
+  不覆盖任何数据。
 
-   The expected response of the Web component is a JSON or CSV formatted
- file for this function to work.
+{:id="ChartData2D.ImportFromWeb" class="method"} <i/> 从Web客户端导入(*web*{:.component},*xValueColumn*{:.text},*yValueColumn*{:.text})
+: 通过将指定的 x 列作为 x 值，将指定的 y 列作为 y 值，从指定的 [Web客户端](connectivity.html#Web) 组件导入数据。 在调用此函数之前，必须调用 [Web客户端](connectivity.html#Web) 组件的 Get 方法来加载数据。 无需在 Web 组件中使用 gotValue 事件。
 
-   Empty columns are filled with default values (1, 2, 3, ... for Entry 1, 2, 3, ...).
+  [Web客户端](connectivity.html#Web) 组件的预期响应是 JSON 或 CSV 格式的文件，以便此函数正常工作。
 
-{:id="ChartData2D.RemoveDataSource" class="method"} <i/> RemoveDataSource()
-: Removes the currently attached Data Source from the Chart Data component.
- Doing so will result in no more updates from the Data Source being sent, however,
- the current data will not be removed.
+  空列填充默认值（1、2、3、... 对于条目 1、2、3、...）。
 
-{:id="ChartData2D.RemoveEntry" class="method"} <i/> RemoveEntry(*x*{:.text},*y*{:.text})
-: Removes an entry with the specified x and y value, provided it exists.
- See [`AddEntry`](#ChartData2D.AddEntry) for an explanation of the valid entry values.
+{:id="ChartData2D.RemoveDataSource" class="method"} <i/> 删除数据源()
+: 从图表数据组件中删除当前附加的数据源。
+  
+  这样做将导致不再发送来自数据源的更新，但是，当前数据不会被删除。
