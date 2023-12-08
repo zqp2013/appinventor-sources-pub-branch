@@ -32,11 +32,11 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 不可见组件，可检测振动并使用 SI 单位(m/s<sup>2</sup>)在三个维度上近似测量加速度。其组成部分是：
 
-  - **xAccel**：当手机静止在平坦表面上时为 0，当手机倾斜时为正向右（即左侧抬起），当手机倾斜到右侧时为负向左（即，其右侧尺寸升高）。
+  - **X分量**：当手机静止在平坦表面上时为 0，当手机倾斜时为正向右（即左侧抬起），当手机倾斜到右侧时为负向左（即，其右侧尺寸升高）。
 
-  - **yAccel**：当手机静止在平坦表面上时为0，当底部抬起时为正，当其顶部升起时为负。
+  - **Y分量**：当手机静止在平坦表面上时为0，当底部抬起时为正，当其顶部升起时为负。
 
-  - **zAccel**：等于 -9.8（当设备处于每秒状态时，地球重力以米每秒为单位）
+  - **Z分量**：等于 -9.8（当设备处于每秒状态时，地球重力以米每秒为单位）
     
     静止时与地面平行且显示屏朝上，0 时垂直于地面，面朝下时+9.8。 该值也可能受到加速或反对的影响重力。
 
@@ -46,37 +46,50 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 {:.properties}
 
 {:id="AccelerometerSensor.Available" .boolean .ro .bo} *可用状态*
-: Returns whether the `AccelerometerSensor` hardware is available on the device.
+: 返回`加速度传感器`硬件在设备上是否可用。
 
 {:id="AccelerometerSensor.Enabled" .boolean} *启用*
-: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
- the sensor will generate events.  Otherwise, no events are
- generated even if the device is accelerated or shaken.
+: 指定传感器是否触发事件。如果`真`{:.logic.block}，传感器将触发事件；否则，即使设备加速或晃动，也不会触发任何事件。
 
 {:id="AccelerometerSensor.LegacyMode" .boolean .wo .do} *兼容模式*
-: Prior to the release that added this property the AccelerometerSensor component passed through sensor values directly as received from the Android system. However these values do not compensate for tablets that default to Landscape mode, requiring the MIT App Inventor programmer to compensate. However compensating would result in incorrect results in Portrait mode devices such as phones. We now detect Landscape mode tablets and perform the compensation. However if your project is already compensating for the change, you will now get incorrect results. Although our preferred solution is for you to update your project, you can also just set this property to “true” and our compensation code will be deactivated. Note: We recommend that you update your project as we may remove this property in a future release.
+: 在添加此属性的版本之前，`加速度传感器` 组件直接传递从 Android 系统接收到的传感器值。然而，这些值无法补偿默认为横向模式的平板电脑，需要 MIT App Inventor 程序员进行补偿。但是，在手机等纵向模式设备中进行补偿会导致结果不正确。
+
+  我们现在检测横向模式平板电脑并执行补偿。但是，如果你的项目已经补偿了，将会得到不正确的结果。
+  
+  虽然我们的首选解决方案是让你更新项目，但你也可以将此属性设置为`真`，我们的补偿代码将被停用。
+  
+  注意：我们建议你更新你的项目，因为我们可能会在将来的版本中删除此属性。
+
+  **中文网注：新建的项目不用关注此属性，无视它就行。**
 
 {:id="AccelerometerSensor.MinimumInterval" .number} *最小间隔（毫秒）*
-: Specifies the minimum interval required between back-to-back [`Shaking`](#AccelerometerSensor.Shaking) events,
- in milliseconds.
- Once the phone starts being shaken, all further [`Shaking`](#AccelerometerSensor.Shaking) events will be ignored
- until the interval has elapsed.
+: 指定连续的 [`被晃动`](#AccelerometerSensor.Shaking) 事件之间所需的最小间隔（以毫秒为单位）。
+
+  一旦手机开始晃动，所有进一步的 [`被晃动`](#AccelerometerSensor.Shaking) 事件都将被忽略，直到间隔结束。
 
 {:id="AccelerometerSensor.Sensitivity" .number} *敏感度*
-: Specifies the sensitivity of the accelerometer. Valid values are: `1` (weak), `2` (moderate),
- and `3` (strong).
+: 指定`加速度传感器`的灵敏度。
+
+  |有效值|含义|
+  |--|--|
+  |1|弱|
+  |2|中等|
+  |3|强|
 
 {:id="AccelerometerSensor.XAccel" .number .ro .bo} *X分量*
-: Returns the acceleration in the X-dimension in SI units (m/s²).
- The sensor must be enabled to return meaningful values.
+: 返回 X 维度的加速度，以 SI 单位 (m/s²) 表示。
+
+  必须启用传感器才能返回有意义的值。
 
 {:id="AccelerometerSensor.YAccel" .number .ro .bo} *Y分量*
-: Returns the acceleration in the Y-dimension in SI units (m/s²).
- The sensor must be enabled to return meaningful values.
+: 返回 Y 维度的加速度，以 SI 单位 (m/s²) 表示。
+  
+  必须启用传感器才能返回有意义的值。
 
 {:id="AccelerometerSensor.ZAccel" .number .ro .bo} *Z分量*
-: Returns the acceleration in the Z-dimension in SI units (m/s²).
- The sensor must be enabled to return meaningful values.
+: 返回 Z 维度的加速度，以 SI 单位 (m/s²) 表示。
+  
+  必须启用传感器才能返回有意义的值。
 
 ### 事件  {#AccelerometerSensor-Events}
 
@@ -86,7 +99,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 : 指示 X、Y 和/或 Z 维度上的加速度变化。
 
 {:id="AccelerometerSensor.Shaking"} 被晃动时()
-: Indicates the device started being shaken or continues to be shaken.
+: 表示设备开始晃动或持续晃动。
 
 ### 方法  {#AccelerometerSensor-Methods}
 
@@ -125,26 +138,20 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 ## ![icon](images/barometer.png)  气压传感器  {#Barometer}
 
-Physical world component that can measure the ambient air pressure if
- supported by the hardware.
-
-
+如果硬件支持，可以测量环境气压的物理世界组件。
 
 ### 属性  {#Barometer-Properties}
 
 {:.properties}
 
 {:id="Barometer.AirPressure" .number .ro .bo} *气压*
-: The atmospheric pressure in hPa (millibar), if the sensor is available 
- and enabled.
+: 如果传感器可用并已启用，则返回以 hPa（毫巴）为单位的大气压力。
 
 {:id="Barometer.Available" .boolean .ro .bo} *可用状态*
-: Specifies whether or not the device has the hardware to support the `Barometer` component.
+: 指定设备是否具有支持`气压传感器`组件的硬件。
 
 {:id="Barometer.Enabled" .boolean} *启用*
-: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
- the sensor will generate events.  Otherwise, no events are
- generated.
+: 指定传感器是否触发事件。 如果为`真`{:.logic.block}，传感器将触发事件；否则，不会触发任何事件。
 
 {:id="Barometer.RefreshTime" .number} *刷新时间*
 : 所请求的读数变化之间的最短时间（以毫秒为单位）。
@@ -325,35 +332,33 @@ Physical world component that can measure the ambient air pressure if
 
 ## ![icon](images/gyroscopesensor.png)  陀螺仪传感器  {#GyroscopeSensor}
 
-Component providing data from the device's gyroscope sensor.
-
-
+提供来自设备陀螺仪传感器的数据的组件。
 
 ### 属性  {#GyroscopeSensor-Properties}
 
 {:.properties}
 
 {:id="GyroscopeSensor.Available" .boolean .ro .bo} *可用状态*
-: Indicates whether a gyroscope sensor is available.
+: 陀螺仪传感器是否可用。
 
 {:id="GyroscopeSensor.Enabled" .boolean} *启用*
-: Enabled property getter method.
+: 指定传感器是否触发事件。 如果为`真`{:.logic.block}，传感器将触发事件；否则，不会触发任何事件。
 
 {:id="GyroscopeSensor.XAngularVelocity" .number .ro .bo} *X分量角速度*
-: The angular velocity around the X axis, in degrees per second.
+: 绕 X 轴的角速度，以 度/秒 为单位。
 
 {:id="GyroscopeSensor.YAngularVelocity" .number .ro .bo} *Y分量角速度*
-: The angular velocity around the Y axis, in degrees per second.
+: 绕 Y 轴的角速度，以 度/秒 为单位。
 
 {:id="GyroscopeSensor.ZAngularVelocity" .number .ro .bo} *Z分量角速度*
-: The angular velocity around the Z axis, in degrees per second.
+: 绕 Z 轴的角速度，以 度/秒 为单位。
 
 ### 事件  {#GyroscopeSensor-Events}
 
 {:.events}
 
 {:id="GyroscopeSensor.GyroscopeChanged"} 陀螺仪状态改变时(*x分量角速度*{:.number},*y分量角速度*{:.number},*z分量角速度*{:.number},*时间戳*{:.number})
-: Indicates that the gyroscope sensor data has changed. The timestamp parameter is the time in nanoseconds at which the event occurred.
+: 表明陀螺仪传感器数据已更改。 时间戳参数是事件发生的时间（以纳秒为单位）。
 
 ### 方法  {#GyroscopeSensor-Methods}
 
@@ -363,37 +368,32 @@ Component providing data from the device's gyroscope sensor.
 
 ## ![icon](images/hygrometer.png)  湿度传感器  {#Hygrometer}
 
-Physical world component that can measure the relative ambient air 
- humidity if supported by the hardware.
-
-
+如果硬件支持，可以测量相对环境空气湿度的物理世界组件。
 
 ### 属性  {#Hygrometer-Properties}
 
 {:.properties}
 
 {:id="Hygrometer.Available" .boolean .ro .bo} *可用状态*
-: Specifies whether or not the device has the hardware to support the `Hygrometer` component.
+: 指定设备是否具有支持`湿度传感器`组件的硬件。
 
 {:id="Hygrometer.Enabled" .boolean} *启用*
-: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
- the sensor will generate events.  Otherwise, no events are
- generated.
+: 指定传感器是否触发事件。 如果`真`{:.logic.block}，传感器将触发事件；否则，不会触发任何事件。
 
 {:id="Hygrometer.Humidity" .number .ro .bo} *湿度*
-: Returns the relative ambient humidity as a percentage.
- The sensor must be enabled and available 
- to return meaningful values.
+: 以百分比形式返回相对环境湿度。
+
+  传感器必须可用并启用，才能返回有意义的值。
 
 {:id="Hygrometer.RefreshTime" .number} *刷新时间*
-: The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
+: 所请求的读数变化之间的最短时间（以毫秒为单位）。 Android 不保证会满足该请求。
 
 ### 事件  {#Hygrometer-Events}
 
 {:.events}
 
 {:id="Hygrometer.HumidityChanged"} 湿度改变时(*湿度值*{:.number})
-: Indicates the relative humidity changed.
+: 表示相对湿度的变化。
 
 ### 方法  {#Hygrometer-Methods}
 
@@ -403,39 +403,37 @@ Physical world component that can measure the relative ambient air
 
 ## ![icon](images/lightsensor.png)  光线传感器  {#LightSensor}
 
-Physical world component that can measure the light level.
-
-
+可以测量光水平的物理世界组件。
 
 ### 属性  {#LightSensor-Properties}
 
 {:.properties}
 
 {:id="LightSensor.Available" .boolean .ro .bo} *可用状态*
-: Specifies whether or not the device has the hardware to support the `LightSensor` component.
-
-{:id="LightSensor.AverageLux" .number .ro .bo} *平均照度*
-: Returns the brightness in lux by averaging the previous 10 measured values.
- The sensor must be enabled and available to return meaningful values.
-
-{:id="LightSensor.Enabled" .boolean} *启用*
-: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
- the sensor will generate events.  Otherwise, no events are
- generated.
+: 指定设备是否具有支持`光线传感器`组件的硬件。
 
 {:id="LightSensor.Lux" .number .ro .bo} *照度*
-: Returns the last measured brightness in lux.
- The sensor must be enabled and available to return meaningful values.
+: 返回最后测量的照度值（以 lux 为单位）。
+
+  传感器必须可用并启用，才能返回有意义的值。
+
+{:id="LightSensor.AverageLux" .number .ro .bo} *平均照度*
+: 通过计算前 10 个测量值的平均值，返回照度值（以 lux 为单位）。
+  
+  传感器必须可用并启用，才能返回有意义的值。
+
+{:id="LightSensor.Enabled" .boolean} *启用*
+: 指定传感器是否触发事件。 如果为`真`{:.logic.block}，传感器将触发事件；否则，不会触发任何事件。
 
 {:id="LightSensor.RefreshTime" .number} *刷新时间*
-: The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
+: 所请求的读数变化之间的最短时间（以毫秒为单位）。 Android 不保证会满足该请求。
 
 ### 事件  {#LightSensor-Events}
 
 {:.events}
 
 {:id="LightSensor.LightChanged"} 光线变化时(*照度值*{:.number})
-: Indicates the light level changed.
+: 亮度级别发生变化时触发该事件。
 
 ### 方法  {#LightSensor-Methods}
 
@@ -457,7 +455,7 @@ Physical world component that can measure the light level.
 
   为了发挥作用，组件必须将其 [`启用`](#LocationSensor.Enabled) 属性设置为`真`{:.logic.block}，并且设备必须通过无线网络启用定位感应器 或 GPS 卫星（如果在室外）。
 
-  应用程序启动时，位置信息可能无法立即可用。你必须稍微等一下找到并使用位置提供商，或者等待[`LocationChanged`](#LocationSensor.LocationChanged) 事件。
+  应用程序启动时，位置信息可能无法立即可用。你必须稍微等一下找到并使用位置提供者，或者等待[`LocationChanged`](#LocationSensor.LocationChanged) 事件。
 
   模拟器并不模拟所有设备上的传感器，App应该在物理设备上进行测试。
 
@@ -465,124 +463,101 @@ Physical world component that can measure the light level.
 
 {:.properties}
 
-{:id="LocationSensor.Accuracy" .number .ro .bo} *Accuracy*
-: The `LocationSensor` will be able to locate the device with a varying degree of confidence,
- based on the quality of satellite, cell towers, and other data used to estimate location.
- The `Accuracy` value is the radius in meters around the sensor's detected location. The device
- has a 68% chance to be located within this radius. More precise location detection will result
- in a smaller accuracy number, which allows the app to have more confidence where the device
- is actually located.
+{:id="LocationSensor.Accuracy" .number .ro .bo} *精度*
+: `位置传感器`将能够根据卫星、手机信号塔和其他用于估计位置的数据的质量，以不同程度的置信度来定位设备。
 
-   If the accuracy is not known, the return value is 0.0
+  “精度”值是传感器检测到的位置周围的半径（以米为单位）。该设备有 68% 的机会位于该半径内。更精确的位置检测将导致更小的精度数字，这使得应用程序对设备实际所在的位置更有信心。
 
-{:id="LocationSensor.Altitude" .number .ro .bo} *Altitude*
-: Altitude of the device measured in meters, if available.
+  如果精度未知，则返回值为 0.0。
 
-   Altitude is measured from the
- [World Geodetic System 84 reference ellipsoid](https://gisgeography.com/wgs84-world-geodetic-system/),
- not sea level.
+{:id="LocationSensor.Altitude" .number .ro .bo} *海拔*
+: 设备的海拔高度（以米为单位）（如果有）。
 
-   Note that it is difficult for devices to accurately sense altitude. Altitude reported on a
- phone/tablet can easily be off by 30 meters or more.
+  海拔高度是根据 [世界大地测量系统 84 参考椭球体](https://gisgeography.com/wgs84-world-geodetic-system/) 测量的，而不是海平面。
 
-{:id="LocationSensor.AvailableProviders" .list .ro .bo} *AvailableProviders*
-: List of available service providers, such as gps or network. This information is provided
- as a list and in text form.
+  请注意，设备很难准确地感知海拔高度。手机/平板电脑上报告的海拔高度很容易偏离 30 米或更多。
 
-{:id="LocationSensor.CurrentAddress" .text .ro .bo} *CurrentAddress*
-: Physical street address of the device from Google's map database.
+{:id="LocationSensor.AvailableProviders" .list .ro .bo} *可用提供者*
+: 可用服务提供者的列表，例如 GPS 或网络。 此信息以列表和文本形式提供。
 
-   The address might not always be available from the provider, and the address reported may not
- always be of the building where the device is located.
+{:id="LocationSensor.CurrentAddress" .text .ro .bo} *当前地址*
+: 来自地图数据库的设备的实际街道地址。
 
-   If Google has no address information available for a particular location, this will return
- `No address available`.
+  提供者可能并不总是提供该地址，并且报告的地址可能并不总是设备所在建筑物的地址。
 
-{:id="LocationSensor.DistanceInterval" .number} *DistanceInterval*
-: Determines the minimum distance interval, in meters, that the sensor will try to use for
- sending out location updates. For example, if this is set to 50, then the sensor will fire a
- [`LocationChanged`](#LocationSensor.LocationChanged) event only after 50 meters have been
- traversed. However, the sensor does not guarantee that an update will be received at exactly
- the distance interval. It may take more than 5 meters to fire an event, for instance.
+  如果没有特定位置的可用地址信息，则会返回“无可用地址”。
 
-   It is also useful to check against [`Accuracy`](#LocationSensor.Accuracy) when using this property. When your
- device is moving, the accuracy of the detected location is constantly changing.
+{:id="LocationSensor.DistanceInterval" .number} *距离间隔*
+: 确定传感器尝试用于发送位置更新的最小距离间隔（以米为单位）。
+
+  例如，如果设置为 50，则传感器仅在穿过 50 米后才会触发 [`位置改变时`](#LocationSensor.LocationChanged) 事件。 然而，传感器不保证在精确的距离间隔处接收到更新。 例如，触发一个事件可能需要超过 5 米。
+
+  使用此属性时，检查 [`精度`](#LocationSensor.Accuracy) 也很有用。 当你的设备移动时，检测到的位置的准确性会不断变化。
 
 {:id="LocationSensor.Enabled" .boolean} *启用*
-: If `真`{:.logic.block}, the `LocationSensor` will attempt to read location information from
- GPS, WiFi location, or other means available on the device. This setting does not control
- whether location information is actually available. Device location must be enabled or
- disabled in the device settings.
+: 如果为`真`{:.logic.block}，则`位置传感器`将尝试从 GPS、WiFi 位置或设备上可用的其他方式读取位置信息。 此设置不控制位置信息是否实际可用。 必须在设备设置中启用或禁用设备定位。
 
-{:id="LocationSensor.HasAccuracy" .boolean .ro .bo} *HasAccuracy*
-: If `真`{:.logic.block}, the device can report its accuracy level.
+{:id="LocationSensor.HasAccuracy" .boolean .ro .bo} *拥有精度数据*
+: 如果为`真`{:.logic.block}，则设备可以报告其精度级别。
 
-{:id="LocationSensor.HasAltitude" .boolean .ro .bo} *HasAltitude*
-: If `真`{:.logic.block}, the device can report its altitude.
+{:id="LocationSensor.HasAltitude" .boolean .ro .bo} *拥有海拔数据*
+: 如果为`真`{:.logic.block}，则设备可以报告其海拔高度。
 
-{:id="LocationSensor.HasLongitudeLatitude" .boolean .ro .bo} *HasLongitudeLatitude*
-: If `真`{:.logic.block}, the device can report longitude and latitude.  It is
- always the case that either both or neither are.
+{:id="LocationSensor.HasLongitudeLatitude" .boolean .ro .bo} *拥有经纬度数据*
+: 如果为`真`{:.logic.block}，则设备可以报告经度和纬度。它们是一起的，要么两者都报告，要么都不报告。
 
-{:id="LocationSensor.Latitude" .number .ro .bo} *Latitude*
-: The most recently available latitude value in degrees reported to 5 decimal places.
- If no value is available, 0 will be returned.
- Latitude is a value between 90 (north) and -90 (south), where 0 marks the Equator.
+{:id="LocationSensor.Latitude" .number .ro .bo} *纬度*
+: 最近可用的纬度值（以度为单位）报告到小数点后 5 位。
+  
+  如果没有可用值，则返回 0。
+  
+  纬度是 90（北）和 -90（南）之间的值，其中 0 表示赤道。
 
-{:id="LocationSensor.Longitude" .number .ro .bo} *Longitude*
-: The most recent available longitude value in degrees reported to 5 decimal places.
- If no value is available, 0 will be returned.
- Longitude is a value between 180 (east) and -180 (west), where 0 marks the Prime Meridian.
+{:id="LocationSensor.Longitude" .number .ro .bo} *经度*
+: 最新可用的经度值（以度为单位）报告到小数点后 5 位。
+  
+  如果没有可用值，则返回 0。
+  
+  经度是 180（东）和 -180（西）之间的值，其中 0 表示本初子午线。
 
-{:id="LocationSensor.ProviderLocked" .boolean .bo} *ProviderLocked*
-: The device will not change the service provider.
+{:id="LocationSensor.ProviderLocked" .boolean .bo} *锁定提供者*
+: 指定设备是否会自动切换服务提供者。
 
-   It is possible for a device to switch service providers when the current provider is unable
- to provide adequate location information. `ProviderLocked` is a Boolean value: true/false.
- Set to `真`{:.logic.block} to prevent providers from changing. Set to `假`{:.logic.block}
- to allow for automatic switching when necessary.
+  当当前提供者无法提供足够的位置信息时，设备可以切换服务提供者。
+  
+  设置为 `真`{:.logic.block} 以防止提供者更改；设置为`假`{:.logic.block} 以允许在必要时自动切换。
 
-{:id="LocationSensor.ProviderName" .text .bo} *ProviderName*
-: The current service provider. The provider will most likely be either GPS or network.
+{:id="LocationSensor.ProviderName" .text .bo} *提供者名称*
+: 当前的服务提供者。提供者很可能是 GPS 或网络。
 
-{:id="LocationSensor.TimeInterval" .number} *TimeInterval*
-: Determines the minimum time interval, in milliseconds, that the sensor will try to use for
- sending out location updates. However, location updates will only be received when the
- location of the phone actually changes, and use of the specified time interval is not
- guaranteed. For example, if 30000 is used as the time interval, location updates will never
- be fired sooner than 30000ms, but they may be fired anytime after.
+{:id="LocationSensor.TimeInterval" .number} *时间间隔（毫秒）*
+: 确定传感器尝试用于发送位置更新的最小时间间隔（以毫秒为单位）。 但是，只有当手机位置实际发生变化时才会收到位置更新，并且不保证指定时间间隔的使用。 例如，如果使用 30000 作为时间间隔，则位置更新永远不会早于 30000 毫秒触发，但可能会在之后的任何时间触发。
 
-   Values smaller than 30000ms (30 seconds) are not practical for most devices. Small values
- may drain battery and overwork the GPS.
+  对于大多数设备来说，小于 30000 毫秒（30 秒）的值不实用。 较小的值可能会耗尽电池电量并使 GPS 过度工作。
 
 ### 事件  {#LocationSensor-Events}
 
 {:.events}
 
-{:id="LocationSensor.LocationChanged"} LocationChanged(*latitude*{:.number},*longitude*{:.number},*altitude*{:.number},*speed*{:.number})
-: Indicates that a new location has been detected. Speed is reported in meters/second
- Other values match their properties.
+{:id="LocationSensor.LocationChanged"} 位置改变时(*纬度*{:.number},*经度*{:.number},*海拔*{:.number},*速度*{:.number})
+: 表示已检测到新位置。`速度`以米/秒为单位。
 
-{:id="LocationSensor.StatusChanged"} StatusChanged(*provider*{:.text},*status*{:.text})
-: Indicates that the status of the location provider service has changed, such as when a
- provider is lost or a new provider starts being used.
+{:id="LocationSensor.StatusChanged"} 状态改变时(*提供者*{:.text},*状态*{:.text})
+: 表示位置提供者服务的状态已更改，例如当提供者丢失或开始使用新提供者时。
 
 ### 方法  {#LocationSensor-Methods}
 
 {:.methods}
 
-{:id="LocationSensor.LatitudeFromAddress" class="method returns number"} <i/> LatitudeFromAddress(*locationName*{:.text})
-: Derives latitude from the given `locationName`.
+{:id="LocationSensor.LatitudeFromAddress" class="method returns number"} <i/> 由地址求纬度(*位置名称*{:.text})
+: 从给定的“位置名称”导出纬度。
 
-{:id="LocationSensor.LongitudeFromAddress" class="method returns number"} <i/> LongitudeFromAddress(*locationName*{:.text})
-: Derives longitude from the given `locationName`.
-
+{:id="LocationSensor.LongitudeFromAddress" class="method returns number"} <i/> 由地址求经度(*位置名称*{:.text})
+: 从给定的“位置名称”导出经度。
 
 ## ![icon](images/magneticfieldsensor.png)  磁场传感器  {#MagneticFieldSensor}
 
-Component for MagneticFieldSensor
-
-
+`磁场传感器`组件。
 
 ### 属性  {#MagneticFieldSensor-Properties}
 
@@ -592,29 +567,29 @@ Component for MagneticFieldSensor
 : 表示磁场的绝对强度。
 
 {:id="MagneticFieldSensor.Available" .boolean .ro .bo} *可用状态*
-: Indicates that there is a magnetic field sensor in the device and it is available.
+: 表示设备中有磁场传感器并且可用。
 
 {:id="MagneticFieldSensor.Enabled" .boolean} *启用*
-: Indicates whether or not the magnetic field sensor is enabled and working.
+: 表示磁场传感器是否已启用并工作。
 
 {:id="MagneticFieldSensor.MaximumRange" .number .ro .bo} *最大范围*
-: 指示磁传感器可以达到的最大范围。
+: 表示磁传感器可以达到的最大范围。
 
 {:id="MagneticFieldSensor.XStrength" .number .ro .bo} *X分量强度*
-: Indicates the field's strength in the X-axis.
+: 表示 X 轴上的磁场强度。
 
 {:id="MagneticFieldSensor.YStrength" .number .ro .bo} *Y分量强度*
-: Indicates the field's strength in the Y-axis.
+: 表示 Y 轴上的磁场强度。
 
 {:id="MagneticFieldSensor.ZStrength" .number .ro .bo} *Z分量强度*
-: Indicates the field's strength in the Z-axis.
+: 表示 Z 轴上的磁场强度。
 
 ### 事件  {#MagneticFieldSensor-Events}
 
 {:.events}
 
-{:id="MagneticFieldSensor.MagneticChanged"} 磁场改变时(*xStrength*{:.number},*yStrength*{:.number},*zStrength*{:.number},*absoluteStrength*{:.number})
-: Triggers when magnetic field has changed, setting the new values in parameters.
+{:id="MagneticFieldSensor.MagneticChanged"} 磁场改变时(*X分量强度*{:.number},*Y分量强度*{:.number},*Z分量强度*{:.number},*绝对强度*{:.number})
+: 当磁场发生变化时触发，在参数中设置新值。
 
 ### 方法  {#MagneticFieldSensor-Methods}
 
@@ -665,66 +640,56 @@ Component for MagneticFieldSensor
 
 ## ![icon](images/orientationsensor.png)  方向传感器  {#OrientationSensor}
 
-![Example of the OrientationSensor icon](images/orientationsensor.png)
+使用方向传感器组件来确定手机的空间方向。
 
- Use an orientation sensor component to determine the phone's spatial orientation.
+  方向传感器是一个不可见的组件，它报告以下三个值（以度为单位）：
 
- An orientation sensor is a non-visible component that reports the following three values, in
- degrees:
+   - **滚动**：设备水平时为 0 度，当设备向左侧向上倾斜时增加至 90 度，当设备向右侧向上倾斜时减少至 -90 度。
+   - **俯仰**：设备水平时为 0 度，当设备倾斜时增加到 90 度，使其顶部朝下，然后在翻转时减小到 0 度。
+         类似地，当设备倾斜时，其底部朝下，俯仰角减小到 -90 度，然后在完全翻转时增加到 0 度。
+   - **方位角**：设备顶部指向北时为 0 度，指向东时为 90 度，指向南时为 180 度，指向西时为 270 度等。
 
-  - **Roll** : 0 degree when the device is level, increasing to 90 degrees as the device is
-    tilted up onto its left side, and decreasing to −90 degrees when the device is tilted up onto
-    its right side.
-  - **Pitch** : 0 degree when the device is level, increasing to 90 degrees as the device is
-    tilted so its top is pointing down, then decreasing to 0 degree as it gets turned over.
-    Similarly, as the device is tilted so its bottom points down, pitch decreases to −90 degrees,
-    then increases to 0 degree as it gets turned all the way over.
-  - **Azimuth** : 0 degree when the top of the device is pointing north, 90 degrees when it is
-    pointing east, 180 degrees when it is pointing south, 270 degrees when it is pointing west,
-    etc.
-
- These measurements assume that the device itself is not moving.
-
-
+  这些测量假设设备本身没有移动。
 
 ### 属性  {#OrientationSensor-Properties}
 
 {:.properties}
 
-{:id="OrientationSensor.Angle" .number .ro .bo} *Angle*
-: Returns an angle that tells the direction in which the device is tiled. That is, it tells the
- direction of the force that would be felt by a ball rolling on the surface of the device.
+{:id="OrientationSensor.Angle" .number .ro .bo} *角度*
+: 返回一个角度，指示设备平铺的方向。也就是说，它告诉了在设备表面滚动的球所感受到的力的方向。
 
-{:id="OrientationSensor.Available" .boolean .ro .bo} *Available*
-: Indicates whether the orientation sensor is present on the device.
+{:id="OrientationSensor.Available" .boolean .ro .bo} *可用状态*
+: 指示设备上是否存在方向传感器。
 
-{:id="OrientationSensor.Azimuth" .number .ro .bo} *Azimuth*
-: Returns the azimuth angle of the device.
- To return meaningful values the sensor must be enabled.
+{:id="OrientationSensor.Azimuth" .number .ro .bo} *方位角*
+: 返回设备的方位角。
+  
+  要返回有意义的值，必须启用传感器。
 
-{:id="OrientationSensor.Enabled" .boolean} *Enabled*
-: Specifies whether the orientation sensor is enabled.
+{:id="OrientationSensor.Enabled" .boolean} *启用*
+: 指定是否启用方向传感器。
 
-{:id="OrientationSensor.Magnitude" .number .ro .bo} *Magnitude*
-: Returns a number between 0 and 1 indicating how much the device
- is tilted. It gives the magnitude of the force that would be felt
- by a ball rolling on the surface of the device. For the angle of
- tilt, use [`Angle`](#OrientationSensor.Angle).
+{:id="OrientationSensor.Magnitude" .number .ro .bo} *力度*
+: 返回 0 到 1 之间的数字，指示设备倾斜的程度。它给出了球在设备表面滚动时感受到的力的大小。
 
-{:id="OrientationSensor.Pitch" .number .ro .bo} *Pitch*
-: Returns the pitch angle of the device.
- To return meaningful values the sensor must be enabled.
+  对于倾斜角度，请使用 [`角度`](#OrientationSensor.Angle)。
 
-{:id="OrientationSensor.Roll" .number .ro .bo} *Roll*
-: Returns the roll angle of the device.
- To return meaningful values the sensor must be enabled.
+{:id="OrientationSensor.Pitch" .number .ro .bo} *倾斜角*
+: 返回设备的倾斜角。
+  
+  要返回有意义的值，必须启用传感器。
+
+{:id="OrientationSensor.Roll" .number .ro .bo} *翻转角*
+: 返回设备的滚动角度。
+
+  要返回有意义的值，必须启用传感器。
 
 ### 事件  {#OrientationSensor-Events}
 
 {:.events}
 
-{:id="OrientationSensor.OrientationChanged"} OrientationChanged(*azimuth*{:.number},*pitch*{:.number},*roll*{:.number})
-: The `OrientationChanged` event handler is run when the orientation has changed.
+{:id="OrientationSensor.OrientationChanged"} 方向改变时(*方位角*{:.number},*倾斜角*{:.number},*翻转角*{:.number})
+: 当方向发生变化时，将触发该事件。
 
 ### 方法  {#OrientationSensor-Methods}
 
@@ -741,51 +706,49 @@ Component for MagneticFieldSensor
 
 {:.properties}
 
-{:id="Pedometer.Distance" .number .ro .bo} *Distance*
-: Returns the approximate distance traveled in meters.
+{:id="Pedometer.Distance" .number .ro .bo} *距离*
+: 返回以米为单位的大致行驶距离。
 
-{:id="Pedometer.ElapsedTime" .number .ro .bo} *ElapsedTime*
-: Returns the time elapsed in milliseconds since the pedometer has started.
+{:id="Pedometer.ElapsedTime" .number .ro .bo} *耗时*
+: 返回自计步器启动以来经过的时间（以毫秒为单位）。
 
-{:id="Pedometer.SimpleSteps" .number .ro .bo} *SimpleSteps*
-: Returns the number of simple steps taken since the pedometer has started.
+{:id="Pedometer.SimpleSteps" .number .ro .bo} *简单步数*
+: 返回自计步器启动以来发生的简单步数。
 
-{:id="Pedometer.StopDetectionTimeout" .number} *StopDetectionTimeout*
-: Returns the duration of idleness (no steps detected) after which to go into a "stopped" state.
+{:id="Pedometer.StopDetectionTimeout" .number} *停止检测超时时间*
+: 返回多长时间（以毫秒为单位）未检测到步数之后进入停止检测状态。
 
-{:id="Pedometer.StrideLength" .number} *StrideLength*
-: Returns the current estimate of stride length in meters, if calibrated, or returns the
- default (0.73 m) otherwise.
+{:id="Pedometer.StrideLength" .number} *步幅*
+: 如果已校准，则返回步幅长度的当前估计值（以米为单位），否则返回默认值 (0.73 m)。
 
-{:id="Pedometer.WalkSteps" .number .ro .bo} *WalkSteps*
-: Returns the number of walk steps taken since the pedometer has started.
+{:id="Pedometer.WalkSteps" .number .ro .bo} *行走步数*
+: 返回自计步器启动以来所走的步数。
 
 ### 事件  {#Pedometer-Events}
 
 {:.events}
 
-{:id="Pedometer.SimpleStep"} SimpleStep(*simpleSteps*{:.number},*distance*{:.number})
-: This event is run when a raw step is detected.
+{:id="Pedometer.SimpleStep"} 检测简单步数时(*简单步数*{:.number},*距离*{:.number})
+: 当检测到原始步骤(raw step)时运行此事件。
 
-{:id="Pedometer.WalkStep"} WalkStep(*walkSteps*{:.number},*distance*{:.number})
-: This event is run when a walking step is detected. A walking step is a step that appears to be involved in forward motion.
+{:id="Pedometer.WalkStep"} 检测行走步数时(*行走步数*{:.number},*距离*{:.number})
+: 当检测到步行步骤(walking step)时触发此事件。步行步骤是看起来涉及向前运动的步骤。
 
 ### 方法  {#Pedometer-Methods}
 
 {:.methods}
 
-{:id="Pedometer.Reset" class="method"} <i/> Reset()
-: Resets the step counter, distance measure and time running.
+{:id="Pedometer.Reset" class="method"} <i/> 复位()
+: 重置计步器、距离测量和跑步时间。
 
-{:id="Pedometer.Save" class="method"} <i/> Save()
-: Saves the pedometer state to the phone. Permits permits accumulation of steps and distance between invocations of an App that uses the pedometer. Different Apps will have their own saved state.
+{:id="Pedometer.Save" class="method"} <i/> 保存()
+: 将计步器状态保存至手机。允许累积步数和调用使用计步器的应用程序之间的距离。不同的应用程序将有自己的保存状态。
 
-{:id="Pedometer.Start" class="method"} <i/> Start()
-: Starts the pedometer.
+{:id="Pedometer.Start" class="method"} <i/> 开始()
+: 启动计步器。
 
-{:id="Pedometer.Stop" class="method"} <i/> Stop()
-: Stops the pedometer.
-
+{:id="Pedometer.Stop" class="method"} <i/> 停止()
+: 停止计步器。
 
 ## ![icon](images/proximitysensor.png)  距离传感器  {#ProximitySensor}
 
@@ -835,31 +798,28 @@ Component for MagneticFieldSensor
 
 {:.properties}
 
-{:id="Thermometer.Available" .boolean .ro .bo} *Available*
-: Specifies whether or not the device has the hardware to support the `Thermometer` component.
+{:id="Thermometer.Available" .boolean .ro .bo} *可用状态*
+: 指定设备是否具有支持“温度计”组件的硬件。
 
-{:id="Thermometer.Enabled" .boolean} *Enabled*
-: Specifies whether the sensor should generate events.  If `真`{:.logic.block},
- the sensor will generate events.  Otherwise, no events are
- generated.
+{:id="Thermometer.Enabled" .boolean} *启用*
+: 指定传感器是否触发事件。 如果为`真`{:.logic.block}，传感器将触发事件；否则，不会触发任何事件。
 
-{:id="Thermometer.RefreshTime" .number} *RefreshTime*
-: The requested minimum time in milliseconds between changes in readings being reported. Android is not guaranteed to honor the request. Setting this property has no effect on pre-Gingerbread devices.
+{:id="Thermometer.RefreshTime" .number} *刷新时间（毫秒）*
+: 所请求的读数变化之间的最短时间（以毫秒为单位）。Android 不保证会满足该请求。
 
 {:id="Thermometer.Temperature" .number .ro .bo} *温度*
-: Returns the temperature in degrees Celsius.
- The sensor must be enabled and available 
- to return meaningful values.
+: 返回以摄氏度为单位的温度。
+  
+  传感器必须启用并可返回有意义的值。
 
 ### 事件  {#Thermometer-Events}
 
 {:.events}
 
 {:id="Thermometer.TemperatureChanged"} 温度改变时(*温度值*{:.number})
-: Indicates a change of temperature, provided in degrees Celsius.
+: 表示温度发生变化，以摄氏度为单位。
 
 ### 方法  {#Thermometer-Methods}
 
 {:.methods}
 无
-
