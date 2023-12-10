@@ -23,26 +23,19 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 
 ## ![icon](images/contactpicker.png)  联系人选择框  {#ContactPicker}
 
-A button that, when clicked on, displays a list of the contacts to choose among. After the user
- has made a selection, the following properties will be set to information about the chosen
- contact:
+单击该按钮后，会显示可供选择的联系人列表。用户做出选择后，以下属性将设置为有关所选联系人的信息：
 
-  - [`ContactName`](#ContactPicker.ContactName): the contact's name
-  - [`EmailAddress`](#ContactPicker.EmailAddress): the contact's primary email address
-  - [`EmailAddressList`](#ContactPicker.EmailAddressList): a list of the contact's email addresses
-  - [`ContactUri`](#ContactPicker.ContactUri): the contact's URI on the device
-  - [`PhoneNumber`](#ContactPicker.PhoneNumber): the contact's primary phone number (on Later Android Verisons)
-  - [`PhoneNumberList`](#ContactPicker.PhoneNumberList): a list of the contact's phone numbers (on Later Android Versions)
-  - [`Picture`](#ContactPicker.Picture): the name of the file containing the contact's image, which can be used as a Picture property value for the Image or ImageSprite component.
+   - [`联系人姓名`](#ContactPicker.ContactName)：联系人姓名
+   - [`邮箱地址`](#ContactPicker.EmailAddress)：联系人的主要电子邮件地址
+   - [`邮箱地址列表`](#ContactPicker.EmailAddressList)：联系人电子邮件地址列表
+   - [`联系人URI`](#ContactPicker.ContactUri)：设备上联系人的 URI
+   - [`电话号码`](#ContactPicker.PhoneNumber)：联系人的主要电话号码（在更高版本的 Android 版本上）
+   - [`电话号码列表`](#ContactPicker.PhoneNumberList)：联系人电话号码列表（在更高版本的 Android 版本上）
+   - [`图片`](#ContactPicker.Picture)：包含联系人图片的文件的名称，可用作 [图像](userinterface.html#Image).[图片](userinterface.html#Image.Picture)属性值 或 [图像精灵](animation.html#ImageSprite).[图片](animation.html#ImageSprite.Picture) 属性值。
 
- Other properties affect the appearance of the button ([`TextAlignment`](#ContactPicker.TextAlignment),
- [`BackgroundColor`](#ContactPicker.BackgroundColor), etc.) and whether it can be clicked on ([`Enabled`](#ContactPicker.Enabled)).
+  其他属性影响按钮外观（[`文本对齐`](#ContactPicker.TextAlignment)、[`背景颜色`](#ContactPicker.BackgroundColor)等）以及是否可以单击（[`启用`](#ContactPicker.Enabled)）。
 
- The `ContactPicker` component might not work on all phones. For example, on Android systems
- before system 3.0, it cannot pick phone numbers, and the list of email addresses will contain
- only one email.
-
-
+  `联系人选择框`组件可能不适用于所有手机。例如，在3.0之前的Android系统上，它无法选择电话号码，并且电子邮件地址列表将仅包含一封电子邮件。
 
 ### 属性  {#ContactPicker-Properties}
 
@@ -51,18 +44,17 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.BackgroundColor" .color} *背景颜色*
 : 设置`联系人选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#ContactPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#ContactPicker.Image)属性为止。
 
-{:id="ContactPicker.ContactName" .text .ro .bo} *ContactName*
-: Returns the full name of the selected contact, or the empty string if a name is unavailable.
+{:id="ContactPicker.ContactName" .text .ro .bo} *联系人姓名*
+: 返回所选联系人的全名，如果名称不可用，则返回空字符串。
 
-{:id="ContactPicker.ContactUri" .text .ro .bo} *ContactUri*
-: Returns a URI that specifies the location of the contact on the device.
+{:id="ContactPicker.ContactUri" .text .ro .bo} *联系人URI*
+: 返回指定联系人在设备上的位置的 URI。
 
-{:id="ContactPicker.EmailAddress" .text .ro .bo} *EmailAddress*
-: Returns the primary email address of the selected contact, or the empty string if an email
- address is unavailable.
+{:id="ContactPicker.EmailAddress" .text .ro .bo} *邮箱地址*
+: 返回所选联系人的主电子邮件地址，如果电子邮件地址不可用，则返回空字符串。
 
-{:id="ContactPicker.EmailAddressList" .list .ro .bo} *EmailAddressList*
-: Returns a list of email addresses associated with the selected contact.
+{:id="ContactPicker.EmailAddressList" .list .ro .bo} *邮箱地址列表*
+: 返回与所选联系人关联的电子邮件地址列表。
 
 {:id="ContactPicker.Enabled" .boolean} *启用*
 : 设置`联系人选择框`是否可以被激活和点击。
@@ -90,16 +82,14 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 {:id="ContactPicker.Image" .text} *图像*
 : 设置`联系人选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#ContactPicker.BackgroundColor)，则仅`图像`可见。
 
-{:id="ContactPicker.PhoneNumber" .text .ro .bo} *PhoneNumber*
-: Returns the primary phone number associated with the selected contact, or the empty string if
- no phone number is associated with the contact.
+{:id="ContactPicker.PhoneNumber" .text .ro .bo} *电话号码*
+: 返回与所选联系人关联的主要电话号码，如果没有与该联系人关联的电话号码，则返回空字符串。
 
-{:id="ContactPicker.PhoneNumberList" .list .ro .bo} *PhoneNumberList*
-: Returns a list of phone numbers associated with the selected contact.
+{:id="ContactPicker.PhoneNumberList" .list .ro .bo} *电话号码列表*
+: 返回与所选联系人关联的电话号码列表。
 
-{:id="ContactPicker.Picture" .text .ro .bo} *Picture*
-: Returns a picture URI for the selected contact, which can be
- used to retrieve the contact's photo and other fields.
+{:id="ContactPicker.Picture" .text .ro .bo} *图片*
+: 返回所选联系人的图片 URI，可用于检索联系人的照片和其他字段。
 
 {:id="ContactPicker.Shape" .number .do} *形状*
 : 设置`联系人选择框`的形状，此属性的有效值为：
@@ -145,58 +135,45 @@ A button that, when clicked on, displays a list of the contacts to choose among.
 
 {:.events}
 
-{:id="ContactPicker.AfterPicking"} AfterPicking()
-: Event to be raised after the `ContactPicker` activity returns its
- result and the properties have been filled in.
+{:id="ContactPicker.AfterPicking"} 选择完成()
+: 在`联系人选择框`活动返回其结果且属性已填写后触发该事件。
 
-{:id="ContactPicker.BeforePicking"} BeforePicking()
-: Event to raise when the `ContactPicker` is clicked or the picker is shown
- using the [`Open`](#ContactPicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
+{:id="ContactPicker.BeforePicking"} 准备选择()
+: 单击`联系人选择框`或使用 [打开选框](#ContactPicker.Open) 方法显示选择器时触发该事件。
 
-{:id="ContactPicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `ContactPicker` so it is now possible
- to click it.
+  此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。
 
-{:id="ContactPicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `ContactPicker` so it is now no
- longer possible to click it.
+{:id="ContactPicker.GotFocus"} 获得焦点()
+: 表示光标移到`联系人选择框`上方，因此现在可以单击它。
 
-{:id="ContactPicker.TouchDown"} TouchDown()
-: Indicates that the `ContactPicker` was pressed down.
+{:id="ContactPicker.LostFocus"} 失去焦点()
+: 表示光标已从`联系人选择框`移开，因此现在无法再单击它。
 
-{:id="ContactPicker.TouchUp"} TouchUp()
-: Indicates that the `ContactPicker` has been released.
+{:id="ContactPicker.TouchDown"} 被按压()
+: 表示`联系人选择框`已被按下。
+
+{:id="ContactPicker.TouchUp"} 被松开()
+: 表示`联系人选择框`按压已释放。
 
 ### 方法  {#ContactPicker-Methods}
 
 {:.methods}
 
-{:id="ContactPicker.Open" class="method"} <i/> Open()
-: Opens the `ContactPicker`, as though the user clicked on it.
+{:id="ContactPicker.Open" class="method"} <i/> 打开选框()
+: 打开`联系人选择框`选框，就像用户单击它一样。
 
-{:id="ContactPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
-: Opens the selected contact's entry in the device's default Contacts app.
-
+{:id="ContactPicker.ViewContact" class="method"} <i/> 查看联系人(*URI*{:.text})
+: 在设备的默认联系人App中打开所选联系人的条目。
 
 ## ![icon](images/emailpicker.png)  邮箱地址选择框  {#EmailPicker}
 
-An `EmailPicker` is a kind of text box. If the user begins entering the name or email address of
- a contact, the phone will show a dropdown menu of choices that complete the entry. If there are
- many contacts, the dropdown can take several seconds to appear, and can show intermediate
- results while the matches are being computed.
+`邮箱地址选择框`是一种文本框。如果用户开始输入联系人的姓名或电子邮件地址，手机将显示完成输入的选项下拉菜单。如果有很多联系人，则下拉列表可能需要几秒钟的时间才能显示，并且可以在计算匹配时显示中间结果。
 
- The initial contents of the text box and the contents< after user entry is in the [`Text`](#EmailPicker.Text)
- property. If the [`Text`](#EmailPicker.Text) property is initially empty, the contents of the [`Hint`](#EmailPicker.Hint)
- property will be faintly shown in the text box as a hint to the user.
+  文本框的初始内容和用户输入后的内容位于 [`文本`](#EmailPicker.Text) 属性中。如果 [`文本`](#EmailPicker.Text) 属性最初为空，则 [`提示`](#EmailPicker.Hint) 属性的内容将隐约显示在文本框中，作为对用户的提示。
 
- Other properties affect the appearance of the text box ([`TextAlignment`](#EmailPicker.TextAlignment),
- [`BackgroundColor`](#EmailPicker.BackgroundColor), etc.) and whether it can be used ([`Enabled`](#EmailPicker.Enabled)).
+  其他属性影响文本框的外观（[`文本对齐`](#EmailPicker.TextAlignment)、[`背景颜色`](#EmailPicker.BackgroundColor)等）以及是否可以使用（[`启用`](#EmailPicker.Enabled)）。
 
- Text boxes like this are usually used with [`Button`](userinterface.html#Button) components, with
- the user clicking on the button when text entry is complete.
-
-
+  像这样的文本框通常与 [`按钮`](userinterface.html#Button) 组件一起使用，用户在文本输入完成后单击按钮。
 
 ### 属性  {#EmailPicker-Properties}
 
@@ -206,7 +183,7 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 : `邮箱地址选择框` 的背景色，可以在“界面设计”视图或“程序设计”视图中通过颜色名字选择一个颜色，`默认`背景颜色为：default（阴影 3-D 外观）。
 
 {:id="EmailPicker.Enabled" .boolean} *启用*
-：如果设置为`真`{:.logic.block}则用户可以在 `邮箱地址选择框` 中输入文本。
+: 如果设置为`真`{:.logic.block}则用户可以在 `邮箱地址选择框` 中输入文本。
 
 {:id="EmailPicker.FontBold" .boolean .do} *粗体*
 : 设置`邮箱地址选择框`的显示字体是否是粗体。（注：有些字体不支持粗体）。
@@ -228,8 +205,8 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 {:id="EmailPicker.HeightPercent" .number .wo .bo} *高度百分比*
 : 设置`邮箱地址选择框`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
-{:id="EmailPicker.Hint" .text} *Hint*
-: `EmailPicker` hint for the user.
+{:id="EmailPicker.Hint" .text} *提示*
+: 设置`邮箱地址选择框`的提示信息，如果 [`文本`](#EmailPicker.Text) 为空，则该提示信息在框中显示为浅淡色文本。
 
 {:id="EmailPicker.Text" .text} *文本*
 : `邮箱地址选择框`中的文本，可以在“界面设计”视图或“程序设计”视图中设置，或由用户输入（除非 [`启用`](#EmailPicker.Enabled) 属性为 `假`{:.logic.block}）。
@@ -259,103 +236,85 @@ An `EmailPicker` is a kind of text box. If the user begins entering the name or 
 
 {:.events}
 
-{:id="EmailPicker.GotFocus"} GotFocus()
-: Event raised when the `EmailPicker` is selected for input, such as by
- the user touching it.
+{:id="EmailPicker.GotFocus"} 获得焦点()
+: 选择`邮箱地址选择框`进行输入（例如用户触摸它）时触发该事件。
 
-{:id="EmailPicker.LostFocus"} LostFocus()
-: Event raised when the `EmailPicker` is no longer selected for input, such
- as if the user touches a different text box.
+{:id="EmailPicker.LostFocus"} 失去焦点()
+: 当不再选择`邮箱地址选择框`进行输入时触发该事件，例如用户触摸不同的文本框。
 
 ### 方法  {#EmailPicker-Methods}
 
 {:.methods}
 
-{:id="EmailPicker.RequestFocus" class="method"} <i/> RequestFocus()
-: Request focus to current `EmailPicker`.
+{:id="EmailPicker.RequestFocus" class="method"} <i/> 焦点请求()
+: 请求焦点到当前的`邮箱地址选择框`。
 
 
 ## ![icon](images/phonecall.png)  电话拨号器  {#PhoneCall}
 
-![PhoneCall component icon](images/phonecall.png)
+一个不可见的组件，用于拨打 [`电话号码`](#PhoneCall.PhoneNumber) 属性中指定的号码，该属性可以在界面设计或程序设计视图中设置。
 
- A non-visible component that makes a phone call to the number specified in the
- [`PhoneNumber`](#PhoneCall.PhoneNumber) property, which can be set either in the Designer or Blocks Editor.
- The component has a [`MakePhoneCall`](#PhoneCall.MakePhoneCall) method, enabling the program to launch a phone call.
- You may also use [`MakePhoneCallDirect`](#PhoneCall.MakePhoneCallDirect) to directly initiate a phone call without user
- interaction. However, apps using this block may require further review by Google if submitted
- to the Play Store so it is advised to use [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead.
+  该组件有一个 [`拨打电话`](#PhoneCall.MakePhoneCall) 方法，使程序能够发起电话呼叫。
 
- Often, this component is used with the [`ContactPicker`](#ContactPicker) component, which lets the user
- select a contact from the ones stored on the phone and sets the
- [`PhoneNumber`](#PhoneCall.PhoneNumber) property to [`ContactPicker`'s `PhoneNumber`](#ContactPicker.PhoneNumber) property.
+  您还可以使用 [`直接拨打电话`](#PhoneCall.MakePhoneCallDirect) 直接发起电话呼叫，无需用户交互。**但是，使用此块的应用程序如果提交到应用商店，可能需要进一步审核，因此建议改用 [`拨打电话`](#PhoneCall.MakePhoneCall)**。
 
- To directly specify the phone number (e.g., 650-555-1212), set the [`PhoneNumber`](#PhoneCall.PhoneNumber)
- property to a Text with the specified digits (e.g., "6505551212"). Dashes, dots, and parentheses
- may be included (e.g., "(650)-555-1212") but will be ignored; spaces may not be included.
+  通常，此组件与 [`联系人选择框`](#ContactPicker) 组件一起使用，该组件允许用户从手机上存储的联系人中选择联系人，并将 [`电话号码`](#PhoneCall.PhoneNumber) 属性设置为 [`联系人选择框`.`电话号码`](#ContactPicker.PhoneNumber) 属性。
 
-
+  要直接指定电话号码（例如 021-12345678），请将 [`电话号码`](#PhoneCall.PhoneNumber) 属性设置为具有指定数字的文本（例如“02112345678”）。
 
 ### 属性  {#PhoneCall-Properties}
 
 {:.properties}
 
-{:id="PhoneCall.PhoneNumber" .text} *PhoneNumber*
-: Specifies the phone number to call.
+{:id="PhoneCall.PhoneNumber" .text} *电话号码*
+: 指定要拨打的电话号码。
 
 ### 事件  {#PhoneCall-Events}
 
 {:.events}
 
-{:id="PhoneCall.IncomingCallAnswered"} IncomingCallAnswered(*phoneNumber*{:.text})
-: Event indicating that an incoming phone call is answered. `phoneNumber`{:.variable.block} is
- the incoming call phone number.
+{:id="PhoneCall.IncomingCallAnswered"} 来电已接听时(*电话号码*{:.text})
+: 指示来电已接听的事件。 `电话号码`{:.variable.block} 是来电电话号码。
 
-{:id="PhoneCall.PhoneCallEnded"} PhoneCallEnded(*status*{:.number},*phoneNumber*{:.text})
-: Event indicating that a phone call has ended. The `status`{:.variable.block} can be any of:
+{:id="PhoneCall.PhoneCallEnded"} 通话结束时(*状态*{:.number},*电话号码*{:.text})
+: 指示电话通话已结束的事件。 `状态`{:.variable.block} 可以是以下任意一种：
 
-   - `1`: Incoming call was missed or rejected
-   - `2`: Incoming call was answered and hung up
-   - `3`: Outgoing call was hung up.
+    - `1`：来电未接或被拒绝
+    - `2`：来电已接听并挂断
+    - `3`：拨出电话已挂断。
 
-{:id="PhoneCall.PhoneCallStarted"} PhoneCallStarted(*status*{:.number},*phoneNumber*{:.text})
-: Event indicating that a phone call has started. The `status`{:.variable.block} can be any of:
+{:id="PhoneCall.PhoneCallStarted"} 开始通话时(*状态*{:.number},*电话号码*{:.text})
+: 指示电话呼叫已开始的事件。 `状态`{:.variable.block} 可以是以下任意一个：
 
-   - `1`: Incoming call is ringing
-   - `2`: Outgoing call is dialled
+    - `1`：来电正在响铃
+    - `2`: 拨出电话
 
 ### 方法  {#PhoneCall-Methods}
 
 {:.methods}
 
 {:id="PhoneCall.MakePhoneCall" class="method"} <i/> 拨打电话()
-: Launches the default dialer app set to start a phone call using the number in the
- [`PhoneNumber`](#PhoneCall.PhoneNumber) property.
+: 启动默认拨号器应用程序，设置为使用 [`电话号码`](#PhoneCall.PhoneNumber) 属性中的号码发起电话呼叫。
 
 {:id="PhoneCall.MakePhoneCallDirect" class="method"} <i/> 直接拨打电话()
-: Directly initiates a phone call using the number in the [`PhoneNumber`](#PhoneCall.PhoneNumber) property,
- bypassing user interaction to start the call. **Most apps should use
- [`MakePhoneCall`](#PhoneCall.MakePhoneCall) instead, which requires no permissions.**
+: 使用 [`电话号码`](#PhoneCall.PhoneNumber) 属性中的号码直接发起电话呼叫，绕过用户交互来启动呼叫。
 
+  **大多数应用程序应使用 [`拨打电话`](#PhoneCall.MakePhoneCall)，这不需要任何权限。**
 
 ## ![icon](images/phonenumberpicker.png)  电话号选择框  {#PhoneNumberPicker}
 
-A button that, when clicked on, displays a list of the contacts' phone numbers to choose among.
- After the user has made a selection, the following properties will be set to information about
- the chosen contact:
+单击该按钮后，会显示联系人电话号码列表以供选择。
+  
+  用户做出选择后，以下属性将设置为有关所选联系人的信息：
 
-  - [`ContactName`](#PhoneNumberPicker.ContactName): the contact's name
-  - [`PhoneNumber`](#PhoneNumberPicker.PhoneNumber): the contact's phone number
-  - [`EmailAddress`](#PhoneNumberPicker.EmailAddress): the contact's email address
-  - [`Picture`](#PhoneNumberPicker.Picture): the name of the file containing the contact's image, which can be used as a Picture property value for the Image or ImageSprite component.
+   - [`联系人姓名`](#PhoneNumberPicker.ContactName)：联系人姓名
+   - [`电话号码`](#PhoneNumberPicker.PhoneNumber): 联系人的电话号码
+   - [`邮箱地址`](#PhoneNumberPicker.EmailAddress)：联系人的电子邮件地址
+   - [`图片`](#PhoneNumberPicker.Picture)：包含联系人图像的文件的名称，可用作 [图像](userinterface.html#Image).[图片](userinterface.html#Image.Picture)属性值 或 [图像精灵](animation.html#ImageSprite).[图片](animation.html#ImageSprite.Picture) 属性值。
 
- Other properties affect the appearance of the button ([`TextAlignment`](#PhoneNumberPicker.TextAlignment),
- [`BackgroundColor`](#PhoneNumberPicker.BackgroundColor), etc.) and whether it can be clicked on ([`Enabled`](#PhoneNumberPicker.Enabled)).
+  其他属性会影响按钮的外观（[`文本对齐`](#PhoneNumberPicker.TextAlignment)、[`背景颜色`](#PhoneNumberPicker.BackgroundColor)等)以及是否可以点击([`启用`](#PhoneNumberPicker.Enabled))。
 
- The `PhoneNumberPicker` component may not work on all Android devices. For example, on Android
- systems before system 3.0, the returned lists of phone numbers and email addresses will be empty.
-
-
+  `电话号选择框` 组件可能不适用于所有 Android 设备。例如，在3.0之前的Android系统上，返回的电话号码和电子邮件地址列表将为空。
 
 ### 属性  {#PhoneNumberPicker-Properties}
 
@@ -364,18 +323,17 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.BackgroundColor" .color} *背景颜色*
 : 设置`电话号选择框`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#PhoneNumberPicker.Image)属性，则不能显示背景颜色直到删除[`图像`](#PhoneNumberPicker.Image)属性为止。
 
-{:id="PhoneNumberPicker.ContactName" .text .ro .bo} *ContactName*
-: Returns the full name of the selected contact, or the empty string if a name is unavailable.
+{:id="PhoneNumberPicker.ContactName" .text .ro .bo} *联系人姓名*
+: 返回所选联系人的全名，如果名称不可用，则返回空字符串。
 
-{:id="PhoneNumberPicker.ContactUri" .text .ro .bo} *ContactUri*
-: Returns a URI that specifies the location of the contact on the device.
+{:id="PhoneNumberPicker.ContactUri" .text .ro .bo} *联系人URI*
+: 返回指定联系人在设备上的位置的 URI。
 
-{:id="PhoneNumberPicker.EmailAddress" .text .ro .bo} *EmailAddress*
-: Returns the primary email address of the selected contact, or the empty string if an email
- address is unavailable.
+{:id="PhoneNumberPicker.EmailAddress" .text .ro .bo} *邮箱地址*
+: 返回所选联系人的主电子邮件地址，如果电子邮件地址不可用，则返回空字符串。
 
-{:id="PhoneNumberPicker.EmailAddressList" .list .ro .bo} *EmailAddressList*
-: Returns a list of email addresses associated with the selected contact.
+{:id="PhoneNumberPicker.EmailAddressList" .list .ro .bo} *邮箱地址列表*
+: 返回与所选联系人关联的电子邮件地址列表。
 
 {:id="PhoneNumberPicker.Enabled" .boolean} *启用*
 : 设置`电话号选择框`是否可以被激活和点击。
@@ -403,16 +361,14 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 {:id="PhoneNumberPicker.Image" .text} *图像*
 : 设置`电话号选择框`图像的路径，如果同时设置了`图像`和[`背景颜色`](#PhoneNumberPicker.BackgroundColor)，则仅`图像`可见。
 
-{:id="PhoneNumberPicker.PhoneNumber" .text .ro .bo} *PhoneNumber*
-: Returns the primary phone number associated with the selected contact, or the empty string if
- no phone number is associated with the contact.
+{:id="PhoneNumberPicker.PhoneNumber" .text .ro .bo} *电话号码*
+: 返回与所选联系人关联的主要电话号码，如果没有与该联系人关联的电话号码，则返回空字符串。
 
-{:id="PhoneNumberPicker.PhoneNumberList" .list .ro .bo} *PhoneNumberList*
-: Returns a list of phone numbers associated with the selected contact.
+{:id="PhoneNumberPicker.PhoneNumberList" .list .ro .bo} *电话号码列表*
+: 返回与所选联系人关联的电话号码列表。
 
-{:id="PhoneNumberPicker.Picture" .text .ro .bo} *Picture*
-: Returns a picture URI for the selected contact, which can be
- used to retrieve the contact's photo and other fields.
+{:id="PhoneNumberPicker.Picture" .text .ro .bo} *图片*
+: 返回所选联系人的图片URI，可用于检索联系人的照片和其他字段。
 
 {:id="PhoneNumberPicker.Shape" .number .do} *形状*
 : 设置`电话号选择框`的形状，此属性的有效值为：
@@ -458,39 +414,35 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:.events}
 
-{:id="PhoneNumberPicker.AfterPicking"} AfterPicking()
-: Event to be raised after the `PhoneNumberPicker` activity returns its
- result and the properties have been filled in.
+{:id="PhoneNumberPicker.AfterPicking"} 选择完成()
+: 在`电话号选择框`活动返回其结果且属性已填写后触发该事件。
 
-{:id="PhoneNumberPicker.BeforePicking"} BeforePicking()
-: Event to raise when the `PhoneNumberPicker` is clicked or the picker is shown
- using the [`Open`](#PhoneNumberPicker.Open) method.  This event occurs before the picker is displayed, and
- can be used to prepare the picker before it is shown.
+{:id="PhoneNumberPicker.BeforePicking"} 准备选择()
+: 单击`电话号选择框`或使用 [打开选框](#PhoneNumberPicker.Open) 方法显示选择器时触发该事件。
 
-{:id="PhoneNumberPicker.GotFocus"} GotFocus()
-: Indicates the cursor moved over the `PhoneNumberPicker` so it is now possible
- to click it.
+  此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。
 
-{:id="PhoneNumberPicker.LostFocus"} LostFocus()
-: Indicates the cursor moved away from the `PhoneNumberPicker` so it is now no
- longer possible to click it.
+{:id="PhoneNumberPicker.GotFocus"} 获得焦点()
+: 表示光标移到`电话号选择框`上方，因此现在可以单击它。
 
-{:id="PhoneNumberPicker.TouchDown"} TouchDown()
-: Indicates that the `PhoneNumberPicker` was pressed down.
+{:id="PhoneNumberPicker.LostFocus"} 失去焦点()
+: 表示光标已从`电话号选择框`移开，因此现在无法再单击它。
 
-{:id="PhoneNumberPicker.TouchUp"} TouchUp()
-: Indicates that the `PhoneNumberPicker` has been released.
+{:id="PhoneNumberPicker.TouchDown"} 被按压()
+: 表示`电话号选择框`已被按下。
+
+{:id="PhoneNumberPicker.TouchUp"} 被松开()
+: 表示`电话号选择框`按压已释放。
 
 ### 方法  {#PhoneNumberPicker-Methods}
 
 {:.methods}
 
-{:id="PhoneNumberPicker.Open" class="method"} <i/> Open()
-: Opens the `PhoneNumberPicker`, as though the user clicked on it.
+{:id="PhoneNumberPicker.Open" class="method"} <i/> 打开选框()
+: 打开`电话号选择框`选框，就像用户单击它一样。
 
-{:id="PhoneNumberPicker.ViewContact" class="method"} <i/> ViewContact(*uri*{:.text})
-: Opens the selected contact's entry in the device's default Contacts app.
-
+{:id="PhoneNumberPicker.ViewContact" class="method"} <i/> 查看联系人(*URI*{:.text})
+: 在设备的默认联系人App中打开所选联系人的条目。
 
 ## ![icon](images/sharing.png)  信息分享器  {#Sharing}
 
@@ -575,53 +527,44 @@ A button that, when clicked on, displays a list of the contacts' phone numbers t
 
 {:.properties}
 
-{:id="Texting.GoogleVoiceEnabled" .boolean} *GoogleVoiceEnabled*
-: If this property is true, then SendMessage will attempt to send messages over
- WiFi, using Google voice.
+{:id="Texting.GoogleVoiceEnabled" .boolean} *启用GoogleVoice*
+: 如果此属性为 `真`，则 [发送消息](#Texting.SendMessage) 将尝试使用 Google语音通过 WiFi 发送消息。
 
-{:id="Texting.Message" .text} *Message*
-: The message that will be sent when the [`SendMessage`](#Texting.SendMessage) method is called.
- The maximum length of a standard SMS message is usually 170. It may be less for languages
- using diacritical marks.
+{:id="Texting.Message" .text} *消息*
+: 调用 [`发送消息`](#Texting.SendMessage) 方法时将发送的消息。
+  
+  标准 SMS 消息的最大长度通常为 170。对于使用变音符号的语言，该长度可能会更短。
 
 {:id="Texting.PhoneNumber" .text} *电话号码*
-: The number that the message will be sent to when the SendMessage method is called.  The 
- number is a text string with the specified digits (e.g., 6505551212).  Dashes, dots, 
- and parentheses may be included (e.g., (650)-555-1212) but will be ignored; spaces
- should not be included.
+: 调用 [`发送消息`](#Texting.SendMessage) 方法时消息将发送到的号码。
 
 {:id="Texting.ReceivingEnabled" .number} *启用消息接收*
-: If set to 1 (OFF) no messages will be received. If set to 2 (FOREGROUND) or 3 (ALWAYS) the
- component will respond to messages if it is running. In the case of 2 (FOREGROUND), messages
- received while the app is not running are discarded. In the case of 3 (ALWAYS), messages
- receive while the app is not running will show a notification. Selecting the notification
- will bring up the app and signal the [`MessageReceived`](#Texting.MessageReceived) event. Messages
- received when the app is dormant will be queued, and so several
- [`MessageReceived`](#Texting.MessageReceived) events might appear when the app awakens. As an app
- developer, it would be a good idea to give your users control over this property, so they can
- make their phones ignore text messages when your app is installed.
+: 如果设置为 1（关闭），则不会收到任何消息。
+
+  如果设置为 2（前台）或 3（始终），组件将在运行时响应消息。在 2（前台）的情况下，应用程序未运行时收到的消息将被丢弃。在 3（始终）的情况下，应用程序未运行时收到的消息将显示通知。
+  
+  选择通知将打开应用程序并触发 [`收到消息`](#Texting.MessageReceived) 事件。应用程序休眠时收到的消息将排队，因此应用程序唤醒时可能会触发多次 [`收到消息`](#Texting.MessageReceived) 事件。作为应用程序开发人员，最好让你的用户控制此属性，这样用户就可以在安装您的应用程序时让手机忽略短信。
 
 ### 事件  {#Texting-Events}
 
 {:.events}
 
 {:id="Texting.MessageReceived"} 收到消息(*数值*{:.text},*消息内容*{:.text})
-: Event that's raised when a text message is received by the phone. **Using this block will add
- [dangerous permissions](//developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
- that will require additional approval if your app is submitted to the Google Play Store.**
+: 手机收到短信时触发该事件。
+
+  **使用此块将添加[危险权限](//developer.android.com/guide/topics/permissions/overview#dangerous_permissions)，如果你的应用提交到应用商店，则需要额外批准。**
 
 ### 方法  {#Texting-Methods}
 
 {:.methods}
 
 {:id="Texting.SendMessage" class="method"} <i/> 发送消息()
-: Launch the phone's default text messaging app with the message and phone number prepopulated.
+: 启动手机的默认短信应用程序，并预先填充消息和电话号码。
 
 {:id="Texting.SendMessageDirect" class="method"} <i/> 直接发送消息()
-: Send a text message. **Using this block will add
- [dangerous permissions](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)
- that will require additional approval if your app is submitted to the Google Play Store.**
+: 发送一个文本消息。
 
+  **使用此块将添加[危险权限](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)，如果您的应用提交到应用商店，则需要额外批准。**
 
 ## ![icon](images/twitter.png)  推特客户端（*国内无法使用*）  {#Twitter}
 
