@@ -1293,6 +1293,16 @@
 
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_FILE_HELPURL": "/reference/components/storage.html#File",
 
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_DATAFILE_HELPURL": "/reference/components/storage.html#DataFile",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_DATAFILE_PROPERTIES_HELPURL": "/reference/components/storage.html#DataFile",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_DATAFILE_EVENTS_HELPURL": "/reference/components/storage.html#DataFile",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_DATAFILE_METHODS_HELPURL": "/reference/components/storage.html#DataFile",
+
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_FILEPICKER_HELPURL": "/reference/components/media.html#FilePicker",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_FILEPICKER_PROPERTIES_HELPURL": "/reference/components/media.html#FilePicker",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_FILEPICKER_EVENTS_HELPURL": "/reference/components/media.html#FilePicker",
+	"Blockly.Msg.LANG_COMPONENT_BLOCK_FILEPICKER_METHODS_HELPURL": "/reference/components/media.html#FilePicker",
+
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_TINYDB_HELPURL": "/reference/components/storage.html#TinyDB",
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_TINYDB_PROPERTIES_HELPURL": "/reference/components/storage.html#TinyDB",
 	"Blockly.Msg.LANG_COMPONENT_BLOCK_TINYDB_EVENTS_HELPURL": "/reference/components/storage.html#TinyDB",
