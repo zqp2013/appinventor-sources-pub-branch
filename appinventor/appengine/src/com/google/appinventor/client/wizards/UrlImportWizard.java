@@ -43,7 +43,7 @@ public class UrlImportWizard extends Wizard {
 
     addPage(panel);
 
-    getConfirmButton().setText("Import");
+    getConfirmButton().setText(MESSAGES.importButton());
 
     setPagePanelHeight(150);
     setPixelSize(200, 150);

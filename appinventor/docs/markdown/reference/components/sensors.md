@@ -445,9 +445,9 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
 不可见组件，提供位置信息，包括：
   
-  [`Latitude`](#LocationSensor.Latitude)， [`Longitude`](#LocationSensor.Longitude)、 [`Altitude`](#LocationSensor.Altitude)（如果设备支持）、速度（如果设备支持） 和地址。
+  [`纬度`](#LocationSensor.Latitude)， [`经度`](#LocationSensor.Longitude)、 [`海拔`](#LocationSensor.Altitude)（如果设备支持）、速度（如果设备支持） 和地址。
   
-  也可以执行“地理编码”，转换给定的地址（不限于当前地址）到纬度（使用 [`LatitudeFromAddress`](#LocationSensor.LatitudeFromAddress)方法）和经度（使用 [`LongitudeFromAddress`](#LocationSensor.LongitudeFromAddress) 方法）。
+  也可以执行“地理编码”，转换给定的地址（不限于当前地址）到纬度（使用 [`由地址求纬度`](#LocationSensor.LatitudeFromAddress)方法）和经度（使用 [`由地址求经度`](#LocationSensor.LongitudeFromAddress) 方法）。
 
   **中文网注：**如果获取不了经纬度，请尝试开启一下定位权限，参考代码如下：
 
@@ -455,7 +455,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 
   为了发挥作用，组件必须将其 [`启用`](#LocationSensor.Enabled) 属性设置为`真`{:.logic.block}，并且设备必须通过无线网络启用定位感应器 或 GPS 卫星（如果在室外）。
 
-  应用程序启动时，位置信息可能无法立即可用。你必须稍微等一下找到并使用位置提供者，或者等待[`LocationChanged`](#LocationSensor.LocationChanged) 事件。
+  应用程序启动时，位置信息可能无法立即可用。你必须稍微等一下找到并使用位置提供者，或者等待[`位置改变时`](#LocationSensor.LocationChanged) 事件。
 
   模拟器并不模拟所有设备上的传感器，App应该在物理设备上进行测试。
 
