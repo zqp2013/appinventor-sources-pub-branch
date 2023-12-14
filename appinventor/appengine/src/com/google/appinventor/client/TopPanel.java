@@ -309,14 +309,32 @@ public class TopPanel extends Composite {
     panel.setCellVerticalAlignment(motdBox, HorizontalPanel.ALIGN_BOTTOM);
   }
 
+  private static boolean isNumericZidai(String str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (!Character.isDigit(str.charAt(i))) {
+            return false;
+        }
+    }
+    return true;
+  }
+  // 检查手机号码正确性
+  private boolean IsPhoneNum(String phone) {
+    return phone.length() == 11 && isNumericZidai(phone);
+  }
+
   /**
    * Updates the UI to show the user's email address.
    *
    * @param email the email address
    */
   public void showUserEmail(String email) {
-    accountButton.setCaption(email);
-    accountButton.setHTML("<i class=\"mdi mdi-account\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + email + " \u25BE ");
+    String disp = email;
+    if (IsPhoneNum(email)) {
+      //Add by 中文网：手机号隐式显示
+      disp = email.substring(0, 3) + "****" + email.substring(7, 11);
+    } 
+    accountButton.setCaption(disp);
+    accountButton.setHTML("<i class=\"mdi mdi-account\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + disp + " \u25BE ");
   }
 
   /**
