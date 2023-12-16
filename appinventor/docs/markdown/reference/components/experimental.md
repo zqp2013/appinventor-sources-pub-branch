@@ -78,91 +78,89 @@ Firebase 组件与 Web 服务通信以存储并获取数据。 该组件可以�
 
  [FirebaseDB vs TinyWebDB 区别](../other/firebaseIntro.html#FirebaseDB_vs_TinyWebDB)
 
+| 区别 |Firebase数据库 | 网络微数据库 |
+|--|--|--|
+|区别在于来自不同应用程序的变量是否会干扰 | 每个应用程序都有其单独的数据存储，因此其他应用程序的变量**不会干扰** | 任何应用程序都可以更改值，前提是它使用相同的标签 |
+
 
 ### 属性  {#FirebaseDB-Properties}
 
 {:.properties}
 
-{:id="FirebaseDB.DeveloperBucket" .text .do} *DeveloperBucket*
-: Getter for the DeveloperBucket.
+{:id="FirebaseDB.DeveloperBucket" .text .do} *开发者桶*
+: 获取开发者桶(bucket)。
 
-{:id="FirebaseDB.FirebaseToken" .text .do} *FirebaseToken*
-: Getter for the FirebaseToken.
+{:id="FirebaseDB.FirebaseToken" .text .do} *Firebase令牌*
+: 获取Firebase访问令牌。
 
-{:id="FirebaseDB.FirebaseURL" .text .do} *FirebaseURL*
-: Specifies the URL for the Firebase.
+{:id="FirebaseDB.FirebaseURL" .text .do} *Firebase URL地址*
+: 指定 Firebase 的 URL地址。当前默认值是MIT私有 Firebase URL地址，目前选择默认即可。
 
- The default value is currently my private Firebase URL, but this will
- eventually changed once the App Inventor Candle plan is activated.
+{:id="FirebaseDB.Persist" .boolean .wo .do} *持久化*
+: 如果为 `真`，则变量在离线且应用程序退出时将保留其值。下次应用程序在连接到网络时运行时，值将上传到 Firebase。这对于在未连接到网络时收集数据的应用程序非常有用。
 
-{:id="FirebaseDB.Persist" .boolean .wo .do} *Persist*
-: If true, variables will retain their values when off-line and the App exits. Values will be uploaded to Firebase the next time the App is run while connected to the network. This is useful for applications which will gather data while not connected to the network. Note: AppendValue and RemoveFirst will not work correctly when off-line, they require a network connection.<br/><br/> <i>Note</i>: If you set Persist on any Firebase component, on any screen, it makes all Firebase components on all screens persistent. This is a limitation of the low level Firebase library. Also be aware that if you want to set persist to true, you should do so before connecting the Companion for incremental development.
+  **注意：**
+  
+  - [追加值](#FirebaseDB.AppendValue) 和 [删除第一项](#FirebaseDB.RemoveFirst) 在离线时无法正常工作，它们需要网络连接。
+  
+  - 如果你在任何 Firebase 组件、任何屏幕上设置 持久化， 它使所有屏幕上的所有 Firebase 组件保持不变。这是 Firebase 底层库的限制。
 
-{:id="FirebaseDB.ProjectBucket" .text} *ProjectBucket*
-: Getter for the ProjectBucket.
+{:id="FirebaseDB.ProjectBucket" .text} *项目桶*
+: 获取项目桶(bucket)。
 
 ### 事件  {#FirebaseDB-Events}
 
 {:.events}
 
-{:id="FirebaseDB.DataChanged"} DataChanged(*tag*{:.text},*value*{:.any})
-: Indicates that the data in the Firebase has changed.
- Launches an event with the tag and value that have been updated.
+{:id="FirebaseDB.DataChanged"} 数据改变时(*标签*{:.text},*值*{:.any})
+: 表示 Firebase 中的数据已更改。
+  
+  使用已更新的标签和值启动事件。
 
-{:id="FirebaseDB.FirebaseError"} FirebaseError(*message*{:.text})
-: Indicates that the communication with the Firebase signaled an error.
+{:id="FirebaseDB.FirebaseError"} Firebase错误时(*消息*{:.text})
+: 表示与 Firebase 的通信发出错误信号。
 
-{:id="FirebaseDB.FirstRemoved"} FirstRemoved(*value*{:.any})
-: Event triggered by the "RemoveFirst" function. The argument "value" is the object that was the first in the list, and which is now removed.
+{:id="FirebaseDB.FirstRemoved"} 第一项已删除时(*值*{:.any})
+: 由 [删除第一项](#FirebaseDB.RemoveFirst) 函数触发的事件。参数“值”是列表中第一个对象，现在已被删除。
 
-{:id="FirebaseDB.GotValue"} GotValue(*tag*{:.text},*value*{:.any})
-: Indicates that a GetValue request has succeeded.
+{:id="FirebaseDB.GotValue"} 以获得值时(*标签*{:.text},*值*{:.any})
+: 表示 [获取值](#FirebaseDB.GetValue) 请求已成功。
 
-{:id="FirebaseDB.TagList"} TagList(*value*{:.list})
-: Event triggered when we have received the list of known tags. Used with the "GetTagList" Function.
+{:id="FirebaseDB.TagList"} 收到标签列表时(*值*{:.list})
+: 当我们收到已知标签列表时触发事件。与 [获取标签列表](#FirebaseDB.GetTagList) 函数一起使用。
 
 ### 方法  {#FirebaseDB-Methods}
 
 {:.methods}
 
-{:id="FirebaseDB.AppendValue" class="method"} <i/> AppendValue(*tag*{:.text},*valueToAdd*{:.any})
-: Append a value to the end of a list atomically. If two devices use this function simultaneously, both will be appended and no data lost.
+{:id="FirebaseDB.AppendValue" class="method"} <i/> 追加值(*标签*{:.text},*待追加值*{:.any})
+: 以原子(Atomic)方式将值附加到列表末尾。如果两个设备同时使用此功能，两个设备都会被追加并且不会丢失数据。
 
-{:id="FirebaseDB.ClearTag" class="method"} <i/> ClearTag(*tag*{:.text})
-: Asks Firebase to forget (delete or set to "null") a given tag.
+{:id="FirebaseDB.ClearTag" class="method"} <i/> 清除标签(*标签*{:.text})
+: 要求 Firebase 清除（删除或设置为“null”）给定标签。
 
-{:id="FirebaseDB.GetTagList" class="method"} <i/> GetTagList()
-: Get the list of tags for this application. When complete a "TagList" event will be triggered with the list of known tags.
+{:id="FirebaseDB.GetTagList" class="method"} <i/> 获取标签列表()
+: 获取此应用程序的标签列表。完成后，将使用已知标签列表触发 [收到标签列表时](#FirebaseDB.TagList) 事件。
 
-{:id="FirebaseDB.GetValue" class="method"} <i/> GetValue(*tag*{:.text},*valueIfTagNotThere*{:.any})
-: GetValue asks Firebase to get the value stored under the given tag.
- It will pass valueIfTagNotThere to GotValue if there is no value stored
- under the tag.
+{:id="FirebaseDB.GetValue" class="method"} <i/> 获取值(*标签*{:.text},*无标签时返回值*{:.any})
+: 获取值 要求 Firebase 获取存储在给定标签下的值。
+  
+  如果标签下没有存储值，它将把 “无标签时返回值” 传递给事件 [以获得值时](FirebaseDB.GotValue)。
 
-{:id="FirebaseDB.RemoveFirst" class="method"} <i/> RemoveFirst(*tag*{:.text})
-: Return the first element of a list and atomically remove it. If two devices use this function simultaneously, one will get the first element and the the other will get the second element, or an error if there is no available element. When the element is available, the "FirstRemoved" event will be triggered.
+{:id="FirebaseDB.RemoveFirst" class="method"} <i/> 删除第一项(*标签*{:.text})
+: 返回列表的第一个元素并自动删除它。如果两个设备同时使用此功能，一个将获取第一个元素，另一个将获取第二个元素，如果没有可用元素，则会出现错误。当元素可用时，将触发[删除第一项](#FirebaseDB.RemoveFirst)事件。
 
-{:id="FirebaseDB.StoreValue" class="method"} <i/> StoreValue(*tag*{:.text},*valueToStore*{:.any})
-: Asks Firebase to store the given value under the given tag.
+{:id="FirebaseDB.StoreValue" class="method"} <i/> 存储值(*标签*{:.text},*待存储值*{:.any})
+: 要求 Firebase 将给定值存储在给定标签下。
 
-{:id="FirebaseDB.Unauthenticate" class="method"} <i/> Unauthenticate()
-: Unauthenticate from Firebase.
+{:id="FirebaseDB.Unauthenticate" class="method"} <i/> 取消身份验证()
+: 从 Firebase 取消身份验证。
 
-   Firebase keeps track of credentials in a cache in shared_prefs
- It will re-use these credentials as long as they are valid. Given
- That we retrieve a FirebaseToken with a version long life, this will
- effectively be forever. Shared_prefs survive an application update
- and depending on how backup is configured on a device, it might survive
- an application removal and reinstallation.
+    Firebase 会跟踪共享首选项中缓存中的凭据，只要这些凭据有效，它就会重复使用这些凭据。 鉴于我们获取的 Firebase令牌有效期较长，这实际上将是永久的。 Shared_prefs 在应用程序更新后仍然存在，并且根据设备上备份的配置方式，它可能在应用程序删除和重新安装后仍然存在。
 
-   Normally this is not a problem, however if we change the credentials
- used, for example the App author is switching from one Firebase account
- to another, or invalided their firebase.secret, this cached credential
- is invalid, but will continue to be used, which results in errors.
+    通常这不是问题，但是如果我们更改使用的凭据，例如应用程序作者从一个 Firebase 帐户切换到另一个帐户，或者使他们的 firebase.secret 无效，则此缓存的凭据无效，但将继续使用，这将导致错误。
 
-   This function permits us to unauthenticate, which tosses the cached
- credentials. The next time authentication is needed we will use our
- current FirebaseToken and get fresh credentials.
+    此函数允许我们取消身份验证，从而丢弃缓存的凭据。下次需要身份验证时，我们将使用当前的 Firebase令牌 并获取新的凭据。
 
 ## <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="20" height="20">  ImageBot（OpenAI 绘图机器人）  {#ImageBot}
 
