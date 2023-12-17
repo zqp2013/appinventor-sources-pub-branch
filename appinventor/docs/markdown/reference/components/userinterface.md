@@ -104,8 +104,8 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Screen.CloseScreenAnimation" .text} *关屏动画*
 : 设置表单关闭和返回到后面表单的过渡动画类型。
 
-{:id="Screen.DefaultFileScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认文件范围*
-: 设置组件访问文件时使用的默认范围。注意 [`文件管理器`](../storage.html#File) 组件有自己的属性来控制文件范围。
+{:id="Screen.DefaultFileScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认文件作用域*
+: 设置组件访问文件时使用的默认作用域。注意 [`文件管理器`](storage.html#File) 组件有自己的属性来控制文件作用域。
 
 {:id="Screen.Width" .number .ro .bo} *宽度*
 : 返回屏幕宽度（以像素px为单位）（x 尺寸）。
@@ -950,6 +950,9 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 
 {:id="ListView.Refresh" class="method"} <i/> 刷新()
 : 重新加载 `列表显示框` 以反映数据中的任何更改。
+
+{:id="ListView.RemoveItemAtIndex" class="method"} <i/> 删除索引处项目(*索引*{:.number})
+: 从列表中给定索引处删除项目。
 
 ## ![icon](images/Notifier.png)  对话框  {#Notifier}
 

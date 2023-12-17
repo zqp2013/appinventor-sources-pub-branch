@@ -109,8 +109,8 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 {:id="DataFile.Columns" .list .ro .bo} *列数据*
 : 获取当前已加载的源文件的列数据列表。
 
-{:id="DataFile.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认范围*
-: 指定使用`数据文件`组件访问文件的默认范围。App范围适用于大多数应用程序。兼容模式可用于旧的应用程序（新约束之前）Android 上的文件访问。
+{:id="DataFile.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认作用域*
+: 指定使用`数据文件`组件访问文件的默认作用域。App作用域适用于大多数应用程序。兼容模式可用于旧的应用程序（新约束之前）Android 上的文件访问。
 
 {:id="DataFile.Rows" .list .ro .bo} *行数据*
 : 获取当前已加载的源文件的行数据列表。
@@ -136,11 +136,11 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
 ## ![icon](images/File.png)  文件管理器  {#File}
 
-不可见组件，用于写入或读取设备上的文件，外部文件的路径均由[`范围`](#File.Scope) 属性指定，不论应用程序是AI伴侣运行还是已编译、以及应用运行的 Android 版本。
+不可见组件，用于写入或读取设备上的文件，外部文件的路径均由[`作用域`](#File.Scope) 属性指定，不论应用程序是AI伴侣运行还是已编译、以及应用运行的 Android 版本。
 
-由于较新版本的 Android 要求将文件存储在App特定目录中，因此 `默认范围` 设置为 `App`，如果使用的是旧版 Android 并且需要访问兼容的公共存储，将 `默认范围` 属性更改为`兼容`，当然你也可以使用代码块来修改`范围`属性。
+由于较新版本的 Android 要求将文件存储在App特定目录中，因此 `默认作用域` 设置为 `App`，如果使用的是旧版 Android 并且需要访问兼容的公共存储，将 `默认作用域` 属性更改为`兼容`，当然你也可以使用代码块来修改`作用域`属性。
 
-  **下面是每种`范围`类型的简述：**
+  **下面是每种`作用域`类型的简述：**
 
   - **App**  **`[推荐]`** ：Android 2.2及更高版本上文件将从应用程序特定存储中读取和写入，在 Android 早期版本上，文件将写入兼容存储中。
 
@@ -162,7 +162,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
   - **缓存**   ：文件将从应用程序的缓存目录读取和写入，可以在缓存中重新创建临时文件，也允许用户清理临时文件以重新获得存储空间。
   - **兼容**   ：文件将使用 App Inventor 在nb187版本之前的规则从文件系统读取和写入，也就是说，将从中读取以单个`/`开头的文件名写入外部存储目录的根目录，例如 `/sdcard/`。
       兼容功能***将无法在 Android 11 或更高版本上运行***。 ***中文网注：我们与MIT官方最新版本一样，`出于安全性考虑，不支持直接从根目录访问文件，如/sdcard/`，推荐使用App模式。***
-  - **私有**   ：文件将从应用程序的私有目录读取和写入，使用这个范围存储的数据对其他App不可见。 与App模式类似，读写文件的目录在 `files` 的 `data子目录` 下：
+  - **私有**   ：文件将从应用程序的私有目录读取和写入，使用这个作用域存储的数据对其他App不可见。 与App模式类似，读写文件的目录在 `files` 的 `data子目录` 下：
 
     ![私有根目录](images/android_data_private.png)
 
@@ -173,24 +173,24 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
    - 外部文件：有一个前导的`/`，写入公共存储（例如，`/file.txt`）
    - 应用程序包：有两个前导的 `//`，**只能读取**（例如，`//file.txt`）
 
-  1. 注2：在所有范围内，以两个斜杠 (`//`) 开头的文件名是程序包中的文件，**只读，不可写**。
+  1. 注2：在所有作用域内，以两个斜杠 (`//`) 开头的文件名是程序包中的文件，**只读，不可写**。
 
 
 ### 属性  {#File-Properties}
 
 {:.properties}
 
-{:id="File.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认范围*
-: 指定使用 `文件管理器` 组件访问文件的默认范围，不指定默认 **`私有`**。
+{:id="File.DefaultScope" .com.google.appinventor.components.common.FileScopeEnum .wo .do} *默认作用域*
+: 指定使用 `文件管理器` 组件访问文件的默认作用域，不指定默认 **`私有`**。
 
 {:id="File.ReadPermission" .boolean .wo .do} *读权限*
-: 仅用于“界面设计”视图的属性，用于启用`App`范围之外的文件的读取权限。
+: 仅用于“界面设计”视图的属性，用于启用`App`作用域之外的文件的读取权限。
 
-{:id="File.Scope" .com.google.appinventor.components.common.FileScopeEnum .bo} *范围*
-: 表示 `读取文件` 和 `保存文件` 等操作的当前范围。
+{:id="File.Scope" .com.google.appinventor.components.common.FileScopeEnum .bo} *作用域*
+: 表示 `读取文件` 和 `保存文件` 等操作的当前作用域。
 
 {:id="File.WritePermission" .boolean .wo .do} *写权限*
-: 仅用于“界面设计”视图的属性，用于启用`App`范围之外的文件的写入权限。
+: 仅用于“界面设计”视图的属性，用于启用`App`作用域之外的文件的写入权限。
 
 ### 事件  {#File-Events}
 
@@ -211,7 +211,7 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
 
   写入成功后，将触发 [`文件存储完毕`](#File.AfterFileSaved) 事件。
 
-{:id="File.CopyFile" class="method returns boolean"} <i/> 拷贝文件(*源范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
+{:id="File.CopyFile" class="method returns boolean"} <i/> 拷贝文件(*源作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
 : 将第一个文件的内容复制到第二个文件。
 
 {:id="File.Delete" class="method"} <i/> 删除(*文件名*{:.text})
@@ -223,24 +223,24 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
   
   1. 以`//`（双斜杠）开头的`文件名`{:.text.block} 是程序包资产文件，是只读的，无法删除会报错。
 
-{:id="File.Exists" class="method returns boolean"} <i/> 是否存在(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
-: 测试在指定范围内给出的路径是否存在。
+{:id="File.Exists" class="method returns boolean"} <i/> 是否存在(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 测试在指定作用域内给出的路径是否存在。
 
-{:id="File.IsDirectory" class="method returns boolean"} <i/> 是否是目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
-: 测试在指定范围内给出的路径是否是目录。
+{:id="File.IsDirectory" class="method returns boolean"} <i/> 是否是目录(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 测试在指定作用域内给出的路径是否是目录。
 
-{:id="File.ListDirectory" class="method returns list"} <i/> 列出目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
+{:id="File.ListDirectory" class="method returns list"} <i/> 列出目录(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
 : 获取给定目录中的文件和目录列表。
 
-{:id="File.MakeDirectory" class="method returns boolean"} <i/> 创建目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
+{:id="File.MakeDirectory" class="method returns boolean"} <i/> 创建目录(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text})
 : 创建一个新目录，只要在完成时目录存在，就返回 `真`，也就是创建之前目录已经存在的话，也是返回 `真`。
 
-{:id="File.MakeFullPath" class="method returns text"} <i/> 制作完整路径(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
-: 将范围和路径转换为单个字符串形式的完整路径，便于其他组件使用。
+{:id="File.MakeFullPath" class="method returns text"} <i/> 制作完整路径(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*路径*{:.text})
+: 将作用域和路径转换为单个字符串形式的完整路径，便于其他组件使用。
 
   关于Android存储路径更深入请参考《[Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现](../creative/asd.html)》。
 
-{:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*源文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标文件范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
+{:id="File.MoveFile" class="method returns boolean"} <i/> 移动文件(*源文件作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*源文件名*{:.text},*目标文件作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*目标文件名*{:.text})
 : 将文件从一个位置移动到另一个位置。
 
 {:id="File.ReadFrom" class="method"} <i/> 读取文件(*文件名*{:.text})
@@ -252,8 +252,8 @@ description: 数据存储组件参考文档：包括云数据库、数据文件�
   
   1. `文件名`{:.text.block} 开头没有 `/`，它将从应用程序的私有存储中读取文件。
 
-{:id="File.RemoveDirectory" class="method returns boolean"} <i/> 删除目录(*范围*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text},*递归处理*{:.boolean})
-: 从文件系统中删除目录。如果递归为`真`，所有内容都将被删除；如果递归为`假`，则只有该目录为空时才能被删除。
+{:id="File.RemoveDirectory" class="method returns boolean"} <i/> 删除目录(*作用域*{:.com.google.appinventor.components.common.FileScopeEnum},*目录名称*{:.text},*递归*{:.boolean})
+: 从文件系统中删除目录。如果`递归`为`真`，所有内容都将被删除；如果`递归`为`假`，则只有该目录为空时才能被删除。
 
 {:id="File.SaveFile" class="method"} <i/> 保存文件(*文本*{:.text},*文件名*{:.text})
 : 将文本保存到文件中。
