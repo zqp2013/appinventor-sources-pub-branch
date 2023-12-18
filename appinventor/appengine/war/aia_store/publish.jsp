@@ -198,9 +198,13 @@
                             required="required" title="该字段是必填字段。" type="text" name="quality" id="quality"></td>
                     </tr>
 
+                    <tr>
+                        <td></td>
+                        <td><br/><button type="submit">发布</button></td>
+                    </tr>
+
                 </table>
-                <br/>
-                <button type="submit">发布</button>
+                
             </form>
 
 
