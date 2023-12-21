@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>乐高机器人®组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，乐高机器人®组件参考文档。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>LEGO® MINDSTORMS®</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,41 +113,137 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">LEGO® MINDSTORMS®</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">乐高机器人®组件</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--乐高机器人组件" id="markdown-toc---乐高机器人组件"><i class="mdi mdi-toy-brick-outline"></i>  乐高机器人®组件</a>    <ul>
+      <li><a href="#Ev3ColorSensor" id="markdown-toc-Ev3ColorSensor">EV3颜色传感器</a>        <ul>
+          <li><a href="#Ev3ColorSensor-Properties" id="markdown-toc-Ev3ColorSensor-Properties">属性</a></li>
+          <li><a href="#Ev3ColorSensor-Events" id="markdown-toc-Ev3ColorSensor-Events">事件</a></li>
+          <li><a href="#Ev3ColorSensor-Methods" id="markdown-toc-Ev3ColorSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3Commands" id="markdown-toc-Ev3Commands">EV3指令发送器</a>        <ul>
+          <li><a href="#Ev3Commands-Properties" id="markdown-toc-Ev3Commands-Properties">属性</a></li>
+          <li><a href="#Ev3Commands-Events" id="markdown-toc-Ev3Commands-Events">事件</a></li>
+          <li><a href="#Ev3Commands-Methods" id="markdown-toc-Ev3Commands-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3GyroSensor" id="markdown-toc-Ev3GyroSensor">EV3陀螺仪传感器</a>        <ul>
+          <li><a href="#Ev3GyroSensor-Properties" id="markdown-toc-Ev3GyroSensor-Properties">属性</a></li>
+          <li><a href="#Ev3GyroSensor-Events" id="markdown-toc-Ev3GyroSensor-Events">事件</a></li>
+          <li><a href="#Ev3GyroSensor-Methods" id="markdown-toc-Ev3GyroSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3Motors" id="markdown-toc-Ev3Motors">EV3马达</a>        <ul>
+          <li><a href="#Ev3Motors-Properties" id="markdown-toc-Ev3Motors-Properties">属性</a></li>
+          <li><a href="#Ev3Motors-Events" id="markdown-toc-Ev3Motors-Events">事件</a></li>
+          <li><a href="#Ev3Motors-Methods" id="markdown-toc-Ev3Motors-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3Sound" id="markdown-toc-Ev3Sound">EV3声音</a>        <ul>
+          <li><a href="#Ev3Sound-Properties" id="markdown-toc-Ev3Sound-Properties">属性</a></li>
+          <li><a href="#Ev3Sound-Events" id="markdown-toc-Ev3Sound-Events">事件</a></li>
+          <li><a href="#Ev3Sound-Methods" id="markdown-toc-Ev3Sound-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3TouchSensor" id="markdown-toc-Ev3TouchSensor">EV3接触传感器</a>        <ul>
+          <li><a href="#Ev3TouchSensor-Properties" id="markdown-toc-Ev3TouchSensor-Properties">属性</a></li>
+          <li><a href="#Ev3TouchSensor-Events" id="markdown-toc-Ev3TouchSensor-Events">事件</a></li>
+          <li><a href="#Ev3TouchSensor-Methods" id="markdown-toc-Ev3TouchSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3UI" id="markdown-toc-Ev3UI">EV3绘图</a>        <ul>
+          <li><a href="#Ev3UI-Properties" id="markdown-toc-Ev3UI-Properties">属性</a></li>
+          <li><a href="#Ev3UI-Events" id="markdown-toc-Ev3UI-Events">事件</a></li>
+          <li><a href="#Ev3UI-Methods" id="markdown-toc-Ev3UI-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ev3UltrasonicSensor" id="markdown-toc-Ev3UltrasonicSensor">EV3超声波传感器</a>        <ul>
+          <li><a href="#Ev3UltrasonicSensor-Properties" id="markdown-toc-Ev3UltrasonicSensor-Properties">属性</a></li>
+          <li><a href="#Ev3UltrasonicSensor-Events" id="markdown-toc-Ev3UltrasonicSensor-Events">事件</a></li>
+          <li><a href="#Ev3UltrasonicSensor-Methods" id="markdown-toc-Ev3UltrasonicSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtColorSensor" id="markdown-toc-NxtColorSensor">Nxt颜色传感器</a>        <ul>
+          <li><a href="#NxtColorSensor-Properties" id="markdown-toc-NxtColorSensor-Properties">属性</a></li>
+          <li><a href="#NxtColorSensor-Events" id="markdown-toc-NxtColorSensor-Events">事件</a></li>
+          <li><a href="#NxtColorSensor-Methods" id="markdown-toc-NxtColorSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtDirectCommands" id="markdown-toc-NxtDirectCommands">Nxt指令发送器</a>        <ul>
+          <li><a href="#NxtDirectCommands-Properties" id="markdown-toc-NxtDirectCommands-Properties">属性</a></li>
+          <li><a href="#NxtDirectCommands-Events" id="markdown-toc-NxtDirectCommands-Events">事件</a></li>
+          <li><a href="#NxtDirectCommands-Methods" id="markdown-toc-NxtDirectCommands-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtDrive" id="markdown-toc-NxtDrive">Nxt电机驱动器</a>        <ul>
+          <li><a href="#NxtDrive-Properties" id="markdown-toc-NxtDrive-Properties">属性</a></li>
+          <li><a href="#NxtDrive-Events" id="markdown-toc-NxtDrive-Events">事件</a></li>
+          <li><a href="#NxtDrive-Methods" id="markdown-toc-NxtDrive-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtLightSensor" id="markdown-toc-NxtLightSensor">Nxt光线传感器</a>        <ul>
+          <li><a href="#NxtLightSensor-Properties" id="markdown-toc-NxtLightSensor-Properties">属性</a></li>
+          <li><a href="#NxtLightSensor-Events" id="markdown-toc-NxtLightSensor-Events">事件</a></li>
+          <li><a href="#NxtLightSensor-Methods" id="markdown-toc-NxtLightSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtSoundSensor" id="markdown-toc-NxtSoundSensor">Nxt声音传感器</a>        <ul>
+          <li><a href="#NxtSoundSensor-Properties" id="markdown-toc-NxtSoundSensor-Properties">属性</a></li>
+          <li><a href="#NxtSoundSensor-Events" id="markdown-toc-NxtSoundSensor-Events">事件</a></li>
+          <li><a href="#NxtSoundSensor-Methods" id="markdown-toc-NxtSoundSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtTouchSensor" id="markdown-toc-NxtTouchSensor">Nxt接触传感器</a>        <ul>
+          <li><a href="#NxtTouchSensor-Properties" id="markdown-toc-NxtTouchSensor-Properties">属性</a></li>
+          <li><a href="#NxtTouchSensor-Events" id="markdown-toc-NxtTouchSensor-Events">事件</a></li>
+          <li><a href="#NxtTouchSensor-Methods" id="markdown-toc-NxtTouchSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#NxtUltrasonicSensor" id="markdown-toc-NxtUltrasonicSensor">Nxt超声波传感器</a>        <ul>
+          <li><a href="#NxtUltrasonicSensor-Properties" id="markdown-toc-NxtUltrasonicSensor-Properties">属性</a></li>
+          <li><a href="#NxtUltrasonicSensor-Events" id="markdown-toc-NxtUltrasonicSensor-Events">事件</a></li>
+          <li><a href="#NxtUltrasonicSensor-Methods" id="markdown-toc-NxtUltrasonicSensor-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <p><a href="index.html">« 返回首页</a></p>
-<h1 id="lego-mindstorms">LEGO® MINDSTORMS®</h1>
+<h1 id="--乐高机器人组件"><i class="mdi mdi-toy-brick-outline"></i>  乐高机器人®组件</h1>
 
 <p>目录：</p>
 
 <ul>
-  <li><a href="#Ev3ColorSensor">Ev3ColorSensor</a></li>
-  <li><a href="#Ev3Commands">Ev3Commands</a></li>
-  <li><a href="#Ev3GyroSensor">Ev3GyroSensor</a></li>
-  <li><a href="#Ev3Motors">Ev3Motors</a></li>
-  <li><a href="#Ev3Sound">Ev3Sound</a></li>
-  <li><a href="#Ev3TouchSensor">Ev3TouchSensor</a></li>
-  <li><a href="#Ev3UI">Ev3UI</a></li>
-  <li><a href="#Ev3UltrasonicSensor">Ev3UltrasonicSensor</a></li>
-  <li><a href="#NxtColorSensor">NxtColorSensor</a></li>
-  <li><a href="#NxtDirectCommands">NxtDirectCommands</a></li>
-  <li><a href="#NxtDrive">NxtDrive</a></li>
-  <li><a href="#NxtLightSensor">NxtLightSensor</a></li>
-  <li><a href="#NxtSoundSensor">NxtSoundSensor</a></li>
-  <li><a href="#NxtTouchSensor">NxtTouchSensor</a></li>
-  <li><a href="#NxtUltrasonicSensor">NxtUltrasonicSensor</a></li>
+  <li><a href="#Ev3ColorSensor">EV3颜色传感器</a></li>
+  <li><a href="#Ev3Commands">EV3指令发送器</a></li>
+  <li><a href="#Ev3GyroSensor">EV3陀螺仪传感器</a></li>
+  <li><a href="#Ev3Motors">EV3马达</a></li>
+  <li><a href="#Ev3Sound">EV3声音</a></li>
+  <li><a href="#Ev3TouchSensor">EV3接触传感器</a></li>
+  <li><a href="#Ev3UI">EV3绘图</a></li>
+  <li><a href="#Ev3UltrasonicSensor">EV3超声波传感器</a></li>
+  <li><a href="#NxtColorSensor">Nxt颜色传感器</a></li>
+  <li><a href="#NxtDirectCommands">Nxt指令发送器</a></li>
+  <li><a href="#NxtDrive">Nxt电机驱动器</a></li>
+  <li><a href="#NxtLightSensor">Nxt光线传感器</a></li>
+  <li><a href="#NxtSoundSensor">Nxt声音传感器</a></li>
+  <li><a href="#NxtTouchSensor">Nxt接触传感器</a></li>
+  <li><a href="#NxtUltrasonicSensor">Nxt超声波传感器</a></li>
 </ul>
 
-<h2 id="Ev3ColorSensor">Ev3ColorSensor</h2>
+<h2 id="Ev3ColorSensor">EV3颜色传感器</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to a color sensor on a
  LEGO MINDSTORMS EV3 robot.</p>
 
-<h3 id="Ev3ColorSensor-Properties">Properties</h3>
+<h3 id="Ev3ColorSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3ColorSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -164,7 +277,7 @@
  goes between the BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="Ev3ColorSensor-Events">Events</h3>
+<h3 id="Ev3ColorSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="Ev3ColorSensor.AboveRange">AboveRange()</dt>
@@ -177,7 +290,7 @@
   <dd>Light level has gone within the range.</dd>
 </dl>
 
-<h3 id="Ev3ColorSensor-Methods">Methods</h3>
+<h3 id="Ev3ColorSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3ColorSensor.GetColorCode" class="method returns number"><i></i> GetColorCode()</dt>
@@ -188,14 +301,14 @@
   <dd>It returns the light level in percentage.</dd>
 </dl>
 
-<h2 id="Ev3Commands">Ev3Commands</h2>
+<h2 id="Ev3Commands">EV3指令发送器</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a low-level interface to a LEGO MINDSTORMS EV3
  robot, with functions to send system or direct commands to EV3 robots.</p>
 
-<h3 id="Ev3Commands-Properties">Properties</h3>
+<h3 id="Ev3Commands-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3Commands.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -203,11 +316,11 @@
  <strong>Must be set in the Designer</strong>.</dd>
 </dl>
 
-<h3 id="Ev3Commands-Events">Events</h3>
+<h3 id="Ev3Commands-Events">事件</h3>
 
-<p class="events">None</p>
+<p class="events">无</p>
 
-<h3 id="Ev3Commands-Methods">Methods</h3>
+<h3 id="Ev3Commands-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3Commands.GetBatteryCurrent" class="method returns number"><i></i> GetBatteryCurrent()</dt>
@@ -228,14 +341,14 @@
   <dd>Keep the EV3 brick from shutdown for a period of time.</dd>
 </dl>
 
-<h2 id="Ev3GyroSensor">Ev3GyroSensor</h2>
+<h2 id="Ev3GyroSensor">EV3陀螺仪传感器</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to a gyro sensor on a LEGO
  MINDSTORMS EV3 robot.</p>
 
-<h3 id="Ev3GyroSensor-Properties">Properties</h3>
+<h3 id="Ev3GyroSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3GyroSensor.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -250,14 +363,14 @@
   <dd>Returns whether the SensorValueChanged event should fire when the sensor value changed.</dd>
 </dl>
 
-<h3 id="Ev3GyroSensor-Events">Events</h3>
+<h3 id="Ev3GyroSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="Ev3GyroSensor.SensorValueChanged">SensorValueChanged(<em class="number">sensorValue</em>)</dt>
   <dd>Called then the sensor value changed.</dd>
 </dl>
 
-<h3 id="Ev3GyroSensor-Methods">Methods</h3>
+<h3 id="Ev3GyroSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3GyroSensor.GetSensorValue" class="method returns number"><i></i> GetSensorValue()</dt>
@@ -265,14 +378,14 @@
  or -1 if the value cannot be read from sensor.</dd>
 </dl>
 
-<h2 id="Ev3Motors">Ev3Motors</h2>
+<h2 id="Ev3Motors">EV3马达</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides both high- and low-level interfaces to
  control the motors on LEGO MINDSTORMS EV3.</p>
 
-<h3 id="Ev3Motors-Properties">Properties</h3>
+<h3 id="Ev3Motors-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3Motors.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -292,14 +405,14 @@
   <dd>Returns the diameter of the wheels attached on motors.</dd>
 </dl>
 
-<h3 id="Ev3Motors-Events">Events</h3>
+<h3 id="Ev3Motors-Events">事件</h3>
 
 <dl class="events">
   <dt id="Ev3Motors.TachoCountChanged">TachoCountChanged(<em class="number">tachoCount</em>)</dt>
   <dd>Called when the tacho count has changed.</dd>
 </dl>
 
-<h3 id="Ev3Motors-Methods">Methods</h3>
+<h3 id="Ev3Motors-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3Motors.GetTachoCount" class="method returns number"><i></i> GetTachoCount()</dt>
@@ -328,14 +441,14 @@
   <dd>Toggle the direction of motors.</dd>
 </dl>
 
-<h2 id="Ev3Sound">Ev3Sound</h2>
+<h2 id="Ev3Sound">EV3声音</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to a LEGO MINDSTORMS EV3
  robot, which provides sound functionalities.</p>
 
-<h3 id="Ev3Sound-Properties">Properties</h3>
+<h3 id="Ev3Sound-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3Sound.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -343,11 +456,11 @@
  <strong>Must be set in the Designer</strong>.</dd>
 </dl>
 
-<h3 id="Ev3Sound-Events">Events</h3>
+<h3 id="Ev3Sound-Events">事件</h3>
 
-<p class="events">None</p>
+<p class="events">无</p>
 
-<h3 id="Ev3Sound-Methods">Methods</h3>
+<h3 id="Ev3Sound-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3Sound.PlayTone" class="method"><i></i> PlayTone(<em class="number">volume</em>,<em class="number">frequency</em>,<em class="number">milliseconds</em>)</dt>
@@ -356,14 +469,14 @@
   <dd>Stop any sound on the robot.</dd>
 </dl>
 
-<h2 id="Ev3TouchSensor">Ev3TouchSensor</h2>
+<h2 id="Ev3TouchSensor">EV3接触传感器</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to a touch sensor on a LEGO
  MINDSTORMS EV3 robot.</p>
 
-<h3 id="Ev3TouchSensor-Properties">Properties</h3>
+<h3 id="Ev3TouchSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3TouchSensor.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -380,7 +493,7 @@
  <strong>Must be set in the Designer.</strong></dd>
 </dl>
 
-<h3 id="Ev3TouchSensor-Events">Events</h3>
+<h3 id="Ev3TouchSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="Ev3TouchSensor.Pressed">Pressed()</dt>
@@ -389,21 +502,21 @@
   <dd>Called when the touch sensor is pressed.</dd>
 </dl>
 
-<h3 id="Ev3TouchSensor-Methods">Methods</h3>
+<h3 id="Ev3TouchSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3TouchSensor.IsPressed" class="method returns boolean"><i></i> IsPressed()</dt>
   <dd>Returns true if the touch sensor is pressed.</dd>
 </dl>
 
-<h2 id="Ev3UI">Ev3UI</h2>
+<h2 id="Ev3UI">EV3绘图</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to a LEGO MINDSTORMS EV3
  robot, which provides graphic functionalities.</p>
 
-<h3 id="Ev3UI-Properties">Properties</h3>
+<h3 id="Ev3UI-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3UI.BluetoothClient" class="component"><em>BluetoothClient</em></dt>
@@ -411,11 +524,11 @@
  <strong>Must be set in the Designer</strong>.</dd>
 </dl>
 
-<h3 id="Ev3UI-Events">Events</h3>
+<h3 id="Ev3UI-Events">事件</h3>
 
-<p class="events">None</p>
+<p class="events">无</p>
 
-<h3 id="Ev3UI-Methods">Methods</h3>
+<h3 id="Ev3UI-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3UI.DrawCircle" class="method"><i></i> DrawCircle(<em class="number">color</em>,<em class="number">x</em>,<em class="number">y</em>,<em class="number">radius</em>,<em class="boolean">fill</em>)</dt>
@@ -432,14 +545,14 @@
   <dd>Fill the screen with a color.</dd>
 </dl>
 
-<h2 id="Ev3UltrasonicSensor">Ev3UltrasonicSensor</h2>
+<h2 id="Ev3UltrasonicSensor">EV3超声波传感器</h2>
 
 <p><img src="images/legoMindstormsEv3.png" alt="EV3 component icon" /></p>
 
 <p>A component that provides a high-level interface to an ultrasonic sensor on a LEGO
  MINDSTORMS EV3 robot.</p>
 
-<h3 id="Ev3UltrasonicSensor-Properties">Properties</h3>
+<h3 id="Ev3UltrasonicSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Ev3UltrasonicSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -467,7 +580,7 @@
  goes between the BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="Ev3UltrasonicSensor-Events">Events</h3>
+<h3 id="Ev3UltrasonicSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="Ev3UltrasonicSensor.AboveRange">AboveRange()</dt>
@@ -478,21 +591,21 @@
   <dd>Called when the detected distance has gone within the range.</dd>
 </dl>
 
-<h3 id="Ev3UltrasonicSensor-Methods">Methods</h3>
+<h3 id="Ev3UltrasonicSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Ev3UltrasonicSensor.GetDistance" class="method returns number"><i></i> GetDistance()</dt>
   <dd>Returns the current distance in centimeters as a value between 0 and 254, or -1 if the distance can not be read.</dd>
 </dl>
 
-<h2 id="NxtColorSensor">NxtColorSensor</h2>
+<h2 id="NxtColorSensor">Nxt颜色传感器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to a color sensor on a LEGO
  MINDSTORMS NXT robot.</p>
 
-<h3 id="NxtColorSensor-Properties">Properties</h3>
+<h3 id="NxtColorSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtColorSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -531,7 +644,7 @@
  BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="NxtColorSensor-Events">Events</h3>
+<h3 id="NxtColorSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="NxtColorSensor.AboveRange">AboveRange()</dt>
@@ -544,7 +657,7 @@
   <dd>Light level has gone within the range. The WithinRange event will not occur if the DetectColor property is set to True or if the WithinRangeEventEnabled property is set to False.</dd>
 </dl>
 
-<h3 id="NxtColorSensor-Methods">Methods</h3>
+<h3 id="NxtColorSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtColorSensor.GetColor" class="method returns number"><i></i> GetColor()</dt>
@@ -553,14 +666,14 @@
   <dd>Returns the current light level as a value between 0 and 1023, or -1 if the light level can not be read or if the DetectColor property is set to True.</dd>
 </dl>
 
-<h2 id="NxtDirectCommands">NxtDirectCommands</h2>
+<h2 id="NxtDirectCommands">Nxt指令发送器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a low-level interface to a LEGO MINDSTORMS NXT
  robot, with functions to send NXT Direct Commands.</p>
 
-<h3 id="NxtDirectCommands-Properties">Properties</h3>
+<h3 id="NxtDirectCommands-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtDirectCommands.BluetoothClient" class="component do"><em>BluetoothClient</em></dt>
@@ -568,11 +681,11 @@
  <strong>Must be set in the Designer.</strong></dd>
 </dl>
 
-<h3 id="NxtDirectCommands-Events">Events</h3>
+<h3 id="NxtDirectCommands-Events">事件</h3>
 
-<p class="events">None</p>
+<p class="events">无</p>
 
-<h3 id="NxtDirectCommands-Methods">Methods</h3>
+<h3 id="NxtDirectCommands-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtDirectCommands.DeleteFile" class="method"><i></i> DeleteFile(<em class="text">fileName</em>)</dt>
@@ -634,14 +747,14 @@
   <dd>Stop sound playback.</dd>
 </dl>
 
-<h2 id="NxtDrive">NxtDrive</h2>
+<h2 id="NxtDrive">Nxt电机驱动器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to a LEGO MINDSTORMS NXT
  robot, with functions that can move and turn the robot.</p>
 
-<h3 id="NxtDrive-Properties">Properties</h3>
+<h3 id="NxtDrive-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtDrive.BluetoothClient" class="component do"><em>BluetoothClient</em></dt>
@@ -655,11 +768,11 @@
   <dd>Returns the diameter of the wheels used for driving.</dd>
 </dl>
 
-<h3 id="NxtDrive-Events">Events</h3>
+<h3 id="NxtDrive-Events">事件</h3>
 
-<p class="events">None</p>
+<p class="events">无</p>
 
-<h3 id="NxtDrive-Methods">Methods</h3>
+<h3 id="NxtDrive-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtDrive.MoveBackward" class="method"><i></i> MoveBackward(<em class="number">power</em>,<em class="number">distance</em>)</dt>
@@ -678,14 +791,14 @@
   <dd>Turn the robot counterclockwise indefinitely, with the specified percentage of maximum power, by powering the right drive motor forward and the left drive motor backward.</dd>
 </dl>
 
-<h2 id="NxtLightSensor">NxtLightSensor</h2>
+<h2 id="NxtLightSensor">Nxt光线传感器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to a light sensor on a LEGO
  MINDSTORMS NXT robot.</p>
 
-<h3 id="NxtLightSensor-Properties">Properties</h3>
+<h3 id="NxtLightSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtLightSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -713,7 +826,7 @@
  goes between the BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="NxtLightSensor-Events">Events</h3>
+<h3 id="NxtLightSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="NxtLightSensor.AboveRange">AboveRange()</dt>
@@ -724,21 +837,21 @@
   <dd>Light level has gone within the range.</dd>
 </dl>
 
-<h3 id="NxtLightSensor-Methods">Methods</h3>
+<h3 id="NxtLightSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtLightSensor.GetLightLevel" class="method returns number"><i></i> GetLightLevel()</dt>
   <dd>Returns the current light level as a value between 0 and 1023, or -1 if the light level can not be read.</dd>
 </dl>
 
-<h2 id="NxtSoundSensor">NxtSoundSensor</h2>
+<h2 id="NxtSoundSensor">Nxt声音传感器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to a sound sensor on a LEGO
  MINDSTORMS NXT robot.</p>
 
-<h3 id="NxtSoundSensor-Properties">Properties</h3>
+<h3 id="NxtSoundSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtSoundSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -764,7 +877,7 @@
  goes between the BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="NxtSoundSensor-Events">Events</h3>
+<h3 id="NxtSoundSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="NxtSoundSensor.AboveRange">AboveRange()</dt>
@@ -775,21 +888,21 @@
   <dd>Sound level has gone within the range.</dd>
 </dl>
 
-<h3 id="NxtSoundSensor-Methods">Methods</h3>
+<h3 id="NxtSoundSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtSoundSensor.GetSoundLevel" class="method returns number"><i></i> GetSoundLevel()</dt>
   <dd>Returns the current sound level as a value between 0 and 1023, or -1 if the sound level can not be read.</dd>
 </dl>
 
-<h2 id="NxtTouchSensor">NxtTouchSensor</h2>
+<h2 id="NxtTouchSensor">Nxt接触传感器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to a touch sensor on a LEGO
  MINDSTORMS NXT robot.</p>
 
-<h3 id="NxtTouchSensor-Properties">Properties</h3>
+<h3 id="NxtTouchSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtTouchSensor.BluetoothClient" class="component do"><em>BluetoothClient</em></dt>
@@ -806,7 +919,7 @@
  <strong>Must be set in the Designer.</strong></dd>
 </dl>
 
-<h3 id="NxtTouchSensor-Events">Events</h3>
+<h3 id="NxtTouchSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="NxtTouchSensor.Pressed">Pressed()</dt>
@@ -815,21 +928,21 @@
   <dd>Touch sensor has been released.</dd>
 </dl>
 
-<h3 id="NxtTouchSensor-Methods">Methods</h3>
+<h3 id="NxtTouchSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtTouchSensor.IsPressed" class="method returns boolean"><i></i> IsPressed()</dt>
   <dd>Returns true if the touch sensor is pressed.</dd>
 </dl>
 
-<h2 id="NxtUltrasonicSensor">NxtUltrasonicSensor</h2>
+<h2 id="NxtUltrasonicSensor">Nxt超声波传感器</h2>
 
 <p><img src="images/legoMindstormsNxt.png" alt="NXT component icon" /></p>
 
 <p>A component that provides a high-level interface to an ultrasonic sensor on a LEGO
  MINDSTORMS NXT robot.</p>
 
-<h3 id="NxtUltrasonicSensor-Properties">Properties</h3>
+<h3 id="NxtUltrasonicSensor-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="NxtUltrasonicSensor.AboveRangeEventEnabled" class="boolean"><em>AboveRangeEventEnabled</em></dt>
@@ -855,7 +968,7 @@
  goes between the BottomOfRange and the TopOfRange.</dd>
 </dl>
 
-<h3 id="NxtUltrasonicSensor-Events">Events</h3>
+<h3 id="NxtUltrasonicSensor-Events">事件</h3>
 
 <dl class="events">
   <dt id="NxtUltrasonicSensor.AboveRange">AboveRange()</dt>
@@ -866,7 +979,7 @@
   <dd>Distance has gone within the range.</dd>
 </dl>
 
-<h3 id="NxtUltrasonicSensor-Methods">Methods</h3>
+<h3 id="NxtUltrasonicSensor-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="NxtUltrasonicSensor.GetDistance" class="method returns number"><i></i> GetDistance()</dt>
@@ -874,69 +987,63 @@
 </dl>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -950,27 +1057,25 @@
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

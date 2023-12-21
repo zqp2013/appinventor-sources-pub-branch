@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 项目合并工具 AIMerge · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，App Inventor 2 项目合并工具 AIMerge">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>Project Merger Tool for AI2</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,79 +113,297 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Project Merger Tool for AI2</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 项目合并工具 AIMerge</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
-<p><a href="https://docs.google.com/document/d/15cEkliGmGxLX2muxysEOrMbPJnjmmglMtMVhbDpLZFE/edit">Click here for a version of this page on which you can comment.</a></p>
+<p><a href="index.html">« 返回首页</a></p>
 
-<iframe width="100%" height="6000" frameborder="0" scrolling="yes" id="frame1" src="https://docs.google.com/document/d/e/2PACX-1vQs66sljoGNWbZTTyZaTHVSR8-Fjlt_IKojwbv8yK6f4_e2ULFk__2-uEih-rmfeM-cvav0DcSamEZU/pub">
-</iframe>
+<h3 id="app-inventor-2-项目合并工具">App Inventor 2 项目合并工具</h3>
+
+<p><img src="images/merger-image3.png" alt="" /></p>
+
+<p>本文档最初由米尔斯学院（Mills College）的 Kate Feeney 为 AI Classic 编写。该计划在她的论文<a href="http://appinventor.mit.edu/explore/sites/all/files/Resources/EncourageCollaborationFeeneyThesis.pdf">通过 App Inventor 鼓励协作</a> 中进行了讨论。</p>
+
+<p>该工具作为 Java 程序在 App Inventor 外部运行，需要在计算机上安装 Java 才能使用它。</p>
+
+<h3 id="如何使用-app-inventor-合并工具进行团队开发">如何使用 App Inventor 合并工具进行团队开发</h3>
+
+<p>在团队内开发应用程序时，App Inventor 合并工具非常有用。该工具允许多个开发人员在应用程序的不同屏幕上工作，然后将它们合并在一起。请记住，整个组合应用程序仍然受到 App Inventor 建议的总共最多 10 个屏幕的限制。</p>
+
+<p>本文档概述了使用 App Inventor 合并工具在团队环境中开发应用程序的过程。它将使用由两个不同开发人员开发的简单双屏应用程序的示例来演示此过程。</p>
+
+<hr />
+<p>概述</p>
+
+<p>Dividing Work</p>
+
+<p>Developer 1 Work In App Inventor</p>
+
+<p>Design View</p>
+
+<p>Blocks Editor</p>
+
+<p>Download Source Code</p>
+
+<p>Developer 2 Work In App Inventor</p>
+
+<p>Design View</p>
+
+<p>Blocks Editor</p>
+
+<p>Download Source Code</p>
+
+<p>Merging into one Project</p>
+
+<p>Launch the App Inventor Merger</p>
+
+<p>Find and Load Both Projects</p>
+
+<p>Merge the Projects</p>
+
+<p>Upload Final Project to App Inventor</p>
+
+<p>Extras</p>
+
+<p>Universal Assets and Databases</p>
+
+<p>Assets</p>
+
+<p>Databases</p>
+
+<p>Merging More Than Two Projects</p>
+
+<p>Renaming Second Project’s “Screen1”</p>
+
+<p>Appendix</p>
+
+<p>Appendix A: Complete Blocks for Screen1 of CountDownScreen1</p>
+
+<p>Appendix B: Complete Blocks for SetTime Screen</p>
+
+<h3 id="overview">Overview</h3>
+<p>Each developer will work on their own separate project file.  These project files can be either under the same username or different usernames.  There can only be one “Screen1” per project, therefore only the developer designing the first screen to appear on the app should populate “Screen1.” All other developers should leave “Screen1” blank and only develop additional screens. In the case that another developer does populate “Screen1”, the merger tool will allow that screen to be renamed so it can be merged into the final project.</p>
+
+<p>Developers can write code to call a screen they are not developing but they must know the name that has been assigned to that screen by its developer.  Also, two different developers/screens can use the same database or asset but they must be named the same (for more details on this see the <a href="#Universal-Assets-and-Databases">Universal Databases and Assets</a> section below). Finally, no two different screens or assets can have the same name (with the exception of “Screen1” which can be renamed). For these reasons it is important to decide beforehand the name of each screen and a naming convention for assets that will insure no unwanted duplicates.</p>
+
+<p>Once separate projects are complete they can be merged together using the App Inventor Merger Tool.</p>
+
+<h2 id="dividing-work">Dividing Work</h2>
+<p>Work should be divided by screens.  Each screen should be assigned to a developer and there should be only one version of each screen to be merged into the final app.  This document will follow an example for which there are two screens and two developers working on an app named “CountDown.” The CountDown app will work like a timer.  The first screen shows the time counting down and allows the user to start, stop or reset the timer. From the first screen the user can also switch to a second screen to set the amount of time to count down.</p>
+
+<p>Developer1 will work on the first screen and call it “Screen1”.   Developer2 will work on the second screen and call it “SetTime”.  The naming convention for assets will be the screen name followed by the asset name.  There are no universal assets or databases. Screen1 will open the SetTime screen and when the SetTime screen is closed it will pass a number, representing the total number of seconds to countdown to Screen1.</p>
+
+<h2 id="developer-1-work-in-app-inventor">Developer 1 Work In App Inventor</h2>
+<p>Developer1 will log into App Inventor using their account and create a new project called “CountDownScreen1.”</p>
+
+<h3 id="designer-view">Designer View</h3>
+<p>The Designer view for CountDownScreen1’s Screen1 is shown below in Figure 1. Note that the project name, the screen name and assets follow the predetermined naming convention.</p>
+
+<p><img src="images/merger-image7.png" alt="" /></p>
+
+<p>Figure 1: CountDownScreen1’s Screen1 Designer View</p>
+
+<h3 id="blocks-editor">Blocks Editor</h3>
+<p>Developer1 then creates the blocks needed for Screen1.  These blocks included a block to open the SetTime screen when the “Set Time” button is clicked and a block to handle when the SetTime screen is closed. Views of the SetTime.Click block and the Screen1.OtherScreenClosed  block are shown in Figure 2 and 3 respectively. The complete set of blocks for Screen1 are shown in Appendix A.</p>
+
+<p><img src="images/merger-image1.png" alt="" /></p>
+
+<p>Figure 2: CountDownScreen1’s Screen1 SetTime.Click block</p>
+
+<p>The SetTime.Click block opens the SetTime screen. Note that the string assigned to screenName must be exactly what was decided in advance as the name of the second screen.</p>
+
+<p><img src="images/merger-image11.png" alt="" /></p>
+
+<p>Figure 3: CountDownScreen1’s Screen1 OtherScreenClosed block</p>
+
+<p>The Screen1.OtherScreenClosed receives the number of seconds to countdown from the SetTime screen when the screen is closed and sets the startTimeInSeconds variable to it.</p>
+
+<h3 id="download-source-code">Download Source Code</h3>
+<p>Once Developer1 completes Screen1 they download the source code.  This is done by going to the My Projects view and checking the checkbox next to the CountDownScreen1 project, then clicking on the “Project” dropdown and selecting “Export selected project (.aia) to my computer”. Figure 4 shows how to select a project and where to click to download the project.</p>
+
+<p><img src="images/merger-image5.png" alt="" /></p>
+
+<p>Figure 4: Steps to download the CountDownScreen1 project</p>
+
+<h2 id="developer-2-work-in-app-inventor">Developer 2 Work In App Inventor</h2>
+<p>Developer2 will log into App Inventor using their account and create a new project called “CountDownSetTime.”</p>
+
+<h3 id="designer-view-1">Designer View</h3>
+<p>The Designer view for CountDownSetTime’s Screen1 is shown below in Figure 5. The Screen1 is empty except for a button that takes you to the SetTime screen.  This button is only for Developer2 to get to the SetTime screen during testing and debugging. This Screen1 will not be merged into the final app.</p>
+
+<p><img src="images/merger-image6.png" alt="" /></p>
+
+<p>Figure 5: CountDownSetTime’s Screen1 Designer View</p>
+
+<p>The Designer view for CountDownSetTime’s SetTime screen is shown below in Figure 6. Note that the project name and the screen name follow the predetermined naming convention.</p>
+
+<p><img src="images/merger-image13.png" alt="" /></p>
+
+<p>Figure 6: CountDownSetTime’s SetTime screen Designer View</p>
+
+<h3 id="blocks-editor-1">Blocks Editor</h3>
+<p>Developer2 then creates the blocks needed for the SetTime screen.  These blocks include a block to send the number of seconds to countdown to Screen1 when the SetTime screen is closed. This block is the Done.Click block shown in Figure 7. A complete set of blocks for the SetTime screen are shown in Appendix B.</p>
+
+<p><img src="images/merger-image12.png" alt="" /></p>
+
+<p>Figure 7: Done.Click block for CountDownSetTime’s SetTime screen</p>
+
+<h3 id="download-source-code-1">Download Source Code</h3>
+<p>Developer2 downloads the CountDownSetTime project following the same steps Developer1 followed to download the CountDownScreen1 project.</p>
+
+<h3 id="merging-into-one-project">Merging into one Project</h3>
+<p>Once both developers have downloaded their respective projects, the two projects can be merged into the final app using the following steps.</p>
+
+<h3 id="launch-the-app-inventor-2-merger">Launch the App Inventor 2 Merger</h3>
+<p>If not already done, downloaded the latest version of the App Inventor Merger.   This is a Java jar file.  You can find a link to the file on the MIT App Inventor Web site at</p>
+
+<p><a href="http://appinventor.mit.edu/explore/resources/ai2-project-merger.html">http://appinventor.mit.edu/explore/resources/ai2-project-merger.html</a></p>
+
+<p>Download the jar file and save it to your computer.   To launch the Project Merger simply double click on the jar file.</p>
+
+<h3 id="find-and-load-both-projects">Find and Load Both Projects</h3>
+<p>The main project will be CountDownScreen1 since Screen1 from this project will be the Screen1 for the final app and the second project will be CountDownSetTime.</p>
+
+<p>Select the browse button for the main project.  A file browser window will appear.  Find and select the CountDownScreen1.aia file, then click Open to load the project into the App Inventor Merger.  A list of the main project’s assets (including their extensions) and screens will appear in the lower left hand corner of the screen and this means that the main project has been loaded into the App Inventor Merger.</p>
+
+<p>Click the browse button for the second project.  A file browser window will appear.  Find and select the CountDownSetTime.aia file, then click Open to load the project into the App Inventor Merger.  A list of the second project’s assets (including their extensions) and screens will appear in the lower right hand corner of the screen and this means that the second project has been loaded into the App Inventor Merger.</p>
+
+<h3 id="merge-the-projects">Merge the Projects</h3>
+<p>Once two projects have been loaded a Merge button will appear between them as shown in Figure 8 below.</p>
+
+<p><img src="images/merger-image15.png" alt="" /></p>
+
+<p>Figure 8: The App Inventor Merger Tool showing the projects loaded and ready to merge.</p>
+
+<p>Check the boxes next to all of the screens and assets you wish to merge into the final app. For this example all assets and screens are selected except Screen1 from the second project.</p>
+
+<p>In this case only one screen is being selected from each project and the second project’s Screen1 is not being used, but in other cases multiple screens can be merged from the same project file and the second project’s Screen1 can be renamed and included.  For more information about renaming your second project’s Screen1 see the Renaming Second Project’s “Screen1” section below.</p>
+
+<p>Click Merge.  A save dialog window will appear.  Browse to where you would like to save the project, enter the project’s name and then click Save. The project will be saved as an .aia file.</p>
+
+<p>A dialog box will appear letting you know that your projects have been successfully merged.  There will now be a new .aia file saved at the location you specified. The dialog box will also ask if you would like to merge another project.  Since this example only has two developers working on two different project files, there is no need to merge another project. Click No and confirm that you want to close the merger. For more information about merging more than two project see the Merging More Than Two Projects section below.</p>
+
+<h2 id="upload-final-project-to-app-inventor">Upload Final Project to App Inventor</h2>
+<p>The .aia file created by the App Inventor Merger is your new project file. This project file can be uploaded to App Inventor so that you have a complete project in App Inventor.</p>
+
+<p>To upload the file, launch App Inventor and go to the My Projects page. Click on the “Projects” dropdown and select “Import project (.aia) from my computer…”</p>
+
+<p><img src="images/merger-image9.png" alt="" /></p>
+
+<p>Figure 9: The My Projects page where you will upload the merged project file.</p>
+
+<p>A dialog box will appear.  Select Choose File. A file browsing window will appear.  Find and select the .aia file that was just created by the App Inventor Merger and then click Open followed by OK.  Your new project will now appear in your list of projects and will open in the App Inventor window.</p>
+
+<h2 id="extras">Extras</h2>
+<h3 id="Universal-Assets-and-Databases">Universal Assets and Databases</h3>
+
+<p>Assets
+If your app uses the same asset on multiple screens, then you can make that asset universal. This is done by giving it a name that does not follow the normal naming convention but instead is repeated by all screens. When the projects are merged the universal asset will only need to be selected from one of the projects.</p>
+
+<p>For example, imagine you have a logo, which is an image, that should appear at the top of every screen. Instead of having every developer name the logo something different (Screen1Logo, Screen2Logo …), as the naming convention would require, every developer can simply name it Logo. When the projects are merged only check the Logo asset listed under the main project so that the asset is only loaded into the final app once but all the screens will be able to access it.</p>
+
+<p>Databases
+Apps that use databases can be merged using the App Inventor Merger very easily.  Different developers can even work on different screens that use the same database separately and then merge them together at the end.</p>
+
+<p>The only requirement for merging screens that share a database is that the name assigned to the database for each screen is the same.  Once the projects are merged the same database will work for all the screens.</p>
+
+<h3 id="merging-more-than-two-projects">Merging More Than Two Projects</h3>
+<p>The App Inventor Merger is still a very useful tool even if there are more than two developers working on more than two project files. The process is exactly the same as the two developer process, described above, until the dialog box letting you know your project has been successfully merged pops up (shown in Figure 10 below).</p>
+
+<p><img src="images/merger-image4.png" alt="" /></p>
+
+<p>Figure 10: Dialogue box that appears after successfully merging an project.  You can merge more projects by clicking “Yes.”</p>
+
+<p>When there were only two developers we selected No but for the case of more than two developers select Yes since there are more projects to be merged.  A new dialog box will appear asking if you would like to use the project you just created as the new main project.  If you select No, the App Inventor Merger will restart with no projects loaded, the same as if you just launched it. This would be used to merge two new projects together.</p>
+
+<p>If you select Yes, the App Inventor Merger will restart with the project you just created loaded as the main project and the second project is blank (as shown in Figure 11 below).  This option can be used if you would like to merge a third project with the first two projects you previously merged.</p>
+
+<p><img src="images/merger-image14.png" alt="" /></p>
+
+<p>Figure 11: By selecting “Yes” to merge another project with the one you just created will pre-populate the Main Project.</p>
+
+<h3 id="renaming-second-projects-screen1">Renaming Second Project’s “Screen1”</h3>
+<p>In the case that two developers populate “Screen1”, the merger tool will allow the “Screen1” of the second project to be renamed so it can be merged into the final project.  The process for merging the projects is exactly the same as described above, except you will check both Screen1s. Once you click merge, a dialog box will appear indicating that you have chosen more than one Screen1 (shown in Figure 12 below, left) and will direct you to enter a new name for the second project’s Screen1 (shown in Figure 13 below, right).</p>
+
+<p><img src="images/merger-image16.png" alt="" /></p>
+
+<p><img src="images/merger-image8.png" alt="" /></p>
+
+<p>Figure 12: The dialogue that appears when you click merge with both Screen1s checked.</p>
+
+<p>Figure 13: Rename the second project’s Screen1 by entering a new name in this textbox.</p>
+
+<p>Once you’ve renamed your second project’s Screen1, the App Inventor Merger will combine your projects and offer the same options as discussed above.</p>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="appendix-a-complete-blocks-for-screen1-of-countdownscreen1">Appendix A: Complete Blocks for Screen1 of CountDownScreen1</h3>
+
+<p><img src="images/merger-image2.png" alt="" /></p>
+
+<h3 id="appendix-b-complete-blocks-for-settime-screen">Appendix B: Complete Blocks for SetTime Screen</h3>
+
+<p><img src="images/merger-image10.png" alt="" /></p>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -182,27 +417,25 @@
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

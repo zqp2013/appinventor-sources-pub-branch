@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>功能列表运算符 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，概念页面下的功能列表运算符参考文档。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">功能列表运算符</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<p><a href="index.html">« 返回首页</a></p>
+
+<p>Functional programming is a programming paradigm where programs are constructed by composing pure functions, avoiding shared state, mutable data, and side effects.
+Many operators in functional programming are commonly used to make code more concise, and less complex.</p>
+
+<p><img src="images/pholoblocks.png" alt="Picture of the functional operator blocks." /></p>
+
+<p>This tutorial demonstrates the usage functional operator blocks: filter, map, reduce and sort.</p>
+
+<h2 id="lemonade-stand">Part 1: Berry’s Lemonade Stand</h2>
+
+<p>Berry is fundraising by setting up a lemonade stand, where she charges $2 per lemonade.
+As shown below, she keeps a simple record of the number of lemonades she sold on each date.
+She planned on doing this for seven consecutive days but was not able to set up her stand on some days, so for those days she wrote down N/A for the number of lemonades sold.
+Berry is interested in finding her total profit for this week’s lemonade stand.</p>
+
+<p><img src="images/lemonadeStandTable.png" alt="Table for Berry's lemonade stand sell profit." /></p>
+
+<p><img src="images/originalList.png" alt="Original List for lemonadeSold." /></p>
+
+<p>Thus, Berry needs to</p>
+
+<ol>
+  <li>keep only the entries that are numbers in her column of “# of Lemonades Sold” (<span style="color: red">filter</span>),</li>
+  <li>multiply each entry by $2 to get a list of daily profits (<span style="color: blue">map</span>), and then</li>
+  <li>sum up all the daily profit entries to get total profit (<span style="color: green">reduce</span>).</li>
+</ol>
+
+<h3 id="step-1-filter">Step 1: <span style="color: red" id="filter">Filter</span></h3>
+
+<p>Berry needs to return a new list that results from filtering her original list so that “N/A” entries are eliminated and only numbers exist in list.</p>
+
+<p><img src="images/filterResult.png" alt="Result after applying filter to original list." /></p>
+
+<p>The filter block takes in two inputs: 1) an input list and 2) a body block that is a boolean expression involving item–it returns true or false.
+Note that item is a variable name that refers to the current list item.
+The filter block iterates through the list and keeps each item the list that makes the body block return true.
+In this case, the input list is Berry’s original list, and the body block checks to see if item is a number.</p>
+
+<p><img src="images/filterBlock.png" alt="Filter block to keep only numbers in the list." /></p>
+
+<h3 id="step-2-map">Step 2: <span style="color: blue" id="map">Map</span></h3>
+
+<p>Now that Berry has a filtered list of # of lemonades sold, she needs to multiply each item in the list by $2 to return a new list of daily profits.</p>
+
+<p><img src="images/mapResult.png" alt="Result after applying filter to the list." /></p>
+
+<p>The map block takes in two inputs: 1) an input list and 2) a body block that is an expression manipulating item. The map block iterates through the list and maps each item in the list to a new item using the body block.
+In this case, the input list is Berry’s filtered list, and the body block multiplies each item by 2.</p>
+
+<p><img src="images/mapBlock.png" alt="Map block to multiply each number in the list by two." /></p>
+
+<h3 id="step-3-reduce">Step 3: <span style="color: green" id="reduce">Reduce</span></h3>
+
+<p>Finally, Berry wants to sum up all the items in her list of daily profits to find her total profit.</p>
+
+<p><img src="images/reduceResult.png" alt="Result after applying reduce to the list." /></p>
+
+<p>The reduce block takes in three inputs: 1) an input list, 2) initialAnswer and 3) a body block that combines item (referring to the current list item) and answerSoFar (referring to the accumulating answer).
+If the input list is empty, then initialAnswer is returned. Otherwise, answerSoFar is initialized to initialAnswer.
+The body block is first evaluated using answerSoFar (which is equivalent to initialAnswer at this point) and the first list item, and then on the accumulating answer and the next list item, and so on until the end of the list.</p>
+
+<p>In this case, the input list is Berry’s list of daily profits, the initialAnswer is 0, since the sum of all the items in an empty list is 0, and the body block adds the current list item to the accumulating answer to sum all her daily profits.</p>
+
+<p>Berry decides to define her procedure as getTotalProfit. When getTotalProfit is called, Berry’s total profit from her lemonade stand is returned.</p>
+
+<p><img src="images/reduceBlock.png" alt="Reduce block to sum up all the daily sells." /></p>
+
+<h2 id="classmates-height">Part 2: Bob’s classmates’ height</h2>
+
+<p>Bob is collecting data about his classmates’ height. Here is a small part of his data:</p>
+
+<p><img src="images/heightTable.png" alt="Table for Bob's classmates' height." /></p>
+
+<p>BobDataList is a list of lists, as shown below:</p>
+
+<p><img src="images/bobData.png" alt="Bob's data" /></p>
+
+<p><img src="images/bobDataList.png" alt="Bob's data list" /></p>
+
+<p>Thus, Bob would like to have the list being sorted in following three different ways:</p>
+
+<ol>
+  <li>Sort the data alphabetically by last name (<span style="color: red">basic sort</span>)</li>
+  <li>Sort the data alphabetically by gender, then numerically by height (<span style="color: blue">sort with comparator</span>)</li>
+  <li>Sort the data alphabetically by height (<span style="color: green">sort with key</span>)</li>
+</ol>
+
+<h3 id="situation-1-basic-sort">Situation 1: <span style="color: red" id="sort">Basic Sort</span></h3>
+
+<p>Bob wants to sort the list by last name.</p>
+
+<p><img src="images/sortLastNameResult.png" alt="Result of sorting by last name" /></p>
+
+<p>Since last name is in index 1 of each item in BobDataList, he can simply input his list into the basic sort block.</p>
+
+<p><img src="images/sortLastNameBlock.png" alt="Sort list with basic sort." /></p>
+
+<h3 id="situation-2-sort-with-comparator">Situation 2: <span style="color: blue" id="sortwithcomparator">Sort with Comparator</span></h3>
+
+<p>Bob wants to first sort his data alphabetically by gender, then numerically by height.
+In other words, the females are listed first, followed by males.
+Within females and within males, the data is organized by height.
+Gender is index 3 of each item in BobDataList, and height is in index 4 of each item in BobDataList.</p>
+
+<p><img src="images/sortGenderHeightResult.png" alt="" /></p>
+
+<p>In this case, Bob can use the sort with comparator block.
+This block takes in two inputs: 1) an input list and 2) a body block that specifies the order by which the the input list should be sorted.
+The body block is a boolean expression involving item1 and item2 and returns true or false.
+The given variable names, item1 and item2, refer to the two current list items that are being compared.</p>
+
+<p>To achieve Bob’s goal, the body block will have two boolean expressions.
+The first boolean expression checks to see if the gender of item1 is less than the gender of item2.
+If is, then the body returns true immediately. If not (i.e. the gender is the same), then the second boolean expression will check to see if the height of item1 is less than the height of item2.</p>
+
+<p>To implement this in terms of blocks, the body block will combine the two boolean expressions using an “or” block.
+An “or” block tests the conditions from left to right, and stops testing as soon as one of the conditions is true.</p>
+
+<p><img src="images/sortGenderHeightBlock.png" alt="" /></p>
+
+<h3 id="situation-3-sort-with-key">Situation 3: <span style="color: green" id="sortwithkey">Sort with Key</span></h3>
+
+<p>Bob wants to sort his data only by height.</p>
+
+<p><img src="images/sortHeightResult.png" alt="Result after applying reduce to the list." /></p>
+
+<p>In this case, he can use the sort with key block.
+This sort block takes in two inputs: 1) an input list and 2) a body block (key) that is a function that is applied to each item in the list prior to sorting.
+The list of proxy values returned by the key is used for sorting.</p>
+
+<p>Since Bob would like to sort by height, the body of the block gets index 4 of each item in BobDataList, and sorts by this value.</p>
+
+<p><img src="images/sortHeightBlock.png" alt="Reduce block to sum up all the daily sells." /></p>
+
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

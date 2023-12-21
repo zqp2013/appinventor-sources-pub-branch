@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>绘画动画组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，绘画动画组件参考文档：包括球形精灵、画布、图像精灵。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>Drawing and Animation</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,474 +113,521 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Drawing and Animation</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">绘画动画组件</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--绘画动画组件" id="markdown-toc---绘画动画组件"><i class="mdi mdi-draw"></i>  绘画动画组件</a>    <ul>
+      <li><a href="#Ball" id="markdown-toc-Ball"><img src="images/ball.png" alt="icon" />  球形精灵</a>        <ul>
+          <li><a href="#Ball-Properties" id="markdown-toc-Ball-Properties">属性</a></li>
+          <li><a href="#Ball-Events" id="markdown-toc-Ball-Events">事件</a></li>
+          <li><a href="#Ball-Methods" id="markdown-toc-Ball-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Canvas" id="markdown-toc-Canvas"><img src="images/canvas.png" alt="icon" />  画布</a>        <ul>
+          <li><a href="#Canvas-Properties" id="markdown-toc-Canvas-Properties">属性</a></li>
+          <li><a href="#Canvas-Events" id="markdown-toc-Canvas-Events">事件</a></li>
+          <li><a href="#Canvas-Methods" id="markdown-toc-Canvas-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#ImageSprite" id="markdown-toc-ImageSprite"><img src="images/imagesprite.png" alt="icon" />  图像精灵</a>        <ul>
+          <li><a href="#ImageSprite-Properties" id="markdown-toc-ImageSprite-Properties">属性</a></li>
+          <li><a href="#ImageSprite-Events" id="markdown-toc-ImageSprite-Events">事件</a></li>
+          <li><a href="#ImageSprite-Methods" id="markdown-toc-ImageSprite-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <p><a href="index.html">« 返回首页</a></p>
-<h1 id="drawing-and-animation">Drawing and Animation</h1>
+<h1 id="--绘画动画组件"><i class="mdi mdi-draw"></i>  绘画动画组件</h1>
 
 <p>目录：</p>
 
+<ol>
+  <li><img src="images/ball.png" alt="icon" />  <a href="#Ball">球形精灵</a></li>
+  <li><img src="images/canvas.png" alt="icon" />  <a href="#Canvas">画布</a></li>
+  <li><img src="images/imagesprite.png" alt="icon" />  <a href="#ImageSprite">图像精灵</a></li>
+</ol>
+
+<h2 id="Ball"><img src="images/ball.png" alt="icon" />  球形精灵</h2>
+
+<p>可以放置在 <a href="#Canvas"><code class="highlighter-rouge">画布</code></a> 上的圆形“精灵”，它可以对触摸和拖动做出反应，
+与其他精灵（<a href="#ImageSprite"><code class="highlighter-rouge">图像精灵</code></a> 和其他 <code class="highlighter-rouge">球形精灵</code>）及<code class="highlighter-rouge">画布</code>的边缘进行交互，并根据其属性值移动。</p>
+
+<p>例如，让一个<code class="highlighter-rouge">球形精灵</code>每 500 毫秒（半秒）向<code class="highlighter-rouge">画布</code>的顶部移动 4 个像素，您可以将 <a href="#Ball.Speed"><code class="highlighter-rouge">速度</code></a> 属性设置为 4 [像素]，
+<a href="#Ball.Interval"><code class="highlighter-rouge">间隔</code></a> 属性为 500 [毫秒]，<a href="#Ball.Heading"><code class="highlighter-rouge">方向</code></a> 属性为90 [度]，<a href="#Ball.Enabled"><code class="highlighter-rouge">启用</code></a> 属性为<code class="logic block highlighter-rouge">真</code>。 
+这些及其他属性可以随时更改。</p>
+
+<p><code class="highlighter-rouge">球形精灵</code> 和 <code class="highlighter-rouge">图像精灵</code> 的区别在于：<code class="highlighter-rouge">图像精灵</code>可以通过设置图像文件改变它的外观；
+而<code class="highlighter-rouge">球形精灵</code>的外观只能改变其<a href="#Ball.PaintColor"><code class="highlighter-rouge">画笔颜色</code></a> 和 <a href="#Ball.Radius"><code class="highlighter-rouge">半径</code></a> 属性。</p>
+
+<h3 id="Ball-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="Ball.Enabled" class="boolean"><em>启用</em></dt>
+  <dd>控制<code class="highlighter-rouge">球形精灵</code>在其速度非零时是否移动。</dd>
+  <dt id="Ball.Heading" class="number"><em>方向</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code> 在 x 轴方向上以度数表示的方向，图示如下：</dd>
+</dl>
+
+<p><img src="images/direction.jpg" alt="方向含义" /></p>
+
+<dl>
+  <dt id="Ball.Interval" class="number"><em>间隔</em></dt>
+  <dd>更新<code class="highlighter-rouge">球形精灵</code>位置的时间间隔（以毫秒为单位）。例如，如果<code class="highlighter-rouge">间隔</code> 为 50，<a href="#Ball.Speed"><code class="highlighter-rouge">速度</code></a> 为 10，则<code class="highlighter-rouge">球形精灵</code>将每50毫秒移动10个像素。</dd>
+  <dt id="Ball.OriginAtCenter" class="boolean wo do"><em>中心坐标</em></dt>
+  <dd>(X, Y) 坐标是否是<code class="highlighter-rouge">球形精灵</code>的中心，<code class="logic block highlighter-rouge">真</code> 表示 (X, Y) 是其中心坐标，<code class="logic block highlighter-rouge">假</code> 则表示 (X, Y) 是其<strong>左上角</strong>坐标。</dd>
+  <dt id="Ball.PaintColor" class="color"><em>填充色</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code>的颜色。</dd>
+  <dt id="Ball.Radius" class="number"><em>半径</em></dt>
+  <dd>从<code class="highlighter-rouge">球形精灵</code>中心到其边缘的距离。</dd>
+  <dt id="Ball.Speed" class="number"><em>速度</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code>移动的速度。如果 <a href="#Ball.Enabled"><code class="highlighter-rouge">启用</code></a> 是<code class="logic block highlighter-rouge">真</code>，<code class="highlighter-rouge">球形精灵</code>每隔<a href="#Ball.Interval"><code class="highlighter-rouge">间隔</code></a>毫秒移动的像素数量。</dd>
+  <dt id="Ball.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置精灵是否可见。</dd>
+  <dt id="Ball.X" class="number"><em>X坐标</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code>的水平坐标，随着<code class="highlighter-rouge">球形精灵</code>向右移动而增加。
+
+    <p>如果属性 <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">中心坐标</code></a> 为 <code class="logic block highlighter-rouge">真</code>，则坐标为 <code class="highlighter-rouge">球形精灵</code> 的中心；否则，它是<code class="highlighter-rouge">球形精灵</code>的最左边的点。</p>
+  </dd>
+  <dt id="Ball.Y" class="number"><em>Y坐标</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code>的垂直坐标，随着<code class="highlighter-rouge">球形精灵</code>向下移动而增加。
+
+    <p>如果属性 <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">中心坐标</code></a> 为 <code class="logic block highlighter-rouge">真</code>，则坐标为 <code class="highlighter-rouge">球形精灵</code> 的中心，否则为 <code class="highlighter-rouge">球形精灵</code> 的最高点。</p>
+  </dd>
+  <dt id="Ball.Z" class="number"><em>Z坐标</em></dt>
+  <dd><code class="highlighter-rouge">球形精灵</code>应如何相对于其他<code class="highlighter-rouge">球形精灵</code>和<code class="highlighter-rouge">图像精灵</code>分层，编号较高的层位于编号较低的层之前。</dd>
+</dl>
+
+<h3 id="Ball-Events">事件</h3>
+
+<dl class="events">
+  <dt id="Ball.CollidedWith">被碰撞时(<em class="component">其他精灵</em>)</dt>
+  <dd>事件将在两个启用的精灵（<a href="#Ball"><code class="highlighter-rouge">球形精灵</code></a>或<a href="#ImageSprite"><code class="highlighter-rouge">图像精灵</code></a>）碰撞时触发。
+
+    <p><em>请注意，检查与旋转的<code class="highlighter-rouge">图像精灵</code>碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。</em></p>
+  </dd>
+  <dt id="Ball.Dragged">被拖动时(<em class="number">起点X坐标</em>,<em class="number">起点Y坐标</em>,<em class="number">前点X坐标</em>,<em class="number">前点Y坐标</em>,<em class="number">当前X坐标</em>,<em class="number">当前Y坐标</em>)</dt>
+  <dd>拖动事件的处理程序。在所有调用中，“起始”坐标是第一次触摸屏幕的位置，“当前”坐标描述当前线段的端点。
+
+    <p>在给定拖动中的第一次调用时，“前一个”坐标与起始坐标相同；随后，它们是先前调用的“当前”坐标。</p>
+
+    <p>请注意，除非专门调用 <a href="#Ball.MoveTo"><code class="highlighter-rouge">移动到指定位置</code></a>，否则 <code class="highlighter-rouge">球形精灵</code> 实际上不会移动到任何地方以响应 <code class="highlighter-rouge">被拖动</code> 事件。</p>
+  </dd>
+  <dt id="Ball.EdgeReached">到达边缘时(<em class="number">边缘数值</em>)</dt>
+  <dd>当<code class="highlighter-rouge">球形精灵</code>到达屏幕的边缘时调用事件处理程序。
+
+    <p>如果随后使用该边缘数值调用 <a href="#Ball.Bounce"><code class="highlighter-rouge">反弹</code></a>方法，则精灵将从它到达的边缘开始反弹。</p>
+
+    <p>这里的边缘表示为一个整数，表示八个方向之一：</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>-4：西北</td>
+          <td>1：北</td>
+          <td>2：东北</td>
+        </tr>
+        <tr>
+          <td>-3：西</td>
+          <td><strong>边缘数值</strong></td>
+          <td>3：东</td>
+        </tr>
+        <tr>
+          <td>-2：西南</td>
+          <td>-1：南</td>
+          <td>4：东南</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+  <dt id="Ball.Flung">被划动时(<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="number">速度</em>,<em class="number">方向</em>,<em class="number">速度X分量</em>,<em class="number">速度Y分量</em>)</dt>
+  <dd>当在精灵上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
+
+    <p>该方法还提供投射的速度（每毫秒像素数）和<a href="#Ball.Heading">方向</a>（0-360 度），以及投射矢量的 x 速度和 y 速度分量。</p>
+  </dd>
+  <dt id="Ball.NoLongerCollidingWith">结束碰撞时(<em class="component">其他精灵</em>)</dt>
+  <dd>该事件表示一对精灵不再发生碰撞。</dd>
+  <dt id="Ball.TouchDown">被按压时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="Ball.TouchUp">被松开时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户停止触摸精灵时（在 <code class="highlighter-rouge">被按压</code> 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="Ball.Touched">被触碰时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+</dl>
+
+<h3 id="Ball-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="Ball.Bounce" class="method"><i></i> 反弹(<em class="number">边缘数值</em>)</dt>
+  <dd>使这个<code class="highlighter-rouge">球形精灵</code>弹起，就像从墙上弹起来一样。对于正常反弹，<code class="highlighter-rouge">边缘数值</code>参数应该是 <a href="#Ball.EdgeReached"><code class="highlighter-rouge">到达边缘时</code></a> 返回的参数。</dd>
+  <dt id="Ball.CollidingWith" class="method returns boolean"><i></i> 碰撞检测(<em class="component">其他精灵</em>)</dt>
+  <dd>表示此<code class="highlighter-rouge">球形精灵</code>和传递的<code class="highlighter-rouge">其他精灵</code>之间是否已发生碰撞，如发生则返回<code class="highlighter-rouge">真</code>。</dd>
+  <dt id="Ball.MoveIntoBounds" class="method"><i></i> 移动到边界()</dt>
+  <dd>如果精灵的一部分超出边界，则将精灵移回到边界内，否则没有任何效果。
+
+    <ul>
+      <li>
+        <p>如果精灵太宽而无法适应画布，则会将精灵的左侧与画布的左侧对齐。</p>
+      </li>
+      <li>
+        <p>如果精灵太高而无法适应画布，则会将精灵的顶部与画布的顶部对齐。</p>
+      </li>
+    </ul>
+  </dd>
+  <dt id="Ball.MoveTo" class="method"><i></i> 移动到指定位置(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>设置<code class="highlighter-rouge">球形精灵</code>的 x 和 y 坐标。如果 <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">中心坐标</code></a> 为 <code class="highlighter-rouge">真</code>，则 <code class="highlighter-rouge">球形精灵</code> 的中心将放置在这里；否则，<code class="highlighter-rouge">球形精灵</code>的左上角将放置在指定的坐标处。</dd>
+  <dt id="Ball.MoveToPoint" class="method"><i></i> 移动到坐标(<em class="list">坐标</em>)</dt>
+  <dd>移动球，使其原点位于指定的 x 和 y 坐标处。（与上面方法效果没有区别，仅参数形式差异）</dd>
+  <dt id="Ball.PointInDirection" class="method"><i></i> 转向指定位置(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>转动此<code class="highlighter-rouge">球形精灵</code>方向以指向坐标为 (x, y) 的点。</dd>
+  <dt id="Ball.PointTowards" class="method"><i></i> 转向指定对象(<em class="component">目标精灵</em>)</dt>
+  <dd>转动此<code class="highlighter-rouge">球形精灵</code>方向以指向给定的<code class="highlighter-rouge">目标精灵</code>。新的方向将平行于连接两个精灵中心点的线。</dd>
+</dl>
+
+<h2 id="Canvas"><img src="images/canvas.png" alt="icon" />  画布</h2>
+
+<p>二维触摸感应矩形面板，可以在上面进行绘图和移动精灵。</p>
+
+<p><a href="#Canvas.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>、<a href="#Canvas.PaintColor"><code class="highlighter-rouge">填充色</code></a>、<a href="#Canvas.BackgroundImage"><code class="highlighter-rouge">背景图像</code></a>、<a href="#Canvas.Width"><code class="highlighter-rouge">宽度</code></a> 和 <code class="highlighter-rouge">画布</code> 的 <a href="#Canvas.Height"><code class="highlighter-rouge">高度</code></a> 可以在界面设计视图或程序设计视图中设置。“宽度”和“高度”以像素px为单位测量，并且必须为正值。</p>
+
+<p><code class="highlighter-rouge">画布</code>上的任何位置都可以指定为一对<code class="highlighter-rouge">(X, Y)</code>值，其中：</p>
+
 <ul>
-  <li><a href="#Ball">Ball</a></li>
-  <li><a href="#Canvas">Canvas</a></li>
-  <li><a href="#ImageSprite">ImageSprite</a></li>
+  <li>X 是距<code class="highlighter-rouge">画布</code>左边缘的像素数</li>
+  <li>Y 是距<code class="highlighter-rouge">画布</code>上边缘的像素数</li>
 </ul>
 
-<h2 id="Ball">Ball</h2>
+<p>有一些事件可以告诉何时何地触摸了<code class="highlighter-rouge">画布</code>或拖动了精灵（<a href="#ImageSprite"><code class="highlighter-rouge">球形精灵</code></a> 或 <a href="#Ball"><code class="highlighter-rouge">球形精灵</code></a>）。还有一些用于绘制点、线、圆、形状、圆弧和文本的方法。</p>
 
-<p>A round ‘sprite’ that can be placed on a <a href="#Canvas"><code class="highlighter-rouge">Canvas</code></a>, where it can react to touches and drags,
- interact with other sprites (<a href="#ImageSprite"><code class="highlighter-rouge">ImageSprite</code></a>s and other <code class="highlighter-rouge">Ball</code>s) and the edge of the
- <code class="highlighter-rouge">Canvas</code>, and move according to its property values.</p>
-
-<p>For example, to have a <code class="highlighter-rouge">Ball</code> move 4 pixels toward the top of a <code class="highlighter-rouge">Canvas</code> every 500 milliseconds
- (half second), you would set the <a href="#Ball.Speed"><code class="highlighter-rouge">Speed</code></a> property to 4 [pixels], the
- <a href="#Ball.Interval"><code class="highlighter-rouge">Interval</code></a> property to 500 [milliseconds], the <a href="#Ball.Heading"><code class="highlighter-rouge">Heading</code></a> property to
- 90 [degrees], and the <a href="#Ball.Enabled"><code class="highlighter-rouge">Enabled</code></a> property to <code class="logic block highlighter-rouge">真</code>. These and its
- other properties can be changed at any time.</p>
-
-<p>The difference between a <code class="highlighter-rouge">Ball</code> and an <code class="highlighter-rouge">ImageSprite</code> is that the latter can get its appearance
- from an image file, while a <code class="highlighter-rouge">Ball</code>’s appearance can only be changed by varying its
- <a href="#Ball.PaintColor"><code class="highlighter-rouge">PaintColor</code></a> and <a href="#Ball.Radius"><code class="highlighter-rouge">Radius</code></a> properties.</p>
-
-<h3 id="Ball-Properties">Properties</h3>
+<h3 id="Canvas-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="Ball.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Controls whether the <code class="highlighter-rouge">Ball</code> moves when its speed is non-zero.</dd>
-  <dt id="Ball.Heading" class="number"><em>Heading</em></dt>
-  <dd>The <code class="highlighter-rouge">Ball</code>’s heading in degrees above the positive x-axis. Zero degrees is toward the right
- of the screen; 90 degrees is toward the top of the screen.</dd>
-  <dt id="Ball.Interval" class="number"><em>Interval</em></dt>
-  <dd>The interval in milliseconds at which the <code class="highlighter-rouge">Ball</code>’s position is updated. For example, if the
- <code class="highlighter-rouge">Interval</code> is 50 and the <a href="#Ball.Speed"><code class="highlighter-rouge">Speed</code></a> is 10, then the <code class="highlighter-rouge">Ball</code> will move 10 pixels
- every 50 milliseconds.</dd>
-  <dt id="Ball.OriginAtCenter" class="boolean wo do"><em>OriginAtCenter</em></dt>
-  <dd>Whether the x- and y-coordinates should represent the center of the <code class="highlighter-rouge">Ball</code>
- (<code class="logic block highlighter-rouge">真</code>) or its left and top edges (<code class="logic block highlighter-rouge">假</code>).</dd>
-  <dt id="Ball.PaintColor" class="color"><em>PaintColor</em></dt>
-  <dd>The color of the <code class="highlighter-rouge">Ball</code>.</dd>
-  <dt id="Ball.Radius" class="number"><em>Radius</em></dt>
-  <dd>The distance from the center of the <code class="highlighter-rouge">Ball</code> to its edge.</dd>
-  <dt id="Ball.Speed" class="number"><em>Speed</em></dt>
-  <dd>The speed at which the <code class="highlighter-rouge">Ball</code> moves. The <code class="highlighter-rouge">Ball</code> moves this many pixels every
- <a href="#Ball.Interval"><code class="highlighter-rouge">Interval</code></a> milliseconds if <a href="#Ball.Enabled"><code class="highlighter-rouge">Enabled</code></a> is <code class="logic block highlighter-rouge">真</code>.</dd>
-  <dt id="Ball.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Sets whether sprite should be visible.</dd>
-  <dt id="Ball.X" class="number"><em>X</em></dt>
-  <dd>The horizontal coordinate of the <code class="highlighter-rouge">Ball</code>, increasing as the <code class="highlighter-rouge">Ball</code> moves right. If the property
- <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">OriginAtCenter</code></a> is true, the coordinate is for the center of the <code class="highlighter-rouge">Ball</code>;
- otherwise, it is for the leftmost point of the <code class="highlighter-rouge">Ball</code>.</dd>
-  <dt id="Ball.Y" class="number"><em>Y</em></dt>
-  <dd>The vertical coordinate of the <code class="highlighter-rouge">Ball</code>, increasing as the <code class="highlighter-rouge">Ball</code> moves down. If the property
- <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">OriginAtCenter</code></a> is true, the coordinate is for the center of the <code class="highlighter-rouge">Ball</code>
- otherwise, it is for the uppermost point of the <code class="highlighter-rouge">Ball</code>.</dd>
-  <dt id="Ball.Z" class="number"><em>Z</em></dt>
-  <dd>How the Ball should be layered relative to other Balls and ImageSprites, with higher-numbered layers in front of lower-numbered layers.</dd>
+  <dt id="Canvas.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd>将画布的背景颜色指定为 alpha-red-green-blue 整数，即<code class="highlighter-rouge">0xAARRGGBB</code>。
+
+    <p>alpha<code class="highlighter-rouge">00</code>表示完全透明，<code class="highlighter-rouge">FF</code>表示不透明。仅当没有背景图像时才显示背景颜色，即背景图像显示优先于。</p>
+  </dd>
+  <dt id="Canvas.BackgroundImage" class="text"><em>背景图像</em></dt>
+  <dd>指定<code class="highlighter-rouge">画布</code>背景图像的文件名称。</dd>
+  <dt id="Canvas.BackgroundImageinBase64" class="text wo bo"><em>背景Base64图像</em></dt>
+  <dd>设置Base64格式的背景图片。这需要 API 级别 &gt;= 8。对于 API 级别低于 8 的设备，设置此选项最终会得到空白背景。</dd>
+  <dt id="Canvas.ExtendMovesOutsideCanvas" class="boolean"><em>可移动到画布外</em></dt>
+  <dd>确定是否可以移动超出画布边界。默认为 <code class="highlighter-rouge">假</code>，通常应该是 <code class="highlighter-rouge">假</code>，提供该属性是为了向后兼容。</dd>
+  <dt id="Canvas.FontSize" class="number"><em>字体大小</em></dt>
+  <dd>指定画布上绘制的文本的字体大小。</dd>
+  <dt id="Canvas.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">画布</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="Canvas.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">画布</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
+  <dt id="Canvas.LineWidth" class="number"><em>线宽</em></dt>
+  <dd>指定在画布上绘制的线条的宽度。</dd>
+  <dt id="Canvas.PaintColor" class="color"><em>填充色</em></dt>
+  <dd>将绘画颜色指定为 alpha-red-green-blue 整数，即<code class="highlighter-rouge">0xAARRGGBB</code>。
+
+    <p>alpha<code class="highlighter-rouge">00</code>表示完全透明，<code class="highlighter-rouge">FF</code>表示不透明。</p>
+  </dd>
+  <dt id="Canvas.TapThreshold" class="number"><em>点击阈值</em></dt>
+  <dd>指定区分拖动和点击的移动阈值。</dd>
+  <dt id="Canvas.TextAlignment" class="number"><em>文本对齐</em></dt>
+  <dd>指定画布文本的对齐方式：
+
+    <ul>
+      <li>
+        <p>居中</p>
+      </li>
+      <li>
+        <p>正常（从 <a href="#Canvas.DrawText"><code class="highlighter-rouge">绘制文本</code></a> 或 <a href="#Canvas.DrawTextAtAngle"><code class="highlighter-rouge">沿角度绘制文本</code></a> 中的指定点开始）</p>
+      </li>
+      <li>
+        <p>相反（从 <a href="#Canvas.DrawText"><code class="highlighter-rouge">绘制文本</code></a> 或 <a href="#Canvas.DrawTextAtAngle"><code class="highlighter-rouge">沿角度绘制文本</code></a> 中的指定点结束）</p>
+      </li>
+    </ul>
+  </dd>
+  <dt id="Canvas.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">画布</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">画布</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="Canvas.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">画布</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="Canvas.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">画布</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
 </dl>
 
-<h3 id="Ball-Events">Events</h3>
+<h3 id="Canvas-Events">事件</h3>
 
 <dl class="events">
-  <dt id="Ball.CollidedWith">CollidedWith(<em class="component">other</em>)</dt>
-  <dd>Event handler called when two enabled sprites (<a href="#Ball"><code class="highlighter-rouge">Ball</code></a>s or <a href="#ImageSprite"><code class="highlighter-rouge">ImageSprite</code></a>s)
- collide. Note that checking for collisions with a rotated <code class="highlighter-rouge">ImageSprite</code> currently
- checks against its unrotated position. Therefore, collision
- checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.</dd>
-  <dt id="Ball.Dragged">Dragged(<em class="number">startX</em>,<em class="number">startY</em>,<em class="number">prevX</em>,<em class="number">prevY</em>,<em class="number">currentX</em>,<em class="number">currentY</em>)</dt>
-  <dd>Event handler for Dragged events.  On all calls, the starting coordinates
- are where the screen was first touched, and the “current” coordinates
- describe the endpoint of the current line segment.  On the first call
- within a given drag, the “previous” coordinates are the same as the
- starting coordinates; subsequently, they are the “current” coordinates
- from the prior call. Note that the <code class="highlighter-rouge">Ball</code> won’t actually move
- anywhere in response to the Dragged event unless
- <a href="#Ball.MoveTo"><code class="highlighter-rouge">MoveTo</code></a> is specifically called.</dd>
-  <dt id="Ball.EdgeReached">EdgeReached(<em class="number">edge</em>)</dt>
-  <dd>Event handler called when the <code class="highlighter-rouge">Ball</code> reaches an <code class="variable block highlighter-rouge">edge</code> of the screen.
- If <a href="#Ball.Bounce"><code class="highlighter-rouge">Bounce</code></a> is then called with that edge, the sprite will appear to bounce off
- of the edge it reached. Edge here is represented as an integer that indicates one of eight
- directions north(1), northeast(2), east(3), southeast(4), south (-1), southwest(-2), west(-3),
- and northwest(-4).</dd>
-  <dt id="Ball.Flung">Flung(<em class="number">x</em>,<em class="number">y</em>,<em class="number">speed</em>,<em class="number">heading</em>,<em class="number">xvel</em>,<em class="number">yvel</em>)</dt>
-  <dd>When a fling gesture (quick swipe) is made on the sprite: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling’s vector.</dd>
-  <dt id="Ball.NoLongerCollidingWith">NoLongerCollidingWith(<em class="component">other</em>)</dt>
-  <dd>Event indicating that a pair of sprites are no longer colliding.</dd>
-  <dt id="Ball.TouchDown">TouchDown(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user begins touching the sprite (places finger on sprite and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas</dd>
-  <dt id="Ball.TouchUp">TouchUp(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user stops touching the sprite (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas.</dd>
-  <dt id="Ball.Touched">Touched(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user touches the sprite and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.</dd>
+  <dt id="Canvas.Dragged">被拖动时(<em class="number">起点X坐标</em>,<em class="number">起点Y坐标</em>,<em class="number">前点X坐标</em>,<em class="number">前点Y坐标</em>,<em class="number">当前X坐标</em>,<em class="number">当前Y坐标</em>,<em class="boolean">有精灵被拖动</em>)</dt>
+  <dd>当用户从一个点（前点X坐标，前点Y坐标）拖动到另一点（当前X坐标，当前Y坐标）时。坐标（起点X坐标，起点Y坐标）指示用户第一次触摸屏幕的位置，<code class="highlighter-rouge">有精灵被拖动</code>表示当前有一个精灵正在被拖动（<code class="highlighter-rouge">假</code>则表示当前没有精灵正在被拖动）。</dd>
+  <dt id="Canvas.Flung">被划动时(<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="number">速度</em>,<em class="number">方向</em>,<em class="number">速度X分量</em>,<em class="number">速度Y分量</em>,<em class="boolean">有精灵被划动</em>)</dt>
+  <dd>当在画布上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
+
+    <p>该方法还提供投射的速度（每毫秒像素数）和<a href="#Ball.Heading">方向</a>（0-360 度），以及投射矢量的 x 速度和 y 速度分量。</p>
+
+    <p>如果精灵位于猛击手势的起始点附近，则值<code class="highlighter-rouge">有精灵被划动</code>为 <code class="highlighter-rouge">真</code>。</p>
+  </dd>
+  <dt id="Canvas.TouchDown">被按压时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="Canvas.TouchUp">被松开时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户停止触摸精灵时（在 <code class="highlighter-rouge">被按压</code> 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="Canvas.Touched">被触碰时(<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="boolean">有精灵被触碰</em>)</dt>
+  <dd>当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。
+
+    <p>如果同时也触摸到了精灵，则 <code class="highlighter-rouge">有精灵被触碰</code> 为 <code class="highlighter-rouge">真</code>，否则为 <code class="highlighter-rouge">假</code>。</p>
+  </dd>
 </dl>
 
-<h3 id="Ball-Methods">Methods</h3>
+<h3 id="Canvas-Methods">方法</h3>
 
 <dl class="methods">
-  <dt id="Ball.Bounce" class="method"><i></i> Bounce(<em class="number">edge</em>)</dt>
-  <dd>Makes this <code class="highlighter-rouge">Ball</code> bounce, as if off a wall. For normal bouncing, the <code class="highlighter-rouge">edge</code> argument should
- be the one returned by <a href="#Ball.EdgeReached"><code class="highlighter-rouge">EdgeReached</code></a>.</dd>
-  <dt id="Ball.CollidingWith" class="method returns boolean"><i></i> CollidingWith(<em class="component">other</em>)</dt>
-  <dd>Indicates whether a collision has been registered between this <code class="highlighter-rouge">Ball</code>
- and the passed <code class="highlighter-rouge">other</code> sprite.</dd>
-  <dt id="Ball.MoveIntoBounds" class="method"><i></i> MoveIntoBounds()</dt>
-  <dd>Moves the sprite back in bounds if part of it extends out of bounds,
- having no effect otherwise. If the sprite is too wide to fit on the
- canvas, this aligns the left side of the sprite with the left side of the
- canvas. If the sprite is too tall to fit on the canvas, this aligns the
- top side of the sprite with the top side of the canvas.</dd>
-  <dt id="Ball.MoveTo" class="method"><i></i> MoveTo(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Sets the <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> coordinates of the <code class="highlighter-rouge">Ball</code>. If <a href="#Ball.OriginAtCenter"><code class="highlighter-rouge">OriginAtCenter</code></a> is true,
- the center of the <code class="highlighter-rouge">Ball</code> will be placed here. Otherwise, the top left edge of the <code class="highlighter-rouge">Ball</code> will
- be placed at the specified coordinates.</dd>
-  <dt id="Ball.MoveToPoint" class="method"><i></i> MoveToPoint(<em class="list">coordinates</em>)</dt>
-  <dd>Moves the Ball so that its origin is at the specified x and y coordinates.</dd>
-  <dt id="Ball.PointInDirection" class="method"><i></i> PointInDirection(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Turns this <code class="highlighter-rouge">Ball</code> to point toward the point with the coordinates <code class="highlighter-rouge">(x, y)</code>.</dd>
-  <dt id="Ball.PointTowards" class="method"><i></i> PointTowards(<em class="component">target</em>)</dt>
-  <dd>Turns this <code class="highlighter-rouge">Ball</code> to point towards a given <code class="highlighter-rouge">target</code> sprite. The new heading will be parallel
- to the line joining the centerpoints of the two sprites.</dd>
+  <dt id="Canvas.Clear" class="method"><i></i> 清除画布()</dt>
+  <dd>清除画布，但不删除背景图像（如果设置了的话）。</dd>
+  <dt id="Canvas.DrawArc" class="method"><i></i> 画弧(<em class="number">左</em>,<em class="number">上</em>,<em class="number">右</em>,<em class="number">下</em>,<em class="number">起始角度</em>,<em class="number">扫过角度</em>,<em class="boolean">是否包含圆心</em>,<em class="boolean">填充</em>)</dt>
+  <dd>通过从指定椭圆（由左、上、右和下指定）绘制圆弧，在画布上绘制圆弧。
+
+    <p>向右旋转时起始角度为0，顺时针旋转时起始角度增大。</p>
+
+    <p>当 <code class="highlighter-rouge">是否包含圆心</code> 为 <code class="highlighter-rouge">真</code> 时，将绘制扇形而不是圆弧。</p>
+
+    <p>当 <code class="highlighter-rouge">填充</code> 为 <code class="highlighter-rouge">真</code> 时，将绘制填充弧（或扇形），而不仅仅是轮廓。</p>
+
+    <p>详细用法请参考<a href="../creative/DrawArc.html">《App Inventor 2 绘图之画布画弧(DrawArc)函数的用法》</a>。</p>
+  </dd>
+  <dt id="Canvas.DrawCircle" class="method"><i></i> 画圆(<em class="number">圆心x坐标</em>,<em class="number">圆心y坐标</em>,<em class="number">半径</em>,<em class="boolean">填充</em>)</dt>
+  <dd>在画布上以给定坐标为中心绘制一个具有给定半径的圆（<code class="highlighter-rouge">填充</code>参数指定是否填充）。</dd>
+  <dt id="Canvas.DrawLine" class="method"><i></i> 画直线(<em class="number">x1坐标</em>,<em class="number">y1坐标</em>,<em class="number">x2坐标</em>,<em class="number">y2坐标</em>)</dt>
+  <dd>在画布上给定坐标之间(从x1,y1点到x2,y2点)绘制一条线。
+
+    <p>典型用法参考（实现画笔绘画功能）：</p>
+
+    <p><img src="images/画布画线.png" alt="画布画线" /></p>
+  </dd>
+  <dt id="Canvas.DrawPoint" class="method"><i></i> 画点(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>在画布上给定坐标处绘制一个点。</dd>
+  <dt id="Canvas.DrawShape" class="method"><i></i> 画多边形(<em class="list">坐标点列表</em>,<em class="boolean">填充</em>)</dt>
+  <dd>在画布上绘制多边形。
+
+    <p><code class="highlighter-rouge">坐标点列表</code> 应该是一个包含子列表（其中两个数字代表坐标）的列表。</p>
+
+    <p>第一个点和最后一个点不需要相同。例如 ((x1 y1) (x2 y2) (x3 y3)) 当 <code class="highlighter-rouge">填充</code> 为 <code class="highlighter-rouge">真</code> 时，形状将被填充颜色。</p>
+  </dd>
+  <dt id="Canvas.DrawText" class="method"><i></i> 绘制文本(<em class="text">文本</em>,<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>使用 <a href="#Canvas.FontSize"><code class="highlighter-rouge">字体大小</code></a> 和 <a href="#Canvas.TextAlignment"><code class="highlighter-rouge">文本对齐</code></a> 属性的值绘制相对于指定坐标的指定文本。</dd>
+  <dt id="Canvas.DrawTextAtAngle" class="method"><i></i> 沿角度绘制文本(<em class="text">文本</em>,<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="number">angle</em>)</dt>
+  <dd>使用 <a href="#Canvas.FontSize"><code class="highlighter-rouge">字体大小</code></a> 和 <a href="#Canvas.TextAlignment"><code class="highlighter-rouge">文本对齐</code></a> 属性的值从指定坐标开始以<strong>指定角度</strong>绘制指定文本。</dd>
+  <dt id="Canvas.GetBackgroundPixelColor" class="method returns color"><i></i> 获取背景像素色值(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>获取给定坐标处像素的颜色，不包括精灵。</dd>
+  <dt id="Canvas.GetPixelColor" class="method returns color"><i></i> 获取像素色值(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>获取给定坐标处像素的颜色，包括精灵。</dd>
+  <dt id="Canvas.Save" class="method returns text"><i></i> 保存()</dt>
+  <dd>将此画布的图片（包括背景图像和绘制内容）保存到设备的外部存储(file:///)中。如果发生错误，将触发<a href="userinterface.html#Screen">屏幕</a>的 <a href="userinterface.html#Screen.ErrorOccurred">出现错误时</a> 事件。
+
+    <p>此函数的<code class="highlighter-rouge">返回值</code>是已保存的图片的路径。</p>
+  </dd>
+  <dt id="Canvas.SaveAs" class="method returns text"><i></i> 另存为…(<em class="text">文件名</em>)</dt>
+  <dd>将此画布的图片以指定的文件名保存到设备的外部存储文件中，文件名必须以“.jpg”、“.jpeg”或“.png”之一结尾（文件类型：JPEG 或 PNG）。</dd>
+  <dt id="Canvas.SetBackgroundPixelColor" class="method"><i></i> 设置背景像素色值(<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="color">颜色</em>)</dt>
+  <dd>设置给定像素的颜色。如果坐标超出范围，则不会生效。</dd>
 </dl>
 
-<h2 id="Canvas">Canvas</h2>
+<h2 id="ImageSprite"><img src="images/imagesprite.png" alt="icon" />  图像精灵</h2>
 
-<p>A two-dimensional touch-sensitive rectangular panel on which drawing can
- be done and sprites can be moved.</p>
+<p>可以放置在 <a href="#Canvas"><code class="highlighter-rouge">画布</code></a> 上的“精灵”，它可以对触摸和拖动做出反应，与其他精灵（<a href="#Ball"><code class="highlighter-rouge">球形精灵</code></a> 和其他 <code class="highlighter-rouge">图像精灵</code> 进行交互） ) 和 <code class="highlighter-rouge">画布</code> 的边缘，并根据其属性值移动。</p>
 
-<p>The <a href="#Canvas.BackgroundColor"><code class="highlighter-rouge">BackgroundColor</code></a>, <a href="#Canvas.PaintColor"><code class="highlighter-rouge">PaintColor</code></a>, <a href="#Canvas.BackgroundImage"><code class="highlighter-rouge">BackgroundImage</code></a>,
- <a href="#Canvas.Width"><code class="highlighter-rouge">Width</code></a>, and <a href="#Canvas.Height"><code class="highlighter-rouge">Height</code></a> of the <code class="highlighter-rouge">Canvas</code> can be set in either the Designer or in
- the Blocks Editor. The <code class="highlighter-rouge">Width</code> and <code class="highlighter-rouge">Height</code> are measured in pixels and must be positive.</p>
+<p>它的外观是其 <a href="#ImageSprite.Picture"><code class="highlighter-rouge">图片</code></a> 属性中指定的图像的外观（除非其 <a href="#ImageSprite.Visible"><code class="highlighter-rouge">可见性</code></a> 属性是 <code class="logic block highlighter-rouge">假</code>）。</p>
 
-<p>Any location on the <code class="highlighter-rouge">Canvas</code> can be specified as a pair of <code class="highlighter-rouge">(X, Y)</code> values, where</p>
+<p>例如，要让<code class="highlighter-rouge">图像精灵</code>每 1000 毫秒（一秒）向左移动 10 个像素，可以将 <a href="#ImageSprite.Speed"><code class="highlighter-rouge">速度</code></a> 属性设置为 10 (pixels)，<a href="#ImageSprite.Interval"><code class="highlighter-rouge">间隔</code> </a> 属性设置为 1000 (毫秒)，<a href="#ImageSprite.Heading"><code class="highlighter-rouge">方向</code></a> 属性设置为 180 (度)，<a href="#ImageSprite.Enabled"><code class="highlighter-rouge">启用</code></a> 属性设置为 <code class="logic block highlighter-rouge">真 </code>。</p>
 
-<ul>
-  <li>X is the number of pixels away from the left edge of the <code class="highlighter-rouge">Canvas</code></li>
-  <li>Y is the number of pixels away from the top edge of the <code class="highlighter-rouge">Canvas</code></li>
-</ul>
+<p><a href="#ImageSprite.Rotates"><code class="highlighter-rouge">旋转</code></a> 属性为 <code class="logic block highlighter-rouge">真</code> 的精灵将随着精灵方向的变化而旋转其图像。</p>
 
-<p>There are events to tell when and where a <code class="highlighter-rouge">Canvas</code> has been touched or a Sprite
- (<a href="#ImageSprite"><code class="highlighter-rouge">ImageSprite</code></a> or <a href="#Ball"><code class="highlighter-rouge">Ball</code></a>) has been dragged. There are also methods for drawing
- points, lines, circles, shapes, arcs, and text.</p>
+<p><em>检查与旋转精灵的碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。</em></p>
 
-<h3 id="Canvas-Properties">Properties</h3>
+<p>任何精灵属性都可以通过程序控制随时修改。</p>
+
+<h3 id="ImageSprite-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="Canvas.BackgroundColor" class="color"><em>BackgroundColor</em></dt>
-  <dd>Specifies the Canvas’s background color as an alpha-red-green-blue
- integer, i.e., <code class="highlighter-rouge">0xAARRGGBB</code>.  An alpha of <code class="highlighter-rouge">00</code>
- indicates fully transparent and <code class="highlighter-rouge">FF</code> means opaque.
- The background color only shows if there is no background image.</dd>
-  <dt id="Canvas.BackgroundImage" class="text"><em>BackgroundImage</em></dt>
-  <dd>Specifies the name of a file containing the background image for the <code class="highlighter-rouge">Canvas</code>.</dd>
-  <dt id="Canvas.BackgroundImageinBase64" class="text wo bo"><em>BackgroundImageinBase64</em></dt>
-  <dd>Set the background image in Base64 format. This requires API level &gt;= 8. For devices with API level less than 8, setting this will end up with an empty background.</dd>
-  <dt id="Canvas.ExtendMovesOutsideCanvas" class="boolean"><em>ExtendMovesOutsideCanvas</em></dt>
-  <dd>Determines whether moves can extend beyond the canvas borders.   Default is false. This should normally be false, and the property is provided for backwards compatibility.</dd>
-  <dt id="Canvas.FontSize" class="number"><em>FontSize</em></dt>
-  <dd>Specifies the font size of text drawn on the Canvas.</dd>
-  <dt id="Canvas.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Canvas</code>’s vertical height, measured in pixels.</dd>
-  <dt id="Canvas.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Canvas</code>’s vertical height as a percentage
- of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
-  <dt id="Canvas.LineWidth" class="number"><em>LineWidth</em></dt>
-  <dd>Specifies the width of lines drawn on the Canvas.</dd>
-  <dt id="Canvas.PaintColor" class="color"><em>PaintColor</em></dt>
-  <dd>Specifies the paint color as an alpha-red-green-blue integer,
- i.e., <code class="highlighter-rouge">0xAARRGGBB</code>.  An alpha of <code class="highlighter-rouge">00</code> indicates fully
- transparent and <code class="highlighter-rouge">FF</code> means opaque.</dd>
-  <dt id="Canvas.TapThreshold" class="number"><em>TapThreshold</em></dt>
-  <dd>Specifies the movement threshold to differentiate a drag from a tap.</dd>
-  <dt id="Canvas.TextAlignment" class="number"><em>TextAlignment</em></dt>
-  <dd>Specifies the alignment of the canvas’s text: center, normal
- (starting at the specified point in <a href="#Canvas.DrawText"><code class="highlighter-rouge">DrawText</code></a> or
- <a href="#Canvas.DrawTextAtAngle"><code class="highlighter-rouge">DrawTextAtAngle</code></a>),
- or opposite (ending at the specified point in
- <a href="#Canvas.DrawText"><code class="highlighter-rouge">DrawText</code></a> or
- <a href="#Canvas.DrawTextAtAngle"><code class="highlighter-rouge">DrawTextAtAngle</code></a>).</dd>
-  <dt id="Canvas.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">Canvas</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">真</code>
- if the <code class="highlighter-rouge">Canvas</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
-  <dt id="Canvas.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Canvas</code>, measured in pixels.</dd>
-  <dt id="Canvas.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Canvas</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dt id="ImageSprite.Enabled" class="boolean"><em>启用</em></dt>
+  <dd>控制<code class="highlighter-rouge">图像精灵</code>在其速度非零时是否移动。</dd>
+  <dt id="ImageSprite.Heading" class="number"><em>方向</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code> 在 x 轴方向上以度数表示的方向，图示如下：</dd>
 </dl>
 
-<h3 id="Canvas-Events">Events</h3>
+<p><img src="images/direction.jpg" alt="方向含义" /></p>
+
+<dl>
+  <dt id="ImageSprite.Height" class="number bo"><em>高度</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code> 的高度（以像素px为单位）。</dd>
+  <dt id="ImageSprite.Interval" class="number"><em>间隔</em></dt>
+  <dd>更新<code class="highlighter-rouge">图像精灵</code>位置的时间间隔（以毫秒为单位）。例如，如果<code class="highlighter-rouge">间隔</code> 为 50，<a href="#ImageSprite.Speed"><code class="highlighter-rouge">速度</code></a> 为 10，则<code class="highlighter-rouge">图像精灵</code>将每50毫秒移动10个像素。</dd>
+  <dt id="ImageSprite.Picture" class="text"><em>图片</em></dt>
+  <dd>指定精灵图片的路径。</dd>
+  <dt id="ImageSprite.Rotates" class="boolean"><em>旋转</em></dt>
+  <dd>如果为 <code class="highlighter-rouge">真</code>，则精灵图像将旋转以匹配精灵的方向。
+
+    <p>如果为 <code class="highlighter-rouge">假</code>，则当精灵改变方向时，精灵图像不会旋转。</p>
+
+    <p>精灵围绕其中心点旋转。</p>
+  </dd>
+  <dt id="ImageSprite.Speed" class="number"><em>速度</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code>移动的速度。如果 <a href="#ImageSprite.Enabled"><code class="highlighter-rouge">启用</code></a> 是<code class="logic block highlighter-rouge">真</code>，<code class="highlighter-rouge">图像精灵</code>每隔<a href="#ImageSprite.Interval"><code class="highlighter-rouge">间隔</code></a>毫秒移动的像素数量。</dd>
+  <dt id="ImageSprite.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置精灵是否可见。</dd>
+  <dt id="ImageSprite.Width" class="number bo"><em>宽度</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code> 的宽度（以像素px为单位）。</dd>
+  <dt id="ImageSprite.X" class="number"><em>X坐标</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code> 左边缘的水平坐标，随着 <code class="highlighter-rouge">图像精灵</code> 向右移动而增加。</dd>
+  <dt id="ImageSprite.Y" class="number"><em>Y坐标</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code> 上边缘的垂直坐标，随着 <code class="highlighter-rouge">图像精灵</code> 向下移动而增加。</dd>
+  <dt id="ImageSprite.Z" class="number"><em>Z坐标</em></dt>
+  <dd><code class="highlighter-rouge">图像精灵</code>应如何相对于其他<code class="highlighter-rouge">球形精灵</code>和<code class="highlighter-rouge">图像精灵</code>分层，编号较高的层位于编号较低的层之前。</dd>
+</dl>
+
+<h3 id="ImageSprite-Events">事件</h3>
 
 <dl class="events">
-  <dt id="Canvas.Dragged">Dragged(<em class="number">startX</em>,<em class="number">startY</em>,<em class="number">prevX</em>,<em class="number">prevY</em>,<em class="number">currentX</em>,<em class="number">currentY</em>,<em class="boolean">draggedAnySprite</em>)</dt>
-  <dd>When the user does a drag from one point (prevX, prevY) to
- another (x, y).  The pair (startX, startY) indicates where the
- user first touched the screen, and “draggedAnySprite” indicates whether a
- sprite is being dragged.</dd>
-  <dt id="Canvas.Flung">Flung(<em class="number">x</em>,<em class="number">y</em>,<em class="number">speed</em>,<em class="number">heading</em>,<em class="number">xvel</em>,<em class="number">yvel</em>,<em class="boolean">flungSprite</em>)</dt>
-  <dd>When a fling gesture (quick swipe) is made on the canvas: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling’s vector. The value “flungSprite” is true if a sprite
- was located near the the starting point of the fling gesture.</dd>
-  <dt id="Canvas.TouchDown">TouchDown(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user begins touching the canvas (places finger on canvas and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas</dd>
-  <dt id="Canvas.TouchUp">TouchUp(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user stops touching the canvas (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas</dd>
-  <dt id="Canvas.Touched">Touched(<em class="number">x</em>,<em class="number">y</em>,<em class="boolean">touchedAnySprite</em>)</dt>
-  <dd>When the user touches the canvas and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.  TouchedAnySprite
- is true if the same touch also touched a sprite, and false otherwise.</dd>
+  <dt id="ImageSprite.CollidedWith">被碰撞时(<em class="component">其他精灵</em>)</dt>
+  <dd>事件将在两个启用的精灵（<a href="#Ball"><code class="highlighter-rouge">球形精灵</code></a>或<a href="#ImageSprite"><code class="highlighter-rouge">图像精灵</code></a>）碰撞时触发。
+
+    <p><em>请注意，检查与旋转的<code class="highlighter-rouge">图像精灵</code>碰撞当前会检查精灵的未旋转位置，因此对于旋转的高窄或矮宽精灵来说，碰撞检查将不准确。</em></p>
+  </dd>
+  <dt id="ImageSprite.Dragged">被拖动时(<em class="number">起点X坐标</em>,<em class="number">起点Y坐标</em>,<em class="number">前点X坐标</em>,<em class="number">前点Y坐标</em>,<em class="number">当前X坐标</em>,<em class="number">当前Y坐标</em>)</dt>
+  <dd>拖动事件的处理程序。在所有调用中，“起始”坐标是第一次触摸屏幕的位置，“当前”坐标描述当前线段的端点。
+
+    <p>在给定拖动中的第一次调用时，“前一个”坐标与起始坐标相同；随后，它们是先前调用的“当前”坐标。</p>
+
+    <p>请注意，除非专门调用 <a href="#ImageSprite.MoveTo"><code class="highlighter-rouge">移动到指定位置</code></a>，否则 <code class="highlighter-rouge">图像精灵</code> 实际上不会移动到任何地方以响应 <code class="highlighter-rouge">被拖动</code> 事件。</p>
+  </dd>
+  <dt id="ImageSprite.EdgeReached">到达边缘时(<em class="number">边缘数值</em>)</dt>
+  <dd>当<code class="highlighter-rouge">图像精灵</code>到达屏幕的边缘时调用事件处理程序。
+
+    <p>如果随后使用该边缘数值调用 <a href="#ImageSprite.Bounce"><code class="highlighter-rouge">反弹</code></a>方法，则精灵将从它到达的边缘开始反弹。</p>
+
+    <p>这里的边缘表示为一个整数，表示八个方向之一：</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>-4：西北</td>
+          <td>1：北</td>
+          <td>2：东北</td>
+        </tr>
+        <tr>
+          <td>-3：西</td>
+          <td><strong>边缘数值</strong></td>
+          <td>3：东</td>
+        </tr>
+        <tr>
+          <td>-2：西南</td>
+          <td>-1：南</td>
+          <td>4：东南</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+  <dt id="ImageSprite.Flung">被划动时(<em class="number">x坐标</em>,<em class="number">y坐标</em>,<em class="number">速度</em>,<em class="number">方向</em>,<em class="number">速度X分量</em>,<em class="number">速度Y分量</em>)</dt>
+  <dd>当在精灵上进行猛击手势（快速滑动）时：提供猛击开始的 (x,y) 坐标位置，相对于画布的左上角。
+
+    <p>该方法还提供投射的速度（每毫秒像素数）和<a href="#ImageSprite.Heading">方向</a>（0-360 度），以及投射矢量的 x 速度和 y 速度分量。</p>
+  </dd>
+  <dt id="ImageSprite.NoLongerCollidingWith">结束碰撞时(<em class="component">其他精灵</em>)</dt>
+  <dd>该事件表示一对精灵不再发生碰撞。</dd>
+  <dt id="ImageSprite.TouchDown">被按压时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户开始触摸精灵时（将手指放在精灵上并停留）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="ImageSprite.TouchUp">被松开时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户停止触摸精灵时（在 <code class="highlighter-rouge">被按压</code> 事件后抬起手指）：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
+  <dt id="ImageSprite.Touched">被触碰时(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>当用户触摸精灵然后立即抬起手指时：提供相对于画布左上角的触摸 (x,y) 坐标位置。</dd>
 </dl>
 
-<h3 id="Canvas-Methods">Methods</h3>
+<h3 id="ImageSprite-Methods">方法</h3>
 
 <dl class="methods">
-  <dt id="Canvas.Clear" class="method"><i></i> Clear()</dt>
-  <dd>Clears the canvas, without removing the background image, if one
- was provided.</dd>
-  <dt id="Canvas.DrawArc" class="method"><i></i> DrawArc(<em class="number">left</em>,<em class="number">top</em>,<em class="number">right</em>,<em class="number">bottom</em>,<em class="number">startAngle</em>,<em class="number">sweepAngle</em>,<em class="boolean">useCenter</em>,<em class="boolean">fill</em>)</dt>
-  <dd>Draw an arc on Canvas, by drawing an arc from a specified oval (specified by left, top, right &amp; bottom).
- Start angle is 0 when heading to the right, and increase when rotate clockwise.
- When useCenter is true, a sector will be drawed instead of an arc.
- When fill is true, a filled arc (or sector) will be drawed instead of just an outline.</dd>
-  <dt id="Canvas.DrawCircle" class="method"><i></i> DrawCircle(<em class="number">centerX</em>,<em class="number">centerY</em>,<em class="number">radius</em>,<em class="boolean">fill</em>)</dt>
-  <dd>Draws a circle (filled in) with the given radius centered at the given coordinates on the
- Canvas.</dd>
-  <dt id="Canvas.DrawLine" class="method"><i></i> DrawLine(<em class="number">x1</em>,<em class="number">y1</em>,<em class="number">x2</em>,<em class="number">y2</em>)</dt>
-  <dd>Draws a line between the given coordinates on the canvas.</dd>
-  <dt id="Canvas.DrawPoint" class="method"><i></i> DrawPoint(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Draws a point at the given coordinates on the canvas.</dd>
-  <dt id="Canvas.DrawShape" class="method"><i></i> DrawShape(<em class="list">pointList</em>,<em class="boolean">fill</em>)</dt>
-  <dd>Draws a shape on the canvas.
- pointList should be a list contains sub-lists with two number which represents a coordinate.
- The first point and last point does not need to be the same. e.g. ((x1 y1) (x2 y2) (x3 y3))
- When fill is true, the shape will be filled.</dd>
-  <dt id="Canvas.DrawText" class="method"><i></i> DrawText(<em class="text">text</em>,<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Draws the specified text relative to the specified coordinates
- using the values of the <a href="#Canvas.FontSize"><code class="highlighter-rouge">FontSize</code></a> and
- <a href="#Canvas.TextAlignment"><code class="highlighter-rouge">TextAlignment</code></a> properties.</dd>
-  <dt id="Canvas.DrawTextAtAngle" class="method"><i></i> DrawTextAtAngle(<em class="text">text</em>,<em class="number">x</em>,<em class="number">y</em>,<em class="number">angle</em>)</dt>
-  <dd>Draws the specified text starting at the specified coordinates
- at the specified angle using the values of the <a href="#Canvas.FontSize"><code class="highlighter-rouge">FontSize</code></a> and
- <a href="#Canvas.TextAlignment"><code class="highlighter-rouge">TextAlignment</code></a> properties.</dd>
-  <dt id="Canvas.GetBackgroundPixelColor" class="method returns color"><i></i> GetBackgroundPixelColor(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Gets the color of the given pixel, ignoring sprites.</dd>
-  <dt id="Canvas.GetPixelColor" class="method returns color"><i></i> GetPixelColor(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Gets the color of the given pixel, including sprites.</dd>
-  <dt id="Canvas.Save" class="method returns text"><i></i> Save()</dt>
-  <dd>Saves a picture of this Canvas to the device’s external storage.
- If an error occurs, the Screen’s ErrorOccurred event will be called.</dd>
-  <dt id="Canvas.SaveAs" class="method returns text"><i></i> SaveAs(<em class="text">fileName</em>)</dt>
-  <dd>Saves a picture of this Canvas to the device’s external storage in the file
- named fileName. fileName must end with one of “.jpg”, “.jpeg”, or “.png”
- (which determines the file type: JPEG, or PNG).</dd>
-  <dt id="Canvas.SetBackgroundPixelColor" class="method"><i></i> SetBackgroundPixelColor(<em class="number">x</em>,<em class="number">y</em>,<em class="color">color</em>)</dt>
-  <dd>Sets the color of the given pixel.  This has no effect if the
- coordinates are out of bounds.</dd>
-</dl>
+  <dt id="ImageSprite.Bounce" class="method"><i></i> 反弹(<em class="number">边缘数值</em>)</dt>
+  <dd>使这个<code class="highlighter-rouge">图像精灵</code>弹起，就像从墙上弹起来一样。对于正常反弹，<code class="highlighter-rouge">边缘数值</code>参数应该是 <a href="#ImageSprite.EdgeReached"><code class="highlighter-rouge">到达边缘时</code></a> 返回的参数。</dd>
+  <dt id="ImageSprite.CollidingWith" class="method returns boolean"><i></i> 碰撞检测(<em class="component">其他精灵</em>)</dt>
+  <dd>表示此<code class="highlighter-rouge">图像精灵</code>和传递的<code class="highlighter-rouge">其他精灵</code>之间是否已发生碰撞，如发生则返回<code class="highlighter-rouge">真</code>。</dd>
+  <dt id="ImageSprite.MoveIntoBounds" class="method"><i></i> 移动到边界()</dt>
+  <dd>如果精灵的一部分超出边界，则将精灵移回到边界内，否则没有任何效果。
 
-<h2 id="ImageSprite">ImageSprite</h2>
-
-<p>A ‘sprite’ that can be placed on a <a href="#Canvas"><code class="highlighter-rouge">Canvas</code></a>, where it can react to touches and drags,
- interact with other sprites (<a href="#Ball"><code class="highlighter-rouge">Ball</code></a>s and other <code class="highlighter-rouge">ImageSprite</code>s) and the edge of the
- <code class="highlighter-rouge">Canvas</code>, and move according to its property values. Its appearance is that of the image
- specified in its <a href="#ImageSprite.Picture"><code class="highlighter-rouge">Picture</code></a> property (unless its <a href="#ImageSprite.Visible"><code class="highlighter-rouge">Visible</code></a> property is
- <code class="logic block highlighter-rouge">假</code>.</p>
-
-<p>To have an <code class="highlighter-rouge">ImageSprite</code> move 10 pixels to the left every 1000 milliseconds (one second), for
- example, you would set the <a href="#ImageSprite.Speed"><code class="highlighter-rouge">Speed</code></a> property to 10 [pixels], the <a href="#ImageSprite.Interval"><code class="highlighter-rouge">Interval</code></a>
- property to 1000 [milliseconds], the <a href="#ImageSprite.Heading"><code class="highlighter-rouge">Heading</code></a> property to 180 [degrees], and the
- <a href="#ImageSprite.Enabled"><code class="highlighter-rouge">Enabled</code></a> property to <code class="logic block highlighter-rouge">真</code>. A sprite whose <a href="#ImageSprite.Rotates"><code class="highlighter-rouge">Rotates</code></a>
- property is <code class="logic block highlighter-rouge">真</code> will rotate its image as the sprite’s heading changes.
- <em>Checking for collisions with a rotated sprite currently checks the sprite’s unrotated position
- so that collision checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.</em> Any of the sprite properties can be changed at any time under program control.</p>
-
-<h3 id="ImageSprite-Properties">Properties</h3>
-
-<dl class="properties">
-  <dt id="ImageSprite.Enabled" class="boolean"><em>Enabled</em></dt>
-  <dd>Controls whether the <code class="highlighter-rouge">ImageSprite</code> moves when its speed is non-zero.</dd>
-  <dt id="ImageSprite.Heading" class="number"><em>Heading</em></dt>
-  <dd>The <code class="highlighter-rouge">ImageSprite</code>’s heading in degrees above the positive x-axis. Zero degrees is toward the right
- of the screen; 90 degrees is toward the top of the screen.</dd>
-  <dt id="ImageSprite.Height" class="number bo"><em>Height</em></dt>
-  <dd>The height of the ImageSprite in pixels.</dd>
-  <dt id="ImageSprite.Interval" class="number"><em>Interval</em></dt>
-  <dd>The interval in milliseconds at which the <code class="highlighter-rouge">ImageSprite</code>’s position is updated. For example, if the
- <code class="highlighter-rouge">Interval</code> is 50 and the <a href="#ImageSprite.Speed"><code class="highlighter-rouge">Speed</code></a> is 10, then the <code class="highlighter-rouge">ImageSprite</code> will move 10 pixels
- every 50 milliseconds.</dd>
-  <dt id="ImageSprite.Picture" class="text"><em>Picture</em></dt>
-  <dd>Specifies the path of the sprite’s picture.</dd>
-  <dt id="ImageSprite.Rotates" class="boolean"><em>Rotates</em></dt>
-  <dd>If true, the sprite image rotates to match the sprite’s heading. If false, the sprite image
- does not rotate when the sprite changes heading. The sprite rotates around its centerpoint.</dd>
-  <dt id="ImageSprite.Speed" class="number"><em>Speed</em></dt>
-  <dd>The speed at which the <code class="highlighter-rouge">ImageSprite</code> moves. The <code class="highlighter-rouge">ImageSprite</code> moves this many pixels every
- <a href="#ImageSprite.Interval"><code class="highlighter-rouge">Interval</code></a> milliseconds if <a href="#ImageSprite.Enabled"><code class="highlighter-rouge">Enabled</code></a> is <code class="logic block highlighter-rouge">真</code>.</dd>
-  <dt id="ImageSprite.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Sets whether sprite should be visible.</dd>
-  <dt id="ImageSprite.Width" class="number bo"><em>Width</em></dt>
-  <dd>The width of the ImageSprite in pixels.</dd>
-  <dt id="ImageSprite.X" class="number"><em>X</em></dt>
-  <dd>The horizontal coordinate of the left edge of the ImageSprite, increasing as the ImageSprite moves right.</dd>
-  <dt id="ImageSprite.Y" class="number"><em>Y</em></dt>
-  <dd>The vertical coordinate of the top edge of the ImageSprite, increasing as the ImageSprite moves down.</dd>
-  <dt id="ImageSprite.Z" class="number"><em>Z</em></dt>
-  <dd>How the ImageSprite should be layered relative to other Balls and ImageSprites, with higher-numbered layers in front of lower-numbered layers.</dd>
-</dl>
-
-<h3 id="ImageSprite-Events">Events</h3>
-
-<dl class="events">
-  <dt id="ImageSprite.CollidedWith">CollidedWith(<em class="component">other</em>)</dt>
-  <dd>Event handler called when two enabled sprites (<a href="#Ball"><code class="highlighter-rouge">Ball</code></a>s or <a href="#ImageSprite"><code class="highlighter-rouge">ImageSprite</code></a>s)
- collide. Note that checking for collisions with a rotated <code class="highlighter-rouge">ImageSprite</code> currently
- checks against its unrotated position. Therefore, collision
- checking will be inaccurate for tall narrow or short wide sprites that are
- rotated.</dd>
-  <dt id="ImageSprite.Dragged">Dragged(<em class="number">startX</em>,<em class="number">startY</em>,<em class="number">prevX</em>,<em class="number">prevY</em>,<em class="number">currentX</em>,<em class="number">currentY</em>)</dt>
-  <dd>Event handler for Dragged events.  On all calls, the starting coordinates
- are where the screen was first touched, and the “current” coordinates
- describe the endpoint of the current line segment.  On the first call
- within a given drag, the “previous” coordinates are the same as the
- starting coordinates; subsequently, they are the “current” coordinates
- from the prior call. Note that the <code class="highlighter-rouge">ImageSprite</code> won’t actually move
- anywhere in response to the Dragged event unless
- <a href="#ImageSprite.MoveTo"><code class="highlighter-rouge">MoveTo</code></a> is specifically called.</dd>
-  <dt id="ImageSprite.EdgeReached">EdgeReached(<em class="number">edge</em>)</dt>
-  <dd>Event handler called when the <code class="highlighter-rouge">ImageSprite</code> reaches an <code class="variable block highlighter-rouge">edge</code> of the screen.
- If <a href="#ImageSprite.Bounce"><code class="highlighter-rouge">Bounce</code></a> is then called with that edge, the sprite will appear to bounce off
- of the edge it reached. Edge here is represented as an integer that indicates one of eight
- directions north(1), northeast(2), east(3), southeast(4), south (-1), southwest(-2), west(-3),
- and northwest(-4).</dd>
-  <dt id="ImageSprite.Flung">Flung(<em class="number">x</em>,<em class="number">y</em>,<em class="number">speed</em>,<em class="number">heading</em>,<em class="number">xvel</em>,<em class="number">yvel</em>)</dt>
-  <dd>When a fling gesture (quick swipe) is made on the sprite: provides
- the (x,y) position of the start of the fling, relative to the upper
- left of the canvas. Also provides the speed (pixels per millisecond) and heading
- (0-360 degrees) of the fling, as well as the x velocity and y velocity
- components of the fling’s vector.</dd>
-  <dt id="ImageSprite.NoLongerCollidingWith">NoLongerCollidingWith(<em class="component">other</em>)</dt>
-  <dd>Event indicating that a pair of sprites are no longer colliding.</dd>
-  <dt id="ImageSprite.TouchDown">TouchDown(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user begins touching the sprite (places finger on sprite and
- leaves it there): provides the (x,y) position of the touch, relative
- to the upper left of the canvas</dd>
-  <dt id="ImageSprite.TouchUp">TouchUp(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user stops touching the sprite (lifts finger after a
- TouchDown event): provides the (x,y) position of the touch, relative
- to the upper left of the canvas.</dd>
-  <dt id="ImageSprite.Touched">Touched(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>When the user touches the sprite and then immediately lifts finger: provides
- the (x,y) position of the touch, relative to the upper left of the canvas.</dd>
-</dl>
-
-<h3 id="ImageSprite-Methods">Methods</h3>
-
-<dl class="methods">
-  <dt id="ImageSprite.Bounce" class="method"><i></i> Bounce(<em class="number">edge</em>)</dt>
-  <dd>Makes this <code class="highlighter-rouge">ImageSprite</code> bounce, as if off a wall. For normal bouncing, the <code class="highlighter-rouge">edge</code> argument should
- be the one returned by <a href="#ImageSprite.EdgeReached"><code class="highlighter-rouge">EdgeReached</code></a>.</dd>
-  <dt id="ImageSprite.CollidingWith" class="method returns boolean"><i></i> CollidingWith(<em class="component">other</em>)</dt>
-  <dd>Indicates whether a collision has been registered between this <code class="highlighter-rouge">ImageSprite</code>
- and the passed <code class="highlighter-rouge">other</code> sprite.</dd>
-  <dt id="ImageSprite.MoveIntoBounds" class="method"><i></i> MoveIntoBounds()</dt>
-  <dd>Moves the sprite back in bounds if part of it extends out of bounds,
- having no effect otherwise. If the sprite is too wide to fit on the
- canvas, this aligns the left side of the sprite with the left side of the
- canvas. If the sprite is too tall to fit on the canvas, this aligns the
- top side of the sprite with the top side of the canvas.</dd>
-  <dt id="ImageSprite.MoveTo" class="method"><i></i> MoveTo(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Moves the ImageSprite so that its left top corner is at the specified <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> coordinates.</dd>
-  <dt id="ImageSprite.MoveToPoint" class="method"><i></i> MoveToPoint(<em class="list">coordinates</em>)</dt>
-  <dd>Moves the ImageSprite so that its origin is at the specified x and y coordinates.</dd>
-  <dt id="ImageSprite.PointInDirection" class="method"><i></i> PointInDirection(<em class="number">x</em>,<em class="number">y</em>)</dt>
-  <dd>Turns this <code class="highlighter-rouge">ImageSprite</code> to point toward the point with the coordinates <code class="highlighter-rouge">(x, y)</code>.</dd>
-  <dt id="ImageSprite.PointTowards" class="method"><i></i> PointTowards(<em class="component">target</em>)</dt>
-  <dd>Turns this <code class="highlighter-rouge">ImageSprite</code> to point towards a given <code class="highlighter-rouge">target</code> sprite. The new heading will be parallel
- to the line joining the centerpoints of the two sprites.</dd>
+    <ul>
+      <li>
+        <p>如果精灵太宽而无法适应画布，则会将精灵的左侧与画布的左侧对齐。</p>
+      </li>
+      <li>
+        <p>如果精灵太高而无法适应画布，则会将精灵的顶部与画布的顶部对齐。</p>
+      </li>
+    </ul>
+  </dd>
+  <dt id="ImageSprite.MoveTo" class="method"><i></i> 移动到指定位置(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>移动<code class="highlighter-rouge">图像精灵</code>使其左上角位于指定的 (x,y) 坐标处。</dd>
+  <dt id="ImageSprite.MoveToPoint" class="method"><i></i> 移动到坐标(<em class="list">坐标</em>)</dt>
+  <dd>移动<code class="highlighter-rouge">图像精灵</code>使其原点位于指定的 (x,y) 坐标处。（与上面方法效果没有区别，仅参数形式差异）</dd>
+  <dt id="ImageSprite.PointInDirection" class="method"><i></i> 转向指定位置(<em class="number">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>转动此<code class="highlighter-rouge">图像精灵</code>方向以指向坐标为 (x, y) 的点。</dd>
+  <dt id="ImageSprite.PointTowards" class="method"><i></i> 转向指定对象(<em class="component">目标精灵</em>)</dt>
+  <dd>转动此<code class="highlighter-rouge">图像精灵</code>方向以指向给定的<code class="highlighter-rouge">目标精灵</code>。新的方向将平行于连接两个精灵中心点的线。</dd>
 </dl>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -577,27 +641,25 @@
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

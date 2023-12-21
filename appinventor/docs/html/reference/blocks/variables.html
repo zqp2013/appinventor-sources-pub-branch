@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 变量代码块 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，变量代码块参考文档：包括初始化全局变量、取值、设置值、初始化局部变量（无返回值）、初始化局部变量（有返回值）。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>MIT App Inventor Variable Blocks</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,120 +113,129 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">MIT App Inventor Variable Blocks</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 变量代码块</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
-<p>There are five main types of variable blocks:</p>
-
-<ul>
-  <li><a href="#global">initialize global name to</a></li>
-  <li><a href="#get">get</a></li>
-  <li><a href="#set">set</a></li>
-  <li><a href="#do">initialize local name to in (do)</a></li>
-  <li><a href="#return">initialize local name to in (return)</a></li>
+<ul id="markdown-toc">
+  <li><a href="#global" id="markdown-toc-global">初始化全局变量</a></li>
+  <li><a href="#get" id="markdown-toc-get">取值</a></li>
+  <li><a href="#set" id="markdown-toc-set">设置值</a></li>
+  <li><a href="#do" id="markdown-toc-do">初始化局部变量（无返回值）</a></li>
+  <li><a href="#return" id="markdown-toc-return">初始化局部变量（有返回值）</a></li>
 </ul>
 
-<h3 id="global">initialize global name to</h3>
+<p>变量块主要有五种类型：</p>
+
+<ul>
+  <li><a href="#global">初始化全局变量</a></li>
+  <li><a href="#get">取值</a></li>
+  <li><a href="#set">设置值</a></li>
+  <li><a href="#do">初始化局部变量（无返回值）</a></li>
+  <li><a href="#return">初始化局部变量（有返回值）</a></li>
+</ul>
+
+<hr />
+<h3 id="global">初始化全局变量</h3>
 
 <p><img src="images/variables/initializeglobal.png" alt="" /></p>
 
-<p>This block is used to create global variables. It takes in any type of value as an argument. Clicking on <em>name</em> will change the name of this global variable. Global variables are used in all procedures or events so this block will stand alone.</p>
+<p>该块用于创建全局变量，它接受任何类型的值作为参数。单击 <em>变量名</em> 将更改此全局变量的名称，全局变量用于所有过程或事件，因此该块将独立存在。</p>
 
-<p>Global variables can be changed while an app is running and can be referred to and changed from any part of the app even within procedures and event handlers. You can rename this block at any time and any associated blocks referring to the old name will be updated automatically.</p>
+<p>全局变量可以在应用程序运行时更改，并且可以从应用程序的任何部分获取和设置，甚至在过程和事件处理程序中也是如此。你可以随时重命名此块，引用旧名称的任何关联块将自动更新。</p>
 
-<h3 id="get">get</h3>
+<hr />
+<h3 id="get">取值</h3>
 
 <p><img src="images/variables/get.png" alt="" /></p>
 
-<p>This block provides a way to get any variables you may have created.</p>
+<p>通过此块可获取已创建变量块的值。</p>
 
-<h3 id="set">set</h3>
+<hr />
+<h3 id="set">设置值</h3>
 
 <p><img src="images/variables/set.png" alt="" /></p>
 
-<p>This block follows the same rules as <code class="variable block highlighter-rouge">get</code>. Only variables in scope will be available in the dropdown. Once a variable <em>v</em> is selected, you can attach a block to give <em>v</em> a new value.</p>
+<p>通过此块可设置已创建变量块的值，与<code class="variable block highlighter-rouge">取值</code> 相对应，下拉列表中只有范围内的变量可用。选择 <em>变量</em> 后，你可以附加一个块以赋予 <em>变量</em> 一个新值。</p>
 
-<h3 id="do">initialize local name to - in (do)</h3>
+<hr />
+<h3 id="do">初始化局部变量（无返回值）</h3>
 
 <p><img src="images/variables/initializelocaldo.png" alt="" /></p>
 
-<p>This block is a mutator that allows you to create new variables that are only used in the procedure you run in the DO part of the block. This way all variables in this procedure will all start with the same value each time the procedure is run. NOTE: This block differs from the block described below because it is a DO block. You can attach <em>statements</em> to it. Statements <em>do</em> things. That is why this block has space inside for statement blocks to be attached.</p>
+<p>该块是一个修改器，它允许你创建仅在块的 <code class="highlighter-rouge">执行</code> 部分范围内运行的过程中使用的新变量，这样，每次运行该过程时，该过程中的所有变量都将以相同的值开始。
+注意：此块与下面的块不同，因为它是 <code class="highlighter-rouge">执行</code> 块。你可以在上面附上<em>声明</em>，然后 <em>执行</em> 声明，这就是为什么这个块内部有空间用于附加语句块。</p>
 
-<p>You can rename the variables in this block at any time and any corresponding blocks elsewhere in your program that refer to the old name will be updated automatically</p>
+<p>你可以随时重命名此块中的变量，并且程序中其他地方引用旧名称的任何相应块将自动更新。</p>
 
-<h3 id="return">initialize local name to - in (return)</h3>
+<hr />
+<h3 id="return">初始化局部变量（有返回值）</h3>
 
 <p><img src="images/variables/initializelocalreturn.png" alt="" /></p>
 
-<p>This block is a mutator that allows you to create new variables that are only used in the procedure you run in the RETURN part of the block. This way all variables in this procedure will all start with the same value each time the procedure is run. NOTE: This block differs from the block described above because it is a RETURN block. You can attach <em>expressions</em> to it. Expressions <em>return</em> a value. That is why this block has a socket for plugging in expressions.</p>
+<p>此块是一个修改器，它允许你创建仅在块的 <code class="highlighter-rouge">返回值</code> 部分范围内运行的过程中使用的新变量，这样，每次运行该过程时，该过程中的所有变量都将以相同的值开始。
+注意：此块与上述块不同，因为它是 <code class="highlighter-rouge">返回值</code> 块。你可以将 <em>表达式</em> 添加到它，表达式 <em>返回</em> 一个值。这就是为什么这个块有一个用于插入表达式的接口。</p>
 
-<p>You can rename the variables in this block at any time and any corresponding blocks elsewhere in your program that refer to the old name will be updated automatically</p>
+<p>你可以随时重命名此块中的变量，并且程序中其他地方引用旧名称的任何相应块将自动更新。</p>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -223,27 +249,25 @@
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图表组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，图表组件参考文档：包括图表、二维图表数据。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>Charts</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,368 +113,339 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Charts</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">图表组件</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--图表组件" id="markdown-toc---图表组件"><i class="mdi mdi-chart-line"></i>  图表组件</a>    <ul>
+      <li><a href="#Chart" id="markdown-toc-Chart"><img src="images/chat.png" alt="icon" />  图表</a>        <ul>
+          <li><a href="#Chart-Properties" id="markdown-toc-Chart-Properties">属性</a></li>
+          <li><a href="#Chart-Events" id="markdown-toc-Chart-Events">事件</a></li>
+          <li><a href="#Chart-Methods" id="markdown-toc-Chart-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#ChartData2D" id="markdown-toc-ChartData2D"><img src="images/chatdata2d.png" alt="icon" />  二维图表数据</a>        <ul>
+          <li><a href="#ChartData2D-Properties" id="markdown-toc-ChartData2D-Properties">属性</a></li>
+          <li><a href="#ChartData2D-Events" id="markdown-toc-ChartData2D-Events">事件</a></li>
+          <li><a href="#ChartData2D-Methods" id="markdown-toc-ChartData2D-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <p><a href="index.html">« 返回首页</a></p>
-<h1 id="charts">Charts</h1>
+<h1 id="--图表组件"><i class="mdi mdi-chart-line"></i>  图表组件</h1>
 
 <p>目录：</p>
 
-<ul>
-  <li><a href="#Chart">Chart</a></li>
-  <li><a href="#ChartData2D">ChartData2D</a></li>
-</ul>
+<ol>
+  <li><img src="images/chat.png" alt="icon" />  <a href="#Chart">图表</a></li>
+  <li><img src="images/chatdata2d.png" alt="icon" />  <a href="#ChartData2D">二维图表数据</a></li>
+</ol>
 
-<h2 id="Chart">Chart</h2>
+<h2 id="Chart"><img src="images/chat.png" alt="icon" />  图表</h2>
 
-<p>The Chart component plots data originating from it’s attached Data components. Five different
- Chart types are available, including Line, Area, Scatter, Bar and Pie, which can be changed by
- the <a href="#Chart.Type"><code class="highlighter-rouge">Type</code></a> property.
- The Chart component itself has various other properties that change the appearance
- of the Chart, such as {<a href="#Chart.Description"><code class="highlighter-rouge">Description</code></a>, <a href="#Chart.GridEnabled"><code class="highlighter-rouge">GridEnabled</code></a>,</p>
+<p>图表组件用于绘制其附加数据（如<a href="#ChartData2D"><code class="highlighter-rouge">二维图表数据</code></a>组件）的组件。有五种不同的图表类型，包括折线图、面积图、散点图、条形图和饼图，可通过<a href="#Chart.Type"><code class="highlighter-rouge">类型</code></a> 属性修改。</p>
 
-<h3 id="Chart-Properties">Properties</h3>
+<p>图表组件有其他可以更改外观的属性，例如 <a href="#Chart.Description"><code class="highlighter-rouge">描述</code></a>、<a href="#Chart.GridEnabled"><code class="highlighter-rouge">启用网格</code></a>。</p>
+
+<h3 id="Chart-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="Chart.BackgroundColor" class="color"><em>BackgroundColor</em></dt>
-  <dd>Specifies the chart’s background color as an alpha-red-green-blue
- integer.</dd>
-  <dt id="Chart.Description" class="text"><em>Description</em></dt>
-  <dd>Specifies the text displayed by the description label inside the Chart.
- Specifying an empty string (“”) will not display any label.</dd>
-  <dt id="Chart.GridEnabled" class="boolean"><em>GridEnabled</em></dt>
-  <dd>Changes the visibility of the Chart’s grid, if the
- Chart Type is set to a Chart with an Axis (applies for Area, Bar, Line,
- Scatter Chart types).</dd>
-  <dt id="Chart.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Chart</code>’s vertical height, measured in pixels.</dd>
-  <dt id="Chart.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Chart</code>’s vertical height as a percentage
- of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
-  <dt id="Chart.Labels" class="list bo"><em>Labels</em></dt>
-  <dd>Changes the Chart’s X axis labels to the specified List,
- if the Chart’s Type is set to a Chart with an Axis.
+  <dt id="Chart.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>的背景颜色，使用RGBA数值表示。</dd>
+  <dt id="Chart.Description" class="text"><em>描述</em></dt>
+  <dd>指定图表内描述标签显示的文本。指定空字符串 (“”) 将不会显示标签。</dd>
+  <dt id="Chart.GridEnabled" class="boolean"><em>启用网格</em></dt>
+  <dd>更改图表网格的可见性，如果图表类型设置为带轴的图表（适用于面积图、条形图、折线图、散点图类型，<em>饼图不适用</em>）。</dd>
+  <dt id="Chart.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="Chart.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
+  <dt id="Chart.Labels" class="list bo"><em>标签列表</em></dt>
+  <dd>将图表的 x 轴标签更改为指定的列表，如果图表类型设置为带轴图表。
 
-    <p>The first entry of the List corresponds to the minimum x value of the data,
- the second to the min x value + 1, and so on.</p>
+    <p>列表的第一个条目对应于数据的最小 x 值，第二个为最小 x 值 + 1，依此类推。</p>
 
-    <p>If a label is not specified for an x value, a default value
- is used (the x value of the axis tick at that location).</p>
+    <p>如果没有为 x 值指定标签，则使用默认值使用（该位置的轴刻度的 x 值）。</p>
   </dd>
-  <dt id="Chart.LabelsFromString" class="text wo do"><em>LabelsFromString</em></dt>
-  <dd>Specifies the labels to set to the Chart’s X Axis, provided the current
- view is a Chart with an X Axis. The labels are specified as a single comma-separated
- values String (meaning each value is separated by a comma). See <a href="#Chart.Labels"><code class="highlighter-rouge">Labels</code></a>
- for more details on how the Labels are applied to the Chart.</dd>
-  <dt id="Chart.LegendEnabled" class="boolean"><em>LegendEnabled</em></dt>
-  <dd>Changes the visibility of the Chart’s Legend.</dd>
-  <dt id="Chart.PieRadius" class="number wo do"><em>PieRadius</em></dt>
-  <dd>Sets the Pie Radius of the Chart. If the current type is
- not the Pie Chart, the value has no effect.</dd>
-  <dt id="Chart.Type" class="com google appinventor components common ChartTypeEnum do"><em>Type</em></dt>
-  <dd>Specifies the type of the Chart, which determines how to visualize the data.</dd>
-  <dt id="Chart.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">Chart</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">真</code>
- if the <code class="highlighter-rouge">Chart</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
-  <dt id="Chart.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Chart</code>, measured in pixels.</dd>
-  <dt id="Chart.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Chart</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dt id="Chart.LabelsFromString" class="text wo do"><em>CSV字符串标签</em></dt>
+  <dd>指定要设置到图表 x 轴的标签，如果当前是一个带有 x 轴的图表。
+
+    <p>标签被指定为逗号分隔（CSV格式）的值字符串，类似的用法参考<a href="#Chart.Labels"><code class="highlighter-rouge">标签列表</code></a>。</p>
+  </dd>
+  <dt id="Chart.LegendEnabled" class="boolean"><em>启用图例</em></dt>
+  <dd>更改图表图例的可见性。</dd>
+  <dt id="Chart.PieRadius" class="number wo do"><em>饼图半径</em></dt>
+  <dd>设置图表的饼图半径，如果当前类型是不是饼图，该值则没有效果。</dd>
+  <dt id="Chart.Type" class="com google appinventor components common ChartTypeEnum do"><em>类型</em></dt>
+  <dd>指定图表的类型，它决定如何可视化数据。</dd>
+  <dt id="Chart.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">图表</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="Chart.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="Chart.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">图表</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
 </dl>
 
-<h3 id="Chart-Events">Events</h3>
+<h3 id="Chart-Events">事件</h3>
 
 <dl class="events">
-  <dt id="Chart.EntryClick">EntryClick(<em class="component">series</em>,<em class="any">x</em>,<em class="number">y</em>)</dt>
-  <dd>Indicates that the user clicked on a data entry in the <code class="highlighter-rouge">Chart</code>. The specific series, along
- with its x and y values, are reported.</dd>
+  <dt id="Chart.EntryClick">数据点被点击时(<em class="component">数据序列</em>,<em class="any">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>指示用户单击<code class="highlighter-rouge">图表</code>中的数据点，返回指定点的 x轴 和 y轴值。</dd>
 </dl>
 
-<h3 id="Chart-Methods">Methods</h3>
+<h3 id="Chart-Methods">方法</h3>
 
-<p class="methods">None</p>
+<p class="methods">无</p>
 
-<h2 id="ChartData2D">ChartData2D</h2>
+<h2 id="ChartData2D"><img src="images/chatdata2d.png" alt="icon" />  二维图表数据</h2>
 
-<p>A ChartData2D component represents a single two-dimensional Data Series in the Chart component,
- for example, a single Line in the case of a Line Chart, or a single Bar in the case of a Bar
- Chart. The Data component is responsible for handling all the data of the Chart. The entries
- of the Data component correspond of an x and a y value.
- The component is attached directly to a Chart component by dragging it onto the Chart.</p>
+<p>二维图表数据组件表示图表组件中的单个二维数据序列。例如：如果是折线图，则为一条线；如果是条形图，则为一条条形图图表。</p>
 
-<h3 id="ChartData2D-Properties">Properties</h3>
+<p>数据组件负责处理图表的数据，数据组件的点对应 x 和 y 值。<strong>可以将该组件拖到图表上，也就是将其直接附加到图表组件上。</strong></p>
+
+<h3 id="ChartData2D-Properties">属性</h3>
 
 <dl class="properties">
-  <dt id="ChartData2D.Color" class="color"><em>Color</em></dt>
-  <dd>Specifies the data series color as an alpha-red-green-blue integer.</dd>
-  <dt id="ChartData2D.Colors" class="list bo"><em>Colors</em></dt>
-  <dd>Specifies the data series colors as a list of alpha-red-green-blue integers.
+  <dt id="ChartData2D.Color" class="color"><em>颜色</em></dt>
+  <dd>指定数据序列的颜色，使用RGBA数值表示。</dd>
+  <dt id="ChartData2D.Colors" class="list bo"><em>颜色列表</em></dt>
+  <dd>指定数据序列的RGBA颜色数值列表。
 
-    <p>If there is more data than there are colors, the colors will be alternated
- in order. E.g. if there are two colors Red and Blue, the colors will be applied
- in the order: Red, Blue, Red, Blue, …</p>
+    <p>如果数据多于颜色，颜色将交替显示。例如，如果有红色和蓝色两种颜色，则颜色顺序为：红、蓝、红、蓝…</p>
   </dd>
-  <dt id="ChartData2D.DataFileXColumn" class="text wo do"><em>DataFileXColumn</em></dt>
-  <dd>Value used when importing data from a DataFile component <a href="#ChartData2D.Source"><code class="highlighter-rouge">Source</code></a>. The
- value represents the column to use from the DataFile for the x entries
- of the Data Series. For instance, if a column’s first value is “Time”,
- and a column value of “Time” is specified, that column will be used
- for the x values. If a value here is not specified, default values for the
- x values will be generated instead.</dd>
-  <dt id="ChartData2D.DataFileYColumn" class="text wo do"><em>DataFileYColumn</em></dt>
-  <dd>Value used when importing data from a DataFile component <a href="#ChartData2D.Source"><code class="highlighter-rouge">Source</code></a>. The
- value represents the column to use from the DataFile for the y entries
- of the Data Series. For instance, if a column’s first value is “Temperature”,
- and a column value of “Temperature” is specified, that column will be used
- for the y values. If a value here is not specified, default values for the
- y values will be generated instead.</dd>
-  <dt id="ChartData2D.DataSourceKey" class="text wo do"><em>DataSourceKey</em></dt>
-  <dd>Sets the Data Source key identifier for the value to import from the
- attached Data Source.
+  <dt id="ChartData2D.DataFileXColumn" class="text wo do"><em>数据文件x列</em></dt>
+  <dd>从 <a href="storage.html#DataFile"><code class="highlighter-rouge">数据文件</code></a> 组件导入数据时， <a href="#ChartData2D.Source"><code class="highlighter-rouge">数据源</code></a> 使用的值。
 
-    <p>An example is the tag of the TinyDB component, which identifies the value.</p>
+    <p>这个值表示数据文件中用于 x 条目的列数据序列。例如，如果列的第一个值是“时间”，并且指定了“时间”列值，将使用该列用于 x 值。</p>
 
-    <p>The property is a Designer-only property, and should be changed after setting the
- Source component of the Chart Data component.</p>
+    <p>如果未指定值，则使用默认值生成 x 值。</p>
+  </dd>
+  <dt id="ChartData2D.DataFileYColumn" class="text wo do"><em>数据文件y列</em></dt>
+  <dd>从 <a href="storage.html#DataFile"><code class="highlighter-rouge">数据文件</code></a> 组件导入数据时， <a href="#ChartData2D.Source"><code class="highlighter-rouge">数据源</code></a> 使用的值。
 
-    <p>A complete list of applicable values for each compatible source is as follows:</p>
+    <p>这个值表示数据文件中用于 y 条目的列数据序列。例如，如果列的第一个值为“温度”，并且指定了“温度”列值，将使用该列 y 值。</p>
+
+    <p>如果未指定值，则使用默认值生成 y 值。</p>
+  </dd>
+  <dt id="ChartData2D.DataSourceKey" class="text wo do"><em>数据源键标识符</em></dt>
+  <dd>为附加数据源导入的值设置键标识符。类似 <a href="storage.html#TinyDB"><code class="highlighter-rouge">微数据库</code></a> 组件的标签，使用它标识具体的值。
+
+    <p>该属性是“界面设计”视图专用的属性，应在设置图表数据组件的数据源后修改成相应的标识值。</p>
+
+    <p>每种兼容数据源的适用值的完整列表如下：</p>
 
     <ul>
-      <li>For TinyDB and CloudDB, this is the tag value.</li>
-      <li>For the AccelerometerSensor, the value should be one of the following: X Y or Z</li>
-      <li>For the GyroscopeSensor, the value should be one of the following: X Y or Z</li>
-      <li>For the LocationSensor, the value should be one of the following:
-latitude, longitude, altitude or speed</li>
-      <li>For the OrientationSensor, the value should be one of the following:
-pitch, azimuth or roll</li>
-      <li>For the Pedometer, the value should be one of the following:
-WalkSteps, SimpleSteps or Distance</li>
-      <li>For the ProximitySensor, the value should be distance.</li>
-      <li>For the BluetoothClient, the value represents the prefix to remove from the value.
-For instance, if values come in the format “t:12”, the prefix can be specified as “t:”,
-and the prefix will then be removed from the data. No value can be specified if purely
-numerical values are returned.</li>
+      <li>对于 <a href="storage.html#TinyDB"><code class="highlighter-rouge">微数据库</code></a> 和 <a href="storage.html#CloudDB"><code class="highlighter-rouge">云数据库</code></a>，这是标签值。</li>
+      <li>对于 <a href="sensors.html#AccelerometerSensor"><code class="highlighter-rouge">加速度传感器</code></a>，该值应为以下之一：X Y 或 Z</li>
+      <li>对于 <a href="sensors.html#GyroscopeSensor"><code class="highlighter-rouge">陀螺仪传感器</code></a>，该值应为以下之一：X Y 或 Z</li>
+      <li>对于 <a href="sensors.html#LocationSensor"><code class="highlighter-rouge">位置传感器</code></a>，该值应为以下之一：纬度、经度、高度或速度</li>
+      <li>对于 <a href="sensors.html#OrientationSensor"><code class="highlighter-rouge">方向传感器</code></a>，该值应为以下之一：俯仰角、方位角或横滚角</li>
+      <li>对于 <a href="sensors.html#Pedometer"><code class="highlighter-rouge">计步器</code></a>，该值应为以下之一：行走步数、简单步数或距离</li>
+      <li>对于 <a href="sensors.html#ProximitySensor"><code class="highlighter-rouge">距离传感器</code></a>，该值应为距离。</li>
+      <li>
+        <p>对于 <a href="connectivity.html#BluetoothClient"><code class="highlighter-rouge">蓝牙客户端</code></a>，该值表示要从该值中删除的前缀。</p>
+
+        <p>例如，如果值的格式为“t:12”，则前缀可以指定为“t:”，然后前缀将从数据中删除。如果是纯数值的话，则不能指定任何值。</p>
+      </li>
     </ul>
   </dd>
-  <dt id="ChartData2D.ElementsFromPairs" class="text wo do"><em>ElementsFromPairs</em></dt>
-  <dd>Comma separated list of Elements to use for the data series. Values are formatted
- as follows: x1,y1,x2,y2,x3,y3. Values are taken in pairs, and an entry is formed
- from the x and y values.</dd>
-  <dt id="ChartData2D.Label" class="text"><em>Label</em></dt>
-  <dd>Specifies the text for the data series label.</dd>
-  <dt id="ChartData2D.LineType" class="com google appinventor components common LineTypeEnum wo do"><em>LineType</em></dt>
-  <dd>Changes the Line Type of the Data Series, provided that the
- Data component is attached to a Chart that has the type set to
- a line-based Chart(applies to area and line Chart types).
-  Valid types include linear, curved or stepped.</dd>
-  <dt id="ChartData2D.PointShape" class="com google appinventor components common PointStyleEnum wo do"><em>PointShape</em></dt>
-  <dd>Changes the Point Shape of the Data Series, provided that the
- Data component is attached to a Chart that has the type set to
- the Scatter Chart. Valid types include circle, square, triangle, cross, x.</dd>
-  <dt id="ChartData2D.Source" class="component wo do"><em>Source</em></dt>
-  <dd>Sets the Source to use for the Data component. Valid choices
- include AccelerometerSensor, BluetoothClient, CloudDB, DataFile,
- GyroscopeSensor, LocationSesnro, OrientationSensor, Pedometer,
- ProximitySensor TinyDB and Web components. The Source value also requires
- valid DataSourceValue, WebColumn or DataFileColumn properties,
- depending on the type of the Source attached (the required properties
- show up in the Properties menu after the Source is changed).
+  <dt id="ChartData2D.ElementsFromPairs" class="text wo do"><em>元素来自键值对</em></dt>
+  <dd>用于数据序列的逗号分隔（CSV）元素列表。值格式化如下：x1,y1,x2,y2,x3,y3。值成对获取， x 和 y 值形成一个条目。</dd>
+  <dt id="ChartData2D.Label" class="text"><em>标签</em></dt>
+  <dd>指定数据序列标签的文本。</dd>
+  <dt id="ChartData2D.LineType" class="com google appinventor components common LineTypeEnum wo do"><em>线型</em></dt>
+  <dd>更改数据序列的线的类型，前提是数据组件附加到基于折线的图表（适用于<code class="highlighter-rouge">面积图</code>和<code class="highlighter-rouge">折线图</code>）。
 
-    <p>If the data identified by the <a href="#ChartData2D.DataSourceKey"><code class="highlighter-rouge">DataSourceKey</code></a> is updated
- in the attached Data Source component, then the data is also updated in
- the Chart Data component.</p>
+    <p>有效类型包括<code class="highlighter-rouge">折线</code>、<code class="highlighter-rouge">曲线</code>、<code class="highlighter-rouge">阶梯</code>。</p>
   </dd>
-  <dt id="ChartData2D.SpreadsheetUseHeaders" class="boolean wo do"><em>SpreadsheetUseHeaders</em></dt>
-  <dd>If checked, the first row of the spreadsheet will be used to interpret the x and y column
- values. Otherwise, the x and y columns should be a column reference, such as A or B.</dd>
-  <dt id="ChartData2D.SpreadsheetXColumn" class="text wo do"><em>SpreadsheetXColumn</em></dt>
-  <dd>Sets the column to parse from the attached Spreadsheet component for the x values. If a
- column is not specified, default values for the x values will be generated instead.</dd>
-  <dt id="ChartData2D.SpreadsheetYColumn" class="text wo do"><em>SpreadsheetYColumn</em></dt>
-  <dd>Sets the column to parse from the attached Spreadsheet component for the y values. If a
- column is not specified, default values for the y values will be generated instead.</dd>
-  <dt id="ChartData2D.WebXColumn" class="text wo do"><em>WebXColumn</em></dt>
-  <dd>Value used when importing data from a Web component Source. The
- value represents the column to use from the Web for the x entries
- of the Data Series. For instance, if the contents of the Web are
- retrieved in JSON format, and an array with the “Time” tag exists,
- the “Time” column value can be specified to use that array.</dd>
-  <dt id="ChartData2D.WebYColumn" class="text wo do"><em>WebYColumn</em></dt>
-  <dd>Value used when importing data from a Web component Source. The
- value represents the column to use from the Web for the y entries
- of the Data Series. For instance, if the contents of the Web are
- retrieved in JSON format, and an array with the “Temperature” tag exists,
- the “Temperature” column value can be specified to use that array.</dd>
+  <dt id="ChartData2D.PointShape" class="com google appinventor components common PointStyleEnum wo do"><em>点型</em></dt>
+  <dd>更改数据序列的点的形状，前提是数据组件附加到<code class="highlighter-rouge">散点图</code>的图表。
+
+    <p>有效类型包括<code class="highlighter-rouge">圆形</code>、<code class="highlighter-rouge">方形</code>、<code class="highlighter-rouge">三角</code>、<code class="highlighter-rouge">十字</code>、<code class="highlighter-rouge">叉号</code>。</p>
+  </dd>
+  <dt id="ChartData2D.Source" class="component wo do"><em>数据源</em></dt>
+  <dd>设置数据组件的数据源。有效的选择包括：<a href="sensors.html#AccelerometerSensor"><code class="highlighter-rouge">加速度传感器</code></a>、<a href="connectivity.html#BluetoothClient"><code class="highlighter-rouge">蓝牙客户端</code></a>、<a href="storage.html#CloudDB"><code class="highlighter-rouge">云数据库</code></a>、<a href="storage.html#DataFile"><code class="highlighter-rouge">数据文件</code></a>、<a href="sensors.html#GyroscopeSensor"><code class="highlighter-rouge">陀螺仪传感器</code></a>、<a href="sensors.html#LocationSensor"><code class="highlighter-rouge">位置传感器</code></a>、<a href="sensors.html#OrientationSensor"><code class="highlighter-rouge">方向传感器</code></a>、<a href="sensors.html#Pedometer"><code class="highlighter-rouge">计步器</code></a>、<a href="sensors.html#ProximitySensor"><code class="highlighter-rouge">距离传感器</code></a>、<a href="storage.html#TinyDB"><code class="highlighter-rouge">微数据库</code></a> 和 <a href="connectivity.html#Web"><code class="highlighter-rouge">Web客户端</code></a>。
+
+    <p><code class="highlighter-rouge">数据源</code> 值还需要有效的 DataSourceValue、WebColumn 或 DataFileColumn 属性，取决于附加的数据源的类型（更改数据源后，所需的属性会显示在“属性”菜单中）。</p>
+
+    <p>如果 <a href="#ChartData2D.DataSourceKey"><code class="highlighter-rouge">数据源键标识符</code></a> 标识的数据在附加的数据源组件中更新，然后数据也会在图表数据组件中更新。</p>
+  </dd>
+  <dt id="ChartData2D.SpreadsheetUseHeaders" class="boolean wo do"><em>使用电子表格头</em></dt>
+  <dd>如果选中，<a href="storage.html#Spreadsheet">电子表格</a>的第一行将用于解释 x 和 y 列值。 否则，x 和 y 列应该是列引用，例如 A 或 B。</dd>
+  <dt id="ChartData2D.SpreadsheetXColumn" class="text wo do"><em>电子表格X列</em></dt>
+  <dd>设置要从附加的<a href="storage.html#Spreadsheet">电子表格</a>组件中解析 x 列的值。如果未指定列，则会生成 x 列值的默认值。</dd>
+  <dt id="ChartData2D.SpreadsheetYColumn" class="text wo do"><em>电子表格Y列</em></dt>
+  <dd>设置要从附加的<a href="storage.html#Spreadsheet">电子表格</a>组件中解析 y 列的值。如果未指定列，则会生成 y 列值的默认值。</dd>
+  <dt id="ChartData2D.WebXColumn" class="text wo do"><em>Web客户端X列</em></dt>
+  <dd>从 <a href="connectivity.html#Web">Web客户端</a> 组件源导入数据时使用的值。该值表示来自 <a href="connectivity.html#Web">Web客户端</a> 的用于数据系列 x 条目的列。例如，如果以 JSON 格式检索 <a href="connectivity.html#Web">Web客户端</a> 内容，并且存在带有“Time”标签的数组，则可以指定“Time”列值以使用该数组。</dd>
+  <dt id="ChartData2D.WebYColumn" class="text wo do"><em>Web客户端Y列</em></dt>
+  <dd>从 <a href="connectivity.html#Web">Web客户端</a> 组件源导入数据时使用的值。该值表示来自 <a href="connectivity.html#Web">Web客户端</a> 的用于数据系列 y 条目的列。 例如，如果以 JSON 格式检索 <a href="connectivity.html#Web">Web客户端</a> 内容，并且存在带有“Temperature”标签的数组，则可以指定“Temperature”列值以使用该数组。</dd>
 </dl>
 
-<h3 id="ChartData2D-Events">Events</h3>
+<h3 id="ChartData2D-Events">事件</h3>
 
 <dl class="events">
-  <dt id="ChartData2D.EntryClick">EntryClick(<em class="any">x</em>,<em class="number">y</em>)</dt>
-  <dd>Indicates that the user tapped on a data point in the chart. The x and y values of the
- tapped entry are reported.</dd>
+  <dt id="ChartData2D.EntryClick">数据点被点击时(<em class="any">x坐标</em>,<em class="number">y坐标</em>)</dt>
+  <dd>指示用户单击<code class="highlighter-rouge">图表</code>中的数据点，返回指定点的 x轴 和 y轴值。</dd>
 </dl>
 
-<h3 id="ChartData2D-Methods">Methods</h3>
+<h3 id="ChartData2D-Methods">方法</h3>
 
 <dl class="methods">
-  <dt id="ChartData2D.AddEntry" class="method"><i></i> AddEntry(<em class="text">x</em>,<em class="text">y</em>)</dt>
-  <dd>Adds an entry with the specified x and y value. Values can be specified as text,
- or as numbers. For Line, Scatter, Area and Bar Charts, both values should represent a number.
- For Bar charts, the x value is rounded to the nearest integer.
- For Pie Charts, the x value is a text value.</dd>
-  <dt id="ChartData2D.ChangeDataSource" class="method"><i></i> ChangeDataSource(<em class="component">source</em>,<em class="text">keyValue</em>)</dt>
-  <dd>Changes the Data Source of the component to the specified component Source with the
- specified key value. See the <a href="#ChartData2D.Source"><code class="highlighter-rouge">Source</code></a> property for
- applicable components. See the <a href="#ChartData2D.DataSourceKey"><code class="highlighter-rouge">DataSourceKey</code></a> property for the interpretation
- of the keyValue. In the case of the DataFile and Web components, the keyValue is expected to
- be a CSV formatted string, where the first value corresponds to the x column, and the second
- value corresponds to the y value.</dd>
-  <dt id="ChartData2D.Clear" class="method"><i></i> Clear()</dt>
-  <dd>Removes all the entries from the Data Series.</dd>
-  <dt id="ChartData2D.DoesEntryExist" class="method returns boolean"><i></i> DoesEntryExist(<em class="text">x</em>,<em class="text">y</em>)</dt>
-  <dd>Returns a boolean value specifying whether an entry with the specified x and y
- values exists. The boolean value of true is returned if the value exists,
- and a false value otherwise. See <a href="#ChartData2D.AddEntry"><code class="highlighter-rouge">AddEntry</code></a>
- for an explanation of the valid entry values.</dd>
-  <dt id="ChartData2D.GetAllEntries" class="method returns list"><i></i> GetAllEntries()</dt>
-  <dd>Returns all entries of the data series.
- The returned value is a list, where each element of the list
- is a list containing the values of the entry in order.</dd>
-  <dt id="ChartData2D.GetEntriesWithXValue" class="method returns list"><i></i> GetEntriesWithXValue(<em class="text">x</em>)</dt>
-  <dd>Returns all entries of the data series matching the specified x value.
- For a description of the format of the returned List, see <a href="#ChartData2D.GetAllEntries"><code class="highlighter-rouge">GetAllEntries</code></a></dd>
-  <dt id="ChartData2D.GetEntriesWithYValue" class="method returns list"><i></i> GetEntriesWithYValue(<em class="text">y</em>)</dt>
-  <dd>Returns all entries of the data series matching the specified y value.
- For a description of the format of the returned List, see <a href="#ChartData2D.GetAllEntries"><code class="highlighter-rouge">GetAllEntries</code></a></dd>
-  <dt id="ChartData2D.ImportFromCloudDB" class="method"><i></i> ImportFromCloudDB(<em class="component">cloudDB</em>,<em class="text">tag</em>)</dt>
-  <dd>Imports data from the specified CloudDB component by taking the value
- identified by the specified tag value.
+  <dt id="ChartData2D.AddEntry" class="method"><i></i> 添加数据点(<em class="text">x</em>,<em class="text">y</em>)</dt>
+  <dd>添加具有指定 x 和 y 值的条目。 值可以指定为文本或数字。 对于折线图、散点图、面积图和条形图，两个值都应代表数字。
 
-    <p>The expected CloudDB value is a list formatted in the same way as described in
- <a href="#ChartData2D.ImportFromList"><code class="highlighter-rouge">ImportFromList</code></a>.</p>
+    <p>对于条形图，x 值四舍五入到最接近的整数。</p>
 
-    <p>Does not overwrite any data.</p>
+    <p>对于饼图，x 值是文本值。</p>
   </dd>
-  <dt id="ChartData2D.ImportFromDataFile" class="method"><i></i> ImportFromDataFile(<em class="component">dataFile</em>,<em class="text">xValueColumn</em>,<em class="text">yValueColumn</em>)</dt>
-  <dd>Imports data from the specified DataFile component by taking the specified x column
- for the x values, and the specified y column for the y values. The DataFile’s source file
- is expected to be either a CSV or a JSON file.
+  <dt id="ChartData2D.RemoveEntry" class="method"><i></i> 删除数据点(<em class="text">x</em>,<em class="text">y</em>)</dt>
+  <dd>删除具有指定 x 和 y 值的条目（前提是该条目存在）。
 
-    <p>Passing in empty test for any of the column parameters will result in the usage of
- default values which are the indices of the entries. For the first entry, the default
- value would be the 1, for the second it would be 2, and so on.</p>
+    <p>有关有效条目值的说明，请参阅 <a href="#ChartData2D.AddEntry"><code class="highlighter-rouge">添加数据点</code></a>。</p>
   </dd>
-  <dt id="ChartData2D.ImportFromList" class="method"><i></i> ImportFromList(<em class="list">list</em>)</dt>
-  <dd>Imports the data from the specified list parameter to the data series.
- The list is expected to contain element which are also lists. Each
- list element is expected to have 2 values, the first one being
- the x value, and the second one being the y value.
- Invalid list entries are simply skipped. Existing data are not cleared.</dd>
-  <dt id="ChartData2D.ImportFromSpreadsheet" class="method"><i></i> ImportFromSpreadsheet(<em class="component">sheet</em>,<em class="text">xColumn</em>,<em class="text">yColumn</em>,<em class="boolean">useHeaders</em>)</dt>
-  <dd>Imports data from the specified Spreadsheet component by taking the specified x column
- for the x values, and the specified y column for the y values. Prior to calling this function,
- the Spreadsheet component’s ReadSheet method has to be called to load the data. The usage of
- the GotSheet event in the Spreadsheet component is unnecessary.
+  <dt id="ChartData2D.ChangeDataSource" class="method"><i></i> 改变数据源(<em class="component">source</em>,<em class="text">keyValue</em>)</dt>
+  <dd>将组件的数据源更改为具有指定键值的指定组件源。
 
-    <p>Empty columns are filled with default values (1, 2, 3, … for Entry 1, 2, 3, …).</p>
+    <p>请参阅 <a href="#ChartData2D.Source"><code class="highlighter-rouge">数据源</code></a> 属性了解适用的组件。</p>
+
+    <p>请参阅 <a href="#ChartData2D.DataSourceKey"><code class="highlighter-rouge">数据源键标识符</code></a> 属性了解 keyValue 的解释。</p>
+
+    <p>对于 <a href="storage.html#DataFile">数据文件</a> 和 <a href="connectivity.html#Web">Web客户端</a> 组件，keyValue 应为 CSV 格式的字符串，其中第一个值对应于 x 列，第二个值对应于 y 值。</p>
   </dd>
-  <dt id="ChartData2D.ImportFromTinyDB" class="method"><i></i> ImportFromTinyDB(<em class="component">tinyDB</em>,<em class="text">tag</em>)</dt>
-  <dd>Imports data from the specified TinyDB component by taking the value
- identified by the specified tag value.
+  <dt id="ChartData2D.Clear" class="method"><i></i> 清除数据序列()</dt>
+  <dd>从数据系列中删除所有条目。</dd>
+  <dt id="ChartData2D.DoesEntryExist" class="method returns boolean"><i></i> 数据点是否存在(<em class="text">x</em>,<em class="text">y</em>)</dt>
+  <dd>返回一个布尔值，指定是否存在具有指定 x 和 y 值的条目。 如果该值存在，则返回布尔值 <code class="highlighter-rouge">真</code>，否则返回 <code class="highlighter-rouge">假</code>。
 
-    <p>The expected TinyDB value is a list formatted in the same way as described in
- <a href="#ChartData2D.ImportFromList"><code class="highlighter-rouge">ImportFromList</code></a>.</p>
-
-    <p>Does not overwrite any data.</p>
+    <p>有关有效条目值的说明，请参阅 <a href="#ChartData2D.AddEntry"><code class="highlighter-rouge">添加数据点</code></a>。</p>
   </dd>
-  <dt id="ChartData2D.ImportFromWeb" class="method"><i></i> ImportFromWeb(<em class="component">web</em>,<em class="text">xValueColumn</em>,<em class="text">yValueColumn</em>)</dt>
-  <dd>Imports data from the specified Web component by taking the specified x column
- for the x values, and the specified y column for the y values. Prior to calling this function,
- the Web component’s Get method has to be called to load the data. The usage of the gotValue
- event in the Web component is unnecessary.
+  <dt id="ChartData2D.GetAllEntries" class="method returns list"><i></i> 获取所有数据点()</dt>
+  <dd>返回数据系列的所有条目。
 
-    <p>The expected response of the Web component is a JSON or CSV formatted
- file for this function to work.</p>
-
-    <p>Empty columns are filled with default values (1, 2, 3, … for Entry 1, 2, 3, …).</p>
+    <p>返回的值是一个列表，其中列表的每个元素都是按顺序包含条目值的列表。</p>
   </dd>
-  <dt id="ChartData2D.RemoveDataSource" class="method"><i></i> RemoveDataSource()</dt>
-  <dd>Removes the currently attached Data Source from the Chart Data component.
- Doing so will result in no more updates from the Data Source being sent, however,
- the current data will not be removed.</dd>
-  <dt id="ChartData2D.RemoveEntry" class="method"><i></i> RemoveEntry(<em class="text">x</em>,<em class="text">y</em>)</dt>
-  <dd>Removes an entry with the specified x and y value, provided it exists.
- See <a href="#ChartData2D.AddEntry"><code class="highlighter-rouge">AddEntry</code></a> for an explanation of the valid entry values.</dd>
+  <dt id="ChartData2D.GetEntriesWithXValue" class="method returns list"><i></i> 获取X值数据点(<em class="text">x</em>)</dt>
+  <dd>返回与指定 x 值匹配的数据系列的所有条目。
+
+    <p>有关返回列表格式的说明，请参阅 <a href="#ChartData2D.GetAllEntries"><code class="highlighter-rouge">获取所有数据点</code></a></p>
+  </dd>
+  <dt id="ChartData2D.GetEntriesWithYValue" class="method returns list"><i></i> 获取Y值数据点(<em class="text">y</em>)</dt>
+  <dd>返回与指定 y 值匹配的数据系列的所有条目。
+
+    <p>有关返回列表格式的说明，请参阅 <a href="#ChartData2D.GetAllEntries"><code class="highlighter-rouge">获取所有数据点</code></a></p>
+  </dd>
+  <dt id="ChartData2D.ImportFromCloudDB" class="method"><i></i> 从云数据库导入(<em class="component">云数据库</em>,<em class="text">标签</em>)</dt>
+  <dd>通过获取指定标签值标识的值，从指定的 <a href="storage.html#CloudDB">云数据库</a> 组件导入数据。
+
+    <p>预期的 <a href="storage.html#CloudDB">云数据库</a> 值是一个列表，其格式与 <a href="#ChartData2D.ImportFromList"><code class="highlighter-rouge">从列表导入</code></a> 中描述的相同。</p>
+
+    <p>不覆盖任何数据。</p>
+  </dd>
+  <dt id="ChartData2D.ImportFromDataFile" class="method"><i></i> 从数据文件导入(<em class="component">数据文件</em>,<em class="text">x值列</em>,<em class="text">y值列</em>)</dt>
+  <dd>通过采用指定的 x 列作为 x 值以及指定的 y 列作为 y 值，从指定的 <a href="storage.html#DataFile">数据文件</a> 组件导入数据。 <a href="storage.html#DataFile">数据文件</a> 的源文件应为 CSV 或 JSON 文件。
+
+    <p>对任何列参数传递空测试将导致使用默认值，即条目的索引。对于第一个条目，默认值为 1，对于第二个条目，默认值为 2，依此类推。</p>
+  </dd>
+  <dt id="ChartData2D.ImportFromList" class="method"><i></i> 从列表导入(<em class="list">list</em>)</dt>
+  <dd>将指定列表参数中的数据导入到数据序列中。
+
+    <p>该列表预计包含也是列表的元素。 每个列表元素预计有 2 个值，第一个是 x 值，第二个是 y 值。</p>
+
+    <p>无效的列表条目将被简单地跳过。</p>
+
+    <p>现有数据不会被清除。</p>
+  </dd>
+  <dt id="ChartData2D.ImportFromSpreadsheet" class="method"><i></i> 从电子表格导入(<em class="component">sheet</em>,<em class="text">xColumn</em>,<em class="text">yColumn</em>,<em class="boolean">useHeaders</em>)</dt>
+  <dd>通过将指定的 x 列作为 x 值，将指定的 y 列作为 y 值，从指定的<a href="storage.html#Spreadsheet">电子表格</a>组件导入数据。
+
+    <p>在调用此函数之前，必须调用电子表格组件的 ReadSheet 方法来加载数据。 不需要在电子表格组件中使用 GotSheet 事件。</p>
+
+    <p>空列填充默认值（1、2、3、… 对于条目 1、2、3、…）。</p>
+  </dd>
+  <dt id="ChartData2D.ImportFromTinyDB" class="method"><i></i> 从微数据库导入(<em class="component">tinyDB</em>,<em class="text">tag</em>)</dt>
+  <dd>通过获取指定标签值标识的值，从指定的 <a href="storage.html#TinyDB">微数据库</a> 组件导入数据。
+
+    <p>预期的 <a href="storage.html#TinyDB">微数据库</a> 值是一个列表，其格式与 <a href="#ChartData2D.ImportFromList"><code class="highlighter-rouge">从列表导入</code></a> 中描述的相同。</p>
+
+    <p>不覆盖任何数据。</p>
+  </dd>
+  <dt id="ChartData2D.ImportFromWeb" class="method"><i></i> 从Web客户端导入(<em class="component">web</em>,<em class="text">xValueColumn</em>,<em class="text">yValueColumn</em>)</dt>
+  <dd>通过将指定的 x 列作为 x 值，将指定的 y 列作为 y 值，从指定的 <a href="connectivity.html#Web">Web客户端</a> 组件导入数据。 在调用此函数之前，必须调用 <a href="connectivity.html#Web">Web客户端</a> 组件的 Get 方法来加载数据。 无需在 Web 组件中使用 gotValue 事件。
+
+    <p><a href="connectivity.html#Web">Web客户端</a> 组件的预期响应是 JSON 或 CSV 格式的文件，以便此函数正常工作。</p>
+
+    <p>空列填充默认值（1、2、3、… 对于条目 1、2、3、…）。</p>
+  </dd>
+  <dt id="ChartData2D.RemoveDataSource" class="method"><i></i> 删除数据源()</dt>
+  <dd>从图表数据组件中删除当前附加的数据源。
+
+    <p>这样做将导致不再发送来自数据源的更新，但是，当前数据不会被删除。</p>
+  </dd>
 </dl>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -471,27 +459,25 @@ numerical values are returned.</li>
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

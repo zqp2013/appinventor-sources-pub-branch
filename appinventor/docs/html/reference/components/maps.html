@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>地图组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，地图组件参考文档：包括圆、特征集合、线段、地图、标记、导航、多边形、矩形。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>Maps</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,27 +113,81 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">Maps</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">地图组件</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--地图组件" id="markdown-toc---地图组件"><i class="mdi mdi-map-outline"></i>  地图组件</a>    <ul>
+      <li><a href="#Circle" id="markdown-toc-Circle">圆</a>        <ul>
+          <li><a href="#Circle-Properties" id="markdown-toc-Circle-Properties">属性</a></li>
+          <li><a href="#Circle-Events" id="markdown-toc-Circle-Events">事件</a></li>
+          <li><a href="#Circle-Methods" id="markdown-toc-Circle-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#FeatureCollection" id="markdown-toc-FeatureCollection">特征集合</a>        <ul>
+          <li><a href="#FeatureCollection-Properties" id="markdown-toc-FeatureCollection-Properties">属性</a></li>
+          <li><a href="#FeatureCollection-Events" id="markdown-toc-FeatureCollection-Events">事件</a></li>
+          <li><a href="#FeatureCollection-Methods" id="markdown-toc-FeatureCollection-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#LineString" id="markdown-toc-LineString">线段</a>        <ul>
+          <li><a href="#LineString-Properties" id="markdown-toc-LineString-Properties">属性</a></li>
+          <li><a href="#LineString-Events" id="markdown-toc-LineString-Events">事件</a></li>
+          <li><a href="#LineString-Methods" id="markdown-toc-LineString-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Map" id="markdown-toc-Map">地图</a>        <ul>
+          <li><a href="#Map-Properties" id="markdown-toc-Map-Properties">属性</a></li>
+          <li><a href="#Map-Events" id="markdown-toc-Map-Events">事件</a></li>
+          <li><a href="#Map-Methods" id="markdown-toc-Map-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Marker" id="markdown-toc-Marker">标记</a>        <ul>
+          <li><a href="#Marker-Properties" id="markdown-toc-Marker-Properties">属性</a></li>
+          <li><a href="#Marker-Events" id="markdown-toc-Marker-Events">事件</a></li>
+          <li><a href="#Marker-Methods" id="markdown-toc-Marker-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Navigation" id="markdown-toc-Navigation">导航</a>        <ul>
+          <li><a href="#Navigation-Properties" id="markdown-toc-Navigation-Properties">属性</a></li>
+          <li><a href="#Navigation-Events" id="markdown-toc-Navigation-Events">事件</a></li>
+          <li><a href="#Navigation-Methods" id="markdown-toc-Navigation-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Polygon" id="markdown-toc-Polygon">多边形</a>        <ul>
+          <li><a href="#Polygon-Properties" id="markdown-toc-Polygon-Properties">属性</a></li>
+          <li><a href="#Polygon-Events" id="markdown-toc-Polygon-Events">事件</a></li>
+          <li><a href="#Polygon-Methods" id="markdown-toc-Polygon-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Rectangle" id="markdown-toc-Rectangle">矩形</a>        <ul>
+          <li><a href="#Rectangle-Properties" id="markdown-toc-Rectangle-Properties">属性</a></li>
+          <li><a href="#Rectangle-Events" id="markdown-toc-Rectangle-Events">事件</a></li>
+          <li><a href="#Rectangle-Methods" id="markdown-toc-Rectangle-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <p><a href="index.html">« 返回首页</a></p>
-<h1 id="maps">Maps</h1>
+<h1 id="--地图组件"><i class="mdi mdi-map-outline"></i>  地图组件</h1>
 
 <p>目录：</p>
 
 <ul>
-  <li><a href="#Circle">Circle</a></li>
-  <li><a href="#FeatureCollection">FeatureCollection</a></li>
-  <li><a href="#LineString">LineString</a></li>
-  <li><a href="#Map">Map</a></li>
-  <li><a href="#Marker">Marker</a></li>
-  <li><a href="#Navigation">Navigation</a></li>
-  <li><a href="#Polygon">Polygon</a></li>
-  <li><a href="#Rectangle">Rectangle</a></li>
+  <li><a href="#Circle">圆</a></li>
+  <li><a href="#FeatureCollection">特征集合</a></li>
+  <li><a href="#LineString">线段</a></li>
+  <li><a href="#Map">地图</a></li>
+  <li><a href="#Marker">标记</a></li>
+  <li><a href="#Navigation">导航</a></li>
+  <li><a href="#Polygon">多边形</a></li>
+  <li><a href="#Rectangle">矩形</a></li>
 </ul>
 
-<h2 id="Circle">Circle</h2>
+<h2 id="Circle">圆</h2>
 
 <p>The <code class="highlighter-rouge">Circle</code> component visualizes a circle of a given <a href="#Circle.Radius"><code class="highlighter-rouge">Radius</code></a>, in meters,
  centered at a <a href="#Circle.Latitude"><code class="highlighter-rouge">Latitude</code></a> and <a href="#Circle.Longitude"><code class="highlighter-rouge">Longitude</code></a>. The <code class="highlighter-rouge">Circle</code>’s appearance
@@ -129,7 +200,7 @@
  <a href="sensors.html#LocationSensor"><code class="highlighter-rouge">LocationSensor</code></a>, you can determine whether a user’s location is
  inside or outside of the <code class="highlighter-rouge">Circle</code>. You can use this feature to trigger additional actions.</p>
 
-<h3 id="Circle-Properties">Properties</h3>
+<h3 id="Circle-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Circle.Description" class="text"><em>Description</em></dt>
@@ -172,7 +243,7 @@
  if the <code class="highlighter-rouge">Circle</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
 </dl>
 
-<h3 id="Circle-Events">Events</h3>
+<h3 id="Circle-Events">事件</h3>
 
 <dl class="events">
   <dt id="Circle.Click">Click()</dt>
@@ -191,7 +262,7 @@
   <dd>The <code class="highlighter-rouge">StopDrag</code> event runs when the user releases the <code class="highlighter-rouge">Circle</code> at the end of a drag.</dd>
 </dl>
 
-<h3 id="Circle-Methods">Methods</h3>
+<h3 id="Circle-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Circle.DistanceToFeature" class="method returns number"><i></i> DistanceToFeature(<em class="component">mapFeature</em>,<em class="boolean">centroids</em>)</dt>
@@ -216,14 +287,14 @@
  This method can be used to show the info box even if <a href="#Circle.EnableInfobox"><code class="highlighter-rouge">EnableInfobox</code></a> is false.</dd>
 </dl>
 
-<h2 id="FeatureCollection">FeatureCollection</h2>
+<h2 id="FeatureCollection">特征集合</h2>
 
 <p>A <code class="highlighter-rouge">FeatureCollection</code> groups one or more map features together. Any events that occur on a
  feature in the collection will also trigger the corresponding event in the collection component.
  <code class="highlighter-rouge">FeatureCollection</code>s can be loaded from external resources to populate <a href="#Map"><code class="highlighter-rouge">Map</code></a>s with content.
  GeoJSON is the only format supported at this time.</p>
 
-<h3 id="FeatureCollection-Properties">Properties</h3>
+<h3 id="FeatureCollection-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="FeatureCollection.Features" class="list bo"><em>Features</em></dt>
@@ -234,24 +305,21 @@
   <dd>Populates the feature collection from a string containing GeoJSON content. Given the size of
  such strings, it is recommended to load the feature collection from assets or the web using
  the <a href="#FeatureCollection.Source"><code class="highlighter-rouge">Source</code></a> property.</dd>
-  <dt id="FeatureCollection.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">FeatureCollection</code>’s vertical height, measured in pixels.</dd>
-  <dt id="FeatureCollection.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">FeatureCollection</code>’s vertical height as a percentage
- of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
+  <dt id="FeatureCollection.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">特征集合</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="FeatureCollection.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">特征集合</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
   <dt id="FeatureCollection.Source" class="text ro"><em>Source</em></dt>
   <dd>Specifies the source URL used to populate the feature collection. If the feature collection was not loaded from a URL, this will be the empty string.</dd>
-  <dt id="FeatureCollection.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">FeatureCollection</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">真</code>
- if the <code class="highlighter-rouge">FeatureCollection</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
-  <dt id="FeatureCollection.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">FeatureCollection</code>, measured in pixels.</dd>
-  <dt id="FeatureCollection.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">FeatureCollection</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dt id="FeatureCollection.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">特征集合</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">特征集合</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="FeatureCollection.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">特征集合</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="FeatureCollection.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">特征集合</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
 </dl>
 
-<h3 id="FeatureCollection-Events">Events</h3>
+<h3 id="FeatureCollection-Events">事件</h3>
 
 <dl class="events">
   <dt id="FeatureCollection.FeatureClick">FeatureClick(<em class="component">feature</em>)</dt>
@@ -291,7 +359,7 @@
  contain a detailed error message.</dd>
 </dl>
 
-<h3 id="FeatureCollection-Methods">Methods</h3>
+<h3 id="FeatureCollection-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="FeatureCollection.FeatureFromDescription" class="method returns any"><i></i> FeatureFromDescription(<em class="list">description</em>)</dt>
@@ -322,14 +390,14 @@
  response code and error message.</dd>
 </dl>
 
-<h2 id="LineString">LineString</h2>
+<h2 id="LineString">线段</h2>
 
 <p><code class="highlighter-rouge">LineString</code> is a component for drawing an open, continuous sequence of lines on a <code class="highlighter-rouge">Map</code>. To add
  new points to a <code class="highlighter-rouge">LineString</code> in the designer, drag the midpoint of any segment away from the
  line to introduce a new vertex. Move a vertex by clicking and dragging the vertex to a new
  location. Clicking on a vertex will delete the vertex, unless only two remain.</p>
 
-<h3 id="LineString-Properties">Properties</h3>
+<h3 id="LineString-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="LineString.Description" class="text"><em>Description</em></dt>
@@ -362,7 +430,7 @@
  if the <code class="highlighter-rouge">LineString</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
 </dl>
 
-<h3 id="LineString-Events">Events</h3>
+<h3 id="LineString-Events">事件</h3>
 
 <dl class="events">
   <dt id="LineString.Click">Click()</dt>
@@ -381,7 +449,7 @@
   <dd>The <code class="highlighter-rouge">StopDrag</code> event runs when the user releases the <code class="highlighter-rouge">LineString</code> at the end of a drag.</dd>
 </dl>
 
-<h3 id="LineString-Methods">Methods</h3>
+<h3 id="LineString-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="LineString.DistanceToFeature" class="method returns number"><i></i> DistanceToFeature(<em class="component">mapFeature</em>,<em class="boolean">centroids</em>)</dt>
@@ -403,7 +471,7 @@
  This method can be used to show the info box even if <a href="#LineString.EnableInfobox"><code class="highlighter-rouge">EnableInfobox</code></a> is false.</dd>
 </dl>
 
-<h2 id="Map">Map</h2>
+<h2 id="Map">地图</h2>
 
 <p>A two-dimensional container that renders map tiles in the background and allows for multiple
  <a href="#Marker"><code class="highlighter-rouge">Marker</code></a> elements to identify points on the map. Map tiles are supplied by OpenStreetMap
@@ -417,7 +485,7 @@
  to add <a href="#Marker"><code class="highlighter-rouge">Marker</code></a>s off-screen, then the "Reset Map to Initial Bounds" button can
  be used to re-center the <code class="highlighter-rouge">Map</code> at the starting location.</p>
 
-<h3 id="Map-Properties">Properties</h3>
+<h3 id="Map-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Map.BoundingBox" class="list bo"><em>BoundingBox</em></dt>
@@ -443,11 +511,10 @@
   <dd>Gets the list of features attached to the <code class="highlighter-rouge">Map</code> (without regard to the value of the
  feature’s <code class="getter block highlighter-rouge">Visible</code> property). This list also includes any features created on
  the <code class="highlighter-rouge">Map</code> by calls to <a href="#Map.FeatureFromDescription"><code class="highlighter-rouge">FeatureFromDescription</code></a>.</dd>
-  <dt id="Map.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Map</code>’s vertical height, measured in pixels.</dd>
-  <dt id="Map.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Map</code>’s vertical height as a percentage
- of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
+  <dt id="Map.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">地图</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="Map.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">地图</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
   <dt id="Map.Latitude" class="number ro bo"><em>Latitude</em></dt>
   <dd>Gets the latitude of the center of the Map. To change the latitude, use the
  <a href="#Map.PanTo"><code class="highlighter-rouge">PanTo</code></a> method.</dd>
@@ -490,14 +557,12 @@
   <dd>Returns the user’s latitude if ShowUser is enabled.</dd>
   <dt id="Map.UserLongitude" class="number ro bo"><em>UserLongitude</em></dt>
   <dd>Returns the user’s longitude if ShowUser is enabled.</dd>
-  <dt id="Map.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">Map</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">真</code>
- if the <code class="highlighter-rouge">Map</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
-  <dt id="Map.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Map</code>, measured in pixels.</dd>
-  <dt id="Map.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Map</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dt id="Map.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">地图</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">地图</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="Map.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">地图</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="Map.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">地图</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
   <dt id="Map.ZoomLevel" class="number"><em>ZoomLevel</em></dt>
   <dd>Specifies the zoom level of the map.
  Valid values of ZoomLevel are dependent on the tile provider and the latitude and
@@ -507,7 +572,7 @@
  great for the server to support.</dd>
 </dl>
 
-<h3 id="Map-Events">Events</h3>
+<h3 id="Map-Events">事件</h3>
 
 <dl class="events">
   <dt id="Map.BoundsChange">BoundsChange()</dt>
@@ -573,7 +638,7 @@
  pinching or double-tapping to zoom.</dd>
 </dl>
 
-<h3 id="Map-Methods">Methods</h3>
+<h3 id="Map-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Map.CreateMarker" class="method returns component"><i></i> CreateMarker(<em class="number">latitude</em>,<em class="number">longitude</em>)</dt>
@@ -610,7 +675,7 @@
   <dd>Saves the features on the <code class="highlighter-rouge">Map</code> as a GeoJSON file at the specified path.</dd>
 </dl>
 
-<h2 id="Marker">Marker</h2>
+<h2 id="Marker">标记</h2>
 
 <p>The <code class="highlighter-rouge">Marker</code> component indicates points on a <a href="#Map"><code class="highlighter-rouge">Map</code></a>, such as buildings or other points of
  interest. <code class="highlighter-rouge">Marker</code>s can be customized in many ways, such as using custom images from the app’s
@@ -618,7 +683,7 @@
  dynamically by calling the <a href="#Map.CreateMarker"><code class="highlighter-rouge">Map</code>’s <code class="highlighter-rouge">CreateMarker</code></a> method and configured using
  the <a href="../other/any-component-blocks.html">“Any Component”</a> blocks.</p>
 
-<h3 id="Marker-Properties">Properties</h3>
+<h3 id="Marker-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Marker.AnchorHorizontal" class="number"><em>AnchorHorizontal</em></dt>
@@ -640,11 +705,10 @@
   <dt id="Marker.FillOpacity" class="number"><em>FillOpacity</em></dt>
   <dd>Sets or gets the opacity of the color used to fill the <code class="highlighter-rouge">Marker</code>. A value of 0.0 will be
  completely invisible and a value of 1.0 will be completely opaque.</dd>
-  <dt id="Marker.Height" class="number bo"><em>Height</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Marker</code>’s vertical height, measured in pixels.</dd>
-  <dt id="Marker.HeightPercent" class="number wo bo"><em>HeightPercent</em></dt>
-  <dd>Specifies the <code class="highlighter-rouge">Marker</code>’s vertical height as a percentage
- of the <a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Height</code></a>.</dd>
+  <dt id="Marker.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">标记</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="Marker.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">标记</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
   <dt id="Marker.ImageAsset" class="text"><em>ImageAsset</em></dt>
   <dd>Specifies the image shown for the <code class="highlighter-rouge">Marker</code>. If set to the empty string “”, then the default
  marker icon will be used.</dd>
@@ -670,17 +734,15 @@
  map feature.</dd>
   <dt id="Marker.Type" class="text ro bo"><em>Type</em></dt>
   <dd>Return the type of the map feature. For Marker, this returns the text “Marker”.</dd>
-  <dt id="Marker.Visible" class="boolean"><em>Visible</em></dt>
-  <dd>Specifies whether the <code class="highlighter-rouge">Marker</code> should be visible on the screen.  Value is <code class="logic block highlighter-rouge">真</code>
- if the <code class="highlighter-rouge">Marker</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
-  <dt id="Marker.Width" class="number bo"><em>Width</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Marker</code>, measured in pixels.</dd>
-  <dt id="Marker.WidthPercent" class="number wo bo"><em>WidthPercent</em></dt>
-  <dd>Specifies the horizontal width of the <code class="highlighter-rouge">Marker</code> as a percentage
- of the <a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">Screen</code>’s <code class="highlighter-rouge">Width</code></a>.</dd>
+  <dt id="Marker.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">标记</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">标记</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="Marker.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">标记</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="Marker.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">标记</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
 </dl>
 
-<h3 id="Marker-Events">Events</h3>
+<h3 id="Marker-Events">事件</h3>
 
 <dl class="events">
   <dt id="Marker.Click">Click()</dt>
@@ -699,7 +761,7 @@
   <dd>The <code class="highlighter-rouge">StopDrag</code> event runs when the user releases the <code class="highlighter-rouge">Marker</code> at the end of a drag.</dd>
 </dl>
 
-<h3 id="Marker-Methods">Methods</h3>
+<h3 id="Marker-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Marker.BearingToFeature" class="method returns number"><i></i> BearingToFeature(<em class="component">mapFeature</em>,<em class="boolean">centroids</em>)</dt>
@@ -727,13 +789,13 @@
  This method can be used to show the info box even if <a href="#Marker.EnableInfobox"><code class="highlighter-rouge">EnableInfobox</code></a> is false.</dd>
 </dl>
 
-<h2 id="Navigation">Navigation</h2>
+<h2 id="Navigation">导航</h2>
 
 <p>The Navigation component generates directions between two locations using a service called
  <a href="https://openrouteservice.org">OpenRouteService</a>. You must provide a valid API key from that
  service in order for this component to work.</p>
 
-<h3 id="Navigation-Properties">Properties</h3>
+<h3 id="Navigation-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Navigation.ApiKey" class="text wo"><em>ApiKey</em></dt>
@@ -768,7 +830,7 @@
   </dd>
 </dl>
 
-<h3 id="Navigation-Events">Events</h3>
+<h3 id="Navigation-Events">事件</h3>
 
 <dl class="events">
   <dt id="Navigation.GotDirections">GotDirections(<em class="list">directions</em>,<em class="list">points</em>,<em class="number">distance</em>,<em class="number">duration</em>)</dt>
@@ -785,7 +847,7 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
   </dd>
 </dl>
 
-<h3 id="Navigation-Methods">Methods</h3>
+<h3 id="Navigation-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Navigation.RequestDirections" class="method"><i></i> RequestDirections()</dt>
@@ -796,14 +858,14 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
  <a href="userinterface.html#Screen.ErrorOccurred"><code class="highlighter-rouge">Screen's ErrorOccurred</code></a> event.</dd>
 </dl>
 
-<h2 id="Polygon">Polygon</h2>
+<h2 id="Polygon">多边形</h2>
 
 <p><code class="highlighter-rouge">Polygon</code> encloses an arbitrary 2-dimensional area on a <a href="#Map"><code class="highlighter-rouge">Map</code></a>. <code class="highlighter-rouge">Polygon</code>s can be used for
  drawing a perimeter, such as a campus, city, or country. <code class="highlighter-rouge">Polygon</code>s begin as basic triangles.
  New vertices can be created by dragging the midpoint of a polygon away from the edge. Clicking
  on a vertex will remove the vertex, but a minimum of 3 vertices must exist at all times.</p>
 
-<h3 id="Polygon-Properties">Properties</h3>
+<h3 id="Polygon-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Polygon.Description" class="text"><em>Description</em></dt>
@@ -849,7 +911,7 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
  if the <code class="highlighter-rouge">Polygon</code> is showing and <code class="logic block highlighter-rouge">假</code> if hidden.</dd>
 </dl>
 
-<h3 id="Polygon-Events">Events</h3>
+<h3 id="Polygon-Events">事件</h3>
 
 <dl class="events">
   <dt id="Polygon.Click">Click()</dt>
@@ -868,7 +930,7 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
   <dd>The <code class="highlighter-rouge">StopDrag</code> event runs when the user releases the <code class="highlighter-rouge">Polygon</code> at the end of a drag.</dd>
 </dl>
 
-<h3 id="Polygon-Methods">Methods</h3>
+<h3 id="Polygon-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Polygon.Centroid" class="method returns list"><i></i> Centroid()</dt>
@@ -892,12 +954,12 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
  This method can be used to show the info box even if <a href="#Polygon.EnableInfobox"><code class="highlighter-rouge">EnableInfobox</code></a> is false.</dd>
 </dl>
 
-<h2 id="Rectangle">Rectangle</h2>
+<h2 id="Rectangle">矩形</h2>
 
 <p><code class="highlighter-rouge">Rectangle</code>s are polygons with fixed latitudes and longitudes for the north, south, east, and
  west boundaries. Moving a vertex of the <code class="highlighter-rouge">Rectangle</code> updates the appropriate edges accordingly.</p>
 
-<h3 id="Rectangle-Properties">Properties</h3>
+<h3 id="Rectangle-Properties">属性</h3>
 
 <dl class="properties">
   <dt id="Rectangle.Description" class="text"><em>Description</em></dt>
@@ -938,7 +1000,7 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
   <dd>Specifies the south-most edge of the <code class="highlighter-rouge">Rectangle</code>, in decimal degrees south of the equator.</dd>
 </dl>
 
-<h3 id="Rectangle-Events">Events</h3>
+<h3 id="Rectangle-Events">事件</h3>
 
 <dl class="events">
   <dt id="Rectangle.Click">Click()</dt>
@@ -957,7 +1019,7 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
   <dd>The <code class="highlighter-rouge">StopDrag</code> event runs when the user releases the <code class="highlighter-rouge">Rectangle</code> at the end of a drag.</dd>
 </dl>
 
-<h3 id="Rectangle-Methods">Methods</h3>
+<h3 id="Rectangle-Methods">方法</h3>
 
 <dl class="methods">
   <dt id="Rectangle.Bounds" class="method returns list"><i></i> Bounds()</dt>
@@ -987,69 +1049,63 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
 </dl>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -1063,27 +1119,25 @@ be passed to <a href="#LineString.Points"><code class="highlighter-rouge">LineSt
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>

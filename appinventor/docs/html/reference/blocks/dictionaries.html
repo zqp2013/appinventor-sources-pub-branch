@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh_CN"><head>
-    <meta charset="utf-8">
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 字典代码块 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，字典代码块参考文档：包括什么情况下需要使用字典、创建空字典、创建字典、键值对、获取键的值、设置键的值、删除键的条目、获取键路径的值、设置键路径的值、获取键列表、获取值列表、键是否在字典中？、字典的长度、键值对列表转换为字典、字典转换为键值对列表、复制字典（深拷贝）、合并字典、在此层级遍历、遍历键路径列表、是否为字典？、字典遍历,遍历字典,获取键值列表的键（列表）。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="/static/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
      <!--//--><![CDATA[// ><!--
 
@@ -15,18 +30,25 @@
                                        if (referrer.match(patt)) {
                                            window.open("http://code.appinventor.mit.edu/", "new");
                                        } else {
-                                           window.open("http://www.fun123.cn/", "new");
+                                           window.open("https://www.fun123.cn/", "new");
                                        }
                                    }
      //--><!]]>
-    </script>
-    <title>MIT App Inventor Dictionary Blocks</title>
-    <meta name="keywords" content="AppInventor,App Inventor,App Inventor 2,App Inventor 2 中文网,ai2,少儿编程,青少年编程,编程,开心哆来咪编程网">
-	<meta name="description" content="App Inventor 2 中文网，专注青少年编程。">
-	<meta name="application-name" content="App Inventor 2 中文网"/></head>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
 <body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="http://fun123.cn/reference/">
-	<img src="/static/images/logo2.png" alt="Logo">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
     </a>
     <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -35,40 +57,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="http://www.fun123.cn/about-us">关于我们</a>
-			<a class="dropdown-item" href="http://www.fun123.cn/ReleaseNotes">发布日志</a>
-			<a class="dropdown-item" href="http://fun123.cn/about/termsofservice" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    教育
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">论坛</a>
-		    <a class="dropdown-item" href="http://www.fun123.cn/reference/tutorials">教程</a>
-		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    资源
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="http://fun123.cn/reference/info/">开始</a>
-		    <a class="dropdown-item" href="http://appinventor.mit.edu/explore/books">App Inventor书籍</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
-		<a class="nav-link" href="http://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			反馈
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum.php?mod=forumdisplay&fid=147&filter=typeid&typeid=63" target="_blank">我要反馈</a>
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
 		</div>
 		</li>
     </ul>
@@ -96,38 +113,76 @@
 </nav>
 <div class="default-page">
             <div class="header">
-	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">MIT App Inventor Dictionary Blocks</h1>
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 字典代码块</h1>
             </div>
             <div class="container-fluid">
                 <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#dictionaries" id="markdown-toc-dictionaries">介绍</a></li>
+  <li><a href="#create-empty-dictionary" id="markdown-toc-create-empty-dictionary">创建空字典</a></li>
+  <li><a href="#make-a-dictionary" id="markdown-toc-make-a-dictionary">创建字典</a></li>
+  <li><a href="#pair" id="markdown-toc-pair">键值对</a></li>
+  <li><a href="#get-value-for-key" id="markdown-toc-get-value-for-key">获取键的值</a></li>
+  <li><a href="#set-value-for-key" id="markdown-toc-set-value-for-key">设置键的值</a></li>
+  <li><a href="#delete-entry-for-key" id="markdown-toc-delete-entry-for-key">删除键的条目</a></li>
+  <li><a href="#get-value-at-key-path" id="markdown-toc-get-value-at-key-path">获取键路径的值</a></li>
+  <li><a href="#set-value-for-key-path" id="markdown-toc-set-value-for-key-path">设置键路径的值</a></li>
+  <li><a href="#get-keys" id="markdown-toc-get-keys">获取键列表</a></li>
+  <li><a href="#get-values" id="markdown-toc-get-values">获取值列表</a></li>
+  <li><a href="#is-key-in-dictionary" id="markdown-toc-is-key-in-dictionary">键是否在字典中？</a></li>
+  <li><a href="#size-of-dictionary" id="markdown-toc-size-of-dictionary">字典的长度</a></li>
+  <li><a href="#list-of-pairs-to-dictionary" id="markdown-toc-list-of-pairs-to-dictionary">键值对列表转换为字典</a></li>
+  <li><a href="#dictionary-to-list-of-pairs" id="markdown-toc-dictionary-to-list-of-pairs">字典转换为键值对列表</a></li>
+  <li><a href="#copy-dictionary" id="markdown-toc-copy-dictionary">复制字典（深拷贝）</a></li>
+  <li><a href="#merge-into-dictionary" id="markdown-toc-merge-into-dictionary">合并字典</a></li>
+  <li><a href="#walk-all-at-level" id="markdown-toc-walk-all-at-level">在此层级遍历</a></li>
+  <li><a href="#list-by-walking-key-path" id="markdown-toc-list-by-walking-key-path">遍历键路径列表</a></li>
+  <li><a href="#is-a-dictionary" id="markdown-toc-is-a-dictionary">是否为字典？</a></li>
+  <li><a href="#foreachdict" id="markdown-toc-foreachdict">案例：字典遍历</a></li>
+</ul>
+
 <p>目录：</p>
 
 <ul>
-  <li><a href="#dictionaries">Introduction</a></li>
-  <li><a href="#create-empty-dictionary">create empty dictionary</a></li>
-  <li><a href="#make-a-dictionary">make a dictionary</a></li>
-  <li><a href="#pair">pair</a></li>
-  <li><a href="#get-value-for-key">get value for key</a></li>
-  <li><a href="#set-value-for-key">set value for key</a></li>
-  <li><a href="#delete-entry-for-key">delete entry for key</a></li>
-  <li><a href="#get-value-at-key-path">get value at key path</a></li>
-  <li><a href="#set-value-for-key-path">set value for key path</a></li>
-  <li><a href="#get-keys">get keys</a></li>
-  <li><a href="#get-values">get values</a></li>
-  <li><a href="#is-key-in-dictionary">is key in dictionary?</a></li>
-  <li><a href="#size-of-dictionary">size of dictionary</a></li>
-  <li><a href="#list-of-pairs-to-dictionary">list of pairs to dictionary</a></li>
-  <li><a href="#dictionary-to-list-of-pairs">dictionary to list of pairs</a></li>
-  <li><a href="#copy-dictionary">copy dictionary</a></li>
-  <li><a href="#merge-into-dictionary">merge into dictionary</a></li>
-  <li><a href="#list-by-walking-key-path">list by walking key path</a></li>
-  <li><a href="#walk-all-at-level">walk all at level</a></li>
-  <li><a href="#is-a-dictionary">is a dictionary?</a></li>
+  <li><a href="#dictionaries">介绍</a></li>
+  <li><a href="#create-empty-dictionary">创建空字典</a></li>
+  <li><a href="#make-a-dictionary">创建字典</a></li>
+  <li><a href="#pair">键值对</a></li>
+  <li><a href="#get-value-for-key">获取键的值</a></li>
+  <li><a href="#set-value-for-key">设置键的值</a></li>
+  <li><a href="#delete-entry-for-key">删除键的条目</a></li>
+  <li><a href="#get-value-at-key-path">获取键路径的值</a></li>
+  <li><a href="#set-value-for-key-path">设置键路径的值</a></li>
+  <li><a href="#get-keys">获取键列表</a></li>
+  <li><a href="#get-values">获取值列表</a></li>
+  <li><a href="#is-key-in-dictionary">键是否在字典中？</a></li>
+  <li><a href="#size-of-dictionary">字典的长度</a></li>
+  <li><a href="#list-of-pairs-to-dictionary">键值对列表转换为字典</a></li>
+  <li><a href="#dictionary-to-list-of-pairs">字典转换为键值对列表</a></li>
+  <li><a href="#copy-dictionary">复制字典（深拷贝）</a></li>
+  <li><a href="#merge-into-dictionary">合并字典</a></li>
+  <li><a href="#walk-all-at-level">在此层级遍历</a></li>
+  <li><a href="#list-by-walking-key-path">遍历键路径列表</a></li>
+  <li><a href="#is-a-dictionary">是否为字典？</a></li>
 </ul>
 
-<h2 id="introduction">Introduction</h2>
+<hr />
+<p>拓展案例：</p>
 
-<p>Dictionaries, called in other languages terms such as maps, associative arrays or lists, are data structures that associate one value, often called the key, with another value. A common way of displaying dictionaries is using the JavaScript Object Notation (JSON), for example:</p>
+<ol>
+  <li><a href="#foreachdict"><em>案例：</em><strong>字典遍历</strong></a></li>
+  <li><a href="lists.html#keylist"><em>案例：</em>获取键值列表的键（列表）</a></li>
+</ol>
+
+<h3 id="dictionaries">介绍</h3>
+
+<p>字典在其他语言中称为映射、关联数组或列表，是一种将一个值（通常称为键）与另一个值关联的数据结构。</p>
+
+<p><strong>Q：App Inventor 2 什么情况下需要使用字典？</strong></p>
+
+<p><strong>A：</strong>列表能完成字典的绝大部分功能，不过字典具有<strong>比列表更好的查找性能</strong>，因此如果要对数据结构执行大量的操作，建议优先使用字典。</p>
+
+<p>显示字典的常见方法是使用 JavaScript 对象表示法 (JSON)，例如：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -140,59 +195,84 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The above example shows that in JSON the keys (quoted text before the <code class="highlighter-rouge">:</code>) can map to different types of values. The allowed types are number, text, other dictionaries, booleans, and lists. In the blocks language, you can bulid this dictionary as follows:</p>
+<p>上面的示例显示，在 JSON 中，键（在 <code class="highlighter-rouge">:</code> 之前引用的文本）可以映射到不同类型的值。</p>
 
-<p><img src="images/dictionaries/example-dictionary-blocks.png" alt="A blocks representation of the dictionary shown above" /></p>
+<p>允许的类型包括数字、文本、其他字典、布尔值和列表。在块语言中，可以按如下方式构建该字典：</p>
 
-<p><strong>Figure 1</strong>: A blocks representation of the JSON code snippet shown above.</p>
+<p><img src="images/dictionaries/example-dictionary-blocks.png" alt="字典的块表示" /></p>
 
-<h3 id="create-empty-dictionary">create empty dictionary</h3>
+<p><strong>图 1</strong>：上面显示的 JSON 代码片段的块表示</p>
+
+<hr />
+<h3 id="create-empty-dictionary">创建空字典</h3>
 
 <p><img src="images/dictionaries/create-with.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">create empty dictionary</code> block creates a dictionary without any key-value pairs. Entries can be added to the empty dictionary using the <code class="dictionary block highlighter-rouge">set value for key</code> block. The <code class="dictionary block highlighter-rouge">create empty dictionary</code> block can also be turned into a <code class="dictionary block highlighter-rouge">make a dictionary</code> block by using the blue mutator button to add <code class="dictionary block highlighter-rouge">pair</code> entries.</p>
+<p><code class="highlighter-rouge">创建空字典</code> 块创建一个没有任何键值对的字典。</p>
 
-<h3 id="make-a-dictionary">make a dictionary</h3>
+<p>可以使用 <a href="#set-value-for-key">设置键的值</a> 块将条目添加到空字典中。</p>
+
+<p>通过使用蓝色块拓展<img src="../concepts/images/mutatoricon.png" alt="块扩展图标" />按钮添加<code class="dictionary block highlighter-rouge">键值对</code>。</p>
+
+<p><code class="highlighter-rouge">创建空字典</code> 块也可以作为 <code class="highlighter-rouge">创建字典</code> 块的条目。</p>
+
+<hr />
+<h3 id="make-a-dictionary">创建字典</h3>
 
 <p><img src="images/dictionaries/make-a-dictionary.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">make a dictionary</code> is used to create a dictionary with a set of <code class="dictionary block highlighter-rouge">pair</code>s known in advance. Additional entries can be added using <code class="dictionary block highlighter-rouge">set value for key</code>.</p>
+<p>用于创建一个预先带有一组已知 <code class="dictionary block highlighter-rouge">键值对</code> 的字典，可以使用 <a href="#set-value-for-key">设置键的值</a> 添加其他条目。</p>
 
-<h3 id="pair">pair</h3>
+<hr />
+<h3 id="pair">键值对</h3>
 
 <p><img src="images/dictionaries/pair.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">pair</code> block is a special purpose block used for constructing dictionaries.</p>
+<p><code class="highlighter-rouge">键值对</code> 块是用于构造字典项的特殊块。</p>
 
-<h3 id="get-value-for-key">get value for key</h3>
+<hr />
+<h3 id="get-value-for-key">获取键的值</h3>
 
 <p><img src="images/dictionaries/get-value-for-key2.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">get value for key</code> block checks to see if the dictionary contains a corresponding value for the given key. If it does, the value is returned. Otherwise, the value of the <code class="highlighter-rouge">not found</code> parameter is returned. This behavior is similar to the behavior of the <a href="lists.html#lookupinpairs"><code class="list block highlighter-rouge">lookup in pairs</code></a> block.</p>
+<p><code class="highlighter-rouge">获取键的值</code> 块检查字典是否包含给定键的对应值，如果是，则返回该值；否则，返回“未找到”参数的值。</p>
 
-<h3 id="set-value-for-key">set value for key</h3>
+<p>此代码块的行为类似于<a href="lists.html"><code class="highlighter-rouge">列表</code></a>的 <a href="lists.html#lookupinpairs"><code class="list block highlighter-rouge">在键值对中查找</code></a> 。</p>
+
+<hr />
+<h3 id="set-value-for-key">设置键的值</h3>
 
 <p><img src="images/dictionaries/set-value-for-key.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">set value for key</code> block sets the corresponding value for the given <code class="highlighter-rouge">key</code> in the <code class="highlighter-rouge">dictionary</code> to <code class="highlighter-rouge">value</code>. If no mapping exists for <code class="highlighter-rouge">key</code>, a new one will be created. Otherwise, the existing value is replaced by the new value.</p>
+<p>将 <code class="highlighter-rouge">字典</code> 中给定 <code class="highlighter-rouge">键</code> 的对应值设置为 <code class="highlighter-rouge">值</code>。</p>
 
-<h3 id="delete-entry-for-key">delete entry for key</h3>
+<p><strong>如果<code class="highlighter-rouge">键</code>不存在映射，则会创建一个新映射；否则，现有值将被新值替换。</strong></p>
+
+<hr />
+<h3 id="delete-entry-for-key">删除键的条目</h3>
 
 <p><img src="images/dictionaries/delete-value-for-key.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">delete entry for key</code> block removes the key-value mapping in the dictionary for the given key. If no entry for the key exists in the dictionary, the dictionary is not modified.</p>
+<p><code class="highlighter-rouge">删除键的条目</code> 块删除字典中给定键的键值映射。如果字典中不存在该键的条目，则不会修改字典。</p>
 
-<h3 id="get-value-at-key-path">get value at key path</h3>
+<hr />
+<h3 id="get-value-at-key-path">获取键路径的值</h3>
 
-<p>The <code class="dictionary block highlighter-rouge">get value at key path</code> block is a more advanced version of the <code class="dictionary block highlighter-rouge">get value for key</code> block. Rather than getting the value of a specific key, it instead takes a list of valid keys and numbers representing a path through a data structure. The <code class="dictionary block highlighter-rouge">get value for key</code> block is equivalent to using this block with a key path of length 1 containing the key. For example, the following two blocks would return <code class="text block highlighter-rouge">"Tim the Beaver"</code>:</p>
+<p><code class="highlighter-rouge">获取键路径的值</code> 块是 <code class="highlighter-rouge">获取键的值</code> 块的<code class="highlighter-rouge">更高级版本</code>，它不是获取特定键的值，而是逐层遍历路径，逐层深入数据结构获取值。</p>
+
+<p><code class="highlighter-rouge">获取键的值</code> 块等同于<code class="highlighter-rouge">获取键路径的值</code> 块路径长度为 1。</p>
+
+<p>例如，以下两个块将返回 <code class="text block highlighter-rouge">"Tim the Beaver"</code>：</p>
 
 <p><img src="images/dictionaries/get-value-for-key.png" alt="" /> <img src="images/dictionaries/get-value-for-key-path.png" alt="" /></p>
 
-<p>It walks the data structure, starting from the initial dictionary, using the <code class="highlighter-rouge">path</code> provided in order to retrieve values nested deeply in complex data structures. It is best used for processing JSON data from web services. Starting from the initial input, it takes the first element in the <code class="highlighter-rouge">key path</code> and checks to see if a key (if the input is a dictionary) or index (if the input is a list) exists at that point. If so, it selects that item as the input and proceeds to check the next element in the <code class="highlighter-rouge">key path</code>, continuing until either the whole path has been followed, at which point it returns what is at that location, or the <code class="highlighter-rouge">"not found"</code> parameter.</p>
+<p>它从初始字典开始，使用提供的“路径”遍历数据结构，以便检索深度嵌套在复杂数据结构中的值。</p>
 
-<p><strong>Examples</strong></p>
+<p>它最适合处理来自 Web 服务的 JSON 数据，从初始输入开始，它获取“键路径”中的第一个元素，并检查该点是否存在键（如果输入是字典）或索引（如果输入是列表），如果是，它选择该项目作为输入，并继续检查“关键路径”中的下一个元素，继续检查整个路径，此时它返回该位置的内容，或者“未找到”参数的值。</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<p><strong>不明白？看例子最直观！</strong></p>
+
+<div class="language-json vip highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Tim the Beaver"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"school"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -203,83 +283,114 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>For example, given the JSON dictionary above, the following use of <code class="dictionary block highlighter-rouge">get value at key path</code> will yield the result <code class="text block highlighter-rouge">"Massachusetts Institute of Technology"</code>.</p>
+<p>例如，给定上面的 JSON 字典，以下使用 <code class="highlighter-rouge">获取键路径的值</code> 将产生结果 <code class="text block highlighter-rouge">"Massachusetts Institute of Technology"</code>。</p>
 
 <p><img src="images/dictionaries/get-value-for-key-path2.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">get value at key path&lt;</code> allows for the path to include numbers representing the index of elements to traverse when dictionaries and lists are mixed. For example, if we wanted to know the second class that Tim was taking, we could do the following:</p>
+<p><code class="highlighter-rouge">获取键路径的值</code> 允许路径包含表示混合字典和列表时要遍历的元素索引的数字。</p>
+
+<p>例如，如果我们想知道 Tim 正在上的第二堂课，我们可以执行以下操作：</p>
 
 <p><img src="images/dictionaries/get-value-for-key-path-with-index.png" alt="" /></p>
 
-<p>which returns the value <code class="highlighter-rouge">"18.01"</code>.</p>
+<p>这将返回值：<code class="highlighter-rouge">"18.01"</code></p>
 
-<h3 id="set-value-for-key-path">set value for key path</h3>
+<hr />
+<h3 id="set-value-for-key-path">设置键路径的值</h3>
 
 <p><img src="images/dictionaries/set-value-for-key-path.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">set value for key path</code> block updates the value at a specific <code class="highlighter-rouge">key path</code> in a data structure. It is the mirror of <code class="dictionary block highlighter-rouge">get value for key path</code>, which retrieves a value at a specific <code class="highlighter-rouge">key path</code>. The path <strong>must be valid</strong>, except for the last key, which if a mapping does not exist will create a mapping to the new value. Otherwise, the existing value is replaced with the new value.</p>
+<p><code class="highlighter-rouge">设置键路径的值</code> 块更新数据结构中特定 <code class="highlighter-rouge">键路径</code> 处的值。</p>
 
-<h3 id="get-keys">get keys</h3>
+<p>它是 <a href="#set-value-at-key-path">获取键路径的值</a> 的镜像，它检索特定 <code class="highlighter-rouge">键路径</code> 处的值。路径<strong>必须有效</strong>，最后一个键除外，如果映射不存在，则将创建到新值的映射。否则，现有值将替换为新值。</p>
+
+<hr />
+<h3 id="get-keys">获取键列表</h3>
 
 <p><img src="images/dictionaries/get-keys.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">get keys</code> returns a list of keys in the dictionary.</p>
+<p>返回字典中的键列表，是一个<code class="list block highlighter-rouge">列表</code>对象。</p>
 
-<h3 id="get-values">get values</h3>
+<hr />
+<h3 id="get-values">获取值列表</h3>
 
 <p><img src="images/dictionaries/get-values.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">get values</code> returns a list containing the values in the dictionary. Modifying the contents of a value in the list will also modify it in the dictionary.</p>
+<p>返回一个包含字典中的值的列表，是一个<code class="list block highlighter-rouge">列表</code>对象。</p>
 
-<h3 id="is-key-in-dictionary">is key in dictionary?</h3>
+<p><strong>修改值列表中值的内容也会修改字典中的值。</strong></p>
+
+<hr />
+<h3 id="is-key-in-dictionary">键是否在字典中？</h3>
 
 <p><img src="images/dictionaries/is-key-in.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">is key in dictionary?</code> tests whether the key exists in the dictionary and returns <code class="logic block highlighter-rouge">真</code> if it does, otherwise it returns <code class="logic block highlighter-rouge">假</code>.</p>
+<p><code class="highlighter-rouge">键是否在字典中？</code> 测试字典中是否存在该键，如果存在则返回 <code class="logic block highlighter-rouge">真</code>，否则返回 <code class="logic block highlighter-rouge">假</code>。</p>
 
-<h3 id="size-of-dictionary">size of dictionary</h3>
+<hr />
+<h3 id="size-of-dictionary">字典的长度</h3>
 
 <p><img src="images/dictionaries/size.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">size of dictionary</code> block returns the number of key-value pairs present in the dictionary.</p>
+<p><code class="highlighter-rouge">字典的长度</code> 块返回字典中存在的键值对的数量。</p>
 
-<h3 id="list-of-pairs-to-dictionary">list of pairs to dictionary</h3>
+<hr />
+<h3 id="list-of-pairs-to-dictionary">键值对列表转换为字典</h3>
 
 <p><img src="images/dictionaries/alist-to-dict.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">list of pairs to dictionary</code> block converts an associative list of the form <code class="highlighter-rouge">((key1 value1) (key2 value2) ...)</code> into a dictionary mapping the keys to their values.
-Because dictionaries provide better lookup performance than associative lists, if you want to perform many operations on a data structure it is advisable to use this block to convert the associative list into a dictionary first.</p>
+<p>将<code class="highlighter-rouge">((key1 value1) (key2 value2) ...)</code>形式的键值对列表转换为键映射到其值的字典。</p>
 
-<h3 id="dictionary-to-list-of-pairs">dictionary to list of pairs</h3>
+<p>由于字典具有比键值对列表更好的查找性能，因此如果要对数据结构执行大量的操作，建议首先使用此块将键值对列表转换为字典。</p>
+
+<hr />
+<h3 id="dictionary-to-list-of-pairs">字典转换为键值对列表</h3>
 
 <p><img src="images/dictionaries/dict-to-alist.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">dictionary to list of pairs</code> converts a dictionary into an associative list.
-This block reverses the conversion performed by the <a href="#list-of-pairs-to-dictionary"><code class="list block highlighter-rouge">list of pairs to dictionary</code></a> block.</p>
+<p>将字典转换为键值对列表。此块执行 <a href="#list-of-pairs-to-dictionary">键值对列表转换为字典</a> 相反的操作。</p>
 
 <p><img src="images/dictionaries/alist-dict-reversability.png" alt="Example of how the dictionary to list of pairs block reverses the list of pairs to dictionary block" /></p>
 
-<h3 id="copy-dictionary">copy dictionary</h3>
+<hr />
+<h3 id="copy-dictionary">复制字典（深拷贝）</h3>
 
 <p><img src="images/dictionaries/copy-dict.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">copy dictionary</code> makes a deep copy of the given dictionary. This means that all of the values are copied recursively and that changing a value in the copy will not change it in the original.</p>
+<p><code class="highlighter-rouge">复制字典</code> 制作给定字典的深层副本（深拷贝），也即是所有值都会递归复制，并且更改副本中的值不会更改原始值。</p>
 
-<h3 id="merge-into-dictionary">merge into dictionary</h3>
+<hr />
+<h3 id="merge-into-dictionary">合并字典</h3>
 
 <p><img src="images/dictionaries/combine-dicts.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">merge into dictionary from dictionary</code> block ccopies the key-value pairs from one dictionary into another, overwriting any keys in the target dictionary.</p>
+<p>该块将键值对从一个字典复制到另一个字典中，覆盖目标字典中的任何键。</p>
 
-<h3 id="list-by-walking-key-path">list by walking key path</h3>
+<hr />
+<h3 id="walk-all-at-level">在此层级遍历</h3>
+
+<p><img src="images/dictionaries/walk-all.png" alt="" /></p>
+
+<p>该块是一个专用块，可以在 <code class="highlighter-rouge">遍历键路径列表</code> 的键路径中使用。</p>
+
+<p>当在遍历中遇到时，它会导致该级别的每个项目都被探索。对于字典来说，这意味着每个值都会被访问；对于列表，将访问列表中的每个项目。</p>
+
+<p>这可用于聚合字典中的项目列表项数据，例如数据库中由 JSON 对象表示的每个人的名字。有关示例，请参阅 <a href="#list-by-walking-key-path"><code class="highlighter-rouge">遍历键路径列表</code></a> 块。</p>
+
+<hr />
+<h3 id="list-by-walking-key-path">遍历键路径列表</h3>
 
 <p><img src="images/dictionaries/walk-tree.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">list by walking key path</code> block works similarly to the <code class="dictionary block highlighter-rouge">get value at key path</code>, but creates a list of values rather than returning a single value. It works by starting at the given dictionary and walking down the tree of objects following the given path. Unlike the <code class="dictionary block highlighter-rouge">get value at key path</code> though, its path can be composed of three major types: dictionary keys, list indices, and the <a href="#walk-all-at-level"><code class="dictionary block highlighter-rouge">walk all at level</code></a> block. If a key or index is provided, the specific path is taken at that point in the tree. If the <code class="dictionary block highlighter-rouge">walk all at level</code> is specified, every value at that point is followed in succession (breadth-first), at which point the walk continues from the next element in the path. Any element that matches the whole path is added to the output list.</p>
+<p><code class="highlighter-rouge">遍历键路径列表</code> 块的工作方式与 <a href="#get-value-at-key-path">获取键路径的值</a> 类似，但会创建一个值列表，而不是返回单个值。</p>
 
-<p><strong>Examples</strong></p>
+<p>它的工作原理是从给定的字典开始，沿着给定的路径沿着对象树走下去。但与 <a href="#get-value-at-key-path">获取键路径的值</a> 不同，它的路径可以由三种主要类型组成：<code class="highlighter-rouge">字典键</code>、<code class="highlighter-rouge">列表索引</code> 和 <a href="#walk-all-at-level"><code class="highlighter-rouge">在此层级遍历</code></a> 块。</p>
 
-<p>Consider the following JSON and blocks:</p>
+<p>如果提供了键或索引，则在树中的该点采用特定路径。如果指定了 <a href="#walk-all-at-level"><code class="highlighter-rouge">在此层级遍历</code></a>，则将连续跟踪该点的每个值（广度优先），此时从路径中的下一个元素继续遍历。与整个路径匹配的任何元素都会添加到输出列表中。</p>
+
+<p><strong>例子</strong></p>
+
+<p>参考以下 JSON 和块：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"people"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -297,13 +408,19 @@ This block reverses the conversion performed by the <a href="#list-of-pairs-to-d
 
 <p><img src="images/dictionaries/walk-tree-example.png" alt="" /></p>
 
-<p>If <code class="variable block highlighter-rouge">global data</code> contains a dictionary represented by the JSON, then the <code class="dictionary block highlighter-rouge">list by walking key path</code> block will produce the list <code class="list block highlighter-rouge">["Tim", "Beaver"]</code>. First, the value of the <code class="text block highlighter-rouge">"people"</code> tag, that is the list of people, is chosen. Next, the first element in the list is chosen. Lastly, the walk all at level block selects the values in the object at that point, that is, the values <code class="text block highlighter-rouge">"Tim"</code> and <code class="text block highlighter-rouge">"Beaver"</code>.</p>
+<p>如果 <code class="variable block highlighter-rouge">global data</code> 包含由 JSON 表示的字典，则 <code class="highlighter-rouge">遍历键路径列表</code> 块将生成列表 <code class="list block highlighter-rouge">["Tim", "Beaver" ]</code>。</p>
 
-<p>You can also use <code class="dictionary block highlighter-rouge">walk all at level</code> at a level containing a list. For example, the following block selects the first names of all of the people in the structure, i.e., <code class="list block highlighter-rouge">["Tim", "John", "Jane"]</code>.</p>
+<p>首先，选择<code class="text block highlighter-rouge">“people”</code> 标记的值，即人员列表。接下来，选择列表中的第一个元素。</p>
+
+<p>最后，<code class="highlighter-rouge">在此层级遍历</code> 块选择该点对象中的值，即值 <code class="text block highlighter-rouge">"Tim"</code> 和 <code class="text block highlighter-rouge">"Beaver"</code>。</p>
+
+<p>还可以在包含列表的层级中使用 <code class="highlighter-rouge">在此层级遍历</code>。例如，以下块选择结构中所有人员的名字，即 <code class="list block highlighter-rouge">["Tim", "John", "Jane"]</code>。</p>
 
 <p><img src="images/dictionaries/walk-tree-example2.png" alt="" /></p>
 
-<p>This block can also be used with XML parsed using the <a href="/reference/components/connectivity.html#Web.XMLTextDecodeAsDictionary"><code class="method block highlighter-rouge">Web.XMLTextDecodeAsDictionary</code></a> block. Consider the following XML document:</p>
+<p>此块还可以与使用 <a href="/reference/components/connectivity.html#Web.XMLTextDecodeAsDictionary"><code class="method block highlighter-rouge">Web.XMLTextDecodeAsDictionary</code></a> 块解析的 XML 一起使用。</p>
+
+<p>参考以下 XML 文档：</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;schedule&gt;</span>
   <span class="nt">&lt;day&gt;</span>
@@ -317,86 +434,82 @@ This block reverses the conversion performed by the <a href="#list-of-pairs-to-d
 <span class="nt">&lt;/schedule&gt;</span>
 </code></pre></div></div>
 
-<p>You can use the following blocks to get a list of the names of the rooms on the first day, i.e. <code class="list block highlighter-rouge">["Hewlitt", "Bleil"]</code>.</p>
+<p>可以使用以下块来获取第一天的房间名称列表，即<code class="list block highlighter-rouge">["Hewlitt", "Bleil"]</code>。</p>
 
 <p><img src="images/dictionaries/walk-tree-xml.png" alt="" /></p>
 
-<h3 id="walk-all-at-level">walk all at level</h3>
-
-<p><img src="images/dictionaries/walk-all.png" alt="" /></p>
-
-<p>The <code class="dictionary block highlighter-rouge">walk all at level</code> block is a specialized block that can be used in the key path of a <code class="dictionary block highlighter-rouge">list by walking key path</code>. When encountered during a walk, it causes every item at that level to be explored. For dictionaries, this means that every value is visited. For lists, each item in the list is visited. This can be used to aggregate information from a list of items in a dictionary, such as the first name of every person in a database represented by JSON objects. See the <a href="#list-by-walking-key-path"><code class="dictionary block highlighter-rouge">list by walking key path</code></a> block for examples.</p>
-
-<h3 id="is-a-dictionary">is a dictionary?</h3>
+<hr />
+<h3 id="is-a-dictionary">是否为字典？</h3>
 
 <p><img src="images/dictionaries/is-dict.png" alt="" /></p>
 
-<p>The <code class="dictionary block highlighter-rouge">is a dictionary?</code> block tests to see whether the <code class="highlighter-rouge">thing</code> given to it is a dictionary or not. It will return <code class="logic block highlighter-rouge">真</code> if the <code class="highlighter-rouge">thing</code> is a dictionary and <code class="logic block highlighter-rouge">假</code> otherwise.</p>
+<p>该块测试给它的 <code class="highlighter-rouge">对象</code> 是否是一个字典。如果<code class="highlighter-rouge">对象</code>是字典，它将返回<code class="logic block highlighter-rouge">真</code>，否则返回<code class="logic block highlighter-rouge">假</code>。</p>
+
+<hr />
+<h3 id="foreachdict">案例：字典遍历</h3>
+
+<p>字典代码块中没有提供遍历的方法，遍历方法在<a href="control.html#foreachdict">控制代码块 &gt; 从字典循环</a>中，参考代码如下：</p>
+
+<p><img src="images/control/foreachdict.png" alt="遍历字典_从字典循环" /></p>
 
 </article>
-<script>
-  // Handle redirection to documentation based on locale query parameter (if specified)
-  (function() {
-      var locale = window.location.search.match('[&?]locale=([a-zA-Z-]*)');
-      if (locale) {
-          if (locale[1].indexOf('en') === 0) {
-              // English needs to stay at the top level to not break existing links
-              var page = window.location.pathname.split('/');
-              if (page.length === 5) {
-                  page.splice(2, 1);
-              } else {
-                  // already on english
-                  return;
-              }
-              window.location.href = page.join('/');
-          } else {
-              var page = window.location.pathname.split('/');
-              if (page.length === 4) {
-                  page.splice(2, 0, locale[1]);
-              } else if (page[2].toLowerCase() != locale[1].toLowerCase()) {
-                  page[2] = locale[1];
-              } else {
-                  return;  // already on the desired language
-              }
-              // Test that the page exists before redirecting.
-              var xhr = new XMLHttpRequest();
-              xhr.open('HEAD', page.join('/'), false);
-              xhr.onreadystatechange = function() {
-                  if (xhr.readyState == 4) {
-                      if ((xhr.status == 200 || xhr.status == 204)) {
-                          window.location.href = page.join('/');
-                      } else if (xhr.status  >= 400) {
-                          page.splice(2, 1);  // go to english version
-                          window.location.href = page.join('/');
-                      }
-                  }
-              };
-              xhr.send();
-          }
-      }
-  })();
-
-  // Handle embedded documentation in help by removing website template
-  if (window.self !== window.top) {
-      setTimeout(function() {
-          var videos = document.querySelectorAll('video');
-          for (var i = 0; i < videos.length; i++) {
-              if (parseInt(videos[i].getAttribute('width')) > 360) {
-                  var aspect = parseInt(videos[i].getAttribute('height')) / parseInt(videos[i].getAttribute('width'));
-                  videos[i].setAttribute('width', '360');
-                  videos[i].setAttribute('height', '' + (360 * aspect));
-              }
-          }
-          var h1 = document.querySelector('h1');
-          var article = document.querySelector('article');
-          article.insertBefore(h1, article.firstElementChild);
-          document.body.innerHTML = article.outerHTML;
-      });
-  }
-</script>
 
             </div>
-            <div class="footer background-green">
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
     <div class="row container">
 	<div class="col-xl-3">
 	    <h4>App Inventor 2 中文网</h4>
@@ -410,27 +523,25 @@ This block reverses the conversion performed by the <a href="#list-of-pairs-to-d
 	<div class="col-xl-6 legal text-center">
 	    <ul>
 		<li>
-		    <a href="http://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 fun123.cn</a>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
 		</li>
 		<li>
-		    <a href="http://creativecommons.org/licenses/by-sa/3.0/"
-                       target="_blank" class="btn btn-link" role="button">本作品遵从 Creative Commons Attribution-ShareAlike 3.0 许可协议</a>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
 		</li>
 		<li>
-		    <a href="http://fun123.cn/about/termsofservice"
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                        target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
 		</li>
 	    </ul>
 	</div>
 	<div class="col-xl-3 links">
-		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a>
-        </div>
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
     </div>
 </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async src="/static/js/widgets.js" charset="utf-8"></script>
+
 </div>
     </body>
 </html>
