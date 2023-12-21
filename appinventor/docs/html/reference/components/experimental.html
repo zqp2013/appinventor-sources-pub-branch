@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 试验组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI ChatGPT聊天机器人），Firebase数据库，ImageBot（OpenAI 绘图机器人）。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 试验组件</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--试验组件" id="markdown-toc---试验组件"><i class="mdi mdi-bug-outline"></i>  试验组件</a>    <ul>
+      <li><a href="#ChatBot" id="markdown-toc-ChatBot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACq0lEQVR42p1VPUiyURR+B1fHXFobJRQaKnSKBmc1si0kyrSwSI1agn7oZykjKn/IvyEoRSKwhnAwiCCiQQjEwcGCoKExK32+75zvuxc1i77vgcO97/He5zz33HOuCn7j/PwcfX190Gq16Ozs5FGv16OtrQ1TU1N4enqiZfj4+EC1WuWRrBWUs7MzKIqCkZER+P1+bG5uYnt7G1tbW9jb28Py8jKurq7wFWrVWiNhb28vxsfHWy5+fX1FOp3mIKurq1hbW8P6+jpWVlZwenoq15FqSUjqAoEAf7y9veH9/Z3nDw8PUKlUrL6npwfd3d1sJMBgMLB/fn5eEokUMOHu7m5DjgiLi4u8qVwuSxW1Wk1uPD4+5t9nZ2flHhqZkHJVH4Vgs9n4QpohNmezWSYkm5mZ4WBS4f7+/ifCwcFBTExMSD9tIKO0EMRlCvN6vd8TWq1WTE5Ofkq6UFIqlTA9PQ2fzwePxwPB89+EzaBKUKvV/0YoxpeXF67ThYUFPD8/sy8YDIrjt76UekJSVa/y4OCAm4BI6NgEKr0fE4raJNLDw0Mkk0n+vr29xcDAAM9DodAfQjr3zs7Ot4SESqWC4eFh7pRwOIyTkxPu+fv7e/6dRDFhR0eHVEibBClFdrlcsgWHhoa4Lm9ubri3NRoN8vm8DChzaDQa4XA4Pt2a2WyW/o2NDRmU+pmUFotFKaIhh5lMhid2u50TvbS0hEKhgNHRUfYRqL0SiQTu7u5wdHTU0L/isv7WIBRR9f39/ejq6mJnLpeD2+2G0+nkxY+PjxgbG4PFYsH19bV8SIhMdI68lOY+FTkkApPJhJ+CukWn00FprjHRCZeXlxyRjh6PxxGJRBCLxbgGaYxGo3I+NzfHa1OpVKNC8QAI0ouLC/4rqH8EWll7ezs/Z4RfAarSWV1mICUAAAAASUVORK5CYII=" width="20" height="20" />  ChatBot（OpenAI ChatGPT聊天机器人）</a>        <ul>
+          <li><a href="#ChatBot-Properties" id="markdown-toc-ChatBot-Properties">属性</a></li>
+          <li><a href="#ChatBot-Events" id="markdown-toc-ChatBot-Events">事件</a></li>
+          <li><a href="#ChatBot-Methods" id="markdown-toc-ChatBot-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#FirebaseDB" id="markdown-toc-FirebaseDB"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADD0lEQVR42m1TfUzMYRx/iP6wMfNy6tR5iWtdijKsrPOLcBjXpd8Vd9wS4RQtruyuOcqa0fhDa6nMeZlexBhZLZOXESVxRmdI10UvNmzy0v1+18dzna52890+z77PnufzeZ7P9/s8hLhiNHHHOF9C/KU0SaTYTsj4ZOLtwxIyKZLOJw/vI6PISPKSIL+5hPjdNu4Q9zWUhuDllWi01cWj/oIc+1OisEoqwaqogG+EiMrpAcKR3H+nz7h9PT8MeDIbeCMHvhj4Bxfl/IZIAU+IwEHXES8Lwvk8CZhF/mVOBssSLwK4rrKMCa7/0ywDmufbObMS6DGitnIbcnWrcfrQCpzJZQbumKL6+5rE2KvyrXNyBrlDAkqZqA7mxcArGce3KDDQqgI+7QM69cDHA8CHXUC7goMlEDuVwrtuAaNxyMK0cnNVMGBTcbDupWSKz+lAFxXozAKse4COOO73MxEU0VNvuQVYlvVyToJDxMXJO1bilD6KqzUl4vW93Wh/no4Pj1JhqUtCY1UsLh0L4w5nxSBiaeh1J8doNI4mcA40FoX4XbM2qKjvLdyJPDWOGLcgK5NFRrocWboNyMuJR5VJzVufqKHZKG5yN7PSWcnBXggr7C/mA91qDh0Z1IoBDic6M6kdg6sWXck8LGLELfd57hZgGDLGlfkVmK/RGrzbaMdHLSVRYs9BoJfWoYfmNh3wfjPfVjMHgbOFD0cIMIMCy6WS0yePJyAtKcJemLMGVYVKVJ9LQLVJgatFChQdlSF160L+eB4LxfrwxmELla4iBoqmlHxtiUfbUy1Xc1WLCtMunC3chpKCrbhYrMHNsu1ovZ/C/zArsGmtyEIpLuu0jUMWSvtb5tErJ/6i7XOgWz+A3uwBfNFR0Lxb70CXph+vZmGddLqVEIm3Rw2EydVFC9DXEgfH29300VDPtkzXe7AdgON9Bl1LQMPlUEwW+NeQ/4cgduK0mTe06vB3ORnM93xDzJ/8bMaeq1v2M02z+HNIUMBjetNDhMyZ4PkjPWMshQ9FAAX9pUREMcFjzyD5L3bts9I+U7jyAAAAAElFTkSuQmCC" width="20" height="20" />  Firebase数据库</a>        <ul>
+          <li><a href="#FirebaseDB-Properties" id="markdown-toc-FirebaseDB-Properties">属性</a></li>
+          <li><a href="#FirebaseDB-Events" id="markdown-toc-FirebaseDB-Events">事件</a></li>
+          <li><a href="#FirebaseDB-Methods" id="markdown-toc-FirebaseDB-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#ImageBot" id="markdown-toc-ImageBot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="20" height="20" />  ImageBot（OpenAI 绘图机器人）</a>        <ul>
+          <li><a href="#ImageBot-Properties" id="markdown-toc-ImageBot-Properties">属性</a></li>
+          <li><a href="#ImageBot-Events" id="markdown-toc-ImageBot-Events">事件</a></li>
+          <li><a href="#ImageBot-Methods" id="markdown-toc-ImageBot-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="--试验组件"><i class="mdi mdi-bug-outline"></i>  试验组件</h1>
+
+<p>目录：</p>
+
+<ol>
+  <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACq0lEQVR42p1VPUiyURR+B1fHXFobJRQaKnSKBmc1si0kyrSwSI1agn7oZykjKn/IvyEoRSKwhnAwiCCiQQjEwcGCoKExK32+75zvuxc1i77vgcO97/He5zz33HOuCn7j/PwcfX190Gq16Ozs5FGv16OtrQ1TU1N4enqiZfj4+EC1WuWRrBWUs7MzKIqCkZER+P1+bG5uYnt7G1tbW9jb28Py8jKurq7wFWrVWiNhb28vxsfHWy5+fX1FOp3mIKurq1hbW8P6+jpWVlZwenoq15FqSUjqAoEAf7y9veH9/Z3nDw8PUKlUrL6npwfd3d1sJMBgMLB/fn5eEokUMOHu7m5DjgiLi4u8qVwuSxW1Wk1uPD4+5t9nZ2flHhqZkHJVH4Vgs9n4QpohNmezWSYkm5mZ4WBS4f7+/ifCwcFBTExMSD9tIKO0EMRlCvN6vd8TWq1WTE5Ofkq6UFIqlTA9PQ2fzwePxwPB89+EzaBKUKvV/0YoxpeXF67ThYUFPD8/sy8YDIrjt76UekJSVa/y4OCAm4BI6NgEKr0fE4raJNLDw0Mkk0n+vr29xcDAAM9DodAfQjr3zs7Ot4SESqWC4eFh7pRwOIyTkxPu+fv7e/6dRDFhR0eHVEibBClFdrlcsgWHhoa4Lm9ubri3NRoN8vm8DChzaDQa4XA4Pt2a2WyW/o2NDRmU+pmUFotFKaIhh5lMhid2u50TvbS0hEKhgNHRUfYRqL0SiQTu7u5wdHTU0L/isv7WIBRR9f39/ejq6mJnLpeD2+2G0+nkxY+PjxgbG4PFYsH19bV8SIhMdI68lOY+FTkkApPJhJ+CukWn00FprjHRCZeXlxyRjh6PxxGJRBCLxbgGaYxGo3I+NzfHa1OpVKNC8QAI0ouLC/4rqH8EWll7ezs/Z4RfAarSWV1mICUAAAAASUVORK5CYII=" width="16" height="16" />  <a href="#ChatBot">ChatBot</a></li>
+  <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADD0lEQVR42m1TfUzMYRx/iP6wMfNy6tR5iWtdijKsrPOLcBjXpd8Vd9wS4RQtruyuOcqa0fhDa6nMeZlexBhZLZOXESVxRmdI10UvNmzy0v1+18dzna52890+z77PnufzeZ7P9/s8hLhiNHHHOF9C/KU0SaTYTsj4ZOLtwxIyKZLOJw/vI6PISPKSIL+5hPjdNu4Q9zWUhuDllWi01cWj/oIc+1OisEoqwaqogG+EiMrpAcKR3H+nz7h9PT8MeDIbeCMHvhj4Bxfl/IZIAU+IwEHXES8Lwvk8CZhF/mVOBssSLwK4rrKMCa7/0ywDmufbObMS6DGitnIbcnWrcfrQCpzJZQbumKL6+5rE2KvyrXNyBrlDAkqZqA7mxcArGce3KDDQqgI+7QM69cDHA8CHXUC7goMlEDuVwrtuAaNxyMK0cnNVMGBTcbDupWSKz+lAFxXozAKse4COOO73MxEU0VNvuQVYlvVyToJDxMXJO1bilD6KqzUl4vW93Wh/no4Pj1JhqUtCY1UsLh0L4w5nxSBiaeh1J8doNI4mcA40FoX4XbM2qKjvLdyJPDWOGLcgK5NFRrocWboNyMuJR5VJzVufqKHZKG5yN7PSWcnBXggr7C/mA91qDh0Z1IoBDic6M6kdg6sWXck8LGLELfd57hZgGDLGlfkVmK/RGrzbaMdHLSVRYs9BoJfWoYfmNh3wfjPfVjMHgbOFD0cIMIMCy6WS0yePJyAtKcJemLMGVYVKVJ9LQLVJgatFChQdlSF160L+eB4LxfrwxmELla4iBoqmlHxtiUfbUy1Xc1WLCtMunC3chpKCrbhYrMHNsu1ovZ/C/zArsGmtyEIpLuu0jUMWSvtb5tErJ/6i7XOgWz+A3uwBfNFR0Lxb70CXph+vZmGddLqVEIm3Rw2EydVFC9DXEgfH29300VDPtkzXe7AdgON9Bl1LQMPlUEwW+NeQ/4cgduK0mTe06vB3ORnM93xDzJ/8bMaeq1v2M02z+HNIUMBjetNDhMyZ4PkjPWMshQ9FAAX9pUREMcFjzyD5L3bts9I+U7jyAAAAAElFTkSuQmCC" width="16" height="16" />  <a href="#FirebaseDB">Firebase数据库</a></li>
+  <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="16" height="16" />  <a href="#ImageBot">ImageBot</a></li>
+</ol>
+
+<h2 id="ChatBot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACq0lEQVR42p1VPUiyURR+B1fHXFobJRQaKnSKBmc1si0kyrSwSI1agn7oZykjKn/IvyEoRSKwhnAwiCCiQQjEwcGCoKExK32+75zvuxc1i77vgcO97/He5zz33HOuCn7j/PwcfX190Gq16Ozs5FGv16OtrQ1TU1N4enqiZfj4+EC1WuWRrBWUs7MzKIqCkZER+P1+bG5uYnt7G1tbW9jb28Py8jKurq7wFWrVWiNhb28vxsfHWy5+fX1FOp3mIKurq1hbW8P6+jpWVlZwenoq15FqSUjqAoEAf7y9veH9/Z3nDw8PUKlUrL6npwfd3d1sJMBgMLB/fn5eEokUMOHu7m5DjgiLi4u8qVwuSxW1Wk1uPD4+5t9nZ2flHhqZkHJVH4Vgs9n4QpohNmezWSYkm5mZ4WBS4f7+/ifCwcFBTExMSD9tIKO0EMRlCvN6vd8TWq1WTE5Ofkq6UFIqlTA9PQ2fzwePxwPB89+EzaBKUKvV/0YoxpeXF67ThYUFPD8/sy8YDIrjt76UekJSVa/y4OCAm4BI6NgEKr0fE4raJNLDw0Mkk0n+vr29xcDAAM9DodAfQjr3zs7Ot4SESqWC4eFh7pRwOIyTkxPu+fv7e/6dRDFhR0eHVEibBClFdrlcsgWHhoa4Lm9ubri3NRoN8vm8DChzaDQa4XA4Pt2a2WyW/o2NDRmU+pmUFotFKaIhh5lMhid2u50TvbS0hEKhgNHRUfYRqL0SiQTu7u5wdHTU0L/isv7WIBRR9f39/ejq6mJnLpeD2+2G0+nkxY+PjxgbG4PFYsH19bV8SIhMdI68lOY+FTkkApPJhJ+CukWn00FprjHRCZeXlxyRjh6PxxGJRBCLxbgGaYxGo3I+NzfHa1OpVKNC8QAI0ouLC/4rqH8EWll7ezs/Z4RfAarSWV1mICUAAAAASUVORK5CYII=" width="20" height="20" />  ChatBot（OpenAI ChatGPT聊天机器人）</h2>
+
+<p>ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此版本使用 MIT 运行的代理，该代理又使用 ChatGPT 生成大语言模型。</p>
+
+<p>注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -&gt; AI伴侣信息)，编译为apk则不受限制安装后可正常运行。</p>
+
+<ul>
+  <li>demo程序下载：
+<a href="demo/chatgpt.aia">chatgpt.aia</a></li>
+</ul>
+
+<h3 id="ChatBot-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="ChatBot.ApiKey" class="text bo"><em>ApiKey</em></dt>
+  <dd>ChatGPT 的 ApiKey，由用户提供。如果提供，我们将使用它来代替聊天代理服务中的 API 密钥。
+
+    <p>注意：我们不将其作为属性在“界面设计”视图中提供，应在“程序设计”视图中使用代码块设置。最好使用<code class="highlighter-rouge">文本块</code>中的<a href="../blocks/text.html#obfuscatetext"><code class="highlighter-rouge">模糊文本</code></a>对嵌入在打包应用程序中的密钥提供一些保护（但不是完美的保护）。</p>
+  </dd>
+  <dt id="ChatBot.Model" class="text"><em>模型</em></dt>
+  <dd>设置要使用的模型的名称。请参阅 <a href="https://appinv.us/chatbot">https://appinv.us/chatbot</a> 了解当前支持的模型列表，留空将使用提供商设置的默认模型。</dd>
+  <dt id="ChatBot.Provider" class="text"><em>提供商</em></dt>
+  <dd>设置要使用的提供商的名称，如<code class="highlighter-rouge">chatgpt</code>。请参阅 <a href="https://appinv.us/chatbot">https://appinv.us/chatbot</a> 了解当前支持的提供商列表。</dd>
+  <dt id="ChatBot.System" class="text"><em>系统值</em></dt>
+  <dd>赋予 ChatGPT 的系统值，它用于设定对话的基调，例如：<code class="highlighter-rouge">“你是一个有趣的人。”</code></dd>
+  <dt id="ChatBot.Token" class="text wo"><em>访问令牌</em></dt>
+  <dd>要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
+
+    <p>默认情况下，令牌是无法访问MIT代理服务器的，如需有效令牌请参照<a href="../creative/token.html">《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》</a>。</p>
+  </dd>
+</dl>
+
+<h3 id="ChatBot-Events">事件</h3>
+
+<dl class="events">
+  <dt id="ChatBot.ErrorOccurred">出现错误(<em class="number">响应代码</em>,<em class="text">响应文本</em>)</dt>
+  <dd>当执行期间发生错误时，将运行 <code class="highlighter-rouge">出现错误</code> 事件处理，例如是否超过使用配额，或者某些ChatGPT 或 PaLM 发出的其他错误。
+
+    <p>看 <a href="https://appinv.us/chatbot">https://appinv.us/chatbot</a> 了解最新信息。</p>
+  </dd>
+  <dt id="ChatBot.GotResponse">获取响应(<em class="text">响应文本</em>)</dt>
+  <dd>指示请求已完成并已返回数据的事件（来自 ChatBot 的输出）。</dd>
+</dl>
+
+<h3 id="ChatBot-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="ChatBot.Converse" class="method"><i></i> 对话(<em class="text">question</em>)</dt>
+  <dd>向聊天机器人询问问题，连续的对话将记住先前对话中的信息，使用 <a href="#ChatBot.ResetConversation">重置对话</a> 方法重置开始新的对话。</dd>
+  <dt id="ChatBot.ResetConversation" class="method"><i></i> 重置对话()</dt>
+  <dd>重置当前对话，聊天机器人在回复时会忘记之前的任何对话。</dd>
+</dl>
+
+<h2 id="FirebaseDB"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADD0lEQVR42m1TfUzMYRx/iP6wMfNy6tR5iWtdijKsrPOLcBjXpd8Vd9wS4RQtruyuOcqa0fhDa6nMeZlexBhZLZOXESVxRmdI10UvNmzy0v1+18dzna52890+z77PnufzeZ7P9/s8hLhiNHHHOF9C/KU0SaTYTsj4ZOLtwxIyKZLOJw/vI6PISPKSIL+5hPjdNu4Q9zWUhuDllWi01cWj/oIc+1OisEoqwaqogG+EiMrpAcKR3H+nz7h9PT8MeDIbeCMHvhj4Bxfl/IZIAU+IwEHXES8Lwvk8CZhF/mVOBssSLwK4rrKMCa7/0ywDmufbObMS6DGitnIbcnWrcfrQCpzJZQbumKL6+5rE2KvyrXNyBrlDAkqZqA7mxcArGce3KDDQqgI+7QM69cDHA8CHXUC7goMlEDuVwrtuAaNxyMK0cnNVMGBTcbDupWSKz+lAFxXozAKse4COOO73MxEU0VNvuQVYlvVyToJDxMXJO1bilD6KqzUl4vW93Wh/no4Pj1JhqUtCY1UsLh0L4w5nxSBiaeh1J8doNI4mcA40FoX4XbM2qKjvLdyJPDWOGLcgK5NFRrocWboNyMuJR5VJzVufqKHZKG5yN7PSWcnBXggr7C/mA91qDh0Z1IoBDic6M6kdg6sWXck8LGLELfd57hZgGDLGlfkVmK/RGrzbaMdHLSVRYs9BoJfWoYfmNh3wfjPfVjMHgbOFD0cIMIMCy6WS0yePJyAtKcJemLMGVYVKVJ9LQLVJgatFChQdlSF160L+eB4LxfrwxmELla4iBoqmlHxtiUfbUy1Xc1WLCtMunC3chpKCrbhYrMHNsu1ovZ/C/zArsGmtyEIpLuu0jUMWSvtb5tErJ/6i7XOgWz+A3uwBfNFR0Lxb70CXph+vZmGddLqVEIm3Rw2EydVFC9DXEgfH29300VDPtkzXe7AdgON9Bl1LQMPlUEwW+NeQ/4cgduK0mTe06vB3ORnM93xDzJ/8bMaeq1v2M02z+HNIUMBjetNDhMyZ4PkjPWMshQ9FAAX9pUREMcFjzyD5L3bts9I+U7jyAAAAAElFTkSuQmCC" width="20" height="20" />  Firebase数据库</h2>
+
+<p>Firebase 组件与 Web 服务通信以存储并获取数据。 该组件可以在标签下存储值并检索与标签关联的值。 它还拥有一个监听器，可以在存储值改变时触发事件。</p>
+
+<p><a href="../other/firebaseIntro.html">更多信息</a></p>
+
+<p><a href="../other/firebaseIntro.html#FirebaseDB_vs_TinyWebDB">FirebaseDB vs TinyWebDB 区别</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>区别</th>
+      <th>Firebase数据库</th>
+      <th>网络微数据库</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>区别在于来自不同应用程序的变量是否会干扰</td>
+      <td>每个应用程序都有其单独的数据存储，因此其他应用程序的变量<strong>不会干扰</strong></td>
+      <td>任何应用程序都可以更改值，前提是它使用相同的标签</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="FirebaseDB-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="FirebaseDB.DeveloperBucket" class="text do"><em>开发者桶</em></dt>
+  <dd>获取开发者桶(bucket)。</dd>
+  <dt id="FirebaseDB.FirebaseToken" class="text do"><em>Firebase令牌</em></dt>
+  <dd>获取Firebase访问令牌。</dd>
+  <dt id="FirebaseDB.FirebaseURL" class="text do"><em>Firebase URL地址</em></dt>
+  <dd>指定 Firebase 的 URL地址。当前默认值是MIT私有 Firebase URL地址，目前选择默认即可。</dd>
+  <dt id="FirebaseDB.Persist" class="boolean wo do"><em>持久化</em></dt>
+  <dd>如果为 <code class="highlighter-rouge">真</code>，则变量在离线且应用程序退出时将保留其值。下次应用程序在连接到网络时运行时，值将上传到 Firebase。这对于在未连接到网络时收集数据的应用程序非常有用。
+
+    <p><strong>注意：</strong></p>
+
+    <ul>
+      <li>
+        <p><a href="#FirebaseDB.AppendValue">追加值</a> 和 <a href="#FirebaseDB.RemoveFirst">删除第一项</a> 在离线时无法正常工作，它们需要网络连接。</p>
+      </li>
+      <li>
+        <p>如果你在任何 Firebase 组件、任何屏幕上设置 持久化， 它使所有屏幕上的所有 Firebase 组件保持不变。这是 Firebase 底层库的限制。</p>
+      </li>
+    </ul>
+  </dd>
+  <dt id="FirebaseDB.ProjectBucket" class="text"><em>项目桶</em></dt>
+  <dd>获取项目桶(bucket)。</dd>
+</dl>
+
+<h3 id="FirebaseDB-Events">事件</h3>
+
+<dl class="events">
+  <dt id="FirebaseDB.DataChanged">数据改变时(<em class="text">标签</em>,<em class="any">值</em>)</dt>
+  <dd>表示 Firebase 中的数据已更改。
+
+    <p>使用已更新的标签和值启动事件。</p>
+  </dd>
+  <dt id="FirebaseDB.FirebaseError">Firebase错误时(<em class="text">消息</em>)</dt>
+  <dd>表示与 Firebase 的通信发出错误信号。</dd>
+  <dt id="FirebaseDB.FirstRemoved">第一项已删除时(<em class="any">值</em>)</dt>
+  <dd>由 <a href="#FirebaseDB.RemoveFirst">删除第一项</a> 函数触发的事件。参数“值”是列表中第一个对象，现在已被删除。</dd>
+  <dt id="FirebaseDB.GotValue">以获得值时(<em class="text">标签</em>,<em class="any">值</em>)</dt>
+  <dd>表示 <a href="#FirebaseDB.GetValue">获取值</a> 请求已成功。</dd>
+  <dt id="FirebaseDB.TagList">收到标签列表时(<em class="list">值</em>)</dt>
+  <dd>当我们收到已知标签列表时触发事件。与 <a href="#FirebaseDB.GetTagList">获取标签列表</a> 函数一起使用。</dd>
+</dl>
+
+<h3 id="FirebaseDB-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="FirebaseDB.AppendValue" class="method"><i></i> 追加值(<em class="text">标签</em>,<em class="any">待追加值</em>)</dt>
+  <dd>以原子(Atomic)方式将值附加到列表末尾。如果两个设备同时使用此功能，两个设备都会被追加并且不会丢失数据。</dd>
+  <dt id="FirebaseDB.ClearTag" class="method"><i></i> 清除标签(<em class="text">标签</em>)</dt>
+  <dd>要求 Firebase 清除（删除或设置为“null”）给定标签。</dd>
+  <dt id="FirebaseDB.GetTagList" class="method"><i></i> 获取标签列表()</dt>
+  <dd>获取此应用程序的标签列表。完成后，将使用已知标签列表触发 <a href="#FirebaseDB.TagList">收到标签列表时</a> 事件。</dd>
+  <dt id="FirebaseDB.GetValue" class="method"><i></i> 获取值(<em class="text">标签</em>,<em class="any">无标签时返回值</em>)</dt>
+  <dd>获取值 要求 Firebase 获取存储在给定标签下的值。
+
+    <p>如果标签下没有存储值，它将把 “无标签时返回值” 传递给事件 <a href="FirebaseDB.GotValue">以获得值时</a>。</p>
+  </dd>
+  <dt id="FirebaseDB.RemoveFirst" class="method"><i></i> 删除第一项(<em class="text">标签</em>)</dt>
+  <dd>返回列表的第一个元素并自动删除它。如果两个设备同时使用此功能，一个将获取第一个元素，另一个将获取第二个元素，如果没有可用元素，则会出现错误。当元素可用时，将触发<a href="#FirebaseDB.RemoveFirst">删除第一项</a>事件。</dd>
+  <dt id="FirebaseDB.StoreValue" class="method"><i></i> 存储值(<em class="text">标签</em>,<em class="any">待存储值</em>)</dt>
+  <dd>要求 Firebase 将给定值存储在给定标签下。</dd>
+  <dt id="FirebaseDB.Unauthenticate" class="method"><i></i> 取消身份验证()</dt>
+  <dd>从 Firebase 取消身份验证。
+
+    <p>Firebase 会跟踪共享首选项中缓存中的凭据，只要这些凭据有效，它就会重复使用这些凭据。 鉴于我们获取的 Firebase令牌有效期较长，这实际上将是永久的。 Shared_prefs 在应用程序更新后仍然存在，并且根据设备上备份的配置方式，它可能在应用程序删除和重新安装后仍然存在。</p>
+
+    <p>通常这不是问题，但是如果我们更改使用的凭据，例如应用程序作者从一个 Firebase 帐户切换到另一个帐户，或者使他们的 firebase.secret 无效，则此缓存的凭据无效，但将继续使用，这将导致错误。</p>
+
+    <p>此函数允许我们取消身份验证，从而丢弃缓存的凭据。下次需要身份验证时，我们将使用当前的 Firebase令牌 并获取新的凭据。</p>
+  </dd>
+</dl>
+
+<h2 id="ImageBot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeUlEQVR42p2TT0gUcRTHVyJUCPagXSSpiMgwpJAZd3ZmdnZczJ0/u7O77o7b0uqmZpuYfyAh6LIIFlkk5SFXhBYr3Dr07xB0kTDNjh281qF/B3XBJEgQ99tbJTP1oP2GBwPz+3zfe9/3xmL5j8NxnMvpdA4JghDZNcyyLOdyuTKJRAKyLE/tCq6srCyTJGk2lUohEAgs8Dx/YSfQXso6SDFDwGwymUQsFvshiuKNbYFQKLRHVdUqw6N2h33KK1kSFyWHI+t2u0ECCAaDSwSPbgF1XT8aNtS06VNnO8M1833R6pWRJh5OOwtN00DfQcIgA5cZhjn/D2x6ld7GgJJ50Cpm33VVIaqcQ2nJBHimAeQ0aiQeDo6FjWWXqJWvJHBzHTZ0XW0PnV7Ige+718KUe2CxABUVlJHRMNbM4m2XDWd8yryiKEc2Zx+mzJgmcLCdR3+nHfebasGUj8JqnQR36i5eX7KvCj9rE7LU5lydoXaTUP6fClquR+VfD9sEHHt+GIVzhdBvn8STuAM9/ggGovp6Zbl402HDtWj1z3pD+UbeHM+5Xmga6pexuIATLw/CQk/ech7artgwTpfvmTzSjdxqhRuF+hurl3weT+taFTS2CPV39TKHiheHUPyhCPEOAbe8POYKCvDRasWQwq6LpFuFrGlonyj5vr9mappYTyMcbpFWUtTORKcNI6YdmYJ85Byd2V+MdDOPx3FhhSr+TB4c2LILXq+3pN6nTbWbtZmnF3lM0WSG3QymS0vwqLwMyQYRtCfft4U3HloYR9ivTp71K/O9UdfiQEzGHYqmOneGFkrY8c/j9/uLPB6PL2hofVTZAL1Lm+/8BuYmMbTdqpuSAAAAAElFTkSuQmCC" width="20" height="20" />  ImageBot（OpenAI 绘图机器人）</h2>
+
+<p>ImageBot 是一个不可见组件，它使用 DALL-E 2 创建和编辑图像。你必须通过在块中设置其 ApiKey 属性，为此组件提供您自己的 OpenAI API 密钥。</p>
+
+<p>注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -&gt; AI伴侣信息)，编译为apk则不受限制安装后可正常运行。</p>
+
+<ul>
+  <li>demo程序下载：
+<a href="demo/AI绘图.aia">AI绘图.aia</a></li>
+</ul>
+
+<h3 id="ImageBot-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="ImageBot.ApiKey" class="text wo bo"><em>ApiKey</em></dt>
+  <dd>指定用于向 ImageBot 进行身份验证的 ApiKey。</dd>
+  <dt id="ImageBot.InvertMask" class="boolean"><em>反转遮罩</em></dt>
+  <dd>指定用于编辑的蒙版是否应反转其 Alpha 通道。</dd>
+  <dt id="ImageBot.Size" class="number"><em>图像大小</em></dt>
+  <dd>指定生成图像的大小。 可以是 256、512 或 1024 之一。</dd>
+  <dt id="ImageBot.Token" class="text wo"><em>访问令牌</em></dt>
+  <dd>要使用的 MIT 访问令牌，默认会自动填写此内容值，不需要更改它。
+
+    <p>默认情况下，令牌是无法访问MIT代理服务器的，如需有效令牌请参照<a href="../creative/token.html">《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》</a>。</p>
+  </dd>
+</dl>
+
+<h3 id="ImageBot-Events">事件</h3>
+
+<dl class="events">
+  <dt id="ImageBot.ErrorOccurred">出现错误(<em class="number">responseCode</em>,<em class="text">responseText</em>)</dt>
+  <dd>该事件将在处理过程中发生错误时运行，例如：忘记提供 API 密钥或服务器过载等。</dd>
+  <dt id="ImageBot.ImageCreated">图像创建完成(<em class="text">fileName</em>)</dt>
+  <dd>当 ImageBot 成功创建图像时，将运行此事件。</dd>
+  <dt id="ImageBot.ImageEdited">图像编辑完成(<em class="text">fileName</em>)</dt>
+  <dd>当 ImageBot 成功编辑图像时，将运行此事件。</dd>
+</dl>
+
+<h3 id="ImageBot-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="ImageBot.CreateImage" class="method"><i></i> 创建图像(<em class="text">description</em>)</dt>
+  <dd>使用给定的描述创建图像。</dd>
+  <dt id="ImageBot.EditImage" class="method"><i></i> 编辑图像(<em class="any">source</em>,<em class="text">description</em>)</dt>
+  <dd>使用给定的描述编辑源图像。图像的可编辑区域应具有透明的Alpha值，源可以是 Canvas 组件、Image 组件或字符串代表文件的路径。</dd>
+  <dt id="ImageBot.EditImageWithMask" class="method"><i></i> 使用遮罩编辑图像(<em class="any">imageSource</em>,<em class="any">遮罩源</em>,<em class="text">提示</em>)</dt>
+  <dd>使用给定的描述编辑 <code class="highlighter-rouge">遮罩源</code>。图像的可编辑区域应该是由 <code class="highlighter-rouge">遮罩源</code> 指示。源可以是画布、图像或字符串代表文件的路径。</dd>
+</dl>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

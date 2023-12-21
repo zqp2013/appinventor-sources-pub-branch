@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 控制代码块 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，控制代码块参考文档。包括：如果、循环、跳出循环、执行模块、求值但忽略结果、打开另一屏幕、打开另一屏幕并传值、获取初始值、关闭屏幕、退出程序。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 控制代码块</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#if" id="markdown-toc-if">如果 &amp; 则</a></li>
+  <li><a href="#forrange" id="markdown-toc-forrange">从范围循环</a></li>
+  <li><a href="#foreach" id="markdown-toc-foreach">从列表循环</a></li>
+  <li><a href="#foreachdict" id="markdown-toc-foreachdict">从字典循环</a></li>
+  <li><a href="#while" id="markdown-toc-while">循环(while)</a></li>
+  <li><a href="#choose" id="markdown-toc-choose">如果 &amp; 则 &amp; 否则</a></li>
+  <li><a href="#doreturn" id="markdown-toc-doreturn">执行模块 &amp; 返回结果</a></li>
+  <li><a href="#evaluate" id="markdown-toc-evaluate">求值但忽略结果</a></li>
+  <li><a href="#openscreen" id="markdown-toc-openscreen">打开另一屏幕</a></li>
+  <li><a href="#openscreenwithvalue" id="markdown-toc-openscreenwithvalue">打开另一屏幕并传值</a></li>
+  <li><a href="#getplainstarttext" id="markdown-toc-getplainstarttext">获取初始文本值</a></li>
+  <li><a href="#getstartvalue" id="markdown-toc-getstartvalue">获取初始值</a></li>
+  <li><a href="#closescreen" id="markdown-toc-closescreen">关闭屏幕</a></li>
+  <li><a href="#closescreenwithplaintext" id="markdown-toc-closescreenwithplaintext">关闭屏幕并返回文本</a></li>
+  <li><a href="#closescreenwithvalue" id="markdown-toc-closescreenwithvalue">关闭屏幕并返回值</a></li>
+  <li><a href="#closeapp" id="markdown-toc-closeapp">退出程序</a></li>
+  <li><a href="#break" id="markdown-toc-break">跳出循环</a></li>
+</ul>
+
+<ul>
+  <li><a href="#if">如果 &amp; 则（if &amp; else if）</a></li>
+  <li><a href="#forrange">从范围循环(for each number from to)</a></li>
+  <li><a href="#foreach">从列表循环（for each item in list）</a></li>
+  <li><a href="#foreachdict">从字典循环(for each key with value in dictionary)</a></li>
+  <li><a href="#while">循环(while)</a></li>
+  <li><a href="#choose">如果 &amp; 则 &amp; 否则（if then else）</a></li>
+  <li><a href="#doreturn">执行模块 &amp; 返回结果（do with result）</a></li>
+  <li><a href="#evaluate">求值但忽略结果（evaluate but ignore result）</a></li>
+  <li><a href="#openscreen">打开另一屏幕（open another screen）</a></li>
+  <li><a href="#openscreenwithvalue">打开另一屏幕并传值（open another screen with start value）</a></li>
+  <li><a href="#getplainstarttext">获取初始文本值（get plain start text）</a></li>
+  <li><a href="#getstartvalue">获取初始值（get start value）</a></li>
+  <li><a href="#closescreen">关闭屏幕（close screen）</a></li>
+  <li><a href="#closescreenwithplaintext">关闭屏幕并返回文本（close screen with plain text）</a></li>
+  <li><a href="#closescreenwithvalue">关闭屏幕并返回值（close screen with value）</a></li>
+  <li><a href="#closeapp">退出程序（close application）</a></li>
+  <li><a href="#break">跳出循环（break）</a></li>
+</ul>
+
+<hr />
+<h3 id="if">如果 &amp; 则</h3>
+
+<p class="clearfix"><img src="images/control/if.png" alt="if" style="float:left;clear:left;border:0" />   测试给定条件。如果条件为真，则执行给定块序列中的操作；否则，这些块将被忽略。</p>
+
+<p class="clearfix"><img src="images/control/ifelse.png" alt="ifelse" style="float:left;clear:left;border:0" />   测试给定条件。如果条件为<code class="highlighter-rouge">真</code>，则执行 <code class="highlighter-rouge">则</code> 块序列中的操作；否则，执行 <code class="highlighter-rouge">否则</code> 块序列中的操作。</p>
+
+<p class="clearfix"><img src="images/control/ifelseif.png" alt="ifelseif" style="float:left;clear:left;border:0" />    测试给定条件。如果结果为<code class="highlighter-rouge">真</code>，则执行 <code class="highlighter-rouge">则</code> 块序列中的操作；否则测试 <code class="highlighter-rouge">否则，如果</code> 部分中的语句。如果结果为<code class="highlighter-rouge">真</code>，则执行 <code class="highlighter-rouge">则</code> 块序列中的操作；否则，执行 <code class="highlighter-rouge">否则</code> 块序列中的操作。</p>
+
+<p>下面的动画展示了如何使用 <code class="highlighter-rouge">如果，否则</code> <a href="../concepts/mutators.html">块扩展</a>：</p>
+
+<p><img src="images/control/if.gif" alt="if" /></p>
+
+<hr />
+<h3 id="forrange">从范围循环</h3>
+
+<p><img src="images/control/forrange.png" alt="forrange" /></p>
+
+<p>针对从 <em><code class="highlighter-rouge">范围从</code></em> 开始到 <em><code class="highlighter-rouge">到</code></em> 结束的范围内的每个数值运行 <code class="highlighter-rouge">执行</code> 部分中的块，每次将 <code class="variable block highlighter-rouge">变量名</code> 增加 <em><code class="highlighter-rouge">每次增加</code></em> 的值。使用给定的变量名称<code class="variable block highlighter-rouge">变量名</code> 来引用当前值，当然也可以将名称 <code class="variable block highlighter-rouge">变量名</code> 更改为其他名称。</p>
+
+<hr />
+<h3 id="foreach">从列表循环</h3>
+
+<p><img src="images/control/foreach.png" alt="foreach" /></p>
+
+<p>为列表中的每个项目运行 <code class="highlighter-rouge">执行</code> 部分中的块。使用给定的变量名称 <code class="variable block highlighter-rouge">列表项目名</code> 来引用当前列表项，当然也可以将名称 <code class="variable block highlighter-rouge">列表项目名</code> 更改为其他名称。</p>
+
+<hr />
+<h3 id="foreachdict">从字典循环</h3>
+
+<p><img src="images/control/foreachdict.png" alt="foreachdict" /></p>
+
+<p>为字典中的每个键值条目运行 <code class="highlighter-rouge">执行</code> 部分中的块。</p>
+
+<p>使用给定的变量<code class="variable block highlighter-rouge">键</code> 和<code class="variable block highlighter-rouge">值</code> 来引用当前字典条目的键和值，当然也可以将名称 <code class="variable block highlighter-rouge">键</code> 和 <code class="variable block highlighter-rouge">值</code> 更改为其他名称。</p>
+
+<hr />
+<h3 id="while">循环(while)</h3>
+
+<p><img src="images/control/while.png" alt="while" /></p>
+
+<p>测试 <code class="highlighter-rouge">满足条件</code> 重复执行代码。</p>
+
+<p>如果为<code class="highlighter-rouge">真</code>，则执行 <code class="highlighter-rouge">重复执行</code> 中给出的操作，然后再次测试。 当 <code class="highlighter-rouge">满足条件</code> 测试为 <code class="highlighter-rouge">假</code> 时，块结束并且不再执行 <code class="highlighter-rouge">重复执行</code> 中给出的操作。</p>
+
+<hr />
+<h3 id="choose">如果 &amp; 则 &amp; 否则</h3>
+
+<p><img src="images/control/choose.png" alt="choose" /></p>
+
+<p>测试给定条件。如果该语句为<code class="highlighter-rouge">真</code>，则执行 <code class="highlighter-rouge">则</code> 块序列中的操作并返回值； 否则，执行 <code class="highlighter-rouge">否则</code> 块序列中的操作并返回值。</p>
+
+<p>该块类似于某些语言中的三元运算符 ( ? : )。</p>
+
+<hr />
+<h3 id="doreturn">执行模块 &amp; 返回结果</h3>
+
+<p><img src="images/control/doreturn.png" alt="doreturn" /></p>
+
+<p>有时，在一个过程或另一个代码块中，你可能需要执行某些操作并返回某些内容，但出于各种原因，你可能会选择使用此块而不是创建新过程。</p>
+
+<hr />
+<h3 id="evaluate">求值但忽略结果</h3>
+
+<p><img src="images/control/evaluate.png" alt="evaluate" /></p>
+
+<p>提供“虚拟插槽”，用于将左侧有插头的块安装到没有插槽的位置，例如过程的 <code class="highlighter-rouge">执行</code> 部分中的块序列之一或 <code class="highlighter-rouge">如果</code> 块。 你放入的块将被运行，但其返回的结果将被忽略。</p>
+
+<p>如果你定义一个返回结果的过程，但想要在不接受结果的上下文中调用它。</p>
+
+<hr />
+<h3 id="openscreen">打开另一屏幕</h3>
+
+<p><img src="images/control/openscreen.png" alt="openscreen" /></p>
+
+<p>打开指定名称的屏幕，屏幕名可以从连接的屏幕名称下拉块中选择。</p>
+
+<p>如果你确实打开了另一个屏幕，则应在返回主屏幕时将其关闭以释放系统内存。 离开屏幕时未能关闭屏幕最终会导致内存问题。</p>
+
+<!-- App developers should never close Screen1 or use this block to return to Screen1. Use the close screen block instead. 
+App开发人员切勿关闭 Screen1 ，但可以使用此块返回到 Screen1。 请改用`关闭屏幕`{:.control.block} 块。-->
+
+<hr />
+<h3 id="openscreenwithvalue">打开另一屏幕并传值</h3>
+
+<p><img src="images/control/openscreenwithvalue.png" alt="openscreenwithvalue" /></p>
+
+<p>打开另一个屏幕并向其传递一个值。</p>
+
+<hr />
+<h3 id="getplainstarttext">获取初始文本值</h3>
+
+<p><img src="images/control/getplainstarttext.png" alt="getplainstarttext" /></p>
+
+<p>返回由另一个应用程序启动时传递到此屏幕的纯文本。 如果未传递任何值，则返回空文本。</p>
+
+<p>对于多屏幕应用程序，请使用<code class="control block highlighter-rouge">获取初始值</code>，而不是<code class="control block highlighter-rouge">获取初始文本值</code>。</p>
+
+<hr />
+<h3 id="getstartvalue">获取初始值</h3>
+
+<p><img src="images/control/getstartvalue.png" alt="getstartvalue" /></p>
+
+<p>返回给当前屏幕的起始值。</p>
+
+<p>该值是通过使用<code class="control block highlighter-rouge">打开另一屏幕并传值</code> 或<code class="control block highlighter-rouge">关闭屏幕并返回值</code> 给出的。</p>
+
+<hr />
+<h3 id="closescreen">关闭屏幕</h3>
+
+<p><img src="images/control/closescreen.png" alt="closescreen" /></p>
+
+<p>关闭当前屏幕。</p>
+
+<hr />
+<h3 id="closescreenwithplaintext">关闭屏幕并返回文本</h3>
+
+<p><img src="images/control/closescreenwithplaintext.png" alt="closescreenwithplaintext" /></p>
+
+<p>关闭当前屏幕并将文本传递到打开此屏幕的应用程序。 此命令用于将文本返回到 非App Inventor活动，而不是 App Inventor屏幕（原文：This command is for returning text to non-App Inventor activities, not to App Inventor screens）。</p>
+
+<p>对于 App Inventor屏幕，就像在多屏幕应用程序中一样，请使用<code class="control block highlighter-rouge">关闭屏幕并返回值</code>，而不是<code class="control block highlighter-rouge">关闭屏幕并返回文本</code>。</p>
+
+<hr />
+<h3 id="closescreenwithvalue">关闭屏幕并返回值</h3>
+
+<p><img src="images/control/closescreenwithvalue.png" alt="closescreenwithvalue" /></p>
+
+<p>关闭当前屏幕并向打开此屏幕的屏幕返回一个值。</p>
+
+<hr />
+<h3 id="closeapp">退出程序</h3>
+
+<p><img src="images/control/closeapp.png" alt="closeapp" /></p>
+
+<p>关闭应用程序。中文网注：只有在编译apk真机运行时，才能退出App，AI伴侣测试的时候无法退出AI伴侣程序。</p>
+
+<hr />
+<h3 id="break">跳出循环</h3>
+
+<p><img src="images/control/break.png" alt="break" /></p>
+
+<p>当使用 <a href="#forrange">从范围循环</a>、<a href="#foreach">从列表循环</a> 或 <a href="#while">循环(while)</a> 块进行循环时，有时能够提前退出循环是很有用的。</p>
+
+<p><code class="control block highlighter-rouge">break</code> 允许你跳出循环。 执行时，这将退出循环并继续执行应用程序块中循环之后发生的语句。</p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

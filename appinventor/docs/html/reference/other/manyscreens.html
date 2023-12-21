@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>构建具有多个屏幕的应用程序 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，使用 App Inventor 2 构建具有多个屏幕的应用程序">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">构建具有多个屏幕的应用程序</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<p><a href="index.html">« 返回首页</a></p>
+
+<h2 id="构建具有多个屏幕的应用程序">构建具有多个屏幕的应用程序</h2>
+
+<p>App Inventor 可以轻松地向应用程序添加更多屏幕，但最好也不要添加太多屏幕，因为多个屏幕的应用程序将非常消耗计算资源，并且很容易超出 App Inventor 的限制。</p>
+
+<p>根据经验，任何单个应用程序中的<strong>屏幕不应超过 10 个</strong>，当你尝试超过此限制时，App Inventor 会警告你。</p>
+
+<p>在向应用程序添加其他屏幕之前，可以考虑使用通过在 Screen1 上使用垂直或水平排列创建的“虚拟”屏幕，并以与“切换屏幕”大致相同的方式管理其可见性。</p>
+
+<p><strong>“虚拟”屏幕</strong></p>
+
+<p>你可以使用单个屏幕，并在屏幕图像更改时显示和隐藏按钮（通过 ”可见性“ 属性），而不是构建具有实际多个屏幕的应用程序。</p>
+
+<p>下面是一个应用程序的示例，该应用程序的一个视图包含四个按钮，另一个视图包含一个标签和一张图像。不是使用两个屏幕，而是一个具有两个垂直排列的屏幕，它们交替可见和隐藏。</p>
+
+<p><img src="images/manyscreens-image1.png" alt="" /></p>
+
+<p>当然，所有这些都是以增加处理视图切换的块中的程序复杂性为代价的 —— 为每个新视图添加一个新的“虚拟”屏幕要简单得多，而不必担心屏幕切换逻辑。你可以通过这种方式处理任意数量的“虚拟”屏幕。</p>
+
+<p><strong>多屏幕：请谨慎！</strong></p>
+
+<p>App Inventor 不会阻止你创建具有超过 10 个屏幕的应用程序。 但请注意，如果你这样做，你将面临超出大多数 Android 设备以及浏览器的处理和内存限制的危险。</p>
+
+<p>精确的限制取决于几个不同的因素，例如应用程序的大小、声音和图像占用的存储空间、网络连接的速度以及 Web 浏览器的配置。 但当你不断添加屏幕时，你会遇到一个或多个这些因素，而后果可能会非常令人不快。 这可能包括：</p>
+
+<ul>
+  <li>块编辑器运行越来越慢，</li>
+  <li>以及 App Inventor 无法构建你的项目。</li>
+  <li>在极端情况下，你可能会超出 App Inventor 保存或加载项目的能力：你将无法查看甚至无法修复你的项目，你必须在论坛上寻求帮助，甚至向人们寻求帮助 可能无法提供帮助。</li>
+</ul>
+
+<p>如果你正在构建具有超过 10 个屏幕的应用程序，请在每次进行重大更改时将项目（aia 文件）保存到本地计算机（而不仅仅是 App Inventor 服务器）。 最好将项目的版本保存在不同的名称下，例如 MyAppV1、MyAppV2 等。 这样，如果你确实遇到问题，你就可以检查版本的历史记录。 <strong>如果你一次向项目添加大量屏幕，请特别小心，这很可能会遇到问题</strong>。</p>
+
+<p>进行一系列这样的备份是一个好主意，不仅在多个屏幕的情况下，而且在你处理大型复杂项目时也是如此。</p>
+
+<p>总是存在丢失工作的风险，因此值得努力进行备份作为预防措施。</p>
+
+<p><strong>设计你的应用程序以限制屏幕数量</strong></p>
+
+<p>如果你的应用程序需要大量屏幕，你可能会考虑重新设计它以不使用这么多屏幕。 例如，假设你的应用程序必须显示多个具有相同功能的不同屏幕图像，但每个图像具有不同的背景。 对此进行编码的一种方法是为每个图像使用不同的 App Inventor 屏幕，每个屏幕都有自己的背景图像。 使用这种方法，你需要的屏幕数量与图像数量一样多。 但另一种编码方法是只有一个屏幕并更改屏幕背景。</p>
+
+<p>类似的想法适用于其他类型的元素：如果每个屏幕图像都有一个带有自己的文本消息的标签，那么你可以拥有一个屏幕和一个标签，而不是拥有多个屏幕，每个屏幕都有自己的标签，只需更改标签的 文本。 例如：</p>
+
+<p><strong>不要这样设计你的应用程序：</strong></p>
+
+<p><img src="images/manyscreens-image2.png" alt="" /></p>
+
+<p><strong>而是像这样设计：</strong></p>
+
+<p><img src="images/manyscreens-image3.png" alt="" /></p>
+
+<p>也许有一天我们会让 App Inventor 足够智能，能够自动处理视图切换逻辑，或者增强系统的功能并放宽对屏幕数量的限制。 但目前，请注意具有大量屏幕的应用程序的限制，并准备好应对这些限制。</p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

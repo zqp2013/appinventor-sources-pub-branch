@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>使用App Inventor扩展实现多点触控：Rotation Detector · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，使用App Inventor扩展实现多点触控：Rotation Detector">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">使用App Inventor扩展实现多点触控：Rotation Detector</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<p><a href="index.html">« 返回首页</a></p>
+
+<p>Using App Inventor extensions to implement multitouch:  Rotation Detector</p>
+
+<p>Xinyue Deng <a href="mailto:dengxinyue0420@gmail.com">dengxinyue0420@gmail.com</a></p>
+
+<p>DRAFT (March 6, 2016):  Building extensions requires the <a href="extensions.html">App Inventor extensions</a> capability, which is not yet incorporated into the App Inventor release.  But you can try some ofary AI2 server.</p>
+
+<p>You can implement the RotationDetector.aix extension as described in part 2 below using the extension test send (2) may need to be rebuilt as the system evolves.</p>
+
+<p>Contents</p>
+
+<p>rver.</p>
+
+<p>Keep in mind that the extensions mechanism is still unstable and under development.   Any aia files you build in steps (1) a</p>
+
+<p>Using <a href="extensions.html">App Inventor extensions</a> to implement multitouch:  Rotation detector</p>
+
+<p>A demo app with rotation detector extension component</p>
+
+<p>How to build rotation detector extension</p>
+
+<p>App Inventor does not have multitouch capabilities built in.  Adding multitouch is a popular request, and MIT App Inventor might eventually include it in the system. This note illustrates how to use <a href="extensions.html">App Inventor extensions</a> to implement a RotationDetector component that people can use to create apps that react to two-finger rotation gestures.</p>
+
+<p>This note is interesting for two aspects:</p>
+
+<p>For App Inventor users, it provides a functioning Rotation Detector component that can be shared and incorporated into projects.
+For App Inventor developers, it can serve as a template for a general  rotation detector component that can be modified to fulfill specific requirements.</p>
+
+<p>The implementation approach for multitouch here follows  Using <a href="extensions.html">App Inventor extensions</a> to implement multitouch: <a href="extensionsMultitouch.html">Scale Detector</a>, which contains a more detailed explanation of the technique.   It would be useful to work through that example first, before building the Rotation Detector.</p>
+
+<p>A demo app that uses the RotationDetector extension component
+        The Rotation detector enables programmer to detect two-finger rotation gestures performed on a Canvas. The demo app here, called rotationSprite,  is a simple demonstration of detecting rotation gestures.  You can download the apk file of the demo app from here. The demo app simply illustrates how to use the RotationDetector component to rotate an ImageSprite on canvas.  The Designer view and block view of this demo app are shown below.</p>
+
+<p><img src="images/extensionsRotation-image2.png" alt="" /></p>
+
+<p><img src="images/extensionsRotation-image1.png" alt="" /></p>
+
+<p>Here’s how to implement the rotationSprite app:</p>
+
+<p>On Screen1, there is a Canvas, Canvas1, which contains an ImageSprite (ArrowSprite) that we want to rotate. Label1 will show  the Arrow’s heading in text format. Heading 0 points to right.  We also add a RotationDetector (MyRotationDetector1) as a non-visible component.</p>
+
+<p>The first key part of using Rotation Detector is to associate the canvas to it by calling the method MyRotationDetector1. AddHandlerToCanvas, which configures the detector to listen the finger movements on Canvas1. This step should be done when screen is initialized.</p>
+
+<p>The main feature of the RotationDetector component is the event handler Rotate, which is called with a number angle. The variable indicates the angle in radians[a] that the two fingers rotate. When the angle is smaller than 0, it means that fingers rotate clockwise; when the angle is bigger than 0, it means that the fingers rotate counterclockwise. It changes the heading of ArrowSprite corresponding to the angle it returns. At the end of Rotate, it updates the text in Label1 to show the current heading of ArrowSprite.</p>
+
+<p>You can use the RotationDetector extension component to create your own multitouch apps that respond to rotation gestures.   You’ll need to import the MyRotationDetector.aix extension file as described in <a href="extensions.html">App Inventor extensions</a>, and then build with the MyRotationDetector component, just as with any component.   The MyRotationDetector.aix extension is available here:</p>
+
+<p>https://drive.google.com/drive/folders/0B3jsksMcCW5bLVZCNjZmQ3FSS2M</p>
+
+<p>We’ve also provided the complete aia source for this demo app to save you the effort of assembling the blocks from scratch.  If you load this aia file into App Inventor, you will not have also separately install the MyRotationDetector.aix extension.  The extension is included in with the source.  In general, project source files include any extensions the project uses.</p>
+
+<p>How to build rotation detector extension
+The previous section showed how to create an app using the supplied MyRotationDetector extension aix file.  You can also practice implementing or modify the extension itself.</p>
+
+<p>The MyRotationDetector extension is implemented as Java code, which is compiled and processed to produce the aix file, as explained in <a href="extensions.html">App Inventor extensions</a>.    The Java code file
+MyRotationDetector.java is available here:</p>
+
+<p>https://drive.google.com/open?id=0B3jsksMcCW5bUU1rOGlNSGpTVE0</p>
+
+<p>Unlike the ScaleDetector, the Android SDK does not have built-in Rotation Detector to use. Therefore, before we implement the extension component for App Inventor, we need to implement a rotation detector module, which can detect the rotation and calculate the angle rotated. We implement the Rotation Detector with the following code:</p>
+
+<p>public class RotationDetector {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    protected final Context mContext;
+
+    private static final int INVALID_POINTER_ID = -1;
+
+    private float fX, fY, sX, sY,oldval,newval;
+
+    private int ptrID1, ptrID2;
+
+    private float mAngle;
+
+
+    private OnRotationGestureListener mListener;
+
+   
+
+    public float getAngle() {
+
+        return mAngle;
+
+    }
+
+
+    public RotationDetector(Context c, OnRotationGestureListener listener){
+
+        mContext = c;
+
+        mListener = listener;
+
+        ptrID1 = INVALID_POINTER_ID;
+
+        ptrID2 = INVALID_POINTER_ID;
+
+    }
+
+
+    public boolean onTouchEvent(MotionEvent event){
+
+        switch (event.getActionMasked()) {
+
+        case MotionEvent.ACTION_DOWN:
+
+            ptrID1 = event.getPointerId(event.getActionIndex());
+
+            break;
+
+            //Detect the second finger pointer
+
+        case MotionEvent.ACTION_POINTER_DOWN:
+
+            ptrID2 = event.getPointerId(event.getActionIndex());
+
+            sX = event.getX(event.findPointerIndex(ptrID1));
+
+            sY = event.getY(event.findPointerIndex(ptrID1));
+
+            fX = event.getX(event.findPointerIndex(ptrID2));
+
+            fY = event.getY(event.findPointerIndex(ptrID2));
+
+            oldval = sX+sY+fY+fX;
+
+            break;
+
+        case MotionEvent.ACTION_MOVE:
+
+            Log.i("Rotate","Action Move");
+
+            if(ptrID1 != INVALID_POINTER_ID &amp;&amp; ptrID2 != INVALID_POINTER_ID){
+
+                float nfX, nfY, nsX, nsY;
+
+                nsX = event.getX(event.findPointerIndex(ptrID1));
+
+                nsY = event.getY(event.findPointerIndex(ptrID1));
+
+                nfX = event.getX(event.findPointerIndex(ptrID2));
+
+                nfY = event.getY(event.findPointerIndex(ptrID2));
+
+                         
+
+                newval = nsX+nsY+nfX+nfY;
+
+                //Create a buffer for detection.
+
+                //Otherwise, even the tiny change will trigger the event
+
+                if(Math.abs(newval-oldval)&gt;5){
+
+                    Log.i("Rotate", "Fire Rotation");
+
+                    mAngle = angleBetweenLines(fX, fY, sX, sY, nfX, nfY, nsX, nsY);
+
+                   
+
+                    if (mListener != null) {
+
+                        mListener.OnRotation(this);
+
+                    }
+
+                    oldval = newval;
+
+                }
+
+            }
+
+            break;
+
+        case MotionEvent.ACTION_UP:
+
+            ptrID1 = INVALID_POINTER_ID;
+
+            break;
+
+        case MotionEvent.ACTION_POINTER_UP:
+
+            ptrID2 = INVALID_POINTER_ID;
+
+            break;
+
+        case MotionEvent.ACTION_CANCEL:
+
+            ptrID1 = INVALID_POINTER_ID;
+
+            ptrID2 = INVALID_POINTER_ID;
+
+            break;
+
+        }
+
+        return true;
+
+    }
+
+
+    private float angleBetweenLines (float fX, float fY, float sX, float sY, float nfX, float nfY, float nsX, float nsY)
+
+    {
+
+        float v1x = fX-sX;
+
+        float v1y = -(fY-sY);
+
+        float v2x = nfX-nsX;
+
+        float v2y = -(nfY-nsY);
+
+        float angle1 = normalizeAngle((float) Math.atan2(v1y, v1x),v1x,v1y);
+
+        float angle2 = normalizeAngle((float) Math.atan2(v2y, v2x),v2x,v2y);
+
+        Log.i("Rotate", String.format("Vector1 (%f,%f) Vector2 (%f,%f)", v1x,v1y,v2x,v2y));
+
+        float angle = (float)Math.toDegrees(angle1-angle2);
+
+        return angle;
+
+    }
+
+    private float normalizeAngle(float angle,float x, float y){
+
+        if(x&gt;=0&amp;&amp;y&gt;=0){
+
+            return angle;
+
+        }else if(x&gt;=0&amp;&amp;y&lt;0){
+
+            return angle;
+
+        }else if(x&lt;0&amp;&amp;y&gt;=0){
+
+            return (float)Math.PI-angle;
+
+        }else{
+
+            return -(float)Math.PI+angle;
+</code></pre></div></div>
+
+<p>public class RotationDetector {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    protected final Context mContext;
+
+    private static final int INVALID_POINTER_ID = -1;
+
+    private float fX, fY, sX, sY,oldval,newval;
+
+    private int ptrID1, ptrID2;
+
+    private float mAngle;
+
+
+    private OnRotationGestureListener mListener;
+
+   
+
+    public float getAngle() {
+
+        return mAngle;
+
+    }
+
+
+    public RotationDetector(Context c, OnRotationGestureListener listener){
+
+        mContext = c;
+
+        mListener = listener;
+
+        ptrID1 = INVALID_POINTER_ID;
+
+        ptrID2 = INVALID_POINTER_ID;
+
+    }
+
+
+    public boolean onTouchEvent(MotionEvent event){
+
+        switch (event.getActionMasked()) {
+
+        case MotionEvent.ACTION_DOWN:
+
+            ptrID1 = event.getPointerId(event.getActionIndex());
+
+            break;
+
+            //Detect the second finger pointer
+
+        case MotionEvent.ACTION_POINTER_DOWN:
+
+            ptrID2 = event.getPointerId(event.getActionIndex());
+
+            sX = event.getX(event.findPointerIndex(ptrID1));
+
+            sY = event.getY(event.findPointerIndex(ptrID1));
+
+            fX = event.getX(event.findPointerIndex(ptrID2));
+
+            fY = event.getY(event.findPointerIndex(ptrID2));
+
+            oldval = sX+sY+fY+fX;
+
+            break;
+
+        case MotionEvent.ACTION_MOVE:
+
+            Log.i("Rotate","Action Move");
+
+            if(ptrID1 != INVALID_POINTER_ID &amp;&amp; ptrID2 != INVALID_POINTER_ID){
+
+                float nfX, nfY, nsX, nsY;
+
+                nsX = event.getX(event.findPointerIndex(ptrID1));
+
+                nsY = event.getY(event.findPointerIndex(ptrID1));
+
+                nfX = event.getX(event.findPointerIndex(ptrID2));
+
+                nfY = event.getY(event.findPointerIndex(ptrID2));
+
+                         
+
+                newval = nsX+nsY+nfX+nfY;
+
+                //Create a buffer for detection.
+
+                //Otherwise, even the tiny change will trigger the event
+
+                if(Math.abs(newval-oldval)&gt;5){
+
+                    Log.i("Rotate", "Fire Rotation");
+
+                    mAngle = angleBetweenLines(fX, fY, sX, sY, nfX, nfY, nsX, nsY);
+
+                   
+
+                    if (mListener != null) {
+
+                        mListener.OnRotation(this);
+
+                    }
+
+                    oldval = newval;
+
+                }
+
+            }
+
+            break;
+
+        case MotionEvent.ACTION_UP:
+
+            ptrID1 = INVALID_POINTER_ID;
+
+            break;
+
+        case MotionEvent.ACTION_POINTER_UP:
+
+            ptrID2 = INVALID_POINTER_ID;
+
+            break;
+
+        case MotionEvent.ACTION_CANCEL:
+
+            ptrID1 = INVALID_POINTER_ID;
+
+            ptrID2 = INVALID_POINTER_ID;
+
+            break;
+
+        }
+
+        return true;
+
+    }
+
+
+    private float angleBetweenLines (float fX, float fY, float sX, float sY, float nfX, float nfY, float nsX, float nsY)
+
+    {
+
+        float v1x = fX-sX;
+
+        float v1y = -(fY-sY);
+
+        float v2x = nfX-nsX;
+
+        float v2y = -(nfY-nsY);
+
+        float angle1 = normalizeAngle((float) Math.atan2(v1y, v1x),v1x,v1y);
+
+        float angle2 = normalizeAngle((float) Math.atan2(v2y, v2x),v2x,v2y);
+
+        Log.i("Rotate", String.format("Vector1 (%f,%f) Vector2 (%f,%f)", v1x,v1y,v2x,v2y));
+
+        float angle = (float)Math.toDegrees(angle1-angle2);
+
+        return angle;
+
+    }
+
+    private float normalizeAngle(float angle,float x, float y){
+
+        if(x&gt;=0&amp;&amp;y&gt;=0){
+
+            return angle;
+
+        }else if(x&gt;=0&amp;&amp;y&lt;0){
+
+            return angle;
+
+        }else if(x&lt;0&amp;&amp;y&gt;=0){
+
+            return (float)Math.PI-angle;
+
+        }else{
+
+            return -(float)Math.PI+angle;
+
+        }
+
+    }
+</code></pre></div></div>
+
+<p>}</p>
+
+<p>The basic idea is that if we have two pointers on the screen, and they can form a line. If they move, they will form a new line. We can calculate the angle between these two lines to detect if it is a rotation detector or not. The angle can also be used to determine the direction of the rotation.</p>
+
+<p>In addition to the RotationDetector, we also create an interface OnRotationGestureListener.</p>
+
+<p>public static interface OnRotationGestureListener {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                     public void OnRotation(RotationDetector rotationDetector);
+
+         }
+</code></pre></div></div>
+
+<p>Once we have the rotation detector, we can implement extension component.  We create a simple event Rotate, which lets our users to create handlers for rotation events.</p>
+
+<p>@SimpleEvent</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      public void Rotate(double angle) {
+
+        EventDispatcher.dispatchEvent(this, "Rotate", angle);
+
+      }
+</code></pre></div></div>
+
+<p>We also created MyOnRotationGestureListener, a class implements OnRotationGestureListener. In its OnRotation block, it detects rotation gesture, and returns the angle as a callback parameter for our Rotate event.</p>
+
+<p>// Here’s the gesture listener.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     public class MyOnRotationGestureListener implements
+
+                OnRotationGestureListener {
+
+             @Override
+
+             public void OnRotation(RotationDetector rotationDetector) {
+
+                     float angle = rotationDetector.getAngle();
+
+                     Rotate((double) angle);
+
+             }
+
+     }
+</code></pre></div></div>
+
+<p>Next, we create the new gesture detector class, that extends the RotationDetector we created above, for adding to the Canvas. It’s built from a  gesture listener, together with a context where the listening should occur:</p>
+
+<p>public class ExtensionRotationDetector extends RotationDetector</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             implements Canvas.ExtensionGestureDetector {
+
+               public ExtensionRotationDetector(Context c, OnRotationGestureListener l ) {
+
+                         super(c,l);
+
+               }
+
+     }
+</code></pre></div></div>
+
+<p>A key step here is to declare the the class as implements Canvas.ExtensionDetector.   Canvas.ExtensionDetector is an interface provided by Canvas. Each Canvas has a list of gesture processors that are called when the Canvas is touched. Classes implementing the ExtensionDetector interface can be added to the Canvas’ list with Canvas.registerCustomGestureDetector.</p>
+
+<p>Finally, we created the function AddHandlerToCanvas,</p>
+
+<p>@SimpleFunction</p>
+
+<p>public void AddHandlerToCanvas(Canvas myCanvas) {</p>
+
+<p>this.myCanvas = myCanvas;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ExtensionRotationDetector myDetector =
+</code></pre></div></div>
+
+<p>new ExtensionRotationDetector(myCanvas.getContext(), new MyOnRotationGestureListener());</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    myCanvas.registerCustomGestureDetector(myDetector);
+</code></pre></div></div>
+
+<p>}</p>
+
+<p>Here, we create an instance of ExtensionRotationDetector and register it to myCanvas.</p>
+
+<p>You can modify the source code to fulfill your own needs.</p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

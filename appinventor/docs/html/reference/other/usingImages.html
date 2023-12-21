@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>在 App Inventor 2 中使用图像 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，在 App Inventor 2 中使用图像，避免一些常见的陷阱！">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">在 App Inventor 2 中使用图像</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<p><a href="index.html">« 返回首页</a></p>
+
+<h2 id="在-app-inventor-2-中使用图像避免一些常见的陷阱">在 App Inventor 2 中使用图像，避免一些常见的陷阱！</h2>
+
+<ol>
+  <li>
+    <p>Out of memory errors</p>
+  </li>
+  <li>
+    <p>An example of misusing large images</p>
+  </li>
+  <li>
+    <p>Use images that are  “Just the right size”</p>
+  </li>
+  <li>
+    <p>Picking “just the right size”</p>
+  </li>
+  <li>
+    <p>Determining the size of the image on the screen</p>
+  </li>
+  <li>
+    <p>Details on fixed vs. responsive sizing</p>
+  </li>
+  <li>
+    <p>In summary: What MIT App Inventor Programmers Should Do</p>
+  </li>
+</ol>
+
+<p><strong>Synopsis:</strong> App Inventor works best if you use images whose size matches the size you want them to appear on your screen. If you import larger images into your app, your app may run out of system memory.</p>
+
+<h3 id="1-out-of-memory-errors">1. Out of memory errors</h3>
+<p>People building apps in App Inventor might find that their app crashes[a] when they try to run it, with an error message like:</p>
+
+<p>Failed to allocate a 25165836 byte allocation with 3395432 free bytes and 3MB until OOM</p>
+
+<p>What’s happening here is that the app is is running out of memory (OOM).  In the case of the message above, the phone is trying to allocate 25 megabytes (25165836 bytes) but there are only 3 megabytes (3395432 bytes) free.   The most common reason for attempting to allocate such a large amount of memory is that the phone is trying to display a huge image, generally an image much larger than the app requires.</p>
+
+<p>Every image has a “size” based on its width and height in pixels.    You can multiply these two numbers to get a sense of the amount of memory required for displaying  the image.</p>
+
+<p>App Inventor lets you get  images (for example, from the Web) and import these into your app as Media.  When you use the images, and App Inventor will rescale them to fit the designated screen area in your app.    Sometimes the image to be displayed will be larger than the designed phone area.   Even so, the large image needs to be held in memory in order for rescaling to occur, even if the result of the rescaling will be a small image.</p>
+
+<h3 id="2-an-example-of-misusing-large-images">2. An example of misusing large images</h3>
+<p>Suppose you are going to display a grid of the letters of the alphabet, where each letter is in a 30×30 pixel square.  You’d expect that to take 30×30 = 900 pixels per letter, so the entire grid (assuming 4 bytes per pixel, which is typical for Android) would require 900×26×4 = 93600 or about 100 kilobytes, which will easily fit in the phone memory.</p>
+
+<p>On the other hand, suppose that each letter is loaded from its own image file into the app’s Media from a high-resolution image where the size of each image is 1000 pixels by 1000 pixels.  Each of those images requires 1000×1000 = 1 million pixels or 1000×1000×4 = 4 Megabytes and the entire grid would require 26×4 = 104 Megabytes.  Typical amounts of memory available to a running app range anywhere from 20 to 50 Megabytes (not to mention that MIT App Inventor requires the app source file, including images, to be less than 5 Megabytes).   So the app will simply not work, and the project will get an OutOfMemory exception when it loads.</p>
+
+<p>Even if the app could work, the result on the phone would hardly look different than if you’d used 30×30 images for the letters.  At the end of the day, each image on the screen would be 30×30 pixels, even if it required 4 Megabytes to generate it: a huge amount of wasted space.</p>
+
+<p>Keep in mind that if the original image is larger and is scaled down to 30×30 for display, the image will still consume memory on the Android deviced based on its actual large size.</p>
+
+<p>There’s no reason to load a giant image file into your app if you will use it displayed only as a small image on the phone.</p>
+
+<h3 id="3-use-images-that-are--just-the-right-size">3. Use images that are  “Just the right size”</h3>
+<p>The general point of the alphabet example above is that you should try to use images whose size is close to the actual size they will appear on the device.  There’s no reason to use larger images: it just wastes space.  And if you use smaller images, App Inventor will scale them up to fit the screen, which may lower  the image quality.</p>
+
+<p>Rule: Resize images to make them not too large and not too small, but rather, “just the right size”.</p>
+
+<p>For example, it’s common to see apps that violate this principle with background images, where a person downloads a high-resolution image (e.g. 3000×3000 pixels) and sets that as the screen background.  That just wastes space.    It’s better to resize the image to better match the device’s screen size before uploading it to the app.</p>
+
+<p>There are many tools that you can use if you need to resize images to be “just the right size”. Tools  include Photoshop, Preview (on MacOS), GIMP (on MacOS and GNU/Linux and Windows) and Paint (on Windows PCs). There are many more. Some tools are commercial software other tools are free or provided with the computer’s operating system. You do not need a particularly fancy program (like Photoshop) just to do image scaling. There may even be websites that you can upload your images to that will rescale them or compress them for you. A Google search for “programs for scaling images” or “image compression” will likely turn up more than a few candidates.  However, compression is not what is needed; you want to resize to “just the right size.”</p>
+
+<p>You can also use services like Google image search to find images for your app that are already the right size, so you don’t need to rescale them.</p>
+
+<p>Keep in mind  that image size refers to the size (height and width) in pixels.   You can find this using one of the tools above.   It’s not good to rely on the file size of the image as a guide because most image file formats have some amount of compression.  Depending on the type of image and the actual image contents, a large image may compress to a small file. The compression factor can be particularly significant with graphics (as opposed to photographs).</p>
+
+<h3 id="4-preferred-image-format">4. Preferred Image Format</h3>
+
+<p>What is the best image format to use for images images?   Although many formats are supported, most users will get the best results using JPG (JPEG) or PNG images.  The PNG images will generally look sharper than JPG on Android devices, due to the difference in compression algorithms although the file sizes tend to be larger that JPG.  (PNG uses lossless compression; JPG does not.)  Avoid BMP  images; BMP images are huge compared to other formats because they are not compressed at all.</p>
+
+<h3 id="5-picking-just-the-right-size">5. Picking “just the right size”</h3>
+<p>When you resize an image for use in an app, you don’t need to exactly match the size it will appear on the screen.   It most cases, it will be adequate to get sizes within an approximate range and let App Inventor’s automatic scaling do the final adjustment.   One exception to relying only on automatic scaling is that if the image size is much smaller than the screen area size, then the image on the screen might appear low quality.</p>
+
+<p>You might want to try to avoid automatic rescaling altogether and match image sizes to the screen area size exactly.  That could work if you are designing your app for a single device.  But different devices have different screen sizes and different screen densities (pixels per inch), so there’s no single image size that can exactly match all devices.</p>
+
+<p>In principle, having your app display the best quality images on all devices, could require you to  provide copies of each image at several sizes match to different devices, and then have the app pick the appropriate image when it runs.   This is the approach taken by Eclipse and Android Studio.  In designing App Inventor, we did not want to require our developers to deal with this complexity.    So we suggest that you pick “just the right size” depending on the device you care most about and rely on App Inventor’s automatic scaling do the best it can.  We might add the multiple image capability to App Inventor if there is enough demand for it.</p>
+
+<h3 id="6-determining-the-size-of-the-image-on-the-screen">6. Determining the size of the image on the screen</h3>
+
+<p>Multiple devices aside, the size for the displayed image on the screen will depend on how the app is designed.</p>
+
+<p>In some contexts, when you use an image, the size of the image will be used to determine the size of the object on the screen.  For example in the HelloPurr tutorial, you set a button to have an image (the cat in this case) as its on-screen representation and set the Height and Width of the button to Automatic.  In this case, the size of the image determines the size of the button.</p>
+
+<p>In other contexts the image is scaled to fit a specified size. For example if you place an Image component on the screen and set its Width and Height properties each 100 pixels, then the image displayed will take up 100 pixels of the screen in each direction, even if the actual image you load is a different size.   Android will automatically scale the image to fit the size of its container when it is displayed.   Keep in mind that if the original image is larger and is scaled down to 100×100 for display, the image will still consume memory on the Android deviced based on its actual large size.  To repeat the main rule:  It’s just wasting space to load a huge image if you will use it displayed only at small size your app.</p>
+
+<h3 id="7-details-on-fixed-vs-responsive-sizing">7. Details on fixed vs. responsive sizing</h3>
+<p>This section provides some background on App Inventor image scaling and how it has changed over different App Inventor releases.</p>
+
+<p>App Inventor introduced Responsive sizing in August 2015.   Prior to that release, App Inventor created Apps that were marked for Android API 3 (Android version 1.45).  That meant that MIT App Inventor Apps prior to version 1.45 of App Inventor 2, created apps could run on phones as old as Cupcake (Android 1.5). However there was a catch. With API 3 Android supported only a single device size (320 pixels wide by 480 pixels high) and a single screen density.</p>
+
+<p>Newer devices usually are both larger than this and support “denser” pixels (there are more pixels to a inch of screen space). Unfortunately, when a newer device loads a program designed for API 3, the Android automatically scales the screen to make it “look” like the older device. This compatibility mode makes tablets look like giant phones and simply magnified the 320 x 480 pixel screen, which could make images (and fonts) appear to be low quality.</p>
+
+<p>As Android evolved and MIT App Inventor matured, AI2 developers expressed a desire to design apps that looked good on tablets.  Additionally newer Android devices are being shipped without the API 3 compatibility mode.  This made MIT App Inventor apps use just a small section of the screen and not look right.</p>
+
+<p>To support those devices  the MIT development team needed to abandon support for Android 1.5 and require at least to Android 1.6 (Donut, API 4). Starting with API 4, Android is aware of different pixel densities and screen sizes. The improved screen handling makes Android application development more complicated than before because now the application developer has to design their application to deal with different screen sizes and densities. The approach taken by Google is to design several UI versions for your application, complete with each version’s image files, and provide all of the images in your APK file. The device then chooses the correct set at runtime.  This is the system used in the Eclipse and Android Studio compilers.</p>
+
+<p>We decided that creating  multiple UI designs on the Google Eclipse/Android Studio model, is more complicated than we want to subject the App Inventor programmers to. We also did not want to make a change to App Inventor requiring  every App Inventor programmer to deal with different size devices and multiple duplicate images.  We did want, to maintain the compatibility mode that we had with API 3. However to do so requires us to provide our own compatibility code, which we have.  The result is Fixed sizing (which is an attempt to emulate the original API 3 compatibility mode as much as possible) and Responsive sizing.</p>
+
+<p>In current releases of MIT App Inventor you can set the “Sizing” property on Screen1 to either “Responsive” or “Fixed” (with “Fixed” being the default for new projects and older projects that automatically get upgraded). Fixed mode attempts to emulate the old API 3 compatibility mode behavior. The emulation does not duplicate the old mode exactly, but it is close enough in our opinion. Responsive mode does not invoke this compatibility feature.   Programmers using Responsive sizing may have to pay attention to the differences between devices. To make this opportunity to code for multiple screen sizes as easy as possible for AI2 developers  we introduced a way to specify the width and height of screen elements based on a percentage of the device’s screen, instead of having to give absolute pixels.</p>
+
+<p>Another change that comes with this upgrade is the notion of “Density Independent Pixels” or “dips.” Density independent pixels are a measure of size that takes into account the screen density of a device. On some devices a dip may map to one pixel while on others it may be nine pixels. The idea is that most screens will have the same number of “dips” to an inch of screen real estate.</p>
+
+<p>Developers can still give UI elements sizes in “pixels” in App Inventor, but realize those pixels are in fact dips.</p>
+
+<p>Images are still based on “real” pixels. So if you load HelloPurr onto a denser device, the cat picture will be smaller than on a 320×480 pixel device. To deal with this difference App Inventor automatically scales images when it loads them based on a device’s screen density. This automatic response can cause issues with memory consumption.   Returning to the Alphabet example above, if  you  attempt to load the Project into a device with a screen density of 3 (not uncommon) the Project will try to use 9 times as much memory as the original example with density 1, or 2.3 Gigabytes of memory. So even if the original example fit in memory on a device with a screen density of 1, it will certainly not fit on a device with a screen density of 3!</p>
+
+<h3 id="8-in-summary-what-mit-app-inventor-programmers-should-do">8. In summary: What MIT App Inventor Programmers Should Do</h3>
+<p>The simple solution is to make sure that the images you load are the “correct size” for the device you care about most and let App Inventor scaling handle the rest.   To return to the Alphabet example, the images of the individual letters should be scaled to be 30 pixels by 30 pixels. If you resize the images to 30×30, each image will  require only about 1000 bytes of memory (instead of 10 Megabytes!).  The entire alphabet will fit in 26,000 bytes of memory. Even if you load this onto a device with a screen density of 3, it will  consume only about 200,000 bytes of memory.</p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

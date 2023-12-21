@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>数据存储组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，数据存储组件参考文档：包括云数据库、数据文件、文件管理器、FileTools拓展、电子表格、微数据库、网络微数据库、App特定目录、ASD(app specific directory)、getASD。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">数据存储组件</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--数据存储组件" id="markdown-toc---数据存储组件"><i class="mdi mdi-database"></i>  数据存储组件</a>    <ul>
+      <li><a href="#CloudDB" id="markdown-toc-CloudDB"><img src="images/CloudDB.png" alt="icon" />  云数据库</a>        <ul>
+          <li><a href="#CloudDB-Properties" id="markdown-toc-CloudDB-Properties">属性</a></li>
+          <li><a href="#CloudDB-Events" id="markdown-toc-CloudDB-Events">事件</a></li>
+          <li><a href="#CloudDB-Methods" id="markdown-toc-CloudDB-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#DataFile" id="markdown-toc-DataFile"><img src="images/DataFile.png" alt="icon" />  数据文件</a>        <ul>
+          <li><a href="#DataFile-Properties" id="markdown-toc-DataFile-Properties">属性</a></li>
+          <li><a href="#DataFile-Events" id="markdown-toc-DataFile-Events">事件</a></li>
+          <li><a href="#DataFile-Methods" id="markdown-toc-DataFile-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#File" id="markdown-toc-File"><img src="images/File.png" alt="icon" />  文件管理器</a>        <ul>
+          <li><a href="#File-Properties" id="markdown-toc-File-Properties">属性</a></li>
+          <li><a href="#File-Events" id="markdown-toc-File-Events">事件</a></li>
+          <li><a href="#File-Methods" id="markdown-toc-File-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#FileTools" id="markdown-toc-FileTools">FileTools 拓展</a>        <ul>
+          <li><a href="#FileTools-Properties" id="markdown-toc-FileTools-Properties">属性</a></li>
+          <li><a href="#FileTools-Events" id="markdown-toc-FileTools-Events">事件</a></li>
+          <li><a href="#FileTools-Methods" id="markdown-toc-FileTools-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Spreadsheet" id="markdown-toc-Spreadsheet"><img src="images/Spreadsheet.png" alt="icon" />  电子表格（<em>依赖谷歌服务，国内无法使用</em>）</a>        <ul>
+          <li><a href="#Spreadsheet-Properties" id="markdown-toc-Spreadsheet-Properties">属性</a></li>
+          <li><a href="#Spreadsheet-Events" id="markdown-toc-Spreadsheet-Events">事件</a></li>
+          <li><a href="#Spreadsheet-Methods" id="markdown-toc-Spreadsheet-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#TinyDB" id="markdown-toc-TinyDB"><img src="images/TinyDB.png" alt="icon" />  微数据库</a>        <ul>
+          <li><a href="#TinyDB-Properties" id="markdown-toc-TinyDB-Properties">属性</a></li>
+          <li><a href="#TinyDB-Events" id="markdown-toc-TinyDB-Events">事件</a></li>
+          <li><a href="#TinyDB-Methods" id="markdown-toc-TinyDB-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#TinyWebDB" id="markdown-toc-TinyWebDB"><img src="images/TinyWebDB.png" alt="icon" />  网络微数据库</a>        <ul>
+          <li><a href="#TinyWebDB-Properties" id="markdown-toc-TinyWebDB-Properties">属性</a></li>
+          <li><a href="#TinyWebDB-Events" id="markdown-toc-TinyWebDB-Events">事件</a></li>
+          <li><a href="#TinyWebDB-Methods" id="markdown-toc-TinyWebDB-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="--数据存储组件"><i class="mdi mdi-database"></i>  数据存储组件</h1>
+
+<p>目录：</p>
+
+<ol>
+  <li><img src="images/CloudDB.png" alt="icon" />  <a href="#CloudDB">云数据库</a></li>
+  <li><img src="images/DataFile.png" alt="icon" />  <a href="#DataFile">数据文件</a></li>
+  <li><img src="images/File.png" alt="icon" />  <a href="#File">文件管理器</a>
+    <ul>
+      <li><a href="#FileTools">FileTools <em>拓展</em>：提供额外的更强大的文件相关操作</a></li>
+    </ul>
+  </li>
+  <li><img src="images/Spreadsheet.png" alt="icon" />  <a href="#Spreadsheet">电子表格</a></li>
+  <li><img src="images/TinyDB.png" alt="icon" />  <a href="#TinyDB">微数据库</a></li>
+  <li><img src="images/TinyWebDB.png" alt="icon" />  <a href="#TinyWebDB">网络微数据库</a></li>
+</ol>
+
+<h2 id="CloudDB"><img src="images/CloudDB.png" alt="icon" />  云数据库</h2>
+
+<p><code class="highlighter-rouge">云数据库</code>是一个不可见组件，允许您将数据存储在连接到互联网的数据库服务器上（使用Redis），这样你的App上所有用户就能共享数据。 默认情况下，数据将存储在 MIT 维护的服务器中，但是您可以设置和运行自己的服务器。 设置<a href="#CloudDB.RedisServer"><code class="highlighter-rouge">服务地址</code></a>属性和<a href="#CloudDB.RedisPort"><code class="highlighter-rouge">服务端口</code></a>属性以访问您自己的服务器。</p>
+
+<h3 id="CloudDB-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="CloudDB.ProjectID" class="text ro"><em>项目编号</em></dt>
+  <dd>获取此云数据库项目的编号。</dd>
+  <dt id="CloudDB.RedisPort" class="number ro"><em>服务端口</em></dt>
+  <dd>要使用的Redis服务器端口，默认为6381。</dd>
+  <dt id="CloudDB.RedisServer" class="text ro"><em>服务地址</em></dt>
+  <dd>用于存储数据的Redis服务器地址，“DEFAULT”表示默认使用MIT服务器。</dd>
+  <dt id="CloudDB.Token" class="text ro do"><em>令牌</em></dt>
+  <dd>此字段包含用于登录到支持的Redis服务器的身份验证令牌。 如果上面服务地址设置“DEFAULT”的话，这个值请不要编辑，系统会自动填上。 
+一个系统管理员还可以为您提供一个特殊值，可用于在彼此之间共享数据来自多人的多个项目。如果使用您自己的Redis服务器，请在服务器的配置并在此处输入。</dd>
+  <dt id="CloudDB.UseSSL" class="boolean ro do"><em>使用SSL</em></dt>
+  <dd>设置为<code class="logic block highlighter-rouge">真</code>则使用SSL加密通道与云数据库/Redis服务器通信。如果上面服务地址设置“DEFAULT”的话，这个应该设置为<code class="logic block highlighter-rouge">真</code>。</dd>
+</dl>
+
+<h3 id="CloudDB-Events">事件</h3>
+
+<dl class="events">
+  <dt id="CloudDB.CloudDBError">云数据库错误(<em class="text">消息</em>)</dt>
+  <dd>表示与云数据库Redis服务器通信时发生错误。</dd>
+  <dt id="CloudDB.DataChanged">数据发生变化(<em class="text">标签</em>,<em class="any">值</em>)</dt>
+  <dd>表示云数据库项目中的数据发生了变化，事件触发时<code class="text block highlighter-rouge">标签</code>已被更新成最新的<code class="variable block highlighter-rouge">值</code>。</dd>
+  <dt id="CloudDB.FirstRemoved">第一项已删除(<em class="any">值</em>)</dt>
+  <dd>由 <a href="#CloudDB.RemoveFirstFromList"><code class="highlighter-rouge">从列表中删除第一项</code></a> 方法触发的事件。参数 <code class="variable block highlighter-rouge">值</code> 是列表中第一个对象，现在已被删除。</dd>
+  <dt id="CloudDB.GotValue">已获得值(<em class="text">标签</em>,<em class="any">值</em>)</dt>
+  <dd>指示 <a href="#CloudDB.GetValue"><code class="highlighter-rouge">获取值</code></a> 请求已成功。</dd>
+  <dt id="CloudDB.TagList">收到标签列表(<em class="list">值</em>)</dt>
+  <dd>当收到已知标签列表时触发事件，是对 <a href="#CloudDB.GetTagList"><code class="highlighter-rouge">获取标签列表</code></a> 方法调用的响应。</dd>
+  <dt id="CloudDB.UpdateDone">更新完成(<em class="text">标签</em>,<em class="text">operation</em>)</dt>
+  <dd>表示将数据存储到云数据库的操作已完成。</dd>
+</dl>
+
+<h3 id="CloudDB-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="CloudDB.AppendValueToList" class="method"><i></i> 追加值到列表(<em class="text">标签</em>,<em class="any">待添加项</em>)</dt>
+  <dd>以原子(Atomic)方式将值附加到列表末尾。如果两个设备同时使用此功能，两个设备都会被追加并且不会丢失数据。</dd>
+  <dt id="CloudDB.ClearTag" class="method"><i></i> 清除标签(<em class="text">标签</em>)</dt>
+  <dd>从云数据库中删除标签。</dd>
+  <dt id="CloudDB.CloudConnected" class="method returns boolean"><i></i> 云服务已连接()</dt>
+  <dd>如果在网络上并且能够连接到云数据库服务器，则返回<code class="logic block highlighter-rouge">真</code>。</dd>
+  <dt id="CloudDB.GetTagList" class="method"><i></i> 获取标签列表()</dt>
+  <dd>要求云数据库检索属于该项目的所有标签。 结果列表在事件 <a href="#CloudDB.TagList"><code class="highlighter-rouge">收到标签列表</code></a> 中返回。</dd>
+  <dt id="CloudDB.GetValue" class="method"><i></i> 获取值(<em class="text">标签</em>,<em class="any">无标签时返回值</em>)</dt>
+  <dd>要求云数据库获取存储在给定标签下的值。
+
+    <p>它将结果传递给 <a href="#CloudDB.GotValue"><code class="highlighter-rouge">已获得值</code></a> 中给出。</p>
+  </dd>
+  <dt id="CloudDB.RemoveFirstFromList" class="method"><i></i> 从列表中删除第一项(<em class="text">标签</em>)</dt>
+  <dd>获取列表的第一个元素并自动删除它。 如果两个设备同时使用此功能，一个将获取第一个元素，另一个将获取第二个元素，如果没有可用元素，则会出现错误。 当元素可用时，将触发 <a href="#CloudDB.FirstRemoved"><code class="highlighter-rouge">第一项已删除</code></a> 事件。</dd>
+  <dt id="CloudDB.StoreValue" class="method"><i></i> 保存值(<em class="text">标签</em>,<em class="any">待存储值</em>)</dt>
+  <dd>要求云数据库将给定的 <code class="variable block highlighter-rouge">待存储值</code> 存储在给定的 <code class="text block highlighter-rouge">标签</code> 下。</dd>
+</dl>
+
+<h2 id="DataFile"><img src="images/DataFile.png" alt="icon" />  数据文件</h2>
+
+<p>不可见组件，用于读取 CSV 和 JSON 数据格式的文件，提供各个维度的列表数据，便于解析出我们想要的数据，也可以作为其他组件的数据源。</p>
+
+<h3 id="DataFile-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="DataFile.ColumnNames" class="list ro bo"><em>列名列表</em></dt>
+  <dd>获取当前已加载的源文件的列名列表。
+    <ul>
+      <li>对于 CSV 文件，将返回第一行的数据列表。</li>
+      <li>对于 JSON 文件，将返回 JSON 对象中的键列表。</li>
+    </ul>
+  </dd>
+  <dt id="DataFile.Columns" class="list ro bo"><em>列数据</em></dt>
+  <dd>获取当前已加载的源文件的列数据列表。</dd>
+  <dt id="DataFile.DefaultScope" class="com google appinventor components common FileScopeEnum wo do"><em>默认作用域</em></dt>
+  <dd>指定使用<code class="highlighter-rouge">数据文件</code>组件访问文件的默认作用域。App作用域适用于大多数应用程序。兼容模式可用于旧的应用程序（新约束之前）Android 上的文件访问。</dd>
+  <dt id="DataFile.Rows" class="list ro bo"><em>行数据</em></dt>
+  <dd>获取当前已加载的源文件的行数据列表。</dd>
+  <dt id="DataFile.SourceFile" class="text wo do"><em>源文件</em></dt>
+  <dd>设置数据解析的源文件，然后<strong>异步解析</strong>文件。结果存储在 <a href="#DataFile.Columns"><code class="highlighter-rouge">列数据</code></a> 、<a href="#DataFile.Rows"><code class="highlighter-rouge">行数据</code></a> 及 <a href="#DataFile.ColumnNames"><code class="highlighter-rouge">列名列表</code></a> 属性中。文件格式为 CSV 或 JSON 格式。</dd>
+</dl>
+
+<h3 id="DataFile-Events">事件</h3>
+
+<p class="events">无</p>
+
+<h3 id="DataFile-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="DataFile.ReadFile" class="method"><i></i> 读取文件(<em class="text">文件名</em>)</dt>
+  <dd>开始加载数据源文件，文件内容的格式是 CSV 或 JSON。
+    <ul>
+      <li>在 <code class="text block highlighter-rouge">文件名</code> 前加上 <code class="highlighter-rouge">/</code> 来读取SD 卡上的特定文件（例如，<code class="highlighter-rouge">/myFile.txt</code> 将读取该文件 <code class="highlighter-rouge">/sdcard/myFile.txt</code>）。</li>
+      <li>读取应用程序打包的资源（也适用于AI伴侣)，<code class="text block highlighter-rouge">文件名</code> 以 <code class="highlighter-rouge">//</code>（两个斜杠）开始。</li>
+      <li>如果一个<code class="text block highlighter-rouge">文件名</code> 不以 <code class="highlighter-rouge">/</code> 开头，打包的应用程序会从应用程序的私有存储读取，AI伴侣则是<code class="highlighter-rouge">/sdcard/AppInventor/data</code>目录。</li>
+    </ul>
+  </dd>
+</dl>
+
+<h2 id="File"><img src="images/File.png" alt="icon" />  文件管理器</h2>
+
+<p>不可见组件，用于写入或读取设备上的文件，外部文件的路径均由<a href="#File.Scope"><code class="highlighter-rouge">作用域</code></a> 属性指定，不论应用程序是AI伴侣运行还是已编译、以及应用运行的 Android 版本。</p>
+
+<p>由于较新版本的 Android 要求将文件存储在App特定目录中，因此 <code class="highlighter-rouge">默认作用域</code> 设置为 <code class="highlighter-rouge">App</code>，如果使用的是旧版 Android 并且需要访问兼容的公共存储，将 <code class="highlighter-rouge">默认作用域</code> 属性更改为<code class="highlighter-rouge">兼容</code>，当然你也可以使用代码块来修改<code class="highlighter-rouge">作用域</code>属性。</p>
+
+<p><strong>下面是每种<code class="highlighter-rouge">作用域</code>类型的简述：</strong></p>
+
+<ul>
+  <li>
+    <p><strong>App</strong>  <strong><code class="highlighter-rouge">[推荐]</code></strong> ：Android 2.2及更高版本上文件将从应用程序特定存储中读取和写入，在 Android 早期版本上，文件将写入兼容存储中。</p>
+
+    <ul>
+      <li>
+        <p>App的根目录为：<code class="highlighter-rouge">/storage/emulated/0/Android/data</code>。读写文件在指定的 <code class="highlighter-rouge">files</code> 目录下，如图：</p>
+
+        <p><img src="images/android_data.png" alt="App根目录" /></p>
+
+        <p>（这是AI伴侣的App目录，如果最终编译apk运行，则到 <code class="highlighter-rouge">appinventor.ai_admin.[project_name]</code> 目录下查看文件）</p>
+      </li>
+      <li>
+        <p>写入文件的参考代码如下：</p>
+
+        <p><img src="images/android_data_code.png" alt="写入文件代码" /></p>
+      </li>
+      <li>
+        <p>生成的文件如下：</p>
+
+        <p><img src="images/android_data_test.png" alt="写入文件结果" /></p>
+      </li>
+    </ul>
+  </li>
+  <li><strong>程序包</strong> ：从应用程序包中读取文件，应用程序包属于<strong>只读存储</strong>，不可写入。</li>
+  <li><strong>缓存</strong>   ：文件将从应用程序的缓存目录读取和写入，可以在缓存中重新创建临时文件，也允许用户清理临时文件以重新获得存储空间。</li>
+  <li><strong>兼容</strong>   ：文件将使用 App Inventor 在nb187版本之前的规则从文件系统读取和写入，也就是说，将从中读取以单个<code class="highlighter-rouge">/</code>开头的文件名写入外部存储目录的根目录，例如 <code class="highlighter-rouge">/sdcard/</code>。
+  兼容功能<strong><em>将无法在 Android 11 或更高版本上运行</em></strong>。 <strong><em>中文网注：我们与MIT官方最新版本一样，<code class="highlighter-rouge">出于安全性考虑，不支持直接从根目录访问文件，如/sdcard/</code>，推荐使用App模式。</em></strong></li>
+  <li>
+    <p><strong>私有</strong>   ：文件将从应用程序的私有目录读取和写入，使用这个作用域存储的数据对其他App不可见。 与App模式类似，读写文件的目录在 <code class="highlighter-rouge">files</code> 的 <code class="highlighter-rouge">data子目录</code> 下：</p>
+
+    <p><img src="images/android_data_private.png" alt="私有根目录" /></p>
+  </li>
+  <li><strong>共享</strong>   ：文件将从设备的共享媒体目录中读取和写入，例如<code class="highlighter-rouge">图片</code>目录。</li>
+</ul>
+
+<ol>
+  <li>注1：在 <code class="highlighter-rouge">兼容</code> 模式下，文件名可以采用以下三种形式之一：
+    <ul>
+      <li>私有文件：没有前导 <code class="highlighter-rouge">/</code> ，写入应用程序私有存储（例如，<code class="highlighter-rouge">file.txt</code>）</li>
+      <li>外部文件：有一个前导的<code class="highlighter-rouge">/</code>，写入公共存储（例如，<code class="highlighter-rouge">/file.txt</code>）</li>
+      <li>应用程序包：有两个前导的 <code class="highlighter-rouge">//</code>，<strong>只能读取</strong>（例如，<code class="highlighter-rouge">//file.txt</code>）</li>
+    </ul>
+  </li>
+  <li>注2：在所有作用域内，以两个斜杠 (<code class="highlighter-rouge">//</code>) 开头的文件名是程序包中的文件，<strong>只读，不可写</strong>。</li>
+</ol>
+
+<h3 id="File-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="File.DefaultScope" class="com google appinventor components common FileScopeEnum wo do"><em>默认作用域</em></dt>
+  <dd>指定使用 <code class="highlighter-rouge">文件管理器</code> 组件访问文件的默认作用域，不指定默认 <strong><code class="highlighter-rouge">私有</code></strong>。</dd>
+  <dt id="File.ReadPermission" class="boolean wo do"><em>读权限</em></dt>
+  <dd>仅用于“界面设计”视图的属性，用于启用<code class="highlighter-rouge">App</code>作用域之外的文件的读取权限。</dd>
+  <dt id="File.Scope" class="com google appinventor components common FileScopeEnum bo"><em>作用域</em></dt>
+  <dd>表示 <code class="highlighter-rouge">读取文件</code> 和 <code class="highlighter-rouge">保存文件</code> 等操作的当前作用域。</dd>
+  <dt id="File.WritePermission" class="boolean wo do"><em>写权限</em></dt>
+  <dd>仅用于“界面设计”视图的属性，用于启用<code class="highlighter-rouge">App</code>作用域之外的文件的写入权限。</dd>
+</dl>
+
+<h3 id="File-Events">事件</h3>
+
+<dl class="events">
+  <dt id="File.AfterFileSaved">文件存储完毕(<em class="text">文件名</em>)</dt>
+  <dd>当文件内容已被写入完成后，触发该事件。</dd>
+  <dt id="File.GotText">获得文本(<em class="text">文本</em>)</dt>
+  <dd>当文件内容已被读取完成后，触发该事件。</dd>
+</dl>
+
+<h3 id="File-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="File.AppendToFile" class="method"><i></i> 追加内容(<em class="text">文本</em>,<em class="text">文件名</em>)</dt>
+  <dd>将文本追加写入到文件末尾。如果文件不存在，则创建该文件。查看 <a href="#File.SaveFile"><code class="highlighter-rouge">保存文件</code></a> 了解有关文件写入位置的信息。
+
+    <p>写入成功后，将触发 <a href="#File.AfterFileSaved"><code class="highlighter-rouge">文件存储完毕</code></a> 事件。</p>
+  </dd>
+  <dt id="File.CopyFile" class="method returns boolean"><i></i> 拷贝文件(<em class="com google appinventor components common FileScopeEnum">源作用域</em>,<em class="text">源文件名</em>,<em class="com google appinventor components common FileScopeEnum">目标作用域</em>,<em class="text">目标文件名</em>)</dt>
+  <dd>将第一个文件的内容复制到第二个文件。</dd>
+  <dt id="File.Delete" class="method"><i></i> 删除(<em class="text">文件名</em>)</dt>
+  <dd>从存储中删除文件。
+
+    <ol>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 以 <code class="highlighter-rouge">/</code> 开头的是用来删除特定的SD卡中的文件（例如，<code class="highlighter-rouge">/myFile.txt</code> 将读取该文件<code class="highlighter-rouge">/sdcard/myFile.txt</code>)。</p>
+      </li>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 开头没有 <code class="highlighter-rouge">/</code>，则删除位于程序的私有存储中文件。</p>
+      </li>
+      <li>
+        <p>以<code class="highlighter-rouge">//</code>（双斜杠）开头的<code class="text block highlighter-rouge">文件名</code> 是程序包资产文件，是只读的，无法删除会报错。</p>
+      </li>
+    </ol>
+  </dd>
+  <dt id="File.Exists" class="method returns boolean"><i></i> 是否存在(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">路径</em>)</dt>
+  <dd>测试在指定作用域内给出的路径是否存在。</dd>
+  <dt id="File.IsDirectory" class="method returns boolean"><i></i> 是否是目录(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">路径</em>)</dt>
+  <dd>测试在指定作用域内给出的路径是否是目录。</dd>
+  <dt id="File.ListDirectory" class="method returns list"><i></i> 列出目录(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">目录名称</em>)</dt>
+  <dd>获取给定目录中的文件和目录列表。</dd>
+  <dt id="File.MakeDirectory" class="method returns boolean"><i></i> 创建目录(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">目录名称</em>)</dt>
+  <dd>创建一个新目录，只要在完成时目录存在，就返回 <code class="highlighter-rouge">真</code>，也就是创建之前目录已经存在的话，也是返回 <code class="highlighter-rouge">真</code>。</dd>
+  <dt id="File.MakeFullPath" class="method returns text"><i></i> 制作完整路径(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">路径</em>)</dt>
+  <dd>将作用域和路径转换为单个字符串形式的完整路径，便于其他组件使用。
+
+    <p>关于Android存储路径更深入请参考《<a href="../creative/asd.html">Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现</a>》。</p>
+  </dd>
+  <dt id="File.MoveFile" class="method returns boolean"><i></i> 移动文件(<em class="com google appinventor components common FileScopeEnum">源文件作用域</em>,<em class="text">源文件名</em>,<em class="com google appinventor components common FileScopeEnum">目标文件作用域</em>,<em class="text">目标文件名</em>)</dt>
+  <dd>将文件从一个位置移动到另一个位置。</dd>
+  <dt id="File.ReadFrom" class="method"><i></i> 读取文件(<em class="text">文件名</em>)</dt>
+  <dd>从存储中的文件中读取文本。
+
+    <ol>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 以 <code class="highlighter-rouge">/</code> 开头的是用来读取 SD 卡上的特定文件（例如，<code class="highlighter-rouge">/myFile.txt</code> 将读取该文件<code class="highlighter-rouge">/sdcard/myFile.txt</code>)。</p>
+      </li>
+      <li>
+        <p>以<code class="highlighter-rouge">//</code>（双斜杠）开头的<code class="text block highlighter-rouge">文件名</code> 是读取应用程序打包的资源（也适用于AI伴侣）。</p>
+      </li>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 开头没有 <code class="highlighter-rouge">/</code>，它将从应用程序的私有存储中读取文件。</p>
+      </li>
+    </ol>
+  </dd>
+  <dt id="File.RemoveDirectory" class="method returns boolean"><i></i> 删除目录(<em class="com google appinventor components common FileScopeEnum">作用域</em>,<em class="text">目录名称</em>,<em class="boolean">递归</em>)</dt>
+  <dd>从文件系统中删除目录。如果<code class="highlighter-rouge">递归</code>为<code class="highlighter-rouge">真</code>，所有内容都将被删除；如果<code class="highlighter-rouge">递归</code>为<code class="highlighter-rouge">假</code>，则只有该目录为空时才能被删除。</dd>
+  <dt id="File.SaveFile" class="method"><i></i> 保存文件(<em class="text">文本</em>,<em class="text">文件名</em>)</dt>
+  <dd>将文本保存到文件中。
+
+    <ol>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 以 <code class="highlighter-rouge">/</code> 开头则该文件是写入 SD 卡（例如，写入 <code class="highlighter-rouge">/myFile.txt</code> 会将文件写入<code class="highlighter-rouge">/sdcard/myFile.txt</code>)。</p>
+      </li>
+      <li>
+        <p><code class="text block highlighter-rouge">文件名</code> 开头没有 <code class="highlighter-rouge">/</code>，它将是写入程序的私有数据目录中，其他人无法访问该目录手机上的程序。</p>
+      </li>
+      <li>
+        <p>AI伴侣较为特殊，它作为一个独立的App拥有一个私有目录，但是在测试多个项目时，由于这些App都是运行在AI伴侣的App上，因此会共用AI伴侣的私有目录，当这些程序编译后独立运行，则私有目录就各自独立，互不干扰了。</p>
+      </li>
+    </ol>
+
+    <p><strong>请注意</strong>：如果文件已存在，此块将覆盖该文件。如果你想给文件添加内容请使用 <a href="#File.AppendToFile"><code class="highlighter-rouge">追加内容</code></a> 方法添加到现有文件。</p>
+  </dd>
+</dl>
+
+<h2 id="FileTools">FileTools 拓展</h2>
+<!--(https://community.kodular.io/t/filetools-some-tools-to-work-with-files/40051)-->
+
+<p>提供一些额外的更加强大的文件相关的操作。是 <a href="#File"><code class="highlighter-rouge">文件管理器</code></a> 的加强拓展。</p>
+
+<p>.aix 拓展下载：</p>
+
+<p class="vip"><a href="extension/com.sunny.FileTools.aix">com.sunny.FileTools.aix</a></p>
+
+<p>FileTools demo程序下载：</p>
+
+<p class="vip"><a href="extension/FileTools.aia">FileTools.aia</a></p>
+
+<h3 id="FileTools-Properties">属性</h3>
+
+<p class="properties">无</p>
+
+<h3 id="FileTools-Events">事件</h3>
+
+<p class="events">无</p>
+
+<h3 id="FileTools-Methods">方法</h3>
+
+<ol class="methods">
+  <li>
+    <p><img src="extension/FileTools/1.png" alt="1" /></p>
+
+    <p>返回应用程序特定目录的路径。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/2.png" alt="2" /></p>
+
+    <p>返回可用存储目录的列表。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/3.png" alt="3" /></p>
+
+    <p>将文件从源文件夹复制到目标文件夹。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/4.png" alt="4" /></p>
+
+    <p>将文件从源异步复制到目标。使用此功能复制大文件以避免运行时错误。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/5.png" alt="5" /></p>
+
+    <p>如果应用程序特定目录不存在，则创建该目录。</p>
+
+    <p>ASD(app specific directory)相关知识请参考《<a href="../creative/asd.html">Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现</a>》。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/6.png" alt="6" /></p>
+
+    <p>创建一个目录。它用布尔值 true 或 false 触发“Directory Created”。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/7.png" alt="7" /></p>
+
+    <p>删除给定的文件或文件夹。如果是目录，则所有子目录将被删除，这可能需要一些时间。它会触发布尔值 true 或 false 的“FileDeleted”事件。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/8.png" alt="8" /></p>
+
+    <p><img src="extension/FileTools/9.png" alt="9" /></p>
+
+    <p>如果文件或文件夹存在则返回 true，否则返回 false。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/10.png" alt="" /></p>
+
+    <p>从给定目录返回文件列表（如果存在）。使用文件扩展名作为过滤器，如 mp3、txt 等。如果您不想使用过滤器，则使用空字符串。另外，如果不想获取子目录，则设置 ‘ withFolders’ to false else true。如果recursive设置为true，那么它也会递归地从子目录中获取文件。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/11.png" alt="" /></p>
+
+    <p>与 FilesList 的工作方式相同，但它异步获取文件列表，这拒绝了从具有如此多文件的目录获取文件列表时出现任何运行时错误的机会。它会引发带有文件列表的“GotFileList”事件。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/12.png" alt="" /></p>
+
+    <p>从资产返回文件列表。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/13.png" alt="" /></p>
+
+    <p>如果存在则返回路径中的文件名。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/14.png" alt="" /></p>
+
+    <p>返回文件或文件夹的当前大小。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/15.png" alt="" /></p>
+
+    <p>从文件名返回文件路径。在这种情况下，它将返回 /storage/sdcard/mFile.txt。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/16.png" alt="" /></p>
+
+    <p>返回给定目录的文件夹列表。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/17.png" alt="" /></p>
+
+    <p>返回目录的可用大小（以字节为单位）。注意：它使用绝对文件路径。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/18.png" alt="" /></p>
+
+    <p>将文件路径转换为内容 uri。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/19.png" alt="" /></p>
+
+    <p>将文件从源异步移动到目标。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/20.png" alt="" /></p>
+
+    <p>检查给定路径是否是完整路径。例如：/testt.txt 和 /mnt/sdcard/Android/com.sunny.notez/files/testt.txt 不相同。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/21.png" alt="" /></p>
+
+    <p>返回文件夹/文件是否可执行。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/22.png" alt="" /></p>
+
+    <p>如果路径是文件则返回 true，否则返回 false。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/23.png" alt="" /></p>
+
+    <p>如果文件/文件夹被隐藏则返回 true，否则返回 false。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/24.png" alt="" /></p>
+
+    <p>如果文件/文件夹可读则返回 true，否则返回 false。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/25.png" alt="" /></p>
+
+    <p>如果文件/文件夹可写则返回 true，否则返回 false。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/26.png" alt="" /></p>
+
+    <p>给定格式的文件/文件夹的最后修改时间。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/27.png" alt="" /></p>
+
+    <p>给定文件的 Mime 类型。在上述情况下，它将返回 text/plain。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/28.png" alt="" /></p>
+
+    <p>将文件从源移动到目标并删除源文件。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/29.png" alt="" /></p>
+
+    <p>将内容 uri 转换为文件路径。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/30.png" alt="" /></p>
+
+    <p>重命名文件而不删除它。</p>
+  </li>
+  <li>
+    <p><img src="extension/FileTools/31.png" alt="" /></p>
+
+    <p>返回目录的总空间。注意：它使用绝对文件路径。</p>
+  </li>
+</ol>
+
+<h2 id="Spreadsheet"><img src="images/Spreadsheet.png" alt="icon" />  电子表格（<em>依赖谷歌服务，国内无法使用</em>）</h2>
+
+<p>电子表格是一个不可见的组件，用于存储和接收来自使用 Google Sheets API 的 Google Sheets 文档。</p>
+
+<p>要使用此组件，首先必须拥有 Google Developer 帐户，然后，必须在该 Google Developer 下创建一个新项目帐户，在该项目上启用 Google Sheets API，最后创建一个Sheets API 的服务帐户。</p>
+
+<p>有关如何创建服务帐户以及在何处查找的说明使用 Google 表格组件的其他相关信息，可以在<a href="/reference/other/googlesheets-api-setup.html">此处</a>找到。</p>
+
+<p>行号和列号是从 1 开始索引的。</p>
+
+<h3 id="Spreadsheet-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="Spreadsheet.ApplicationName" class="text do"><em>ApplicationName</em></dt>
+  <dd>The name of your application, used when making API calls.</dd>
+  <dt id="Spreadsheet.CredentialsJson" class="text"><em>CredentialsJson</em></dt>
+  <dd>The JSON File with credentials for the Service Account</dd>
+  <dt id="Spreadsheet.SpreadsheetID" class="text"><em>SpreadsheetID</em></dt>
+  <dd>The ID for the Google Sheets file you want to edit. You can find the spreadsheetID in the URL of the Google Sheets file.</dd>
+</dl>
+
+<h3 id="Spreadsheet-Events">事件</h3>
+
+<dl class="events">
+  <dt id="Spreadsheet.ErrorOccurred">ErrorOccurred(<em class="text">errorMessage</em>)</dt>
+  <dd>Triggered whenever an API call encounters an error. Details about the error are in <code class="highlighter-rouge">errorMessage</code>.</dd>
+  <dt id="Spreadsheet.FinishedAddCol">FinishedAddCol(<em class="number">columnNumber</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.AddCol"><code class="highlighter-rouge">AddCol</code></a> block, called once the
+ values on the table have been updated. Additionally, this returns the
+ column number for the new column.</dd>
+  <dt id="Spreadsheet.FinishedAddRow">FinishedAddRow(<em class="number">rowNumber</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.AddRow"><code class="highlighter-rouge">AddRow</code></a> block, called once the
+ values on the table have been updated. Additionally, this returns the
+ row number for the new row.</dd>
+  <dt id="Spreadsheet.FinishedClearRange">FinishedClearRange()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ClearRange"><code class="highlighter-rouge">ClearRange</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedRemoveCol">FinishedRemoveCol()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.RemoveCol"><code class="highlighter-rouge">RemoveCol</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedRemoveRow">FinishedRemoveRow()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.RemoveRow"><code class="highlighter-rouge">RemoveRow</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedWriteCell">FinishedWriteCell()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.WriteCell"><code class="highlighter-rouge">WriteCell</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedWriteCol">FinishedWriteCol()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.WriteCol"><code class="highlighter-rouge">WriteCol</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedWriteRange">FinishedWriteRange()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.WriteRange"><code class="highlighter-rouge">WriteRange</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.FinishedWriteRow">FinishedWriteRow()</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.WriteRow"><code class="highlighter-rouge">WriteRow</code></a> block, called once the
+ values on the table have been updated.</dd>
+  <dt id="Spreadsheet.GotCellData">GotCellData(<em class="text">cellData</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ReadCell"><code class="highlighter-rouge">ReadCell</code></a> block. The <code class="highlighter-rouge">cellData</code> is
+ the text value in the cell.</dd>
+  <dt id="Spreadsheet.GotColData">GotColData(<em class="list">colDataList</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ReadCol"><code class="highlighter-rouge">ReadCol</code></a> block. The <code class="highlighter-rouge">colDataList</code> is a
+ list of text cell-values in order of increasing row number.</dd>
+  <dt id="Spreadsheet.GotFilterResult">GotFilterResult(<em class="list">return_rows</em>,<em class="list">return_data</em>)</dt>
+  <dd>The callbeck event for the <a href="#Spreadsheet.ReadWithQuery"><code class="highlighter-rouge">ReadWithQuery</code></a> block. The <code class="highlighter-rouge">response</code>
+ is a list of rows, where each row satisfies the query.</dd>
+  <dt id="Spreadsheet.GotRangeData">GotRangeData(<em class="list">rangeData</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ReadRange"><code class="highlighter-rouge">ReadRange</code></a> block. The <code class="highlighter-rouge">rangeData</code> is
+ a list of rows, where the dimensions are the same as the rangeReference.</dd>
+  <dt id="Spreadsheet.GotRowData">GotRowData(<em class="list">rowDataList</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ReadRow"><code class="highlighter-rouge">ReadRow</code></a> block. The <code class="highlighter-rouge">rowDataList</code> is a
+ list of text cell-values in order of increasing column number.</dd>
+  <dt id="Spreadsheet.GotSheetData">GotSheetData(<em class="list">sheetData</em>)</dt>
+  <dd>The callback event for the <a href="#Spreadsheet.ReadSheet"><code class="highlighter-rouge">ReadSheet</code></a> block. The <code class="highlighter-rouge">sheetData</code> is a
+ list of rows.</dd>
+</dl>
+
+<h3 id="Spreadsheet-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="Spreadsheet.AddCol" class="method"><i></i> AddCol(<em class="text">sheetName</em>,<em class="list">data</em>)</dt>
+  <dd>Given a list of values as <code class="highlighter-rouge">data</code>, appends the values to the next empty
+ column of the sheet. It will always start from the top row and continue
+ downwards. Once complete, it triggers the <a href="#Spreadsheet.FinishedAddCol"><code class="highlighter-rouge">FinishedAddCol</code></a>
+ callback event.</dd>
+  <dt id="Spreadsheet.AddRow" class="method"><i></i> AddRow(<em class="text">sheetName</em>,<em class="list">data</em>)</dt>
+  <dd>Given a list of values as <code class="highlighter-rouge">data</code>, appends the values to the next
+ empty row of the sheet. It will always start from the left most column and
+ continue to the right. Once complete, it triggers the <a href="#Spreadsheet.FinishedAddRow"><code class="highlighter-rouge">FinishedAddRow</code></a>
+ callback event. Additionally, this returns the row number for the new row.</dd>
+  <dt id="Spreadsheet.ClearRange" class="method"><i></i> ClearRange(<em class="text">sheetName</em>,<em class="text">rangeReference</em>)</dt>
+  <dd>Empties the cells in the given range. Once complete, this block triggers
+ the <a href="#Spreadsheet.FinishedClearRange"><code class="highlighter-rouge">FinishedClearRange</code></a> callback event.</dd>
+  <dt id="Spreadsheet.GetCellReference" class="method returns text"><i></i> GetCellReference(<em class="number">row</em>,<em class="number">col</em>)</dt>
+  <dd>Converts the integer representation of rows and columns to A1-Notation used
+ in Google Sheets for a single cell. For example, row 1 and col 2
+ corresponds to the string "B1".</dd>
+  <dt id="Spreadsheet.GetRangeReference" class="method returns text"><i></i> GetRangeReference(<em class="number">row1</em>,<em class="number">col1</em>,<em class="number">row2</em>,<em class="number">col2</em>)</dt>
+  <dd>Converts the integer representation of rows and columns for the corners of
+ the range to A1-Notation used in Google Sheets. For example, selecting the
+ range from row 1, col 2 to row 3, col 4 corresponds to the string “B1:D3”.</dd>
+  <dt id="Spreadsheet.ReadCell" class="method"><i></i> ReadCell(<em class="text">sheetName</em>,<em class="text">cellReference</em>)</dt>
+  <dd>On the page with the provided sheetName, reads the cell at the given
+ cellReference and triggers the <a href="#Spreadsheet.GotCellData"><code class="highlighter-rouge">GotCellData</code></a> callback event. The
+ cellReference can be either a text block with A1-Notation, or the result of
+ the <a href="#Spreadsheet.getCellReference"><code class="highlighter-rouge">getCellReference</code></a> block.</dd>
+  <dt id="Spreadsheet.ReadCol" class="method"><i></i> ReadCol(<em class="text">sheetName</em>,<em class="number">colNumber</em>)</dt>
+  <dd>On the page with the provided sheetName, reads the column at the given
+ colNumber and triggers the <a href="#Spreadsheet.GotColData"><code class="highlighter-rouge">GotColData</code></a> callback event.</dd>
+  <dt id="Spreadsheet.ReadRange" class="method"><i></i> ReadRange(<em class="text">sheetName</em>,<em class="text">rangeReference</em>)</dt>
+  <dd>On the page with the provided sheetName, reads the cells at the given
+ rangeReference and triggers the <a href="#Spreadsheet.GotRangeData"><code class="highlighter-rouge">GotRangeData</code></a> callback event. The
+ rangeReference can be either a text block with A1-Notation, or the result
+ of the <a href="#Spreadsheet.getRangeReference"><code class="highlighter-rouge">getRangeReference</code></a> block.</dd>
+  <dt id="Spreadsheet.ReadRow" class="method"><i></i> ReadRow(<em class="text">sheetName</em>,<em class="number">rowNumber</em>)</dt>
+  <dd>On the page with the provided sheetName, reads the row at the given
+ rowNumber and triggers the <a href="#Spreadsheet.GotRowData"><code class="highlighter-rouge">GotRowData</code></a> callback event.</dd>
+  <dt id="Spreadsheet.ReadSheet" class="method"><i></i> ReadSheet(<em class="text">sheetName</em>)</dt>
+  <dd>Reads the <b>entire</b> Google Sheets document and triggers the
+ <a href="#Spreadsheet.GotSheetData"><code class="highlighter-rouge">GotSheetData</code></a> callback event.</dd>
+  <dt id="Spreadsheet.ReadWithExactFilter" class="method"><i></i> ReadWithExactFilter(<em class="text">sheetName</em>,<em class="number">colID</em>,<em class="text">value</em>)</dt>
+  <dd>Filters a Google Sheet for rows where the given column number matches the provided value.</dd>
+  <dt id="Spreadsheet.ReadWithPartialFilter" class="method"><i></i> ReadWithPartialFilter(<em class="text">sheetName</em>,<em class="number">colID</em>,<em class="text">value</em>)</dt>
+  <dd>Filters a Google Sheet for rows where the given column number contains the provided value string.</dd>
+  <dt id="Spreadsheet.RemoveCol" class="method"><i></i> RemoveCol(<em class="text">sheetName</em>,<em class="number">colNumber</em>)</dt>
+  <dd>Deletes the column with the given column number from the table. This does
+ not clear the column, but removes it entirely. The sheet’s grid id can be
+ found at the end of the url of the Google Sheets document, right after the
+ “gid=”. Once complete, it triggers the <a href="#Spreadsheet.FinishedRemoveCol"><code class="highlighter-rouge">FinishedRemoveCol</code></a>
+ callback event.</dd>
+  <dt id="Spreadsheet.RemoveRow" class="method"><i></i> RemoveRow(<em class="text">sheetName</em>,<em class="number">rowNumber</em>)</dt>
+  <dd>Deletes the row with the given row number (1-indexed) from the table. This
+ does not clear the row, but removes it entirely. The sheet’s grid id can be
+ found at the end of the url of the Google Sheets document, right after the
+ “gid=”. Once complete, it triggers the <a href="#Spreadsheet.FinishedRemoveRow"><code class="highlighter-rouge">FinishedRemoveRow</code></a>
+ callback event.</dd>
+  <dt id="Spreadsheet.WriteCell" class="method"><i></i> WriteCell(<em class="text">sheetName</em>,<em class="text">cellReference</em>,<em class="any">data</em>)</dt>
+  <dd>Given text or a number as <code class="highlighter-rouge">data</code>, writes the value to the cell. It will
+ override any existing data in the cell with the one provided. Once complete,
+ it triggers the <a href="#Spreadsheet.FinishedWriteCell"><code class="highlighter-rouge">FinishedWriteCell</code></a> callback event.</dd>
+  <dt id="Spreadsheet.WriteCol" class="method"><i></i> WriteCol(<em class="text">sheetName</em>,<em class="number">colNumber</em>,<em class="list">data</em>)</dt>
+  <dd>Given a list of values as <code class="highlighter-rouge">data</code>, writes the values to the column with the
+ given column number, overriding existing values from top down. (Note: It
+ will not erase the entire column.) Once complete, it triggers the
+ <a href="#Spreadsheet.FinishedWriteCol"><code class="highlighter-rouge">FinishedWriteCol</code></a> callback event.</dd>
+  <dt id="Spreadsheet.WriteRange" class="method"><i></i> WriteRange(<em class="text">sheetName</em>,<em class="text">rangeReference</em>,<em class="list">data</em>)</dt>
+  <dd>Given list of lists as <code class="highlighter-rouge">data</code>, writes the values to cells in the range. The
+ number of rows and columns in the range must match the dimensions of your
+ data. This method will override existing data in the range. Once complete,
+ it triggers the <a href="#Spreadsheet.FinishedWriteRange"><code class="highlighter-rouge">FinishedWriteRange</code></a> callback event.</dd>
+  <dt id="Spreadsheet.WriteRow" class="method"><i></i> WriteRow(<em class="text">sheetName</em>,<em class="number">rowNumber</em>,<em class="list">data</em>)</dt>
+  <dd>Given a list of values as <code class="highlighter-rouge">data</code>, writes the values to the row  with the
+ given row number, overriding existing values from left to right. (Note: It
+ will not erase the entire row.) Once complete, it triggers the
+ <a href="#Spreadsheet.FinishedWriteRow"><code class="highlighter-rouge">FinishedWriteRow</code></a> callback event.</dd>
+</dl>
+
+<h2 id="TinyDB"><img src="images/TinyDB.png" alt="icon" />  微数据库</h2>
+
+<p><code class="highlighter-rouge">微数据库</code>是一个不可见的组件，用于存储应用程序的数据。</p>
+
+<p>使用 App Inventor 创建的应用程序在每次运行时都会进行初始化，这意味着如果一个应用程序设置变量的值，然后用户退出应用程序，该变量的值将在下次运行应用程序时不会被记住。
+ 相比之下，微数据库是一个持久化的数据存储，每次运行应用程序时，存储在“微数据库”中的数据都能被记住并获取。例如游戏中保存最高分，并在每次玩游戏时获取它。</p>
+
+<ol>
+  <li>
+    <p>数据项由标签和值组成，要存储数据项需要指定标签（标签必须是文本块，为数据命名），然后可以根据标签获取存储在该标签下的数据。</p>
+  </li>
+  <li>
+    <p>不能使用“微数据库”在手机上的两个不同App之间传递数据，可以在多屏应用的<strong>不同屏幕之间共享数据</strong>。</p>
+  </li>
+  <li>
+    <p>在使用AI伴侣开发应用时，使用该<strong>AI伴侣的所有应用都将共用一个微数据库</strong>，而一旦应用打包之后，数据的共享将不复存在。因此在开发过程中，每次创建新项目时，都需留心清空微数据库。</p>
+  </li>
+</ol>
+
+<p>总结下来，就是“微数据库”只能在同一个App间共享数据，AI伴侣算一个App（所有被测试的程序均归到AI伴侣App上），程序打包编译apk后算作各自的App。</p>
+
+<h3 id="TinyDB-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="TinyDB.Namespace" class="text"><em>命名空间</em></dt>
+  <dd>用于存储数据的命名空间。</dd>
+</dl>
+
+<h3 id="TinyDB-Events">事件</h3>
+
+<p class="events">无</p>
+
+<h3 id="TinyDB-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="TinyDB.ClearAll" class="method"><i></i> 清除所有数据()</dt>
+  <dd>清除整个数据存储。</dd>
+  <dt id="TinyDB.ClearTag" class="method"><i></i> 清除标签数据(<em class="text">标签</em>)</dt>
+  <dd>清除指定 <code class="text block highlighter-rouge">标签</code> 下的数据。</dd>
+  <dt id="TinyDB.GetTags" class="method returns any"><i></i> 获取标签列表()</dt>
+  <dd>返回数据存储中所有标签的列表（是一个列表对象）。</dd>
+  <dt id="TinyDB.GetValue" class="method returns any"><i></i> 获取值(<em class="text">标签</em>,<em class="any">无标签时返回值</em>)</dt>
+  <dd>获取指定 <code class="text block highlighter-rouge">标签</code> 下的数据，如果没有该标签，则返回 <code class="variable block highlighter-rouge">无标签时返回值</code> 中指定的值。</dd>
+  <dt id="TinyDB.StoreValue" class="method"><i></i> 保存值(<em class="text">标签</em>,<em class="any">存储值</em>)</dt>
+  <dd>将 <code class="variable block highlighter-rouge">存储值</code> 保存到指定 <code class="text block highlighter-rouge">标签</code> 下，当应用程序重新启动时，存储仍然存在于手机上。</dd>
+  <dd>
+    <p><code class="highlighter-rouge">存储值</code>可以是文本，也可以是数字，<strong>还可以是列表</strong>。</p>
+
+    <p>重复保存同一个标签的话，第二次会覆盖第一次的值，即以最新存储的值为准。</p>
+  </dd>
+</dl>
+
+<p><strong>拓展</strong></p>
+
+<ul>
+  <li>
+    <p>微数据库的<code class="highlighter-rouge">存储值</code>可以是列表吗？我们写了一个测试程序如下：</p>
+
+    <p><img src="images/微数据库存储列表测试.png" alt="微数据库存储列表测试" /></p>
+
+    <p>测试结果是：2。说明<strong>值取出后成功还原了列表</strong>，也说明<strong>列表是能够直接存储</strong>进微数据库的。</p>
+  </li>
+</ul>
+
+<h2 id="TinyWebDB"><img src="images/TinyWebDB.png" alt="icon" />  网络微数据库</h2>
+
+<p><code class="highlighter-rouge">网络微数据库</code> 组件通过与Web服务通信以存储及查询数据，虽然这个组件是有用的，<strong>但是非常有限</strong>，主要是作为对那些想要创建自己的组件与 Web 对话的<code class="highlighter-rouge">Demo应用</code>。</p>
+
+<p>随附的 Web 服务位于 <a href="http://tinywebdb.appinventor.mit.edu">http://tinywebdb.appinventor.mit.edu</a>。该组件有方法<a href="#TinyWebDB.StoreValue">保存值</a> 和<a href="#TinyWebDB.GetValue">获取值</a> ，“保存”和“获取”的含义取决于Web服务。在目前的实现中，所有标签和值是字符串（文本），后续版本可能会放开这一限制。</p>
+
+<p><strong>中文网注：</strong></p>
+
+<p>MIT官方的功能很单一，目前国内也有免费的网络微数据库，功能上也进行了一定的拓展，详细可以去各自的网站上查看中文文档。网站如下：</p>
+
+<p><a href="https://tinywebdb.cn/">https://tinywebdb.cn/</a></p>
+
+<p><a href="https://tinywebdb.appinventor.space/">https://tinywebdb.appinventor.space/</a>   <em>经过测试，单个键值的大小不可超过9000字节，否则可能保存失败。</em></p>
+
+<h3 id="TinyWebDB-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="TinyWebDB.ServiceURL" class="text"><em>服务地址</em></dt>
+  <dd>指定Web服务的 URL，默认值是 <a href="http://tinywebdb.appinventor.mit.edu">http://tinywebdb.appinventor.mit.edu</a>。</dd>
+</dl>
+
+<h3 id="TinyWebDB-Events">事件</h3>
+
+<dl class="events">
+  <dt id="TinyWebDB.GotValue">已获得值时(<em class="text">网络微数据库标签</em>,<em class="any">网络微数据库值</em>)</dt>
+  <dd><a href="#TinyWebDB.GetValue"><code class="highlighter-rouge">获取值</code></a> 请求服务器执行成功时触发该事件。</dd>
+  <dt id="TinyWebDB.ValueStored">值存储完毕时()</dt>
+  <dd><a href="#TinyWebDB.StoreValue"><code class="highlighter-rouge">保存值</code></a> 请求服务器执行成功时触发该事件。</dd>
+  <dt id="TinyWebDB.WebServiceError">发生Web服务故障时(<em class="text">消息</em>)</dt>
+  <dd>与Web服务器的通信发出错误信号时触发该事件。</dd>
+</dl>
+
+<h3 id="TinyWebDB-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="TinyWebDB.GetValue" class="method"><i></i> 获取值(<em class="text">标签</em>)</dt>
+  <dd><code class="highlighter-rouge">获取值</code> 请求Web服务获取存储在指定 <code class="text block highlighter-rouge">标签</code> 下的值，如果 <code class="text block highlighter-rouge">标签</code> 下没有存储值，则返回什么取决于Web服务。
+
+    <p>该组件接受返回任何内容，然后 <a href="#TinyWebDB.GotValue"><code class="highlighter-rouge">获取值</code></a> 事件将在完成时触发。</p>
+  </dd>
+  <dt id="TinyWebDB.StoreValue" class="method"><i></i> 保存值(<em class="text">标签</em>,<em class="any">待存储值</em>)</dt>
+  <dd>向Web服务发送请求，将给定的 <code class="variable block highlighter-rouge">待存储值</code> 存储在指定的 <code class="text block highlighter-rouge">标签</code> 下，<a href="#TinyWebDB.ValueStored"><code class="highlighter-rouge">值存储完成</code></a> 事件将在完成时触发。</dd>
+</dl>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

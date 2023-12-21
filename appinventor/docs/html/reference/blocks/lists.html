@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>App Inventor 2 列表代码块 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，列表代码块参考文档：包括创建空列表、创建列表、追加列表项、检查列表中是否包含对象、求列表长度、列表是否为空？、随机选取列表项、选择列表中索引值对应的列表项、替换列表中索引值对应的列表项、删除列表中某项、将一个列表中所有项追加到另一个列表中、复制列表、是否为列表？、列表转置、列表转换为CSV行、列表转换为CSV表、CSV行转换为列表、CSV表转换为列表、在键值对中查找、分隔符拼接成文本、创建映射列表、创建过滤列表、缩减列表、创建有序列表、创建带比较器的有序列表、创建带键函数的有序列表、列表中的最小值、列表中的最大值、去除首个元素的列表、去除末尾元素的列表、截取列表、列表去重、列表赋值、列表比较、遍历列表、列表遍历、二维列表、多维列表、获取键值列表的键（列表）。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2 列表代码块</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#emptylist" id="markdown-toc-emptylist">创建空列表</a></li>
+  <li><a href="#makealist" id="markdown-toc-makealist">创建列表</a></li>
+  <li><a href="#additems" id="markdown-toc-additems">追加列表项</a></li>
+  <li><a href="#inlist" id="markdown-toc-inlist">检查列表中是否包含对象</a></li>
+  <li><a href="#lengthoflist" id="markdown-toc-lengthoflist">求列表长度</a></li>
+  <li><a href="#islistempty" id="markdown-toc-islistempty">列表是否为空？</a></li>
+  <li><a href="#pickrandomitem" id="markdown-toc-pickrandomitem">随机选取列表项</a></li>
+  <li><a href="#indexinlist" id="markdown-toc-indexinlist">求对象在列表中的位置</a></li>
+  <li><a href="#selectlistitem" id="markdown-toc-selectlistitem">选择列表中索引值对应的列表项</a></li>
+  <li><a href="#insert" id="markdown-toc-insert">在列表的某个位置插入列表项</a></li>
+  <li><a href="#replace" id="markdown-toc-replace">替换列表中索引值对应的列表项</a></li>
+  <li><a href="#removeitem" id="markdown-toc-removeitem">删除列表中某项</a></li>
+  <li><a href="#append" id="markdown-toc-append">将一个列表中所有项追加到另一个列表中</a></li>
+  <li><a href="#copy" id="markdown-toc-copy">复制列表</a></li>
+  <li><a href="#isalist" id="markdown-toc-isalist">是否为列表？</a></li>
+  <li><a href="#reverse" id="markdown-toc-reverse">列表转置</a></li>
+  <li><a href="#listtocsvrow" id="markdown-toc-listtocsvrow">列表转换为CSV行</a></li>
+  <li><a href="#listtocsvtable" id="markdown-toc-listtocsvtable">列表转换为CSV表</a></li>
+  <li><a href="#listfromcsvrow" id="markdown-toc-listfromcsvrow">CSV行转换为列表</a></li>
+  <li><a href="#listfromcsvtable" id="markdown-toc-listfromcsvtable">CSV表转换为列表</a></li>
+  <li><a href="#lookuppairs" id="markdown-toc-lookuppairs">在键值对中查找</a></li>
+  <li><a href="#joinwithseparator" id="markdown-toc-joinwithseparator">分隔符拼接成文本</a></li>
+  <li><a href="#map" id="markdown-toc-map">创建映射列表</a></li>
+  <li><a href="#filter" id="markdown-toc-filter">创建过滤列表</a></li>
+  <li><a href="#reduce" id="markdown-toc-reduce">缩减列表</a></li>
+  <li><a href="#sort" id="markdown-toc-sort">创建有序列表</a></li>
+  <li><a href="#sortwithcomparator" id="markdown-toc-sortwithcomparator">创建带比较器的有序列表</a></li>
+  <li><a href="#sortwithkey" id="markdown-toc-sortwithkey">创建带键函数的有序列表</a></li>
+  <li><a href="#minnumber" id="markdown-toc-minnumber">列表中的最小值</a></li>
+  <li><a href="#maxnumber" id="markdown-toc-maxnumber">列表中的最大值</a></li>
+  <li><a href="#butfirst" id="markdown-toc-butfirst">去除首个元素的列表</a></li>
+  <li><a href="#butlast" id="markdown-toc-butlast">去除末尾元素的列表</a></li>
+  <li><a href="#slices" id="markdown-toc-slices">截取列表</a></li>
+  <li><a href="#foreachlist" id="markdown-toc-foreachlist">案例：列表遍历</a></li>
+  <li><a href="#uniquekeylist" id="markdown-toc-uniquekeylist">案例：去除列表重复项（列表去重）</a></li>
+  <li><a href="#list_assign" id="markdown-toc-list_assign">案例：将一个列表等于另一个列表（列表赋值）</a></li>
+  <li><a href="#list_compare" id="markdown-toc-list_compare">案例：判断一个列表是否等于另一个列表（列表比较）</a></li>
+  <li><a href="#list_clear" id="markdown-toc-list_clear">案例：清理列表（ClearList）</a></li>
+  <li><a href="#multidlist" id="markdown-toc-multidlist">二维列表、多维列表</a></li>
+  <li><a href="#weather" id="markdown-toc-weather">案例：解析天气预报结果JSON数据</a></li>
+  <li><a href="#keylist" id="markdown-toc-keylist">案例：获取键值列表的键（列表）</a></li>
+</ul>
+
+<p>目录：</p>
+
+<ul>
+  <li><a href="#emptylist">创建空列表</a></li>
+  <li><a href="#makealist">创建列表</a></li>
+  <li><a href="#additems">追加列表项</a></li>
+  <li><a href="#inlist">检查列表中是否包含对象</a></li>
+  <li><a href="#lengthoflist">求列表长度</a></li>
+  <li><a href="#islistempty">列表是否为空？</a></li>
+  <li><a href="#pickrandomitem">随机选取列表项</a></li>
+  <li><a href="#indexinlist">求对象在列表中的位置</a></li>
+  <li><a href="#selectlistitem">选择列表中索引值对应的列表项</a></li>
+  <li><a href="#insert">在列表的某个位置插入列表项</a></li>
+  <li><a href="#replace">替换列表中索引值对应的列表项</a></li>
+  <li><a href="#removeitem">删除列表中某项</a></li>
+  <li><a href="#append">将一个列表中所有项追加到另一个列表中</a></li>
+  <li><a href="#copy">复制列表</a></li>
+  <li><a href="#isalist">是否为列表？</a></li>
+  <li><a href="#reverse">列表转置</a></li>
+  <li><a href="#listtocsvrow">列表转换为CSV行</a></li>
+  <li><a href="#listtocsvtable">列表转换为CSV表</a></li>
+  <li><a href="#listfromcsvrow">CSV行转换为列表</a></li>
+  <li><a href="#listfromcsvtable">CSV表转换为列表</a></li>
+  <li><a href="#lookuppairs">在键值对中查找</a></li>
+  <li><a href="#joinwithseparator">分隔符拼接成文本</a></li>
+  <li><a href="#map">创建映射列表</a></li>
+  <li><a href="#filter">创建过滤列表</a></li>
+  <li><a href="#reduce">缩减列表</a></li>
+  <li><a href="#sort">创建有序列表</a></li>
+  <li><a href="#sortwithcomparator">创建带比较器的有序列表</a></li>
+  <li><a href="#sortwithkey">创建带键函数的有序列表</a></li>
+  <li><a href="#minnumber">列表中的最小值</a></li>
+  <li><a href="#maximum">列表中的最大值</a></li>
+  <li><a href="#butfirst">去除首个元素的列表</a></li>
+  <li><a href="#butlast">去除末尾元素的列表</a></li>
+  <li><a href="#slices">截取列表</a></li>
+</ul>
+
+<hr />
+<p>拓展案例：</p>
+
+<ol>
+  <li><a href="#foreachlist"><em>案例：</em><strong>列表遍历</strong></a></li>
+  <li><a href="#uniquekeylist"><em>案例：</em>去除列表重复项（<strong>列表去重</strong>）</a></li>
+  <li><a href="#list_assign"><em>案例：</em>将一个列表等于另一个列表（<strong>列表赋值</strong>）</a></li>
+  <li><a href="#list_compare"><em>案例：</em>判断一个列表是否等于另一个列表（<strong>列表比较</strong>）</a></li>
+  <li><a href="#list_clear"><em>案例：</em>清理列表（ClearList）</a></li>
+  <li><a href="#multidlist"><strong>二维列表、多维列表</strong></a></li>
+  <li><a href="#weather"><em>案例：</em>解析天气预报结果JSON数据</a></li>
+  <li><a href="#keylist"><em>案例：</em>获取键值列表的键（列表）</a></li>
+</ol>
+
+<p><em>需要额外的帮助来理解列表吗？请查看“概念”页面上的<a href="../concepts/lists.html">制作列表</a>。</em></p>
+
+<hr />
+<h3 id="emptylist">创建空列表</h3>
+
+<p><img src="images/lists/emptylist.png" alt="" /></p>
+
+<p>创建一个没有元素的空列表。</p>
+
+<hr />
+<h3 id="makealist">创建列表</h3>
+
+<p><img src="images/lists/makealist.png" alt="" /></p>
+
+<p>从给定的代码块创建一个列表。如果不提供任何参数，这将创建一个空列表，可以稍后向其中添加元素。</p>
+
+<p>这个代码块是一个<a href="../concepts/mutators.html">块扩展</a>，点击蓝色齿轮可以新增额外的列表项。</p>
+
+<hr />
+<h3 id="additems">追加列表项</h3>
+
+<p><img src="images/lists/additems.png" alt="" /></p>
+
+<p>将给定列表项添加到列表末尾。这个代码块是一个<a href="../concepts/mutators.html">块扩展</a>。</p>
+
+<hr />
+<h3 id="inlist">检查列表中是否包含对象</h3>
+
+<p><img src="images/lists/inlist.png" alt="" /></p>
+
+<p>如果指定对象是列表元素之一，则返回 <code class="logic block highlighter-rouge">真</code>， 否则，返回 <code class="logic block highlighter-rouge">假</code>。</p>
+
+<p>请注意，如果列表包含子列表，子列表的成员本身并不是列表的成员。</p>
+
+<p>例如列表 <code class="highlighter-rouge">[1,2,[3,4]]</code> 的成员为1、2，列表[3 4]， 3 和 4 本身不是列表的成员。</p>
+
+<hr />
+<h3 id="lengthoflist">求列表长度</h3>
+
+<p><img src="images/lists/lengthoflist.png" alt="" /></p>
+
+<p>返回列表中的项目数。</p>
+
+<hr />
+<h3 id="islistempty">列表是否为空？</h3>
+
+<p><img src="images/lists/islistempty.png" alt="" /></p>
+
+<p>如果列表没有项目，则返回 <code class="logic block highlighter-rouge">真</code>， 否则，返回 <code class="logic block highlighter-rouge">假</code>。</p>
+
+<hr />
+<h3 id="pickrandomitem">随机选取列表项</h3>
+
+<p><img src="images/lists/pickrandomitem.png" alt="" /></p>
+
+<p>从给定列表中随机返回一个列表项，如果列表为空则会发出异常、报错。</p>
+
+<p>如果给定列表是一个二维列表，如 <code class="highlighter-rouge">[["abc","123"],["xyz","456"]]</code> ，则返回的列表项也是一个列表对象，如 <code class="highlighter-rouge">["abc","123"]</code>。</p>
+
+<hr />
+<h3 id="indexinlist">求对象在列表中的位置</h3>
+
+<p><img src="images/lists/indexinlist.png" alt="" /></p>
+
+<p>返回指定对象在列表中的位置，从 <code class="highlighter-rouge">1</code> 开始，如果不在列表中，则返回 0。</p>
+
+<hr />
+<h3 id="selectlistitem">选择列表中索引值对应的列表项</h3>
+
+<p><img src="images/lists/selectlistitem.png" alt="" /></p>
+
+<p>返回给定列表中给定索引处的项目，索引从 <code class="highlighter-rouge">1</code> 开始。</p>
+
+<hr />
+<h3 id="insert">在列表的某个位置插入列表项</h3>
+
+<p><img src="images/lists/insert.png" alt="" /></p>
+
+<p>将项目插入列表中的给定位置。</p>
+
+<hr />
+<h3 id="replace">替换列表中索引值对应的列表项</h3>
+
+<p><img src="images/lists/replace.png" alt="" /></p>
+
+<p>将 <em>替换值</em> 插入到给定列表的位置索引处，该位置的前一项将被删除。</p>
+
+<hr />
+<h3 id="removeitem">删除列表中某项</h3>
+
+<p><img src="images/lists/removeitem.png" alt="" /></p>
+
+<p>删除给定位置的项目。</p>
+
+<hr />
+<h3 id="append">将一个列表中所有项追加到另一个列表中</h3>
+
+<p><img src="images/lists/append.png" alt="" /></p>
+
+<p>将第二个列表中的项目添加到第一个列表的末尾。</p>
+
+<hr />
+<h3 id="copy">复制列表</h3>
+
+<p><img src="images/lists/copy.png" alt="" /></p>
+
+<p>复制列表，包括复制所有子列表。</p>
+
+<hr />
+<h3 id="isalist">是否为列表？</h3>
+
+<p><img src="images/lists/isalist.png" alt="" /></p>
+
+<p>如果 <em>给定对象</em> 是一个列表，则返回 <code class="logic block highlighter-rouge">真</code>， 否则，返回 <code class="logic block highlighter-rouge">假</code>。</p>
+
+<hr />
+<h3 id="reverse">列表转置</h3>
+
+<p><img src="images/lists/reverse.png" alt="" /></p>
+
+<p>使用相反顺序反转列表并返回副本（不改变原列表数据）。</p>
+
+<p>例如：列表转置[1,2,3]，返回 [3,2,1]</p>
+
+<hr />
+<h3 id="listtocsvrow">列表转换为CSV行</h3>
+
+<p><img src="images/lists/listtocsvrow.png" alt="" /></p>
+
+<p>将列表解释为表的一行并返回表示该行的 CSV（逗号分隔格式）文本。</p>
+
+<p>列表中的每个项目都被视为一个字段，并在生成的 CSV 文本中用双引号引起来，以逗号分隔。</p>
+
+<p>例如，将列表 <code class="highlighter-rouge">[a, b, c, d]</code> 转换为 CSV 行会生成 <code class="highlighter-rouge">"a", "b", "c", "d"</code>，返回的行文本末尾没有行分隔符。</p>
+
+<hr />
+<h3 id="listtocsvtable">列表转换为CSV表</h3>
+
+<p><img src="images/lists/listtocsvtable.png" alt="" /></p>
+
+<p>将列表解释为以行为主格式的表，并返回表示该表的 CSV（逗号分隔格式）文本。</p>
+
+<p>列表中的每个项目本身是表示 CSV 表一行的列表（即二维列表），每行列表中的每个项目都被视为一个字段，并在生成的 CSV 文本中用双引号引起来。</p>
+
+<p>在返回的文本中，行中的项目以逗号分隔，行以 CRLF (Windows下<code class="highlighter-rouge">\r\n</code>) 分隔。</p>
+
+<hr />
+<h3 id="listfromcsvrow">CSV行转换为列表</h3>
+
+<p><img src="images/lists/listfromcsvrow.png" alt="" /></p>
+
+<p>从CSV（逗号分隔）文件的单行文本中解析出一个列表。如CSV内容：<code class="highlighter-rouge">a,b,c,d</code>  →  列表：<code class="highlighter-rouge">["a","b","c","d"]</code>。</p>
+
+<hr />
+<h3 id="listfromcsvtable">CSV表转换为列表</h3>
+
+<p><img src="images/lists/listfromcsvtable.png" alt="" /></p>
+
+<p>从CSV（逗号分隔）文件的多行文本中解析出一个二维列表，CSV文件的多行内容以换行符（Linux下<code class="highlighter-rouge">\n</code> 或 Windows下<code class="highlighter-rouge">\r\n</code>）分隔。</p>
+
+<p>如CSV内容：<code class="highlighter-rouge">a,b,c,d</code> \n <code class="highlighter-rouge">1,2,3,4</code>  →   二维列表：<code class="highlighter-rouge">[["a","b","c","d"],["1","2","3","4"]]</code>。</p>
+
+<hr />
+<h3 id="lookuppairs">在键值对中查找</h3>
+
+<p><img src="images/lists/lookupinpairs.png" alt="" /></p>
+
+<p>用于在类似字典的结构的列表中查找信息。</p>
+
+<p>此操作需要三个输入，一个 <code class="highlighter-rouge">关键字</code>、一个列表 <code class="highlighter-rouge">键值对</code> 和一个 <code class="highlighter-rouge">未找到</code> 结果，默认情况下设置为<code class="highlighter-rouge">not found</code>。</p>
+
+<p>这里 <code class="highlighter-rouge">键值对</code> 必须是对的列表，即每个元素本身就是两个元素列表的列表。</p>
+
+<p><code class="list block highlighter-rouge">在键值对中查找</code> 查找列表中第一个元素为 <code class="highlighter-rouge">关键字</code> 的第一对，并返回第二对元素。</p>
+
+<p>例如，如果列表为 <code class="highlighter-rouge">[[a,apple], [d,Dragon], [,boxcar], [cat,100]]</code>，则查找 <code class="highlighter-rouge">b</code> 将返回 <code class="highlighter-rouge">boxcar</code>。</p>
+
+<p>如果列表中没有这样的对，则 <code class="list block highlighter-rouge">在键值对中查找</code> 将返回<code class="highlighter-rouge">未找到</code>参数。 如果 <code class="highlighter-rouge">键值对</code> 不是列表对，则操作将发出错误信号。</p>
+
+<hr />
+<h3 id="joinwithseparator">分隔符拼接成文本</h3>
+
+<p><img src="images/lists/joinwithseparator.png" alt="" /></p>
+
+<p>按指定分隔符连接指定列表中的所有元素，结果生成文本。</p>
+
+<hr />
+<h3 id="map">创建映射列表</h3>
+
+<p><img src="images/lists/mapnondest.png" alt="" /></p>
+
+<p>使用提供的表达式将输入列表中的每个项目映射到新值，从而创建一个新列表。</p>
+
+<p>主体是一个操作列表中每个项目的表达式。</p>
+
+<p>使用给定的变量名称 item 来引用当前列表项。</p>
+
+<p><a href="../concepts/pholo.html#map">此处</a> 是有关如何使用该块的教程。</p>
+
+<hr />
+<h3 id="filter">创建过滤列表</h3>
+
+<p><img src="images/lists/filternondest.png" alt="" /></p>
+
+<p>通过保持输入列表中的每个项目满足测试来创建一个新列表。</p>
+
+<p>主体是一个布尔表达式，用于检查项目是否通过测试。</p>
+
+<p>如果主体返回 true，则该项目将添加到新的过滤列表中。</p>
+
+<p>使用给定的变量名称 item 来引用当前列表项。</p>
+
+<p><a href="../concepts/pholo.html#filter">此处</a> 是有关如何使用该块的教程。</p>
+
+<hr />
+<h3 id="reduce">缩减列表</h3>
+
+<p><img src="images/lists/reduce.png" alt="" /></p>
+
+<p>通过使用主体部分中的块组合列表元素，将列表缩减为单个值。</p>
+
+<p>如果列表为空，则返回初始结果。 否则，该函数首先应用于初始结果和第一个列表项，然后应用于累积结果和下一个列表项。</p>
+
+<p>这一直持续到列表末尾。</p>
+
+<p><a href="../concepts/pholo.html#reduce">此处</a> 是有关如何使用缩减列表块的教程。</p>
+
+<hr />
+<h3 id="sort">创建有序列表</h3>
+
+<p><img src="images/lists/sort.png" alt="" /></p>
+
+<p>通过按升序对输入列表进行排序来创建一个新列表。</p>
+
+<p>这是适用于任何类型的列表的通用排序过程。</p>
+
+<p>它将相同类型的项目分组在一起，然后在同一类型组中进行相应的排序。</p>
+
+<p>当前类型的顺序是布尔值、数字、字符串、列表，然后是组件。</p>
+
+<p>对于布尔值， false 被定义为小于 true。</p>
+
+<p>首先将组件与其类名进行比较。</p>
+
+<p>如果它们是同一类的实例，则使用它们的哈希码（HashCode）进行比较。</p>
+
+<p><a href="../concepts/pholo.html#sort">此处</a> 是有关如何使用排序块的教程。</p>
+
+<hr />
+<h3 id="sortwithcomparator">创建带比较器的有序列表</h3>
+
+<p><img src="images/lists/sortwithcomparator.png" alt="" /></p>
+
+<p>按照块主体指定的顺序对输入列表进行排序，创建一个新列表。</p>
+
+<p>该块的主体是一个涉及 item1 和 item2 的布尔表达式，返回 true 或 false。</p>
+
+<p>如果主体返回 true，则排序时 item1 会先于 item2 合并。</p>
+
+<p>如果主体返回 false，则排序时 item2 会先于 item1 合并。</p>
+
+<p>使用给定的变量名称 item1 和 item2 来引用正在比较的两个当前列表项。</p>
+
+<p><a href="../concepts/pholo.html#sortwithcomparator">此处</a> 是有关如何使用带有比较器块的排序的教程。</p>
+
+<hr />
+<h3 id="sortwithkey">创建带键函数的有序列表</h3>
+
+<p><img src="images/lists/sortwithkey.png" alt="" /></p>
+
+<p>通过使用键按升序对输入列表进行排序来创建一个新列表。</p>
+
+<p>键是由该块的主体从列表中的每个项目生成的代理值。</p>
+
+<p><a href="../concepts/pholo.html#sortwithkey">此处</a> 是有关如何使用带键排序块的教程。</p>
+
+<hr />
+<h3 id="minnumber">列表中的最小值</h3>
+
+<p><img src="images/lists/minnumber.png" alt="" /></p>
+
+<p>返回输入列表中的最小数字。</p>
+
+<hr />
+<h3 id="maxnumber">列表中的最大值</h3>
+
+<p><img src="images/lists/maxnumber.png" alt="" /></p>
+
+<p>返回输入列表中的最大数字。</p>
+
+<hr />
+<h3 id="butfirst">去除首个元素的列表</h3>
+
+<p><img src="images/lists/butfirst.png" alt="" /></p>
+
+<p>返回一个列表，其中不包含输入列表中的第一项。</p>
+
+<hr />
+<h3 id="butlast">去除末尾元素的列表</h3>
+
+<p><img src="images/lists/butlast.png" alt="" /></p>
+
+<p>返回一个列表，其中不包含输入列表中的最后一项。</p>
+
+<hr />
+<h3 id="slices">截取列表</h3>
+
+<p><img src="images/lists/slices.png" alt="" /></p>
+
+<p>通过在两个给定索引处对输入列表进行切片来返回一个列表。</p>
+
+<p>返回的列表包含输入列表中从index1开始到但不包括index2的项目。</p>
+
+<hr />
+<h3 id="foreachlist">案例：列表遍历</h3>
+
+<p>列表代码块中没有提供遍历的方法，遍历逻辑在<a href="control.html">控制代码块</a>中，提供 2 种遍历方式：</p>
+
+<ul>
+  <li>
+    <p>方法1：<a href="control.html#foreach">控制代码块 &gt; 从列表循环</a> 对于无需知道列表当前遍历的下标索引，用这种最好</p>
+
+    <p><img src="images/lists/遍历列表_从列表循环.png" alt="遍历列表_从列表循环" /></p>
+  </li>
+  <li>
+    <p>方法2：<a href="control.html#forrange">控制代码块 &gt; 从范围循环</a> 典型的使用下标索引循环列表（索引从 1 开始）</p>
+
+    <p><img src="images/lists/遍历列表_从范围循环.png" alt="遍历列表_从范围循环" /></p>
+  </li>
+</ul>
+
+<hr />
+<h3 id="uniquekeylist">案例：去除列表重复项（列表去重）</h3>
+
+<p><img src="images/lists/去除列表重复项.png" alt="去除列表重复项" class="vip" /></p>
+
+<ul>
+  <li>
+    <p>去除列表重复项的原理：新建一个列表，将原列表项逐一添加，添加时判断该项是否已存在，如果不存在才添加，最终的返回结果就是已去除重复的列表。</p>
+  </li>
+  <li>
+    <p>测试代码如下：</p>
+
+    <p><img src="images/lists/去除列表项测试.png" alt="去除列表项测试" /></p>
+  </li>
+  <li>
+    <p>测试结果为：<code class="highlighter-rouge">[1, 2, 3, 4]</code></p>
+  </li>
+</ul>
+
+<hr />
+<h3 id="list_assign">案例：将一个列表等于另一个列表（列表赋值）</h3>
+
+<p>列表赋值很简单，就是将目标列表设置为源列表：</p>
+
+<p><img src="images/lists/列表赋值.png" alt="列表赋值" /></p>
+
+<hr />
+<h3 id="list_compare">案例：判断一个列表是否等于另一个列表（列表比较）</h3>
+
+<p>数学等于号(=) 及 字符串比较(=) <strong>均可</strong>有效比较两个列表是否相等：</p>
+
+<p><img src="images/lists/列表比较.png" alt="列表比较" class="vip" /></p>
+
+<hr />
+<h3 id="list_clear">案例：清理列表（ClearList）</h3>
+
+<p>可以考虑遍历列表，然后逐一删除列表项。不过直接用空列表覆盖更加简单便捷，如下：</p>
+
+<p><img src="images/lists/清理列表.png" alt="清理列表" class="vip" /></p>
+
+<hr />
+<h3 id="multidlist">二维列表、多维列表</h3>
+
+<p>其实二维列表操作和普通一维列表几乎一样，只不过普通一维列表返回的列表项是基本数据类型（字符串、数字等），二维列表返回的列表项仍然是一个一维列表。</p>
+
+<p>同理，<code class="highlighter-rouge">多维列表</code>也是一样，N维列表返回的列表项是 N-1维列表。</p>
+
+<ol>
+  <li>
+    <p>获取对象在二维列表中的索引（位置），同 <a href="#indexinlist">求对象在列表中的位置</a>。</p>
+  </li>
+  <li>
+    <p>读取二维列表中的值，同 <a href="#selectlistitem">选择列表中索引值对应的列表项</a>。</p>
+  </li>
+</ol>
+
+<hr />
+<h3 id="weather">案例：解析天气预报结果JSON数据</h3>
+
+<p>未来7天天气数据返回结果JSON参考数据（这里只截取2天）：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-27T16:35+08:00"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"fxLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.qweather.com/weather/beijing-101010100.html"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"daily"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+		</span><span class="s2">"fxDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-27"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"sunrise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06:36"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"sunset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17:22"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonrise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:34"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04:34"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonPhase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"盈凸月"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonPhaseIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"803"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tempMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tempMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"iconDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"textDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"晴"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"iconNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"textNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"晴"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"wind360Day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windDirDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"无持续风向"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windScaleDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-3"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windSpeedDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"wind360Night"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windDirNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"无持续风向"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windScaleNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-3"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windSpeedNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"humidity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"precip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"pressure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"vis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"uvIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"fxDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-28"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"sunrise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06:37"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"sunset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17:21"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonrise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16:59"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05:47"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonPhase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"盈凸月"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"moonPhaseIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"803"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tempMax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"tempMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"iconDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"textDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"晴"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"iconNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"textNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"晴"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"wind360Day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windDirDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"无持续风向"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windScaleDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-3"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windSpeedDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"wind360Night"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windDirNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"无持续风向"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windScaleNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-3"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"windSpeedNight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"humidity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"precip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"pressure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1011"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"vis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"uvIndex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+	</span><span class="p">}],</span><span class="w">
+	</span><span class="s2">"refer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"QWeather"</span><span class="p">],</span><span class="w">
+		</span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CC BY-SA 4.0"</span><span class="p">]</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<!--未来7天天气请求代码参考：![天气预报请求数据](images/lists/天气预报请求数据.png)-->
+
+<p>天气预报结果JSON数据解析代码，主要用到列表的 <a href="#lookuppairs">在键值对中查找</a> 代码块：</p>
+
+<p class="vip"><img src="images/lists/天气预报结果数据解析.png" alt="天气预报结果数据解析" /></p>
+
+<hr />
+<h3 id="keylist">案例：获取键值列表的键（列表）</h3>
+
+<p>使用 <a href="dictionaries.html#list-of-pairs-to-dictionary">键值对列表转换为字典</a> 将键值列表转换为字典，然后通过<a href="dictionaries.html">字典</a>的 <a href="dictionaries.html#get-keys">获取键列表</a> 方法即可取出键列表。参考代码如下：</p>
+
+<p><img src="images/lists/获取键值列表的键列表.png" alt="获取键值列表的键列表" class="vip" /></p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

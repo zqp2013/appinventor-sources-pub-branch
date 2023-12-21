@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>使用 JSON 和 Web API · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)进行交互，JSON提供了不同的数据类型，同样App Inventor也支持这些值。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">使用 JSON 和 Web API</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#本文档中使用的组件" id="markdown-toc-本文档中使用的组件">本文档中使用的组件</a></li>
+  <li><a href="#获取数据" id="markdown-toc-获取数据">获取数据</a>    <ul>
+      <li><a href="#示例---成功获取" id="markdown-toc-示例---成功获取">示例 - 成功获取</a></li>
+      <li><a href="#示例---获取失败" id="markdown-toc-示例---获取失败">示例 - 获取失败</a></li>
+      <li><a href="#示例---跟踪响应数据" id="markdown-toc-示例---跟踪响应数据">示例 - 跟踪响应数据</a></li>
+    </ul>
+  </li>
+  <li><a href="#发送数据" id="markdown-toc-发送数据">发送数据</a>    <ul>
+      <li><a href="#例子" id="markdown-toc-例子">例子</a></li>
+    </ul>
+  </li>
+  <li><a href="#更多信息" id="markdown-toc-更多信息">更多信息</a></li>
+</ul>
+
+<p><a href="index.html">« 返回首页</a></p>
+
+<p>JavaScript对象表示法(JSON)广泛用于与 Web 上的应用程序接口(API)进行交互，JSON提供了不同的数据类型，同样App Inventor也支持这些值。</p>
+<ul>
+  <li>JSON 布尔值<code class="highlighter-rouge">true</code>和<code class="highlighter-rouge">false</code> 对应 App Inventor<code class="logic block highlighter-rouge">真</code>和<code class="logic block highlighter-rouge">假</code></li>
+  <li>JSON 数字（整数和小数）对应 App Inventor <code class="math block highlighter-rouge">数字</code></li>
+  <li>JSON 字符串 对应 App Inventor <code class="text block highlighter-rouge">文本</code></li>
+  <li>JSON 数组 对应 App Inventor <code class="list block highlighter-rouge">列表</code></li>
+  <li>JSON 对象 对应 App Inventor <code class="dictionary block highlighter-rouge">字典</code></li>
+</ul>
+
+<p>一个简单的JSON消息例子如下：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"张三"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"reading"</span><span class="p">,</span><span class="w"> </span><span class="s2">"music"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"hasTowel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"widgets"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>此 JSON 声明了一个对象（由 <code class="highlighter-rouge">{</code> 和 <code class="highlighter-rouge">}</code> 表示），key是冒号 (<code class="highlighter-rouge">:</code>) 前的带引号的字符串（例如，<code class="highlighter-rouge">"name"</code>），有不同的值，包括数组（方括号<code class="highlighter-rouge">[...]</code>之间的逗号分隔值）、数字（例如<code class="highlighter-rouge">42</code>）和布尔值（例如<code class="highlighter-rouge">true</code>）。</p>
+
+<p>对于本文档的其余部分，我们将使用 <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> 服务生成示例JSON响应，实际上并不存储任何数据。</p>
+
+<h2 id="本文档中使用的组件">本文档中使用的组件</h2>
+
+<p>以下示例使用了这些组件：</p>
+
+<ul>
+  <li><a href="../components/userinterface.html#Button">按钮</a></li>
+  <li><a href="../components/userinterface.html#Label">标签</a></li>
+  <li><a href="../components/userinterface.html#ListView">列表显示框</a></li>
+  <li><a href="../components/connectivity.html#Web">Web客户端</a></li>
+</ul>
+
+<h2 id="获取数据">获取数据</h2>
+
+<p>Web客户端组件提供了一个 <code class="method block highlighter-rouge">执行GET请求</code> 方法，当请求完成时Web客户端的 <code class="event block highlighter-rouge">获得文本</code> 事件块将触发，该事件有两个重要参数：</p>
+
+<ul>
+  <li><code class="variable block highlighter-rouge">响应代码</code>: 服务器提供的HTTP状态码，常见的有 <code class="math block highlighter-rouge">200</code>（OK）或 <code class="math block highlighter-rouge">201</code>（已创建），也可能是 <code class="math block highlighter-rouge">400</code> 之类的值 （错误请求）、<code class="math block highlighter-rouge">403</code>（禁止访问）和 <code class="math block highlighter-rouge">404</code>（未找到）。根据你在应用程序中使用的 API，你应该检查状态代码以了解您的请求是否成功。</li>
+  <li><code class="variable block highlighter-rouge">响应内容</code>：服务器返回的响应内容为<code class="text block highlighter-rouge">文本</code>，让我们看看如何将其作为JSON进行处理：</li>
+</ul>
+
+<p>Web客户端组件提供了方法<a href="../components/connectivity.html#Web.JsonTextDecodeWithDictionaries"><code class="method block highlighter-rouge">将JSON文本解码为字典</code></a> 获取<code class="text block highlighter-rouge">文本</code>的内容，比如 <code class="variable block highlighter-rouge">响应内容</code> 参数，并将其转换为适当的 App Inventor 类型。根据返回的内容，<code class="method block highlighter-rouge">将JSON文本解码为字典</code> 的输出可能会返回不同的类型，例如<code class="list block highlighter-rouge">列表</code> 或<code class="dictionary block highlighter-rouge">字典</code>。 App Inventor 提供了诸如<code class="list block highlighter-rouge">是列表?</code> 和<code class="dictionary block highlighter-rouge">是字典?</code> 之类的代码块，如果 API 允许多种类型，你可以使用它们来测试返回值的类型。</p>
+
+<hr />
+<h3 id="示例---成功获取">示例 - 成功获取</h3>
+
+<p>通过相应地设置 <code class="setter block highlighter-rouge">Url</code> 属性并调用 <code class="method block highlighter-rouge">执行GET请求</code> 来执行第一次请求：</p>
+
+<p><img src="images/webapis-get-button.png" alt="" /></p>
+
+<p>成功时，<code class="event block highlighter-rouge">获得文本</code> 事件的 <code class="variable block highlighter-rouge">响应代码</code> 为 <code class="math block highlighter-rouge">200</code>，我们可以使用 <code class="method block highlighter-rouge">将JSON文本解码为字典</code> 方法解析 <code class="variable block highlighter-rouge">响应内容</code> ，一旦我们有了包含结果的字典，我们就可以访问如下示例中的 <code class="text block highlighter-rouge">title</code> 和 <code class="text block highlighter-rouge">body</code> 属性。</p>
+
+<p><strong>JSON 示例</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunt aut facere repellat provident occaecati excepturi optio reprehenderit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quia et suscipit</span><span class="se">\n</span><span class="s2">suscipit recusandae consequuntur expedita et cum</span><span class="se">\n</span><span class="s2">reprehenderit molestiae ut ut quas totam</span><span class="se">\n</span><span class="s2">nostrum rerum est autem sunt rem eveniet architecto"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>代码块</strong></p>
+
+<p><img src="images/webapis-get-success.png" alt="" /></p>
+
+<p>运行上述块后，标签1 将包含 JSON 中的标题（即<code class="highlighter-rouge">"sunt aut facere..."</code>），标签2 将包含 JSON 中的正文（即<code class="highlighter-rouge">"quia et sucipit..."</code>）。</p>
+
+<hr />
+<h3 id="示例---获取失败">示例 - 获取失败</h3>
+
+<p>如果您请求一个不存在的资源（示例中的 post 101），那么你将得到一个错误：</p>
+
+<p><img src="images/webapis-get-button-fail.png" alt="" /></p>
+
+<p>HTTP 使用错误代码 <code class="math block highlighter-rouge">404</code> 表示服务器找不到资源，我们对此进行测试并向用户报告错误。</p>
+
+<p><img src="images/webapis-get-failure.png" alt="" /></p>
+
+<hr />
+<h3 id="示例---跟踪响应数据">示例 - 跟踪响应数据</h3>
+
+<p>如果您调用 <code class="method block highlighter-rouge">执行GET请求</code> 并将 <code class="setter block highlighter-rouge">Url</code> 设置为 <code class="text block highlighter-rouge">https://jsonplaceholder.typicode.com/posts</code>，那么您将 获取包含 100 个条目的列表。</p>
+
+<p><img src="images/webapis-get-all-posts.png" alt="" /></p>
+
+<p>如果您想在 列表显示框(ListView) 中显示有关这些项目的一些信息，一种方法是使用<code class="control block highlighter-rouge">for each item</code> 块来遍历列表。</p>
+
+<p><img src="images/webapis-get-foreach.png" alt="" /></p>
+
+<p>但是，<a href="../blocks/dictionaries.html#list-by-walking-key-path"><code class="dictionary block highlighter-rouge">list by walking key path</code></a> 使这更容易，这个块的工作原理是从给定的对象开始，然后按照以<code class="list block highlighter-rouge">列表</code> 的形式提供给它的后续步骤。在下面的例子中，我们给它 <code class="dictionary block highlighter-rouge">walk all at level</code> 和 <code class="text block highlighter-rouge">title</code> 的关键路径来获取列表中每个帖子的标题（按appearance排序）。这段代码在功能上等同于上面使用 <code class="control block highlighter-rouge">for each</code> 块的代码，但它更简洁。</p>
+
+<p><img src="images/webapis-get-walk.png" alt="" /></p>
+
+<h2 id="发送数据">发送数据</h2>
+
+<p>将数据发送到 Web API 进行处理通常涉及两件事。首先，你必须构建需要发送到 API 的消息，API 开发人员通常会提供有关如何使用其 API 的详尽文档；其次，根据操作是否敏感，例如更改或删除数据，你需要提供一些身份验证令牌。</p>
+
+<p>要使用 JSON 的 Web API，您需要使用 App Inventor 的列表和字典类型，例如：</p>
+
+<h3 id="例子">例子</h3>
+
+<p>我们可以使用 Web客户端 组件的 <a href="../components/connectivity.html#Web.PostText"><code class="method block highlighter-rouge">PostText</code></a> 方法将内容发送到基于 JSON 的 Web API。 对于 JSONPlaceholder，帖子应包含 3 个键：<code class="highlighter-rouge">"userId"</code>、<code class="highlighter-rouge">"title"</code> 和 <code class="highlighter-rouge">"body"</code>。</p>
+
+<p><img src="images/webapis-post.png" alt="" /></p>
+
+<p>成功时，<code class="event block highlighter-rouge">获得文本</code> 中的<code class="variable block highlighter-rouge">响应代码</code> 将为 <code class="math block highlighter-rouge">201</code>，表示“已创建”。</p>
+
+<p><img src="images/webapis-post-success.png" alt="" /></p>
+
+<h2 id="更多信息">更多信息</h2>
+
+<p>要了解有关 HTTP 响应代码的更多信息，请参阅 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">HTTP 响应状态代码</a>。</p>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

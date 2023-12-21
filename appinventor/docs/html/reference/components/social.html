@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>社交应用组件 · App Inventor 2 中文网</title>
+    <meta name="keywords" content="App Inventor 2 中文网,参考文档,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网参考文档，社交应用组件参考文档：包括联系人选择框、邮箱地址选择框、电话拨号器、电话号选择框、信息分享器、短信收发器、推特客户端。">
+	<meta name="application-name" content="App Inventor 2 中文网"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <script src="/static/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js?2" crossorigin="anonymous"></script>
+    <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     <!--//--><![CDATA[// ><!--
+
+                                   var gotoappinventor = function() {
+                                       var referrer = document.location.pathname;
+                                       var patt = /.*hour-of-code.*/;
+                                       if (referrer.match(patt)) {
+                                           window.open("http://code.appinventor.mit.edu/", "new");
+                                       } else {
+                                           window.open("https://www.fun123.cn/", "new");
+                                       }
+                                   }
+     //--><!]]>
+    </script><!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="mit_app_inventor"><nav class="navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.fun123.cn/">
+	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+    </a>
+    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+	<ul class="navbar-nav" style="margin-left: auto;">
+		<li class="nav-item">
+		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+		</li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    关于我们
+		</a>
+		<div class="dropdown-menu">
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		</div>
+	    </li>
+	    <li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    教育
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+		</div>
+	    </li>
+		<li class="nav-item dropdown">
+		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			反馈
+		</a>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
+		</div>
+		</li>
+    </ul>
+        <div style="display: inline-flex;margin-left:auto;margin-right:0">
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+        </div>
+	<!-- <form class="form-inline" action="/action_page.php">
+	     <div class="form-group has-search">
+	     <span class="fa fa-search form-control-feedback"></span>
+	     <input type="text" class="form-control" placeholder="Search">
+	     </div>
+	     </form> -->
+    </div>
+	<div class="collapse navbar-collapse">
+		<img src="/static/images/hello.png" alt="你好">
+	</div>
+</nav>
+<div class="default-page">
+            <div class="header">
+	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">社交应用组件</h1>
+            </div>
+            <div class="container-fluid">
+                <article class="documentation">
+<ul id="markdown-toc">
+  <li><a href="#--社交应用组件" id="markdown-toc---社交应用组件"><i class="mdi mdi-share-variant-outline"></i>  社交应用组件</a>    <ul>
+      <li><a href="#ContactPicker" id="markdown-toc-ContactPicker"><img src="images/contactpicker.png" alt="icon" />  联系人选择框</a>        <ul>
+          <li><a href="#ContactPicker-Properties" id="markdown-toc-ContactPicker-Properties">属性</a></li>
+          <li><a href="#ContactPicker-Events" id="markdown-toc-ContactPicker-Events">事件</a></li>
+          <li><a href="#ContactPicker-Methods" id="markdown-toc-ContactPicker-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#EmailPicker" id="markdown-toc-EmailPicker"><img src="images/emailpicker.png" alt="icon" />  邮箱地址选择框</a>        <ul>
+          <li><a href="#EmailPicker-Properties" id="markdown-toc-EmailPicker-Properties">属性</a></li>
+          <li><a href="#EmailPicker-Events" id="markdown-toc-EmailPicker-Events">事件</a></li>
+          <li><a href="#EmailPicker-Methods" id="markdown-toc-EmailPicker-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#PhoneCall" id="markdown-toc-PhoneCall"><img src="images/phonecall.png" alt="icon" />  电话拨号器</a>        <ul>
+          <li><a href="#PhoneCall-Properties" id="markdown-toc-PhoneCall-Properties">属性</a></li>
+          <li><a href="#PhoneCall-Events" id="markdown-toc-PhoneCall-Events">事件</a></li>
+          <li><a href="#PhoneCall-Methods" id="markdown-toc-PhoneCall-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#PhoneNumberPicker" id="markdown-toc-PhoneNumberPicker"><img src="images/phonenumberpicker.png" alt="icon" />  电话号选择框</a>        <ul>
+          <li><a href="#PhoneNumberPicker-Properties" id="markdown-toc-PhoneNumberPicker-Properties">属性</a></li>
+          <li><a href="#PhoneNumberPicker-Events" id="markdown-toc-PhoneNumberPicker-Events">事件</a></li>
+          <li><a href="#PhoneNumberPicker-Methods" id="markdown-toc-PhoneNumberPicker-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Sharing" id="markdown-toc-Sharing"><img src="images/sharing.png" alt="icon" />  信息分享器</a>        <ul>
+          <li><a href="#Sharing-Properties" id="markdown-toc-Sharing-Properties">属性</a></li>
+          <li><a href="#Sharing-Events" id="markdown-toc-Sharing-Events">事件</a></li>
+          <li><a href="#Sharing-Methods" id="markdown-toc-Sharing-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Texting" id="markdown-toc-Texting"><img src="images/texting.png" alt="icon" />  短信收发器</a>        <ul>
+          <li><a href="#Texting-Properties" id="markdown-toc-Texting-Properties">属性</a></li>
+          <li><a href="#Texting-Events" id="markdown-toc-Texting-Events">事件</a></li>
+          <li><a href="#Texting-Methods" id="markdown-toc-Texting-Methods">方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#Twitter" id="markdown-toc-Twitter"><img src="images/twitter.png" alt="icon" />  推特客户端（<em>国内无法使用</em>）</a>        <ul>
+          <li><a href="#Twitter-Properties" id="markdown-toc-Twitter-Properties">属性</a></li>
+          <li><a href="#Twitter-Events" id="markdown-toc-Twitter-Events">事件</a></li>
+          <li><a href="#Twitter-Methods" id="markdown-toc-Twitter-Methods">方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="index.html">« 返回首页</a></p>
+<h1 id="--社交应用组件"><i class="mdi mdi-share-variant-outline"></i>  社交应用组件</h1>
+
+<p>目录：</p>
+
+<ol>
+  <li><img src="images/contactpicker.png" alt="icon" />  <a href="#ContactPicker">联系人选择框</a></li>
+  <li><img src="images/emailpicker.png" alt="icon" />  <a href="#EmailPicker">邮箱地址选择框</a></li>
+  <li><img src="images/phonecall.png" alt="icon" />  <a href="#PhoneCall">电话拨号器</a></li>
+  <li><img src="images/phonenumberpicker.png" alt="icon" />  <a href="#PhoneNumberPicker">电话号选择框</a></li>
+  <li><img src="images/sharing.png" alt="icon" />  <a href="#Sharing">信息分享器</a></li>
+  <li><img src="images/texting.png" alt="icon" />  <a href="#Texting">短信收发器</a></li>
+  <li><img src="images/twitter.png" alt="icon" />  <a href="#Twitter">推特客户端</a></li>
+</ol>
+
+<h2 id="ContactPicker"><img src="images/contactpicker.png" alt="icon" />  联系人选择框</h2>
+
+<p>单击该按钮后，会显示可供选择的联系人列表。用户做出选择后，以下属性将设置为有关所选联系人的信息：</p>
+
+<ul>
+  <li><a href="#ContactPicker.ContactName"><code class="highlighter-rouge">联系人姓名</code></a>：联系人姓名</li>
+  <li><a href="#ContactPicker.EmailAddress"><code class="highlighter-rouge">邮箱地址</code></a>：联系人的主要电子邮件地址</li>
+  <li><a href="#ContactPicker.EmailAddressList"><code class="highlighter-rouge">邮箱地址列表</code></a>：联系人电子邮件地址列表</li>
+  <li><a href="#ContactPicker.ContactUri"><code class="highlighter-rouge">联系人URI</code></a>：设备上联系人的 URI</li>
+  <li><a href="#ContactPicker.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a>：联系人的主要电话号码（在更高版本的 Android 版本上）</li>
+  <li><a href="#ContactPicker.PhoneNumberList"><code class="highlighter-rouge">电话号码列表</code></a>：联系人电话号码列表（在更高版本的 Android 版本上）</li>
+  <li><a href="#ContactPicker.Picture"><code class="highlighter-rouge">图片</code></a>：包含联系人图片的文件的名称，可用作 <a href="userinterface.html#Image">图像</a>.<a href="userinterface.html#Image.Picture">图片</a>属性值 或 <a href="animation.html#ImageSprite">图像精灵</a>.<a href="animation.html#ImageSprite.Picture">图片</a> 属性值。</li>
+</ul>
+
+<p>其他属性影响按钮外观（<a href="#ContactPicker.TextAlignment"><code class="highlighter-rouge">文本对齐</code></a>、<a href="#ContactPicker.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>等）以及是否可以单击（<a href="#ContactPicker.Enabled"><code class="highlighter-rouge">启用</code></a>）。</p>
+
+<p><code class="highlighter-rouge">联系人选择框</code>组件可能不适用于所有手机。例如，在3.0之前的Android系统上，它无法选择电话号码，并且电子邮件地址列表将仅包含一封电子邮件。</p>
+
+<h3 id="ContactPicker-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="ContactPicker.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的背景颜色，使用RGBA数值表示，如果设置了<a href="#ContactPicker.Image"><code class="highlighter-rouge">图像</code></a>属性，则不能显示背景颜色直到删除<a href="#ContactPicker.Image"><code class="highlighter-rouge">图像</code></a>属性为止。</dd>
+  <dt id="ContactPicker.ContactName" class="text ro bo"><em>联系人姓名</em></dt>
+  <dd>返回所选联系人的全名，如果名称不可用，则返回空字符串。</dd>
+  <dt id="ContactPicker.ContactUri" class="text ro bo"><em>联系人URI</em></dt>
+  <dd>返回指定联系人在设备上的位置的 URI。</dd>
+  <dt id="ContactPicker.EmailAddress" class="text ro bo"><em>邮箱地址</em></dt>
+  <dd>返回所选联系人的主电子邮件地址，如果电子邮件地址不可用，则返回空字符串。</dd>
+  <dt id="ContactPicker.EmailAddressList" class="list ro bo"><em>邮箱地址列表</em></dt>
+  <dd>返回与所选联系人关联的电子邮件地址列表。</dd>
+  <dt id="ContactPicker.Enabled" class="boolean"><em>启用</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>是否可以被激活和点击。</dd>
+  <dt id="ContactPicker.FontBold" class="boolean"><em>粗体</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的显示字体是否是粗体。（注：有些字体不支持粗体）。</dd>
+  <dt id="ContactPicker.FontItalic" class="boolean"><em>斜体</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的显示字体是否是斜体。（注：有些字体不支持斜体）。</dd>
+  <dt id="ContactPicker.FontSize" class="number"><em>字体大小</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的字体大小，以像素px为单位。</dd>
+  <dt id="ContactPicker.FontTypeface" class="number do"><em>字体</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+    <p>要使用自定义字体，请将 <strong>.ttf</strong> 字体文件上传并选中它。</p>
+  </dd>
+  <dt id="ContactPicker.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="ContactPicker.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
+  <dt id="ContactPicker.Image" class="text"><em>图像</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>图像的路径，如果同时设置了<code class="highlighter-rouge">图像</code>和<a href="#ContactPicker.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>，则仅<code class="highlighter-rouge">图像</code>可见。</dd>
+  <dt id="ContactPicker.PhoneNumber" class="text ro bo"><em>电话号码</em></dt>
+  <dd>返回与所选联系人关联的主要电话号码，如果没有与该联系人关联的电话号码，则返回空字符串。</dd>
+  <dt id="ContactPicker.PhoneNumberList" class="list ro bo"><em>电话号码列表</em></dt>
+  <dd>返回与所选联系人关联的电话号码列表。</dd>
+  <dt id="ContactPicker.Picture" class="text ro bo"><em>图片</em></dt>
+  <dd>返回所选联系人的图片 URI，可用于检索联系人的照片和其他字段。</dd>
+  <dt id="ContactPicker.Shape" class="number do"><em>形状</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的形状，此属性的有效值为：
+
+    <p><code class="highlighter-rouge">0</code>（默认）</p>
+
+    <p><code class="highlighter-rouge">1</code> （圆形）</p>
+
+    <p><code class="highlighter-rouge">2</code>（矩形）</p>
+
+    <p><code class="highlighter-rouge">3</code>（椭圆形）。</p>
+
+    <p>如果设置了<a href="#ContactPicker.Image"><code class="highlighter-rouge">图像</code></a>，则<code class="highlighter-rouge">形状</code>将不可见。</p>
+  </dd>
+  <dt id="ContactPicker.ShowFeedback" class="boolean"><em>显示反馈</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>指定 <a href="#ContactPicker.Image"><code class="highlighter-rouge">图像</code></a>后被按压是否显示视觉反馈。</dd>
+  <dt id="ContactPicker.Text" class="text"><em>文本</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的显示文本。</dd>
+  <dt id="ContactPicker.TextAlignment" class="number do"><em>文本对齐</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>文本的对齐方式，有效值有：
+
+    <p><code class="highlighter-rouge">0</code>（正常；例如，如果文本从左到右书写，则左对齐）</p>
+
+    <p><code class="highlighter-rouge">1</code>（居中）</p>
+
+    <p><code class="highlighter-rouge">2</code>（相反；例如，如果文本从左到右书写，则右对齐）。</p>
+  </dd>
+  <dt id="ContactPicker.TextColor" class="color"><em>文本颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的文本颜色，使用RGBA数值表示。</dd>
+  <dt id="ContactPicker.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">联系人选择框</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="ContactPicker.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="ContactPicker.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">联系人选择框</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
+</dl>
+
+<h3 id="ContactPicker-Events">事件</h3>
+
+<dl class="events">
+  <dt id="ContactPicker.AfterPicking">选择完成()</dt>
+  <dd>在<code class="highlighter-rouge">联系人选择框</code>活动返回其结果且属性已填写后触发该事件。</dd>
+  <dt id="ContactPicker.BeforePicking">准备选择()</dt>
+  <dd>单击<code class="highlighter-rouge">联系人选择框</code>或使用 <a href="#ContactPicker.Open">打开选框</a> 方法显示选择器时触发该事件。
+
+    <p>此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。</p>
+  </dd>
+  <dt id="ContactPicker.GotFocus">获得焦点()</dt>
+  <dd>表示光标移到<code class="highlighter-rouge">联系人选择框</code>上方，因此现在可以单击它。</dd>
+  <dt id="ContactPicker.LostFocus">失去焦点()</dt>
+  <dd>表示光标已从<code class="highlighter-rouge">联系人选择框</code>移开，因此现在无法再单击它。</dd>
+  <dt id="ContactPicker.TouchDown">被按压()</dt>
+  <dd>表示<code class="highlighter-rouge">联系人选择框</code>已被按下。</dd>
+  <dt id="ContactPicker.TouchUp">被松开()</dt>
+  <dd>表示<code class="highlighter-rouge">联系人选择框</code>按压已释放。</dd>
+</dl>
+
+<h3 id="ContactPicker-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="ContactPicker.Open" class="method"><i></i> 打开选框()</dt>
+  <dd>打开<code class="highlighter-rouge">联系人选择框</code>选框，就像用户单击它一样。</dd>
+  <dt id="ContactPicker.ViewContact" class="method"><i></i> 查看联系人(<em class="text">URI</em>)</dt>
+  <dd>在设备的默认联系人App中打开所选联系人的条目。</dd>
+</dl>
+
+<h2 id="EmailPicker"><img src="images/emailpicker.png" alt="icon" />  邮箱地址选择框</h2>
+
+<p><code class="highlighter-rouge">邮箱地址选择框</code>是一种文本框。如果用户开始输入联系人的姓名或电子邮件地址，手机将显示完成输入的选项下拉菜单。如果有很多联系人，则下拉列表可能需要几秒钟的时间才能显示，并且可以在计算匹配时显示中间结果。</p>
+
+<p>文本框的初始内容和用户输入后的内容位于 <a href="#EmailPicker.Text"><code class="highlighter-rouge">文本</code></a> 属性中。如果 <a href="#EmailPicker.Text"><code class="highlighter-rouge">文本</code></a> 属性最初为空，则 <a href="#EmailPicker.Hint"><code class="highlighter-rouge">提示</code></a> 属性的内容将隐约显示在文本框中，作为对用户的提示。</p>
+
+<p>其他属性影响文本框的外观（<a href="#EmailPicker.TextAlignment"><code class="highlighter-rouge">文本对齐</code></a>、<a href="#EmailPicker.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>等）以及是否可以使用（<a href="#EmailPicker.Enabled"><code class="highlighter-rouge">启用</code></a>）。</p>
+
+<p>像这样的文本框通常与 <a href="userinterface.html#Button"><code class="highlighter-rouge">按钮</code></a> 组件一起使用，用户在文本输入完成后单击按钮。</p>
+
+<h3 id="EmailPicker-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="EmailPicker.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd><code class="highlighter-rouge">邮箱地址选择框</code> 的背景色，可以在“界面设计”视图或“程序设计”视图中通过颜色名字选择一个颜色，<code class="highlighter-rouge">默认</code>背景颜色为：default（阴影 3-D 外观）。</dd>
+  <dt id="EmailPicker.Enabled" class="boolean"><em>启用</em></dt>
+  <dd>如果设置为<code class="logic block highlighter-rouge">真</code>则用户可以在 <code class="highlighter-rouge">邮箱地址选择框</code> 中输入文本。</dd>
+  <dt id="EmailPicker.FontBold" class="boolean do"><em>粗体</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的显示字体是否是粗体。（注：有些字体不支持粗体）。</dd>
+  <dt id="EmailPicker.FontItalic" class="boolean do"><em>斜体</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的显示字体是否是粗体。（注：有些字体不支持粗体）。</dd>
+  <dt id="EmailPicker.FontSize" class="number"><em>字体大小</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的字体大小，以像素px为单位。</dd>
+  <dt id="EmailPicker.FontTypeface" class="number do"><em>字体</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的字体，目前支持的字体有：<code class="highlighter-rouge">0</code> (default), <code class="highlighter-rouge">1</code> (serif), <code class="highlighter-rouge">2</code> (sansserif), 和 <code class="highlighter-rouge">3</code> (monospace)。
+
+    <p>要使用自定义字体，请将 <strong>.ttf</strong> 字体文件上传并选中它。</p>
+  </dd>
+  <dt id="EmailPicker.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="EmailPicker.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
+  <dt id="EmailPicker.Hint" class="text"><em>提示</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的提示信息，如果 <a href="#EmailPicker.Text"><code class="highlighter-rouge">文本</code></a> 为空，则该提示信息在框中显示为浅淡色文本。</dd>
+  <dt id="EmailPicker.Text" class="text"><em>文本</em></dt>
+  <dd><code class="highlighter-rouge">邮箱地址选择框</code>中的文本，可以在“界面设计”视图或“程序设计”视图中设置，或由用户输入（除非 <a href="#EmailPicker.Enabled"><code class="highlighter-rouge">启用</code></a> 属性为 <code class="logic block highlighter-rouge">假</code>）。</dd>
+  <dt id="EmailPicker.TextAlignment" class="number do"><em>文本对齐</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>文本的对齐方式，有效值有：
+
+    <p><code class="highlighter-rouge">0</code>（正常；例如，如果文本从左到右书写，则左对齐）</p>
+
+    <p><code class="highlighter-rouge">1</code>（居中）</p>
+
+    <p><code class="highlighter-rouge">2</code>（相反；例如，如果文本从左到右书写，则右对齐）。</p>
+  </dd>
+  <dt id="EmailPicker.TextColor" class="color"><em>文本颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的文本颜色，使用RGBA数值表示。</dd>
+  <dt id="EmailPicker.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">邮箱地址选择框</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="EmailPicker.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="EmailPicker.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">邮箱地址选择框</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
+</dl>
+
+<h3 id="EmailPicker-Events">事件</h3>
+
+<dl class="events">
+  <dt id="EmailPicker.GotFocus">获得焦点()</dt>
+  <dd>选择<code class="highlighter-rouge">邮箱地址选择框</code>进行输入（例如用户触摸它）时触发该事件。</dd>
+  <dt id="EmailPicker.LostFocus">失去焦点()</dt>
+  <dd>当不再选择<code class="highlighter-rouge">邮箱地址选择框</code>进行输入时触发该事件，例如用户触摸不同的文本框。</dd>
+</dl>
+
+<h3 id="EmailPicker-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="EmailPicker.RequestFocus" class="method"><i></i> 焦点请求()</dt>
+  <dd>请求焦点到当前的<code class="highlighter-rouge">邮箱地址选择框</code>。</dd>
+</dl>
+
+<h2 id="PhoneCall"><img src="images/phonecall.png" alt="icon" />  电话拨号器</h2>
+
+<p>一个不可见的组件，用于拨打 <a href="#PhoneCall.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性中指定的号码，该属性可以在界面设计或程序设计视图中设置。</p>
+
+<p>该组件有一个 <a href="#PhoneCall.MakePhoneCall"><code class="highlighter-rouge">拨打电话</code></a> 方法，使程序能够发起电话呼叫。</p>
+
+<p>您还可以使用 <a href="#PhoneCall.MakePhoneCallDirect"><code class="highlighter-rouge">直接拨打电话</code></a> 直接发起电话呼叫，无需用户交互。<strong>但是，使用此块的应用程序如果提交到应用商店，可能需要进一步审核，因此建议改用 <a href="#PhoneCall.MakePhoneCall"><code class="highlighter-rouge">拨打电话</code></a></strong>。</p>
+
+<p>通常，此组件与 <a href="#ContactPicker"><code class="highlighter-rouge">联系人选择框</code></a> 组件一起使用，该组件允许用户从手机上存储的联系人中选择联系人，并将 <a href="#PhoneCall.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性设置为 <a href="#ContactPicker.PhoneNumber"><code class="highlighter-rouge">联系人选择框</code>.<code class="highlighter-rouge">电话号码</code></a> 属性。</p>
+
+<p>要直接指定电话号码（例如 021-12345678），请将 <a href="#PhoneCall.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性设置为具有指定数字的文本（例如“02112345678”）。</p>
+
+<h3 id="PhoneCall-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="PhoneCall.PhoneNumber" class="text"><em>电话号码</em></dt>
+  <dd>指定要拨打的电话号码。</dd>
+</dl>
+
+<h3 id="PhoneCall-Events">事件</h3>
+
+<dl class="events">
+  <dt id="PhoneCall.IncomingCallAnswered">来电已接听时(<em class="text">电话号码</em>)</dt>
+  <dd>指示来电已接听的事件。 <code class="variable block highlighter-rouge">电话号码</code> 是来电电话号码。</dd>
+  <dt id="PhoneCall.PhoneCallEnded">通话结束时(<em class="number">状态</em>,<em class="text">电话号码</em>)</dt>
+  <dd>指示电话通话已结束的事件。 <code class="variable block highlighter-rouge">状态</code> 可以是以下任意一种：
+
+    <ul>
+      <li><code class="highlighter-rouge">1</code>：来电未接或被拒绝</li>
+      <li><code class="highlighter-rouge">2</code>：来电已接听并挂断</li>
+      <li><code class="highlighter-rouge">3</code>：拨出电话已挂断。</li>
+    </ul>
+  </dd>
+  <dt id="PhoneCall.PhoneCallStarted">开始通话时(<em class="number">状态</em>,<em class="text">电话号码</em>)</dt>
+  <dd>指示电话呼叫已开始的事件。 <code class="variable block highlighter-rouge">状态</code> 可以是以下任意一个：
+
+    <ul>
+      <li><code class="highlighter-rouge">1</code>：来电正在响铃</li>
+      <li><code class="highlighter-rouge">2</code>: 拨出电话</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="PhoneCall-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="PhoneCall.MakePhoneCall" class="method"><i></i> 拨打电话()</dt>
+  <dd>启动默认拨号器应用程序，设置为使用 <a href="#PhoneCall.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性中的号码发起电话呼叫。</dd>
+  <dt id="PhoneCall.MakePhoneCallDirect" class="method"><i></i> 直接拨打电话()</dt>
+  <dd>使用 <a href="#PhoneCall.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性中的号码直接发起电话呼叫，绕过用户交互来启动呼叫。
+
+    <p><strong>大多数应用程序应使用 <a href="#PhoneCall.MakePhoneCall"><code class="highlighter-rouge">拨打电话</code></a>，这不需要任何权限。</strong></p>
+  </dd>
+</dl>
+
+<h2 id="PhoneNumberPicker"><img src="images/phonenumberpicker.png" alt="icon" />  电话号选择框</h2>
+
+<p>单击该按钮后，会显示联系人电话号码列表以供选择。</p>
+
+<p>用户做出选择后，以下属性将设置为有关所选联系人的信息：</p>
+
+<ul>
+  <li><a href="#PhoneNumberPicker.ContactName"><code class="highlighter-rouge">联系人姓名</code></a>：联系人姓名</li>
+  <li><a href="#PhoneNumberPicker.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a>: 联系人的电话号码</li>
+  <li><a href="#PhoneNumberPicker.EmailAddress"><code class="highlighter-rouge">邮箱地址</code></a>：联系人的电子邮件地址</li>
+  <li><a href="#PhoneNumberPicker.Picture"><code class="highlighter-rouge">图片</code></a>：包含联系人图像的文件的名称，可用作 <a href="userinterface.html#Image">图像</a>.<a href="userinterface.html#Image.Picture">图片</a>属性值 或 <a href="animation.html#ImageSprite">图像精灵</a>.<a href="animation.html#ImageSprite.Picture">图片</a> 属性值。</li>
+</ul>
+
+<p>其他属性会影响按钮的外观（<a href="#PhoneNumberPicker.TextAlignment"><code class="highlighter-rouge">文本对齐</code></a>、<a href="#PhoneNumberPicker.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>等)以及是否可以点击(<a href="#PhoneNumberPicker.Enabled"><code class="highlighter-rouge">启用</code></a>)。</p>
+
+<p><code class="highlighter-rouge">电话号选择框</code> 组件可能不适用于所有 Android 设备。例如，在3.0之前的Android系统上，返回的电话号码和电子邮件地址列表将为空。</p>
+
+<h3 id="PhoneNumberPicker-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="PhoneNumberPicker.BackgroundColor" class="color"><em>背景颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的背景颜色，使用RGBA数值表示，如果设置了<a href="#PhoneNumberPicker.Image"><code class="highlighter-rouge">图像</code></a>属性，则不能显示背景颜色直到删除<a href="#PhoneNumberPicker.Image"><code class="highlighter-rouge">图像</code></a>属性为止。</dd>
+  <dt id="PhoneNumberPicker.ContactName" class="text ro bo"><em>联系人姓名</em></dt>
+  <dd>返回所选联系人的全名，如果名称不可用，则返回空字符串。</dd>
+  <dt id="PhoneNumberPicker.ContactUri" class="text ro bo"><em>联系人URI</em></dt>
+  <dd>返回指定联系人在设备上的位置的 URI。</dd>
+  <dt id="PhoneNumberPicker.EmailAddress" class="text ro bo"><em>邮箱地址</em></dt>
+  <dd>返回所选联系人的主电子邮件地址，如果电子邮件地址不可用，则返回空字符串。</dd>
+  <dt id="PhoneNumberPicker.EmailAddressList" class="list ro bo"><em>邮箱地址列表</em></dt>
+  <dd>返回与所选联系人关联的电子邮件地址列表。</dd>
+  <dt id="PhoneNumberPicker.Enabled" class="boolean"><em>启用</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>是否可以被激活和点击。</dd>
+  <dt id="PhoneNumberPicker.FontBold" class="boolean"><em>粗体</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的显示字体是否是粗体。（注：有些字体不支持粗体）。</dd>
+  <dt id="PhoneNumberPicker.FontItalic" class="boolean"><em>斜体</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的显示字体是否是斜体。（注：有些字体不支持斜体）。</dd>
+  <dt id="PhoneNumberPicker.FontSize" class="number"><em>字体大小</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的字体大小，以像素px为单位。</dd>
+  <dt id="PhoneNumberPicker.FontTypeface" class="number do"><em>字体</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+
+    <p>要使用自定义字体，请将 <strong>.ttf</strong> 字体文件上传并选中它。</p>
+  </dd>
+  <dt id="PhoneNumberPicker.Height" class="number bo"><em>高度</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的垂直高度，以像素px为单位。</dd>
+  <dt id="PhoneNumberPicker.HeightPercent" class="number wo bo"><em>高度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的垂直高度相对于整个<a href="userinterface.html#Screen.Height"><code class="highlighter-rouge">屏幕高度</code></a>的百分比。</dd>
+  <dt id="PhoneNumberPicker.Image" class="text"><em>图像</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>图像的路径，如果同时设置了<code class="highlighter-rouge">图像</code>和<a href="#PhoneNumberPicker.BackgroundColor"><code class="highlighter-rouge">背景颜色</code></a>，则仅<code class="highlighter-rouge">图像</code>可见。</dd>
+  <dt id="PhoneNumberPicker.PhoneNumber" class="text ro bo"><em>电话号码</em></dt>
+  <dd>返回与所选联系人关联的主要电话号码，如果没有与该联系人关联的电话号码，则返回空字符串。</dd>
+  <dt id="PhoneNumberPicker.PhoneNumberList" class="list ro bo"><em>电话号码列表</em></dt>
+  <dd>返回与所选联系人关联的电话号码列表。</dd>
+  <dt id="PhoneNumberPicker.Picture" class="text ro bo"><em>图片</em></dt>
+  <dd>返回所选联系人的图片URI，可用于检索联系人的照片和其他字段。</dd>
+  <dt id="PhoneNumberPicker.Shape" class="number do"><em>形状</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的形状，此属性的有效值为：
+
+    <p><code class="highlighter-rouge">0</code>（默认）</p>
+
+    <p><code class="highlighter-rouge">1</code> （圆形）</p>
+
+    <p><code class="highlighter-rouge">2</code>（矩形）</p>
+
+    <p><code class="highlighter-rouge">3</code>（椭圆形）。</p>
+
+    <p>如果设置了<a href="#PhoneNumberPicker.Image"><code class="highlighter-rouge">图像</code></a>，则<code class="highlighter-rouge">形状</code>将不可见。</p>
+  </dd>
+  <dt id="PhoneNumberPicker.ShowFeedback" class="boolean"><em>显示反馈</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>指定 <a href="#PhoneNumberPicker.Image"><code class="highlighter-rouge">图像</code></a>后被按压是否显示视觉反馈。</dd>
+  <dt id="PhoneNumberPicker.Text" class="text"><em>文本</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的显示文本。</dd>
+  <dt id="PhoneNumberPicker.TextAlignment" class="number do"><em>文本对齐</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>文本的对齐方式，有效值有：
+
+    <p><code class="highlighter-rouge">0</code>（正常；例如，如果文本从左到右书写，则左对齐）</p>
+
+    <p><code class="highlighter-rouge">1</code>（居中）</p>
+
+    <p><code class="highlighter-rouge">2</code>（相反；例如，如果文本从左到右书写，则右对齐）。</p>
+  </dd>
+  <dt id="PhoneNumberPicker.TextColor" class="color"><em>文本颜色</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的文本颜色，使用RGBA数值表示。</dd>
+  <dt id="PhoneNumberPicker.Visible" class="boolean"><em>可见性</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>是否显示在屏幕上，值是<code class="logic block highlighter-rouge">真</code>则<code class="highlighter-rouge">电话号选择框</code>显示，<code class="logic block highlighter-rouge">假</code>则隐藏。</dd>
+  <dt id="PhoneNumberPicker.Width" class="number bo"><em>宽度</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的水平宽度，以像素px为单位。</dd>
+  <dt id="PhoneNumberPicker.WidthPercent" class="number wo bo"><em>宽度百分比</em></dt>
+  <dd>设置<code class="highlighter-rouge">电话号选择框</code>的水平宽度相对于<a href="userinterface.html#Screen.Width"><code class="highlighter-rouge">屏幕宽度</code></a>的百分比。</dd>
+</dl>
+
+<h3 id="PhoneNumberPicker-Events">事件</h3>
+
+<dl class="events">
+  <dt id="PhoneNumberPicker.AfterPicking">选择完成()</dt>
+  <dd>在<code class="highlighter-rouge">电话号选择框</code>活动返回其结果且属性已填写后触发该事件。</dd>
+  <dt id="PhoneNumberPicker.BeforePicking">准备选择()</dt>
+  <dd>单击<code class="highlighter-rouge">电话号选择框</code>或使用 <a href="#PhoneNumberPicker.Open">打开选框</a> 方法显示选择器时触发该事件。
+
+    <p>此事件发生在选择器显示之前，可用于在显示选择器之前准备好选择器。</p>
+  </dd>
+  <dt id="PhoneNumberPicker.GotFocus">获得焦点()</dt>
+  <dd>表示光标移到<code class="highlighter-rouge">电话号选择框</code>上方，因此现在可以单击它。</dd>
+  <dt id="PhoneNumberPicker.LostFocus">失去焦点()</dt>
+  <dd>表示光标已从<code class="highlighter-rouge">电话号选择框</code>移开，因此现在无法再单击它。</dd>
+  <dt id="PhoneNumberPicker.TouchDown">被按压()</dt>
+  <dd>表示<code class="highlighter-rouge">电话号选择框</code>已被按下。</dd>
+  <dt id="PhoneNumberPicker.TouchUp">被松开()</dt>
+  <dd>表示<code class="highlighter-rouge">电话号选择框</code>按压已释放。</dd>
+</dl>
+
+<h3 id="PhoneNumberPicker-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="PhoneNumberPicker.Open" class="method"><i></i> 打开选框()</dt>
+  <dd>打开<code class="highlighter-rouge">电话号选择框</code>选框，就像用户单击它一样。</dd>
+  <dt id="PhoneNumberPicker.ViewContact" class="method"><i></i> 查看联系人(<em class="text">URI</em>)</dt>
+  <dd>在设备的默认联系人App中打开所选联系人的条目。</dd>
+</dl>
+
+<h2 id="Sharing"><img src="images/sharing.png" alt="icon" />  信息分享器</h2>
+
+<p><code class="highlighter-rouge">信息分享器</code>是一个不可见的组件，可以让App和设备上其他App之间共享数据或文件。
+该组件将显示已安装的可处理所提供信息的App列表，并允许用户选择一个App来共享内容，例如邮件App、社交网络App、短信App等。</p>
+
+<p>文件路径可以来自其他组件，例如<a href="media.html#Camera"><code class="highlighter-rouge">照相机</code></a> 或 <a href="media.html#ImagePicker"><code class="highlighter-rouge">图像选择框</code></a>，但也可以指定直接从存储中读取。
+  请注意：不同的设备处理的存储路径可能不同，例如有一个名为 <code class="highlighter-rouge">arrow.gif</code> 的文件在文件夹 <code class="highlighter-rouge">Appinventor/assets</code> 中，它的表示方式可能是：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">"file:///sdcard/Appinventor/assets/arrow.gif"</code>; 或</li>
+  <li>
+    <p><code class="highlighter-rouge">"/storage/Appinventor/assets/arrow.gif"</code></p>
+  </li>
+  <li><code class="highlighter-rouge">分享消息</code> 弹出其他App的界面：弹出的是文档（保存文本到文档）、地图（文本作为搜索地址）、蓝牙（传输文本数据）之类的App，<strong>没有打印机相关的，打印机App在<code class="highlighter-rouge">分享文件</code>的方式才弹出</strong>。</li>
+</ul>
+
+<p><img src="images/sharing/分享消息弹出界面.jpg" alt="分享消息弹出界面" style="width:30%; border:1px solid #eee;" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">分享文件</code>、<code class="highlighter-rouge">分享文件及消息</code> 弹出其他App的界面：<code class="highlighter-rouge">分享文件</code>的方式弹出的App几乎非常全面了，包括打印机App（打印分享的文件）。<code class="highlighter-rouge">分享文件及消息</code>弹出的和<code class="highlighter-rouge">分享文件</code>是一致的。</li>
+</ul>
+
+<p><img src="images/sharing/分享文件弹出界面.jpg" alt="分享文件（分享文件及消息）弹出界面" style="width:30%; border:1px solid #eee;" /></p>
+
+<h3 id="Sharing-Properties">属性</h3>
+
+<p class="properties">无</p>
+
+<h3 id="Sharing-Events">事件</h3>
+
+<p class="events">无</p>
+
+<h3 id="Sharing-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="Sharing.ShareFile" class="method"><i></i> 分享文件(<em class="text">文件</em>)</dt>
+  <dd>通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件。选定的应用程序将打开，向其中传入文件。</dd>
+</dl>
+
+<p><img src="images/sharing/分享文件.jpg" alt="分享文件效果预览" style="width:30%; border:1px solid #eee;" /></p>
+
+<dl>
+  <dt id="Sharing.ShareFileWithMessage" class="method"><i></i> 分享文件及消息(<em class="text">文件</em>,<em class="text">消息</em>)</dt>
+  <dd>通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享文件及消息。选定的应用程序将打开，向其中传入文件及消息。</dd>
+</dl>
+
+<p><img src="images/sharing/分享文件及消息.jpg" alt="分享文件及消息效果预览" style="width:30%; border:1px solid #eee;" /></p>
+
+<dl>
+  <dt id="Sharing.ShareMessage" class="method"><i></i> 分享消息(<em class="text">消息</em>)</dt>
+  <dd>通过显示可用的应用程序列表并允许用户从列表中选择一个，通过手机上安装的任何功能强大的应用程序共享消息。所选应用程序将打开，并向其中传入消息。</dd>
+</dl>
+
+<p><img src="images/sharing/分享消息.jpg" alt="分享消息效果预览" style="width:30%; border:1px solid #eee;" /></p>
+
+<h2 id="Texting"><img src="images/texting.png" alt="icon" />  短信收发器</h2>
+
+<p>当调用组件 <a href="#Texting.SendMessage"><code class="highlighter-rouge">发送消息</code></a> 方法时，将启动设备的首选短信应用程序将属性中指定的短信内容发送到 <a href="#Texting.PhoneNumber"><code class="highlighter-rouge">电话号码</code></a> 属性中指定的电话中。</p>
+
+<p>也可以通过调用 <a href="#Texting.SendMessageDirect"><code class="highlighter-rouge">直接发送消息</code></a> 直接发送短信，而无需进行交互，但前提是应用程序已请求危险权限。</p>
+
+<ul>
+  <li>如果 <a href="#Texting.ReceivingEnabled"><code class="highlighter-rouge">启用消息接收</code></a> 属性设为 1，将不会收到消息。</li>
+  <li>如果 <a href="#Texting.ReceivingEnabled"><code class="highlighter-rouge">启用消息接收</code></a> 属性设为 2，消息将仅在应用程序正在运行的时候才被接收。</li>
+  <li>如果 <a href="#Texting.ReceivingEnabled"><code class="highlighter-rouge">启用消息接收</code></a> 属性设置 3，则消息将在应用程序正在运行时被接收；当应用程序未运行时，消息将排队给用户显示通知消息。</li>
+</ul>
+
+<p>当消息到达时，将触发 <a href="#Texting.MessageReceived"><code class="highlighter-rouge">收到消息</code></a> 事件，并提供发送号码和消息。</p>
+
+<p>包含此组件的应用程序即使在后台也会收到消息（即当它在屏幕上不可见时），而且<strong>只要应用程序安装在手机上了，即使没有运行也能收到消息</strong>。</p>
+
+<p>如果应用程序不在手机前台运行，收到短信时手机将在通知栏中显示一条通知。选中通知栏的通知将调出该应用程序，作为应用程序开发人员，你可能希望为用户提供控制 <code class="highlighter-rouge">启用消息接收</code> 的能力，这样他们就可以让手机忽略短信。</p>
+
+<p><br />
+  如果 <a href="#Texting.GoogleVoiceEnabled"><code class="highlighter-rouge">启用谷歌语音</code></a> 属性为<code class="logic block highlighter-rouge">真</code>，则可以通过 Wifi 使用谷歌语音发送消息。</p>
+
+<p>此选项要求用户拥有谷歌语音帐户并且手机手机上安装了语音应用程序，谷歌语音选项仅适用于支持 Android 2.0 (Eclair) 或更高版本。</p>
+
+<p><strong>不幸的是，由于以下原因，谷歌语音App中引入的变更，导致谷歌语音不再被接收。</strong></p>
+
+<p>要指定电话号码（例如 650-555-1212），请将 <code class="highlighter-rouge">电话号码</code> 属性设置为文本字符串与指定的数字（例如，6505551212），可能包含破折号、点和括号（例如，(650)-555-1212）会被忽略，但是不能有空格。</p>
+
+<p>应用程序指定电话号码的另一种方法是包含 <a href="#PhoneNumberPicker"><code class="highlighter-rouge">电话号选择框</code></a> 组件，它允许用户从手机中存储的电话号码中选择一个联系人。</p>
+
+<h3 id="Texting-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="Texting.GoogleVoiceEnabled" class="boolean"><em>启用GoogleVoice</em></dt>
+  <dd>如果此属性为 <code class="highlighter-rouge">真</code>，则 <a href="#Texting.SendMessage">发送消息</a> 将尝试使用 Google语音通过 WiFi 发送消息。</dd>
+  <dt id="Texting.Message" class="text"><em>消息</em></dt>
+  <dd>调用 <a href="#Texting.SendMessage"><code class="highlighter-rouge">发送消息</code></a> 方法时将发送的消息。
+
+    <p>标准 SMS 消息的最大长度通常为 170。对于使用变音符号的语言，该长度可能会更短。</p>
+  </dd>
+  <dt id="Texting.PhoneNumber" class="text"><em>电话号码</em></dt>
+  <dd>调用 <a href="#Texting.SendMessage"><code class="highlighter-rouge">发送消息</code></a> 方法时消息将发送到的号码。</dd>
+  <dt id="Texting.ReceivingEnabled" class="number"><em>启用消息接收</em></dt>
+  <dd>如果设置为 1（关闭），则不会收到任何消息。
+
+    <p>如果设置为 2（前台）或 3（始终），组件将在运行时响应消息。在 2（前台）的情况下，应用程序未运行时收到的消息将被丢弃。在 3（始终）的情况下，应用程序未运行时收到的消息将显示通知。</p>
+
+    <p>选择通知将打开应用程序并触发 <a href="#Texting.MessageReceived"><code class="highlighter-rouge">收到消息</code></a> 事件。应用程序休眠时收到的消息将排队，因此应用程序唤醒时可能会触发多次 <a href="#Texting.MessageReceived"><code class="highlighter-rouge">收到消息</code></a> 事件。作为应用程序开发人员，最好让你的用户控制此属性，这样用户就可以在安装您的应用程序时让手机忽略短信。</p>
+  </dd>
+</dl>
+
+<h3 id="Texting-Events">事件</h3>
+
+<dl class="events">
+  <dt id="Texting.MessageReceived">收到消息(<em class="text">数值</em>,<em class="text">消息内容</em>)</dt>
+  <dd>手机收到短信时触发该事件。
+
+    <p><strong>使用此块将添加<a href="//developer.android.com/guide/topics/permissions/overview#dangerous_permissions">危险权限</a>，如果你的应用提交到应用商店，则需要额外批准。</strong></p>
+  </dd>
+</dl>
+
+<h3 id="Texting-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="Texting.SendMessage" class="method"><i></i> 发送消息()</dt>
+  <dd>启动手机的默认短信应用程序，并预先填充消息和电话号码。</dd>
+  <dt id="Texting.SendMessageDirect" class="method"><i></i> 直接发送消息()</dt>
+  <dd>发送一个文本消息。
+
+    <p><strong>使用此块将添加<a href="https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions">危险权限</a>，如果您的应用提交到应用商店，则需要额外批准。</strong></p>
+  </dd>
+</dl>
+
+<h2 id="Twitter"><img src="images/twitter.png" alt="icon" />  推特客户端（<em>国内无法使用</em>）</h2>
+
+<p>A non-visible component that enables communication with <a href="https://twitter.com">Twitter</a>. Once a
+ user has logged into their Twitter account (and the authorization has been confirmed successful
+ by the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event), many more operations are available:</p>
+
+<ul>
+  <li>Searching Twitter for tweets or labels (<a href="#Twitter.SearchTwitter"><code class="highlighter-rouge">SearchTwitter</code></a>)</li>
+  <li>Sending a Tweet (<a href="#Twitter.Tweet"><code class="highlighter-rouge">Tweet</code></a>)</li>
+  <li>Sending a Tweet with an Image (<a href="#Twitter.TweetWithImage"><code class="highlighter-rouge">TweetWithImage</code></a>)</li>
+  <li>Directing a message to a specific user (<a href="#Twitter.DirectMessage"><code class="highlighter-rouge">DirectMessage</code></a>)</li>
+  <li>Receiving the most recent messages directed to the logged-in user (<a href="#Twitter.RequestDirectMessages"><code class="highlighter-rouge">RequestDirectMessages</code></a>)</li>
+  <li>Following a specific user (<a href="#Twitter.Follow"><code class="highlighter-rouge">Follow</code></a>)</li>
+  <li>Ceasing to follow a specific user (<a href="#Twitter.StopFollowing"><code class="highlighter-rouge">StopFollowing</code></a>)</li>
+  <li>Getting a list of users following the logged-in user (<a href="#Twitter.RequestFollowers"><code class="highlighter-rouge">RequestFollowers</code></a>)</li>
+  <li>Getting the most recent messages of users followed by the logged-in user (<a href="#Twitter.RequestFriendTimeline"><code class="highlighter-rouge">RequestFriendTimeline</code></a>)</li>
+  <li>Getting the most recent mentions of the logged-in user (<a href="#Twitter.RequestMentions"><code class="highlighter-rouge">RequestMentions</code></a>)</li>
+</ul>
+
+<p>You must obtain a Consumer Key and Consumer Secret for Twitter authorization specific to your
+ app from http://twitter.com/oauth_clients/new</p>
+
+<h3 id="Twitter-Properties">属性</h3>
+
+<dl class="properties">
+  <dt id="Twitter.ConsumerKey" class="text"><em>ConsumerKey</em></dt>
+  <dd>The consumer key to be used when authorizing with Twitter via OAuth.</dd>
+  <dt id="Twitter.ConsumerSecret" class="text"><em>ConsumerSecret</em></dt>
+  <dd>The consumer secret to be used when authorizing with Twitter via OAuth.</dd>
+  <dt id="Twitter.DirectMessages" class="list ro bo"><em>DirectMessages</em></dt>
+  <dd>This property contains a list of the most recent messages mentioning the logged-in user.
+ Initially, the list is empty. To set it, the program must:
+
+    <ol>
+      <li>Call the <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event.</li>
+      <li>Call the <a href="#Twitter.RequestDirectMessages"><code class="highlighter-rouge">RequestDirectMessages</code></a> method.
+ 4, Wait for the <a href="#Twitter.DirectMessagesReceived"><code class="highlighter-rouge">DirectMessagesReceived</code></a> event.</li>
+    </ol>
+
+    <p>The value of this property will then be set to the list of direct messages retrieved (and
+ maintain that value until any subsequent call to <a href="#Twitter.RequestDirectMessages"><code class="highlighter-rouge">RequestDirectMessages</code></a>).</p>
+  </dd>
+  <dt id="Twitter.Followers" class="list ro bo"><em>Followers</em></dt>
+  <dd>This property contains a list of the followers of the logged-in user. Initially, the list is
+ empty. To set it, the program must:
+
+    <ol>
+      <li>Call the <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event.</li>
+      <li>Call the <a href="#Twitter.RequestFollowers"><code class="highlighter-rouge">RequestFollowers</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.FollowersReceived"><code class="highlighter-rouge">FollowersReceived</code></a> event.</li>
+    </ol>
+
+    <p>The value of this property will then be set to the list of followers (and maintain its value
+ until any subsequent call to <a href="#Twitter.RequestFollowers"><code class="highlighter-rouge">RequestFollowers</code></a>).</p>
+  </dd>
+  <dt id="Twitter.FriendTimeline" class="list ro bo"><em>FriendTimeline</em></dt>
+  <dd>This property contains the 20 most recent messages of users being followed. Initially, the
+ list is empty. To set it, the program must:
+
+    <ol>
+      <li>Call the <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event.</li>
+      <li>Specify users to follow with one or more calls to the <a href="#Twitter.Follow"><code class="highlighter-rouge">Follow</code></a> method.</li>
+      <li>Call the <a href="#Twitter.RequestFriendTimeline"><code class="highlighter-rouge">RequestFriendTimeline</code></a>  method.</li>
+      <li>Wait for the <a href="#Twitter.FriendTimelineReceived"><code class="highlighter-rouge">FriendTimelineReceived</code></a> event.</li>
+    </ol>
+
+    <p>The value of this property will then be set to the list of messages (and maintain its value
+ until any subsequent call to <a href="#Twitter.RequestFriendTimeline"><code class="highlighter-rouge">RequestFriendTimeline</code></a>.</p>
+  </dd>
+  <dt id="Twitter.Mentions" class="list ro bo"><em>Mentions</em></dt>
+  <dd>This property contains a list of mentions of the logged-in user. Initially, the list is empty.
+ To set it, the program must:
+
+    <ol>
+      <li>Call the <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event.</li>
+      <li>Call the <a href="#Twitter.RequestMentions"><code class="highlighter-rouge">RequestMentions</code></a> method.</li>
+      <li>Wait for the <a href="#Twitter.MentionsReceived"><code class="highlighter-rouge">MentionsReceived</code></a> event.</li>
+    </ol>
+
+    <p>The value of this property will then be set to the list of mentions (and will maintain its
+ value until any subsequent calls to <a href="#Twitter.RequestMentions"><code class="highlighter-rouge">RequestMentions</code></a>).</p>
+  </dd>
+  <dt id="Twitter.SearchResults" class="list ro bo"><em>SearchResults</em></dt>
+  <dd>This property, which is initially empty, is set to a list of search results after the program:
+
+    <ol>
+      <li>Calls the <a href="#Twitter.SearchTwitter"><code class="highlighter-rouge">SearchTwitter</code></a> method.</li>
+      <li>Waits for the <a href="#Twitter.SearchSuccessful"><code class="highlighter-rouge">SearchSuccessful</code></a> event.</li>
+    </ol>
+
+    <p>The value of the property will then be the same as the parameter to
+ <a href="#Twitter.SearchSuccessful"><code class="highlighter-rouge">SearchSuccessful</code></a>. Note that it is not necessary to call the <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a>
+ method before calling <a href="#Twitter.SearchTwitter"><code class="highlighter-rouge">SearchTwitter</code></a>.</p>
+  </dd>
+  <dt id="Twitter.Username" class="text ro bo"><em>Username</em></dt>
+  <dd>The user name of the authorized user. Empty if there is no authorized user.</dd>
+</dl>
+
+<h3 id="Twitter-Events">事件</h3>
+
+<dl class="events">
+  <dt id="Twitter.DirectMessagesReceived">DirectMessagesReceived(<em class="list">messages</em>)</dt>
+  <dd>This event is raised when the recent messages requested through
+ <a href="#Twitter.RequestDirectMessages"><code class="highlighter-rouge">RequestDirectMessages</code></a> have been retrieved. A list of the messages can then be found
+ in the <code class="variable block highlighter-rouge">messages</code> parameter or the <a href="#Twitter.DirectMessages"><code class="highlighter-rouge">DirectMessages</code></a> property.</dd>
+  <dt id="Twitter.FollowersReceived">FollowersReceived(<em class="list">followers2</em>)</dt>
+  <dd>This event is raised when all of the followers of the logged-in user requested through
+ <a href="#Twitter.RequestFollowers"><code class="highlighter-rouge">RequestFollowers</code></a> have been retrieved. A list of the followers can then be found in
+ the <code class="variable block highlighter-rouge">followers</code> parameter or the <a href="#Twitter.Followers"><code class="highlighter-rouge">Followers</code></a> property.</dd>
+  <dt id="Twitter.FriendTimelineReceived">FriendTimelineReceived(<em class="list">timeline</em>)</dt>
+  <dd>This event is raised when the messages requested through <a href="#Twitter.RequestFriendTimeline"><code class="highlighter-rouge">RequestFriendTimeline</code></a> have
+ been retrieved. The <code class="variable block highlighter-rouge">timeline</code> parameter and the <a href="#Twitter.FriendTimeline"><code class="highlighter-rouge">FriendTimeline</code></a>
+ property will contain a list of lists, where each sub-list contains a status update of the
+ form (username message).</dd>
+  <dt id="Twitter.IsAuthorized">IsAuthorized()</dt>
+  <dd>This event is raised after the program calls <a href="#Twitter.Authorize"><code class="highlighter-rouge">Authorize</code></a> if the authorization was
+ successful. It is also called after a call to <a href="#Twitter.CheckAuthorized"><code class="highlighter-rouge">CheckAuthorized</code></a> if we already have a
+ valid access token. After this event has been raised, any other method for this component can
+ be called.</dd>
+  <dt id="Twitter.MentionsReceived">MentionsReceived(<em class="list">mentions</em>)</dt>
+  <dd>This event is raised when the mentions of the logged-in user requested through
+ <a href="#Twitter.RequestMentions"><code class="highlighter-rouge">RequestMentions</code></a> have been retrieved. A list of the mentions can then be found in
+ the <code class="variable block highlighter-rouge">mentions</code> parameter or the <a href="#Twitter.Mentions"><code class="highlighter-rouge">Mentions</code></a> property.</dd>
+  <dt id="Twitter.SearchSuccessful">SearchSuccessful(<em class="list">searchResults</em>)</dt>
+  <dd>This event is raised when the results of the search requested through
+ <a href="#Twitter.SearchTwitter"><code class="highlighter-rouge">SearchTwitter</code></a> have been retrieved. A list of the results can then be found in
+ the <code class="variable block highlighter-rouge">results</code> parameter or the <a href="#Twitter.SearchResults"><code class="highlighter-rouge">SearchResults</code></a> property.</dd>
+</dl>
+
+<h3 id="Twitter-Methods">方法</h3>
+
+<dl class="methods">
+  <dt id="Twitter.Authorize" class="method"><i></i> Authorize()</dt>
+  <dd>Redirects user to login to Twitter via the Web browser using the OAuth protocol if we don’t already have authorization.</dd>
+  <dt id="Twitter.CheckAuthorized" class="method"><i></i> CheckAuthorized()</dt>
+  <dd>Check whether we already have access, and if so, causes the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event
+ handler to be called.</dd>
+  <dt id="Twitter.DeAuthorize" class="method"><i></i> DeAuthorize()</dt>
+  <dd>Removes Twitter authorization from this running app instance.</dd>
+  <dt id="Twitter.DirectMessage" class="method"><i></i> DirectMessage(<em class="text">user</em>,<em class="text">message</em>)</dt>
+  <dd>This sends a direct (private) message to the specified user. The message will be trimmed if it
+ exceeds 160 characters.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+  <dt id="Twitter.Follow" class="method"><i></i> Follow(<em class="text">user</em>)</dt>
+  <dd>Starts following a user.</dd>
+  <dt id="Twitter.RequestDirectMessages" class="method"><i></i> RequestDirectMessages()</dt>
+  <dd>Requests the 20 most recent direct messages sent to the logged-in user. When the messages have
+ been retrieved, the system will raise the <a href="#Twitter.DirectMessagesReceived"><code class="highlighter-rouge">DirectMessagesReceived</code></a> event and set
+ the <a href="#Twitter.DirectMessages"><code class="highlighter-rouge">DirectMessages</code></a> property to the list of messages.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+  <dt id="Twitter.RequestFollowers" class="method"><i></i> RequestFollowers()</dt>
+  <dd>Gets who is following you.</dd>
+  <dt id="Twitter.RequestFriendTimeline" class="method"><i></i> RequestFriendTimeline()</dt>
+  <dd>Gets the most recent 20 messages in the user’s timeline.</dd>
+  <dt id="Twitter.RequestMentions" class="method"><i></i> RequestMentions()</dt>
+  <dd>Requests the 20 most recent mentions of the logged-in user. When the mentions have been
+ retrieved, the system will raise the <a href="#Twitter.MentionsReceived"><code class="highlighter-rouge">MentionsReceived</code></a> event and set the
+ <a href="#Twitter.Mentions"><code class="highlighter-rouge">Mentions</code></a> property to the list of mentions.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+  <dt id="Twitter.SearchTwitter" class="method"><i></i> SearchTwitter(<em class="text">query</em>)</dt>
+  <dd>This searches Twitter for the given String query.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+  <dt id="Twitter.StopFollowing" class="method"><i></i> StopFollowing(<em class="text">user</em>)</dt>
+  <dd>Stops following a user.</dd>
+  <dt id="Twitter.Tweet" class="method"><i></i> Tweet(<em class="text">status</em>)</dt>
+  <dd>This sends a tweet as the logged-in user with the specified Text, which will be trimmed if it
+ exceeds 160 characters.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+  <dt id="Twitter.TweetWithImage" class="method"><i></i> TweetWithImage(<em class="text">status</em>,<em class="text">imagePath</em>)</dt>
+  <dd>This sends a tweet as the logged-in user with the specified Text and a path to the image to be
+ uploaded, which will be trimmed if it exceeds 160 characters. If an image is not found or
+ invalid, the update will not be sent.
+
+    <p><strong>Requirements</strong>: This should only be called after the <a href="#Twitter.IsAuthorized"><code class="highlighter-rouge">IsAuthorized</code></a> event has
+ been raised, indicating that the user has successfully logged in to Twitter.</p>
+  </dd>
+</dl>
+
+</article>
+
+            </div>
+            <div class="cndns-right">
+	<div class="cndns-right-menu menu-common" style="display:none" id="float_menu_btn">
+		<a href="javascript:HideORDispMenu();" class="cndns-right-btn">
+			<span class="fa fa-bars"></span>
+			<p>
+				切换<br />
+				目录
+			</p>
+		</a>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-qrcode"></span>
+			<p>
+				关注<br />
+				我们
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.jpg" />
+					<i>关注我，不迷路</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				技术<br />
+				支持
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>有技术难题，加我！</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
+	<div class="cndns-right-menu menu-top" style="display:none" id="float_scrolltop">
+		<a href="javascript:scroll2Top();" class="cndns-right-btn">
+			<span class="fa fa-angle-up"></span>
+			<i>顶部</i>
+		</a>
+	</div>
+</div>
+
+<div class="footer background-green">
+    <div class="row container">
+	<div class="col-xl-3">
+	    <h4>App Inventor 2 中文网</h4>
+	    <!-- <form class="form-inline" action="/action_page.php">
+		 <div class="form-group has-search">
+		 <span class="fa fa-search form-control-feedback"></span>
+		 <input type="text" class="form-control" placeholder="Search">
+		 </div>
+		 </form> -->
+	</div>
+	<div class="col-xl-6 legal text-center">
+	    <ul>
+		<li>
+		    <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+		</li>
+		<li>
+		    <a class="btn btn-link" role="button">版权所有，未经书面许可，不得转载或使用</a>
+		</li>
+		<li>
+		    <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
+                       target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
+		</li>
+	    </ul>
+	</div>
+	<div class="col-xl-3 links">
+		<a href="https://bbs.tsingfun.com/forum-147-1.html" target="_blank">技术支持</a><br>
+		<a href="mailto:service@fun123.cn">service@fun123.cn</a>
+	</div>
+
+    </div>
+</div>
+
+</div>
+    </body>
+</html>
