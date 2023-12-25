@@ -31,7 +31,6 @@ description: 其他参考资料：包括编辑你的应用、使用Activity Star
 1. [使用App Inventor扩展实现多点触控：Scale Detector](extensionsMultitouch.html)
 1. [使用App Inventor扩展实现多点触控：Rotation Detector](extensionsRotation.html)
 1. [扩展App Inventor：具有多点触控和手势检测功能](extensionsGestures.html)
-1. [Android和App Inventor版本的兼容性问题](compatibilityIssues.html)
 
 ## 数据通信
 

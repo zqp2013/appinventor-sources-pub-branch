@@ -4,75 +4,73 @@ layout: documentation
 description: App Inventor 2 背包：将代码块复制并粘贴到不同的屏幕和项目
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ![](images/backpack-image1.png)
 
 ## 背包：将代码块复制并粘贴到不同的屏幕和项目
 
-The Backpack allows you to carry around blocks throughout your project repositories, allowing blocks to be transferred between projects and between screens.  The contents of the Backpack are persistent across logins. When you login to MIT App Inventor, you will find the blocks you left from your last session.
+背包允许你在整个项目存储库中携带代码块，从而允许块在项目之间和屏幕之间传输。 背包的内容在登录后保持不变。 当你重新登录时，你将找到上次会话留下的块。
 
-### How does Backpack work?
+## 背包是如何工作的？
 
-The Backpack is a copy-and-paste feature that works between projects and screens. The Backpack icon is located at the upper-right corner of the workspace.
+背包是一种在项目和屏幕之间工作的复制粘贴功能。 背包图标位于工作区的右上角。
 
 ![](images/backpack-image2.png)
 
-Copying Blocks. Blocks from the workspace can be dragged and dropped into Backpack. This is the copy operation -- the blocks are copied (duplicated) in the backpack.  When blocks are dropped into the Backpack, an animation and sound will occur to confirm for the user that the operation was successful. The blocks are not removed from the workspace.
+复制块。 工作区中的块可以拖放到背包中。 这就是复制操作——块在背包中被复制（复制）。 当方块被放入背包中时，会出现动画和声音，以向用户确认操作成功。 这些块不会从工作区中删除。
 
+查看背包内容。 单击背包的图标（工作区右上角）即可查看背包的内容。 一个可滚动的弹出窗口将从工作区的右边缘拉出，显示背包的内容。 背包的弹出按钮的工作方式与块抽屉中的弹出按钮的工作方式相同。
 
-Viewing the Backpack Contents. The contents of the Backpack can be viewed by clicking on its icon (upper right corner of the workspace).  A scrollable flyout will pull out from the right edge of the workspace, displaying the Backpack’s contents. The flyout of the Backpack works the same way as the flyouts in the Block drawers.
+要关闭弹出窗口而不粘贴任何块，你可以单击工作区或单击背包中没有突出显示的块的任何空白区域。 请注意，如果你单击弹出窗口中突出显示的块，该块将被粘贴到工作区。
 
+粘贴块。 通过单击背包图标（工作区右上角）并将块从弹出窗口拖动到工作区中的所需位置，可以将块从背包粘贴到当前工作区中。 
 
-To close the flyout without pasting any blocks, you can click the workspace or click any empty space in the Backpack with no block highlighted. Note that if you click on a highlighted block in the flyout, that block will be pasted to the workspace.
+## 背景菜单
 
-
-Pasting Blocks.  Blocks can be pasted from the backpack into the current workspace by clicking on the Backpack icon (upper right corner of the workspace) and dragging the block from the flyout to the desired location in the workspace.  
-
-
-
-### Background Menus
-
-In addition to the drag-and-drop functionality, you can select Backpack functions by right-clicking on a block or on the workspace, as shown in the following image.
+除了拖放功能之外，你还可以通过右键单击块或工作区来选择背包功能，如下图所示。
 
 ![right click on a block](images/backpack-image3.png)
 
 ![right click on the workspace](images/backpack-image4.png)
 
-### Right Click on Block
+## 右键点击代码块
 
-Add to Backpack: You can add this block and all of its contained blocks to the Backpack by doing a right-click on the block and selecting this option. The number in the parentheses indicates the total number of blocks in the Backpack (not the number that will be added).
+添加到背包：你可以通过右键单击该块并选择此选项来将该块及其包含的所有块添加到背包中。 括号中的数字表示背包中的块总数（不是将添加的数量）。
 
-### Right Click on Workspace Background
+## 右键点击工作区背景
 
-Paste All Blocks from Backpack: This pastes all the blocks from the Backpack into the current project. The number in the parentheses indicates the total number of blocks in the Backpack.
+粘贴背包中的所有块：这会将背包中的所有块粘贴到当前项目中。 括号中的数字表示背包中的块总数。
 
-Copy All Blocks to Backpack: This adds all blocks in the current workspace to the Backpack.
+将所有块复制到背包：这会将当前工作区中的所有块添加到背包中。
 
-Empty the Backpack: This removes and discards all blocks in the Backpack. There is no way to undo this operation.
+清空背包：这会移除并丢弃背包中的所有方块。 无法撤消此操作。
 
-### What can be added to Backpack?
+## 背包里可以加什么东西？
 
-Function and procedure definitions.  These will be renamed if a duplicate definition exists in the destination workspace.
-Lists, strings, and other data
-Variable definitions and references.  Variable definitions will be renamed if a duplicate definition exists in the destination workspace.
-Blocks Containing Components: Ideally, your destination project should have matching components with the same name or you will need to add components into the destination project after pasting from the Backpack. Reference to a non-existing component will cause **red error triangles** to be shown.
+- 函数和过程定义。 如果目标工作区中存在重复定义，这些将被重命名。
+
+- 列表、字符串和其他数据
+
+- 变量定义和引用。 如果目标工作区中存在重复的定义，变量定义将被重命名。
+
+- 包含组件的块：理想情况下，你的目标项目应该具有相同名称的匹配组件，否则你需要在从背包粘贴后将组件添加到目标项目中。 引用不存在的组件将导致显示**红色错误三角形**。
 
 ![](images/backpack-image5.png)
 
-Initializations that duplicate existing blocks in the destination workspace will be automatically renamed.  For example, if you try to paste a variable initialization block for global variable X and the workspace already contains an initialization block for X, the variable will be renamed X2 in the pasted block.
+复制目标工作区中现有块的初始化将自动重命名。 例如，如果你尝试粘贴全局变量 X 的变量初始化块，并且工作区已包含 X 的初始化块，则该变量将在粘贴的块中重命名为 X2。
 
-Similarly, if you try to paste a procedure definition for procedure foo and the workspace already contains a definition of foo, the pasted procedure will be renamed foo2.
+同样，如果你尝试粘贴过程 foo 的过程定义，并且工作区已包含 foo 的定义，则粘贴的过程将被重命名为 foo2。
 
+## 可以将代码块粘贴到任何项目或屏幕中吗？
 
-### Can you paste blocks into any project or screen?
-
-
-Yes. However, there are instances when pasting blocks from the Backpack to a new project or screen will cause red error triangles to appear.  For example, this will occur when a block refers to a non-existent variable or procedure in the destination project. The errors can be removed (fixed) by defining the missing variable or procedure.  It will also occur when a block refers to a non-existent component in the destination project.  The errors can be removed (fixed) by adding the missing component and giving it the same name as the one referred to in the pasted block.
+是的。 但是，在某些情况下，将背包中的块粘贴到新项目或屏幕会导致出现红色错误三角形。 例如，当块引用目标项目中不存在的变量或过程时，就会发生这种情况。 可以通过定义缺失的变量或过程来删除（修复）错误。 当块引用目标项目中不存在的组件时也会发生这种情况。 通过添加缺少的组件并为其指定与粘贴块中引用的名称相同的名称，可以删除（修复）错误。
 
 ![](images/backpack-image6.png)
 
-### Can blocks be removed from the Backpack?
+## 可以从背包中移除代码块吗？
 
-
-To remove all blocks from the Backpack, right-click on the backpack, and select "Empty the Backpack". To remove a block stack from the Backpack, right-click on the block stack and select "Remove from Backpack". These operations cannot be undone.
+要从背包中移除所有块，请右键单击背包，然后选择“清空背包”。 要从背包中删除块堆栈，请右键单击块堆栈并选择“从背包中删除”。 这些操作无法撤消。
