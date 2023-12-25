@@ -1,71 +1,74 @@
 ---
 title: 显示列表
 layout: documentation
-description: App Inventor 2 显示列表
+description: App Inventor 2 显示列表，将列表序列化为标签，使用列表转 csv 行，使用 while 循环。
 ---
+
+* TOC
+{:toc}
 
 [&laquo; 返回首页](index.html)
 
-## 显示列表
-You'll often use lists  to  store data. For instance, the following list stores phone numbers:
+我们经常会使用列表来存储数据。例如，以下列表存储电话号码：
 
 ![](images/displaylist-image1.png)
 
-Variables such as BroadcastList are the hidden memory of the app-- the user can’t see them. If you want to display such a list on the device, you can use the ListView component. You just need to tell the ListView which list to display. You do this by setting its Elements property, as in the blocks below:It’s important to remember that you should update the ListView each time the data in the list is changed. For example, if the user adds a new item in a TextBox and clicks submit, you should add the item to the list variable and reset the
+像 BroadcastList 这样的变量是应用程序的隐藏内存（用户看不到它们），如果你想在设备上显示这样的列表，可以使用 [`列表显示框`](../components/userinterface.html#ListView) 组件。
 
-ListView.Elements property, as in the sample below:
+只需告诉 [`列表显示框`](../components/userinterface.html#ListView) 要显示哪个列表即可，可以通过设置其 [`元素`](../components/userinterface.html#ListView.Elements) 属性来完成此操作，如下面的块所示：重要的是要记住，每次列表中的数据更改时都应该更新 [`列表显示框`](../components/userinterface.html#ListView) 例如，如果用户在 [`文本输入框`](../components/userinterface.html#TextBox) 中添加一个新项目并单击“提交”，应该将该项目添加到列表变量中并重置 [`元素`](../components/userinterface.html#ListView.Elements) 属性，如下例所示：
 
 ![](images/displaylist-image7.png)
 
 
+## 将列表序列化为标签
 
-### Serializing a List into a Label
-The ListView displays list data in a fixed, vertical manner. If you want to display the list in a different way, such as horizontally with commas, or with decorative text (e.g., numbers in front of each item), you can serialize it into a Label component.
+[`列表显示框`](../components/userinterface.html#ListView) 以固定的垂直方式显示列表数据。 如果你想以不同的方式显示列表，例如使用逗号水平显示列表，或使用装饰文本（例如每个项目前面的数字），你可以将其序列化为 [`标签`](../components/userinterface.html#Label) 组件。
 
-There are many ways to do this, where you would choose the most suitable approach depending on the way you want to use the serialized result.
+有很多方法可以做到这一点，你可以根据你想要使用序列化结果的方式选择最合适的方法。
 
-#### Using list to csv row
+### 使用列表转 csv 行
 
-The easiest way to serialize the BroadcastList would be to use the list to csv row block. We use DoIt (click on the block with your right mouse button and choose DoIt) to show the result here.
+序列化 BroadcastList 的最简单方法是使用列表到 csv 行块。
 
 ![](images/displaylist-image2.png)
 
-A disadvantage is, that the values are enclosed in “. It is easy to correct this as follows:
+缺点是这些值都被包在““（双引号）中，解决这个问题很容易，如下所示：
 
 ![](images/displaylist-image4.png)
 
 
-#### Using while test
+### 使用 while 循环
 
-Another way to serialize a list is to use an iterator (foreach, while) block to successively add each item, and any separators or decoration, to the Label.
+序列化列表的另一种方法是使用迭代器（foreach、while）块将每个项目以及任何分隔符或装饰连续添加到标签。
 
-Here's a sample that displays the BroadcastList in a label, with commas in-between items. The blocks are within a procedure which you call anytime the list is modified.
+下面是在标签中显示 BroadcastList 的示例，项目之间用逗号分隔。 这些块位于一个过程中，只要列表被修改，你就可以调用该过程。
 
 ![](images/displaylist-image3.png)
 
-### How the Blocks Work
-The BroadcastListLabel.Text is first initialized to “”, so you start out fresh each time the list is displayed.. Then, if the list is
+## 代码块如何工作
 
- not empty, you place the first item into the Label. The while loop then successively adds the other items, placing a comma before each. Note how the blocks within the while loop append a comma and the new item to the end of the Label.
+BroadcastListLabel.Text 首先初始化为“”，因此每次显示列表时都会重新开始。然后，如果列表不为空，则将第一项放入标签中。 然后 while 循环连续添加其他项目，并在每个项目之前放置一个逗号。 请注意 while 循环中的块如何将逗号和新项目附加到 Label 的末尾。
 
-If the list has the items shown in the BroadcastList variable above, the code will first put 111-1111 into the Label. The while blocks will then be executed twice, for index=2 and index=3. During the first iteration, the blocks will add a comma and the second item (,222-2222) to the Label, so that it t will contain 111-1111,222-2222. During the second iteration, (,333-3333) will be appended so that the Label will end up as 111-1111, 222-2222, 333-3333.
+如果列表具有上面的 BroadcastList 变量中显示的项目，则代码将首先将 111-1111 放入 Label 中。 while 块将被执行两次，索引=2 和索引=3。 在第一次迭代期间，块将向标签添加一个逗号和第二项 (,222-2222)，以便它包含 111-1111,222-2222。 在第二次迭代期间，将附加 (,333-3333)，以便标签最终为 111-1111、222-2222、333-3333。
 
-Note: If you would like to display the list elements line-by-line, just insert \n instead of , (a comma), and the label will look like this:
+注意：如果你想逐行显示列表元素，只需插入 \n 而不是 , （逗号），标签将如下所示：
 
 111-1111
 222-2222
 333-3333
 
-### Using for each number from - to - by
-Variations on the while test approach are to use for each from to by or for each item in list. We show the blocks for both approaches below.
+## 使用”从范围循环“
+
+while 方法的变体用于每个 from 到 by 或列表中的每个项目。 我们在下面展示了两种方法的块。
 
 ![](images/displaylist-image5.png)
 
-Remark that we have to test for an empty list. If the list has at least one element, then we set the label to whatever is in the first item. Then, for each iteration the next element would be joined to the text. If the list would have only one element, the for each would do nothing because 2 is larger that the length of the list, 1 in this case.
+请注意，我们必须测试空列表。 如果列表至少有一个元素，那么我们将标签设置为第一项中的任何内容。 然后，对于每次迭代，下一个元素将连接到文本。 如果列表只有一个元素，则 foreach 不会执行任何操作，因为 2 大于列表的长度（在本例中为 1）。
 
-### Using for each item in list
-A slightly neater solution is to use the for each item in list block:
+## 使用”从列表循环“
+
+一个稍微简洁的解决方案是使用 for every item in list 块：
 
 ![](images/displaylist-image6.png)
 
-The result would always have a , in front of the serialized string, except when the list is empty. We remove the , at the end, but we need to check whether the label indeed contains a comma.
+结果总是在序列化字符串前面有一个逗号，除非列表为空。 我们删除末尾的 , ，但我们需要检查标签是否确实包含逗号。
