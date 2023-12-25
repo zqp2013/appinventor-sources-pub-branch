@@ -35,4 +35,4 @@ description: 其他参考资料：包括编辑你的应用、使用Activity Star
 1. [使用虚拟现实和App Inventor进行实验](vr.html)
 1. [不要使用任何组件块重复自己(DRY)](any-component-blocks.html)
 1. [将代码块导入和导出为PNG](download-pngs.html)
-1. [使用ListViewLayout和ElementsFromString的ListView布局](advanced-listview.html)
+1. [列表显示框布局：使用布局和元素字串](advanced-listview.html)

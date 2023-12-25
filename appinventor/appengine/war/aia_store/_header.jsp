@@ -99,7 +99,7 @@
     </ul>
     </div>
 	<div class="collapse navbar-collapse">
-		<img src="/static/images/hello.png" alt="你好">
+		<img src="https://www.fun123.cn/static/images/hello.png" alt="你好">
 	</div>
 </nav>
 

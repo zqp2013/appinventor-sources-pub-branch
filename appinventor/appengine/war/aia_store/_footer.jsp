@@ -22,6 +22,9 @@
                 <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
                         target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
             </li>
+            <li>
+                &nbsp;
+            </li>
             </ul>
         </div>
         <div class="col-xl-3 links">
