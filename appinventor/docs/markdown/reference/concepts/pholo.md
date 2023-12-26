@@ -1,137 +1,156 @@
 ---
-title: 功能列表运算符
+title: App Inventor 2 列表的函数式编程
 layout: documentation
-description: 概念页面下的功能列表运算符参考文档。
+description: 概念页面下的功能列表运算符参考文档。函数式编程是一种编程范式，其中程序是通过组合纯函数来构造的，避免共享状态、可变数据和副作用。函数式编程中的许多运算符通常用于使代码更简洁、更简单。
 ---
+
+* TOC
+{:toc}
 
 [&laquo; 返回首页](index.html)
 
-Functional programming is a programming paradigm where programs are constructed by composing pure functions, avoiding shared state, mutable data, and side effects.
-Many operators in functional programming are commonly used to make code more concise, and less complex.
+函数式编程是一种编程范式，其中程序是通过组合纯函数来构造的，避免共享状态、可变数据和副作用。
+
+函数式编程中的许多运算符通常用于使代码更简洁、更简单。
 
 ![Picture of the functional operator blocks.](images/pholoblocks.png)
 
-This tutorial demonstrates the usage functional operator blocks: filter, map, reduce and sort.
+本教程演示了功能运算符块的用法：过滤器、映射、缩减和排序。
 
-## Part 1: Berry's Lemonade Stand  {#lemonade-stand}
+## 第 1 部分：贝瑞的柠檬水摊  {#lemonade-stand}
 
-Berry is fundraising by setting up a lemonade stand, where she charges $2 per lemonade.
-As shown below, she keeps a simple record of the number of lemonades she sold on each date.
-She planned on doing this for seven consecutive days but was not able to set up her stand on some days, so for those days she wrote down N/A for the number of lemonades sold.
-Berry is interested in finding her total profit for this week's lemonade stand.
+贝瑞正在通过设立一个柠檬水摊来筹款，每瓶柠檬水收费 2 美元。
+
+如下所示，她简单记录了每个日期售出的柠檬水数量。
+
+她计划连续 7 天这样做，但有些日子无法搭建摊位，因此在那些日子里，她将柠檬水的销售数量记为 N/A。
+
+贝瑞有兴趣找出本周柠檬水摊位的总利润。
 
 ![Table for Berry's lemonade stand sell profit.](images/lemonadeStandTable.png)
 
 ![Original List for lemonadeSold.](images/originalList.png)
 
-Thus, Berry needs to
+因此，贝瑞需要
 
-1. keep only the entries that are numbers in her column of "# of Lemonades Sold" (<span style="color: red">filter</span>),
-2. multiply each entry by $2 to get a list of daily profits (<span style="color: blue">map</span>), and then
-3. sum up all the daily profit entries to get total profit (<span style="color: green">reduce</span>).
+1. 仅保留“已售柠檬水数量”列中的数字条目（<span style="color: red">过滤</span>），
+2. 将每个条目乘以 2 美元，得到每日利润列表（<span style="color: blue">映射</span>），然后
+3. 将每日所有利润条目相加，得到总利润（<span style="color: green">缩减</span>）。
 
-### Step 1: <span style="color: red" id="filter">Filter</span>
+### 第1步：<span style="color: red" id="filter">过滤</span>   {#filter}
 
-Berry needs to return a new list that results from filtering her original list so that "N/A" entries are eliminated and only numbers exist in list.
+Berry 需要返回一个新列表，该列表是通过过滤原始列表而产生的，以便消除“N/A”条目，并且列表中仅存在数字。
 
 ![Result after applying filter to original list.](images/filterResult.png)
 
-The filter block takes in two inputs: 1) an input list and 2) a body block that is a boolean expression involving item--it returns true or false.
-Note that item is a variable name that refers to the current list item.
-The filter block iterates through the list and keeps each item the list that makes the body block return true.
-In this case, the input list is Berry’s original list, and the body block checks to see if item is a number.
+过滤器块接受两个输入：1）输入列表和 2）主体块，它是涉及 item 的布尔表达式 - 它返回 真 或 假。
+
+请注意，item 是引用当前列表项的变量名称。
+
+过滤器块迭代列表并保留使主体块返回 true 的列表中的每个项目。
+
+在本例中，输入列表是 Berry 的原始列表，主体块检查 item 是否是数字。
 
 ![Filter block to keep only numbers in the list.](images/filterBlock.png)
 
-### Step 2: <span style="color: blue" id="map">Map</span>
+### 第2步：<span style="color: blue" id="map">映射</span>   {#map}
 
-Now that Berry has a filtered list of # of lemonades sold, she needs to multiply each item in the list by $2 to return a new list of daily profits.
+现在，Berry 已经过滤了已售柠檬水的数量列表，她需要将列表中的每一项乘以 2 美元，以返回新的每日利润列表。
 
 ![Result after applying filter to the list.](images/mapResult.png)
 
-The map block takes in two inputs: 1) an input list and 2) a body block that is an expression manipulating item. The map block iterates through the list and maps each item in the list to a new item using the body block.
-In this case, the input list is Berry’s filtered list, and the body block multiplies each item by 2.
+映射块接受两个输入：1）输入列表和 2）作为表达式操作项的主体块。 映射块迭代列表并使用主体块将列表中的每个项目映射到新项目。
+
+在本例中，输入列表是 Berry 的过滤列表，主体块将每个项目乘以 2。
 
 ![Map block to multiply each number in the list by two.](images/mapBlock.png)
 
-### Step 3: <span style="color: green" id="reduce">Reduce</span>
+### 第3步：<span style="color: green" id="reduce">缩减</span>   {#reduce}
 
-Finally, Berry wants to sum up all the items in her list of daily profits to find her total profit.
+最后，贝瑞想要将每日利润列表中的所有项目相加，以求出她的总利润。
 
 ![Result after applying reduce to the list.](images/reduceResult.png)
 
-The reduce block takes in three inputs: 1) an input list, 2) initialAnswer and 3) a body block that combines item (referring to the current list item) and answerSoFar (referring to the accumulating answer).
-If the input list is empty, then initialAnswer is returned. Otherwise, answerSoFar is initialized to initialAnswer.
-The body block is first evaluated using answerSoFar (which is equivalent to initialAnswer at this point) and the first list item, and then on the accumulating answer and the next list item, and so on until the end of the list.
+缩减块接受三个输入：1）输入列表，2）initialAnswer 和 3）组合 item（指当前列表项）和answerSoFar（指累积答案）的 body 块。
+如果输入列表为空，则返回initialAnswer。 否则，answerSoFar 被初始化为initialAnswer。
+首先使用answerSoFar（此时相当于initialAnswer）和第一个列表项来评估主体块，然后使用累积答案和下一个列表项来评估，依此类推，直到列表末尾。
 
-In this case, the input list is Berry’s list of daily profits, the initialAnswer is 0, since the sum of all the items in an empty list is 0, and the body block adds the current list item to the accumulating answer to sum all her daily profits.
+在本例中，输入列表是 Berry 的每日利润列表，初始答案为 0，因为空列表中所有项目的总和为 0，而主体块将当前列表项目添加到累积答案中，以求和 每日利润。
 
-Berry decides to define her procedure as getTotalProfit. When getTotalProfit is called, Berry’s total profit from her lemonade stand is returned.
+Berry 决定将她的过程定义为 getTotalProfit。 当 getTotalProfit 被调用时，Berry 从她的柠檬水摊上获得的总利润将被返回。
 
 ![Reduce block to sum up all the daily sells.](images/reduceBlock.png)
 
-## Part 2: Bob's classmates' height  {#classmates-height}
+## 第 2 部分：鲍勃同学的身高  {#classmates-height}
 
-Bob is collecting data about his classmates’ height. Here is a small part of his data:
+鲍勃正在收集有关他同学身高的数据。 以下是他的一小部分数据：
 
 ![Table for Bob's classmates' height.](images/heightTable.png)
 
-BobDataList is a list of lists, as shown below:
+BobDataList是列表的列表，如下所示：
 
 ![Bob's data](images/bobData.png)
 
 ![Bob's data list](images/bobDataList.png)
 
-Thus, Bob would like to have the list being sorted in following three different ways: 
+因此，Bob 希望以以下三种不同的方式对列表进行排序：
 
-1. Sort the data alphabetically by last name (<span style="color: red">basic sort</span>)
-2. Sort the data alphabetically by gender, then numerically by height (<span style="color: blue">sort with comparator</span>)
-3. Sort the data alphabetically by height (<span style="color: green">sort with key</span>)
+1. 按姓氏字母顺序对数据进行排序（<span style="color: red">基本排序</span>）
 
-### Situation 1: <span style="color: red" id="sort">Basic Sort</span>
+2. 按性别字母顺序对数据排序，然后按身高数字排序（<span style="color: blue">使用比较器排序</span>）
 
-Bob wants to sort the list by last name.
+3. 按高度字母顺序对数据进行排序（<span style="color: green">用 key 排序</span>）
+
+### 情况1：<span style="color: red" id="sort">基本排序</span>   {#sort}
+
+鲍勃想按姓氏对列表进行排序。
 
 ![Result of sorting by last name](images/sortLastNameResult.png)
 
-Since last name is in index 1 of each item in BobDataList, he can simply input his list into the basic sort block.
+由于姓氏位于 BobDataList 中每个项目的索引 1 中，因此他可以简单地将其列表输入到基本排序块中。
 
 ![Sort list with basic sort.](images/sortLastNameBlock.png)
 
-### Situation 2: <span style="color: blue" id="sortwithcomparator">Sort with Comparator</span>
+### 情况2：<span style="color: blue" id="sortwith comparator">使用比较器排序</span>   {#sortwithcomparator}
 
-Bob wants to first sort his data alphabetically by gender, then numerically by height.
-In other words, the females are listed first, followed by males.
-Within females and within males, the data is organized by height.
-Gender is index 3 of each item in BobDataList, and height is in index 4 of each item in BobDataList.
+Bob 希望首先按性别字母顺序对数据进行排序，然后按身高数字排序。
+
+换句话说，女性先列出，然后是男性。
+
+在女性和男性中，数据按身高组织。
+
+性别是 BobDataList 中每个项目的索引 3，身高是 BobDataList 中每个项目的索引 4。
 
 ![](images/sortGenderHeightResult.png)
 
-In this case, Bob can use the sort with comparator block.
-This block takes in two inputs: 1) an input list and 2) a body block that specifies the order by which the the input list should be sorted.
-The body block is a boolean expression involving item1 and item2 and returns true or false.
-The given variable names, item1 and item2, refer to the two current list items that are being compared.
+在这种情况下，Bob 可以使用带有比较器块的排序。
 
-To achieve Bob’s goal, the body block will have two boolean expressions.
-The first boolean expression checks to see if the gender of item1 is less than the gender of item2.
-If is, then the body returns true immediately. If not (i.e. the gender is the same), then the second boolean expression will check to see if the height of item1 is less than the height of item2.
+该块接受两个输入：1) 输入列表和 2) 指定输入列表排序顺序的主体块。
 
-To implement this in terms of blocks, the body block will combine the two boolean expressions using an “or” block.
-An “or” block tests the conditions from left to right, and stops testing as soon as one of the conditions is true.
+body 块是一个涉及 item1 和 item2 的布尔表达式，返回 真 或 假。
+
+给定的变量名称 item1 和 item2 指的是正在比较的两个当前列表项。
+
+为了实现鲍勃的目标，主体块将有两个布尔表达式。
+
+第一个布尔表达式检查 item1 的性别是否小于 item2 的性别。
+
+如果是，则主体立即返回 true。 如果不是（即性别相同），则第二个布尔表达式将检查 item1 的高度是否小于 item2 的高度。
+
+为了用块来实现这一点，主体块将使用“或”块组合两个布尔表达式。“或”块从左到右测试条件，一旦其中一个条件为真就停止测试。
 
 ![](images/sortGenderHeightBlock.png)
 
-### Situation 3: <span style="color: green" id="sortwithkey">Sort with Key</span>
+### 情况3：<span style="color: green" id="sortwithkey">用Key排序</span>   {#sortwithkey}
 
-Bob wants to sort his data only by height.
+鲍勃只想按身高对数据进行排序。
 
 ![Result after applying reduce to the list.](images/sortHeightResult.png)
 
-In this case, he can use the sort with key block.
-This sort block takes in two inputs: 1) an input list and 2) a body block (key) that is a function that is applied to each item in the list prior to sorting.
-The list of proxy values returned by the key is used for sorting.
+在这种情况下，他可以使用带有键的排序块。
 
-Since Bob would like to sort by height, the body of the block gets index 4 of each item in BobDataList, and sorts by this value.
+此排序块接受两个输入：1）输入列表和 2）主体块（键），该主体块是在排序之前应用于列表中每个项目的函数。键返回的代理值列表用于排序。
+
+由于 Bob 希望按高度排序，因此块的主体获取 BobDataList 中每个项目的索引 4，并按该值排序。
 
 ![Reduce block to sum up all the daily sells.](images/sortHeightBlock.png)
-
