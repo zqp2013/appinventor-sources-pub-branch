@@ -1,0 +1,114 @@
+package cn.fun123.AliSms;
+
+import com.google.appinventor.components.annotations.*;
+import com.google.appinventor.components.common.ComponentCategory;
+import com.google.appinventor.components.runtime.*;
+import com.google.appinventor.components.runtime.util.*;
+import com.google.appinventor.components.runtime.errors.YailRuntimeError;
+import com.google.appinventor.components.common.PropertyTypeConstants;
+import com.aliyun.tea.*;
+import java.util.Random;
+
+@DesignerComponent(version = 1,
+        versionName = "1.0",
+        description = "阿里云短信平台接入，开通短信服务及添加短信模板流程请<a href=\"https://help.aliyun.com/zh/sms/user-guide/usage-notes\" target=\"_blank\">点击这里</a>，填入必要的信息即可调用API直接发送短信。",
+        helpUrl = "https://www.fun123.cn/reference/extensions/",
+        category = ComponentCategory.EXTENSION,//展示在appinventor的哪个模块下
+        nonVisible = true,//不可见
+        iconName = "favicon.ico")
+
+@SimpleObject(external = true)
+@UsesLibraries(libraries = "tea-1.1.14.jar, tea-openapi-0.2.8.jar, tea-util-0.2.16.jar, tea-console-0.0.1.jar, dysmsapi20170525-2.0.23.jar")
+public class AliSms extends AndroidNonvisibleComponent {
+    private String accessKeyId = "";
+    private String accessKeySecret = "";
+
+    public AliSms(ComponentContainer container) {
+        super(container.$form());
+    }
+
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
+      defaultValue = "")
+    @SimpleProperty(category = PropertyCategory.APPEARANCE,
+      description = "AccessKey ID")
+    public void AccessKeyId(String text) {
+        this.accessKeyId = text;
+    }
+
+    @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_STRING,
+      defaultValue = "")
+    @SimpleProperty(category = PropertyCategory.APPEARANCE,
+      description = "AccessKey Secret")
+    public void AccessKeySecret(String text) {
+        this.accessKeySecret = text;
+    }
+
+    private static boolean isNumericZidai(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            System.out.println(str.charAt(i));
+            if (!Character.isDigit(str.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    // 检查手机号码正确性
+    private boolean IsPhoneNum(String phone) {
+        return phone.length() == 11 && isNumericZidai(phone);
+    }
+
+    /**
+     * 使用AK&SK初始化账号Client
+     * @param accessKeyId
+     * @param accessKeySecret
+     * @return Client
+     * @throws Exception
+     */
+    private com.aliyun.dysmsapi20170525.Client createClient() throws Exception {
+        com.aliyun.teaopenapi.models.Config config = new com.aliyun.teaopenapi.models.Config()
+                // 必填，您的 AccessKey ID
+                .setAccessKeyId(this.accessKeyId)
+                // 必填，您的 AccessKey Secret
+                .setAccessKeySecret(this.accessKeySecret);
+        // 访问的域名
+        config.endpoint = "dysmsapi.aliyuncs.com";
+        return new com.aliyun.dysmsapi20170525.Client(config);
+    }
+
+    @SimpleFunction(description = "发送短信，参数：手机号，短信签名，短信模板ID，短信模板参数JSON")
+    public String SendSms(String phoneNumber, String signName, String templateCode, String templateParam) {
+        if (this.accessKeyId == "" || this.accessKeySecret == "")
+            return "AccessKey ID or Secret 未设置！";
+        if (!IsPhoneNum(phoneNumber))
+            return "手机号码格式不正确，请检查！";
+        if (signName == "" || signName == null || templateCode == "" || templateCode == null || templateParam == "" || templateParam == null)
+            return "短信模板及参数不能为空！";
+
+        try {
+            com.aliyun.dysmsapi20170525.Client client = createClient();
+            com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
+                    .setPhoneNumbers(phoneNumber)
+                    .setSignName(signName)
+                    .setTemplateCode(templateCode)
+                    .setTemplateParam(templateParam);
+
+            com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+            com.aliyun.dysmsapi20170525.models.SendSmsResponse resp = client.sendSmsWithOptions(sendSmsRequest, runtime);
+            com.aliyun.teaconsole.Client.log(com.aliyun.teautil.Common.toJSONString(resp));
+        } catch (Exception e) {
+            return "发生异常：" + e.toString();
+        }
+        return "短信发送成功！";
+    }
+
+    @SimpleFunction(description = "生成一个指定位数随机验证码。")
+    public String RandomNumCode(int length) {
+        StringBuilder code = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            int digit = random.nextInt(10); // 生成0-9之间的随机数
+            code.append(digit);
+        }
+        return code.toString();
+    }
+}
