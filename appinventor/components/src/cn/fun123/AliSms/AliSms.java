@@ -26,7 +26,7 @@ import java.net.URL;
 
 @SimpleObject(external = true)
 @UsesPermissions({INTERNET})
-@UsesLibraries(libraries = "tea-1.1.14.jar, tea-openapi-0.2.8.jar, tea-util-0.2.16.jar, tea-console-0.0.1.jar, dysmsapi20170525-2.0.23.jar, credentials-java-0.2.4.jar, openapiutil-0.2.0.jar, okhttp-3.12.13.jar, okio-1.15.0.jar, gson-2.7.jar")
+@UsesLibraries(libraries = "tea-1.1.14.jar, tea-openapi-0.2.8.jar, tea-util-0.2.16.jar, tea-console-0.0.1.jar, dysmsapi20170525-2.0.23.jar, credentials-java-0.2.4.jar, openapiutil-0.2.0.jar, okhttp-3.12.13.jar, okio-1.15.0.jar, sun.misc.BASE64Decoder.jar")
 public class AliSms extends AndroidNonvisibleComponent {
     private String accessKeyId = "";
     private String accessKeySecret = "";
@@ -135,7 +135,7 @@ public class AliSms extends AndroidNonvisibleComponent {
         javax.crypto.Mac mac = javax.crypto.Mac.getInstance("HmacSHA1");
         mac.init(new javax.crypto.spec.SecretKeySpec(accessSecret.getBytes("UTF-8"), "HmacSHA1"));
         byte[] signData = mac.doFinal(stringToSign.getBytes("UTF-8"));
-        return new sun.misc.BASE64Encoder().encode(signData);
+        return new Decoder.BASE64Encoder().encode(signData);
     }
     
 

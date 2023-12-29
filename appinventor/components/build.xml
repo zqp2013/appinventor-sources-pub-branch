@@ -197,7 +197,7 @@
     <copy toFile="${public.deps.dir}/openapiutil-0.2.0.jar" file="${lib.dir}/aliyun/openapiutil-0.2.0.jar" />
     <copy toFile="${public.deps.dir}/okhttp-3.12.13.jar" file="${lib.dir}/aliyun/okhttp-3.12.13.jar" />
     <copy toFile="${public.deps.dir}/okio-1.15.0.jar" file="${lib.dir}/aliyun/okio-1.15.0.jar" />
-    <copy toFile="${public.deps.dir}/gson-2.7.jar" file="${lib.dir}/aliyun/no_copy/gson-2.7.jar" />
+    <copy toFile="${public.deps.dir}/sun.misc.BASE64Decoder.jar" file="${lib.dir}/base64/sun.misc.BASE64Decoder.jar" />
   </target>
 
   <path id="AndroidRuntime.path">
