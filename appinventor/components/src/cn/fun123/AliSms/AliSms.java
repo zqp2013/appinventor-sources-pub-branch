@@ -15,10 +15,10 @@ import java.util.Random;
         helpUrl = "https://www.fun123.cn/reference/extensions/",
         category = ComponentCategory.EXTENSION,//展示在appinventor的哪个模块下
         nonVisible = true,//不可见
-        iconName = "favicon.ico")
+        iconName = "images/extension.png")//这个组件的图标
 
 @SimpleObject(external = true)
-@UsesLibraries(libraries = "tea-1.1.14.jar, tea-openapi-0.2.8.jar, tea-util-0.2.16.jar, tea-console-0.0.1.jar, dysmsapi20170525-2.0.23.jar")
+@UsesLibraries(libraries = "tea-1.1.14.jar, tea-openapi-0.2.8.jar, tea-util-0.2.16.jar, tea-console-0.0.1.jar, dysmsapi20170525-2.0.23.jar, credentials-java-0.2.4.jar, openapiutil-0.2.0.jar, okhttp-3.12.13.jar, okio-1.15.0.jar, gson-2.7.jar")
 public class AliSms extends AndroidNonvisibleComponent {
     private String accessKeyId = "";
     private String accessKeySecret = "";
@@ -75,8 +75,8 @@ public class AliSms extends AndroidNonvisibleComponent {
         return new com.aliyun.dysmsapi20170525.Client(config);
     }
 
-    @SimpleFunction(description = "发送短信，参数：手机号，短信签名，短信模板ID，短信模板参数JSON")
-    public String SendSms(String phoneNumber, String signName, String templateCode, String templateParam) {
+    @SimpleFunction(description = "发送短信并返回发送结果。参数：手机号，签名名称，模板CODE，模板参数JSON")
+    public String SendSms(String phoneNumber, String signName, String templateCode, String templateParam) throws Exception {
         if (this.accessKeyId == "" || this.accessKeySecret == "")
             return "AccessKey ID or Secret 未设置！";
         if (!IsPhoneNum(phoneNumber))
@@ -84,7 +84,7 @@ public class AliSms extends AndroidNonvisibleComponent {
         if (signName == "" || signName == null || templateCode == "" || templateCode == null || templateParam == "" || templateParam == null)
             return "短信模板及参数不能为空！";
 
-        try {
+        //try {
             com.aliyun.dysmsapi20170525.Client client = createClient();
             com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
                     .setPhoneNumbers(phoneNumber)
@@ -95,13 +95,19 @@ public class AliSms extends AndroidNonvisibleComponent {
             com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
             com.aliyun.dysmsapi20170525.models.SendSmsResponse resp = client.sendSmsWithOptions(sendSmsRequest, runtime);
             com.aliyun.teaconsole.Client.log(com.aliyun.teautil.Common.toJSONString(resp));
-        } catch (Exception e) {
-            return "发生异常：" + e.toString();
-        }
-        return "短信发送成功！";
+
+            String code = resp.body.code;
+            if(code != null && code.equals("OK")) {
+                return "短信发送成功！";
+            }else {
+                return "！！！短信发送失败：" + com.aliyun.teautil.Common.toJSONString(resp);
+            }
+        //} catch (Exception e) {
+        //    return "发生异常：" + e.toString();
+        //}
     }
 
-    @SimpleFunction(description = "生成一个指定位数随机验证码。")
+    @SimpleFunction(description = "返回一个指定位数随机数字码。")
     public String RandomNumCode(int length) {
         StringBuilder code = new StringBuilder();
         Random random = new Random();

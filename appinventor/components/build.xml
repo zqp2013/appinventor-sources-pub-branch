@@ -187,12 +187,17 @@
     <!-- Example: <copy toFile="${public.deps.dir}/my-dependency.jar" file="${lib.dir}/my-dependency/my-dependency-1.0.0.jar" /> -->
     <!-- Remember to include my-dependency.jar in the @UsesLibraries annotation in the extension -->
 
-    <!-- Aliyun:copy this compile ok, but copy all of lib to WEB_INFO when run -->
+    <!-- Aliyun -->
     <copy toFile="${public.deps.dir}/tea-1.1.14.jar" file="${lib.dir}/aliyun/tea-1.1.14.jar" />
     <copy toFile="${public.deps.dir}/tea-openapi-0.2.8.jar" file="${lib.dir}/aliyun/tea-openapi-0.2.8.jar" />
     <copy toFile="${public.deps.dir}/tea-util-0.2.16.jar" file="${lib.dir}/aliyun/tea-util-0.2.16.jar" />
     <copy toFile="${public.deps.dir}/tea-console-0.0.1.jar" file="${lib.dir}/aliyun/tea-console-0.0.1.jar" />
     <copy toFile="${public.deps.dir}/dysmsapi20170525-2.0.23.jar" file="${lib.dir}/aliyun/dysmsapi20170525-2.0.23.jar" />
+    <copy toFile="${public.deps.dir}/credentials-java-0.2.4.jar" file="${lib.dir}/aliyun/credentials-java-0.2.4.jar" />
+    <copy toFile="${public.deps.dir}/openapiutil-0.2.0.jar" file="${lib.dir}/aliyun/openapiutil-0.2.0.jar" />
+    <copy toFile="${public.deps.dir}/okhttp-3.12.13.jar" file="${lib.dir}/aliyun/okhttp-3.12.13.jar" />
+    <copy toFile="${public.deps.dir}/okio-1.15.0.jar" file="${lib.dir}/aliyun/okio-1.15.0.jar" />
+    <copy toFile="${public.deps.dir}/gson-2.7.jar" file="${lib.dir}/aliyun/no_copy/gson-2.7.jar" />
   </target>
 
   <path id="AndroidRuntime.path">
