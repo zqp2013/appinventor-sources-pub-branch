@@ -554,6 +554,11 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 
   **使用此块将添加[危险权限](//developer.android.com/guide/topics/permissions/overview#dangerous_permissions)，如果你的应用提交到应用商店，则需要额外批准。**
 
+  需要请求的权限名称如下：
+
+  {:.vip}
+  权限名：`android.permission.READ_SMS`。
+
 ### 方法  {#Texting-Methods}
 
 {:.methods}
@@ -565,6 +570,11 @@ description: 社交应用组件参考文档：包括联系人选择框、邮箱�
 : 发送一个文本消息。
 
   **使用此块将添加[危险权限](https://developer.android.com/guide/topics/permissions/overview#dangerous_permissions)，如果您的应用提交到应用商店，则需要额外批准。**
+
+  需要请求的权限名称如下：
+
+  {:.vip}
+  权限名：`android.permission.SEND_SMS`。
 
 ## ![icon](images/twitter.png)  推特客户端（*国内无法使用*）  {#Twitter}
 

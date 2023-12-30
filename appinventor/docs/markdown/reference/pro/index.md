@@ -19,6 +19,7 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 1. [【AI云识图】利用云API进行AI识图]
 1. [【OCR识别】App Inventor 2 OCR 图片文字识别全方案总结](ocr.html)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](ftp.html)
+1. [【短信平台】App Inventor 2 接入阿里云短信服务，实现短信验证码功能](alisms.html)
 
 
 ## 产品级技巧
