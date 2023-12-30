@@ -65,8 +65,15 @@ public class AliSms extends AndroidNonvisibleComponent {
         return phone.length() == 11 && isNumericZidai(phone);
     }
 
-    @SimpleFunction(description = "发送短信并返回发送结果。参数：手机号，签名名称，模板CODE，模板参数JSON")
+    @SimpleFunction(description = "发送短信。参数：手机号，签名名称，模板CODE，模板参数JSON")
     public void SendSms(String phoneNumber, String signName, String templateCode, String templateParam) throws Exception {
+        if (this.accessKeyId == "" || this.accessKeySecret == "")
+            throw new Exception("AccessKey ID or Secret 未设置！");
+        if (!IsPhoneNum(phoneNumber))
+            throw new Exception("手机号码格式不正确，请检查！");
+        if (signName == "" || signName == null || templateCode == "" || templateCode == null || templateParam == "" || templateParam == null)
+            throw new Exception("短信模板及参数不能为空！");
+
         java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         df.setTimeZone(new java.util.SimpleTimeZone(0, "GMT"));
         java.util.Map<String, String> paras = new java.util.HashMap<String, String>();
