@@ -13,6 +13,8 @@ description: App Inventor 2 接入阿里云短信服务，实现短信验证码�
 
 ## App Inventor 2 中文网原创开发阿里短信平台接入拓展
 
+![AliSmsAix](images/AliSmsAix.png)
+
 提供的函数如下：
 
 ![AliSms](images/AliSms.png)
