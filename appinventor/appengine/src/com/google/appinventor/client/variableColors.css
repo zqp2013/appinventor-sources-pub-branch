@@ -1131,4 +1131,5 @@ svg.blocklySvg,
 .blocklyMainBackground,
 rect.gridBackground {
   fill: background-color;
+  background-color: background-color !important;
 }
