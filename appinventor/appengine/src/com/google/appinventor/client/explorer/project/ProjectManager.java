@@ -40,6 +40,9 @@ public final class ProjectManager {
   public ProjectManager() {
     projectsMap = new HashMap<Long, Project>();
     projectManagerEventListeners = new ArrayList<ProjectManagerEventListener>();
+  }
+
+  public void loadProjects() {
     Ode.getInstance().getProjectService().getProjectInfos(
       new OdeAsyncCallback<List<UserProject>>(
         MESSAGES.projectInformationRetrievalError()) {

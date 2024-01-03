@@ -7,6 +7,8 @@
 package com.google.appinventor.client.boxes;
 
 import static com.google.appinventor.client.Ode.MESSAGES;
+
+import com.google.appinventor.client.Ode;
 import com.google.appinventor.client.explorer.youngandroid.ProjectList;
 import com.google.appinventor.client.widgets.boxes.Box;
 
@@ -41,7 +43,7 @@ public final class ProjectListBox extends Box {
         false,  // minimizable
         false); // removable
 
-    plist = new ProjectList();
+    plist = Ode.getUiFactory().createProjectList();
     setContent(plist);
   }
 

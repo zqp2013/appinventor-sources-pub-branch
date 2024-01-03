@@ -97,6 +97,10 @@ public class TopToolbar extends Composite {
   private static final String WIDGET_NAME_SETTINGS = "Settings";
   private static final String WIDGET_NAME_AUTOLOAD = "Autoload Last Project";
   private static final String WIDGET_NAME_DYSLEXIC_FONT = "DyslexicFont";
+  private static final String WIDGET_NAME_UI_SETTINGS = "UISettings";
+  private static final String WIDGET_NAME_NEW_LAYOUT = "NewLayout";
+  private static final String WIDGET_NAME_OLD_LAYOUT = "OldLayout";
+  private static final String WIDGET_NAME_DARK_THEME_ENABLED = "DarkThemeEnabled";
   private static final String WIDGET_NAME_HELP = "Help";
   private static final String WIDGET_NAME_ABOUT = "About";
   private static final String WIDGET_NAME_LIBRARY = "Library";
@@ -360,6 +364,15 @@ public class TopToolbar extends Composite {
 
   private void createSettingsMenu() {
     List<DropDownItem> settingsItems = Lists.newArrayList();
+    // Add by中文网：主题样式
+    if (Ode.getUserDarkThemeEnabled()) {
+      settingsItems.add(new DropDownItem(WIDGET_NAME_UI_SETTINGS, MESSAGES.switchLightTheme(),
+          new SwitchLightThemeAction()));
+    } else {
+      settingsItems.add(new DropDownItem(WIDGET_NAME_UI_SETTINGS, MESSAGES.switchDarkTheme(),
+          new SwitchDarkThemeAction()));
+    }
+
     if (Ode.getUserAutoloadProject()) {
       settingsItems.add(new DropDownItem(WIDGET_NAME_AUTOLOAD, MESSAGES.disableAutoload(),
           new DisableAutoloadAction()));
@@ -456,6 +469,20 @@ public class TopToolbar extends Composite {
     refreshMenu(adminDropDown, adminItems);
   }
 
+  public class SwitchLightThemeAction implements Command {
+    @Override
+    public void execute() {
+      Ode.setUserDarkThemeEnabled(false);
+    }
+  }
+  public class SwitchDarkThemeAction implements Command {
+    @Override
+    public void execute() {
+      Ode.setUserDarkThemeEnabled(true);    
+    }
+  }
+
+  
   // -----------------------------
   // List of Commands for use in Drop-Down Menus
   // -----------------------------

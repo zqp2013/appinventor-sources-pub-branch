@@ -32,6 +32,7 @@ public class SettingsConstants {
   public static final String FOLDERS = "Folders";
   public static final String USER_LAST_BUILD_TIME = "LastBuildTime";// Add by 中文网
   public static final String USER_THEME = "Theme";// Add by 中文网
+  public static final String USER_THEME_ENABLEDARK = "ThemeDarkEnable";// Add by 中文网
 
   public static final String SPLASH_SETTINGS = "SplashSettings";
 

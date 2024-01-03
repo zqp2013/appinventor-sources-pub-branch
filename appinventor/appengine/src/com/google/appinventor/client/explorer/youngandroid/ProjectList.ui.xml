@@ -10,7 +10,7 @@
              ui:generateLocales="default">
   <ui:with field="messages" type="com.google.appinventor.client.OdeMessages" />
   <g:FlowPanel styleName='ode-ProjectTable'>
-    <g:FlowPanel styleName='ode-ProjectHeaderRowFlex'>
+    <g:FlowPanel styleName='ode-ProjectHeaderRow'>
         <g:CheckBox ui:field='selectAllCheckBox' styleName="gwt-CheckBox" />
         <g:FlowPanel styleName="ode-ProjectHeaderLabel ode-ProjectListName">
           <g:Label text='{messages.projectNameHeader}' ui:field='projectName'

@@ -87,6 +87,37 @@ body {
   border: 1px #262626;
 }
 
+
+.ode-Root {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+div.TopToolbar {
+  display: flex;
+}
+
+div.OverDeckPanel {
+  display: flex;
+  flex-grow: 1;
+}
+
+div.StatusPanel {
+  text-align: center;
+}
+
+/*
+ * Module switcher root panel
+ */
+.ode-ModuleControllerRoot {
+  height: 100vh;
+  width: 100vw;
+}
 /*
  * Context menus
  */
@@ -176,7 +207,13 @@ body {
   border: 1px solid;
   border-color: #d2d2d2 #d2d2d2 #b0b2a7 #d2d2d2;
 }
-
+.ode-Box-toolkit {
+  width: 96%;
+  margin: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 9px;
+}
 .ode-Box-header-caption,
 .ode-Box-header-caption-highlighted {
   font-size: 13px;
@@ -298,7 +335,14 @@ body {
 .ode-ProjectRow-Highlighted {
   background-color: #fff6c3;
 }
-
+.ode-ProjectRowUnHighlighted {
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+  border-bottom: 0;
+  width: 100%;
+  vertical-align: center;
+}
 .ode-ProjectRowHidden {
   display:none;
 }
@@ -318,18 +362,11 @@ body {
 
 .ode-ProjectHeaderRow {
   background: url(../images/toolbarBG.png) repeat;
-  border: 1px;
-  border-bottom: 1px solid #bbccff;
-}
-/*add by 中文网*/
-.ode-ProjectHeaderRowFlex {
-  background: url(../images/toolbarBG.png) repeat;
   display: flex;
   align-items: center;
   grid-gap: 10px;
 
   border: 1px;
-  border-bottom: 1px solid #bbccff;
   position: relative;
   flex-direction: row;
   width: 100%;
@@ -600,12 +637,70 @@ body {
   color:#FF8E21;
 }
 
+.ode-TutorialWrapper {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: visible;
+  display: flex;
+  flex-flow: row;
+}
+
 /*
  * Deck Panel
  */
 
 .ode-DeckPanel {
-  margin: 4px 8px 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 4px 8px 8px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.ode-DeckPanel>div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.ode-ProjectEditor {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+}
+
+.ode-WorkColumns {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.ode-WorkColumns>* {
+  max-height: 100%;
+  vertical-align: top;
+}
+
+.ViewerBox {
+  min-width: 368px;
+  flex-grow: 1;
 }
 
 .ode-NavArrow {
@@ -630,15 +725,15 @@ body {
 
 .ode-StatusPanel {
   font-size: 12px;
-  color: #888;
   padding: 4px 12px;
   background: url(../images/toolbarBG.png) repeat;
   border: 1px;
-  border-bottom: 1px solid #bbccff;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
-
 .ode-StatusPanel a {
-  color: #888;
+  color:#888
 }
 
 /*
@@ -1126,9 +1221,7 @@ select.ode-PropertyEditor[disabled] {
 }
 
 .ode-SimpleMockFormPhonePortrait {
-  background: url(../images/phonePortrait.png);
-  background-repeat: no-repeat;
-  background-position: right top;
+  background: url(../images/phonePortrait.png) no-repeat right top;
   background-size: 100% 100%;
   padding: 50px 11px 43px 7px;
 }
@@ -1141,24 +1234,18 @@ select.ode-PropertyEditor[disabled] {
   padding: 15px 56px 12px 64px;;
 }
 .ode-SimpleMockFormPhonePortraitTablet {
-  background: url(../images/phonePortraitTablet.png);
-  background-repeat: no-repeat;
-  background-position: right top;
+  background: url(../images/phonePortraitTablet.png) no-repeat right top;
   background-size: 100% 100%;
   padding: 64px 13px 55px 13px;
 }
 .ode-SimpleMockFormPhoneLandscapeMonitor {
-  background: url(../images/phoneLandscapeMonitor.png);
-  background-repeat: no-repeat;
-  background-position: right top;
+  background: url(../images/phoneLandscapeMonitor.png) no-repeat right top;
   background-size: 100% 100%;
   padding: 44px 43px 39px 48px;
 }
 
 .ode-SimpleMockFormPhonePortraitMonitor {
-  background: url(../images/phonePortraitMonitor.png);
-  background-repeat: no-repeat;
-  background-position: right top;
+  background: url(../images/phonePortraitMonitor.png) no-repeat right top;
   background-size: 100% 100%;
   padding: 99px 36px 75px 34px;
 }
@@ -2908,6 +2995,10 @@ div.dropdiv p {
   position: relative;
 }
 
+.ya-ProjectName {
+  display: inline-block;
+}
+
 .download-button {
   display: grid;
   max-width: 130px;
@@ -2935,6 +3026,13 @@ div.dropdiv p {
     display: block;
 }
 
+.listItem:nth-child(2n + 0) {
+  background: rgba(200, 200, 200, 0.1);
+}
+/* for now */
+.ode-ProjectListButton{
+
+}
 .components-tree-filter {
   margin-top: 2px;
   margin-left: 7px;

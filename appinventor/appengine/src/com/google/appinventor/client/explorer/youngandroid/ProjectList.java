@@ -82,13 +82,22 @@ public class ProjectList extends Composite implements FolderManagerEventListener
     sortField = SortField.DATE_MODIFIED;
     sortOrder = SortOrder.DESCENDING;
 
-    initWidget(UI_BINDER.createAndBindUi(this));
+    bindIU();
+    setIsTrash(false);
     refreshSortIndicators();
     Ode.getInstance().getFolderManager().addFolderManagerEventListener(this);
 
     // It is important to listen to project manager events as soon as possible.
     Ode.getInstance().getProjectManager().addProjectManagerEventListener(this);
-    setIsTrash(false);
+  }
+
+  public void bindIU() {
+    ProjectListUiBinder UI_BINDER = GWT.create(ProjectListUiBinder.class);
+    initWidget(UI_BINDER.createAndBindUi(this));
+    Ode.getInstance().getFolderManager().addFolderManagerEventListener(this);
+
+    // It is important to listen to project manager events as soon as possible.
+    Ode.getInstance().getProjectManager().addProjectManagerEventListener(this);
   }
 
   @SuppressWarnings("unused")
@@ -232,6 +241,10 @@ public class ProjectList extends Composite implements FolderManagerEventListener
     }
   }
 
+  public ProjectListItem createProjectListItem(Project p) {
+   return new ProjectListItem(p) ;
+  }
+
   public boolean isSelected() {
     return selectAllCheckBox.getValue();
   }
@@ -265,7 +278,7 @@ public class ProjectList extends Composite implements FolderManagerEventListener
   }
 
   @UiHandler("selectAllCheckBox")
-  void toggleAllItemSelection(ClickEvent e) {
+  protected void toggleAllItemSelection(ClickEvent e) {
     folder.selectAll(selectAllCheckBox.getValue());
     fireSelectionChangeEvent();
   }

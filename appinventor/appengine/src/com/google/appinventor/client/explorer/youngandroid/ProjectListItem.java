@@ -70,6 +70,10 @@ public class ProjectListItem extends Composite {
     this.project = project;
   }
 
+  public void bindUI() {
+    initWidget(UI_BINDER.createAndBindUi(this));
+  }
+
   public void setSelectionChangeHandler(ProjectSelectionChangeHandler changeHandler) {
     this.changeHandler = changeHandler;
   }
@@ -98,7 +102,7 @@ public class ProjectListItem extends Composite {
 
   @SuppressWarnings("unused")
   @UiHandler("checkBox")
-  void toggleItemSelection(ClickEvent e) {
+  protected void toggleItemSelection(ClickEvent e) {
     setSelected(checkBox.getValue());
     changeHandler.onSelectionChange(checkBox.getValue());
   }
@@ -106,7 +110,7 @@ public class ProjectListItem extends Composite {
 
   @SuppressWarnings("unused")
   @UiHandler("nameLabel")
-  void itemClicked(ClickEvent e) {
+  protected void itemClicked(ClickEvent e) {
     Ode.getInstance().openYoungAndroidProjectInDesigner(project);
   }
 

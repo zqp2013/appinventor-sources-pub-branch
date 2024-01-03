@@ -75,7 +75,7 @@ public class ProjectFolder extends Composite {
   Icon expandButton;
 
   public ProjectFolder(String name, long dateCreated, long dateModified, ProjectFolder parent) {
-    initWidget(UI_BINDER.createAndBindUi(this));
+    bindUI();
     this.name = name;
     nameLabel.setText(name);
     this.dateCreated = dateCreated;
@@ -92,7 +92,7 @@ public class ProjectFolder extends Composite {
   }
 
   public ProjectFolder(JSONObject json, ProjectFolder parent) {
-    initWidget(UI_BINDER.createAndBindUi(this));
+    bindUI();
     this.parent = parent;
     name = json.get(FolderJSONKeys.NAME).isString().stringValue();
     nameLabel.setText(name);
@@ -114,9 +114,15 @@ public class ProjectFolder extends Composite {
 
     JSONArray childFoldersJson = json.get(FolderJSONKeys.CHILD_FOLDERS).isArray();
     for (int i = 0; i < childFoldersJson.size(); i++) {
-      addChildFolder(new ProjectFolder(childFoldersJson.get(i).isObject(), this));
+      addChildFolder(Ode.getUiFactory().createProjectFolder(childFoldersJson.get(i).isObject(),
+          this));
     }
     cachedJson = null;
+  }
+
+  public void bindUI() {
+    ProjectFolderUiBinder UI_BINDER = GWT.create(ProjectFolderUiBinder.class);
+    initWidget(UI_BINDER.createAndBindUi(this));
   }
 
   public void setSelectionChangeHandler(ProjectSelectionChangeHandler changeHandler) {
@@ -128,14 +134,16 @@ public class ProjectFolder extends Composite {
     return MESSAGES;
   }
 
+  @SuppressWarnings("unused")
   @UiHandler("checkBox")
-  void toggleFolderSelection(ClickEvent e) {
+  protected void toggleFolderSelection(ClickEvent e) {
     setSelected(checkBox.getValue());
     fireSelectionChangeEvent();
   }
 
+  @SuppressWarnings("unused")
   @UiHandler("expandButton")
-  void toggleExpandedState(ClickEvent e) {
+  protected void toggleExpandedState(ClickEvent e) {
     setSelected(false);
     isExpanded = !isExpanded;
     if (isExpanded) {
@@ -190,6 +198,10 @@ public class ProjectFolder extends Composite {
       childrenContainer.add(item);
       projectListItems.add(item);
     }
+  }
+
+  public ProjectListItem createProjectListItem(Project p) {
+    return new ProjectListItem(p) ;
   }
 
   public void removeProject(Project project) {

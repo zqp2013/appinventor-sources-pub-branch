@@ -61,6 +61,7 @@ import com.google.appinventor.client.editor.simple.components.MockVerticalArrang
 import com.google.appinventor.client.editor.simple.components.MockVideoPlayer;
 import com.google.appinventor.client.editor.simple.components.MockWebViewer;
 
+import com.google.appinventor.client.editor.youngandroid.YaFormEditor;
 import com.google.appinventor.shared.storage.StorageUtil;
 
 import com.google.common.collect.Maps;
@@ -250,6 +251,31 @@ public final class SimpleComponentDescriptor {
     COMPONENT_DATABASE = SimpleComponentDatabase.getInstance(editor.getProjectId());
   }
 
+  public SimpleComponentDescriptor(String name,
+                                   int version,
+                                   String versionName,
+                                   String dateBuilt,
+                                   String helpString,
+                                   String helpUrl,
+                                   String categoryDocUrlString,
+                                   boolean showOnPalette,
+                                   boolean nonVisible,
+                                   boolean external) {
+    // TODO: Remove editor and component database attributes
+    this.name = name;
+    this.editor = (YaFormEditor)Ode.getInstance().getCurrentFileEditor();
+    this.version = version;
+    this.versionName = versionName;
+    this.dateBuilt = dateBuilt;
+    this.helpString = helpString;
+    this.helpUrl = helpUrl;
+    this.categoryDocUrlString = categoryDocUrlString;
+    this.showOnPalette = showOnPalette;
+    this.nonVisible = nonVisible;
+    this.external = external;
+    COMPONENT_DATABASE = SimpleComponentDatabase.getInstance(editor.getProjectId());
+  }
+
   /**
    * Returns the display name of the component.
    *
@@ -406,6 +432,10 @@ public final class SimpleComponentDescriptor {
           COMPONENT_DATABASE.getComponentType(name), editor);
     }
     return cachedMockComponent;
+  }
+
+  public static void resetImageBundle() {
+    imagesInitialized = false;
   }
 
   public static Image getImageFromPath(String iconPath, String packageName, long projectId) {

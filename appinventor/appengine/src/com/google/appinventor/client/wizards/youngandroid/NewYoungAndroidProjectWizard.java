@@ -37,7 +37,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  *
  * @author markf@google.com (Mark Friedman)
  */
-public final class NewYoungAndroidProjectWizard extends NewProjectWizard {
+public class NewYoungAndroidProjectWizard extends NewProjectWizard {
   // UI element for project name
   private LabeledTextBox projectNameTextBox;
 
