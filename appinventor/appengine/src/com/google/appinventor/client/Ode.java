@@ -41,6 +41,12 @@ import com.google.appinventor.client.tracking.Tracking;
 import com.google.appinventor.client.utils.HTML5DragDrop;
 import com.google.appinventor.client.utils.PZAwarePositionCallback;
 import com.google.appinventor.client.widgets.ExpiredServiceOverlay;
+import com.google.appinventor.client.widgets.boxes.ColumnLayout.Column;
+import com.google.appinventor.client.widgets.boxes.ColumnLayout;
+import com.google.appinventor.client.boxes.MessagesOutputBox;
+import com.google.appinventor.client.boxes.OdeLogBox;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.appinventor.client.widgets.boxes.WorkAreaPanel;
 import com.google.appinventor.client.wizards.NewProjectWizard.NewProjectCommand;
 import com.google.appinventor.client.wizards.TemplateUploadWizard;
@@ -1022,6 +1028,25 @@ public class Ode implements EntryPoint {
 
     // Debugging Panel
     debuggingTabIndex = 3;
+    // add by 中文网
+    Button dismissButton = new Button(MESSAGES.dismissButton());
+    dismissButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        if (currentView == DESIGNER)
+          switchToDesignView();
+        else
+          switchToProjectsView();
+      }
+    });
+    ColumnLayout defaultLayout = new ColumnLayout("Default");
+    Column column = defaultLayout.addColumn(100);
+    column.add(MessagesOutputBox.class, 300, false);
+    column.add(OdeLogBox.class, 300, false);
+    final WorkAreaPanel debuggingTab = new WorkAreaPanel(new OdeBoxRegistry(), defaultLayout);
+    debuggingTab.add(dismissButton);
+    deckPanel.add(debuggingTab);
+
 
     RootPanel.get().add(mainPanel);
 

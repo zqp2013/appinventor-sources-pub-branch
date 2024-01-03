@@ -371,6 +371,17 @@ div.StatusPanel {
   flex-direction: row;
   width: 100%;
 }
+/*add by 中文网*/
+.ode-ProjectHeaderRowNoFlex {
+  background: url(../images/toolbarBG.png) repeat;
+  align-items: center;
+  grid-gap: 10px;
+
+  border: 1px;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+}
 
 .ode-ProjectHeaderLabel {
   text-indent: initial;

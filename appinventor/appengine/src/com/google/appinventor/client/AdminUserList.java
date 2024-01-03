@@ -167,7 +167,7 @@ public class AdminUserList extends Composite {
    *
    */
   private void setHeaderRow() {
-    table.getRowFormatter().setStyleName(0, "ode-ProjectHeaderRow");
+    table.getRowFormatter().setStyleName(0, "ode-ProjectHeaderRowNoFlex");
 
     HorizontalPanel emailHeader = new HorizontalPanel();
     final Label emailHeaderLabel = new Label("用户账号");
@@ -330,7 +330,7 @@ public class AdminUserList extends Composite {
       if (disp_remark == null)
         disp_remark = "";
       if (disp_remark.length() > 100)
-        disp_remark = disp_remark.substring(0, 100) + "...";
+        disp_remark = disp_remark.substring(0, 90) + "...";
       remarkLabel = new Label(disp_remark);
       nameLabel.addMouseDownHandler(new MouseDownHandler() {
           @Override
