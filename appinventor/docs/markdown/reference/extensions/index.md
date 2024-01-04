@@ -24,6 +24,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【数据库】TaifunSQLite 拓展：SQLite数据库引擎](http://puravidaapps.com/sqlite.php)
 1. [【UI】NotificatioStyle 拓展：个性化通知栏样式](https://github.com/jarlisson2/NotificationStyleAIX)
 1. [【UI】<img src="WordCloud/icon.png" style="width:16px;margin:-4px 5px 0 0">WordCloud 拓展：免费且酷炫的词云效果](word_cloud.html)
+1. [【UI】<img src="navbar/BubbleTabBar.png" style="width:16px;margin:-4px 5px 0 0">BubbleTabBar 拓展：打造个性化酷炫的底部导航条](navbar.html)
 1. [【动态创建】<img src="DynamicComponents/icon.png" style="width:16px;margin:-4px 5px 0 0">DynamicComponents 拓展：动态创建AI2组件对象](dynamic_components.html)
 1. [【OCR】App Inventor 2 OCR 图片文字识别全方案总结](../pro/ocr.html)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](../pro/ftp.html)
