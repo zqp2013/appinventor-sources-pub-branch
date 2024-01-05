@@ -11,201 +11,200 @@ description: App Inventor 2 使用Activity启动器组件
 
 ## 使用Activity启动器组件
 
-The Activity Starter component lets you combine applications by having one application start up other applications.  It's a key way to extend the capabilities of App Inventor by taking advantage of other  apps, whether they are apps created with App Inventor or whether they are “external apps” (i.e., apps that were not created with App Inventor).  These can be App Inventor apps created by you or others.   They can also be apps like Camera and Maps that are pre-installed on the device.  Or they be any app at all as long as you have the necessary information to provide to the activity starter.  You can also pass values to applications when you start them, as well as get back results from applications to use in further processing.   In addition, advanced developers who work with the Android SDK can create original apps that can start App Inventor apps, and be started by them.
+Activity Starter 组件允许你通过让一个应用程序启动其他应用程序来组合应用程序。 这是通过利用其他应用程序来扩展 App Inventor 功能的关键方法，无论它们是使用 App Inventor 创建的应用程序还是“外部应用程序”（即不是使用 App Inventor 创建的应用程序）。 这些可以是你或其他人创建的 App Inventor 应用程序。 它们也可以是设备上预安装的相机和地图等应用程序。 或者它们可以是任何应用程序，只要你有必要的信息提供给活动发起者即可。 你还可以在启动应用程序时将值传递给应用程序，以及从应用程序返回结果以用于进一步处理。 此外，使用Android SDK的高级开发人员可以创建可以启动App Inventor应用程序的原始应用程序，并由它们启动。
 
+ActivityStarter 组件文档的链接提供了有关 Activity Starter 组件属性、事件和方法的附加信息。
 
+要使用 Activity Starter 启动应用程序，你必须向 Android 操作系统提供某些控制信息。 你可以通过在调用 ActivityStarter.StartActivity 方法之前设置 Activity Starter 的各种属性来实现此目的。 本节给出了一些示例。
 
-A link to the ActivityStarter Component  documentation provides additional information about the Activity Starter Component  Properties, Events and Methods.
+## 启动其他 App Inventor 应用程序
 
+你可以使用 Activity Starter 启动另一个使用 App Inventor 创建的应用程序。 这与在多屏幕应用程序中使用 OpenAnotherScreen 类似，只不过现在我们处理的是两个单独的应用程序，而不是单个应用程序中的两个屏幕。 要打开其他应用程序，你需要知道其包名和类名。 如果你有 App Inventor 应用程序的源代码（aia 文件），你可以按如下方式找到这些名称：
 
+将源代码下载到你的计算机。
+使用文件资源管理器或解压缩实用程序，找到名为 youngandroidproject/project.properties 的文件。
+第一行以`main=`开头。 之后的所有内容都是包名和类名。
 
-To start an application with the Activity Starter, you must supply certain control information to the Android operating system. You do this by setting various properties of Activity Starter before calling the ActivityStarter.StartActivity method. This section gives some examples.
+例如，你可能会看到名为 HelloPurr 的应用程序的第一行。
 
-## Starting Other App Inventor Applications
-You can use the Activity Starter to start another app that was created with App Inventor.   This is similar to using OpenAnotherScreen in multiple screen applications, except that now we’re dealing with two separate applications rather than two screens within a single application.  To open the other application, you need to know its package name and class name. If you have the source code of the App Inventor app (aia file), you can find these names as follows:
-
-Download the source code to your computer.
-Using a file explorer or unzip utility, find the file called youngandroidproject/project.properties .
-The first line will start with " main= ". Everything after that is the package and class name.
-
-For example, here is a first line you might see for an App named HelloPurr.
-
-```
+```json
 main=appinventor.ai_ElsaArendelle.HelloPurr
 ```
 
-The ElsaArendelle part of the name comes from the App Inventor user account.
+名称中的 ElsaArendelle 部分来自 App Inventor 用户帐户。
 
 
-To start this app, you would use an activity starter component and set these properties:
+要启动此应用程序，你将使用活动启动器组件并设置以下属性：
 
-```
-ActivityPackage: appinventor.ai_ElsaArendelle.HelloPurr
+```json
+ActivityPackage：appinventor.ai_ElsaArendelle.HelloPurr
 
-ActivityClass: appinventor.ai_ElsaArendelle.HelloPurr.Screen
-```
-
-Invoking the activity starter's StartActivity method will start HelloPurr. When HelloPurr finishes (if it does), the original app's AfterActivity method will be invoked.
-
-
-If you are going to start another App Inventor app, make sure you use the correct package name. For example, if someone posts the source code (aia file) for an app, and you repackage that app, you'll end up with a different package name than the original.
-
-
-## Starting a Built-in Android Application from your App Inventor App
-Apps that come built in with the Android device can be invoked “explicitly” by using package names and class names, as above.   They can also be started “implicitly” by specifying an Action, in which case the Android operating system can figure out which actual application to start.  The information used to start an app is called an intent, and the process for determining which application to start is called intent resolution.  You can find information about intents in the Android system documentation on intents and intent filters.
-
-
-Some apps are designed to accept extra information when they are launched. For example, the Android Map activity can accept geographic information that specifies a location to display.   You must consult the documentation for the particular app to learn what this extra information is and how to specify it.  You can also find information on  Android  Common Intents for Google Android applications available on most devices.
-
-
-Generally, you specify the information by setting the ActivityStarter's properties just before the you launch the other app with StartActivity.  You can set these in App Inventor using the ActivityStarter properties DataType and DataURI.  There is also an Extras property that takes a list of keys and values and specifies the property values for the corresponding keys.  The particular values you have to set depend on the activity you want to launch.
-
-
-Here are some examples.
-
-
-        Warning: The values in these examples depend on the version of the Android operating system on the app user’s device.  If you are creating an app that will be used on many different devices, you can run the ActivityStarter.ResolveActivity command to test whether the activity you need is supported on the user’s device and generate an appropriate error message if it is not supported.
-
-### Start the Camera
-To launch the Android Camera app, use an activity starter with the IMAGE_CAPTURE Action property. You do not specify an ActivityPackage or an ActivityClass:
-
-
-Action: android.media.action.IMAGE_CAPTURE
-
-This is basically what the App Inventor Camera component does, although it is more convenient to use the Camera component than to use the ActivityStarter in building your app.
-
-### Launch a Web search
-To launch a Web search, use an ActivityStarter with the WEB_SEARCH action.  The user’s phone will display a menu asking what kind of search to perform:
-
-```
-Action: android.intent.action.WEB_SEARCH
+ActivityClass：appinventor.ai_ElsaArendelle.HelloPurr.Screen
 ```
 
-Open the browser to a designated Web page
-Use these ActivityStarter with the VIEW action and a Data Uri  to open the phone’s browser to a designated web page, for example,
+调用活动启动器的 StartActivity 方法将启动 HelloPurr。 当 HelloPurr 完成时（如果完成），将调用原始应用程序的 AfterActivity 方法。
 
+如果你要启动另一个 App Inventor 应用程序，请确保使用正确的包名称。 例如，如果有人发布某个应用程序的源代码（aia 文件），并且你重新打包该应用程序，则最终会得到与原始包名称不同的包名称。
+
+## 从 App Inventor 应用程序启动内置 Android 应用程序
+
+Android 设备内置的应用程序可以通过使用包名称和类名称“显式”调用，如上所述。 它们还可以通过指定操作来“隐式”启动，在这种情况下，Android 操作系统可以确定要启动哪个实际应用程序。 用于启动应用程序的信息称为意图，确定启动哪个应用程序的过程称为意图解析。 你可以在有关意图和意图过滤器的 Android 系统文档中找到有关意图的信息。
+
+有些应用程序设计为在启动时接受额外信息。 例如，Android Map 活动可以接受指定要显示的位置的地理信息。 你必须查阅特定应用程序的文档，以了解这些额外信息是什么以及如何指定它。 你还可以找到有关大多数设备上可用的 Google Android 应用程序的 Android Common Intents 的信息。
+
+通常，你可以在使用 StartActivity 启动其他应用程序之前通过设置 ActivityStarter 的属性来指定信息。 你可以使用 ActivityStarter 属性 DataType 和 DataURI 在 App Inventor 中设置这些。 还有一个 Extras 属性，它采用键和值的列表并指定相应键的属性值。 你必须设置的特定值取决于你要启动的活动。
+
+这里有些例子。
+
+警告：这些示例中的值取决于应用程序用户设备上的 Android 操作系统版本。 如果你要创建将在许多不同设备上使用的应用程序，则可以运行 ActivityStarter.ResolveActivity 命令来测试用户设备是否支持你所需的 Activity，如果不支持，则生成相应的错误消息。
+
+### 启动相机
+
+要启动 Android 相机应用程序，请使用具有 IMAGE_CAPTURE Action 属性的活动启动器。 你没有指定 ActivityPackage 或 ActivityClass：
+
+```json
+Action：android.media.action.IMAGE_CAPTURE
 ```
-Action: android.intent.action.VIEW
-DataUri: http://mit.edu
+
+这基本上就是 App Inventor Camera 组件的作用，尽管在构建应用程序时使用 Camera 组件比使用 ActivityStarter 更方便。
+
+### 启动网络搜索
+
+要启动 Web 搜索，请使用带有 WEB_SEARCH 操作的 ActivityStarter。 用户的手机将显示一个菜单，询问要执行哪种搜索：
+
+```json
+Action：android.intent.action.WEB_SEARCH
 ```
 
-### Start the mailer with pre-addressed message
+打开浏览器到指定网页：将这些 ActivityStarter 与 VIEW 操作和数据 Uri 一起使用，将手机浏览器打开到指定的网页，例如，
 
-January 26, 2020: This example was updated to accommodate a change in android.   The email  sending code shown here will work in the next app inventor release but does not work  yet.
-
-
-
-To start the Android mailer application, use the SEND action and use the EmailAddressList property to specify a list of email addresses.  Use the android.intent.extra.SUBJECT property and the android.intent.extra.TEXT properties to specify the subject, and the body of the message. In each case, starting the activity will bring up the Android mailer, and you can complete the message and then press "Send".
-
-
-For instance, if you specify:
-
-```
-Action: android.intent.action.SEND
+```json
+Action：android.intent.action.VIEW
+DataUri：https://www.fun123.cn
 ```
 
-then starting the activity will bring up the mailer.
+### 使用预先指定的消息启动邮件程序
 
+2020 年 1 月 26 日：此示例已更新以适应 android 中的更改。 此处显示的电子邮件发送代码将在下一个应用程序发明者版本中运行，但尚未运行。
 
-You can also specify the subject line and the message text with the aid of android.extra.SUBJECT and android.extra.TEXT.  You can specify email addresses for recipients with the list android.intent.extra.EMAIL.  For example, to send email to Santa@northpole.com, you could use:
+要启动 Android 邮件程序应用程序，请使用 SEND 操作并使用 EmailAddressList 属性指定电子邮件地址列表。 使用 android.intent.extra.SUBJECT 属性和 android.intent.extra.TEXT 属性指定主题和消息正文。 在每种情况下，启动活动都会弹出 Android 邮件程序，你可以完成消息，然后按“发送”。
 
+例如，如果你指定：
 
+```json
+Action：android.intent.action.SEND
+```
+
+然后开始活动将显示邮件程序。
+
+你还可以借助 android.extra.SUBJECT 和 android.extra.TEXT 指定主题行和消息文本。 你可以使用列表 android.intent.extra.EMAIL 指定收件人的电子邮件地址。 例如，要将电子邮件发送到 Santa@northpole.com，你可以使用：
 
 ![](images/activitystarter-image1.png)
 
-Observe how EXTRAS is a list, where each element is itself a 2-item list (a key, value pair).  For the email addresses, the value is a list of addresses (or a list of 1-address is there is only a single address).
+观察 EXTRAS 是如何成为一个列表的，其中每个元素本身就是一个 2 项列表（键、值对）。 对于电子邮件地址，该值是地址列表（如果只有一个地址，则为 1 个地址的列表）。
 
+### 显示某个位置的地图
 
-### Show a map for a location
-If you know a latitude and a longitude, you can use the VIEW action to show a map of the area:
+如果你知道纬度和经度，则可以使用 VIEW 操作来显示该区域的地图：
 
-```
-Action: android.intent.action.VIEW
-DataUri: geo:37.8,-122.23?z=10
-```
-
-The DataURI here specifies the latitude and longitude and also a zoom value of 10 (z=10).  Zoom value is optional and ranges from 1 (the entire Earth) to 23.
-
-
-If you know a zip code of a location, you can set the activity starter properties as follows:
-
-```
-Action: android.intent.action.VIEW
-DataUri: geo:0,0?q=94043
+```json
+Action：android.intent.action.VIEW
+DataUri：地理：37.8，-122.23?z=10
 ```
 
-If you have a street address, you can use a DataUri that encodes the address with a scheme called URL encoding :
+这里的 DataURI 指定纬度和经度以及缩放值 10 (z=10)。 缩放值是可选的，范围从 1（整个地球）到 23。
 
+如果你知道某个位置的邮政编码，则可以按如下方式设置活动启动器属性：
+
+```json
+Action：android.intent.action.VIEW
+DataUri：地理：0,0?q=94043
 ```
-Action: android.intent.action.VIEW
-DataUri: geo:0,0?q=77+Massachusetts+Avenue%2C+Cambridge%2C+MA
+
+如果你有街道地址，则可以使用 DataUri 通过称为 URL 编码的方案对地址进行编码：
+
+```json
+Action：android.intent.action.VIEW
+DataUri：地理：0,0?q=77+马萨诸塞州+大道%2C+剑桥%2C+MA
 ```
 
-Generally in URL encoding you have to replace spaces (with  %20 or plus sign ) and punctuation marks, such as comma ( %2C ) and period ( %2E ).
+通常，在 URL 编码中，你必须替换空格（用 %20 或加号）和标点符号，例如逗号 (%2C) 和句点 (%2E)。
 
-### Play a YouTube video
-You'll need to know the URI of the YouTube video. Then set the Activity Starter action to VIEW, and set the  Data URI to vnd.youtube followed by the YouTube URI of the video to be played, for example
+### 播放在线视频
 
+你需要知道在线视频的 URI。 然后将 Activity Starter 操作设置为 VIEW，并将数据 URI 设置为视频URI，例如
 
-Action: android.intent.action.VIEW
-DataUri: vnd.youtube:nAPk9ycCbfc
-### Select a contact
-To choose a contact, use an ActivityStarter with the PICK action. The contact will be returned in the form of uri and stored in the Activity Starter’s ResultUri property
+```json
+Action：android.intent.action.VIEW
+DataUri：xxx/xxx
+```
 
+### 选择联系人
 
-Action: android.intent.action.PICK
-## Starting other external apps
-You can use the Activity Starter to start any activity at all.  You’ll need to  know the package name and class name, or the appropriate intent.  Some third-party application developers document this information. For hints on starting external apps, see the Android API documentation or search the Android developer forums.
+要选择联系人，请使用带有 PICK 操作的 ActivityStarter。 联系人将以 uri 的形式返回并存储在 Activity Starter 的 ResultUri 属性中
 
+```json
+Action：android.intent.action.PICK
+```
 
-## Discovering how to set the ActivityStarter properties
-If you want to start an app and you you don't have the source code or documentation, you might still be able figure out the package name and class name (and sometimes the intent) by launching the app and inspecting the Android system log.
-For example, if you use the YouTube application to play a video, you'll see in the log:
+## 启动其他外部应用程序
+
+你可以使用活动启动器来启动任何活动。 你需要知道包名称和类名称，或适当的意图。 一些第三方应用程序开发人员记录了此信息。 有关启动外部应用程序的提示，请参阅 Android API 文档或搜索 Android 开发人员论坛。
+
+## 了解如何设置 ActivityStarter 属性
+如果你想启动一个应用程序，但没有源代码或文档，你仍然可以通过启动应用程序并检查 Android 系统日志来找出包名称和类名称（有时还包括意图）。
+例如，如果你使用 YouTube 应用程序播放视频，你将在日志中看到：
+
+```log
 I/ActivityManager(   86): Starting activity: Intent { act=android.intent.action.VIEW dat=vnd.youtube:nAPk9ycCbfc cmp=com.google.android.youtube/.PlayerActivity }
-If you can find the "cmp=" string, then the ActivityPackage is the part before the slash, e.g.,  com.google.android.youtube.  The ActivityClass is is the entire "cmp=" part, without the slash character, e.g., com.google.android.youtube.PlayerActivity.   There may also in general be "dat=" information that should be specify as the DataUri property.
-Example: Starting  an external app to pick files
-AndExplorer from Lysesoft is an application that lets you pick files from your phone’s file system. You can use AndExplorer with an activity starter to add a file picking capability to your application. If you have AndExplorer installed on your phone, you can pick a file from your App Inventor app by setting the following Activity Starter properties:
-Action: android.intent.action.PICK
-dataType: vnd.android.cursor.dir/lysesoft.andexplorer.file
-dataURI: file:///sdcard
+```
 
-When AndExplorer runs, it will display lists of files and let you pick one.  When AndExplorer finishes and ActivityStarter.AfterActivity is called, the resulting file name will be available as the value of ActivityStarter’s  ResultUri property.  In addition, ResultType will give the type of the file, for example, image/jpeg or audio/mpeg. Using this information, you can build an App Inventor app that lets you pick a file from the file system and displays the image if you’d picked a jpeg file, or plays a music track if you picked an mpeg file.
+如果你可以找到“cmp=”字符串，则 ActivityPackage 就是斜杠之前的部分，例如 com.google.android.youtube。 ActivityClass 是整个“cmp=”部分，没有斜杠字符，例如 com.google.android.youtube.PlayerActivity。 通常还可能有应指定为 DataUri 属性的“dat=”信息。
 
+示例：启动外部应用程序来选择文件
 
-This example also illustrates how the external app can return values to the App Inventor app. For more information, see  “Returning results from external apps to App Inventor apps” below.
+Lysesoft 的 AndExplorer 是一款可让你从手机文件系统中选取文件的应用程序。 你可以将 AndExplorer 与活动启动器一起使用，以向你的应用程序添加文件选取功能。 如果你的手机上安装了 AndExplorer，则可以通过设置以下 Activity Starter 属性从 App Inventor 应用程序中选择文件：
 
+```json
+Action：android.intent.action.PICK
+数据类型：vnd.android.cursor.dir/lysesoft.andexplorer.file
+dataURI：文件:///sdcard
+```
 
-### Passing values between applications
-In the general situation, an App A can start an App B.  App A can also start App B and pass it a startup value, and App B can return a result to App A when it terminates.   The details of how this is accomplished depend on the specific apps, and on whether the App Inventor app is the app that is doing the starting, or the app being started, or both.  See the appendix below for hints on creating external apps that interact with App Inventor apps.
+当 AndExplorer 运行时，它将显示文件列表并让你选择一个。 当 AndExplorer 完成并且调用 ActivityStarter.AfterActivity 时，生成的文件名将作为 ActivityStarter 的 ResultUri 属性的值提供。 另外，ResultType将给出文件的类型，例如image/jpeg或audio/mpeg。 使用此信息，你可以构建一个 App Inventor 应用程序，该应用程序允许你从文件系统中选择一个文件，并在选择 jpeg 文件时显示图像，或者在选择 mpeg 文件时播放音乐曲目。
 
-### Using the activity starter with two App Inventor Apps
-App Inventor screens are activities, so you can use the Activity Starter to start other App Inventor apps.   The Hello Purr example at the top of this page shows how to do this. This is basically how App Inventor’s multiple screen apps work.  
+此示例还说明了外部应用程序如何将值返回到 App Inventor 应用程序。 有关更多信息，请参阅下面的“将结果从外部应用程序返回到 App Inventor 应用程序”。
 
-To pass a startup text value to the App Inventor app you are starting with the Activity Starter, ise EXTRAS to set the KEY property to the string APP_INVENTOR_START and set the VALUE Property to the text you want to pass.  The other app can then retrieve this value with Get Start Plain Text.   To return a value from the other app, use Close Screen With Plain Text. 
+### 在应用程序之间传递值
 
+一般情况下，App A 可以启动 App B。App A 也可以启动 App B 并向其传递启动值，App B 终止时可以将结果返回给 App A。 如何完成此操作的详细信息取决于特定的应用程序，以及 App Inventor 应用程序是正在启动的应用程序，还是正在启动的应用程序，或两者兼而有之。 请参阅下面的附录，了解有关创建与 App Inventor 应用程序交互的外部应用程序的提示。
 
-For the case of two App Inventor apps, it’s simpler to design the combination as a single multiple screen app, rather than create two separate apps that communicate using the Activity Starter.   But one situation where you might want to have separate apps is where two people are loosely collaborating on a project and want to work separately.  Remember that in order to run the combined app, users must have both applications installed on their devices.
+### 将活动启动器与两个 App Inventor 应用程序一起使用
 
-### Is the application available on the device?
+App Inventor 屏幕是活动，因此你可以使用活动启动器来启动其他 App Inventor 应用程序。 本页顶部的 Hello Purr 示例展示了如何执行此操作。 这基本上就是 App Inventor 的多屏幕应用程序的工作原理。
 
-If your app tries to start other apps, you'll want to check that those other apps are available on your user's phone before trying to start them. You can determine this using the ActivityStarter.ResolveActivity , which returns the name of the Activity that would be started by ActivityStarter.StartActivity, given the package or other information you've provided. If this name is blank, then the required application is not present, and you can make your app alert the user.
+要将启动文本值传递到你使用 Activity Starter 启动的 App Inventor 应用程序，请使用 EXTRAS 将 KEY 属性设置为字符串 APP_INVENTOR_START，并将 VALUE 属性设置为要传递的文本。 然后，其他应用程序可以使用 Get Start Plain Text 检索此值。 要从其他应用程序返回值，请使用“使用纯文本关闭屏幕”。
 
+对于两个 App Inventor 应用程序的情况，将组合设计为单个多屏幕应用程序更简单，而不是创建两个使用 Activity Starter 进行通信的单独应用程序。 但你可能希望拥有单独的应用程序的一种情况是，两个人在一个项目上松散地协作并希望单独工作。 请记住，为了运行组合应用程序，用户必须在其设备上安装这两个应用程序。
 
-## Appendix:  Technical information  for Android developers who are designing external apps for use with  App Inventor apps
+### 该应用程序在设备上可用吗？
 
-If you build Android apps using the Android SDK, you can design external apps that start App Inventor apps and you can also design apps can be started by App Inventor apps.  You can also arrange to pass values between the App Inventor apps and the external apps.
-
-**Returning results from external apps to App Inventor apps**
-The AndExplorer example at https://appinventor.mit.edu/explore/content/using-activity-starter.html using Classic App inventor shows how  external apps can make results available as properties of the Activity Starter when the app terminates.    In the case of AndExplorer, the properties were ResultType and ResultUri.   To know this information about AndExplorer, you’d need to find documentation for AndExplorer or see examples of Android code that uses it.
+如果你的应用尝试启动其他应用，你需要在尝试启动之前检查这些其他应用在用户的手机上是否可用。 你可以使用 ActivityStarter.ResolveActivity 来确定这一点，根据你提供的包或其他信息，它返回将由 ActivityStarter.StartActivity 启动的活动的名称。 如果此名称为空，则所需的应用程序不存在，你可以让你的应用程序提醒用户。
 
 
-In general when your external app finishes and returns an intent to the App Inventor app that started it, the value of Intent.type() will be available as the ActivityStarter.ResultType property.  Similarly, the will be the value of Intent.getDataString() will be available as the  ResultUri property.
+## 附录：为设计与 App Inventor 应用程序一起使用的外部应用程序的 Android 开发人员提供的技术信息
 
+如果你使用 Android SDK 构建 Android 应用程序，则可以设计启动 App Inventor 应用程序的外部应用程序，也可以设计可以由 App Inventor 应用程序启动的应用程序。 你还可以安排在 App Inventor 应用程序和外部应用程序之间传递值。
 
-You can also pass back other information in the intent.   Choose a name (Java String) for the result and have the App Inventor apps set that name to be the ResultName property of the activity starter.  To return a desired value from your external app in an intent, use Intent.putextra(chosenResultName, desiredValue).   When your external app finishes, the App Inventor ActivityStarter.AfterActivity() event will be signalled, and the result parameter to event handler will be the desired value.  That same desired value will also be available as the Activity Starter’s Result property.  The desired value must be a string, and you can return only one value using this method.
+**将结果从外部应用程序返回到 App Inventor 应用程序**
+https://appinventor.mit.edu/explore/content/using-activity-starter.html 上的 AndExplorer 示例使用经典应用程序inventor，展示了外部应用程序如何在应用程序终止时将结果作为活动启动器的属性提供。 对于 AndExplorer，属性是 ResultType 和 ResultUri。 要了解有关 AndExplorer 的信息，你需要查找 AndExplorer 的文档或查看使用它的 Android 代码示例。
 
-**Starting App Inventor apps from external apps**
-To start an App Inventor activity from an external app, use the Java Android methods startActitvity() or startActivityForResult().  To pass a startup value, include that value in the intent, by invoking the method  Intent.putExtra(tag, value) where tag is the string APP_INVENTOR_START.   The App Inventor app being started can then access the corresponding value with the screen’s Get Start Plain Start Text method.
+一般来说，当你的外部应用程序完成并向启动它的 App Inventor 应用程序返回意图时，Intent.type() 的值将作为 ActivityStarter.ResultType 属性提供。 同样，Intent.getDataString() 的值将作为 ResultUri 属性提供。
 
-**Returning results from App Inventor apps to external apps**
-When the App Inventor app that you started finishes (more technically, when the current screen closes with CloseScreen), it will signal onActivityResult() to the external app that started it.   The App Inventor app can pass back a text string value by using Close Screen With Plain Text.  That value will be available to the external app through the returned Intent as Intent.getStringExtra(APP_INVENTOR_RESULT).
+你还可以在意图中传回其他信息。 为结果选择一个名称（Java 字符串），并让 App Inventor 应用程序将该名称设置为活动启动器的 ResultName 属性。 要在 Intent 中从外部应用程序返回所需值，请使用 Intent.putextra(chosenResultName,desiredValue)。 当你的外部应用程序完成时，将发出 App Inventor ActivityStarter.AfterActivity() 事件信号，并且事件处理程序的结果参数将是所需的值。 同样的期望值也可用作活动启动器的结果属性。 所需的值必须是字符串，并且使用此方法只能返回一个值。
+
+**从外部应用程序启动 App Inventor 应用程序**
+要从外部应用程序启动 App Inventor 活动，请使用 Java Android 方法 startActivity() 或 startActivityForResult()。 要传递启动值，请通过调用方法 Intent.putExtra(tag, value) 将该值包含在意图中，其中 tag 是字符串 APP_INVENTOR_START。 然后，正在启动的 App Inventor 应用程序可以使用屏幕的 Get Start Plain Start Text 方法访问相应的值。
+
+**将结果从 App Inventor 应用程序返回到外部应用程序**
+当你启动的 App Inventor 应用程序完成时（更技术地说，当当前屏幕通过 CloseScreen 关闭时），它将向启动它的外部应用程序发出 onActivityResult() 信号。 App Inventor 应用程序可以使用“使用纯文本关闭屏幕”传回文本字符串值。 该值将通过返回的 Intent 作为 Intent.getStringExtra(APP_INVENTOR_RESULT) 提供给外部应用程序。
