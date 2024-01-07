@@ -330,7 +330,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--<script src="/static/js/jquery-3.3.1.slim.min.js"></script>-->
+<script src="/static/js/jquery-3.3.1.min.js"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
