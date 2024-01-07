@@ -33,6 +33,83 @@
         --tw-gradient-to: #ef4444 !important;
         font-size: 1.7rem!important;
     }
+    .countdown {
+        position: absolute;
+        height: 40px;
+        margin: 25px 0 0 41px;
+        display: inline-block;
+        background-color: #fff9f1;
+        border-radius: 4px;
+        border: 1px solid #f5debf;
+        line-height: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 16px;
+        color:#fc5531;
+        font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif;
+    }
+
+    .card-item {
+        float:left;
+        width: 102px;
+        height: 66px;
+        border-radius: 8px;
+        border: 2px solid #fae8d0;
+        background-color: #fff;
+        position: relative;
+        text-align: center;
+        margin-right: 8px;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        cursor: pointer;
+        margin-bottom: 24px;
+    }
+    .card-item:last-child {margin-right:0px;}
+    .card-item.active {
+        border-color: #b87100;
+        background-color: #fff9f1;
+    }
+    .card-item.active:after {
+        content: " ";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: -2px;
+        bottom: -2px;
+        z-index: 2;
+        background: url(/static/images/card-active-icon.png) 50% no-repeat;
+        background-size: contain;
+    }
+    .card-tips {
+        position: absolute;
+        padding: 0 4px;
+        height: 24px;
+        line-height: 24px;
+        /*background: -webkit-gradient(linear,left top,right top,from(#fc5531),to(#fc1944));
+        background: linear-gradient(90deg,#fc5531,#fc1944);
+        border-radius: 6px 0 8px 0;
+        color: #fff;
+        top: -2px;*/
+        left: -2px;
+    }
+    .t1 {
+        font-size: 16px;
+        height: 22px;
+        line-height: 22px;
+        color: #222226;
+        font-weight: 700;
+        margin: 4px 0 2px;
+        position: relative;
+        z-index: 2;
+    }
+    .t2 {
+        font-size: 12px;
+        height: 32px;
+        line-height: 32px;
+        color: #b87100;
+        position: relative;
+        z-index: 2;
+    }
     </style>
 </head>
 
@@ -75,7 +152,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <form action="/pay" method="post">
                                             <input type="hidden" name="subject" value="App Inventor 2 中文网 VIP 会员">
                                             <div class="form-group px-5 pt-5">
-                                                <label class="label-bold">手机号：</label>
+                                                <label class="label-bold">开通/续期手机号：</label>
                                                 <div class="float-right">
                                                     <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
                                                 </div>
@@ -95,27 +172,38 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <label class="label-bold mb-1">开通/续期时长：</label>
-                                                
-    <input id="month" name="period" value="1" required type="radio" 
-    onclick="javascript:document.getElementById('amount').value=29.98;document.getElementById('amount_label').innerHTML=29.98;document.getElementById('perday').innerHTML=(29.98/30).toFixed(2);document.getElementById('delprc').innerHTML=39;">
-    <label for="month">1个月</label>&nbsp;&nbsp;
+                                                <input type="hidden" id="period" name="period" value="6"/>
 
-    <input id="halfyear" name="period" value="6" required type="radio" checked="true"
-        onclick="javascript:document.getElementById('amount').value=89.98;document.getElementById('amount_label').innerHTML=89.98;document.getElementById('perday').innerHTML=(89.98/180).toFixed(2);document.getElementById('delprc').innerHTML=199;">
-    <label for="halfyear">6个月</label>&nbsp;&nbsp;
-    
-    <input id="year" name="period" value="12" required type="radio"
-        onclick="javascript:document.getElementById('amount').value=169.98;document.getElementById('amount_label').innerHTML=169.98;document.getElementById('perday').innerHTML=(169.98/365).toFixed(2);document.getElementById('delprc').innerHTML=299;">
-    <label for="year">1年</label>
+                                                <div class="card-item" prop-period="1" prop-oprice="39" prop-price="29.98">
+                                                    <p class="t1">VIP月卡</p>
+                                                    <p class="t2">¥ <span>0.99</span>/天</p>
+                                                </div>
+                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="59.98">
+                                                    <p class="t1">VIP季卡</p>
+                                                    <p class="t2">¥ <span>0.66</span>/天</p>
+                                                </div>
+                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98">
+                                                    <span class="card-tips"><img src="/static/images/fire.png" alt="img" width="16" height="16"/></span>
+                                                    <p class="t1">VIP半年卡</p>
+                                                    <p class="t2">¥ <span>0.49</span>/天</p>
+                                                </div>
+                                                <div class="card-item" prop-period="12" prop-oprice="299" prop-price="169.98">
+                                                    <p class="t1">VIP年卡</p>
+                                                    <p class="t2">¥ <span>0.46</span>/天</p>
+                                                </div>
+
                                             </div>
 
                                             <div class="form-group px-5">
                                                 <label class="label-bold mb-1">支付金额： 
                                                     <div>
-                                                        <h1 style="float:left;">¥ <span style="color:green" id="amount_label">89.98</span></h1>
+                                                        <h1 style="float:left;">¥ <span style="color:#fc5531" id="amount_label">89.98</span></h1>
                                                         <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">199</span></h3></del>
-                                                        <span style="position: absolute;color:#FF8E21;float:left;margin-top: 36px;margin-left: 20px;">低至 <span id="perday">0.5</span> 元/天！</span>
+                                                        <!--<span style="position: absolute;color:#FF8E21;float:left;margin-top: 36px;margin-left: 20px;">低至 <span id="perday">0.5</span> 元/天！</span>-->
+                                                        <div class="countdown">
+                                                            <img src="/static/images/clock.svg" alt="img" width="16" height="16" style="margin: -3px 3px 0 2px;"/>
+                                                            优惠倒计时 <span id="countdown-text">00:00:00</span>
+                                                        </div>
                                                     </div>
                                                 </label>
                                                 <input type="hidden" id="amount" name="amount" value="89.98">
@@ -207,6 +295,34 @@ var _hmt = _hmt || [];
   hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
+
+    //倒计时
+    var countdown = $('#countdown-text');
+    var initTime = 5 * 60 * 1000; // 倒计时为5分钟 (5*60*1000)
+    var targetTime = new Date().getTime() + initTime;
+    setInterval(function() {
+        var currentTime = new Date().getTime();
+        if (currentTime >= targetTime) {
+            targetTime += initTime;
+        }
+        var timeRemaining = targetTime - currentTime; // 计算剩余时间
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        var mills = Math.floor((timeRemaining % (1000 * 60)) / 100 % 10);
+        countdown.text('0'+minutes+':'+seconds+':'+mills); // 更新显示剩余时间的文本内容
+    }, 100);
+
+    //价格计算
+    $('.card-item').click(function(){
+	  $('.card-item').not(this).removeClass('active');
+      $(this).addClass('active');
+
+      $('#amount').val($(this).attr('prop-price'));
+      $('#amount_label').html($(this).attr('prop-price'));
+      $('#period').val($(this).attr('prop-period'));
+      $('#delprc').html($(this).attr('prop-oprice'));
+    });
+
 })();
 $(document).bind("contextmenu",function(){return false;});
 $(document).bind("selectstart",function(){return false;});
