@@ -110,6 +110,34 @@
         position: relative;
         z-index: 2;
     }
+    .t2 span {font-weight:bold;}
+
+
+    .buyinfo {
+        width: 260px;
+        height: 80px;
+        position: absolute;
+        right: 10px;
+        top:55px;
+        overflow: hidden;
+        color:#999aaa;
+        z-index:999;
+    }
+    .buyinfo ul {
+        position: absolute;
+    }
+    .buyinfo li {
+        list-style: none;
+        width:100%;
+        height:30px;
+        border-radius:20px;
+        line-height:30px;
+        padding:0 4px;
+        margin-bottom:5px;
+    }
+    .buyinfo li span {
+        color:#b87100;
+    }
     </style>
 </head>
 
@@ -123,6 +151,21 @@
                 <a href="https://www.fun123.cn/reference/info/vip.html?f=pay" target="_blank" style="color:#9c6521;">查看 VIP 特权</a>
             </span>
         </div>
+    </div>
+
+    <div class="buyinfo">
+        <ul>
+            <li>18********7 <span>刚刚</span>买了VIP季卡</li>
+            <li>13********5 <span>刚刚</span>买了VIP季卡</li>
+            <li>15********1 <span>刚刚</span>买了VIP月卡</li>
+            <li>19********0 <span>刚刚</span>买了VIP月卡</li>
+            <li>13********4 <span>刚刚</span>买了VIP月卡</li>
+            <li>16********7 <span>刚刚</span>买了VIP季卡</li>
+            <li>13********8 <span>刚刚</span>买了VIP季卡</li>
+            <li>15********9 <span>刚刚</span>买了VIP月卡</li>
+            <li>18********2 <span>刚刚</span>买了VIP半年卡</li>
+            <li>13********4 <span>刚刚</span>买了VIP月卡</li>
+        </ul>
     </div>
 
 
@@ -287,7 +330,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             </div>
         </div>
     </div>
-<script src="/static/js/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--<script src="/static/js/jquery-3.3.1.slim.min.js"></script>-->
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -322,6 +365,28 @@ var _hmt = _hmt || [];
       $('#period').val($(this).attr('prop-period'));
       $('#delprc').html($(this).attr('prop-oprice'));
     });
+
+    //滚动信息
+    play();
+    var id;
+    function play() {
+        id = setInterval(function() {
+            $(".buyinfo ul").animate({
+                "top": "-35px"
+            }, 1000, function() {
+                $(this).append($("li:first"));
+                $(this).css("top", "0");
+            });
+        }, 4500);
+    }
+    $(".buyinfo").hover(
+        function() {
+            clearInterval(id);
+        },
+        function() {
+            play();
+        }
+    )
 
 })();
 $(document).bind("contextmenu",function(){return false;});
