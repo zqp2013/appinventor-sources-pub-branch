@@ -35,6 +35,10 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
+            <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/guide.pdf?f=login" target="_blank">新手必读！</a>
+            </span>
+            &nbsp;
             <img src="/static/images/vip.png" width="14" height="14" style="margin-top: -4px;" />
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/vip.html?f=login" target="_blank" style="color:#9c6521;">开通正式账号</a>

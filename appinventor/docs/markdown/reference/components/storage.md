@@ -647,6 +647,9 @@ FileTools demo程序下载：
 {:id="TinyDB.ClearTag" class="method"} <i/> 清除标签数据(*标签*{:.text})
 : 清除指定 `标签`{:.text.block} 下的数据。
 
+{:id="TinyDB.GetEntries" class="method returns dictionary"} <i/> 获取数据()
+: 以字典形式获取所有数据。
+
 {:id="TinyDB.GetTags" class="method returns any"} <i/> 获取标签列表()
 : 返回数据存储中所有标签的列表（是一个列表对象）。
 
