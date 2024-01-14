@@ -266,8 +266,8 @@ public class TopToolbar extends Composite {
           new NewAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTPROJECT, MESSAGES.importProjectMenuItem(),
           new ImportProjectAction()));
-      //fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTTEMPLATE, MESSAGES.importTemplateButton(),
-      //    new ImportTemplateAction()));
+      fileItems.add(new DropDownItem(WIDGET_NAME_IMPORTTEMPLATE, MESSAGES.importTemplateButton(),
+          new ImportTemplateAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_DELETE, MESSAGES.deleteProjectButton(),
           new DeleteAction()));
       fileItems.add(new DropDownItem(WIDGET_NAME_DELETE_TRASH, MESSAGES.deleteFromTrashButton(),
@@ -415,6 +415,7 @@ public class TopToolbar extends Composite {
     // Add by 中文网
     helpItems.add(new DropDownItem("参考文档", "<i class=\"mdi mdi-bookmark-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;参考文档", new WindowOpenAction("https://www.fun123.cn/reference/?f=help")));
     helpItems.add(new DropDownItem("拓展文档", "<i class=\"mdi mdi-puzzle-plus-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
+    helpItems.add(new DropDownItem("IoT 文档", "<i class=\"mdi mdi-bluetooth-audio\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;IoT 文档", new WindowOpenAction("https://www.fun123.cn/reference/iot/?f=help")));
 
     String tutorialsUrl = config.getTutorialsUrl();
     if (!Strings.isNullOrEmpty(tutorialsUrl)) {

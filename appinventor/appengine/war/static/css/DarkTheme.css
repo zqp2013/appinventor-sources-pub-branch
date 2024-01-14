@@ -67,7 +67,9 @@
 
 
 
-
+.colorThemeTip {
+  float:left;
+}
 .colorTheme {
   height: 11px;
   float: left;
@@ -86,7 +88,7 @@
   background-color: #8FC202;
 }
 .lightgreen {
-  background-color: #8FC202;
+  background-color: #8EBF4C;
 }
 .red {
   background-color: red;
@@ -110,5 +112,10 @@
 }
 .switchDark:hover{
   opacity: 1;
+}
+
+/*隐私策略和使用条款*/
+.tosLink {
+  padding-right: 125px;
 }
 

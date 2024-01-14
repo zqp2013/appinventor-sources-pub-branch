@@ -207,7 +207,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             </div>
             <div class="records display-none md-display-flex footer-links">
                 <span class="record-item display-flex align-items-center">
-                    &copy; 2023&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;&nbsp;
+                    &copy; <script>document.write(new Date().getFullYear());</script>&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;&nbsp;
                 </span>                
                 <span class="record-item display-flex align-items-center">
                     <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2020034476号-2</a>

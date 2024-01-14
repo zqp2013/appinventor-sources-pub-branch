@@ -10,6 +10,7 @@
   <ui:with field="messages" type="com.google.appinventor.client.OdeMessages" />
   <g:FlowPanel styleName="ode-StatusPanel" ui:field="footer">
     <g:HTMLPanel>
+        <g:Anchor text="主题：" styleName="colorThemeTip"/>
         <li ui:field="classic" class="colorTheme classic" title="经典绿">
         </li>
         <li ui:field="lightgreen" class="colorTheme lightgreen" title="翡翠绿">
@@ -23,6 +24,6 @@
         
         <g:HTML ui:field="switchDark"></g:HTML>
     </g:HTMLPanel>
-    <g:Anchor text="{messages.privacyTermsLink}" target="_blank" ui:field="tosLink" />
+    <g:Anchor text="{messages.privacyTermsLink}" target="_blank" ui:field="tosLink" styleName="tosLink" />
   </g:FlowPanel>
 </ui:UiBinder>
