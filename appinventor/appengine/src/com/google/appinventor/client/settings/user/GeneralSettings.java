@@ -42,7 +42,7 @@ public final class GeneralSettings extends Settings {
     // Add by 中文网
     addProperty(new EditableProperty(this, SettingsConstants.USER_LAST_BUILD_TIME, "",
         EditableProperty.TYPE_INVISIBLE));
-    addProperty(new EditableProperty(this, SettingsConstants.USER_THEME, "default",
+    addProperty(new EditableProperty(this, SettingsConstants.USER_THEME, "classic",
         EditableProperty.TYPE_INVISIBLE));
     addProperty(new EditableProperty(this, SettingsConstants.USER_THEME_ENABLEDARK, "false",
         EditableProperty.TYPE_INVISIBLE));

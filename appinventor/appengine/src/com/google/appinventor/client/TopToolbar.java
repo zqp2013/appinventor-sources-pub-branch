@@ -414,7 +414,7 @@ public class TopToolbar extends Composite {
 
     // Add by 中文网
     helpItems.add(new DropDownItem("参考文档", "<i class=\"mdi mdi-bookmark-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;参考文档", new WindowOpenAction("https://www.fun123.cn/reference/?f=help")));
-    helpItems.add(new DropDownItem("拓展文档", "<i class=\"mdi mdi-puzzle-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
+    helpItems.add(new DropDownItem("拓展文档", "<i class=\"mdi mdi-puzzle-plus-outline\" style=\"font-size:15px\"/></i>&nbsp;&nbsp;拓展文档", new WindowOpenAction("https://www.fun123.cn/reference/extensions/?f=help")));
 
     String tutorialsUrl = config.getTutorialsUrl();
     if (!Strings.isNullOrEmpty(tutorialsUrl)) {

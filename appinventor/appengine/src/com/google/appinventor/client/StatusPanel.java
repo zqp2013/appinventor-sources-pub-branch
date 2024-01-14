@@ -14,9 +14,15 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
-
+import com.google.gwt.user.client.ui.ClickListener;
+import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.dom.client.LIElement;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.EventListener;
+import com.google.gwt.user.client.Event;
 
 /**
  * The status panel contains various links.
@@ -28,6 +34,13 @@ public class StatusPanel extends Composite {
   private static final StatusPanelUiBinder UI_BINDER = GWT.create(StatusPanelUiBinder.class);
 
   @UiField(provided = true) FlowPanel footer = new FlowPanel("footer");
+  @UiField LIElement classic;
+  @UiField LIElement lightgreen;
+  @UiField LIElement red;
+  @UiField LIElement gray;
+  @UiField LIElement pink;
+
+  @UiField HTML switchDark;
   @UiField Anchor tosLink;
 
   /**
@@ -42,6 +55,74 @@ public class StatusPanel extends Composite {
     } else {
       tosLink.removeFromParent();
     }
+
+    //Add by 中文网
+    switchDark.addStyleName("switchDark");
+    if (Ode.getUserDarkThemeEnabled()) {
+      switchDark.setHTML("<i class=\"mdi mdi-weather-sunny\" style=\"font-size:15px\" title=\"切换到白天模式\"></i>");
+      switchDark.addClickListener(new ClickListener() {
+        public void onClick(Widget sender) {
+          Ode.setUserDarkThemeEnabled(false);
+        }
+      });
+    } else {
+      switchDark.setHTML("<i class=\"mdi mdi-weather-night\" style=\"font-size:15px\" title=\"切换到黑夜模式\"></i>");
+      switchDark.addClickListener(new ClickListener() {
+        public void onClick(Widget sender) {
+          Ode.setUserDarkThemeEnabled(true);
+        }
+      });
+    }
+
+    String theme = Ode.getUserTheme();
+    if ("classic".equals(theme)) {
+      classic.addClassName("active");
+    } else if ("lightgreen".equals(theme)) {
+      lightgreen.addClassName("active");
+    } else if ("red".equals(theme)) {
+      red.addClassName("active");
+    } else if ("gray".equals(theme)) {
+      gray.addClassName("active");
+    } else if ("pink".equals(theme)) {
+      pink.addClassName("active");
+    }
+
+    DOM.sinkEvents(classic, Event.ONCLICK);
+    DOM.setEventListener(classic, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("classic"); }
+      }
+    });
+    DOM.sinkEvents(lightgreen, Event.ONCLICK);
+    DOM.setEventListener(lightgreen, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("lightgreen"); }
+      }
+    });
+    DOM.sinkEvents(red, Event.ONCLICK);
+    DOM.setEventListener(red, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("red"); }
+      }
+    });
+    DOM.sinkEvents(gray, Event.ONCLICK);
+    DOM.setEventListener(gray, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("gray"); }
+      }
+    });
+    DOM.sinkEvents(pink, Event.ONCLICK);
+    DOM.setEventListener(pink, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("pink"); }
+      }
+    });
+
   }
 
   @UiFactory

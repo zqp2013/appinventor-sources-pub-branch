@@ -62,3 +62,53 @@
   color : rgba(10, 132, 255);
   font-family: iOSFont;
 }
+
+
+
+
+
+
+.colorTheme {
+  height: 11px;
+  float: left;
+  width: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  margin-right: 5px;
+  list-style: none;
+  margin-top: 2px;
+  opacity: 0.6;
+}
+.colorTheme:hover{
+  opacity: 1;
+}
+.classic {
+  background-color: #8FC202;
+}
+.lightgreen {
+  background-color: #8FC202;
+}
+.red {
+  background-color: red;
+}
+.gray {
+  background-color: #999;
+}
+.pink {
+  background-color: rgb(230, 60, 216);
+}
+.active {
+  border:1px solid #44413e;
+}
+
+.switchDark {
+  float:left;
+  color:#888;
+  max-height: 16px;
+  cursor:pointer;
+  opacity: 0.6;
+}
+.switchDark:hover{
+  opacity: 1;
+}
+

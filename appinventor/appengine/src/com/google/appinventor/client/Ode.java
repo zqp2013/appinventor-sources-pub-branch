@@ -1445,6 +1445,22 @@ public class Ode implements EntryPoint {
       });
   }
 
+  public static String getUserTheme() {
+    return userSettings.getSettings(SettingsConstants.USER_GENERAL_SETTINGS).
+            getPropertyValue(SettingsConstants.USER_THEME);
+  }
+  public static void setUserTheme(String theme_name) {
+    userSettings.getSettings(SettingsConstants.USER_GENERAL_SETTINGS).
+            changePropertyValue(SettingsConstants.USER_THEME, theme_name);
+    userSettings.saveSettings(new Command() {
+      @Override
+      public void execute() {
+        Window.Location.reload();
+      }
+    });
+  }
+
+
   /**
    * Checks whether the user has autoloading enabled in their settings.
    *
