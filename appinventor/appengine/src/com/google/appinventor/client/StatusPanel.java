@@ -36,6 +36,7 @@ public class StatusPanel extends Composite {
   @UiField(provided = true) FlowPanel footer = new FlowPanel("footer");
   @UiField LIElement classic;
   @UiField LIElement lightgreen;
+  @UiField LIElement blue;
   @UiField LIElement red;
   @UiField LIElement gray;
   @UiField LIElement pink;
@@ -79,12 +80,16 @@ public class StatusPanel extends Composite {
       classic.addClassName("active");
     } else if ("lightgreen".equals(theme)) {
       lightgreen.addClassName("active");
+    } else if ("blue".equals(theme)) {
+      blue.addClassName("active");
     } else if ("red".equals(theme)) {
       red.addClassName("active");
     } else if ("gray".equals(theme)) {
       gray.addClassName("active");
     } else if ("pink".equals(theme)) {
       pink.addClassName("active");
+    } else {
+      classic.addClassName("active");//默认经典色
     }
 
     DOM.sinkEvents(classic, Event.ONCLICK);
@@ -99,6 +104,13 @@ public class StatusPanel extends Composite {
       @Override
       public void onBrowserEvent(Event event) {
           if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("lightgreen"); }
+      }
+    });
+    DOM.sinkEvents(blue, Event.ONCLICK);
+    DOM.setEventListener(blue, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("blue"); }
       }
     });
     DOM.sinkEvents(red, Event.ONCLICK);

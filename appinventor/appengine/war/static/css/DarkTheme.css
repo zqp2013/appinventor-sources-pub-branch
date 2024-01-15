@@ -90,6 +90,9 @@
 .lightgreen {
   background-color: #8EBF4C;
 }
+.blue {
+  background-color: #0a278c;
+}
 .red {
   background-color: red;
 }
@@ -97,7 +100,7 @@
   background-color: #999;
 }
 .pink {
-  background-color: rgb(230, 60, 216);
+  background-color: #EFD9FD;
 }
 .active {
   border:1px solid #44413e;

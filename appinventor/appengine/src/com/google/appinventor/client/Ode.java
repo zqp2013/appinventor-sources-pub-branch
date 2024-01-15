@@ -1003,7 +1003,22 @@ public class Ode implements EntryPoint {
       if (Ode.getUserDarkThemeEnabled()){
         style = Resources.INSTANCE.styleclassicDark();
       } else{
-        style = Resources.INSTANCE.styleclassicLight();
+        String theme = Ode.getUserTheme();
+        if ("classic".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicLight();
+        } else if ("lightgreen".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicLightGreen();
+        } else if ("blue".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicBlue();
+        } else if ("red".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicRed();
+        } else if ("gray".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicGray();
+        } else if ("pink".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicPink();
+        } else {
+          style = Resources.INSTANCE.styleclassicLight();//默认经典色
+        }
       }
     //}
 
@@ -2628,15 +2643,48 @@ public class Ode implements EntryPoint {
 
     public static final Resources INSTANCE =  GWT.create(Resources.class);
     
+    //经典绿
     @Source({
-      "com/google/appinventor/client/light.css",
-      "com/google/appinventor/client/variableColors.css"
+      "com/google/appinventor/client/theme/light.css",
+      "com/google/appinventor/client/theme/variableColors.css"
     })
     Style styleclassicLight();
 
+    //浅绿
     @Source({
-      "com/google/appinventor/client/dark.css",
-      "com/google/appinventor/client/variableColors.css"
+      "com/google/appinventor/client/theme/lightgreen.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicLightGreen();
+    //蓝
+    @Source({
+      "com/google/appinventor/client/theme/blue.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicBlue();
+    //红
+    @Source({
+      "com/google/appinventor/client/theme/red.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicRed();
+    //灰
+    @Source({
+      "com/google/appinventor/client/theme/gray.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicGray();
+    //玫红
+    @Source({
+      "com/google/appinventor/client/theme/pink.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicPink();
+
+    //暗黑模式
+    @Source({
+      "com/google/appinventor/client/theme/dark.css",
+      "com/google/appinventor/client/theme/variableColors.css"
     })
     Style styleclassicDark();
 

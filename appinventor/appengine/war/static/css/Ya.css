@@ -462,7 +462,7 @@ div.StatusPanel {
 .ode-TopPanel {
   min-height: 40px;
   height: 40px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;/*4->2 消除滚动条 by中文网*/
   padding-right: 4px;
   padding-left: 4px;
   background-color: #f2f2f2;
