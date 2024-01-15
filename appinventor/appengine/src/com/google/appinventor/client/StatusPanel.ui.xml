@@ -11,17 +11,19 @@
   <g:FlowPanel styleName="ode-StatusPanel" ui:field="footer">
     <g:HTMLPanel>
         <g:Anchor text="主题：" styleName="colorThemeTip"/>
-        <li ui:field="classic" class="colorTheme classic" title="经典绿">
+        <li ui:field="classic" class="colorTheme classic" title="经典绿（原版）">
         </li>
         <li ui:field="lightgreen" class="colorTheme lightgreen" title="翡翠绿">
+        </li>
+        <li ui:field="gray" class="colorTheme gray" title="高级灰">
         </li>
         <li ui:field="blue" class="colorTheme blue" title="专业蓝">
         </li>
         <li ui:field="red" class="colorTheme red" title="中国红">
         </li>
-        <li ui:field="gray" class="colorTheme gray" title="高级灰">
-        </li>
         <li ui:field="pink" class="colorTheme pink" title="玫红">
+        </li>
+        <li ui:field="orange" class="colorTheme orange" title="活力橙">
         </li>
         
         <g:HTML ui:field="switchDark"></g:HTML>

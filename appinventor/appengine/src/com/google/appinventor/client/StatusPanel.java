@@ -40,6 +40,7 @@ public class StatusPanel extends Composite {
   @UiField LIElement red;
   @UiField LIElement gray;
   @UiField LIElement pink;
+  @UiField LIElement orange;
 
   @UiField HTML switchDark;
   @UiField Anchor tosLink;
@@ -88,6 +89,8 @@ public class StatusPanel extends Composite {
       gray.addClassName("active");
     } else if ("pink".equals(theme)) {
       pink.addClassName("active");
+    } else if ("orange".equals(theme)) {
+      orange.addClassName("active");
     } else {
       classic.addClassName("active");//默认经典色
     }
@@ -132,6 +135,13 @@ public class StatusPanel extends Composite {
       @Override
       public void onBrowserEvent(Event event) {
           if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("pink"); }
+      }
+    });
+    DOM.sinkEvents(orange, Event.ONCLICK);
+    DOM.setEventListener(orange, new EventListener() {
+      @Override
+      public void onBrowserEvent(Event event) {
+          if (Event.ONCLICK == event.getTypeInt()) { Ode.setUserTheme("orange"); }
       }
     });
 

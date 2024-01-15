@@ -13,7 +13,7 @@ they get cut off in Windows.
 
 @external .*;
 body {
-  background: background-image center/cover no-repeat;
+  background: background-image;
 }
 /* For the TOS Form*/
 .floatingBox {
@@ -40,7 +40,7 @@ body {
 }
 
 .ode-ContextMenuItem-selected {
-  color: background-color;
+  color: #fff;
   background: selected-color;
 }
 
@@ -66,7 +66,7 @@ body {
 
 .ode-Box-header {
   background: box-background;
-  border-color: #d2d2d2 #d2d2d2 #b0b2a7 #d2d2d2;
+  border-color: border-color;
 }
 
 .ode-Box-toolkit {
@@ -171,7 +171,7 @@ body {
   background-image: -webkit-linear-gradient(top, top-panel-background-color, top-panel-background-image);
   background-image: -o-linear-gradient(top, top-panel-background-color, top-panel-background-image); */
   background-repeat: repeat-x;
-  border: 1px solid top-panel-border;
+  border: 1px solid border-color;
   filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='background-color', endColorstr='top-panel-end-color', GradientType=0)";
   box-shadow: 0 1px 4px shadow-color;
   /* -webkit-box-shadow: 0 1px 4px box-shadow;
@@ -309,6 +309,7 @@ body {
 
 .ya-Toolbar {
   background-color: selected-color;
+  border-radius: 2px;
 }
 
 .ya-Toolbar .ya-ProjectName {
@@ -319,7 +320,7 @@ body {
 .ode-TextButton,
 .gwt-Button {
   color: panel-shadow;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  text-shadow: text-shadow-def;
   background-color: top-panel-background-color;
   /* *background-color: border-color; */
   background-image:linear-gradient(to bottom, background-color, border-color);  
@@ -611,7 +612,7 @@ path.ode-SimpleMockMapFeature-selected {
 
 .ode-ComponentHelpPopup-TitleBar {
   background-color: selected-color;
-  color: background-color;
+  color: #fff;
 }
 
 .ode-ComponentHelpPopup-Body {
@@ -646,13 +647,13 @@ path.ode-SimpleMockMapFeature-selected {
 }
 
 .ode-InfoMessage {
-  color: #2d2d2d;
+  color: message-color;
 }
 
 .ode-GroupedList .Header td {
   background: #eee;
 }
-  
+
 /* All dialog boxes */
 
 /* Start of NoProjectsDialogBox. */
@@ -703,7 +704,6 @@ path.ode-SimpleMockMapFeature-selected {
   background-color: selected-color;
   color: background-color;
   box-shadow: 0 0 4px shadow-color;
-
 }
 
 .ode-DialogBox .dialogContent {

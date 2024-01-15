@@ -1016,6 +1016,8 @@ public class Ode implements EntryPoint {
           style = Resources.INSTANCE.styleclassicGray();
         } else if ("pink".equals(theme)) {
           style = Resources.INSTANCE.styleclassicPink();
+        } else if ("orange".equals(theme)) {
+          style = Resources.INSTANCE.styleclassicOrange();
         } else {
           style = Resources.INSTANCE.styleclassicLight();//默认经典色
         }
@@ -2680,6 +2682,12 @@ public class Ode implements EntryPoint {
       "com/google/appinventor/client/theme/variableColors.css"
     })
     Style styleclassicPink();
+    //橙
+    @Source({
+      "com/google/appinventor/client/theme/orange.css",
+      "com/google/appinventor/client/theme/variableColors.css"
+    })
+    Style styleclassicOrange();
 
     //暗黑模式
     @Source({

@@ -94,14 +94,18 @@
   background-color: #0a278c;
 }
 .red {
-  background-color: red;
+  background-color: #b91818;
 }
 .gray {
-  background-color: #999;
+  background-color: #203440;
 }
 .pink {
-  background-color: #EFD9FD;
+  background-color: #f2465f;
 }
+.orange {
+  background-color: #ff8e21;
+}
+/*选中*/
 .active {
   border:1px solid #44413e;
 }
@@ -119,6 +123,6 @@
 
 /*隐私策略和使用条款*/
 .tosLink {
-  padding-right: 125px;
+  padding-right: 140px;
 }
 

@@ -1,8 +1,8 @@
-@def background-image                   url('static/images/bg.svg');
+@def background-image                   url('static/images/bg.png') repeat;
 @def closed-backpack                    url('../bloclyeditor/media/backpack-closed-copy.png');
 @def text-button-background             #f5f5f5;
 /* Greens */
-@def box-background                     rgba(102, 153, 0, 0.3);
+@def box-background                     rgba(10, 39, 140, 0.3);
 @def selected-color                     #0a278c;
 @def bar-color                          #d2e0a6;
 @def tab-bar-background-color           #eef2e0;
@@ -33,3 +33,6 @@
     /* red */
 @def destructive-action-hover           #FF6666;
 @def item-color-red                     #ff0000;
+
+@def text-shadow-def                    0 1px 1px rgba(255, 255, 255, 0.75);
+@def message-color                      #2d2d2d;
