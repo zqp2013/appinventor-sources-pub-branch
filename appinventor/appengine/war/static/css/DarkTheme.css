@@ -91,19 +91,19 @@
   background-color: #8EBF4C;
 }
 .blue {
-  background-color: #0a278c;
+  background-color: #3f51b5;
 }
 .red {
-  background-color: #b91818;
+  background-color: #FF5722;
 }
 .gray {
-  background-color: #797a7e;
+  background-color: rgb(96, 125, 139);
 }
 .pink {
   background-color: #e9464d;
 }
 .orange {
-  background-color: #ff8e21;
+  background-color: #FF9700;
 }
 /*选中*/
 .active {

@@ -2,9 +2,12 @@
 @def closed-backpack                    url('../bloclyeditor/media/backpack-closed-copy.png');
 @def text-button-background             #f5f5f5;
 /* Greens */
-@def box-background                     rgba(255, 142, 33, 0.3);
-@def selected-color                     #ff8e21;
+@def box-background                     rgba(255, 151, 0, 0.3);
+/*主色*/
+@def selected-color                     #FF9700;
+/*组件选中背景*/
 @def bar-color                          #ffebd4;
+/*左侧抽屉背景*/
 @def tab-bar-background-color           #fdecd9;
 @def box-background-color               #f7f9f2;
 
@@ -34,5 +37,6 @@
 @def destructive-action-hover           #FF6666;
 @def item-color-red                     #ff0000;
 
+/*Add by 中文网*/
 @def text-shadow-def                    0 1px 1px rgba(255, 255, 255, 0.75);
 @def message-color                      #2d2d2d;
