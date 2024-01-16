@@ -2,10 +2,10 @@
 @def closed-backpack                    url('../bloclyeditor/media/backpack-closed-copy.png');
 @def text-button-background             #f5f5f5;
 /* Greens */
-@def box-background                     rgba(242, 70, 95, 0.3);
-@def selected-color                     #f2465f;
-@def bar-color                          #d2e0a6;
-@def tab-bar-background-color           #eef2e0;
+@def box-background                     rgba(233, 70, 77, 0.3);
+@def selected-color                     #e9464d;
+@def bar-color                          #ffe8e9;
+@def tab-bar-background-color           #ffeeef;
 @def box-background-color               #f7f9f2;
 
 /* Greys */

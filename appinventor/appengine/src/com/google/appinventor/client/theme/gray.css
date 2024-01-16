@@ -4,8 +4,8 @@
 /* Greens */
 @def box-background                     rgba(121, 122, 126, 0.3);
 @def selected-color                     #797a7e;
-@def bar-color                          #d2e0a6;
-@def tab-bar-background-color           #eef2e0;
+@def bar-color                          #dbddd9;
+@def tab-bar-background-color           #f9f9f9;
 @def box-background-color               #f7f9f2;
 
 /* Greys */

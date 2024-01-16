@@ -1,10 +1,13 @@
 @def background-image                   url('static/images/squairy_dark.jpg') repeat;
 @def text-button-background             #11151B;
 /* Greens */
+/*主色*/
 @def box-background                     rgba(17, 21, 27, 0.3);
 @def selected-color                     #11151B;
-@def tab-bar-background-color           #11151B;
+/*组件选中背景*/
 @def bar-color                          #555;
+/*左侧抽屉背景*/
+@def tab-bar-background-color           #11151B;
 @def box-background-color               #11151B;
 
 /* Greys */
@@ -26,13 +29,16 @@
 @def blocks-designer-color              #11151B;
 @def project-background-color           #11151B;
     /* blue */
-@def explorer-border                    #D6E9F8;
+@def explorer-border                    #333;
 @def simple-panel-border                #67A7E3;
-@def project-color                      #112abb;
+@def project-color                      #a3a3a3;
     /* red */
 @def destructive-action-hover           #FF6666;
 @def item-color-red                     #ff0000;
 
 @def text-shadow-def                    none;
 @def message-color                      #ff8a8a;
+
+/*暗色特有的*/
 @def title-color                        #fff;
+@def none-background                    none;

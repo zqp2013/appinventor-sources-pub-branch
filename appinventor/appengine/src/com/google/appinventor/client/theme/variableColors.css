@@ -117,8 +117,12 @@ body {
   background-color: background-color;
 }
 
+.ode-ProjectRow {
+  background: none-background;
+}
+
 .ode-ProjectHeaderRow {
-  background: project-background repeat;
+  background: none-background;
   border-bottom: 1px solid explorer-border;
 }
 
@@ -255,6 +259,8 @@ body {
 .ode-StatusPanel {
   color: label-color;
   border-bottom: 1px solid explorer-border;
+  /*去掉图片背景*/
+  background: none-background;
 }
 
 /*.ode-StatusPanel a {
