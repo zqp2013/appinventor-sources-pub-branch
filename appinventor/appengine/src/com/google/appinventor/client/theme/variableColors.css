@@ -41,12 +41,12 @@ body {
 
 .ode-ContextMenuItem-selected {
   color: #fff;
-  background: selected-color;
+  background: menu-bgcolor;
 }
 
 .ode-ContextMenuItem-Red-selected {
   color: item-color-red;
-  background: selected-color;
+  background: menu-bgcolor;
 }
 
 .ode-ContextMenuItem-disabled {
@@ -117,7 +117,7 @@ body {
   background-color: background-color;
 }
 
-.ode-ProjectRow {
+.ode-ProjectRow, .ode-ProjectFolderList {
   background: none-background;
 }
 

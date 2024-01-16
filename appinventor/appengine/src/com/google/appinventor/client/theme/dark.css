@@ -36,8 +36,10 @@
 @def destructive-action-hover           #FF6666;
 @def item-color-red                     #ff0000;
 
+/*Add by 中文网*/
 @def text-shadow-def                    none;
 @def message-color                      #ff8a8a;
+@def menu-bgcolor                       #555;
 
 /*暗色特有的*/
 @def title-color                        #fff;

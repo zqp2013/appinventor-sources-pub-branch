@@ -1268,7 +1268,7 @@ Blockly.WorkspaceSvg.prototype.setGridSettings = function(enabled, snap) {
       this.svgBackground_.setAttribute('style', 'fill: url(#' + this.options.gridPattern.id + ');');
     } else {
       // remove grid
-      this.svgBackground_.setAttribute('style', 'fill: white;');
+      this.svgBackground_.setAttribute('style', 'fill:;'); //fill: white; del by 中文网：黑色主题
     }
   }
 };
