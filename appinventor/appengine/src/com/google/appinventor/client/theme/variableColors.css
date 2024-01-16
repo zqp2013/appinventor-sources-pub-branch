@@ -313,7 +313,6 @@ body {
 }
 
 .ya-Toolbar .ya-ProjectName {
-  color: background-color;
   text-shadow: 0 0 1px panel-shadow;
 }
 
@@ -620,9 +619,9 @@ path.ode-SimpleMockMapFeature-selected {
 }
 
 .ode-ComponentHelpPopup-Link a {
-  color: selected-color;
+  color: title-color;
 }
-  
+
 .compiler-ErrorMarker {
   color:  item-color-red;
 }
@@ -640,6 +639,7 @@ path.ode-SimpleMockMapFeature-selected {
 .ode-RpcStatusMessage .popupMiddleRight,
 .ode-RpcStatusMessage .popupBottomCenter {
   background-color: project-background-color;
+  color:tab-bar-color;
 }
 
 .ode-ErrorMessage {
@@ -702,7 +702,7 @@ path.ode-SimpleMockMapFeature-selected {
 
 .ode-DialogBox .Caption {
   background-color: selected-color;
-  color: background-color;
+  color: title-color;
   box-shadow: 0 0 4px shadow-color;
 }
 

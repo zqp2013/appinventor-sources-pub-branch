@@ -1446,6 +1446,12 @@ public class Ode implements EntryPoint {
    * @param enabled new value for the user's UI preference
    */
   public static void setUserDarkThemeEnabled(boolean enabled) {
+    // VIP检查（到期可以用）
+    if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+      TopToolbar.showVip();
+      return;
+    }
+
     userSettings.getSettings(SettingsConstants.USER_GENERAL_SETTINGS).
             changePropertyValue(SettingsConstants.USER_THEME_ENABLEDARK,
                     "" + enabled);
@@ -1467,6 +1473,12 @@ public class Ode implements EntryPoint {
             getPropertyValue(SettingsConstants.USER_THEME);
   }
   public static void setUserTheme(String theme_name) {
+    // VIP检查（到期可以用）
+    if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly() && !"classic".equals(theme_name) && !"gray".equals(theme_name)) {
+      TopToolbar.showVip();
+      return;
+    }
+
     userSettings.getSettings(SettingsConstants.USER_GENERAL_SETTINGS).
             changePropertyValue(SettingsConstants.USER_THEME, theme_name);
     userSettings.saveSettings(new Command() {
