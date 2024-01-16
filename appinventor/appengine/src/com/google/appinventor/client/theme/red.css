@@ -2,9 +2,9 @@
 @def closed-backpack                    url('../bloclyeditor/media/backpack-closed-copy.png');
 @def text-button-background             #f5f5f5;
 /* Greens */
-@def box-background                     rgba(255, 87, 34, 0.3);
+@def box-background                     rgba(242, 79, 54, 0.3);
 /*主色*/
-@def selected-color                     #FF5722;
+@def selected-color                     #f24f36;
 /*组件选中背景*/
 @def bar-color                          #fbe1de;
 /*左侧抽屉背景*/
