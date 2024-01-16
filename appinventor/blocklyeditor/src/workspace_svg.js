@@ -1136,7 +1136,7 @@ Blockly.WorkspaceSvg.prototype.customContextMenu = function(menuOptions) {
       self.svgBackground_.setAttribute('style', 'fill: url(#' + self.options.gridPattern.id + ');');
     } else {
       // remove grid
-      self.svgBackground_.setAttribute('style', 'fill: white;');
+      self.svgBackground_.setAttribute('style', 'fill:;'); //fill: white; del by 中文网：黑色主题
     }
     if (top.BlocklyPanel_setGridEnabled) {
       top.BlocklyPanel_setGridEnabled(self.options.gridOptions['enabled']);

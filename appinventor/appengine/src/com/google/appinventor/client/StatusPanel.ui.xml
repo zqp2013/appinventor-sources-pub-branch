@@ -21,7 +21,7 @@
         </li>
         <li ui:field="red" class="colorTheme red" title="中国红">
         </li>
-        <li ui:field="pink" class="colorTheme pink" title="玫红">
+        <li ui:field="pink" class="colorTheme pink" title="翘红">
         </li>
         <li ui:field="orange" class="colorTheme orange" title="活力橙">
         </li>

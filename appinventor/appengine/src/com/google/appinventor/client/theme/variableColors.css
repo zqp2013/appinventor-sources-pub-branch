@@ -1139,3 +1139,7 @@ rect.gridBackground {
   fill: background-color;
   background-color: background-color !important;
 }
+
+a, a:visited, a:hover {
+  color:link-color;
+}
