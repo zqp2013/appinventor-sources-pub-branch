@@ -1,0 +1,1 @@
+{"name": "水果翻翻翻", "subtitle": "过程代码块的使用、字典的基本使用、稍复杂的逻辑判断。", "description": "开发水果翻翻翻游戏App，屏幕上有6张卡片，里面随机有三种水果，尝试点击格子翻开卡片，如果第二次翻出一样的水果则继续，否则之前翻出的暂时隐藏，直至6张卡片全部翻出则为胜利。", "screenshot": "screenshot.png", "thumbnail":"thumbnail.png"}

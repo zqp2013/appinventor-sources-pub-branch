@@ -1,0 +1,1 @@
+{"name": "微数据库", "subtitle": "本地存储之“微数据库”组件的使用，如何持久化App数据。", "description": "本示例程序演示了如何保存App退出前的状态（即数据），然后重新打开App时仍然能够知道上次保存的数据。主要用到“数据通信”下的“微数据库”组件。", "screenshot": "screenshot.png", "thumbnail":"thumbnail.png"}

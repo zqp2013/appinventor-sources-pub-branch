@@ -1,0 +1,1 @@
+{"name": "打字机效果", "subtitle": "字符串的各种使用方法。效果很赞！", "description": "开发模拟打字机效果的App，在屏幕上一个一个汉字蹦出，同时播放打字机的音效，主要用到文本块、计时器及逻辑控制块。", "screenshot": "screenshot.gif", "thumbnail":"thumbnail.png"}

@@ -1,0 +1,1 @@
+{"name": "动态创建组件", "subtitle": "可在循环中动态创建UI组件，无需事先拖拽准备好。", "description": "用到 App Inventor 2 的动态组件扩展。它基于 Java 的反射功能，因此只需键入类名称即可搜索类来创建组件。<br/><a href='https://www.fun123.cn/reference/extensions/dynamic_components.html?f=tpl' target='_blank'>点此</a> 查看详细用法中文文档。", "screenshot": "screenshot.png", "thumbnail":"thumbnail.png"}

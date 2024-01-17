@@ -1,0 +1,1 @@
+{"name": "语音机器人Robot", "subtitle": "语音交互App开发，用到“语音识别器”和“文本朗读器”组件。", "description": "识别语言指令并控制机器人运动，主要用到语音识别器及文本朗读器组件，语音识别相关开发最佳入门。代码逻辑简单，App交互性及趣味性非常强~", "screenshot": "screenshot.jpg", "thumbnail":"thumbnail.png"}
