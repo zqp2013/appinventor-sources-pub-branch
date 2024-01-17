@@ -16,7 +16,7 @@
         <div class="col-xl-6 legal text-center">
             <ul>
             <li>
-                <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 跟着学（上海）教育科技有限公司</a>
+                <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 - <script>document.write(new Date().getFullYear());</script> 跟着学（上海）教育科技有限公司</a>
             </li>
             <li>
                 <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
