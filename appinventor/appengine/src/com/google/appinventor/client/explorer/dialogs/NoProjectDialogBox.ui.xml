@@ -115,8 +115,12 @@
 
     <div class="ode-bottomRow">
         <g:Button ui:field='noDialogNewProject' styleName="{style.ode-noDialogNewProject}">
-          <ui:msg key="startProjectButton" description="Text of the button to start a new project"
-          >新建一个空项目</ui:msg>
+          <ui:msg key="startProjectButton" description="新建一个空项目"
+          >新建空项目</ui:msg>
+        </g:Button>
+        <g:Button ui:field='templateNewProject' styleName="{style.ode-noDialogNewProject}">
+          <ui:msg key="templateProjectButton" description="从模板创建项目"
+          >从模板创建项目</ui:msg>
         </g:Button>
         <g:Button ui:field='closeDialogBox' styleName='{style.ode-closeDialogBox}'>
           <ui:msg key="closeButton" description="Text of the button to close the dialog box"

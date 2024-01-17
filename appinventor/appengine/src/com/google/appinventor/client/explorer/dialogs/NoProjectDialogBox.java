@@ -54,6 +54,8 @@ public class NoProjectDialogBox extends DialogBox {
   //Button goToYR;
   @UiField
   Button noDialogNewProject;
+  @UiField
+  Button templateNewProject;
 
   /**
    * Creates a new dialog box when the user has no current projects in their
@@ -97,6 +99,12 @@ public class NoProjectDialogBox extends DialogBox {
   void handleNewProject(ClickEvent e) {
     this.hide();
     new NewYoungAndroidProjectWizard(null).show();
+  }
+
+  @UiHandler("templateNewProject")
+  void handleTemplateProject(ClickEvent e) {
+    this.hide();
+    new TemplateUploadWizard().center();
   }
 
   public static void closeIfOpen() {

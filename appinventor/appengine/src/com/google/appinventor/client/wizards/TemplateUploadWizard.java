@@ -58,6 +58,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.ProvidesKey;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
+import com.google.appinventor.client.TopToolbar;
 
 /**
  * Wizard for importing AI2 project from a server.  A 'template' is
@@ -349,6 +350,21 @@ public class TemplateUploadWizard extends Wizard implements NewUrlDialogCallback
     initFinishCommand(new Command() {
         @Override
         public void execute() {
+
+
+          // VIP到期
+          if (TopToolbar.getLeftDays() <= 0 && !Ode.getInstance().isReadOnly()) {
+            TopToolbar.checkVip(-1);
+            return;
+          }
+
+          // VIP检查
+          if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+            TopToolbar.showVip();
+            return;
+          }
+
+
           // Make sure the project name is legal and unique.
           if (TextValidators.checkNewProjectName(selectedTemplateNAME, true) 
                   != TextValidators.ProjectNameStatus.SUCCESS) {

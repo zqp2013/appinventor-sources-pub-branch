@@ -182,7 +182,7 @@ public class TopPanel extends Composite {
       TextButton guideLink = new TextButton(MESSAGES.guideTabName());
       guideLink.setHTML("<i class=\"mdi mdi-school-outline\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + guideLink.getText());
       guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
-      guideLink.setStyleName("ode-TopPanelButton hot");
+      guideLink.setStyleName("ode-TopPanelButton"); //hot del by 中文网：上线模板，高亮去掉
       links.add(guideLink);
     }
 
