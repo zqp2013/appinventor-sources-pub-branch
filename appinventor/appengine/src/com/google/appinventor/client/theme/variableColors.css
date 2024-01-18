@@ -747,7 +747,7 @@ a.ode-ExtensionAnchor:hover {
   background-color: label-color;
 }
 .gwt-ProgressBar-shell .gwt-ProgressBar-bar {
-  background-color: selected-color;
+  background-color: menu-bgcolor;
 }
 .gwt-ProgressBar-shell .gwt-ProgressBar-text {
   color: background-color;
