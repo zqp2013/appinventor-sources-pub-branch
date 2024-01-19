@@ -6,6 +6,8 @@ description: BLE(Bluetooth Low Energy)，低功耗蓝牙(BLE) 和 传统蓝牙
 
 [&laquo; 返回首页](index.html)
 
+![BlueTooth](assets/BlueTooth.jpg)
+
 ## 低功耗蓝牙(BLE) vs 传统蓝牙(SPP)
 
 |   区别项    | 低功耗蓝牙(BLE) | 传统蓝牙(SPP 串行端口协议)	  |
