@@ -119,8 +119,9 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 使用 `蓝牙客户端` 通过蓝牙将您的设备连接到其他设备。这个组件使用串行端口配置文件 (SPP) 进行通信。 
 
-如果您有兴趣使用低能耗蓝牙，请看 [BluetoothLE](http://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro) 扩展。
+如果您有兴趣使用低能耗蓝牙，请查看《[App Inventor 2 低功耗蓝牙(BLE) 硬件接入、数据通信及IO控制](../iot/ble.html)》。
 
+如果您希望了解传统蓝牙与BLE之间的区别，请查看《[低功耗蓝牙(BLE) 和 传统蓝牙(SPP) 的区别](../iot/ble_spp.html)》。
 
 ### 属性  {#BluetoothClient-Properties}
 
