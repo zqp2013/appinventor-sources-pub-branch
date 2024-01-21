@@ -5,53 +5,47 @@
 
         <a href="/aia-store/publish">+ 发布项目</a>
 
-
+        <!--<center>
+            <a href="?offset=10">下一页 &gt;&gt;</a>
+        </center>-->
 
         <div class="card-columns">
-
-
 
             <c:forEach items="${aiaList}" var="item">
                 <div class="card shadow" style="max-height: 1000px;
                                                 overflow: auto">
                     <div class="card-body">
                         
-                        <h4 class="card-title"><a href='/aia-store/<c:out value="${item.asId}" />'>title:<c:out value="${item.title}" /></h4>
-                        <p class="card-text"><i><c:out value="${item.publish_time}" /></i>&nbsp;Likes:&nbsp;<span id="like_841d90c3-42de-4531-969e-6c580b45a154">0</span>
-                            <img id="img_841d90c3-42de-4531-969e-6c580b45a154" src="/assets/numLikeHollow.png" onclick="doLike('841d90c3-42de-4531-969e-6c580b45a154', true);">
+                        <h4 class="card-title"><a href='/aia-store/<c:out value="${item.asId}" />'><c:out value="${item.title}" /></a></h4>
+                        <p class="card-text"><i><c:out value="${item.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" /></p>
+                        <p class="card-text">
+                            
+                            <img src="<c:out value="${item.pics}" />" width="300px">
                             
                         </p>
                         <p class="card-text">
-                            
-                            <img src="/image/a22e67ab-1d01-45a8-a682-26981990788e/screen.png" width="300px">
-                            
+                            <c:out value="${item.contents}" />
                         </p>
-                        <p class="card-text"></p><p>This app will help grade 7 student to understand more about livestock production</p><p></p>
-                        <p class="card-text">Credit:&nbsp;</p><p>Jolicoeur Jean baptiste</p><p>PGCE P/T Rodrigues 2023</p><br>
                             
-                            <p></p>
+                            <p>作者：<c:out value="${item.phone}" /></p>
                         <p class="card-text">
-                            <a href="http://ai2.appinventor.mit.edu/?ng=841d90c3-42de-4531-969e-6c580b45a154" target="_blank">Load App Into MIT App Inventor</a>
-                            <!-- <a href="http://jisqyvap4.appspot.com/?ng=841d90c3-42de-4531-969e-6c580b45a154" target="_blank">Load App Into MIT App Inventor</a> -->
+                            <a href="<c:out value="${item.aia_path}" />" target="_blank">下载源码</a>
                             
-                            
-                            <br>
-                            <a href="/byowner/841d90c3-42de-4531-969e-6c580b45a154">Other projects by same author</a>
-                            
-                            <br><a href="/report/841d90c3-42de-4531-969e-6c580b45a154">Report Project</a><br>
-                            Permanent link:&nbsp;<a href="https://gallery.appinventor.mit.edu/?galleryid=841d90c3-42de-4531-969e-6c580b45a154">
-                                https://gallery.appinventor.mit.edu/?galleryid=841d90c3-42de-4531-969e-6c580b45a154</a>
+                            <!--<br>
+                            <a href="">作者其他作品</a>-->
+                    
                             
                         </p>
                     </div>
                 </div>
             </c:forEach>
-
-                
+            
         </div>
 
 
-
+        <!--<center>
+            <a href="?offset=10">下一页 &gt;&gt;</a>
+        </center>-->
 
 
 

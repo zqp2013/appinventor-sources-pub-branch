@@ -97,6 +97,26 @@ public class AiaStoreServlet extends HttpServlet {
     } else if (page.equals("aia-store") || page.equals("")) {
       List<AiaStore> aiaList = storageIo.getAiaStoreList();
       req.setAttribute("aiaList", aiaList);
+
+    } else if (page.equals("rm")) {
+      //删除
+      String id = params.get("id");
+      storageIo.deleteAiaStore(id);
+
+      List<AiaStore> aiaList = storageIo.getAiaStoreList();
+      req.setAttribute("aiaList", aiaList);
+
+    } else if (page.equals("update")) {
+      //更新
+      String id = params.get("id");
+      AiaStore as = storageIo.getAiaStore(id);
+      if (as == null) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        return;
+      }
+      req.setAttribute("aia", as);
+      to_page = "publish.jsp";
+
     } else {
       // 详情页
       AiaStore as = storageIo.getAiaStore(page);
@@ -114,6 +134,7 @@ public class AiaStoreServlet extends HttpServlet {
       User user = storageIo.getUser(userInfo.getUserId());
       if (user != null && !user.getUserEmail().equals("test@fun123.cn")) {
         req.setAttribute("phone", user.getUserEmail());
+        req.setAttribute("is_admin", user.getIsAdmin());
       }
     }
     
@@ -136,40 +157,8 @@ public class AiaStoreServlet extends HttpServlet {
 		return key;
 	}
 
-  // private static String getFileName(final Part part) {
-  //     final String partHeader = part.getHeader("content-disposition");
-  //     for (String content : partHeader.split(";")) {
-  //         if (content.trim().startsWith("filename")) {
-  //             return content.substring(content.indexOf('=') + 1).replaceAll("\"", "").trim();
-  //         }
-  //     }
-  //     return null;
-  // }
-  // private String saveFile(HttpServletRequest req, String asno, String file_field_name) throws Exception {
-  //   try {
-  //     Part filePart = req.getPart(file_field_name);
-  //     if (filePart != null && !filePart.getName().isEmpty()) {
-  //         String fileName = getFileName(filePart);
-  //         if (fileName != null && !fileName.isEmpty()) {
-  //           // 设置保存路径
-  //           String savePath = req.getRealPath("aia_store_files/") + asno + "/" + fileName;
-  //           filePart.write(savePath);
-  //           LOG.info("File uploaded successfully!" + file_field_name);
-  //           return "/aia_store_files/" + asno + "/" + fileName;
-  //         }
-  //     } else {
-  //       LOG.info("No file selected for upload." + file_field_name);
-  //       return null;
-  //     }
-  //   } catch (IOException e) {
-  //     throw new ServletException("Error saving the file.", e);
-  //   }
-  //   return null;
-  // }
-
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String asno = getNo();
-    HashMap<String, String> params = genFormDataMap(req, asno);
+    HashMap<String, String> params = genFormDataMap(req);
     //String page = getPage(req);
     //if (page.equals("publish")) {
       // 发布页
@@ -180,19 +169,12 @@ public class AiaStoreServlet extends HttpServlet {
       }
 
       AiaStore podata = new AiaStore();
-      podata.asId = asno;
+      podata.asId = params.get("asId");
       podata.title = title;
       podata.phone = params.get("phone");
       podata.aia_path = params.get("aia_path");
-      podata.phone = params.get("apk_path");
+      podata.apk_path = params.get("apk_path");
       podata.pics = params.get("pics");
-      // try {
-      //   podata.aia_path = saveFile(req, podata.asId, "aia_path");
-      //   podata.apk_path = saveFile(req, podata.asId, "apk_path");
-      //   podata.pics = saveFile(req, podata.asId, "pics");
-      // } catch (Exception e) {
-      //   throw CrashReport.createAndLogError(LOG, req, null, e);
-      // }
       podata.contents = params.get("contents");
       podata.price = params.get("price");
       podata.app_status = "审核中";//审核状态
@@ -226,7 +208,9 @@ public class AiaStoreServlet extends HttpServlet {
     }
     return map;
   }
-  private static HashMap<String, String> genFormDataMap(HttpServletRequest req, String asno)  {
+
+  private static HashMap<String, String> genFormDataMap(HttpServletRequest req)  {
+    String asno = "";
     HashMap<String, String> map = new HashMap<String, String>();
     try {
       //String tempPathDir = "";
@@ -250,9 +234,8 @@ public class AiaStoreServlet extends HttpServlet {
         // false表示文件 否则字段
         if (!fi.isFormField()) {
           String fileName = fi.getName();
-          if (fileName != null) {
-
-            String savePath = req.getRealPath("aia_store_files/") + "/" + asno + "/" + fileName;
+          if (fileName != null && !"".equals(fileName)) {
+            String savePath = req.getRealPath("reference/oss/") + "/" + asno + "/" + fileName;
             File file = new File(savePath);
             file.getParentFile().mkdirs(); // Will create parent directories if not exists
             file.createNewFile(); // if file already exists will do nothing 
@@ -271,11 +254,18 @@ public class AiaStoreServlet extends HttpServlet {
             fin.close();
             fout.close();
 
-            map.put(new String(fi.getFieldName()), "/aia_store_files/" + asno + "/" + fileName);
+            map.put(new String(fi.getFieldName()), "/reference/oss/" + asno + "/" + fileName);
           }
         } else {
-          fi.getString("UTF-8");
-          map.put(new String(fi.getFieldName()), new String(fi.getString()));
+          //字段
+          map.put(new String(fi.getFieldName()), new String(fi.getString("UTF-8")));
+          if (fi.getFieldName().equals("asId")) {
+            asno = fi.getString("UTF-8");
+            if (asno == null || "".equals(asno)) {
+              asno = getNo();
+              map.put("asId", asno);
+            }
+          }
         }
       }
     } catch (Exception e) {

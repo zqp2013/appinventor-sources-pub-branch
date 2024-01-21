@@ -2386,6 +2386,38 @@ public class ObjectifyStorageIo implements  StorageIo {
     }
     return result.t;
   }
+  public void deleteAiaStore(final String asId) {
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            LOG.info("rmAiaStore asid:" + asId);
+            datastore.delete(datastore.find(AiaStoreData.class, asId));
+            //datastore.delete(asId);
+          }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
+  public void updateAiaStoreStatus(final String asId, final String status) {
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            LOG.info("updateAiaStoreStatus asid:" + asId + ", status:" + status);
+            AiaStoreData podata = datastore.find(AiaStoreData.class, asId);
+            if (podata != null) {
+              podata.app_status = status;// <---- 审核状态
+              podata.publish_time = new Date();
+              datastore.put(podata);
+            }
+          }
+      }, true);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+  }
   //购买信息
   public void storeAiaBuy(final AiaBuy ab) {
     if (ab.id == 0)

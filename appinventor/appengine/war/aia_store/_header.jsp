@@ -9,6 +9,7 @@
 <%
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String phone = (String) request.getAttribute("phone");
+   String is_admin = (String) request.getAttribute("is_admin");
    List<AiaStore> aiaList = (List<AiaStore>) request.getAttribute("aiaList");
 %>
 <!DOCTYPE html>

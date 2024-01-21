@@ -2,7 +2,6 @@
 <%@ include file="_header.jsp" %> 
 
 
-
             <ul class="messagelist">
                 <% if (error != null) {
                     out.println("<center><font color=red><b>" + error + "</b></font></center>");
@@ -130,6 +129,8 @@
 
 
             <form method="POST" action="/aia-store/publish" enctype="multipart/form-data">
+                <input type="hidden" name="asId" value="<c:out value="${aia.asId}" />"/>
+
                 <input type="hidden" name="phone"
                 <% if (phone != null) {
                     out.println("value=" + phone);
@@ -139,7 +140,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td style="width:100px;">项目名：</td>
-                        <td><input class="form-control form-input top"
+                        <td><input class="form-control form-input top" value="<c:out value="${aia.title}" />"
                             autofocus="autofocus" autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="title" id="title"></td>
                     </tr>
@@ -173,21 +174,21 @@
                     <tr>
                         <td>价格：￥</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')"  style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
+                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.price}" />"
                             required="required" title="该字段是必填字段。" type="text" name="price" id="price"></td>
                     </tr>
 
                     <tr>
                         <td>屏幕数量：</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
+                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_screen}" />"
                             required="required" title="该字段是必填字段。" type="text" name="num_screen" id="num_screen"></td>
                     </tr>
 
                     <tr>
                         <td>代码块数量：</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
+                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_blocks}" />"
                             required="required" title="该字段是必填字段。" type="text" name="num_blocks" id="num_blocks"></td>
                     </tr>
 

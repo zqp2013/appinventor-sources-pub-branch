@@ -587,6 +587,8 @@ public interface StorageIo {
   List<AiaStore> getAiaStoreList();
   AiaStore getAiaStore(final String asId);
   void storeAiaBuy(final AiaBuy ab);
+  void deleteAiaStore(final String asId);
+  void updateAiaStoreStatus(final String asId, final String status);
   //List<AiaBuy> getAiaBuy(final String asId);
   //List<AiaBuy> getOwnerAiaBuy(final String owner_phone);
   //List<AiaBuy> getBuyAiaBuy(final String buy_phone);
