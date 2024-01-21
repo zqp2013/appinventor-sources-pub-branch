@@ -25,6 +25,7 @@ public class AiaStore implements IsSerializable, Serializable {
     public String getTitle(){return title;}
     public String getPhone(){return phone;}
     public String getAia_path(){return aia_path;}
+    public String getApk_path(){return aia_path;}
     public String getPics(){return pics;}
     public String getContents(){return contents;}
     public String getPrice(){return price;}
@@ -34,6 +35,7 @@ public class AiaStore implements IsSerializable, Serializable {
     public int getNum_blocks(){return num_blocks;}
     public String getCatalog(){return catalog;}
     public String getQuality(){return quality;}
+    public String getProvide_support(){return provide_support;}
     public String getScore(){return score;}
     public Date getPublish_time(){return publish_time;}
 
@@ -41,6 +43,7 @@ public class AiaStore implements IsSerializable, Serializable {
     public String title;
     public String phone;
     public String aia_path;
+    public String apk_path;
     public String pics;
     public String contents;
     public String price;
@@ -50,6 +53,7 @@ public class AiaStore implements IsSerializable, Serializable {
     public int num_blocks;
     public String catalog;//aia分类
     public String quality;//质量等级
+    public String provide_support;//是否提供售后支持
     public String score;//最新评分
     public Date publish_time;
 }

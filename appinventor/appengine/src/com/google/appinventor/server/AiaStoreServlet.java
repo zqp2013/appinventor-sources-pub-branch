@@ -25,14 +25,17 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Logger;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import org.owasp.html.HtmlPolicyBuilder;
 import org.owasp.html.PolicyFactory;
+
+import java.io.*;
+import java.util.Iterator;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadBase.FileSizeLimitExceededException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.alipay.api.domain.AlipayTradePrecreateModel;
 import com.alipay.api.request.AlipayTradePrecreateRequest;
@@ -133,13 +136,42 @@ public class AiaStoreServlet extends HttpServlet {
 		return key;
 	}
 
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    BufferedReader input = new BufferedReader(new InputStreamReader(req.getInputStream()));
-    String queryString = input.readLine();
-    HashMap<String, String> params = getQueryMap(queryString);
-    String page = getPage(req);
+  // private static String getFileName(final Part part) {
+  //     final String partHeader = part.getHeader("content-disposition");
+  //     for (String content : partHeader.split(";")) {
+  //         if (content.trim().startsWith("filename")) {
+  //             return content.substring(content.indexOf('=') + 1).replaceAll("\"", "").trim();
+  //         }
+  //     }
+  //     return null;
+  // }
+  // private String saveFile(HttpServletRequest req, String asno, String file_field_name) throws Exception {
+  //   try {
+  //     Part filePart = req.getPart(file_field_name);
+  //     if (filePart != null && !filePart.getName().isEmpty()) {
+  //         String fileName = getFileName(filePart);
+  //         if (fileName != null && !fileName.isEmpty()) {
+  //           // 设置保存路径
+  //           String savePath = req.getRealPath("aia_store_files/") + asno + "/" + fileName;
+  //           filePart.write(savePath);
+  //           LOG.info("File uploaded successfully!" + file_field_name);
+  //           return "/aia_store_files/" + asno + "/" + fileName;
+  //         }
+  //     } else {
+  //       LOG.info("No file selected for upload." + file_field_name);
+  //       return null;
+  //     }
+  //   } catch (IOException e) {
+  //     throw new ServletException("Error saving the file.", e);
+  //   }
+  //   return null;
+  // }
 
-    if (page.equals("publish")) {
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String asno = getNo();
+    HashMap<String, String> params = genFormDataMap(req, asno);
+    //String page = getPage(req);
+    //if (page.equals("publish")) {
       // 发布页
       String title = params.get("title");
       if (title == null || title.equals("")) {
@@ -148,11 +180,19 @@ public class AiaStoreServlet extends HttpServlet {
       }
 
       AiaStore podata = new AiaStore();
-      podata.asId = getNo();
+      podata.asId = asno;
       podata.title = title;
       podata.phone = params.get("phone");
       podata.aia_path = params.get("aia_path");
+      podata.phone = params.get("apk_path");
       podata.pics = params.get("pics");
+      // try {
+      //   podata.aia_path = saveFile(req, podata.asId, "aia_path");
+      //   podata.apk_path = saveFile(req, podata.asId, "apk_path");
+      //   podata.pics = saveFile(req, podata.asId, "pics");
+      // } catch (Exception e) {
+      //   throw CrashReport.createAndLogError(LOG, req, null, e);
+      // }
       podata.contents = params.get("contents");
       podata.price = params.get("price");
       podata.app_status = "审核中";//审核状态
@@ -161,13 +201,14 @@ public class AiaStoreServlet extends HttpServlet {
       podata.num_blocks = Integer.parseInt(params.get("num_blocks"));
       podata.catalog = params.get("catalog");//aia分类
       podata.quality = params.get("quality");//质量等级
+      podata.provide_support = params.get("provide_support");//是否提供售后支持
       podata.score = "0";//最新评分
       storageIo.storeAiaStore(podata);
 
       List<AiaStore> aiaList = storageIo.getAiaStoreList();
       req.setAttribute("aiaList", aiaList);
       resp.sendRedirect("/aia-store/");
-    }
+    //}
   }
 
   private static HashMap<String, String> getQueryMap(String query)  {
@@ -182,6 +223,63 @@ public class AiaStoreServlet extends HttpServlet {
         map.put(nvpair[0], "");
       } else
         map.put(nvpair[0], URLDecoder.decode(nvpair[1]));
+    }
+    return map;
+  }
+  private static HashMap<String, String> genFormDataMap(HttpServletRequest req, String asno)  {
+    HashMap<String, String> map = new HashMap<String, String>();
+    try {
+      //String tempPathDir = "";
+      //File tempPathDirFile = new File(tempPathDir);
+      // 创建工厂
+      DiskFileItemFactory factory = new DiskFileItemFactory();
+      // 设置缓冲区大小，这里是400kb
+      factory.setSizeThreshold(4096 * 100);
+      // 设置缓冲区目录
+      //factory.setRepository(tempPathDirFile);
+      // Create a new file upload handler
+      ServletFileUpload upload = new ServletFileUpload(factory);
+      // 设置上传文件的大小 12M
+      upload.setSizeMax(4194304 * 3);
+      // 创建解析器
+      // 得到所有的文件
+      List<FileItem> items = upload.parseRequest(req);
+      Iterator<FileItem> i = items.iterator();
+      while (i.hasNext()) {
+        FileItem fi = i.next();
+        // false表示文件 否则字段
+        if (!fi.isFormField()) {
+          String fileName = fi.getName();
+          if (fileName != null) {
+
+            String savePath = req.getRealPath("aia_store_files/") + "/" + asno + "/" + fileName;
+            File file = new File(savePath);
+            file.getParentFile().mkdirs(); // Will create parent directories if not exists
+            file.createNewFile(); // if file already exists will do nothing 
+
+            // 定义图片流
+            InputStream fin = fi.getInputStream();
+            // 定义图片输出流
+            FileOutputStream fout = new FileOutputStream(file, false);
+            // 写文件
+            byte[] b = new byte[1024];
+            int length = 0;
+            while ((length = fin.read(b)) > 0) {
+              fout.write(b, 0, length);
+            }
+            // 关闭数据流
+            fin.close();
+            fout.close();
+
+            map.put(new String(fi.getFieldName()), "/aia_store_files/" + asno + "/" + fileName);
+          }
+        } else {
+          fi.getString("UTF-8");
+          map.put(new String(fi.getFieldName()), new String(fi.getString()));
+        }
+      }
+    } catch (Exception e) {
+      throw CrashReport.createAndLogError(LOG, req, null, e);
     }
     return map;
   }

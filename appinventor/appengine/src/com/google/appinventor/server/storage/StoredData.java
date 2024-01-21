@@ -285,6 +285,7 @@ public class StoredData {
     public String title;
     public String phone;
     public String aia_path;
+    public String apk_path;
     public String pics;
     public String contents;
     public String price;
@@ -294,6 +295,7 @@ public class StoredData {
     public int num_blocks;
     public String catalog;//aia分类
     public String quality;//质量等级
+    public String provide_support;//是否提供售后支持
     public String score;//最新评分
     //public List score_list; //评分历史
     //public List comment_list; //评论历史

@@ -15,7 +15,7 @@
 <html class="devise-layout-html">
 <head prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Aia 应用商店 · App Inventor 2 中文网</title>
+    <title>aia 应用商店 · App Inventor 2 中文网</title>
     <meta name="keywords" content="App Inventor 2 中文网,.aia 应用商店,应用商店,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
 	<meta name="description" content="App Inventor 2 中文网.aia 应用商店，{{ page.description }}">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
@@ -73,9 +73,9 @@
 		    关于我们
 		</a>
 		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
-			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
-			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=aiastore">关于我们</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=aiastore" target="_blank">发布日志</a>
+			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=aiastore" target="_blank">服务条款</a>
 		</div>
 	    </li>
 	    <li class="nav-item dropdown">
@@ -83,9 +83,8 @@
 		    教育
 		</a>
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">项目指南</a>
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文论坛</a>
-		    <a class="dropdown-item" href="https://www.fun123.cn/reference/tutorials?f=ref">中文教程</a>
+            <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=aiastore#AppEntry" target="_blank">中文教程</a>
+		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=aiastore" target="_blank">中文论坛</a>
 		</div>
 	    </li>
 		<li class="nav-item dropdown">
@@ -106,7 +105,7 @@
 
 <div class="default-page">
     <div class="header" style="background:#009999;">
-    <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2&nbsp; Aia 应用商店</h1>
+    <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2&nbsp; aia 应用商店</h1>
     </div>
     <div class="container-fluid">
         

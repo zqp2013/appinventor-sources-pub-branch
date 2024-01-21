@@ -129,7 +129,7 @@
     </style>
 
 
-            <form method="POST" action="/aia-store/publish">
+            <form method="POST" action="/aia-store/publish" enctype="multipart/form-data">
                 <input type="hidden" name="phone"
                 <% if (phone != null) {
                     out.println("value=" + phone);
@@ -145,17 +145,24 @@
                     </tr>
 
                     <tr>
-                        <td>aia文件：</td>
-                        <td><input class="form-control form-input top"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
-                            required="required" title="该字段是必填字段。" type="text" name="aia_path" id="aia_path"></td>
+                        <td>图片预览：</td>
+                        <td><input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics">
+                            用于展示App效果，必填项！
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>图片预览：</td>
-                        <td><input class="form-control form-input top"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
-                            required="required" title="该字段是必填字段。" type="text" name="pics" id="pics"></td>
+                        <td>aia文件：</td>
+                        <td><input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path">
+                            源码文件，必填项！
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>apk文件：</td>
+                        <td><input type="file" name="apk_path" id="apk_path">
+                            apk安装文件，便于用户体验最终效果，非必填项！
+                        </td>
                     </tr>
 
                     <tr>
@@ -164,43 +171,56 @@
                     </tr>
 
                     <tr>
-                        <td>价格：</td>
-                        <td><input class="form-control form-input top"
+                        <td>价格：￥</td>
+                        <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')"  style="width: 150px;"
                             autofocus="autofocus" autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="price" id="price"></td>
                     </tr>
 
                     <tr>
                         <td>屏幕数量：</td>
-                        <td><input class="form-control form-input top"
+                        <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
                             autofocus="autofocus" autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="num_screen" id="num_screen"></td>
                     </tr>
 
                     <tr>
                         <td>代码块数量：</td>
-                        <td><input class="form-control form-input top"
+                        <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
                             autofocus="autofocus" autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="num_blocks" id="num_blocks"></td>
                     </tr>
 
                     <tr>
                         <td>分类：</td>
-                        <td><input class="form-control form-input top"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
-                            required="required" title="该字段是必填字段。" type="text" name="catalog" id="catalog"></td>
+                        <td>
+                            <input id="app" name="catalog" value="1" required type="radio" checked="true">&nbsp;<label for="app">软件应用App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="hardware" name="catalog" value="2" required type="radio">&nbsp;<label for="hardware">物联网硬件App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="game" name="catalog" value="3" required type="radio">&nbsp;<label for="game">游戏App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="other" name="catalog" value="4" required type="radio">&nbsp;<label for="other">其他App</label>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>等级：</td>
-                        <td><input class="form-control form-input top"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
-                            required="required" title="该字段是必填字段。" type="text" name="quality" id="quality"></td>
+                        <td>
+                            <input id="app" name="quality" value="1" required type="radio" checked="true">&nbsp;<label for="app">练手级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="hardware" name="quality" value="2" required type="radio">&nbsp;<label for="hardware">教学级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="game" name="quality" value="3" required type="radio">&nbsp;<label for="game">应用级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="other" name="quality" value="4" required type="radio">&nbsp;<label for="game">商业级</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>技术支持：</td>
+                        <td><input type="checkbox" name="provide_support" id="provide_support">&nbsp;<label for="provide_support">是否提供售后技术支持服务</label></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><br/><button type="submit">发布</button></td>
+                        <td><br/><button type="submit">发布</button>
+                            <a href="/aia-store/" style="margin-left:50px;"><< 返回</a>
+                        </td>
                     </tr>
 
                 </table>

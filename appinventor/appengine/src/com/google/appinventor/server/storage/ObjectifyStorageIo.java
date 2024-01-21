@@ -2293,6 +2293,7 @@ public class ObjectifyStorageIo implements  StorageIo {
             podata.title = as.title;
             podata.phone = as.phone;
             podata.aia_path = as.aia_path;
+            podata.apk_path = as.apk_path;
             podata.pics = as.pics;
             podata.contents = as.contents;
             podata.price = as.price;
@@ -2302,6 +2303,7 @@ public class ObjectifyStorageIo implements  StorageIo {
             podata.num_blocks = as.num_blocks;
             podata.catalog = as.catalog;//aia分类
             podata.quality = as.quality;//质量等级
+            podata.provide_support = as.provide_support;//是否提供售后支持
             podata.score = as.score;//最新评分
             podata.publish_time = new Date();
             datastore.put(podata);
@@ -2325,6 +2327,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               as.title = podata.title;
               as.phone = podata.phone;
               as.aia_path = podata.aia_path;
+              as.apk_path = podata.apk_path;
               as.pics = podata.pics;
               as.contents = podata.contents;
               as.price = podata.price;
@@ -2334,6 +2337,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               as.num_blocks = podata.num_blocks;
               as.catalog = podata.catalog;//aia分类
               as.quality = podata.quality;//质量等级
+              as.provide_support = podata.provide_support;//是否提供售后支持
               as.score = podata.score;//最新评分
               as.publish_time = podata.publish_time;
               result.t.add(as);
@@ -2359,6 +2363,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               as.phone = podata.phone;
               as.title = podata.title;
               as.aia_path = podata.aia_path;
+              as.apk_path = podata.apk_path;
               as.pics = podata.pics;
               as.contents = podata.contents;
               as.price = podata.price;
@@ -2368,6 +2373,7 @@ public class ObjectifyStorageIo implements  StorageIo {
               as.num_blocks = podata.num_blocks;
               as.catalog = podata.catalog;//aia分类
               as.quality = podata.quality;//质量等级
+              as.provide_support = podata.provide_support;//是否提供售后支持
               as.score = podata.score;//最新评分
               as.publish_time = podata.publish_time;
               result.t = as;
