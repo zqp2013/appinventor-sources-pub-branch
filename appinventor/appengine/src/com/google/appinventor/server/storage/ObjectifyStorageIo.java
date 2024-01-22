@@ -2420,7 +2420,7 @@ public class ObjectifyStorageIo implements  StorageIo {
   }
   //购买信息
   public void storeAiaBuy(final AiaBuy ab) {
-    if (ab.id == 0)
+    if (ab.asId == null)
       return;
 
     try {
@@ -2428,7 +2428,7 @@ public class ObjectifyStorageIo implements  StorageIo {
           @Override
           public void run(Objectify datastore) {
             AiaBuyData podata = new AiaBuyData();
-            podata.id = ab.id;
+            podata.orderId = ab.orderId;
             podata.asId = ab.asId;
             podata.owner_phone = ab.owner_phone;
             podata.buy_phone = ab.buy_phone;
@@ -2441,6 +2441,33 @@ public class ObjectifyStorageIo implements  StorageIo {
     } catch (ObjectifyException e) {
       throw CrashReport.createAndLogError(LOG, null, null, e);
     }
+  }
+  public AiaBuy getAiaBuy(final String orderId) {
+    final Result<AiaBuy> result = new Result<AiaBuy>();
+    try {
+      runJobWithRetries(new JobRetryHelper() {
+          @Override
+          public void run(Objectify datastore) {
+            LOG.info("getAiaBuy id:" + orderId);
+            AiaBuyData podata = datastore.find(AiaBuyData.class, orderId);
+            if (podata != null) {
+              AiaBuy order = new AiaBuy();
+              order.orderId = podata.orderId;
+              order.asId = podata.asId;
+              order.owner_phone = podata.owner_phone;
+              order.buy_phone = podata.buy_phone;
+              order.price = podata.price;
+              order.commission = podata.commission;
+              order.buy_time = podata.buy_time;
+              result.t = order;
+              LOG.info("find it:" + orderId);
+            }
+          }
+      }, false);
+    } catch (ObjectifyException e) {
+      throw CrashReport.createAndLogError(LOG, null, null, e);
+    }
+    return result.t;
   }
 
 

@@ -3,8 +3,11 @@
 @def text-button-background             #f5f5f5;
 /* Greens */
 @def box-background                     rgba(142, 191, 76, 0.3);
+/*主色*/
 @def selected-color                     #8EBF4C;
+/*组件选中背景*/
 @def bar-color                          #d2e0a6;
+/*左侧抽屉背景*/
 @def tab-bar-background-color           #eef2e0;
 @def box-background-color               #f7f9f2;
 
@@ -34,6 +37,7 @@
 @def destructive-action-hover           #FF6666;
 @def item-color-red                     #ff0000;
 
+/*Add by 中文网*/
 @def text-shadow-def                    0 1px 1px rgba(255, 255, 255, 0.75);
 @def message-color                      #2d2d2d;
 @def menu-bgcolor                       selected-color;

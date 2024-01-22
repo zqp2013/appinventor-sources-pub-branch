@@ -304,7 +304,7 @@ public class StoredData {
   //aia商店购买信息
   @Unindexed
   public static final class AiaBuyData {
-    @Id Long id;
+    @Id String orderId;
     public String asId;
     public String owner_phone; //发布者
     public String buy_phone; //购买者

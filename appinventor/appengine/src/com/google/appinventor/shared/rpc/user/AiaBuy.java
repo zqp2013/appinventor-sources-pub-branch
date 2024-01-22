@@ -21,7 +21,7 @@ public class AiaBuy implements IsSerializable, Serializable {
     public AiaBuy() {
     }
 
-    public Long getId(){return id;}
+    public String getOrderId(){return orderId;}
     public String getAsId(){return asId;}
     public String getOwner_phone(){return owner_phone;}
     public String getBuy_phone(){return buy_phone;}
@@ -29,7 +29,7 @@ public class AiaBuy implements IsSerializable, Serializable {
     public String getCommission(){return commission;}
     public Date getBuy_time(){return buy_time;}
 
-    public Long id;
+    public String orderId;
     public String asId;
     public String owner_phone; //发布者
     public String buy_phone; //购买者

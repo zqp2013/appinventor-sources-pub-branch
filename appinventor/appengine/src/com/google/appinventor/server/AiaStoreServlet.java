@@ -69,11 +69,78 @@ public class AiaStoreServlet extends HttpServlet {
   private final PolicyFactory sanitizer = new HtmlPolicyBuilder().allowElements("p").toFactory();
   static final SimpleDateFormat expiredFormat = new SimpleDateFormat("yyyy/MM/dd");
 
+  // 回调url前缀
+  //private String CALLBACK_URL_PRE = "https://www.fun123.cn";
+  private String CALLBACK_URL_PRE = "http://192.168.1.11:8088"; //for dev
+  
   public void init(ServletConfig config) throws ServletException {
     super.init(config);
   }
   public void destroy() {
     super.destroy();
+  }
+
+  // 订单编号规则
+  private static String genTradeNo(String phone, String asId) {
+		return "A" + phone + asId;
+	}
+
+  // 检查是否已经购买
+  private boolean ValidateBuy(String phone, String asId) {
+    boolean has_buy = false;
+    String trade_no = genTradeNo(phone, asId);
+    AiaBuy order = storageIo.getAiaBuy(trade_no);
+    if (order != null && order.price != null && !"".equals(order.price)) {
+      has_buy = true;
+    }
+    return has_buy;
+  }
+
+  // PC支付（来自PayServlet.java）
+  protected void pc_pay(HttpServletRequest req, HttpServletResponse resp, String asId, String subject, String owner_phone, String buy_phone, String amount) throws IOException {    
+		AlipayTradePagePayModel model = new AlipayTradePagePayModel();
+    model.setOutTradeNo(genTradeNo(buy_phone, asId));
+    model.setProductCode("FAST_INSTANT_TRADE_PAY");
+		model.setSubject(subject);//订单标题
+		model.setTotalAmount(amount);//支付金额
+		
+		try {
+      LOG.info("==> pc trade no:" + model.getOutTradeNo());
+      AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
+      request.setBizModel(model);
+      request.setNotifyUrl(CALLBACK_URL_PRE + "/aia-store/notify");
+      request.setReturnUrl(CALLBACK_URL_PRE + "/aia-store/return");
+      AlipayTradePagePayResponse alipayResp = PayServlet.alipayClient.pageExecute(request);
+      LOG.info("==> pc pay resp:" + alipayResp.getBody());
+
+      if (alipayResp.isSuccess()) {
+
+        //==========================生成订单信息===================================
+        AiaBuy order = new AiaBuy();
+        order.orderId = model.getOutTradeNo();
+        order.asId = asId;
+        order.owner_phone = owner_phone;
+        order.buy_phone = buy_phone;
+        storageIo.storeAiaBuy(order);
+        //========================================================================
+
+        //处理成功
+        String form = alipayResp.getBody();
+        resp.setContentType("text/html;charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        out.write(form);
+        out.flush();
+        out.close();
+
+      } else {  //其他状态, 表示下单失败
+          resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Sorry! Pay Failed, Please contact customer service."));
+          return;
+      }
+
+		} catch (Exception e) {
+      resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize(e.getMessage()));
+      return;
+		}
   }
 
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -86,12 +153,56 @@ public class AiaStoreServlet extends HttpServlet {
     HashMap<String, String> params = getQueryMap(queryString);
     String to_page = "list.jsp";
 
-    // 回调返回，开通服务
+    // 当前用户信息
+    OdeAuthFilter.UserInfo userInfo = OdeAuthFilter.getUserInfo(req);
+    User user = null;
+    req.setCharacterEncoding("UTF-8");
+    if (userInfo != null) {
+      user = storageIo.getUser(userInfo.getUserId());
+      if (user != null && !user.getUserEmail().equals("test@fun123.cn")) {
+        req.setAttribute("phone", user.getUserEmail());
+        req.setAttribute("is_admin", user.getIsAdmin());
+      }
+    }
+
     if (page.equals("return")) {
-      
-      //pay_succ(req, resp, phone, period);
+      // ----回调返回，购买成功----
+      String trade_no = params.get("out_trade_no");
+      String method = params.get("method");//alipay.trade.page.pay.return 类型
+      String total_amount = params.get("total_amount"); //金额
+
+      String phone = trade_no.substring(1, 12);
+      String asId = trade_no.substring(12);
+
+      //==========================回填订单信息===================================
+      AiaBuy order = storageIo.getAiaBuy(trade_no);
+      if (order == null) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid order: " + trade_no));
+        return;
+      }
+      if (order.price != null && !"".equals(order.price)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("The order has been paid: " + trade_no));
+        return;
+      }
+
+      order.price = total_amount;
+      order.commission = "0";//TODO：计算佣金
+      order.buy_time = new Date();
+      storageIo.storeAiaBuy(order);
+      //========================================================================
+
+      // 跳到详情页
+      AiaStore as = storageIo.getAiaStore(asId);
+      if (as == null) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + asId));
+        return;
+      }
+      req.setAttribute("aia", as);
+      req.setAttribute("has_buy", true); //是否已经购买
+      to_page = "aia.jsp";
+
     } else if (page.equals("publish")) {
-      // 发布页
+      // --------发布页----------
       to_page = "publish.jsp";
       
     } else if (page.equals("aia-store") || page.equals("")) {
@@ -99,7 +210,7 @@ public class AiaStoreServlet extends HttpServlet {
       req.setAttribute("aiaList", aiaList);
 
     } else if (page.equals("rm")) {
-      //删除
+      //--------删除--------
       String id = params.get("id");
       storageIo.deleteAiaStore(id);
 
@@ -107,7 +218,7 @@ public class AiaStoreServlet extends HttpServlet {
       req.setAttribute("aiaList", aiaList);
 
     } else if (page.equals("update")) {
-      //更新
+      //-------更新-------
       String id = params.get("id");
       AiaStore as = storageIo.getAiaStore(id);
       if (as == null) {
@@ -117,25 +228,53 @@ public class AiaStoreServlet extends HttpServlet {
       req.setAttribute("aia", as);
       to_page = "publish.jsp";
 
+    } else if (page.equals("pay")) {
+      //--------购买--------
+      String id = params.get("id");
+      AiaStore as = storageIo.getAiaStore(id);
+      if (as == null) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        return;
+      }
+  
+      String subject = params.get("subject");
+      String buy_phone = params.get("phone");
+      String amount = params.get("amount");  
+      pc_pay(req, resp, id, subject, as.phone, buy_phone, amount);
+      return;
+
+    } else if (page.equals("validatebuy")) {
+      //--------购买验证--------
+      String phone = params.get("phone");
+      String asId = params.get("id");      
+      AiaStore as = storageIo.getAiaStore(asId);
+      if (as == null) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        return;
+      }
+  
+      boolean has_buy = ValidateBuy(phone, asId);
+      req.setAttribute("has_buy", has_buy); //是否已经购买
+      req.setAttribute("aia", as);
+      to_page = "aia.jsp";
+
     } else {
-      // 详情页
+      // -----详情页-----
       AiaStore as = storageIo.getAiaStore(page);
       if (as == null) {
         resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
         return;
       }
+    
+      // 检查是否已经购买
+      boolean has_buy = false;
+      if (user != null && !user.getUserEmail().equals("test@fun123.cn")) {
+        has_buy = ValidateBuy(user.getUserEmail(), page);
+      }
+
+      req.setAttribute("has_buy", has_buy); //是否已经购买
       req.setAttribute("aia", as);
       to_page = "aia.jsp";
-    }
-
-    OdeAuthFilter.UserInfo userInfo = OdeAuthFilter.getUserInfo(req);
-    req.setCharacterEncoding("UTF-8");
-    if (userInfo != null) {
-      User user = storageIo.getUser(userInfo.getUserId());
-      if (user != null && !user.getUserEmail().equals("test@fun123.cn")) {
-        req.setAttribute("phone", user.getUserEmail());
-        req.setAttribute("is_admin", user.getIsAdmin());
-      }
     }
     
     try {

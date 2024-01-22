@@ -9,7 +9,7 @@
 <%
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String phone = (String) request.getAttribute("phone");
-   String is_admin = (String) request.getAttribute("is_admin");
+   Boolean is_admin = (Boolean) request.getAttribute("is_admin");
    List<AiaStore> aiaList = (List<AiaStore>) request.getAttribute("aiaList");
 %>
 <!DOCTYPE html>
@@ -112,4 +112,8 @@
         
 
 
+        <% if (phone != null) {
+            out.println("账户信息：" + phone);
+        } %>
 
+        <br/>

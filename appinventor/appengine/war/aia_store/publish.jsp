@@ -9,11 +9,6 @@
             </ul>
 
 
-            <% if (phone != null) {
-                out.println("账户信息：" + phone);
-            } %>
-
-
 <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script><!--40.2.0-->
 <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/translations/zh-cn.js"></script>
 <script type="text/javascript">
