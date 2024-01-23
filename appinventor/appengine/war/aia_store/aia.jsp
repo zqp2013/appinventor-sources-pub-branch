@@ -20,11 +20,15 @@
                         <h4 class="card-title"><c:out value="${aia.title}" /></h4>
                         <p class="card-text"><i><c:out value="${aia.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${aia.score}" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;购买信息：
-                                <% if (has_buy) {
-                                    out.println("<font color=green>已购买</font>");
-                                } else {
-                                    out.println("<font>未购买</font>");
-                                } %>
+                                <c:choose>
+                                    <c:when test="${aia.price == '0'}">免费</c:when>
+                                    <c:otherwise>
+                                        <c:choose>
+                                            <c:when test="${has_buy != null && has_buy}">已购买</c:when>
+                                            <c:otherwise>未购买</c:otherwise>
+                                        </c:choose>
+                                    </c:otherwise>                                    
+                                </c:choose>
                         </p>
                         <p class="card-text">
                             
@@ -34,62 +38,88 @@
                         <p class="card-text">
                             <c:out value="${aia.contents}" />
                         </p>
-                            
-                            <p>作者：<c:out value="${aia.phone}" /></p>
-                        <p class="card-text">
-                            <a href="<c:out value="${aia.aia_path}" />" target="_blank">下载源码</a>
-                            
-                            <!--<br>
-                            <a href="">作者其他作品</a>-->
-                        
-                            
-                        </p>
 
-                        <p class="card-text">
-                            ￥ <c:out value="${aia.price}" />
-
-                            
-                            <form action="/aia-store/pay/" method="post">
-                                <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
-                                <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
-                                <input type="hidden" name="phone" value="<% if (phone != null) {
-                                        out.println(phone);
-                                    } %>">
-                                <input type="hidden" name="amount" value="<c:out value="${aia.price}" />">
-                                <button name="button" type="submit">会员购买</button>
-                            </form>
-
-                            <br/><br/>
-
-                            <form action="/aia-store/pay/" method="post">
-                                <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
-                                <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
+                        <p>作者：<c:out value="${aia.phone}" />
+                        <!--<br>
+                            <a href="">作者其他作品</a>--></p>
 
 
-                                <div>
-                                    <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
-                                </div>
 
-                                <input class="form-control form-input top js-username-field" style="width:300px"
-oninput="value=value.replace(/[^0-9.]/g,'')" 
-onblur="javascript:if(value.length!=11){
-    document.getElementById('paybtn').disabled = true;
-    if (value.length > 0) document.getElementById('error_msg').style.visibility = 'visible';
-} else {document.getElementById('paybtn').disabled = false; document.getElementById('error_msg').style.visibility = 'hidden'; } " 
-                                    autocapitalize="off" autocorrect="off" placeholder="请输入手机号码，作为购买凭证"
-                                    required="required" title="该字段是必填字段。" type="text" name="phone" id="phone">
-  
+<c:set var="NoNeedBuy" value="${(has_buy != null && has_buy) || aia.price == '0'}"/>
+<c:choose>
 
-                                <input type="hidden" name="amount" value="<c:out value="${aia.price}" />">
-                                <button name="button" type="submit" id="paybtn">非会员购买</button>
-                            </form>
+    <c:when test="${NoNeedBuy}">
+        <!--已购买或免费-->
+        <p class="card-text">
+            <a href="<c:out value="${aia.aia_path}" />" target="_blank">下载源码</a> 
+        </p>
+    </c:when>
+
+    <c:otherwise>
+        <!--购买-->
+        <p class="card-text">
+            
 
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/aia-store/validatebuy?phone=&id=">非会员已购买验证</a>
-                        </p>
+            <c:choose>
+                <c:when test="${phone != null}">
+                    <!--已登录-->
+                    ￥ <del><c:out value="${aia.price}" /></del> <c:out value="${aia.price * 0.5}" /> &nbsp;&nbsp;会员价5折
+                    <form action="/aia-store/pay/" method="get">
+                        <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
+                        <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
+                        <input type="hidden" name="phone" value="<% out.println(phone); %>">
+                        <input type="hidden" name="amount" value="<c:out value="${aia.price * 0.5}" />"><!--折扣-->
+                        <button name="button" type="submit">会员购买</button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <!--未登录-->
+                    ￥ <c:out value="${aia.price}" />&nbsp;&nbsp;
+                    <a href="https://www.fun123.cn/" target="_blank">未登录，点此登录以会员折扣价购买</a>
+
+
+                    <br/><br/>
+                    <form action="/aia-store/pay/" method="get">
+                        <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
+                        <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
+        
+        
+                        <div>
+                            <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
+                        </div>
+        
+                        <input class="form-control form-input top js-username-field" style="width:300px"
+            oninput="value=value.replace(/[^0-9.]/g,'')" 
+            onblur="javascript:if(value.length!=11){
+                document.getElementById('paybtn').disabled = true;
+                if (value.length > 0) document.getElementById('error_msg').style.visibility = 'visible';
+                document.getElementById('validatebuy').disabled = true;
+            } else {
+                document.getElementById('paybtn').disabled = false; 
+                document.getElementById('error_msg').style.visibility = 'hidden'; 
+                document.getElementById('validatebuy').href = '/aia-store/validatebuy?phone=' + value + '&id=<c:out value='${aia.asId}' />'; 
+                document.getElementById('validatebuy').disabled = false;
+            } " 
+                            autocapitalize="off" autocorrect="off" placeholder="请输入手机号码，作为购买凭证"
+                            required="required" title="该字段是必填字段。" type="text" name="phone" id="phone">
+        
+        
+                        <input type="hidden" name="amount" value="<c:out value="${aia.price}" />">
+                        <button name="button" type="submit" id="paybtn" disabled>非会员购买</button>  
+                        &nbsp;&nbsp;<a id="validatebuy">非会员已购买点此验证</a>
+                    </form>
+
+                </c:otherwise>
+            </c:choose>
+            
+        </p>
+    </c:otherwise>
+
+</c:choose>
+
                     </div>
             </div>
-
 
 
 <%@ include file="_footer.jsp" %>

@@ -16,7 +16,7 @@
                                                 overflow: auto">
                     <div class="card-body">
                         
-                        <h4 class="card-title"><a href='/aia-store/<c:out value="${item.asId}" />'><c:out value="${item.title}" /></a></h4>
+                        <h4 class="card-title"><c:out value="${item.title}" /></h4>
                         <p class="card-text"><i><c:out value="${item.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" /></p>
                         <p class="card-text">
                             
@@ -29,12 +29,7 @@
                             
                             <p>作者：<c:out value="${item.phone}" /></p>
                         <p class="card-text">
-                            <a href="<c:out value="${item.aia_path}" />" target="_blank">下载源码</a>
-                            
-                            <!--<br>
-                            <a href="">作者其他作品</a>-->
-                    
-                            
+                            <a href='/aia-store/<c:out value="${item.asId}" />'>查看详情</a>
                         </p>
                     </div>
                 </div>

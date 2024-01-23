@@ -211,18 +211,26 @@ public class AiaStoreServlet extends HttpServlet {
 
     } else if (page.equals("rm")) {
       //--------删除--------
-      String id = params.get("id");
-      storageIo.deleteAiaStore(id);
+      String asId = params.get("id");
+      if (asId == null || "".equals(asId)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid param!"));
+        return;
+      }
+      storageIo.deleteAiaStore(asId);
 
       List<AiaStore> aiaList = storageIo.getAiaStoreList();
       req.setAttribute("aiaList", aiaList);
 
     } else if (page.equals("update")) {
       //-------更新-------
-      String id = params.get("id");
-      AiaStore as = storageIo.getAiaStore(id);
+      String asId = params.get("id");
+      if (asId == null || "".equals(asId)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid param!"));
+        return;
+      }
+      AiaStore as = storageIo.getAiaStore(asId);
       if (as == null) {
-        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + asId));
         return;
       }
       req.setAttribute("aia", as);
@@ -230,26 +238,34 @@ public class AiaStoreServlet extends HttpServlet {
 
     } else if (page.equals("pay")) {
       //--------购买--------
-      String id = params.get("id");
-      AiaStore as = storageIo.getAiaStore(id);
+      String asId = params.get("id");
+      if (asId == null || "".equals(asId)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid param!"));
+        return;
+      }
+      AiaStore as = storageIo.getAiaStore(asId);
       if (as == null) {
-        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + asId));
         return;
       }
   
       String subject = params.get("subject");
       String buy_phone = params.get("phone");
       String amount = params.get("amount");  
-      pc_pay(req, resp, id, subject, as.phone, buy_phone, amount);
+      pc_pay(req, resp, asId, subject, as.phone, buy_phone, amount);
       return;
 
     } else if (page.equals("validatebuy")) {
       //--------购买验证--------
       String phone = params.get("phone");
-      String asId = params.get("id");      
+      String asId = params.get("id");
+      if (phone == null || "".equals(phone) || asId == null || "".equals(asId)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid param!"));
+        return;
+      }
       AiaStore as = storageIo.getAiaStore(asId);
       if (as == null) {
-        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + page));
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + asId));
         return;
       }
   
