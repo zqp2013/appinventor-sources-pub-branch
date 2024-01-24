@@ -1,5 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="_header.jsp" %> 
+<%
+   AiaStore aia = (AiaStore) request.getAttribute("aia");
+   if (aia != null) {
+      request.setAttribute("pageTitle", aia.title + " · App Inventor 2 源码商店");
+   } else {
+      request.setAttribute("pageTitle", "App Inventor 2 源码商店");
+   }
+
+   request.setAttribute("pageDesc", "");
+%>
+<%@ include file="_header.jsp" %>
 
 <%
    Boolean has_buy = (Boolean) request.getAttribute("has_buy");
@@ -10,8 +20,15 @@
 
 
 <a href="/aia-store/"><< 返回列表</a>&nbsp;&nbsp;
-<a href="/aia-store/update?id=<c:out value="${aia.asId}" />">编辑</a>&nbsp;&nbsp;
-<a href="/aia-store/rm?id=<c:out value="${aia.asId}" />">删除</a>
+
+
+        <c:choose>
+            <c:when test="${is_admin || aia.phone == phone}">
+                <a href="/aia-store/update?id=<c:out value="${aia.asId}" />">编辑</a>&nbsp;&nbsp;
+                <a href="/aia-store/rm?id=<c:out value="${aia.asId}" />">删除</a>
+            </c:when>
+        </c:choose>
+
 
             <div class="card shadow" style="max-height: 1000px;
                                                 overflow: auto">
@@ -32,8 +49,31 @@
                         </p>
                         <p class="card-text">
                             
-                            <img src="<c:out value="${aia.pics}" />" width="300px">
+                            <img src="<c:out value="${aia.pics}" />" width="300px"/>
                             
+                            <br/>屏幕数量：<c:out value="${aia.num_screen}" />
+                            <br/>代码块数量：<c:out value="${aia.num_blocks}" />
+                            <br/>分类：
+                            <c:choose>
+                                <c:when test="${aia.catalog == null || aia.catalog == '1'}">软件应用App</c:when>
+                                <c:when test="${aia.catalog == '2'}">物联网硬件App</c:when>
+                                <c:when test="${aia.catalog == '3'}">游戏App</c:when>
+                                <c:when test="${aia.catalog == '4'}">其他App</c:when>
+                            </c:choose>
+                            
+                            <br/>等级：
+                            <c:choose>
+                                <c:when test="${aia.quality == null || aia.quality == '1'}">练手级</c:when>
+                                <c:when test="${aia.quality == '2'}">教学级</c:when>
+                                <c:when test="${aia.quality == '3'}">应用级</c:when>
+                                <c:when test="${aia.quality == '4'}">商业级</c:when>
+                            </c:choose>
+                            
+                            <br/>提供技术支持：
+                            <c:choose>
+                                <c:when test="${aia.provide_support == '1'}">提供</c:when>
+                                <c:otherwise>不提供</c:otherwise>
+                            </c:choose>
                         </p>
                         <p class="card-text">
                             <c:out value="${aia.contents}" />
@@ -45,12 +85,13 @@
 
 
 
-<c:set var="NoNeedBuy" value="${(has_buy != null && has_buy) || aia.price == '0'}"/>
+<c:set var="NoNeedBuy" value="${(has_buy != null && has_buy) || aia.price == '0' || is_admin || aia.phone == phone}"/>
 <c:choose>
 
     <c:when test="${NoNeedBuy}">
         <!--已购买或免费-->
         <p class="card-text">
+            售价：￥ <c:out value="${aia.price}" /><br/>
             <a href="<c:out value="${aia.aia_path}" />" target="_blank">下载源码</a> 
         </p>
     </c:when>

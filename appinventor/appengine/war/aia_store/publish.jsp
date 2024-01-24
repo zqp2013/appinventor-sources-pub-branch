@@ -1,5 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="_header.jsp" %> 
+<%
+   request.setAttribute("pageTitle", "发布项目 · App Inventor 2 源码商店");
+   request.setAttribute("pageDesc", "");
+%>
+<%@ include file="_header.jsp" %>
 
 
             <ul class="messagelist">
@@ -126,96 +130,141 @@
             <form method="POST" action="/aia-store/publish" enctype="multipart/form-data">
                 <input type="hidden" name="asId" value="<c:out value="${aia.asId}" />"/>
 
-                <input type="hidden" name="phone"
-                <% if (phone != null) {
-                    out.println("value=" + phone);
-                } %>
-                />
+                
+                <c:choose>
+                    <c:when test="${aia.phone != null}">
+                        <input type="hidden" name="phone" value="${aia.phone}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <input type="hidden" name="phone"
+                        <% if (phone != null) {
+                            out.println("value=" + phone);
+                        } %>
+                        />
+                    </c:otherwise>
+                </c:choose>
 
                 <table style="width: 100%;">
                     <tr>
                         <td style="width:100px;">项目名：</td>
                         <td><input class="form-control form-input top" value="<c:out value="${aia.title}" />"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off"
+                            autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="title" id="title"></td>
                     </tr>
 
                     <tr>
                         <td>图片预览：</td>
-                        <td><input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics">
-                            用于展示App效果，必填项！
+                        <td>
+                            <c:choose>
+                                <c:when test="${aia.pics != null}">
+                                    <img src="<c:out value="${aia.pics}" />" width="120px"/>
+                                    <input type="hidden" name="pics" id="pics" value="<c:out value="${aia.pics}" />">
+                                </c:when>
+                                <c:otherwise>
+                                    <input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics">
+                                    用于展示App效果，必填项！
+                                </c:otherwise>
+                            </c:choose>
                         </td>
                     </tr>
 
                     <tr>
                         <td>aia文件：</td>
-                        <td><input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path">
-                            源码文件，必填项！
+                        <td>
+                            <c:choose>
+                                <c:when test="${aia.aia_path != null}">
+                                    <c:out value="${aia.aia_path}" />
+                                    <input type="hidden" name="aia_path" id="aia_path" value="<c:out value="${aia.aia_path}" />">
+                                </c:when>
+                                <c:otherwise>
+                                    <input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path">
+                                    源码文件，必填项！
+                                </c:otherwise>
+                            </c:choose> 
                         </td>
                     </tr>
 
                     <tr>
                         <td>apk文件：</td>
-                        <td><input type="file" name="apk_path" id="apk_path">
-                            apk安装文件，便于用户体验最终效果，非必填项！
+                        <td>
+                            <c:choose>
+                                <c:when test="${aia.apk_path != null}">
+                                    <c:out value="${aia.apk_path}" />
+                                    <input type="hidden" name="apk_path" id="apk_path" value="<c:out value="${aia.apk_path}" />">
+                                </c:when>
+                                <c:otherwise>
+                                    <input type="file" name="apk_path" id="apk_path">
+                                    apk安装文件，便于用户体验最终效果，非必填项！
+                                </c:otherwise>
+                            </c:choose> 
                         </td>
                     </tr>
 
                     <tr>
                         <td>描述：</td>
-                        <td><textarea name="contents" id="desc_contents"></textarea></td>
+                        <td><textarea name="contents" id="desc_contents"><c:out value="${aia.contents}" /></textarea></td>
                     </tr>
 
                     <tr>
                         <td>价格：￥</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')"  style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.price}" />"
+                            autocapitalize="off" autocorrect="off" value="<c:out value="${aia.price}" />"
                             required="required" title="该字段是必填字段。" type="text" name="price" id="price"></td>
                     </tr>
 
                     <tr>
                         <td>屏幕数量：</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_screen}" />"
+                            autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_screen}" />"
                             required="required" title="该字段是必填字段。" type="text" name="num_screen" id="num_screen"></td>
                     </tr>
 
                     <tr>
                         <td>代码块数量：</td>
                         <td><input class="form-control form-input top" oninput="value=value.replace(/[^0-9.]/g,'')" style="width: 150px;"
-                            autofocus="autofocus" autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_blocks}" />"
+                            autocapitalize="off" autocorrect="off" value="<c:out value="${aia.num_blocks}" />"
                             required="required" title="该字段是必填字段。" type="text" name="num_blocks" id="num_blocks"></td>
                     </tr>
 
                     <tr>
                         <td>分类：</td>
                         <td>
-                            <input id="app" name="catalog" value="1" required type="radio" checked="true">&nbsp;<label for="app">软件应用App</label>&nbsp;&nbsp;&nbsp;
-                            <input id="hardware" name="catalog" value="2" required type="radio">&nbsp;<label for="hardware">物联网硬件App</label>&nbsp;&nbsp;&nbsp;
-                            <input id="game" name="catalog" value="3" required type="radio">&nbsp;<label for="game">游戏App</label>&nbsp;&nbsp;&nbsp;
-                            <input id="other" name="catalog" value="4" required type="radio">&nbsp;<label for="other">其他App</label>
+                            
+                            <input id="app" name="catalog" value="1" required type="radio" <c:choose><c:when test="${aia.catalog == null || aia.catalog == '1'}">checked</c:when></c:choose> >&nbsp;<label for="app">软件应用App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="hardware" name="catalog" value="2" required type="radio" <c:choose><c:when test="${aia.catalog == '2'}">checked</c:when></c:choose>>&nbsp;<label for="hardware">物联网硬件App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="game" name="catalog" value="3" required type="radio" <c:choose><c:when test="${aia.catalog == '3'}">checked</c:when></c:choose>>&nbsp;<label for="game">游戏App</label>&nbsp;&nbsp;&nbsp;
+                            <input id="other" name="catalog" value="4" required type="radio" <c:choose><c:when test="${aia.catalog == '4'}">checked</c:when></c:choose>>&nbsp;<label for="other">其他App</label>
                         </td>
                     </tr>
 
                     <tr>
                         <td>等级：</td>
                         <td>
-                            <input id="app" name="quality" value="1" required type="radio" checked="true">&nbsp;<label for="app">练手级</label>&nbsp;&nbsp;&nbsp;
-                            <input id="hardware" name="quality" value="2" required type="radio">&nbsp;<label for="hardware">教学级</label>&nbsp;&nbsp;&nbsp;
-                            <input id="game" name="quality" value="3" required type="radio">&nbsp;<label for="game">应用级</label>&nbsp;&nbsp;&nbsp;
-                            <input id="other" name="quality" value="4" required type="radio">&nbsp;<label for="game">商业级</label>
+                            <input id="demo" name="quality" value="1" required type="radio" <c:choose><c:when test="${aia.quality == null || aia.quality == '1'}">checked</c:when></c:choose> >&nbsp;<label for="demo">练手级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="teach" name="quality" value="2" required type="radio" <c:choose><c:when test="${aia.quality == '2'}">checked</c:when></c:choose> >&nbsp;<label for="teach">教学级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="pro" name="quality" value="3" required type="radio" <c:choose><c:when test="${aia.quality == '3'}">checked</c:when></c:choose> >&nbsp;<label for="pro">应用级</label>&nbsp;&nbsp;&nbsp;
+                            <input id="biz" name="quality" value="4" required type="radio" <c:choose><c:when test="${aia.quality == '4'}">checked</c:when></c:choose> >&nbsp;<label for="biz">商业级</label>
                         </td>
                     </tr>
 
                     <tr>
                         <td>技术支持：</td>
-                        <td><input type="checkbox" name="provide_support" id="provide_support">&nbsp;<label for="provide_support">是否提供售后技术支持服务</label></td>
+                        <td><input type="checkbox" name="provide_support" id="provide_support" value="1" <c:choose><c:when test="${aia.provide_support == '1'}">checked</c:when></c:choose> >&nbsp;<label for="provide_support">是否提供售后技术支持服务</label></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><br/><button type="submit">发布</button>
-                            <a href="/aia-store/" style="margin-left:50px;"><< 返回</a>
+                        <td><br/>
+                            <c:choose>
+                                <c:when test="${phone != null}">
+                                    <button type="submit">发布</button>
+                                </c:when>
+                                <c:otherwise>
+                                    请登<a href="https://www.fun123.cn/" target="_blank">录后</a>发布项目
+                                </c:otherwise>
+                            </c:choose>
+                            
+                            <a href="javascript:window.history.back();" style="margin-left:50px;"><< 返回</a>
                         </td>
                     </tr>
 

@@ -1,9 +1,27 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+   request.setAttribute("pageTitle", "App Inventor 2 源码商店");
+   request.setAttribute("pageDesc", "");
+%>
 <%@ include file="_header.jsp" %> 
 
 
+        <c:choose>
+            <c:when test="${is_admin}">
+                <a href="/aia-store/publish">+ 发布项目</a>
+            </c:when>
+        </c:choose>
 
-        <a href="/aia-store/publish">+ 发布项目</a>
+        <!--<a href="/aia-store/?order=publish_time&desc=1" style="margin-left:300px;">新发布优先</a>
+        <a href="/aia-store/?order=score&desc=1">评分高优先</a>
+        <c:choose>
+            <c:when test="${phone != null}">
+                <a href="/aia-store/">全部</a>
+                <a href="/aia-store/?phone=${phone}">我的</a>
+            </c:when>
+        </c:choose>
+        -->
+
 
         <!--<center>
             <a href="?offset=10">下一页 &gt;&gt;</a>
@@ -20,7 +38,7 @@
                         <p class="card-text"><i><c:out value="${item.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" /></p>
                         <p class="card-text">
                             
-                            <img src="<c:out value="${item.pics}" />" width="300px">
+                            <img src="<c:out value="${item.pics}" />" width="300px"/>
                             
                         </p>
                         <p class="card-text">

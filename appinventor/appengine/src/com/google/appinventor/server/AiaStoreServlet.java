@@ -206,6 +206,13 @@ public class AiaStoreServlet extends HttpServlet {
       to_page = "publish.jsp";
       
     } else if (page.equals("aia-store") || page.equals("")) {
+
+
+      //可以查看某人的项目列表
+      //String phone = params.get("phone");
+      //String order = params.get("order");
+      //String desc = params.get("desc");
+
       List<AiaStore> aiaList = storageIo.getAiaStoreList();
       req.setAttribute("aiaList", aiaList);
 
@@ -240,7 +247,7 @@ public class AiaStoreServlet extends HttpServlet {
       //--------购买--------
       String asId = params.get("id");
       if (asId == null || "".equals(asId)) {
-        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid param!"));
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid id param!"));
         return;
       }
       AiaStore as = storageIo.getAiaStore(asId);
@@ -248,9 +255,17 @@ public class AiaStoreServlet extends HttpServlet {
         resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Aia Not Found: " + asId));
         return;
       }
-  
       String subject = params.get("subject");
       String buy_phone = params.get("phone");
+      if (subject == null || "".equals(subject) || buy_phone == null || "".equals(buy_phone)) {
+        resp.sendRedirect("/aia_store/aia.jsp?error=" + sanitizer.sanitize("Invalid params!"));
+        return;
+      }
+      if (ValidateBuy(buy_phone, asId)) { //重复购买：跳转到验证购买页面
+        resp.sendRedirect("/aia-store/validatebuy?phone=" + buy_phone + "&id=" + asId);
+        return;
+      }
+      
       String amount = params.get("amount");  
       pc_pay(req, resp, asId, subject, as.phone, buy_phone, amount);
       return;
@@ -312,40 +327,40 @@ public class AiaStoreServlet extends HttpServlet {
 		return key;
 	}
 
+  // 发布页
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     HashMap<String, String> params = genFormDataMap(req);
-    //String page = getPage(req);
-    //if (page.equals("publish")) {
-      // 发布页
-      String title = params.get("title");
-      if (title == null || title.equals("")) {
-        resp.sendRedirect("/aia_store/publish.jsp?error=" + sanitizer.sanitize("Invalid title!"));
-        return;
-      }
+    String title = params.get("title");
+    if (title == null || title.equals("")) {
+      resp.sendRedirect("/aia_store/publish.jsp?error=" + sanitizer.sanitize("Invalid title!"));
+      return;
+    }
+    String phone = params.get("phone");
+    if (phone == null || phone.equals("")) {
+      resp.sendRedirect("/aia_store/publish.jsp?error=" + sanitizer.sanitize("Invalid account info!"));
+      return;
+    }
 
-      AiaStore podata = new AiaStore();
-      podata.asId = params.get("asId");
-      podata.title = title;
-      podata.phone = params.get("phone");
-      podata.aia_path = params.get("aia_path");
-      podata.apk_path = params.get("apk_path");
-      podata.pics = params.get("pics");
-      podata.contents = params.get("contents");
-      podata.price = params.get("price");
-      podata.app_status = "审核中";//审核状态
-      podata.ranking = "0";//综合排名
-      podata.num_screen = Integer.parseInt(params.get("num_screen"));
-      podata.num_blocks = Integer.parseInt(params.get("num_blocks"));
-      podata.catalog = params.get("catalog");//aia分类
-      podata.quality = params.get("quality");//质量等级
-      podata.provide_support = params.get("provide_support");//是否提供售后支持
-      podata.score = "0";//最新评分
-      storageIo.storeAiaStore(podata);
+    AiaStore podata = new AiaStore();
+    podata.asId = params.get("asId");
+    podata.title = title;
+    podata.phone = phone;
+    podata.aia_path = params.get("aia_path");
+    podata.apk_path = params.get("apk_path");
+    podata.pics = params.get("pics");
+    podata.contents = params.get("contents");
+    podata.price = params.get("price");
+    podata.app_status = "审核中";//审核状态
+    podata.ranking = "0";//综合排名
+    podata.num_screen = Integer.parseInt(params.get("num_screen"));
+    podata.num_blocks = Integer.parseInt(params.get("num_blocks"));
+    podata.catalog = params.get("catalog");//aia分类
+    podata.quality = params.get("quality");//质量等级
+    podata.provide_support = params.get("provide_support");//是否提供售后支持
+    podata.score = "0";//最新评分
+    storageIo.storeAiaStore(podata);
 
-      List<AiaStore> aiaList = storageIo.getAiaStoreList();
-      req.setAttribute("aiaList", aiaList);
-      resp.sendRedirect("/aia-store/");
-    //}
+    resp.sendRedirect("/aia-store/" + podata.asId);
   }
 
   private static HashMap<String, String> getQueryMap(String query)  {

@@ -16,9 +16,9 @@
 <html class="devise-layout-html">
 <head prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>aia 应用商店 · App Inventor 2 中文网</title>
-    <meta name="keywords" content="App Inventor 2 中文网,.aia 应用商店,应用商店,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
-	<meta name="description" content="App Inventor 2 中文网.aia 应用商店，{{ page.description }}">
+    <title><c:out value="${pageTitle}" /></title>
+    <meta name="keywords" content="App Inventor 2 中文网,aia源码商店,aia源码下载,.aia 应用商店,应用商店,App Inventor 源码购买,AppInventor源码下载,App Inventor 2源码购买,AppInventor2源码下载">
+	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" />">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
@@ -106,7 +106,7 @@
 
 <div class="default-page">
     <div class="header" style="background:#009999;">
-    <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2&nbsp; aia 应用商店</h1>
+    <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2&nbsp; .aia 源码商店</h1>
     </div>
     <div class="container-fluid">
         
