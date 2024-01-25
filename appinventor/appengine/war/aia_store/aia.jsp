@@ -48,7 +48,7 @@
                                     <c:when test="${aia.price == '0'}">免费</c:when>
                                     <c:otherwise>
                                         <c:choose>
-                                            <c:when test="${has_buy != null && has_buy}">已购买</c:when>
+                                            <c:when test="${has_buy != null && has_buy}"><a style="color:green;">已购买</a></c:when>
                                             <c:otherwise>未购买</c:otherwise>
                                         </c:choose>
                                     </c:otherwise>                                    
@@ -170,7 +170,7 @@
                     <form action="/aia-store/pay/" method="get">
                         <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
                         <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
-                        <input type="hidden" name="phone" value="<% out.println(phone); %>">
+                        <input type="hidden" name="phone" value="<c:out value="${phone}" />">
                         <input type="hidden" name="amount" value="<c:out value="${aia.price * 0.5}" />"><!--折扣-->
                         <button name="button" type="submit" class="publish_btn">会员价购买</button>
                     </form>

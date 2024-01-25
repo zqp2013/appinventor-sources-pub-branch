@@ -140,11 +140,7 @@
                         <input type="hidden" name="phone" value="${aia.phone}"/>
                     </c:when>
                     <c:otherwise>
-                        <input type="hidden" name="phone"
-                        <% if (phone != null) {
-                            out.println("value=" + phone);
-                        } %>
-                        />
+                        <input type="hidden" name="phone" value="<c:out value="${phone}" />" />
                     </c:otherwise>
                 </c:choose>
 
