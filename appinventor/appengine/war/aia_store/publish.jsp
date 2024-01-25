@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-   request.setAttribute("pageTitle", "发布项目 · App Inventor 2 源码商店");
-   request.setAttribute("pageDesc", "");
+   request.setAttribute("pageTitle", "发布源码 · App Inventor 2 源码商店");
+   request.setAttribute("pageDesc", "发布源码");
 %>
 <%@ include file="_header.jsp" %>
 

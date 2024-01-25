@@ -173,7 +173,7 @@ $().ready(function(){
     }
 
     //禁用鼠标右键
-    $(document).bind("contextmenu",function(){return false;});
+    //$(document).bind("contextmenu",function(){return false;});
 
     //图片url化，SEO需要
     var imgElems = document.getElementsByTagName('img');

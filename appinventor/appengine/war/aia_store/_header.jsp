@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <%
+   java.text.SimpleDateFormat dtfmt = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm");
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String phone = (String) request.getAttribute("phone");
    Boolean is_admin = (Boolean) request.getAttribute("is_admin");
@@ -28,13 +29,15 @@
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
     <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/docs.css">
     <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/store.css">
     <script src="/static/js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/popper.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="/static/js/docs.js" crossorigin="anonymous"></script>
     <script src="/static/js/prism.js" crossorigin="anonymous"></script>
+    <script src="/static/js/docs.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/qrcode.min.js"></script>
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -44,14 +47,17 @@
           s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    <style type="text/css">
-    .mit_app_inventor .card-columns {
-        column-count: 2;
-    }
-    .mit_app_inventor .card {
-        border-radius: 1rem;
-    }
-    </style>
+<!-- Hotjar Tracking Code for https://www.fun123.cn -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3792684,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 </head>
 
 <body class="mit_app_inventor">

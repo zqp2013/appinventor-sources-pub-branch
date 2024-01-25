@@ -3,17 +3,16 @@
    AiaStore aia = (AiaStore) request.getAttribute("aia");
    if (aia != null) {
       request.setAttribute("pageTitle", aia.title + " · App Inventor 2 源码商店");
+      request.setAttribute("pageDesc", aia.contents);
    } else {
       request.setAttribute("pageTitle", "App Inventor 2 源码商店");
    }
 
-   request.setAttribute("pageDesc", "");
+   Boolean has_buy = (Boolean) request.getAttribute("has_buy");
 %>
 <%@ include file="_header.jsp" %>
 
-<%
-   Boolean has_buy = (Boolean) request.getAttribute("has_buy");
-%>
+
 <% if (error != null) {
     out.println("<center><font color=red><b>" + error + "</b></font></center>");
 } %>
@@ -30,12 +29,18 @@
         </c:choose>
 
 
-            <div class="card shadow" style="max-height: 1000px;
-                                                overflow: auto">
+
                     <div class="card-body">
                         
                         <h4 class="card-title"><c:out value="${aia.title}" /></h4>
-                        <p class="card-text"><i><c:out value="${aia.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${aia.score}" />
+                        <p class="card-text">
+                            <i>
+                                <% if (aia.publish_time != null) {
+                                    out.println(dtfmt.format(aia.publish_time));
+                                } %>
+                            </i>
+                            <!--&nbsp;&nbsp;&nbsp;评分：<c:out value="${aia.score}" />-->
+
                                 &nbsp;&nbsp;&nbsp;&nbsp;购买信息：
                                 <c:choose>
                                     <c:when test="${aia.price == '0'}">免费</c:when>
@@ -75,6 +80,23 @@
                                 <c:otherwise>不提供</c:otherwise>
                             </c:choose>
                         </p>
+
+                        <c:if test="${fn:length(aia.apk_path) > 0}">
+                            提供安卓apk供预览最终效果：
+                            <a href="<c:out value="${aia.apk_path}" />" target="_blank">下载apk</a> 或扫码下载
+                            <div id="qrcode"></div>
+                            
+                            <script type="text/javascript">
+                            var qrcode = new QRCode("qrcode", {  
+                                text: window.location.href + "?f=share",   //URL地址
+                                width: 150,
+                                height: 150,
+                                colorDark: '#000000',  //二维码颜色
+                                colorLight: "#ffffff"  //背景颜色
+                            });
+                            </script>
+                        </c:if>
+
                         <p class="card-text">
                             <c:out value="${aia.contents}" escapeXml="false"/>
                         </p>
@@ -160,7 +182,7 @@
 </c:choose>
 
                     </div>
-            </div>
+
 
 
 <%@ include file="_footer.jsp" %>

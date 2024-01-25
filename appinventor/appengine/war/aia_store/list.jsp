@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
    request.setAttribute("pageTitle", "App Inventor 2 源码商店");
-   request.setAttribute("pageDesc", "");
+   request.setAttribute("pageDesc", "aia源码一览,源码列表,App Inventor 2 源码列表,aia专业源码,aia学习源码");
 %>
 <%@ include file="_header.jsp" %> 
 
@@ -35,7 +35,11 @@
                     <div class="card-body">
                         
                         <h4 class="card-title"><c:out value="${item.title}" /></h4>
-                        <p class="card-text"><i><c:out value="${item.publish_time}" /></i>&nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" /></p>
+                        <!--<p class="card-text">
+                            <i>
+                            </i>
+                            &nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" />
+                        </p>-->
                         <p class="card-text">
                             
                             <img src="<c:out value="${item.pics}" />" width="300px"/>
@@ -43,8 +47,8 @@
                         </p>
                         <p class="card-text">
                             <c:choose>
-                                <c:when test="{${fn:length(item.contents) > 100}">
-                                    <c:out value="${fn:substring(item.contents, 1 ,100 )}..." escapeXml="false"/>
+                                <c:when test="${ fn:length(item.contents) > 100 }">
+                                    <c:out value="${ fn:replace(fn:replace(fn:substring(item.contents, 1 ,100), '<', ''), 'p>','' ) } ..." escapeXml="false"/>
                                 </c:when>
                                 <c:otherwise>
                                     <c:out value="${item.contents}" escapeXml="false"/>
