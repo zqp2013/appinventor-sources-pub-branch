@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="javax.servlet.http.HttpServletRequest"%>
 <%@page import="com.google.appinventor.server.util.UriBuilder"%>
 <%@page import="org.apache.commons.lang3.StringEscapeUtils"%>

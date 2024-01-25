@@ -42,7 +42,14 @@
                             
                         </p>
                         <p class="card-text">
-                            <c:out value="${item.contents}" />
+                            <c:choose>
+                                <c:when test="{${fn:length(item.contents) > 100}">
+                                    <c:out value="${fn:substring(item.contents, 1 ,100 )}..." escapeXml="false"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:out value="${item.contents}" escapeXml="false"/>
+                                </c:otherwise>
+                            </c:choose>
                         </p>
                             
                             <p>作者：<c:out value="${item.phone}" /></p>

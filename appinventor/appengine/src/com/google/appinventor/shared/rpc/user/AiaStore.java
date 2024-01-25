@@ -25,7 +25,7 @@ public class AiaStore implements IsSerializable, Serializable {
     public String getTitle(){return title;}
     public String getPhone(){return phone;}
     public String getAia_path(){return aia_path;}
-    public String getApk_path(){return aia_path;}
+    public String getApk_path(){return apk_path;}
     public String getPics(){return pics;}
     public String getContents(){return contents;}
     public String getPrice(){return price;}

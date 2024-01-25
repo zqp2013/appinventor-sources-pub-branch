@@ -69,14 +69,14 @@
                                 <c:when test="${aia.quality == '4'}">商业级</c:when>
                             </c:choose>
                             
-                            <br/>提供技术支持：
+                            <br/>技术支持：
                             <c:choose>
                                 <c:when test="${aia.provide_support == '1'}">提供</c:when>
                                 <c:otherwise>不提供</c:otherwise>
                             </c:choose>
                         </p>
                         <p class="card-text">
-                            <c:out value="${aia.contents}" />
+                            <c:out value="${aia.contents}" escapeXml="false"/>
                         </p>
 
                         <p>作者：<c:out value="${aia.phone}" />

@@ -144,6 +144,12 @@
                     </c:otherwise>
                 </c:choose>
 
+                <script>
+                    function modify_file(id) {
+                        document.getElementById(id).type = 'file';
+                    }
+                </script>
+
                 <table style="width: 100%;">
                     <tr>
                         <td style="width:100px;">项目名：</td>
@@ -158,7 +164,7 @@
                             <c:choose>
                                 <c:when test="${aia.pics != null}">
                                     <img src="<c:out value="${aia.pics}" />" width="120px"/>
-                                    <input type="hidden" name="pics" id="pics" value="<c:out value="${aia.pics}" />">
+                                    <input type="hidden" name="pics" id="pics" value="<c:out value="${aia.pics}" />"> &nbsp;<a onclick="modify_file('pics')">修改</a>
                                 </c:when>
                                 <c:otherwise>
                                     <input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics">
@@ -174,7 +180,7 @@
                             <c:choose>
                                 <c:when test="${aia.aia_path != null}">
                                     <c:out value="${aia.aia_path}" />
-                                    <input type="hidden" name="aia_path" id="aia_path" value="<c:out value="${aia.aia_path}" />">
+                                    <input type="hidden" name="aia_path" id="aia_path" value="<c:out value="${aia.aia_path}" />"> &nbsp;<a onclick="modify_file('aia_path')">修改</a>
                                 </c:when>
                                 <c:otherwise>
                                     <input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path">
@@ -190,7 +196,7 @@
                             <c:choose>
                                 <c:when test="${aia.apk_path != null}">
                                     <c:out value="${aia.apk_path}" />
-                                    <input type="hidden" name="apk_path" id="apk_path" value="<c:out value="${aia.apk_path}" />">
+                                    <input type="hidden" name="apk_path" id="apk_path" value="<c:out value="${aia.apk_path}" />"> &nbsp;<a onclick="modify_file('apk_path')">修改</a>
                                 </c:when>
                                 <c:otherwise>
                                     <input type="file" name="apk_path" id="apk_path">
