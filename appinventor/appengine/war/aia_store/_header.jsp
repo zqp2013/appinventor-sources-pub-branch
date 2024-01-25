@@ -20,7 +20,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><c:out value="${pageTitle}" /></title>
     <meta name="keywords" content="App Inventor 2 中文网,aia源码商店,aia源码下载,.aia 应用商店,应用商店,App Inventor 源码购买,AppInventor源码下载,App Inventor 2源码购买,AppInventor2源码下载">
-	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" />">
+	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" escapeXml="false"/>">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
@@ -60,25 +60,33 @@
 </script>
 </head>
 
-<body class="mit_app_inventor">
+<body>
+<div class="mit_app_inventor">
 
-<nav class="navbar navbar-expand-xl navbar-light">
+<nav class="navbar navbar-expand-xl" id="navbar">
     <a class="navbar-brand" href="https://www.fun123.cn/">
-	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+	    <img src="/static/images/logo.png" alt="Logo" style="height:55px;">
     </a>
-    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <a style="color:#888;">beta</a>
+    <a style="margin-left:20px;color:#3b3837;font-weight: bold;">App Inventor 2 .aia 源码商店</a>
+
     <div class="collapse navbar-collapse" id="navbarContent">
-	<ul class="navbar-nav" style="margin-left: auto;">
-		<li class="nav-item">
-		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+	<ul class="navbar-nav" style="margin-left: 120px;">
+		<li>
+		<a class="nav-link" href="https://www.fun123.cn/reference/">中文网</a>
 		</li>
-	    <li class="nav-item dropdown">
+        <li class="dropdown">
+            <a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                教育
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=aiastore#AppEntry" target="_blank">中文教程</a>
+                <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=aiastore" target="_blank">中文论坛</a>
+            </div>
+            </li>
+	    <li class="dropdown">
 		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    关于我们
+		    关于
 		</a>
 		<div class="dropdown-menu">
 		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=aiastore">关于我们</a>
@@ -86,41 +94,18 @@
 			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=aiastore" target="_blank">服务条款</a>
 		</div>
 	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    教育
-		</a>
-		<div class="dropdown-menu">
-            <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=aiastore#AppEntry" target="_blank">中文教程</a>
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=aiastore" target="_blank">中文论坛</a>
-		</div>
-	    </li>
-		<li class="nav-item dropdown">
-		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			反馈
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://support.qq.com/products/514085" target="_blank">我要反馈</a>
-		</div>
-		</li>
     </ul>
     </div>
-	<div class="collapse navbar-collapse">
-		<img src="https://www.fun123.cn/static/images/hello.png" alt="你好">
-	</div>
+
+    <div class="account">
+        <% if (phone != null) {
+            out.println("账户信息：" + phone);
+        } %>
+    </div>
 </nav>
 
 
 <div class="default-page">
-    <div class="header" style="background:#009999;">
+    <!--<div class="header" style="background:#009999;">
     <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">App Inventor 2&nbsp; .aia 源码商店</h1>
-    </div>
-    <div class="container-fluid">
-        
-
-
-        <% if (phone != null) {
-            out.println("账户信息：" + phone);
-        } %>
-
-        <br/>
+    </div>-->

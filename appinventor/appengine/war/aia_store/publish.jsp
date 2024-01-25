@@ -5,6 +5,7 @@
 %>
 <%@ include file="_header.jsp" %>
 
+<div class="container-fluid bgwhite">
 
             <ul class="messagelist">
                 <% if (error != null) {
@@ -126,6 +127,9 @@
 }
     </style>
 
+            <div class="op_area">
+                <a href="/aia-store/">源码列表</a>&nbsp;/&nbsp;<a>发布</a>
+            </div>
 
             <form method="POST" action="/aia-store/publish" enctype="multipart/form-data">
                 <input type="hidden" name="asId" value="<c:out value="${aia.asId}" />"/>
@@ -152,7 +156,7 @@
 
                 <table style="width: 100%;">
                     <tr>
-                        <td style="width:100px;">项目名：</td>
+                        <td style="width:100px;">应用名称：</td>
                         <td><input class="form-control form-input top" value="<c:out value="${aia.title}" />"
                             autocapitalize="off" autocorrect="off"
                             required="required" title="该字段是必填字段。" type="text" name="title" id="title"></td>
@@ -164,11 +168,11 @@
                             <c:choose>
                                 <c:when test="${aia.pics != null}">
                                     <img src="<c:out value="${aia.pics}" />" width="120px"/>
-                                    <input type="hidden" name="pics" id="pics" value="<c:out value="${aia.pics}" />"> &nbsp;<a onclick="modify_file('pics')">修改</a>
+                                    <input type="hidden" name="pics" id="pics" value="<c:out value="${aia.pics}" />" accept=".jpg,.jpeg,.png,.gif" /> &nbsp;<a onclick="modify_file('pics')">修改</a>
                                 </c:when>
                                 <c:otherwise>
-                                    <input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics">
-                                    用于展示App效果，必填项！
+                                    <input required="required" title="该字段是必填字段。" type="file" name="pics" id="pics" accept=".jpg,.jpeg,.png,.gif" />
+                                    <a class="tip">用于展示App效果，<font color=red>*</font>必填项！</a>
                                 </c:otherwise>
                             </c:choose>
                         </td>
@@ -180,11 +184,11 @@
                             <c:choose>
                                 <c:when test="${aia.aia_path != null}">
                                     <c:out value="${aia.aia_path}" />
-                                    <input type="hidden" name="aia_path" id="aia_path" value="<c:out value="${aia.aia_path}" />"> &nbsp;<a onclick="modify_file('aia_path')">修改</a>
+                                    <input type="hidden" name="aia_path" id="aia_path" value="<c:out value="${aia.aia_path}" />" accept=".aia" /> &nbsp;<a onclick="modify_file('aia_path')">修改</a>
                                 </c:when>
                                 <c:otherwise>
-                                    <input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path">
-                                    源码文件，必填项！
+                                    <input required="required" title="该字段是必填字段。" type="file" name="aia_path" id="aia_path" accept=".aia" />
+                                    <a class="tip">源码文件，<font color=red>*</font>必填项！</a>
                                 </c:otherwise>
                             </c:choose> 
                         </td>
@@ -196,11 +200,11 @@
                             <c:choose>
                                 <c:when test="${aia.apk_path != null}">
                                     <c:out value="${aia.apk_path}" />
-                                    <input type="hidden" name="apk_path" id="apk_path" value="<c:out value="${aia.apk_path}" />"> &nbsp;<a onclick="modify_file('apk_path')">修改</a>
+                                    <input type="hidden" name="apk_path" id="apk_path" value="<c:out value="${aia.apk_path}" />" accept=".apk" /> &nbsp;<a onclick="modify_file('apk_path')">修改</a>
                                 </c:when>
                                 <c:otherwise>
-                                    <input type="file" name="apk_path" id="apk_path">
-                                    apk安装文件，便于用户体验最终效果，非必填项！
+                                    <input type="file" name="apk_path" id="apk_path" accept=".apk" />
+                                    <a class="tip">apk安装文件，便于用户体验最终效果，非必填项！</a>
                                 </c:otherwise>
                             </c:choose> 
                         </td>
@@ -260,13 +264,13 @@
 
                     <tr>
                         <td></td>
-                        <td><br/>
+                        <td>
                             <c:choose>
                                 <c:when test="${phone != null}">
-                                    <button type="submit">发布</button>
+                                    <button type="submit" class="publish_btn">立即发布</button>
                                 </c:when>
                                 <c:otherwise>
-                                    请登<a href="https://www.fun123.cn/" target="_blank">录后</a>发布项目
+                                    请登<a href="https://www.fun123.cn/" target="_blank">录后</a>发布应用
                                 </c:otherwise>
                             </c:choose>
                             

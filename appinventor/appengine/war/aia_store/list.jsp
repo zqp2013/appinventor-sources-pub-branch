@@ -5,10 +5,13 @@
 %>
 <%@ include file="_header.jsp" %> 
 
+<div class="container-fluid">
 
         <c:choose>
             <c:when test="${is_admin}">
-                <a href="/aia-store/publish">+ 发布项目</a>
+                <div class="op_area">
+                    <a href="/aia-store/publish">+ 源码发布</a>
+                </div>
             </c:when>
         </c:choose>
 
@@ -55,8 +58,17 @@
                                 </c:otherwise>
                             </c:choose>
                         </p>
-                            
-                            <p>作者：<c:out value="${item.phone}" /></p>
+
+                        <p class="card-author">作者：
+                            <c:choose>
+                                <c:when test="${ fn:length(item.phone) == 11 }">
+                                    <c:out value="${ fn:substring(item.phone, 0, 3) } "/>****<c:out value="${ fn:substring(item.phone, 7, 11) } "/>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:out value="${item.phone}" />
+                                </c:otherwise>
+                            </c:choose>
+                        </p>
                         <p class="card-text">
                             <a href='/aia-store/<c:out value="${item.asId}" />'>查看详情</a>
                         </p>

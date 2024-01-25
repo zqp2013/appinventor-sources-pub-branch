@@ -13,21 +13,23 @@
 <%@ include file="_header.jsp" %>
 
 
+<div class="container-fluid bgwhite">
+
 <% if (error != null) {
     out.println("<center><font color=red><b>" + error + "</b></font></center>");
 } %>
 
 
-<a href="/aia-store/"><< 返回列表</a>&nbsp;&nbsp;
-
-
-        <c:choose>
-            <c:when test="${is_admin || aia.phone == phone}">
-                <a href="/aia-store/update?id=<c:out value="${aia.asId}" />">编辑</a>&nbsp;&nbsp;
-                <a href="/aia-store/rm?id=<c:out value="${aia.asId}" />">删除</a>
-            </c:when>
-        </c:choose>
-
+                    <div class="op_area">
+                        <a href="/aia-store/">源码列表</a>&nbsp;/&nbsp;<a><c:out value="${aia.title}" /></a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <c:choose>
+                            <c:when test="${is_admin || aia.phone == phone}">
+                                <a href="/aia-store/update?id=<c:out value="${aia.asId}" />">编辑</a>&nbsp;&nbsp;
+                                <a href="/aia-store/rm?id=<c:out value="${aia.asId}" />">删除</a>
+                            </c:when>
+                        </c:choose>
+                    </div>
 
 
                     <div class="card-body">
@@ -54,56 +56,87 @@
                         </p>
                         <p class="card-text">
                             
+                            <p class="intro_title">应用截图</p>
                             <img src="<c:out value="${aia.pics}" />" width="300px"/>
-                            
-                            <br/>屏幕数量：<c:out value="${aia.num_screen}" />
-                            <br/>代码块数量：<c:out value="${aia.num_blocks}" />
-                            <br/>分类：
-                            <c:choose>
-                                <c:when test="${aia.catalog == null || aia.catalog == '1'}">软件应用App</c:when>
-                                <c:when test="${aia.catalog == '2'}">物联网硬件App</c:when>
-                                <c:when test="${aia.catalog == '3'}">游戏App</c:when>
-                                <c:when test="${aia.catalog == '4'}">其他App</c:when>
-                            </c:choose>
-                            
-                            <br/>等级：
-                            <c:choose>
-                                <c:when test="${aia.quality == null || aia.quality == '1'}">练手级</c:when>
-                                <c:when test="${aia.quality == '2'}">教学级</c:when>
-                                <c:when test="${aia.quality == '3'}">应用级</c:when>
-                                <c:when test="${aia.quality == '4'}">商业级</c:when>
-                            </c:choose>
-                            
-                            <br/>技术支持：
-                            <c:choose>
-                                <c:when test="${aia.provide_support == '1'}">提供</c:when>
-                                <c:otherwise>不提供</c:otherwise>
-                            </c:choose>
-                        </p>
+
+                            <p class="intro_title">源码信息</p>
+                            <table>
+                                <tr>
+                                    <td>作者：</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${ fn:length(aia.phone) == 11 && !has_buy }">
+                                                <c:out value="${ fn:substring(aia.phone, 0, 3) } "/>****<c:out value="${ fn:substring(aia.phone, 7, 11) } "/>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:out value="${aia.phone}" />
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>屏幕数量：</td>
+                                    <td><c:out value="${aia.num_screen}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>代码块数量：</td>
+                                    <td><c:out value="${aia.num_blocks}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>源码分类：</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${aia.catalog == null || aia.catalog == '1'}">软件应用App</c:when>
+                                            <c:when test="${aia.catalog == '2'}">物联网硬件App</c:when>
+                                            <c:when test="${aia.catalog == '3'}">游戏App</c:when>
+                                            <c:when test="${aia.catalog == '4'}">其他App</c:when>
+                                        </c:choose>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>质量等级：</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${aia.quality == null || aia.quality == '1'}">练手级</c:when>
+                                            <c:when test="${aia.quality == '2'}">教学级</c:when>
+                                            <c:when test="${aia.quality == '3'}">应用级</c:when>
+                                            <c:when test="${aia.quality == '4'}">商业级</c:when>
+                                        </c:choose>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>技术支持：</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${aia.provide_support == '1'}">提供</c:when>
+                                            <c:otherwise>不提供</c:otherwise>
+                                        </c:choose>
+                                    </td>
+                                </tr>
+                            </table>
 
                         <c:if test="${fn:length(aia.apk_path) > 0}">
-                            提供安卓apk供预览最终效果：
-                            <a href="<c:out value="${aia.apk_path}" />" target="_blank">下载apk</a> 或扫码下载
-                            <div id="qrcode"></div>
-                            
+                            <div class="apk_preview">
+                                <p style="color:#4caf50;">提供安卓apk效果预览</p>
+                                <div id="apk-qrcode"></div>
+                                <p>扫码安装 或 <a href="<c:out value="${aia.apk_path}" />">点此下载</a></p>
+                            </div>
                             <script type="text/javascript">
-                            var qrcode = new QRCode("qrcode", {  
-                                text: window.location.href + "?f=share",   //URL地址
+                            var qrcode = new QRCode("apk-qrcode", {  
+                                text: '<c:out value="${aia.apk_path}" />?t=' + (new Date()).getTime(),   //apk地址
                                 width: 150,
                                 height: 150,
-                                colorDark: '#000000',  //二维码颜色
+                                colorDark: '#333',  //二维码颜色
                                 colorLight: "#ffffff"  //背景颜色
                             });
                             </script>
                         </c:if>
 
+
                         <p class="card-text">
+                            <p class="intro_title">源码详情</p>
                             <c:out value="${aia.contents}" escapeXml="false"/>
                         </p>
-
-                        <p>作者：<c:out value="${aia.phone}" />
-                        <!--<br>
-                            <a href="">作者其他作品</a>--></p>
 
 
 
@@ -111,10 +144,16 @@
 <c:choose>
 
     <c:when test="${NoNeedBuy}">
+        <p class="intro_title">源码下载</p>
         <!--已购买或免费-->
         <p class="card-text">
-            售价：￥ <c:out value="${aia.price}" /><br/>
-            <a href="<c:out value="${aia.aia_path}" />" target="_blank">下载源码</a> 
+            <!--售价：<font class="price">￥<c:out value="${aia.price}" /></font>
+            <br/>-->
+            <a href="<c:out value="${aia.aia_path}" />" target="_blank" style="position:relative;">
+                <button class="publish_btn" style="height:44px;padding:10px 50px;border-radius:22px;width:auto;">
+                    立即下载
+                </button>
+            </a>
         </p>
     </c:when>
 
@@ -122,23 +161,23 @@
         <!--购买-->
         <p class="card-text">
             
-
+            <p class="intro_title">源码购买</p>
 
             <c:choose>
                 <c:when test="${phone != null}">
                     <!--已登录-->
-                    ￥ <del><c:out value="${aia.price}" /></del> <c:out value="${aia.price * 0.5}" /> &nbsp;&nbsp;会员价5折
+                    <font class="price">￥<del><c:out value="${aia.price}" /></del>&nbsp;&nbsp;<c:out value="${aia.price * 0.5}" /></font> &nbsp;&nbsp;会员价5折
                     <form action="/aia-store/pay/" method="get">
                         <input type="hidden" name="id" value="<c:out value="${aia.asId}" />">
                         <input type="hidden" name="subject" value="App Inventor 2 中文网 aia 源码">
                         <input type="hidden" name="phone" value="<% out.println(phone); %>">
                         <input type="hidden" name="amount" value="<c:out value="${aia.price * 0.5}" />"><!--折扣-->
-                        <button name="button" type="submit">会员购买</button>
+                        <button name="button" type="submit" class="publish_btn">会员价购买</button>
                     </form>
                 </c:when>
                 <c:otherwise>
                     <!--未登录-->
-                    ￥ <c:out value="${aia.price}" />&nbsp;&nbsp;
+                    <font class="price">￥<c:out value="${aia.price}" /></font>&nbsp;&nbsp;
                     <a href="https://www.fun123.cn/" target="_blank">未登录，点此登录以会员折扣价购买</a>
 
 
@@ -169,7 +208,7 @@
         
         
                         <input type="hidden" name="amount" value="<c:out value="${aia.price}" />">
-                        <button name="button" type="submit" id="paybtn" disabled>非会员购买</button>  
+                        <button name="button" type="submit" id="paybtn" disabled class="publish_btn">非会员购买</button>  
                         &nbsp;&nbsp;<a id="validatebuy">非会员已购买点此验证</a>
                     </form>
 
