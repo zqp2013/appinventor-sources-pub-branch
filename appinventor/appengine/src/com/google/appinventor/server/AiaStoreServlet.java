@@ -70,8 +70,8 @@ public class AiaStoreServlet extends HttpServlet {
   static final SimpleDateFormat expiredFormat = new SimpleDateFormat("yyyy/MM/dd");
 
   // 回调url前缀
-  //private String CALLBACK_URL_PRE = "https://www.fun123.cn";
-  private String CALLBACK_URL_PRE = "http://192.168.1.11:8088"; //for dev
+  private String CALLBACK_URL_PRE = "https://www.fun123.cn";
+  //private String CALLBACK_URL_PRE = "http://192.168.1.11:8088"; //for dev
   
   public void init(ServletConfig config) throws ServletException {
     super.init(config);
