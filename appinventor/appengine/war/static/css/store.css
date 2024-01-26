@@ -85,7 +85,7 @@ body {
     margin-top: 6px;
     border: none;
 }
-.publish_btn[disabled] {
+.publish_btn[disabled], .publish_btn[disabled]:hover {
     background-color: #c4c4c4;
 }
 
