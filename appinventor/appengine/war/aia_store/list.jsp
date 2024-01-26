@@ -10,7 +10,7 @@
         <c:choose>
             <c:when test="${is_admin}">
                 <div class="op_area">
-                    <a href="/aia-store/publish">+ 源码发布</a>
+                    <a href="/aia-store/publish"><span class="mdi mdi-package-variant-plus" style="font-size: 18px;"/>&nbsp;源码发布</a>
                 </div>
             </c:when>
         </c:choose>
@@ -62,7 +62,7 @@
                         <p class="card-author">作者：
                             <c:choose>
                                 <c:when test="${ fn:length(item.phone) == 11 }">
-                                    <c:out value="${ fn:substring(item.phone, 0, 3) } "/>****<c:out value="${ fn:substring(item.phone, 7, 11) } "/>
+                                    <c:out value="${ fn:substring(item.phone, 0, 3) }"/>****<c:out value="${ fn:substring(item.phone, 7, 11) }"/>
                                 </c:when>
                                 <c:otherwise>
                                     <c:out value="${item.phone}" />

@@ -20,13 +20,27 @@
 } %>
 
 
+<!--此页面必须aia-->
+<c:choose>
+    <c:when test="${aia == null}">
+        404 - 抱歉，该项目不存在！
+    </c:when>
+    <c:otherwise>
+        
+
+
                     <div class="op_area">
                         <a href="/aia-store/">源码列表</a>&nbsp;/&nbsp;<a><c:out value="${aia.title}" /></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <c:choose>
                             <c:when test="${is_admin || aia.phone == phone}">
-                                <a href="/aia-store/update?id=<c:out value="${aia.asId}" />">编辑</a>&nbsp;&nbsp;
-                                <a href="/aia-store/rm?id=<c:out value="${aia.asId}" />">删除</a>
+                                <a href="/aia-store/update?id=<c:out value="${aia.asId}" />"><span class="mdi mdi-square-edit-outline" style="font-size: 18px;"/>编辑</a>&nbsp;&nbsp;
+                                <a onclick="return confirmDel('您确定要删除吗？')" href="/aia-store/rm?id=<c:out value="${aia.asId}" />"><span class="mdi mdi-trash-can-outline" style="font-size: 18px;"/>删除</a>
+                                <script language="javascript">
+                                    function confirmDel(str) {
+                                        return confirm(str);
+                                    }
+                                </script>
                             </c:when>
                         </c:choose>
                     </div>
@@ -223,5 +237,9 @@
                     </div>
 
 
+
+    </c:otherwise>
+</c:choose>
+<!--此页面必须aia-->
 
 <%@ include file="_footer.jsp" %>

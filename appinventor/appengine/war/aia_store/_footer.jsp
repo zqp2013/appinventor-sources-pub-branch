@@ -72,10 +72,11 @@ var qrcode = new QRCode("qrcode", {
 </div>
 
 
-<div class="footer" style="padding-bottom:0;">
+<div class="footer" style="padding-bottom:30px;">
     <div class="row container" style="margin:auto;">
     <div class="col-xl-3">
-        <h4><a>App Inventor 2 中文网</a></h4>
+        <h4><a href="https://www.fun123.cn/?f=asbtn" target="_blank">App Inventor 2 中文网</a></h4>
+        <h6><a href="https://www.fun123.cn/aia-store/?f=asbtn" target="_blank">App Inventor 2 aia 源码商店</a></h6>
     </div>
     <div class="col-xl-6 legal text-center">
         <ul>
@@ -83,11 +84,7 @@ var qrcode = new QRCode("qrcode", {
             <a href="https://www.fun123.cn" class="btn btn-link" role="button" target="_blank">© 2023 - <script>document.write(new Date().getFullYear());</script> 跟着学（上海）教育科技有限公司</a>
         </li>
         <li>
-            <a href="https://www.fun123.cn/Ya_tos_form.html?f=refb"
-                    target="_blank" class="btn btn-link" role="button">隐私策略和使用条款</a>
-        </li>
-        <li>
-            &nbsp;
+            <a><b>源码版权申明</b>：无特别申明的前提下，本站源码版权归原作者所有，<br/>未经原作者书面授权一律不允许包括但不限于二次售卖等商业用途。</a>
         </li>
         </ul>
     </div>

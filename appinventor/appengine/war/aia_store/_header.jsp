@@ -20,7 +20,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><c:out value="${pageTitle}" /></title>
     <meta name="keywords" content="App Inventor 2 中文网,aia源码商店,aia源码下载,.aia 应用商店,应用商店,App Inventor 源码购买,AppInventor源码下载,App Inventor 2源码购买,AppInventor2源码下载">
-	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" escapeXml="false"/>">
+	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" />">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
@@ -64,24 +64,23 @@
 <div class="mit_app_inventor">
 
 <nav class="navbar navbar-expand-xl" id="navbar">
-    <a class="navbar-brand" href="https://www.fun123.cn/">
+    <a class="navbar-brand" href="https://www.fun123.cn/aia-store">
 	    <img src="/static/images/logo.png" alt="Logo" style="height:55px;">
     </a>
-    <a style="color:#888;">beta</a>
-    <a style="margin-left:20px;color:#3b3837;font-weight: bold;">App Inventor 2 .aia 源码商店</a>
+    <a style="margin-left:10px;color:#3b3837;font-weight: bold;">App Inventor 2 .aia 源码商店</a>
+    <a style="color:#888;margin-left: 5px;">beta</a>
 
     <div class="collapse navbar-collapse" id="navbarContent">
 	<ul class="navbar-nav" style="margin-left: 120px;">
-		<li>
-		<a class="nav-link" href="https://www.fun123.cn/reference/">中文网</a>
-		</li>
         <li class="dropdown">
-            <a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                教育
+            <a class="nav-link" href="https://www.fun123.cn/?f=as" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                中文网
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=aiastore#AppEntry" target="_blank">中文教程</a>
-                <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=aiastore" target="_blank">中文论坛</a>
+                <a class="dropdown-item" href="https://www.fun123.cn/?f=asmenu" target="_blank">App Inventor 2 中文网</a>
+                <a class="dropdown-item" href="https://www.fun123.cn/reference/?f=asmenu" target="_blank">中文文档</a>
+                <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=asmenu#AppEntry" target="_blank">中文教程</a>
+                <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=asmenu" target="_blank">中文论坛</a>
             </div>
             </li>
 	    <li class="dropdown">

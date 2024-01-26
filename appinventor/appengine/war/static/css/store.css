@@ -55,6 +55,7 @@ body {
 }
 .bgwhite {
     background-color: #fff;
+    min-height: 600px;
 }
 
 .op_area {
@@ -86,6 +87,10 @@ body {
 }
 .publish_btn[disabled] {
     background-color: #c4c4c4;
+}
+
+.publish_btn:hover {
+    background-color: #01875F;
 }
 
 a.tip {
