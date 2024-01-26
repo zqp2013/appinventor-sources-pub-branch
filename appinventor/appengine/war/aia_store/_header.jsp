@@ -8,11 +8,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <%
-   java.text.SimpleDateFormat dtfmt = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm");
-   String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
-   String phone = (String) request.getAttribute("phone");
-   Boolean is_admin = (Boolean) request.getAttribute("is_admin");
-   List<AiaStore> aiaList = (List<AiaStore>) request.getAttribute("aiaList");
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+    
+    java.text.SimpleDateFormat dtfmt = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm");
+    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
+    String phone = (String) request.getAttribute("phone");
+    Boolean is_admin = (Boolean) request.getAttribute("is_admin");
+    List<AiaStore> aiaList = (List<AiaStore>) request.getAttribute("aiaList");
 %>
 <!DOCTYPE html>
 <html class="devise-layout-html">
