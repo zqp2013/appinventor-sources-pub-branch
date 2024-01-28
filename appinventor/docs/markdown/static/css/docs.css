@@ -9,14 +9,13 @@
     text-align: center;
     display: block;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.6);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    tap-highlight-color: rgba(0,0,0,0);
+    background: rgba(75,75,75,0.5);
     overflow: hidden;
 }
-.cndns-right-btn span{color:#fff;font-size:22px;line-height:40px;}
+.cndns-right-btn:hover {background: rgba(0,0,0,0.6);}
+.cndns-right-btn span{color:#fff;font-size:21px;line-height:42px;}
 .cndns-right-btn sup{display:block;min-width:24px;height:24px;text-align:center;line-height:24px;color:#fff;border-radius: 50%;background-color:#ff6800;position:absolute;left:-12px;top:-12px;}
 .cndns-right-btn p{color:#fff;font-size:12px;line-height:15px;padding-top:5px;display:none;}
 .cndns-right-menu:hover .cndns-right-btn span{display:none}
