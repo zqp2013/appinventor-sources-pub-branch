@@ -23,7 +23,6 @@
 .menu-top .cndns-right-btn span{font-size:12px;line-height:12px;padding-top:10px;display:block}
 .menu-top .cndns-right-btn span.fa-angle-up{font-size:30px;line-height: 14px;}
 .menu-top .cndns-right-btn i{display:none;color:#999;}/*顶部2个字去掉*/
-.menu-top.cndns-right-menu:hover .cndns-right-btn{background-color:#ff6800}
 .menu-top.cndns-right-menu:hover .cndns-right-btn span{display:block;color:#fff} 
 .menu-top.cndns-right-menu:hover .cndns-right-btn i{color:#fff;}
 .cndns-right-box{position:absolute;top:-15px;right:48px;padding-right:25px;overflow:hidden;display:none;}
@@ -209,4 +208,19 @@ table td {
   background: #FFF url(/static/images/locked.gif) no-repeat 16px 50%;
   font-size: 14px;
   color:#9c6521;
+}
+
+/*商店购买按钮*/
+.store {
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  color: white !important;
+  background-color: #4caf50;
+  margin-top: 6px;
+  border: none;
+  text-decoration: none;
+}
+.store:hover {
+  background-color: #01875F;
 }
