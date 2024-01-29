@@ -9,7 +9,7 @@ description: App Inventor 2 接入阿里云短信服务，实现短信验证码�
 
 [&laquo; 返回首页](index.html)
 
-发送短信验证码功能一般都是基于短信平台提供的sdk进行调用，这里是基于阿里云短信平台进行的开发，阿里云短信平台接入步骤请[点此参考](https://help.aliyun.com/zh/sms/user-guide/usage-notes)。
+发送短信验证码功能一般都是基于短信平台提供的sdk进行调用，这里是基于阿里云短信平台进行的开发，阿里云短信平台[点此开通](https://www.aliyun.com/product/sms?userCode=qpd7410l)，接入步骤请[点此参考](https://help.aliyun.com/zh/sms/user-guide/usage-notes?userCode=qpd7410l)。
 
 ## App Inventor 2 中文网原创开发阿里短信平台接入拓展
 
