@@ -9,13 +9,12 @@ description: App Inventor 2 低功耗蓝牙(BLE)的硬件接入、数据通信�
 
 [&laquo; 返回首页](index.html)
 
-![BlueTooth](assets/bluetooth.svg)
-
+![ble5](ble/ble5.jpg)
 
 
 低功耗蓝牙(BLE)以低功耗、低成本、开发简便逐渐被广泛应用，本文主要介绍一款较为通用、价格低廉（20元以内）的BLE设备从零开始如何利用App Inventor 2开发一款自己专属的手机蓝牙App应用。
 
-BLE与传统蓝牙的区别可参考：《[低功耗蓝牙(BLE) 和 传统蓝牙(SPP) 的区别](ble_spp.html)》。
+BLE与经典蓝牙的区别可参考：《[低功耗蓝牙(BLE) 和 经典蓝牙(SPP) 的区别](ble_spp.html)》。
 
 <!--
 ## 1、接线：VCC(特别注意：3.3v 或 5v 请参阅说明书，不要弄错以免烧坏硬件)
@@ -104,6 +103,11 @@ demo参考界面如下：
 - 厂商自定义UUID：同样采用UUID基数 + 16位UUID的形式，由厂商定义，如BLE串口服务的UUID是`0x001`，使用的UUID基数是：`6E400001-B5A3-F393-E0A9-E50E24DCCA9E`。
 - 标准16位UUID技术文档请参考：[https://www.bluetooth.com/specifications/assigned-numbers/](https://www.bluetooth.com/specifications/assigned-numbers/)。
 <!--https://blog.csdn.net/INT_TANG/article/details/124758332-->
+
+
+### BLE专业文档
+
+更多关于BLE更深入的技术原理介绍，请参考[BLE技术揭秘](http://doc.iotxx.com/BLE%E6%8A%80%E6%9C%AF%E6%8F%AD%E7%A7%98?f=fun123.cn)。
 
 
 

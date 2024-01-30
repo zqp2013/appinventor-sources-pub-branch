@@ -121,7 +121,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 如果您有兴趣使用低能耗蓝牙，请查看《[App Inventor 2 低功耗蓝牙(BLE) 硬件接入、数据通信及IO控制](../iot/ble.html)》。
 
-如果您希望了解传统蓝牙与BLE之间的区别，请查看《[低功耗蓝牙(BLE) 和 传统蓝牙(SPP) 的区别](../iot/ble_spp.html)》。
+如果您希望了解经典蓝牙与BLE之间的区别，请查看《[低功耗蓝牙(BLE) 和 经典蓝牙(SPP) 的区别](../iot/ble_spp.html)》。
 
 ### 属性  {#BluetoothClient-Properties}
 
