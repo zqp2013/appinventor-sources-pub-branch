@@ -21,17 +21,17 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 
 ## 属性
 
-+ <a name="AdvertisementScanPeriod"></a>`AdvertisementScanPeriod` – 广告扫描周期：返回扫描周期的值（毫秒ms）。
++ <a name="AdvertisementScanPeriod"></a>`AdvertisementScanPeriod` – 广播扫描周期：返回广播扫描周期的值（毫秒ms）。
 
 
 ![get BluetoothLE1 AdvertisementScanPeriod ](assets/BluetoothLE.AdvertisementScanPeriod_getter.svg)
 
-+ <a name="AdvertiserAddresses"></a>`AdvertiserAddresses` – 广告商地址：返回在广告扫描期间找到的设备地址列表。
++ <a name="AdvertiserAddresses"></a>`AdvertiserAddresses` – 广播者设备地址列表：返回在广播扫描期间找到的设备地址列表。
 
 
 ![get BluetoothLE1 AdvertiserAddresses ](assets/BluetoothLE.AdvertiserAddresses_getter.svg)
 
-+ <a name="AdvertiserNames"></a>`AdvertiserNames` – 广告商名称：返回广告扫描期间找到的设备名称列表。
++ <a name="AdvertiserNames"></a>`AdvertiserNames` – 广播者设备名称列表：返回广播扫描期间找到的设备名称列表。
 
 
 ![get BluetoothLE1 AdvertiserNames ](assets/BluetoothLE.AdvertiserNames_getter.svg)

@@ -6,7 +6,7 @@ description: BLE(Bluetooth Low Energy)，低功耗蓝牙(BLE) 和 传统蓝牙
 
 [&laquo; 返回首页](index.html)
 
-![BlueTooth](assets/BlueTooth.jpg)
+![BlueTooth](assets/bluetooth.svg)
 
 ## 低功耗蓝牙(BLE) vs 传统蓝牙(SPP)
 
@@ -19,7 +19,7 @@ description: BLE(Bluetooth Low Energy)，低功耗蓝牙(BLE) 和 传统蓝牙
 | 硬件成本 | 低成本：BLE芯片和模块<b>价格低廉</b>。  |  相比BLE<b>价格稍高</b>一些。 |
 | 开发难度 | 低复杂度：<b>协议栈简单</b>,易于开发。  | 较高复杂度：<b>协议栈较复杂</b>，开发难度较大。  |
 | 典型应用 | <b>可穿戴设备</b>（智能手表、手环）、<b>智能家居</b>、智能门锁、健康监测、环境监测设备等。  |  蓝牙打印机、蓝牙串口替代、蓝牙POS机、<b>蓝牙耳机</b>、高速数据交换（图像传输、文件传输）等。 |
-| <b>App Inventor 2 组件</b> | [BlueToothLE拓展](bluetoothle.html) | [蓝牙客户端](../components/connectivity.html#BluetoothClient) / [蓝牙服务端](../components/connectivity.html#BluetoothServer) |
+| <b>App Inventor 2 组件</b> | [BlueToothLE拓展](bluetoothle.html)<br/><b>无需配对</b>，直接出现在设备列表中，连接后即可使用 | [蓝牙客户端](../components/connectivity.html#BluetoothClient) / [蓝牙服务端](../components/connectivity.html#BluetoothServer)<br/>必须<b>事先配对</b>（手机设置 -> 蓝牙）成功后，才能出现在设备列表中 |
 
 ## BLE 和 SPP 怎么选？
 
