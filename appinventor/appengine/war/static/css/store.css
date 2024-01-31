@@ -1,7 +1,7 @@
 
 .mit_app_inventor .card-columns {
     column-count: 2;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 .mit_app_inventor .card {
     border-radius: 1rem;
@@ -101,6 +101,9 @@ a.tip {
 .card-title {
     color: #333;
 }
+.card:hover .card-title {
+    color: #153f97;
+}
 .card-text {
     color: #666;
 }
@@ -139,8 +142,13 @@ a.tip {
 
 
 .shadow {
-    box-shadow: 0 .1rem 0.5rem rgba(0,0,0,.1)!important;
+    box-shadow: 0 .1rem 0.5rem rgba(90,90,90,.1)!important;
+    -webkit-transition: opacity 1s,-webkit-transform .5s;
+    transition: opacity 1s,-webkit-transform .5s;
+    transition: transform .5s,opacity 1s;
+    transition: transform .5s,opacity 1s,-webkit-transform .5s;
 }
 .shadow:hover {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    -webkit-transform:translateY(-5px);transform:translateY(-5px);
 }

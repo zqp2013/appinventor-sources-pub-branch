@@ -39,19 +39,27 @@
 /* width */
 ::-webkit-scrollbar {
 	width: 10px;
+  height: 10px;
+  background: transparent;
 }
 /* Track */
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px grey;
+	background: transparent;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #ccc;/*skyblue;*/
-	border-radius: 10px;
+	background: #dbdcdf;/*skyblue;*/
+  background-clip: padding-box;
+  border:2px solid transparent;
+	border-radius: 6px;
 }
 /* Handle on hover */
+::-webkit-scrollbar:hover {
+	background-color: #f2f3f3;
+}
 ::-webkit-scrollbar-thumb:hover {
-	background: #FF8E21;
+	background: #b7babf;
+  border:1px solid transparent;
 }
 
 /*引用*/
