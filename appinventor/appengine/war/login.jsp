@@ -29,12 +29,17 @@
     <meta name="application-name" content="App Inventor 2 中文网" />
     <link rel="apple-touch-icon" href="/static/images/logo2.png" />
     <link rel="stylesheet" media="all" href="/static/css/login.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialdesignicons.min.css">
 </head>
 
 <body class="login-page" style="background:url(/static/images/bg.svg) center/cover no-repeat;">
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
+            <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/iot/?f=login" target="_blank"><i class="mdi mdi-bluetooth-audio" style="font-size: 15px;"></i> IoT专题</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/guide.pdf?f=login" target="_blank">新手必读！</a>
             </span>

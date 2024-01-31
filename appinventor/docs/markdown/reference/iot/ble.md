@@ -160,7 +160,7 @@ UUID的获取途径：
 
 ## 最后做个推广
 
-即日起，开通[App Inventor 2 中文网VIP会员](https://www.fun123.cn/pay/?f=ble)，半年卡即送本文实验**同款BLE蓝牙硬件一个**（单硬件），年卡即送**BLE蓝牙 + UART线一套**，限时 **2024/05/01** 之前。
+即日起，开通[App Inventor 2 中文网VIP会员](https://www.fun123.cn/pay/?f=ble)，半年卡即包邮赠送本文实验**同款BLE蓝牙硬件一个**（单硬件），年卡即送**BLE蓝牙 + UART线一套**，限时 **2024/05/01** 之前。
 
 [App Inventor 2 中文网VIP会员](https://www.fun123.cn/pay/?f=ble)免费享有基础版技术支持服务，有任何问题都可以在线及时得到解决，是创客学习App Inventor 2 必备之利器，欢迎体验！
 
