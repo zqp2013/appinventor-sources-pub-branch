@@ -187,8 +187,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <div>公众号 </div>
                                     </div>
                                     <div class="service_info">
-                                        <img src="/static/images/weibo.png" loading="lazy">
-                                        <div>微博</div> 
+                                        <img src="/static/images/bilibili.png" loading="lazy">
+                                        <div>bilibili教程</div> 
                                     </div>
 
                                 </div>
