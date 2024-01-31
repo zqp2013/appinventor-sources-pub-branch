@@ -150,6 +150,7 @@ UUID的获取途径：
 - 标准16位UUID技术文档请参考：[https://www.bluetooth.com/specifications/assigned-numbers/](https://www.bluetooth.com/specifications/assigned-numbers/)。
 <!--https://blog.csdn.net/INT_TANG/article/details/124758332-->
 
+[点此自助购买](https://www.fun123.cn/aia-store/240131150201850?f=doc){:.store} 以上演示的aia源码。
 
 ### BLE专业文档
 
