@@ -152,3 +152,17 @@ a.tip {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     -webkit-transform:translateY(-5px);transform:translateY(-5px);
 }
+
+/*右上箭头右上效果*/
+.mdi-arrow-top-right {
+    display: inline-block;
+    fill: currentColor;
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
+    transition: transform .2s ease, -webkit-transform .2s ease;
+    vertical-align: middle;
+}
+.shadow:hover .mdi-arrow-top-right{
+    -webkit-transform:translate(4px,-4px);transform:translate(4px,-4px);
+}

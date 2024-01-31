@@ -33,8 +33,7 @@
         <div class="card-columns">
 
             <c:forEach items="${aiaList}" var="item">
-                <div class="card shadow" style="max-height: 1000px;
-                                                overflow: auto">
+                <div class="card shadow" style="max-height: 1000px;overflow:auto">
                     <div class="card-body">
                         
                         <h4 class="card-title"><c:out value="${item.title}" /></h4>
@@ -44,9 +43,7 @@
                             &nbsp;&nbsp;&nbsp;评分：<c:out value="${item.score}" />
                         </p>-->
                         <p class="card-text">
-                            
                             <img src="<c:out value="${item.pics}" />" width="300px"/>
-                            
                         </p>
                         <p class="card-text">
                             <c:choose>
@@ -70,7 +67,7 @@
                             </c:choose>
                         </p>
                         <p class="card-text">
-                            <a href='/aia-store/<c:out value="${item.asId}" />'>查看详情</a>
+                            <a href='/aia-store/<c:out value="${item.asId}" />'>了解详情 <span class="mdi mdi-arrow-top-right" style="font-size:16px;"/></a>
                         </p>
                     </div>
                 </div>
