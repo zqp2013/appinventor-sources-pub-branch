@@ -11,5 +11,6 @@ App Inventor 2 IoT 专题：经典蓝牙(SPP)，低功耗蓝牙(BLE)，WIFI，�
 
 1. [<img src="assets/ble.png" style="width:16px;margin:-4px 5px 0 0">【BLE中文文档】App Inventor 2 低功耗蓝牙 BlueToothLE 拓展](bluetoothle.html)
 1. [【科普文】低功耗蓝牙(BLE) 和 经典蓝牙(SPP) 的区别](ble_spp.html)
-1. [【蓝牙硬件通用教程】App Inventor 2 低功耗蓝牙(BLE) 硬件接入、数据通信及IO控制](ble.html)
+1. [【BLE蓝牙硬件通用教程】App Inventor 2 低功耗蓝牙(BLE) 硬件接入、数据通信及IO控制](ble.html)
+1. [【经典蓝牙2.0】HC-05 经典蓝牙模块开发](https://bbs.tsingfun.com/thread-1376-1-1.html)
 1. [【物联网·云】App inventor + ESP8266：使用WIFI连接云控制](https://blog.csdn.net/INT_TANG/article/details/128210609)
