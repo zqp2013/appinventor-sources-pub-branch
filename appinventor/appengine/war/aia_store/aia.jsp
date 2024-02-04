@@ -217,7 +217,7 @@
                 document.getElementById('validatebuy').href = '/aia-store/validatebuy?phone=' + value + '&id=<c:out value='${aia.asId}' />'; 
                 document.getElementById('validatebuy').disabled = false;
             } " 
-                            autocapitalize="off" autocorrect="off" placeholder="请输入手机号码，作为购买凭证"
+                            autocapitalize="off" autocorrect="off" placeholder="非会员请输入手机号码，作为购买凭证"
                             required="required" title="该字段是必填字段。" type="text" name="phone" id="phone">
         
         

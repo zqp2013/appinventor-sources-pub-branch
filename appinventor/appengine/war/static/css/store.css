@@ -86,7 +86,7 @@ body {
     border: none;
 }
 .publish_btn[disabled], .publish_btn[disabled]:hover {
-    background-color: #c4c4c4;
+    background-color: #7ec9b3;
 }
 
 .publish_btn:hover {
