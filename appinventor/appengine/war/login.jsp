@@ -4,6 +4,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <%
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String useGoogleLabel = (String) request.getAttribute("useGoogleLabel");
    String locale = StringEscapeUtils.escapeHtml4(request.getParameter("locale"));
@@ -36,6 +40,10 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
+            <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin-top: -3px;"/>有奖征文</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/iot/?f=login" target="_blank"><i class="mdi mdi-bluetooth-audio" style="font-size: 15px;"></i> IoT专题</a>
             </span>
