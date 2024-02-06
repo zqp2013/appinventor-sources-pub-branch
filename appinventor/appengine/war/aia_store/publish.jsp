@@ -14,8 +14,8 @@
             </ul>
 
 
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script><!--40.2.0-->
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/translations/zh-cn.js"></script>
+<script src="https://www.tsingfun.com/statics/js/ckeditor/40.2.0/ckeditor.js"></script><!--40.2.0-->
+<script src="https://www.tsingfun.com/statics/js/ckeditor/40.2.0/zh-cn.js"></script>
 <script type="text/javascript">
     ClassicEditor
     .create( document.querySelector( '#editor' ) )
