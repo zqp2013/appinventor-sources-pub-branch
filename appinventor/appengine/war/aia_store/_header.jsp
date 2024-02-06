@@ -23,7 +23,7 @@
 <head prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><c:out value="${pageTitle}" /></title>
-    <meta name="keywords" content="App Inventor 2 中文网,aia源码商店,aia源码下载,.aia 应用商店,应用商店,App Inventor 源码购买,AppInventor源码下载,App Inventor 2源码购买,AppInventor2源码下载">
+    <meta name="keywords" content="App Inventor 2 中文网,Aia Store,App Store,aia源码商店,aia源码下载,.aia 应用商店,应用商店,App Inventor 源码购买,AppInventor源码下载,App Inventor 2源码购买,AppInventor2源码下载">
 	<meta name="description" content="App Inventor 2 中文网,.aia 源码商店,.aia 应用商店,aia 源码下载,<c:out value="${pageDesc}" />">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,8 +34,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/mit_app_inventor.css">
     <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/docs.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/store.css?2">
+    <link rel="stylesheet" type="text/css" href="/static/css/docs.css?1">
+    <link rel="stylesheet" type="text/css" href="/static/css/store.css?6">
     <script src="/static/js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/popper.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -69,19 +69,19 @@
 
 <nav class="navbar navbar-expand-xl" id="navbar">
     <a class="navbar-brand" href="https://www.fun123.cn/aia-store">
-	    <img src="/static/images/logo.png" alt="Logo" style="height:55px;">
+	    <img src="/static/images/aiastore.png" alt="Aia Store Logo" style="height:55px;">
     </a>
-    <a style="margin-left:10px;color:#3b3837;font-weight: bold;">App Inventor 2 .aia 源码商店</a>
+    <a style="color:#3b3837;font-weight: bold;">Aia Store</a>
     <a style="color:#888;margin-left: 5px;">beta</a>
 
     <div class="collapse navbar-collapse" id="navbarContent">
-	<ul class="navbar-nav" style="margin-left: 120px;">
+	<ul class="navbar-nav" style="margin-left: 50px;">
         <li class="dropdown">
             <a class="nav-link" href="https://www.fun123.cn/?f=as" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                中文网
+                App Inventor 2 中文网
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="https://www.fun123.cn/?f=asmenu" target="_blank">App Inventor 2 中文网</a>
+                <a class="dropdown-item" href="https://www.fun123.cn/?f=asmenu" target="_blank">开始编程</a>
                 <a class="dropdown-item" href="https://www.fun123.cn/reference/?f=asmenu" target="_blank">中文文档</a>
                 <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=asmenu#AppEntry" target="_blank">中文教程</a>
                 <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=asmenu" target="_blank">中文论坛</a>

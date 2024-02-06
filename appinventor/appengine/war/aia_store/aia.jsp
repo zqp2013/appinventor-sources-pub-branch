@@ -80,7 +80,7 @@
                                     <td>
                                         <c:choose>
                                             <c:when test="${ fn:length(aia.phone) == 11 && !has_buy }">
-                                                <c:out value="${ fn:substring(aia.phone, 0, 3) } "/>****<c:out value="${ fn:substring(aia.phone, 7, 11) } "/>
+                                                <c:out value="${ fn:substring(aia.phone, 0, 3) } "/>****<c:out value="${ fn:substring(aia.phone, 7, 11) } "/>（购买后显示完整号码）
                                             </c:when>
                                             <c:otherwise>
                                                 <c:out value="${aia.phone}" />

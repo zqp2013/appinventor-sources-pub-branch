@@ -216,7 +216,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                 <a href="https://www.fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
                 <a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
                 <a href="https://www.fun123.cn/reference/?f=login" target="_blank">中文文档</a> &nbsp;&nbsp;
-                <a href="https://www.fun123.cn/aia-store/?f=login" target="_blank">.aia 源码商店</a>
+                <a href="https://www.fun123.cn/aia-store/?f=login" target="_blank">Aia Store</a>
             </div>
             <div class="records display-none md-display-flex footer-links">
                 <span class="record-item display-flex align-items-center">
