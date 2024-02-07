@@ -90,8 +90,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <div>公众号 </div>
                                     </div>
                                     <div class="service_info">
-                                        <img src="/static/images/bilibili.png" loading="lazy">
-                                        <div>bilibili教程</div> 
+                                        <img src="https://bbs.tsingfun.com/static/image/common/qr_bbs.png" loading="lazy">
+                                        <div>移动中文社区</div> 
                                     </div>
 
                                 </div>
@@ -110,8 +110,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
             <div class="footer-links display-flex">
                 <a href="https://www.fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
                 <a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
-                <a href="https://www.fun123.cn/reference/?f=login" target="_blank">参考文档</a> &nbsp;&nbsp;
-                <a href="https://space.bilibili.com/3493106345314902" target="_blank">bilibili 视频教程</a>
+                <a href="https://www.fun123.cn/reference/?f=login" target="_blank">中文文档</a> &nbsp;&nbsp;
+                <a href="https://bbs.tsingfun.com/?f=paysucc" target="_blank">中文社区</a>
             </div>
             <div class="records display-none md-display-flex footer-links">
                 <span class="record-item display-flex align-items-center">
