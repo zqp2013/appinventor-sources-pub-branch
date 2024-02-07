@@ -311,10 +311,10 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
         
         <div class="container footer-container lg-display-flex align-items-center glass">
             <div class="footer-links display-flex">
-                <a href="https://www.fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
-                <a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
-                <a href="https://www.fun123.cn/reference/?f=login" target="_blank">中文文档</a> &nbsp;&nbsp;
-                <a href="https://bbs.tsingfun.com/?f=pay" target="_blank">中文社区</a>
+                <a href="https://www.fun123.cn/reference/info/?f=pay" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
+                <a href="https://www.fun123.cn/reference/info/about-us.html?f=pay" target="_blank">关于我们</a> &nbsp;&nbsp;
+                <a href="https://www.fun123.cn/reference/?f=pay" target="_blank">中文文档</a> &nbsp;&nbsp;
+                <a href="https://www.fun123.cn/aia-store/?f=pay" target="_blank"><i class="mdi mdi-shopping-outline" style="font-size: 14px;"></i> Aia Store</a>
             </div>
             <div class="records display-none md-display-flex footer-links">
                 <span class="record-item display-flex align-items-center">

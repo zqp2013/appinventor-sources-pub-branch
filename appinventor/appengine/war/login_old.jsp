@@ -132,7 +132,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center><br/>")
 <a href="https://www.fun123.cn/reference/info/?f=login" target="_blank">关于App Inventor 2</a> &nbsp;&nbsp;
 <a href="https://www.fun123.cn/reference/info/about-us.html?f=login" target="_blank">关于我们</a> &nbsp;&nbsp;
 <a href="https://www.fun123.cn/reference/?f=login" target="_blank">中文文档</a> &nbsp;&nbsp;
-<a href="https://bbs.tsingfun.com/?f=login" target="_blank">中文社区</a>
+<a href="https://www.fun123.cn/aia-store/?f=login" target="_blank"><i class="mdi mdi-shopping-outline" style="font-size: 14px;"></i> Aia Store</a>
 
 <p class="copyright" style="font-size:15px;color:#666;margin-top:4%;line-height:24px;">&copy; <script>document.write(new Date().getFullYear());</script>&nbsp;跟着学（上海）教育科技有限公司&nbsp;&nbsp;<br/>
 	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#666;text-decoration: none;">沪ICP备2020034476号-2</a>&nbsp;&nbsp;
