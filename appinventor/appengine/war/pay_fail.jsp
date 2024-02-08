@@ -4,6 +4,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <%
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+    
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String phone = (String) request.getAttribute("phone");
 %>
@@ -20,6 +24,7 @@
     <meta name="application-name" content="App Inventor 2 中文网" />
     <link rel="apple-touch-icon" href="/static/images/logo2.png" />
     <link rel="stylesheet" media="all" href="/static/css/login.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialdesignicons.min.css">
     <style type="text/css">
     .title {
         background-clip: text;

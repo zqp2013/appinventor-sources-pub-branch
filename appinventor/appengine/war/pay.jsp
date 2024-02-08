@@ -4,6 +4,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <%
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
    String error = StringEscapeUtils.escapeHtml4(request.getParameter("error"));
    String phone = (String) request.getAttribute("phone");
 %>
@@ -20,6 +24,7 @@
     <meta name="application-name" content="App Inventor 2 中文网" />
     <link rel="apple-touch-icon" href="/static/images/logo2.png" />
     <link rel="stylesheet" media="all" href="/static/css/login.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialdesignicons.min.css">
     <style type="text/css">
     .title {
         background-clip: text;
@@ -173,7 +178,8 @@
 
         <div class="container navless-container">
             <div class="content">
-                <div class="flash-container flash-container-page sticky" style="padding-bottom: 20px;">
+                <div class="flash-container flash-container-page sticky" style="padding-bottom: 20px;color:#999;">
+                    <b>限时活动</b>：即日起，开通会员半年卡包邮赠送 <a href="https://www.fun123.cn/reference/iot/ble.html?f=pay">实验同款BLE蓝牙</a> 硬件一个（单硬件），年卡送BLE蓝牙硬件 + UART线一套，限时 <font color=red>2024/05/01</font> 之前。
                 </div>
 
                 <div class="mt-3">
