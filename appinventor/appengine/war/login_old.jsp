@@ -24,8 +24,8 @@
     <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
     <meta HTTP-EQUIV="expires" CONTENT="0"/>
     <title>App Inventor 2 中文网</title>
-	<meta name="keywords" content="App Inventor 2 中文网,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 论坛,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
-	<meta name="description" content="App Inventor 2 中文网，在MIT官方原版基础上深度中文化定制且与原版同步更新，编程文档及案例本土化。不断开发中文教程并提供中文论坛方便学习交流，陪伴少儿编程成长，做忠实的编程陪伴者。">
+	<meta name="keywords" content="App Inventor 2 中文网,App Inventor 2中文网,app inventor中文官网,appinventor网页版,appinventor2网站,appinventor官网,APPinventor2网页最新版,app inventor2中文官网,appinventor2 汉化,搭建appinventor2服务器,app inventor2 社区,AppInventor,App Inventor,App Inventor 2,AI2中文网,AI2 中文网,ai2,少儿编程,青少年编程">
+	<meta name="description" content="App Inventor 2 中文网，在MIT官方原版基础上深度中文化定制且与原版同步更新，编程文档及案例本土化。不断开发中文教程并提供中文社区方便学习交流，陪伴少儿编程成长，做忠实的编程陪伴者。">
 	<meta name="application-name" content="App Inventor 2 中文网"/>
 	<link rel="apple-touch-icon" href="/static/images/logo2.png"/>
   </head>

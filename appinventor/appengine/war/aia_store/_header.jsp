@@ -84,7 +84,7 @@
                 <a class="dropdown-item" href="https://www.fun123.cn/?f=asmenu" target="_blank">开始编程</a>
                 <a class="dropdown-item" href="https://www.fun123.cn/reference/?f=asmenu" target="_blank">中文文档</a>
                 <a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=asmenu#AppEntry" target="_blank">中文教程</a>
-                <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=asmenu" target="_blank">中文论坛</a>
+                <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=asmenu" target="_blank">中文社区</a>
             </div>
             </li>
 	    <li class="dropdown">
