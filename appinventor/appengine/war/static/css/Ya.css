@@ -659,6 +659,11 @@ div.StatusPanel {
   display: flex;
   flex-flow: row;
 }
+/*add by 中文网:项目滚动条*/
+.ode-ProjectListView {
+  overflow-x: auto;
+  overflow-y: visible;
+}
 
 /*
  * Deck Panel
