@@ -146,7 +146,7 @@
     </style>
 </head>
 
-<body class="login-page" style="overflow:hidden;background:url(/static/images/bgpay.svg) center/cover no-repeat;">
+<body class="login-page" style="background:url(/static/images/bgpay.svg) center/cover no-repeat;">
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">

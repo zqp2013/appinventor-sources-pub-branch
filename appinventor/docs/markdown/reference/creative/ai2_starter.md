@@ -16,6 +16,8 @@ Ai2 Starter助手极速下载地址：
 |---------|---------|---------|
 |    中文绿色最新版（AI伴侣已升级至v2.69）<br/> ![AI2Starter](images/AI2Starter.png)   | .zip<br/>116MB |    [微云下载](https://share.weiyun.com/MYlivorr){:.vip}      |   绿色版无需安装，点击即用，升级了内置**AI伴侣版本至中文最新版v2.69**。<br/>如果之前电脑安装或使用过旧版本，请先点“Hard Reset”后再启动！<br/>**性能优化提升，对电脑要求非常低，虚拟机也可正常使用**，用户体验很不错！<br/>此方式通信模式是纯本地的，全程**自动交互启动及运行**，<br/>&nbsp;&nbsp;经测试即使通信服务器故障也能正常测试。      |
 
+想要自己动手升级的，或者想要学习了解升级原理的，请查看[《谈如何升级aiStarter内置AI伴侣的方式及原理》](https://bbs.tsingfun.com/thread-1437-1-1.html?f=ai2_starter)。
+
 ## Ai2 Starter使用步骤
 
 ### 连接模拟器

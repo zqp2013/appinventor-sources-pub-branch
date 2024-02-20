@@ -41,7 +41,7 @@
     </style>
 </head>
 
-<body class="login-page" style="overflow:hidden;background:url(/static/images/bgpay.svg) center/cover no-repeat;">
+<body class="login-page" style="background:url(/static/images/bgpay.svg) center/cover no-repeat;">
 
     <div class="page-wrap borderless">
 
