@@ -21,6 +21,7 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 
 图表组件有其他可以更改外观的属性，例如 [`描述`](#Chart.Description)、[`启用网格`](#Chart.GridEnabled)。
 
+图表的入门教程请查看[《【App Inventor 2 数据可视化】使用柱状图和饼图收集数据》](https://bbs.tsingfun.com/thread-1442-1-1.html?f=ref)。
 
 ### 属性  {#Chart-Properties}
 
