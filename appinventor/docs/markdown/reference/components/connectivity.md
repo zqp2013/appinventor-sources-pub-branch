@@ -54,6 +54,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
   * 可选取多个文件（图片、音频、视频等）：
     * `Action`: `android.intent.action.GET_CONTENT`
 
+  更多有关Activity启动器使用技巧请查看[《Activity启动器如何查看并启动其他App》](guide/ActivityStarter.html)。
 
 ### 属性  {#ActivityStarter-Properties}
 

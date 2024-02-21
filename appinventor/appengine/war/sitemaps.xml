@@ -235,6 +235,12 @@
 			<priority>0.7</priority>
 		</url>
 		<url>
+			<loc>https://www.fun123.cn/reference/components/guide/ActivityStarter.html</loc>
+			<lastmod>2024-02-21</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+		<url>
 			<loc>https://www.fun123.cn/reference/extensions/AsciiConversion.html</loc>
 			<lastmod>2023-09-13</lastmod>
 			<changefreq>weekly</changefreq>
