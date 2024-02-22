@@ -88,8 +88,8 @@ public abstract class ColorChoicePropertyEditor extends PropertyEditor {
     }
 
     static String getHtmlDescription(String rgbString, String name) {
-      return "<span style=\"background:#" + rgbString + "; border:1px solid black; " +
-          "width:1em; height:1em\">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;" + name;
+      return "<span style=\"background:#" + rgbString + "; " +
+          "border:1px solid grey; width:15px; border-radius: 200px; display: inline-block; height:15px\">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;" + name;
     }
   }
 
@@ -310,8 +310,8 @@ public abstract class ColorChoicePropertyEditor extends PropertyEditor {
    * @return HTML string for the Custom... dropdown entry
    */
   private static String makeCustomHTML(double a, int r, int g, int b) {
-    return "<span style=\"background:rgba(" + r + "," + g + "," + b + "," + a + "); border:1px solid black; " +
-        "width:1em; height:1em\">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;" + MESSAGES.customEllipsis();
+    return "<span style=\"background:rgba(" + r + "," + g + "," + b + "," + a + "); " +
+        "border:1px solid grey; width:15px; border-radius: 200px; display: inline-block; height:15px\">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;" + MESSAGES.customEllipsis();
   }
 
   /**

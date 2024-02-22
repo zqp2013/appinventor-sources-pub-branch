@@ -193,7 +193,7 @@ public class TopPanel extends Composite {
       feedbackLink.setHTML("<i class=\"mdi mdi-progress-question\" style=\"font-size:14px\"/></i>&nbsp;&nbsp;" + feedbackLink.getText());
       feedbackLink.addClickHandler(
         new WindowOpenClickHandler(feedbackUrl));
-      feedbackLink.setStyleName("ode-TopPanelButton");
+      feedbackLink.setStyleName("ode-TopPanelButton hot");
       links.add(feedbackLink);
     }
 
