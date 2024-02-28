@@ -211,7 +211,7 @@ $().ready(function(){
 
         var url = "https://www.fun123.cn/reference/info/vip.html?f=doc&url=" + window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
         var alertText = document.createElement("span");
-        alertText.innerHTML = '开通VIP会员后查看此处隐藏内容！ <a target="_blank" href="' + url + '">点此开通VIP</a>';
+        alertText.innerHTML = '<a target="_blank" href="' + url + '">开通VIP会员</a>后查看此处隐藏内容！ 已开通<a target="_blank" href="https://www.fun123.cn/?f=doc">点此登录</a>';
         newDiv.appendChild(alertText);
 
         $(newDiv).insertBefore(vipElems[i]);
