@@ -1,64 +1,78 @@
 <nav class="navbar navbar-expand-xl navbar-light">
-    <a class="navbar-brand" href="https://www.fun123.cn/">
-	<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
-    </a>
-    <button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建 Apps</button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-	<ul class="navbar-nav" style="margin-left: auto;">
-		<li class="nav-item">
-		<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
-		</li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    关于我们
-		</a>
-		<div class="dropdown-menu">
-		    <a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
-			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref" target="_blank">发布日志</a>
-			<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref" target="_blank">服务条款</a>
+	<a class="navbar-brand" href="https://www.fun123.cn/">
+		<img src="/static/images/logo.png" alt="Logo" style="height:72px;">
+	</a>
+	<button type="button" class="btn create-btn" style="margin-right: 20px;" onclick="gotoappinventor();">创建
+		Apps</button>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+		aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarContent">
+		<ul class="navbar-nav" style="margin-left: auto;">
+			<li class="nav-item">
+				<a class="nav-link" href="https://www.fun123.cn/reference/">首页</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">
+					关于我们
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="https://www.fun123.cn/reference/info/about-us.html?f=ref">关于我们</a>
+					<a class="dropdown-item" href="https://www.fun123.cn/reference/info/ReleaseNotes.html?f=ref"
+						target="_blank">发布日志</a>
+					<a class="dropdown-item" href="https://www.fun123.cn/Ya_tos_form.html?f=ref"
+						target="_blank">服务条款</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">
+					教育
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry"
+						target="_blank">中文教程</a>
+					<a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref"
+						target="_blank">中文社区</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">
+					反馈
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="https://bbs.tsingfun.com/forum-89-1.html?f=ref"
+						target="_blank">我要反馈</a>
+				</div>
+			</li>
+		</ul>
+
+		<div style="display: inline-flex;margin-left:auto;margin-right:0">
+			
+				<form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8" action="https://so.tsingfun.com/?" target="_blank">
+					<div style="float: left;">
+						<input autocomplete="off" placeholder="没找到？试试搜索吧~"
+							type="text" size="10" class="gsc-input" name="q"
+							title="搜索" aria-label="search" id="gsc-i-id1"
+							style="width: 100%; padding: 2px; border:1px solid #F57C00; height: 33px; width:160px; outline: none;"
+							dir="ltr" spellcheck="false">
+					</div>
+
+					<div style="float: left;">
+						<button class="gsc-search-button gsc-search-button-v2" type="submit" style="margin-left:6px;background-color: #F57C00;padding: 4px 27px;border-radius: 2px;border:none;">
+							<svg width="13" height="13" style="fill: #fff;"
+								viewBox="0 0 13 13">
+								<title>搜索</title>
+								<path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z">
+								</path></svg>
+						</button>
+					</div>
+				</form>
+
 		</div>
-	    </li>
-	    <li class="nav-item dropdown">
-		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    教育
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://www.fun123.cn/reference/info/?f=ref#AppEntry" target="_blank">中文教程</a>
-		    <a class="dropdown-item" href="https://bbs.tsingfun.com/forum-147-1.html?f=ref" target="_blank">中文社区</a>
-		</div>
-	    </li>
-		<li class="nav-item dropdown">
-		<a class="nav-link" href="https://www.fun123.cn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			反馈
-		</a>
-		<div class="dropdown-menu">
-			<a class="dropdown-item" href="https://bbs.tsingfun.com/forum-89-1.html?f=ref" target="_blank">我要反馈</a>
-		</div>
-		</li>
-    </ul>
-        <div style="display: inline-flex;margin-left:auto;margin-right:0">
-				<script>
-					var _hmt = _hmt || [];
-					(function() {
-					  var hm = document.createElement("script");
-					  hm.src = "https://hm.baidu.com/hm.js?8d287b854d737bdc880e8ddeac1b309d";
-					  var s = document.getElementsByTagName("script")[0]; 
-					  s.parentNode.insertBefore(hm, s);
-					})();
-				</script>
-        </div>
-	<!-- <form class="form-inline" action="/action_page.php">
-	     <div class="form-group has-search">
-	     <span class="fa fa-search form-control-feedback"></span>
-	     <input type="text" class="form-control" placeholder="Search">
-	     </div>
-	     </form> -->
-    </div>
-	<div class="collapse navbar-collapse">
-		<img src="/static/images/hello.png" alt="你好">
+
 	</div>
 </nav>
