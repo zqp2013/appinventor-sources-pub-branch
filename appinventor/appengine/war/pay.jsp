@@ -203,14 +203,14 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="form-group px-5 pt-5">
                                                 <label class="label-bold">开通/续期手机号：</label>
                                                 <div class="float-right">
-                                                    <span style="color: red; visibility: hidden;" id="error_msg">手机号码输入有误，请检查！</span>
+                                                    <span style="color: red; visibility: hidden;font-weight: bold;" id="error_msg">手机号码输入有误，请检查！</span>
                                                 </div>
 
                                                 <input class="form-control form-input top js-username-field"
             oninput="value=value.replace(/[^0-9.]/g,'')" 
             onblur="javascript:if(value.length!=11){
                     document.getElementById('paybtn').disabled = true;
-                    if (value.length > 0) document.getElementById('error_msg').style.visibility = 'visible';
+                    if (value.length >= 0) document.getElementById('error_msg').style.visibility = 'visible';
             } else {document.getElementById('paybtn').disabled = false; document.getElementById('error_msg').style.visibility = 'hidden'; } " 
         <% if (phone != null) {
             out.println("value=" + phone);
