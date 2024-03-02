@@ -45,6 +45,10 @@
             </span>
             &nbsp;&nbsp;&nbsp;
             <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/?f=login#AppEntry" target="_blank"><i class="mdi mdi-school-outline" style="font-size: 15px;"></i> 手把手入门教程</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/iot/?f=login" target="_blank"><i class="mdi mdi-bluetooth-audio" style="font-size: 15px;"></i> IoT专题</a>
             </span>
             &nbsp;&nbsp;&nbsp;
@@ -194,10 +198,11 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <img src="/static/images/gzh.jpg" loading="lazy">
                                         <div>公众号 </div>
                                     </div>
+                                    <a href="https://bbs.tsingfun.com/forum-147-1.html?f=login" target="_blank">
                                     <div class="service_info">
                                         <img src="https://bbs.tsingfun.com/static/image/common/qr_bbs.png" loading="lazy">
                                         <div>移动中文社区</div> 
-                                    </div>
+                                    </div></a>
 
                                 </div>
 
