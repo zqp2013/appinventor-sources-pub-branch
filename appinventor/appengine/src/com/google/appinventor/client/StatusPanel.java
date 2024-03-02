@@ -23,6 +23,8 @@ import com.google.gwt.dom.client.LIElement;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.EventListener;
 import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.ui.Frame;
+import java.util.Date;
 
 /**
  * The status panel contains various links.
@@ -44,6 +46,7 @@ public class StatusPanel extends Composite {
 
   @UiField HTML switchDark;
   @UiField Anchor tosLink;
+  @UiField Frame searchFrame;
 
   /**
    * Initializes and assembles all UI elements shown in the status panel.
@@ -57,6 +60,7 @@ public class StatusPanel extends Composite {
     } else {
       tosLink.removeFromParent();
     }
+    searchFrame.setUrl("https://www.fun123.cn/reference/info/search/?" + (new Date()).getTime());
 
     //Add by 中文网
     switchDark.addStyleName("switchDark");

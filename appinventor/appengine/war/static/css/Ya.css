@@ -642,6 +642,17 @@ div.StatusPanel {
   min-width: 300px;
   margin-right: 22px;
 }
+/*搜索框*/
+.searchFrame {
+  position: absolute;
+  height: 20px;
+  margin-top: -2px;
+  width:240px;
+  float: right;
+  right: 1px;
+  border: none;
+  overflow: hidden;
+}
 
 .userCount{
   padding:4px;

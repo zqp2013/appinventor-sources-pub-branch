@@ -29,5 +29,6 @@
         <g:HTML ui:field="switchDark"></g:HTML>
     </g:HTMLPanel>
     <g:Anchor text="{messages.privacyTermsLink}" target="_blank" ui:field="tosLink" styleName="tosLink" />
+    <g:Frame ui:field="searchFrame" styleName="searchFrame" />
   </g:FlowPanel>
 </ui:UiBinder>
