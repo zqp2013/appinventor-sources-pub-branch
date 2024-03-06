@@ -29,3 +29,4 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【OCR】App Inventor 2 OCR 图片文字识别全方案总结](../pro/ocr.html)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](../pro/ftp.html)
 1. [【手机管理器】App Inventor 2 TaifunTM拓展：获取本机手机号码](phone_manager.html)
+1. [【AI模型】Personal Image Classifier (PIC) 拓展：自行训练AI图像识别模型，开发图像识别分类App](PersonalImageClassifier.html)
