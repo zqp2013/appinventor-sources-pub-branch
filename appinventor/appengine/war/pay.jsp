@@ -179,7 +179,7 @@
         <div class="container navless-container">
             <div class="content">
                 <div class="flash-container flash-container-page sticky" style="padding-bottom: 20px;color:#999;">
-                    <b>限时活动</b>：即日起，开通会员半年卡包邮赠送 <a href="https://www.fun123.cn/reference/iot/ble.html?f=pay">实验同款BLE蓝牙</a> 硬件一个（单硬件），年卡送BLE蓝牙硬件 + UART线一套，限时 <font color=red>2024/05/01</font> 之前。
+                    <!--<b>限时活动</b>：即日起，开通会员半年卡包邮赠送 <a href="https://www.fun123.cn/reference/iot/ble.html?f=pay">实验同款BLE蓝牙</a> 硬件一个（单硬件），年卡送BLE蓝牙硬件 + UART线一套，限时 <font color=red>2024/05/01</font> 之前。-->
                 </div>
 
                 <div class="mt-3">
@@ -223,13 +223,13 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="form-group px-5">
                                                 <input type="hidden" id="period" name="period" value="6"/>
 
-                                                <div class="card-item" prop-period="1" prop-oprice="39" prop-price="29.98">
+                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98">
                                                     <p class="t1">VIP月卡</p>
-                                                    <p class="t2">¥ <span>0.99</span>/天</p>
+                                                    <p class="t2">¥ <span>1.33</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="59.98">
+                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="69.98">
                                                     <p class="t1">VIP季卡</p>
-                                                    <p class="t2">¥ <span>0.66</span>/天</p>
+                                                    <p class="t2">¥ <span>0.77</span>/天</p>
                                                 </div>
                                                 <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98">
                                                     <span class="card-tips"><img src="/static/images/fire.png" alt="img" width="16" height="16"/></span>
