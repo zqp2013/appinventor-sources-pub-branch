@@ -21,20 +21,21 @@ $Source $Yail
 (do-after-form-creation (set-and-coerce-property! 'Screen1 'AccentColor #xFF128BA8 'number)
  (set-and-coerce-property! 'Screen1 'ActionBar #t 'boolean)
  (set-and-coerce-property! 'Screen1 'AlignHorizontal 3 'number)
+ (set-and-coerce-property! 'Screen1 'AppName "AI2\u4f34\u4fa3" 'text)
  (set-and-coerce-property! 'Screen1 'BackgroundColor #x00FFFFFF 'number)
  (set-and-coerce-property! 'Screen1 'BackgroundImage "mooning.png" 'text)
  (set-and-coerce-property! 'Screen1 'Icon "AI2Companion-Icon.png" 'text)
  (set-and-coerce-property! 'Screen1 'PrimaryColor #xFFA5CF47 'number)
  (set-and-coerce-property! 'Screen1 'PrimaryColorDark #xFF516623 'number)
+ (set-and-coerce-property! 'Screen1 'ScreenOrientation "unspecified" 'text)
  (set-and-coerce-property! 'Screen1 'Scrollable #t 'boolean)
  (set-and-coerce-property! 'Screen1 'ShowListsAsJson #t 'boolean)
  (set-and-coerce-property! 'Screen1 'Sizing "Responsive" 'text)
- (set-and-coerce-property! 'Screen1 'Theme "AppTheme.Light.DarkActionBar" 'text)
- (set-and-coerce-property! 'Screen1 'Title "AI2伴侣 · App Inventor 2 中文网" 'text)
+ (set-and-coerce-property! 'Screen1 'Title "AI2\u4f34\u4fa3 \u00b7 App Inventor 2 \u4e2d\u6587\u7f51" 'text)
 )
 
 (define-event Screen1 Initialize()(set-this-form)
-    (set-var! g$rendezvousServer ((get-var p$getRendezvousServer) ))(set-and-coerce-property! 'ScanButton 'BackgroundColor -16738048 'number)(set-and-coerce-property! 'ConnectButton 'BackgroundColor -13312 'number)(if (call-component-method 'PhoneStatus1 'isDirect (*list-for-runtime*) '()) (begin   (set-and-coerce-property! 'PhonePanel 'Visible #f 'boolean)(set-and-coerce-property! 'EmulatorPanel 'Visible #t 'boolean)(set-and-coerce-property! 'IPContainer 'Visible #f 'boolean)((get-var p$startdirectconnect) )) (begin   (set-and-coerce-property! 'PhonePanel 'Visible #t 'boolean)(set-and-coerce-property! 'EmulatorPanel 'Visible #f 'boolean)(set-and-coerce-property! 'ipaddrlabel 'Text (call-component-method 'PhoneStatus1 'GetWifiIpAddress (*list-for-runtime*) '()) 'text)(set-and-coerce-property! 'IPContainer 'Visible #t 'boolean)((get-var p$checkWiFi) )))(call-component-method 'PhoneStatus1 'setAssetsLoaded (*list-for-runtime*) '())(set-and-coerce-property! 'versionlabel 'Text (call-component-method 'PhoneStatus1 'GetVersionName (*list-for-runtime*) '()) 'text)(set-and-coerce-property! 'PhoneStatus1 'WebRTC (get-property 'CheckBox1 'Checked) 'boolean))
+    (set-var! g$rendezvousServer ((get-var p$getRendezvousServer) ))(if (call-component-method 'PhoneStatus1 'isDirect (*list-for-runtime*) '()) (begin   (set-and-coerce-property! 'PhonePanel 'Visible #f 'boolean)(set-and-coerce-property! 'EmulatorPanel 'Visible #t 'boolean)(set-and-coerce-property! 'IPContainer 'Visible #f 'boolean)((get-var p$startdirectconnect) )) (begin   (set-and-coerce-property! 'PhonePanel 'Visible #t 'boolean)(set-and-coerce-property! 'EmulatorPanel 'Visible #f 'boolean)(set-and-coerce-property! 'ipaddrlabel 'Text (call-component-method 'PhoneStatus1 'GetWifiIpAddress (*list-for-runtime*) '()) 'text)(set-and-coerce-property! 'IPContainer 'Visible #t 'boolean)((get-var p$checkWiFi) )))(call-component-method 'PhoneStatus1 'setAssetsLoaded (*list-for-runtime*) '())(set-and-coerce-property! 'versionlabel 'Text (call-component-method 'PhoneStatus1 'GetVersionName (*list-for-runtime*) '()) 'text)(set-and-coerce-property! 'PhoneStatus1 'WebRTC (get-property 'CheckBox1 'Checked) 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean))
 ;;; SettingsPanel
 
 (add-component Screen1 com.google.appinventor.components.runtime.VerticalArrangement SettingsPanel 
@@ -51,7 +52,7 @@ $Source $Yail
 (add-component SettingsPanel com.google.appinventor.components.runtime.Label settingsintro 
 (set-and-coerce-property! 'settingsintro 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'settingsintro 'Text "AI2伴侣设置" 'text)
+(set-and-coerce-property! 'settingsintro 'Text "AI2\u4f34\u4fa3\u8bbe\u7f6e" 'text)
 
 )
 
@@ -65,7 +66,7 @@ $Source $Yail
 (add-component HorizontalArrangement4 com.google.appinventor.components.runtime.Label Label12 
 (set-and-coerce-property! 'Label12 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label12 'Text "设置通信服务器：" 'text)
+(set-and-coerce-property! 'Label12 'Text "\u8bbe\u7f6e\u901a\u4fe1\u670d\u52a1\u5668\uff1a" 'text)
 
 )
 
@@ -84,21 +85,21 @@ $Source $Yail
 ;;; SetRenzvousServer
 
 (add-component HorizontalArrangement5 com.google.appinventor.components.runtime.Button SetRenzvousServer 
-(set-and-coerce-property! 'SetRenzvousServer 'Text "设置通信服务器" 'text)
+(set-and-coerce-property! 'SetRenzvousServer 'Text "\u8bbe\u7f6e\u901a\u4fe1\u670d\u52a1\u5668" 'text)
 
 )
 
 (define-event SetRenzvousServer Click()(set-this-form)
-    ((get-var p$setRendezvousServer) (get-property 'rendezvoustextbox 'Text) #t)(call-component-method 'rendezvoustextbox 'HideKeyboard (*list-for-runtime*) '())(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'MainPanel 'Visible #t 'boolean))
+    ((get-var p$setRendezvousServer) (get-property 'rendezvoustextbox 'Text) #t)(call-component-method 'rendezvoustextbox 'HideKeyboard (*list-for-runtime*) '())(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean))
 ;;; ResetRendezvousServer
 
 (add-component HorizontalArrangement5 com.google.appinventor.components.runtime.Button ResetRendezvousServer 
-(set-and-coerce-property! 'ResetRendezvousServer 'Text "恢复默认" 'text)
+(set-and-coerce-property! 'ResetRendezvousServer 'Text "\u6062\u590d\u9ed8\u8ba4" 'text)
 
 )
 
 (define-event ResetRendezvousServer Click()(set-this-form)
-    ((get-var p$resetRendezvousServer) )(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'MainPanel 'Visible #t 'boolean))
+    ((get-var p$resetRendezvousServer) )(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean))
 ;;; aidLabel
 
 (add-component SettingsPanel com.google.appinventor.components.runtime.Label aidLabel 
@@ -108,6 +109,8 @@ $Source $Yail
 
 (add-component Screen1 com.google.appinventor.components.runtime.VerticalArrangement MainPanel 
 (set-and-coerce-property! 'MainPanel 'AlignHorizontal 3 'number)
+
+(set-and-coerce-property! 'MainPanel 'Height -2 'number)
 
 (set-and-coerce-property! 'MainPanel 'Width -2 'number)
 
@@ -127,7 +130,7 @@ $Source $Yail
 (add-component EmulatorPanel com.google.appinventor.components.runtime.Label Label5 
 (set-and-coerce-property! 'Label5 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label5 'Text "使用模拟器或 USB 运行，\u000a正在等待运行指令..." 'text)
+(set-and-coerce-property! 'Label5 'Text "\u4f7f\u7528\u6a21\u62df\u5668\u6216 USB \u8fd0\u884c\uff0c\u000a\u6b63\u5728\u7b49\u5f85\u8fd0\u884c\u6307\u4ee4..." 'text)
 
 )
 
@@ -230,9 +233,9 @@ $Source $Yail
 (add-component HorizontalArrangement2 com.google.appinventor.components.runtime.TextBox CodeBox 
 (set-and-coerce-property! 'CodeBox 'BackgroundColor #xFFFFFFFF 'number)
 
-(set-and-coerce-property! 'CodeBox 'FontTypeface 1 'number)
+(set-and-coerce-property! 'CodeBox 'FontTypeface "1" 'text)
 
-(set-and-coerce-property! 'CodeBox 'Hint "输入或粘贴6位字符码" 'text)
+(set-and-coerce-property! 'CodeBox 'Hint "\u8f93\u5165\u6216\u7c98\u8d346\u4f4d\u5b57\u7b26\u7801" 'text)
 
 (set-and-coerce-property! 'CodeBox 'TextAlignment 1 'number)
 
@@ -261,13 +264,19 @@ $Source $Yail
 ;;; ConnectButton
 
 (add-component PhonePanel com.google.appinventor.components.runtime.Button ConnectButton 
-(set-and-coerce-property! 'ConnectButton 'BackgroundColor #xFFFFFF00 'number)
+(set-and-coerce-property! 'ConnectButton 'BackgroundColor #xFFFFBB33 'number)
 
-(set-and-coerce-property! 'ConnectButton 'FontSize 18 'number)
+(set-and-coerce-property! 'ConnectButton 'FontBold #t 'boolean)
 
-(set-and-coerce-property! 'ConnectButton 'Image "connectwCode.png" 'text)
+(set-and-coerce-property! 'ConnectButton 'FontSize 26 'number)
 
-(set-and-coerce-property! 'ConnectButton 'TextColor #xFF000000 'number)
+(set-and-coerce-property! 'ConnectButton 'Shape 1 'number)
+
+(set-and-coerce-property! 'ConnectButton 'Text "\u4f7f\u7528\u7f16\u7801\u8fde\u63a5" 'text)
+
+(set-and-coerce-property! 'ConnectButton 'TextColor #xFFFFFFFF 'number)
+
+(set-and-coerce-property! 'ConnectButton 'Width -1085 'number)
 
 )
 
@@ -285,13 +294,19 @@ $Source $Yail
 ;;; ScanButton
 
 (add-component PhonePanel com.google.appinventor.components.runtime.Button ScanButton 
-(set-and-coerce-property! 'ScanButton 'BackgroundColor #xFF00FF00 'number)
+(set-and-coerce-property! 'ScanButton 'BackgroundColor #xFF33B5E5 'number)
 
-(set-and-coerce-property! 'ScanButton 'FontSize 18 'number)
+(set-and-coerce-property! 'ScanButton 'FontBold #t 'boolean)
 
-(set-and-coerce-property! 'ScanButton 'Image "connectwQR.png" 'text)
+(set-and-coerce-property! 'ScanButton 'FontSize 26 'number)
+
+(set-and-coerce-property! 'ScanButton 'Shape 1 'number)
+
+(set-and-coerce-property! 'ScanButton 'Text "\u626b\u4e8c\u7ef4\u7801\u8fde\u63a5" 'text)
 
 (set-and-coerce-property! 'ScanButton 'TextColor #xFFFFFFFF 'number)
+
+(set-and-coerce-property! 'ScanButton 'Width -1085 'number)
 
 )
 
@@ -302,6 +317,10 @@ $Source $Yail
 (add-component MainPanel com.google.appinventor.components.runtime.HorizontalArrangement IPContainer 
 (set-and-coerce-property! 'IPContainer 'AlignHorizontal 3 'number)
 
+(set-and-coerce-property! 'IPContainer 'AlignVertical 3 'number)
+
+(set-and-coerce-property! 'IPContainer 'Height 30 'number)
+
 (set-and-coerce-property! 'IPContainer 'Width -2 'number)
 
 )
@@ -311,7 +330,7 @@ $Source $Yail
 (add-component IPContainer com.google.appinventor.components.runtime.Label Label4 
 (set-and-coerce-property! 'Label4 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label4 'Text "IP地址：" 'text)
+(set-and-coerce-property! 'Label4 'Text "IP\u5730\u5740\uff1a" 'text)
 
 )
 
@@ -329,6 +348,10 @@ $Source $Yail
 (add-component MainPanel com.google.appinventor.components.runtime.HorizontalArrangement HorizontalArrangement3 
 (set-and-coerce-property! 'HorizontalArrangement3 'AlignHorizontal 3 'number)
 
+(set-and-coerce-property! 'HorizontalArrangement3 'AlignVertical 2 'number)
+
+(set-and-coerce-property! 'HorizontalArrangement3 'Height 30 'number)
+
 (set-and-coerce-property! 'HorizontalArrangement3 'Width -2 'number)
 
 )
@@ -338,7 +361,7 @@ $Source $Yail
 (add-component HorizontalArrangement3 com.google.appinventor.components.runtime.Label Label11 
 (set-and-coerce-property! 'Label11 'HasMargins #f 'boolean)
 
-(set-and-coerce-property! 'Label11 'Text "版本：" 'text)
+(set-and-coerce-property! 'Label11 'Text "\u7248\u672c\uff1a" 'text)
 
 )
 
@@ -354,12 +377,53 @@ $Source $Yail
 ;;; CheckBox1
 
 (add-component MainPanel com.google.appinventor.components.runtime.CheckBox CheckBox1 
-(set-and-coerce-property! 'CheckBox1 'Text "使用兼容旧连接方式" 'text)
+(set-and-coerce-property! 'CheckBox1 'Text "\u4f7f\u7528\u517c\u5bb9\u65e7\u8fde\u63a5\u65b9\u5f0f" 'text)
+
+(set-and-coerce-property! 'CheckBox1 'Visible #f 'boolean)
 
 )
 
 (define-event CheckBox1 Changed()(set-this-form)
     (set-and-coerce-property! 'PhoneStatus1 'WebRTC (call-yail-primitive yail-not (*list-for-runtime* (get-property 'CheckBox1 'Checked)) '(boolean) "not") 'boolean))
+;;; my
+
+(add-component MainPanel com.google.appinventor.components.runtime.VerticalArrangement my 
+(set-and-coerce-property! 'my 'AlignHorizontal 3 'number)
+
+(set-and-coerce-property! 'my 'AlignVertical 3 'number)
+
+(set-and-coerce-property! 'my 'Height -2 'number)
+
+(set-and-coerce-property! 'my 'Width -2 'number)
+
+)
+
+;;; QA
+
+(add-component my com.google.appinventor.components.runtime.Button QA 
+(set-and-coerce-property! 'QA 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'QA 'Shape 1 'number)
+
+(set-and-coerce-property! 'QA 'Text "\u6709\u95ee\u9898\uff1f\u53bb\u793e\u533a\u63d0\u95ee\u5427" 'text)
+
+(set-and-coerce-property! 'QA 'TextColor #xFFFFFFFF 'number)
+
+)
+
+(define-event QA Click()(set-this-form)
+    (set-and-coerce-property! 'MainPanel 'Visible #f 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #t 'boolean))
+;;; Copyright
+
+(add-component my com.google.appinventor.components.runtime.Label Copyright 
+(set-and-coerce-property! 'Copyright 'Height 30 'number)
+
+(set-and-coerce-property! 'Copyright 'Text "\u00a9 2024 App Inventor 2 \u4e2d\u6587\u7f51\uff08www.fun123.cn\uff09" 'text)
+
+(set-and-coerce-property! 'Copyright 'TextColor #xFF666666 'number)
+
+)
+
 ;;; SplashBox
 
 (add-component MainPanel com.google.appinventor.components.runtime.TextBox SplashBox 
@@ -375,7 +439,9 @@ $Source $Yail
 
 (set-and-coerce-property! 'SplashBox 'ReadOnly #t 'boolean)
 
-(set-and-coerce-property! 'SplashBox 'Text "此应用是 App Inventor 2 的辅助测试程序，请访问App Inventor 2 中文网（www.fun123.cn）获取更多信息！" 'text)
+(set-and-coerce-property! 'SplashBox 'Text "\u6b64\u5e94\u7528\u662f App Inventor 2 \u7684\u8f85\u52a9\u6d4b\u8bd5\u7a0b\u5e8f\uff0c\u8bf7\u8bbf\u95eeApp Inventor 2 \u4e2d\u6587\u7f51\uff08www.fun123.cn\uff09\u83b7\u53d6\u66f4\u591a\u4fe1\u606f\uff01" 'text)
+
+(set-and-coerce-property! 'SplashBox 'Visible #f 'boolean)
 
 (set-and-coerce-property! 'SplashBox 'Width -2 'number)
 
@@ -387,7 +453,7 @@ $Source $Yail
 )
 
 (define-event PhoneStatus1 OnSettings()(set-this-form)
-    (set-and-coerce-property! 'MainPanel 'Visible #f 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #t 'boolean)(set-and-coerce-property! 'rendezvoustextbox 'Text ((get-var p$getRendezvousServer) ) 'text)(set-and-coerce-property! 'aidLabel 'Text (call-component-method 'PhoneStatus1 'InstallationId (*list-for-runtime*) '()) 'text))
+    (set-and-coerce-property! 'MainPanel 'Visible #f 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #t 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean)(set-and-coerce-property! 'rendezvoustextbox 'Text ((get-var p$getRendezvousServer) ) 'text)(set-and-coerce-property! 'aidLabel 'Text (call-component-method 'PhoneStatus1 'InstallationId (*list-for-runtime*) '()) 'text))
 ;;; Web1
 
 (add-component MainPanel com.google.appinventor.components.runtime.Web Web1 
@@ -411,6 +477,120 @@ $Source $Yail
 
 (define-event Notifier1 AfterChoosing($choice)(set-this-form)
     (if (call-yail-primitive yail-equal? (*list-for-runtime* (lexical-value $choice) "Exit") '(any any) "=") (begin   (call-component-method 'PhoneStatus1 'shutdown (*list-for-runtime*) '()))))
+;;; CommunityPanel
+
+(add-component Screen1 com.google.appinventor.components.runtime.VerticalArrangement CommunityPanel 
+(set-and-coerce-property! 'CommunityPanel 'AlignHorizontal 3 'number)
+
+(set-and-coerce-property! 'CommunityPanel 'Height -2 'number)
+
+(set-and-coerce-property! 'CommunityPanel 'Width -2 'number)
+
+)
+
+;;; WebCommunity
+
+(add-component CommunityPanel com.google.appinventor.components.runtime.WebViewer WebCommunity 
+(set-and-coerce-property! 'WebCommunity 'HomeUrl "https://bbs.tsingfun.com/?f=ai2companion" 'text)
+
+(set-and-coerce-property! 'WebCommunity 'UsesLocation #t 'boolean)
+
+(set-and-coerce-property! 'WebCommunity 'Width -2 'number)
+
+)
+
+;;; menu
+
+(add-component CommunityPanel com.google.appinventor.components.runtime.HorizontalArrangement menu 
+(set-and-coerce-property! 'menu 'AlignVertical 3 'number)
+
+)
+
+;;; back_web
+
+(add-component menu com.google.appinventor.components.runtime.Button back_web 
+(set-and-coerce-property! 'back_web 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'back_web 'FontBold #t 'boolean)
+
+(set-and-coerce-property! 'back_web 'Shape 1 'number)
+
+(set-and-coerce-property! 'back_web 'Text "\u2190" 'text)
+
+(set-and-coerce-property! 'back_web 'TextColor #xFFFFFFFF 'number)
+
+(set-and-coerce-property! 'back_web 'Width 50 'number)
+
+)
+
+(define-event back_web Click()(set-this-form)
+    (call-component-method 'WebCommunity 'GoBack (*list-for-runtime*) '()))
+;;; space1
+
+(add-component menu com.google.appinventor.components.runtime.Label space1 
+)
+
+;;; refresh_web
+
+(add-component menu com.google.appinventor.components.runtime.Button refresh_web 
+(set-and-coerce-property! 'refresh_web 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'refresh_web 'Shape 1 'number)
+
+(set-and-coerce-property! 'refresh_web 'Text "\u5237\u65b0\u9875\u9762" 'text)
+
+(set-and-coerce-property! 'refresh_web 'TextColor #xFFFFFFFF 'number)
+
+)
+
+(define-event refresh_web Click()(set-this-form)
+    (call-component-method 'WebCommunity 'Reload (*list-for-runtime*) '()))
+;;; space2
+
+(add-component menu com.google.appinventor.components.runtime.Label space2 
+)
+
+;;; forward_web
+
+(add-component menu com.google.appinventor.components.runtime.Button forward_web 
+(set-and-coerce-property! 'forward_web 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'forward_web 'FontBold #t 'boolean)
+
+(set-and-coerce-property! 'forward_web 'Shape 1 'number)
+
+(set-and-coerce-property! 'forward_web 'Text "\u2192" 'text)
+
+(set-and-coerce-property! 'forward_web 'TextColor #xFFFFFFFF 'number)
+
+(set-and-coerce-property! 'forward_web 'Width 50 'number)
+
+)
+
+(define-event forward_web Click()(set-this-form)
+    (call-component-method 'WebCommunity 'GoForward (*list-for-runtime*) '()))
+;;; space3
+
+(add-component menu com.google.appinventor.components.runtime.Label space3 
+(set-and-coerce-property! 'space3 'Text "   " 'text)
+
+)
+
+;;; Index_web
+
+(add-component menu com.google.appinventor.components.runtime.Button Index_web 
+(set-and-coerce-property! 'Index_web 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'Index_web 'Shape 1 'number)
+
+(set-and-coerce-property! 'Index_web 'Text "\u56deAI2\u4f34\u4fa3" 'text)
+
+(set-and-coerce-property! 'Index_web 'TextColor #xFFFFFFFF 'number)
+
+)
+
+(define-event Index_web Click()(set-this-form)
+    (set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean))
 ;;; TinyDB1
 
 (add-component Screen1 com.google.appinventor.components.runtime.TinyDB TinyDB1 
