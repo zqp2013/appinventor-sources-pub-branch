@@ -576,7 +576,7 @@ $Source $Yail
 ;;; space3
 
 (add-component menu com.google.appinventor.components.runtime.Label space3 
-(set-and-coerce-property! 'space3 'Text "   " 'text)
+(set-and-coerce-property! 'space3 'Text "  " 'text)
 
 )
 
@@ -595,9 +595,38 @@ $Source $Yail
 
 (define-event Index_web Click()(set-this-form)
     (set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean)(set-and-coerce-property! 'Screen1 'TitleVisible #t 'boolean)(set-and-coerce-property! 'Screen1 'BackgroundImage "mooning.png" 'text)(set-and-coerce-property! 'Screen1 'BackgroundColor -3355444 'number))
+;;; space4
+
+(add-component menu com.google.appinventor.components.runtime.Label space4 
+)
+
+;;; share_web
+
+(add-component menu com.google.appinventor.components.runtime.Button share_web 
+(set-and-coerce-property! 'share_web 'BackgroundColor #xFF999999 'number)
+
+(set-and-coerce-property! 'share_web 'Height 24 'number)
+
+(set-and-coerce-property! 'share_web 'Image "share.png" 'text)
+
+(set-and-coerce-property! 'share_web 'Shape 1 'number)
+
+(set-and-coerce-property! 'share_web 'TextColor #xFFFFFFFF 'number)
+
+(set-and-coerce-property! 'share_web 'Width 24 'number)
+
+)
+
+(define-event share_web Click()(set-this-form)
+    (call-component-method 'share 'ShareMessage (*list-for-runtime* (call-yail-primitive string-append (*list-for-runtime* (get-property 'WebCommunity 'CurrentPageTitle) (get-property 'WebCommunity 'CurrentUrl) ) '(text text ) "join")) '(text)))
 ;;; TinyDB1
 
 (add-component Screen1 com.google.appinventor.components.runtime.TinyDB TinyDB1 
+)
+
+;;; share
+
+(add-component Screen1 com.google.appinventor.components.runtime.Sharing share 
 )
 
 (init-runtime)
