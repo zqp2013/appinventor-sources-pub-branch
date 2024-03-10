@@ -276,7 +276,7 @@ $Source $Yail
 
 (set-and-coerce-property! 'ConnectButton 'TextColor #xFFFFFFFF 'number)
 
-(set-and-coerce-property! 'ConnectButton 'Width -1085 'number)
+(set-and-coerce-property! 'ConnectButton 'Width -1086 'number)
 
 )
 
@@ -306,7 +306,7 @@ $Source $Yail
 
 (set-and-coerce-property! 'ScanButton 'TextColor #xFFFFFFFF 'number)
 
-(set-and-coerce-property! 'ScanButton 'Width -1085 'number)
+(set-and-coerce-property! 'ScanButton 'Width -1086 'number)
 
 )
 
@@ -412,7 +412,7 @@ $Source $Yail
 )
 
 (define-event QA Click()(set-this-form)
-    (set-and-coerce-property! 'MainPanel 'Visible #f 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #t 'boolean))
+    (set-and-coerce-property! 'MainPanel 'Visible #f 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #t 'boolean)(set-and-coerce-property! 'Screen1 'TitleVisible #f 'boolean)(set-and-coerce-property! 'Screen1 'BackgroundImage "" 'text)(set-and-coerce-property! 'Screen1 'BackgroundColor -1 'number))
 ;;; Copyright
 
 (add-component my com.google.appinventor.components.runtime.Label Copyright 
@@ -491,6 +491,8 @@ $Source $Yail
 ;;; WebCommunity
 
 (add-component CommunityPanel com.google.appinventor.components.runtime.WebViewer WebCommunity 
+(set-and-coerce-property! 'WebCommunity 'Height -1091 'number)
+
 (set-and-coerce-property! 'WebCommunity 'HomeUrl "https://bbs.tsingfun.com/?f=ai2companion" 'text)
 
 (set-and-coerce-property! 'WebCommunity 'UsesLocation #t 'boolean)
@@ -502,7 +504,9 @@ $Source $Yail
 ;;; menu
 
 (add-component CommunityPanel com.google.appinventor.components.runtime.HorizontalArrangement menu 
-(set-and-coerce-property! 'menu 'AlignVertical 3 'number)
+(set-and-coerce-property! 'menu 'AlignVertical 2 'number)
+
+(set-and-coerce-property! 'menu 'Height -2 'number)
 
 )
 
@@ -590,7 +594,7 @@ $Source $Yail
 )
 
 (define-event Index_web Click()(set-this-form)
-    (set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean))
+    (set-and-coerce-property! 'MainPanel 'Visible #t 'boolean)(set-and-coerce-property! 'SettingsPanel 'Visible #f 'boolean)(set-and-coerce-property! 'CommunityPanel 'Visible #f 'boolean)(set-and-coerce-property! 'Screen1 'TitleVisible #t 'boolean)(set-and-coerce-property! 'Screen1 'BackgroundImage "mooning.png" 'text)(set-and-coerce-property! 'Screen1 'BackgroundColor -3355444 'number))
 ;;; TinyDB1
 
 (add-component Screen1 com.google.appinventor.components.runtime.TinyDB TinyDB1 
