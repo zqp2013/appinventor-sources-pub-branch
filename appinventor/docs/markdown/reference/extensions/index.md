@@ -14,7 +14,8 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 ## 中文网拓展
 
-1. [【剪贴板】![logo](icons/clipboard.png)Clipboard 拓展：实现剪贴板的复制粘贴功能](clipboard.html)
+1. [【剪贴板】![logo](icons/clipboard.png) Clipboard 拓展：实现剪贴板的复制粘贴功能](clipboard.html)
+1. [【短信平台接入】![logo](icons/sendsms.png) AliSms 拓展：阿里云短信平台接入，验证码发送](../pro/alisms.html?f=extensions)
 
 ## 第三方拓展
 
