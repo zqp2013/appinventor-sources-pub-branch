@@ -22,7 +22,7 @@ import java.net.URL;
         helpUrl = "https://www.fun123.cn/reference/extensions/",
         category = ComponentCategory.EXTENSION,//展示在appinventor的哪个模块下
         nonVisible = true,//不可见
-        iconName = "images/extension.png")//这个组件的图标
+        iconName = "https://www.fun123.cn/reference/extensions/icons/sendsms.png")//这个组件的图标images/extension.png
 
 @SimpleObject(external = true)
 @UsesPermissions({INTERNET})
