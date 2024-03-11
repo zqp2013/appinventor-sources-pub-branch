@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 @DesignerComponent(version = Clipboard.VERSION,
-    description = "App Inventor 2 剪贴板管理拓展。",
+    description = "App Inventor 2 剪贴板管理拓展。Powered by 中文网(www.fun123.cn)",
     helpUrl = "https://www.fun123.cn/reference/extensions/",
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
@@ -54,7 +54,7 @@ public class Clipboard extends AndroidNonvisibleComponent implements Component {
    * Returns whether Success Toast should be suppressed
    */
   @SimpleProperty(category = PropertyCategory.BEHAVIOR,
-      description = "操作成功后是否显示提示信息。")
+      description = "操作成功后不显示提示信息，默认 false。")
   public boolean SuppressToast() {
     return suppressToast;
   }
@@ -77,7 +77,7 @@ public class Clipboard extends AndroidNonvisibleComponent implements Component {
    *
    * @param text =  the text to copy
    */
-  @SimpleFunction(description = "拷贝文本至剪贴板，如果 SuppressToast 是 true，则拷贝完成后会显示'文本已拷贝'的提示信息。")
+  @SimpleFunction(description = "拷贝文本至剪贴板，如果 SuppressToast 是 true，则拷贝完成后不会显示'文本已拷贝'的提示信息。")
   public void Copy(String text) {
     try {
       int sdk = android.os.Build.VERSION.SDK_INT;
@@ -103,7 +103,7 @@ public class Clipboard extends AndroidNonvisibleComponent implements Component {
    * The Paste method
    * http://stackoverflow.com/a/19253877/1545993
    */
-  @SimpleFunction(description = "从剪贴板粘贴文本，如果 SuppressToast 是 true，则粘贴完成后会显示'文本已粘贴'的提示信息。")
+  @SimpleFunction(description = "从剪贴板粘贴文本，如果 SuppressToast 是 true，则粘贴完成后不会显示'文本已粘贴'的提示信息。")
   public String Paste() {
     int sdk = android.os.Build.VERSION.SDK_INT;
     if (sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
