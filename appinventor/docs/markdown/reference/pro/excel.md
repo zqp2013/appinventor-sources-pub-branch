@@ -29,7 +29,7 @@ description: App Inventor 2 实现导出Excel全方案总结，包括导出CSV�
 ***
 ### 2、导出原生Excel：支持数据、文本、图片等
 
-对于更高要求的写原生Excel，如指定特殊格式，写入图片，写入特定单元格等，可以明确的是 **App Inventor 2 不支持写原生Excel**，当然可以通过.axi拓展，使用java语音接入Excel实现。
+对于更高要求的写原生Excel，如指定特殊格式，写入图片，写入特定单元格等，可以明确的是 **App Inventor 2 不支持写原生Excel**，当然可以通过.axi拓展，使用java/kotlin语言接入Excel实现。
 
 目前没有现成的.aix拓展，需要自己去开发。
 
