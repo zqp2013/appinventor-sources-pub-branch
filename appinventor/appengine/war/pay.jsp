@@ -160,16 +160,16 @@
 
     <div class="buyinfo">
         <ul>
-            <li>18********7 <span>刚刚</span>买了VIP季卡</li>
-            <li>13********5 <span>刚刚</span>买了VIP季卡</li>
-            <li>15********1 <span>刚刚</span>买了VIP月卡</li>
-            <li>19********0 <span>刚刚</span>买了VIP月卡</li>
+            <li>18********7 <span>刚刚</span>买了VIP月卡</li>
+            <li>13********5 <span>刚刚</span>买了VIP半年卡</li>
+            <li>15********1 <span>刚刚</span>买了VIP半年卡</li>
+            <li>19********0 <span>刚刚</span>买了VIP季卡</li>
             <li>13********4 <span>刚刚</span>买了VIP月卡</li>
-            <li>16********7 <span>刚刚</span>买了VIP季卡</li>
+            <li>16********7 <span>刚刚</span>买了VIP半年卡</li>
             <li>13********8 <span>刚刚</span>买了VIP季卡</li>
             <li>15********9 <span>刚刚</span>买了VIP月卡</li>
-            <li>18********2 <span>刚刚</span>买了VIP半年卡</li>
-            <li>13********4 <span>刚刚</span>买了VIP月卡</li>
+            <li>18********2 <span>刚刚</span>买了VIP年卡</li>
+            <li>13********4 <span>刚刚</span>买了VIP半年卡</li>
         </ul>
     </div>
 
