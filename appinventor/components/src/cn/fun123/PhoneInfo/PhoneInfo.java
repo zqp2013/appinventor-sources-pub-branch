@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 
+import android.os.Build;
+import java.util.*;
+import java.net.*;
+
 import android.telephony.TelephonyManager;
 import android.telephony.CellLocation;     
 import android.telephony.PhoneStateListener;
@@ -27,7 +31,7 @@ import com.google.appinventor.components.runtime.*;
 
 @SimpleObject(external = true)
 //@UsesPermissions({INTERNET})
-@UsesPermissions(permissionNames = "android.permission.READ_PHONE_STATE")
+@UsesPermissions(permissionNames = "android.permission.READ_PHONE_STATE, android.permission.INTERNET")
 
 public class PhoneInfo extends AndroidNonvisibleComponent {
     private ComponentContainer container;
@@ -46,5 +50,54 @@ public class PhoneInfo extends AndroidNonvisibleComponent {
         TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
         return tm.getDeviceId();
     }
+
+    @SimpleFunction(description = "获取本机手机号码")
+    public String GetPhoneNumber() {
+        try {
+            TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+            return tm.getLine1Number();
+        } catch (SecurityException e) {
+            e.printStackTrace();
+            Toast.makeText(context, "无法获取本机手机号码！", Toast.LENGTH_SHORT).show();
+        }
+        return "";
+    }
+
+    @SimpleFunction(description = "获取本机手机型号")
+    public String GetPhoneModel() {
+        return Build.MODEL;
+    }
+
+    @SimpleFunction(description = "获取SDK版本")
+    public String GetSDKVersion() {
+        return Build.VERSION.SDK;
+    }
+
+    @SimpleFunction(description = "获取系统版本")
+    public String GetReleaseVersion() {
+        return Build.VERSION.RELEASE;
+    }
+
+    @SimpleFunction(description = "获取网卡MAC地址信息")
+    public String GetMacAddress() {
+        try {
+            List<NetworkInterface> infos = Collections.list(NetworkInterface.getNetworkInterfaces());
     
+            for (NetworkInterface info: infos) {
+                if (!info.getName().equalsIgnoreCase("wlan0")) {
+                    continue;
+                }
+                byte[] macBytes = info.getHardwareAddress();
+                List<String> macByteList = new ArrayList<>();
+                for (Byte byt: macBytes) {
+                    macByteList.add(String.format("%02X", byt));
+                }
+                return String.join(":", macByteList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(context, "获取网卡MAC地址信息失败！", Toast.LENGTH_SHORT).show();
+        }
+        return "00:00:00:00:00:00";
+    }
 }
