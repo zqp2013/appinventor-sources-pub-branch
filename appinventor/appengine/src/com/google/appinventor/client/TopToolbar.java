@@ -498,6 +498,13 @@ public class TopToolbar extends Composite {
         return;
       }
 
+      // 试用账户项目数量限制
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" 
+          && ProjectListBox.getProjectListBox().getProjectList().getMyProjectsCount() > 25) {
+        showVip("已达到试用账户项目数量上限，请升级VIP后继续！");
+        return;
+      }
+
 
       new NewYoungAndroidProjectWizard(null).center();
       // The wizard will switch to the design view when the new
@@ -623,7 +630,7 @@ public class TopToolbar extends Composite {
 
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-        showVip();
+        showVip(null);
         return;
       }
       
@@ -635,7 +642,12 @@ public class TopToolbar extends Composite {
   }
 
   // VIP提醒
-  public static void showVip(){
+  public static void showVip(String tips) {
+    String real_tips = "抱歉，此功能需要VIP权限才能继续！";
+    if (tips != null && !"".equals(tips)) {
+      real_tips = tips;
+    }
+
     final DialogBox db = new DialogBox(false, true);
     db.setText("App Inventor 2 中文网VIP会员");
     db.setStyleName("ode-DialogBox");
@@ -646,7 +658,7 @@ public class TopToolbar extends Composite {
     db.center();
 
     VerticalPanel DialogBoxContents = new VerticalPanel();
-    String html = "<p style=\"color:red\">抱歉，此功能需要VIP权限才能继续！<p/><br/><a class=\"vip\" href=\"/pay?f=auth\" target=\"_blank\">升级VIP会员</a><br/><br/>";
+    String html = "<p style=\"color:red\">" + real_tips + "<p/><br/><a class=\"vip\" href=\"/pay?f=auth\" target=\"_blank\">升级VIP会员</a><br/><br/>";
     HTML message = new HTML(html);
 
     SimplePanel holder = new SimplePanel();
@@ -715,7 +727,7 @@ public class TopToolbar extends Composite {
 
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-        showVip();
+        showVip(null);
         return;
       }
 
@@ -786,7 +798,7 @@ public class TopToolbar extends Composite {
 
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-        showVip();
+        showVip(null);
         return;
       }
 
@@ -845,7 +857,7 @@ public class TopToolbar extends Composite {
 
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-        showVip();
+        showVip(null);
         return;
       }
 
@@ -1027,7 +1039,7 @@ public class TopToolbar extends Composite {
 
       // VIP检查
       if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-        showVip();
+        showVip(null);
         return;
       }
       
@@ -1455,9 +1467,14 @@ public class TopToolbar extends Composite {
           List<Project> deletedProjects = ProjectListBox.getProjectListBox().getProjectList().getSelectedProjects();
           if (deletedProjects.size() > 0) {
 
-            // Add by 中文网：保险起见，每次删除项目不得超过5个，防止非预期的CPU过高及偶发服务崩溃
-            if (deletedProjects.size() > 5) {
-              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过5个！！");
+            // 试用账户不给删除权限
+            if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+              showVip(null);
+              return;
+            }
+            // Add by 中文网：保险起见，每次删除项目不得超过3个，防止非预期的CPU过高及偶发服务崩溃
+            if (deletedProjects.size() > 3) {
+              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过3个！！");
               return;
             }
 

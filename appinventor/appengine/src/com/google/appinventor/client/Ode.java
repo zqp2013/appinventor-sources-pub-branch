@@ -1448,7 +1448,7 @@ public class Ode implements EntryPoint {
   public static void setUserDarkThemeEnabled(boolean enabled) {
     // VIP检查（到期可以用）
     if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-      TopToolbar.showVip();
+      TopToolbar.showVip(null);
       return;
     }
 
@@ -1475,7 +1475,7 @@ public class Ode implements EntryPoint {
   public static void setUserTheme(String theme_name) {
     // VIP检查（到期可以用）
     if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly() && !"classic".equals(theme_name) && !"gray".equals(theme_name)) {
-      TopToolbar.showVip();
+      TopToolbar.showVip(null);
       return;
     }
 

@@ -114,6 +114,23 @@ public class ProjectToolbar extends Toolbar {
       if (Ode.getInstance().screensLocked()) {
         return;                 // Refuse to switch if locked (save file happening)
       }
+
+
+      // VIP到期
+      if (TopToolbar.getLeftDays() <= 0) {
+        TopToolbar.checkVip(-1);
+        return;
+      }
+
+      // 试用账户项目数量限制
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" 
+          && ProjectListBox.getProjectListBox().getProjectList().getMyProjectsCount() > 25) {
+        TopToolbar.showVip("已达到试用账户项目数量上限，请升级VIP后继续！");
+        return;
+      }
+
+
+
       // Disabled the Start New Project button. We do this because on slow machines people
       // click it multiple times while the wizard (below) is starting. This then causes
       // a second wizard to start and a very confused user experience.

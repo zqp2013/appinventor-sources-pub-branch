@@ -360,7 +360,7 @@ public class TemplateUploadWizard extends Wizard implements NewUrlDialogCallback
 
           // VIP检查
           if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
-            TopToolbar.showVip();
+            TopToolbar.showVip(null);
             return;
           }
 
