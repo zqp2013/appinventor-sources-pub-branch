@@ -31,7 +31,7 @@ import com.google.appinventor.components.runtime.*;
 
 @SimpleObject(external = true)
 //@UsesPermissions({INTERNET})
-@UsesPermissions(permissionNames = "android.permission.READ_PHONE_STATE, android.permission.INTERNET")
+@UsesPermissions(permissionNames = "android.permission.READ_PHONE_STATE, android.permission.READ_PHONE_NUMBERS, android.permission.INTERNET")
 
 public class PhoneInfo extends AndroidNonvisibleComponent {
     private ComponentContainer container;
@@ -51,11 +51,12 @@ public class PhoneInfo extends AndroidNonvisibleComponent {
         return tm.getDeviceId();
     }
 
-    @SimpleFunction(description = "获取本机手机号码")
+    @SimpleFunction(description = "获取本机手机号码。无SIM卡设备将返回空文本；双SIM卡设备将返回主卡号码。")
     public String GetPhoneNumber() {
         try {
             TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
-            return tm.getLine1Number();
+            String phoneNumber = tm.getLine1Number();
+            return (phoneNumber == null) ? "" : phoneNumber;
         } catch (SecurityException e) {
             e.printStackTrace();
             Toast.makeText(context, "无法获取本机手机号码！", Toast.LENGTH_SHORT).show();
