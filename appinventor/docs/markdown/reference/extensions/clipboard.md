@@ -11,7 +11,7 @@ description: App Inventor 2 Clipboard 拓展：实现剪贴板的复制粘贴功
 
 ## ![logo](icons/clipboard.png) Clipboard 拓展  {#Clipboard}
 
-![demo截图](Clipboard/demo截图.png)
+![demo截图](Clipboard/剪贴板效果.gif)
 
 此Clipboard 拓展由中文网开发及维护，最新版本 v1.0，基于 [TaifunClipboard 拓展](https://www.puravidaapps.com/clipboard.php) 开发。
 
