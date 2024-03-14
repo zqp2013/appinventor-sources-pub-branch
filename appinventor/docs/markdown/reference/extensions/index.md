@@ -16,7 +16,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 1. [【剪贴板】![logo](icons/clipboard.png) Clipboard 拓展：实现剪贴板的复制粘贴功能](clipboard.html)
 1. [【短信平台接入】![logo](icons/sendsms.png) AliSms 拓展：阿里云短信平台接入，验证码发送](../pro/alisms.html?f=extensions)
-<!--1. [【手机信息】![logo](icons/phoneinfo.png) PhoneInfo 拓展：获取手机软硬件、版本等相关信息](phoneinfo.html)-->
+1. [【设备信息】![logo](icons/phoneinfo.png) PhoneInfo 拓展：获取手机等设备软硬件、版本等相关信息](phoneinfo.html)
 1. [【数据库】![logo](icons/sqlite.png) SQLite 拓展：超流行兼容主流SQL语法的迷你本地数据库引擎](sqlite.html)
 
 ## 第三方拓展
