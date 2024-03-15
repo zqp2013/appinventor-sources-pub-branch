@@ -145,6 +145,13 @@ public class ProjectToolbar extends Toolbar {
   public class NewFolderAction implements Command {
     @Override
     public void execute() {
+
+      // 试用账户不给权限
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        TopToolbar.showVip(null);
+        return;
+      }
+
       new NewFolderWizard();
     }
   }
@@ -202,6 +209,13 @@ public class ProjectToolbar extends Toolbar {
   public class DeleteAction implements Command {
     @Override
     public void execute() {
+
+      // 试用账户不给权限
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        TopToolbar.showVip(null);
+        return;
+      }
+      
       Ode.getInstance().getEditorManager().saveDirtyEditors(new Command() {
         @Override
         public void execute() {

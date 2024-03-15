@@ -526,6 +526,20 @@ public class TopToolbar extends Composite {
   private class SaveAsAction implements Command {
     @Override
     public void execute() {
+
+      // VIP到期
+      if (getLeftDays() <= 0) {
+        checkVip(-1);
+        return;
+      }
+
+      // 试用账户项目数量限制
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" 
+          && ProjectListBox.getProjectListBox().getProjectList().getMyProjectsCount() > 25) {
+        showVip("已达到试用账户项目数量上限，请升级VIP后继续！");
+        return;
+      }
+
       ProjectRootNode projectRootNode = Ode.getInstance().getCurrentYoungAndroidProjectRootNode();
       if (projectRootNode != null) {
         ChainableCommand cmd = new SaveAllEditorsCommand(
@@ -887,6 +901,13 @@ public class TopToolbar extends Composite {
   private static class DeleteAction implements Command {
     @Override
     public void execute() {
+
+      // 试用账户不给权限
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        showVip(null);
+        return;
+      }
+
       Ode.getInstance().getEditorManager().saveDirtyEditors(new Command() {
         @Override
         public void execute() {
