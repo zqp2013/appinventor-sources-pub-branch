@@ -4,7 +4,7 @@ layout: documentation
 description: App Inventor 2 扩展
 ---
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-puzzle-plus-outline" style="font-size: 18px;"/> 中文拓展文档</font>](../extensions/?f=other)
 
 ## App Inventor 2 扩展
 

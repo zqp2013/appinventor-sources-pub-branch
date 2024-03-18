@@ -4,7 +4,7 @@ layout: documentation
 description: 使用App Inventor 2 控制物联网设备/低功耗蓝牙设备(BLE)
 ---
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=other)
 
 ## 使用 MIT App Inventor 控制低功耗蓝牙设备
 
