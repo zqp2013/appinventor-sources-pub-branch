@@ -94,10 +94,11 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <img src="/static/images/gzh.jpg" loading="lazy">
                                         <div>公众号 </div>
                                     </div>
+                                    <a href="https://bbs.tsingfun.com/forum-147-1.html?f=paysucc" target="_blank">
                                     <div class="service_info">
                                         <img src="https://bbs.tsingfun.com/static/image/common/qr_bbs.png" loading="lazy">
                                         <div>移动中文社区</div> 
-                                    </div>
+                                    </div></a>
 
                                 </div>
 

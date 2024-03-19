@@ -226,7 +226,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <input type="hidden" id="period" name="period" value="6"/>
+                                                <input type="hidden" id="period" name="period" value="1"/>
 
                                                 <div class="card-item active" prop-period="1" prop-oprice="49" prop-price="39.98">
                                                     <p class="t1">VIP月卡</p>
@@ -303,10 +303,11 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <img src="/static/images/gzh.jpg" loading="lazy">
                                         <div>公众号 </div>
                                     </div>
+                                    <a href="https://bbs.tsingfun.com/forum-147-1.html?f=pay" target="_blank">
                                     <div class="service_info">
                                         <img src="https://bbs.tsingfun.com/static/image/common/qr_bbs.png" loading="lazy">
                                         <div>移动中文社区</div> 
-                                    </div>
+                                    </div></a>
 
                                 </div>
 
