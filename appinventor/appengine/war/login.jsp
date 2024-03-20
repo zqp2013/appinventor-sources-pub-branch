@@ -139,7 +139,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                     </div>
                                                 </div>
                                                 <div class="float-right">
-                                                    <a href="javascript:alert('如您已遗忘密码，请联系客服进行初始重置，谢谢！');">忘记密码？</a>
+                                                    <a href="javascript:alert('如您已遗忘密码，请联系客服进行初始密码重置，谢谢！');">忘记密码？</a>
                                                 </div>
                                                 
                                             </div>
