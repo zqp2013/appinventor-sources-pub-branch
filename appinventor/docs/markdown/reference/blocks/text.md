@@ -239,9 +239,10 @@ description: 文本代码块参考文档：包括字符串、合并字符串、�
 ***
 ### 案例：文本转数字  {#text2num}
 
+{:.vip}
 App Inventor 2 是弱语言类型，文本和数字之间不用刻意去转换，之间赋值就可以了。文本赋值给数字变量如下：
 
-{:.figure}
+{:.figure .vip}
 ![文本自动转数字](images/text/文本自动转数字.png)   
 
 {:.caption}
@@ -254,8 +255,9 @@ App Inventor 2 是弱语言类型，文本和数字之间不用刻意去转换�
 ***
 ### 案例：数字转文本   {#num2text}
 
+{:.vip}
 App Inventor 2 是弱语言类型，同理数字也能直接赋值给文本变量：
 
-{:.figure}
+{:.figure .vip}
 ![数字自动转文本](images/text/数字自动转文本.png)
 

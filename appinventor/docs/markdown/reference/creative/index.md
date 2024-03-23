@@ -36,23 +36,22 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 
 ## 技巧分享
 
+1. [【技巧】分享几个App Inventor 2“隐藏”的非常的实用的小技巧](https://bbs.tsingfun.com/thread-1183-1-1.html?f=doc)
+<!--【技巧】代码视图，搜索功能【技巧】iOS界面外观【技巧】过程参数，鼠标悬停时，可直接拖动获取和设置的代码块-->
 1. [【技巧】App Inventor 2在不同的屏幕之间传值](screen_communication.html)
 1. [【技巧】组件过多，屏幕显示不下，没有滚动条？](allow_scrolling.html)
 1. [【技巧】组件过多，水平/垂直布局显示不下，需要一个滚动条？](allow_scrolling.html#Layout)
 1. [【技巧】App Inventor 2 如何去掉顶部标题栏实现全屏？](fullscreen.html)
 1. [【技巧】App Inventor 2 模拟sleep函数](sim_sleep.html)
 1. [【技巧】App Inventor 2 过滤蓝牙设备列表](filter_devicelist.html)
-1. 【技巧】代码视图，搜索功能
 1. [【代码简洁之道】App Inventor 2 任何(Any)代码块](https://www.bilibili.com/video/BV1Xj41147cn)
 1. [【技巧】代码块导出图像，以及还原](https://mp.weixin.qq.com/s?__biz=MzA5NTE5OTg1MA==&mid=2247483897&idx=1&sn=de0a12d3b132bab30e8c51f6d27c1da2&chksm=9043b6fca7343feaeed30d24c73e9d1d5673993db459d871c4707da47f6f0d5a41dbcae79942&token=270925767&lang=zh_CN#rd)
-1. 【技巧】iOS界面外观
-1. 【技巧】过程参数，鼠标悬停时，可直接拖动获取和设置的代码块
 1. [【技巧】块拓展：参数可变](https://www.fun123.cn/reference/concepts/mutators.html)
 1. [【技巧】拷贝及分享功能](https://www.fun123.cn/reference/other/editing-functions.html)
 1. [【技巧】App Inventor 2分享你的App](https://bbs.tsingfun.com/thread-1021-1-1.html)
 1. [【技巧】网上免登陆找素材、处理素材技巧](https://bbs.tsingfun.com/thread-1027-1-1.html)
 1. [【技巧】App Inventor 2 连接网络打印机进行自定义打印的思路及方法](https://bbs.tsingfun.com/thread-1153-1-1.html)
-1. 【技巧】App Inventor 2 开发蓝牙App的思路及方法
+1. [【技巧】App Inventor 2 开发蓝牙App的思路及方法](../iot/index.html)
 1. [【技巧】照相机定制个性化的文件名](https://bbs.tsingfun.com/thread-1167-1-1.html)
 
 
