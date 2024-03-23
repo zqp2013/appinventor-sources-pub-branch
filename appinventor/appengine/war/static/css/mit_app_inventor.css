@@ -132,6 +132,15 @@
       line-height: 16px;
       color: #FFFFFF; }
 
+
+/*手机适配*/
+@media screen and (max-width: 700px) {
+  .mit_app_inventor .footer {
+    padding: 20px 0 20px 3px;
+  }
+}
+
+
 .mit_app_inventor {
   max-width: 1440px;
   margin: auto;
