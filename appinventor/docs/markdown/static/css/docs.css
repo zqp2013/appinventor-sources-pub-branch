@@ -91,6 +91,14 @@ article blockquote {
   min-width:200px;
   max-height:400px;
 }
+
+/*手机适配*/
+@media screen and (max-width: 700px) {
+  #markdown-toc {
+    display: none;
+  }
+}
+
 #markdown-toc ul {
   margin-left: -20px;
   list-style-type: revert;

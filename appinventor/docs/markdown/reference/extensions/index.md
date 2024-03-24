@@ -29,7 +29,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 1. [【连接】ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
 1. [【WIFI】TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)
-1. [【蓝牙】<img src="../iot/assets/ble.png" style="width:16px;margin:-4px 5px 0 0">BlueToothLE 拓展：低功耗蓝牙(BLE)](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)  [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ext)
+1. [【蓝牙】<img src="../iot/assets/ble.png" style="width:16px;margin:-4px 5px 0 0">BlueToothLE 拓展：低功耗蓝牙(BLE)](../iot/bluetoothle.html)  [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ext)
 1. [【UI】NotificatioStyle 拓展：个性化通知栏样式](https://github.com/jarlisson2/NotificationStyleAIX)
 1. [【UI】<img src="WordCloud/icon.png" style="width:16px;margin:-4px 5px 0 0">WordCloud 拓展：免费且酷炫的词云效果](word_cloud.html)
 1. [【UI】<img src="navbar/BubbleTabBar.png" style="width:16px;margin:-4px 5px 0 0">BubbleTabBar 拓展：打造个性化酷炫的底部导航条](navbar.html)

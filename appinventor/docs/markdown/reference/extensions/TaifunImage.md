@@ -13,15 +13,20 @@ description: App Inventor 2 TaifunImage 拓展，图像高级处理，剪裁，�
 <!--(https://puravidaapps.com/image.php)-->
 
 * .aix 拓展下载：
+
+{:.vip}
 [com.puravidaapps.TaifunImage.aix](TaifunImage/com.puravidaapps.TaifunImage.aix)
 
 * demo程序下载：
 
+{:.vip}
+<div>
     <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/Resize.aia" target="_blank">Download Resize test project (aia file)</a><br>
     <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/chunks.aia" target="_blank">Download Create Chunks test project (aia file)</a><br>
     <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/crop.aia" target="_blank">Download Crop test project (aia file)</a><br>
     <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/rotate.aia" target="_blank">Download Rotate test project (aia file)</a><br>
     <a class="ext" href="https://downloads.sourceforge.net/project/puravidaapps/overlay.aia" target="_blank">Download Scale &amp; Overlay test project (aia file)</a><br>
+</div>
 
 * [*案例分享1：*图片压缩](#image-compress)
 
@@ -219,4 +224,5 @@ Some more blocks to get the current image size, width and height using the <a cl
 
 参考代码如下：
 
+{:.vip}
 ![图片分辨率压缩](TaifunImage/图片压缩.png)
