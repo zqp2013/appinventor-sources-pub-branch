@@ -116,12 +116,7 @@
         z-index: 2;
     }
     .t2 span {font-weight:bold;}
-    .card-item p.t2{
-        opacity: 0.4 !important;
-    }
-    .card-item.active p.t2{
-        opacity: 1 !important;
-    }
+
 
     .buyinfo {
         width: 260px;
@@ -226,9 +221,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="form-group px-5">
-                                                <input type="hidden" id="period" name="period" value="1"/>
+                                                <input type="hidden" id="period" name="period" value="6"/>
 
-                                                <div class="card-item active" prop-period="1" prop-oprice="49" prop-price="39.98">
+                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98">
                                                     <p class="t1">VIP月卡</p>
                                                     <p class="t2">¥ <span>1.33</span>/天</p>
                                                 </div>
@@ -236,7 +231,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                     <p class="t1">VIP季卡</p>
                                                     <p class="t2">¥ <span>0.77</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="6" prop-oprice="199" prop-price="89.98">
+                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98">
                                                     <span class="card-tips"><img src="/static/images/fire.png" alt="img" width="16" height="16"/></span>
                                                     <p class="t1">VIP半年卡</p>
                                                     <p class="t2">¥ <span>0.49</span>/天</p>
@@ -251,8 +246,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="form-group px-5">
                                                 <label class="label-bold mb-1">支付金额： 
                                                     <div>
-                                                        <h1 style="float:left;">¥ <span style="color:#fc5531" id="amount_label">39.98</span></h1>
-                                                        <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">49</span></h3></del>
+                                                        <h1 style="float:left;">¥ <span style="color:#fc5531" id="amount_label">89.98</span></h1>
+                                                        <del style="color: #888;float:left;margin-top: 20px;margin-left: 20px;"><h3>原价：<span id="delprc">199</span></h3></del>
                                                         <!--<span style="position: absolute;color:#FF8E21;float:left;margin-top: 36px;margin-left: 20px;">低至 <span id="perday">0.5</span> 元/天！</span>-->
                                                         <div class="countdown">
                                                             <img src="/static/images/clock.svg" alt="img" width="16" height="16" style="margin: -3px 3px 0 2px;"/>
@@ -260,7 +255,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                         </div>
                                                     </div>
                                                 </label>
-                                                <input type="hidden" id="amount" name="amount" value="39.98">
+                                                <input type="hidden" id="amount" name="amount" value="89.98">
 
                                                 <div class="float-right">
                                                     <span>免费赠送 <i>基础版</i>* <a href="https://www.fun123.cn/reference/info/#qa" target="_blank">技术支持服务</a></span>
