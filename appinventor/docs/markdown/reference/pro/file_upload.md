@@ -24,7 +24,7 @@ description: App Inventor 2 实现上传文件到服务器全方案总结，包�
 
 参考代码如下：
 
-![上传文件到服务器](../components/images/上传文件到服务器.png)
+![上传文件到服务器](../components/images/上传文件到服务器.png){:.vip}
 
 文件成功上传并写入服务端，参考结果如下：
 

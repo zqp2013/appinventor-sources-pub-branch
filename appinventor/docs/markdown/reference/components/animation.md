@@ -39,7 +39,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="Ball.Heading" .number} *方向*
 : `球形精灵` 在 x 轴方向上以度数表示的方向，图示如下：
 
- ![方向含义](images/direction.jpg)
+  ![方向含义](images/direction.jpg){:.vip}
 
 {:id="Ball.Interval" .number} *间隔*
 : 更新`球形精灵`位置的时间间隔（以毫秒为单位）。例如，如果`间隔` 为 50，[`速度`](#Ball.Speed) 为 10，则`球形精灵`将每50毫秒移动10个像素。
@@ -95,6 +95,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
   
   这里的边缘表示为一个整数，表示八个方向之一：
 
+  {:.vip}
   | -4：西北 | 1：北 | 2：东北 |
   | -3：西  | **边缘数值** | 3：东 |
   | -2：西南 | -1：南 | 4：东南 |
@@ -265,7 +266,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 
   典型用法参考（实现画笔绘画功能）：
 
-  ![画布画线](images/画布画线.png)
+  ![画布画线](images/画布画线.png){:.vip}
 
 {:id="Canvas.DrawPoint" class="method"} <i/> 画点(*x坐标*{:.number},*y坐标*{:.number})
 : 在画布上给定坐标处绘制一个点。
@@ -324,7 +325,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="ImageSprite.Heading" .number} *方向*
 : `图像精灵` 在 x 轴方向上以度数表示的方向，图示如下：
 
- ![方向含义](images/direction.jpg)
+  ![方向含义](images/direction.jpg){:.vip}
 
 {:id="ImageSprite.Height" .number .bo} *高度*
 : `图像精灵` 的高度（以像素px为单位）。
@@ -383,6 +384,7 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
   
   这里的边缘表示为一个整数，表示八个方向之一：
 
+  {:.vip}
   | -4：西北 | 1：北 | 2：东北 |
   | -3：西  | **边缘数值** | 3：东 |
   | -2：西南 | -1：南 | 4：东南 |

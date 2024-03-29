@@ -447,7 +447,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
   设置案例如下：
 
-  ![请求标头设置](images/请求标头设置.png)
+  ![请求标头设置](images/请求标头设置.png){:.vip}
 
 {:id="Web.ResponseFileName" .text} *响应文件名称*
 : 指定保存响应数据的文件的名称，如果 [保存响应信息](#Web.SaveResponse) 为`真` 且 [响应文件名称](#Web.ResponseFileName) 为空，则自动创建一个新文件名。
@@ -552,7 +552,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="Web.PostFile" class="method"} <i/> 执行POST文件请求(*文件路径*{:.text})
 : POST方式发送通用文件，同 curl -F 参数，可用于**二进制文件上传**，参考代码如下：
 
-  ![上传文件到服务器](images/上传文件到服务器.png)
+  ![上传文件到服务器](images/上传文件到服务器.png){:.vip}
 
   文件上传服务器结果如下：
   
