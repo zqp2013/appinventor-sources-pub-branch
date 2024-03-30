@@ -13,4 +13,4 @@ App Inventor 2 参考文档分为以下几大类：内置块参考文档、组�
 1. <i class="mdi mdi-book-plus-outline" style="font-size: 18px;"/>&nbsp;&nbsp;[技术和其他指南](other/)
 1. <i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/>&nbsp;&nbsp;[IoT 参考文档](iot/)
 1. <i class="mdi mdi-numeric" style="font-size: 18px;"/>&nbsp;&nbsp;[App Inventor 2 中文网原创](creative/)
-1. <i class="mdi mdi-vimeo" style="font-size: 18px;"/>&nbsp;&nbsp;[App Inventor 2 中文网VIP专享内容](pro/)
+1. <i class="mdi mdi-vimeo" style="font-size: 18px;"/>&nbsp;&nbsp;[App Inventor 2 中文网VIP专享](pro/)
