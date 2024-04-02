@@ -11,6 +11,7 @@ import com.google.appinventor.client.explorer.project.ComponentDatabaseChangeLis
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 
 import java.util.List;
 import java.util.Map;
@@ -45,22 +46,37 @@ public class PropertiesPanel extends Composite implements ComponentDatabaseChang
     initWidget(outerPanel);
   }
 
+  boolean hasValidDescription(EditableProperty p) {
+    return p.getDescription() != null &&
+        !p.getDescription().isEmpty() &&
+        !p.getDescription().equals(p.getName());
+  }
+
   /**
    * Adds a new property to be displayed in the UI.
    *
    * @param property  new property to be shown
    */
   void addProperty(EditableProperty property) {
+    HorizontalPanel header = new HorizontalPanel();
     Label label = new Label(property.getCaption());
     label.setStyleName("ode-PropertyLabel");
-    panel.add(label);
-    PropertyEditor editor = property.getEditor();
+    header.add(label);
+    header.setStyleName("ode-PropertyHeader");
+    if ( hasValidDescription(property) ) {
+      PropertyHelpWidget helpImage = new PropertyHelpWidget(property);
+      header.add(helpImage);
+      helpImage.setStylePrimaryName("ode-PropertyHelpWidget");
+    }
+    panel.add(header);
     // Since UIObject#setStyleName(String) clears existing styles, only
     // style the editor if it hasn't already been styled during instantiation.
-    if(!editor.getStyleName().contains("PropertyEditor")) {
+    PropertyEditor editor = property.getEditor();
+    if (!editor.getStyleName().contains("PropertyEditor")) {
       editor.setStyleName("ode-PropertyEditor");
     }
     panel.add(editor);
+    panel.setWidth("100%");
   }
 
   /**

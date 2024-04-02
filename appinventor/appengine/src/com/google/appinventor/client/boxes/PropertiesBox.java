@@ -104,8 +104,8 @@ public final class PropertiesBox extends Box {
             name,
             property.getDefaultValue(),
             property.getCaption(),
-            // property.getCategory(),
-            // property.getDescription(), //del by 中文网
+            // property.getCategory(), //del by 中文网
+            property.getDescription(), 
             PropertiesUtil.createPropertyEditor(property.getEditorType(),
                 property.getDefaultValue(), formEditor, property.getEditorArgs()),
             property.getType(),

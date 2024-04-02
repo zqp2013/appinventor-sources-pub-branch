@@ -409,7 +409,7 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
     // Add the special name property and set the tooltip
     String name = componentName();
     setTitle(name);
-    addProperty(PROPERTY_NAME_NAME, name, null, new TextPropertyEditor());
+    addProperty(PROPERTY_NAME_NAME, name, null, null, new TextPropertyEditor());
 
     // TODO(user): Ensure this value is unique within the project using a list of
     // already used UUIDs
@@ -417,7 +417,7 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
     // The default value here can be anything except 0, because YoungAndroidProjectService
     // creates forms with an initial Uuid of 0, and Properties.java doesn't encode
     // default values when it generates JSON for a component.
-    addProperty(PROPERTY_NAME_UUID, "-1", null, new TextPropertyEditor());
+    addProperty(PROPERTY_NAME_UUID, "-1", null, null, new TextPropertyEditor());
     changeProperty(PROPERTY_NAME_UUID, "" + Random.nextInt());
 
     editor.getComponentPalettePanel().configureComponent(this);
@@ -510,7 +510,7 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
    * @param editor  property editor
    */
   public final void addProperty(String name, String defaultValue, String caption,
-      PropertyEditor editor) {
+      String description, PropertyEditor editor) {
 
     int type = EditableProperty.TYPE_NORMAL;
     if (!isPropertyPersisted(name)) {
@@ -522,7 +522,7 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
     if (isPropertyforYail(name)) {
       type |= EditableProperty.TYPE_DOYAIL;
     }
-    properties.addProperty(name, defaultValue, caption, editor, type, "", null);
+    properties.addProperty(name, defaultValue, caption, description, editor, type, "", null);
   }
 
   /**
@@ -538,17 +538,24 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
   public final void addProperty(String name, String defaultValue, String caption,
       String editorType, String[] editorArgs, PropertyEditor editor) {
 
-    int type = EditableProperty.TYPE_NORMAL;
+    String propertyDesc = ComponentsTranslation.getPropertyDescription(name
+      + "PropertyDescriptions");
+    if (propertyDesc.equals(name + "PropertyDescriptions")) {
+      propertyDesc = ComponentsTranslation.getPropertyDescription((type.equals("Form")
+          ? "Screen" : type) + "." + propertyDesc);
+    }
+
+    int propertyType = EditableProperty.TYPE_NORMAL;
     if (!isPropertyPersisted(name)) {
-      type |= EditableProperty.TYPE_NONPERSISTED;
+      propertyType |= EditableProperty.TYPE_NONPERSISTED;
     }
     if (!isPropertyVisible(name)) {
-      type |= EditableProperty.TYPE_INVISIBLE;
+      propertyType |= EditableProperty.TYPE_INVISIBLE;
     }
     if (isPropertyforYail(name)) {
-      type |= EditableProperty.TYPE_DOYAIL;
+      propertyType |= EditableProperty.TYPE_DOYAIL;
     }
-    properties.addProperty(name, defaultValue, caption, editor, type, editorType, editorArgs);
+    properties.addProperty(name, defaultValue, caption, propertyDesc, editor, propertyType, editorType, editorArgs);
   }
 
   /**

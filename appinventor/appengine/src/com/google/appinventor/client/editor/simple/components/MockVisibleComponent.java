@@ -97,9 +97,9 @@ public abstract class MockVisibleComponent extends MockComponent {
 
     // Add standard per-child layout properties
     // NOTE: Not all layouts use these properties
-    addProperty(PROPERTY_NAME_COLUMN, "" + ComponentConstants.DEFAULT_ROW_COLUMN, null,
+    addProperty(PROPERTY_NAME_COLUMN, "" + ComponentConstants.DEFAULT_ROW_COLUMN, null, null,
         new TextPropertyEditor());
-    addProperty(PROPERTY_NAME_ROW, "" + ComponentConstants.DEFAULT_ROW_COLUMN, null,
+    addProperty(PROPERTY_NAME_ROW, "" + ComponentConstants.DEFAULT_ROW_COLUMN, null, null,
         new TextPropertyEditor());
     addWidthHeightProperties();
   }
