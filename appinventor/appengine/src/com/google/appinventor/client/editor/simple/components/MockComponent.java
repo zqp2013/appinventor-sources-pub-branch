@@ -76,6 +76,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.appinventor.shared.simple.ComponentDatabaseInterface.ComponentDefinition;
 import com.google.appinventor.shared.simple.ComponentDatabaseInterface.PropertyDefinition;
+import com.google.common.base.Strings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -541,9 +542,22 @@ public abstract class MockComponent extends Composite implements PropertyChangeL
     String propertyDesc = ComponentsTranslation.getPropertyDescription(name
       + "PropertyDescriptions");
     if (propertyDesc.equals(name + "PropertyDescriptions")) {
-      propertyDesc = ComponentsTranslation.getPropertyDescription((type.equals("Form")
-          ? "Screen" : type) + "." + propertyDesc);
+      propertyDesc = ComponentsTranslation.getPropertyDescription((type.equals("Form") ? "Screen" : type) + "." + propertyDesc);
     }
+
+    //add by 中文网：属性的url
+    String referenceComponentsUrl = Ode.getSystemConfig().getReferenceComponentsUrl();
+    if (!Strings.isNullOrEmpty(referenceComponentsUrl)) {
+      if (!referenceComponentsUrl.endsWith("/")) {
+        referenceComponentsUrl += "/";
+      }
+      String categoryDocUrlString = COMPONENT_DATABASE.getCategoryDocUrlString(type); //参考：ComponentHelpWidget.java  COMPONENT_DATABASE.getHelpUrl(); extensions documentation
+      String url = (categoryDocUrlString == null)
+          ? referenceComponentsUrl + "index.html"
+          : referenceComponentsUrl + categoryDocUrlString + ".html#" + (type.equals("Form") ? "Screen" : type) + "." + name;
+      propertyDesc += "&nbsp;<a href=\"" + url + "\" target=\"_blank\">" + MESSAGES.moreInformation() + "</a>";
+    }
+
 
     int propertyType = EditableProperty.TYPE_NORMAL;
     if (!isPropertyPersisted(name)) {
