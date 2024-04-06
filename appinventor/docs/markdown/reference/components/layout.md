@@ -129,7 +129,7 @@ description: 界面布局组件参考文档：包括水平布局、水平滚动�
   如果`水平滚动条布局`的[`高度`](#HorizontalScrollArrangement.Height)是`自动`，则对齐方式无效。
 
 {:id="HorizontalScrollArrangement.BackgroundColor" .color} *背景颜色*
-: 设置`水平布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#HorizontalScrollArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#HorizontalScrollArrangement.Image)属性为止。
+: 设置`水平滚动条布局`的背景颜色，使用RGBA数值表示，如果设置了[`图像`](#HorizontalScrollArrangement.Image)属性，则不能显示背景颜色直到删除[`图像`](#HorizontalScrollArrangement.Image)属性为止。
 
 {:id="HorizontalScrollArrangement.Height" .number .bo} *高度*
 : 设置`水平滚动条布局`的垂直高度，以像素px为单位。
