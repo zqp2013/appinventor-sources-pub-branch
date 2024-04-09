@@ -337,6 +337,12 @@
 			<priority>0.7</priority>
 		</url>
 		<url>
+			<loc>https://www.fun123.cn/reference/components/extension.html</loc>
+			<lastmod>2024-04-09</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+		<url>
 			<loc>https://www.fun123.cn/reference/components/guide/ListPicker.html</loc>
 			<lastmod>2023-09-12</lastmod>
 			<changefreq>weekly</changefreq>
