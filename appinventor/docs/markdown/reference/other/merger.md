@@ -8,6 +8,8 @@ description: App Inventor 2 项目合并工具 AIMerge
 
 ### App Inventor 2 项目合并工具
 
+Windows免安装版下载及中文详细用法请参考[这里](../creative/AI2MergerTool.html?f=other)。
+
 ![](images/merger-image3.png)
 
 本文档最初由米尔斯学院（Mills College）的 Kate Feeney 为 AI Classic 编写。该计划在她的论文[通过 App Inventor 鼓励协作](http://appinventor.mit.edu/explore/sites/all/files/Resources/EncourageCollaborationFeeneyThesis.pdf) 中进行了讨论。
