@@ -3069,7 +3069,7 @@ div.dropdiv p {
 /*属性帮助图标*/
 .ode-PropertyHelpWidget {
   position: absolute;
-  margin-top: 11px;
+  margin-top: 10px;
   margin-left: 1px;
   opacity: 0.7;
   cursor: pointer;
