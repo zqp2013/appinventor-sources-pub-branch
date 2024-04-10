@@ -14,6 +14,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 
 1. [【连接调试】App Inventor 2 连接方式：AI伴侣、模拟器、USB](connect.html)
 1. [【连接调试】Ai2 Starter模拟器下载及安装](ai2_starter.html)
+1. [【项目合并】AI2项目合并工具](AI2MergerTool.html)
 1. [【存储】Android存储系统基础知识：内部存储，外部存储，App特定目录ASD 及 getASD代码实现](asd.html)
 1. [【视频】App Inventor 2基础组件使用](https://www.bilibili.com/video/BV1HY4y127rN/)
 1. [【科普】App Inventor 2 中的“2”是什么意思？](https://bbs.tsingfun.com/thread-1069-1-3.html)
