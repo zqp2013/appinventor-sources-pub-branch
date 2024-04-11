@@ -1,0 +1,1 @@
+{"name": "SplashScreen", "subtitle": "商业级APP启动屏幕效果", "description": "实现的功能包括：启动App时展示启动屏，右上角展示5秒倒计时，中途可点击跳过。倒计时结束或点击跳过，则跳转到主界面。<br/><a href='https://www.bilibili.com/video/BV13Z421t7qC/' target='_blank'>效果视频点此</a>。", "screenshot": "screenshot.png", "thumbnail":"thumbnail.png"}

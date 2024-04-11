@@ -38,4 +38,4 @@ App启动屏效果的实现原理及详细步骤要点如下：
 ## 源码下载
 
 {:.vip}
-[splash_screen.aia](splash_screen/com.splash_screen.aia)
+[splash_screen.aia](splash_screen/splash_screen.aia)
