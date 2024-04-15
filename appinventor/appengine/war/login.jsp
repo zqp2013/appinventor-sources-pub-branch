@@ -41,9 +41,30 @@
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
             <span class="gl-button-text">
-                <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin-top: -3px;"/>有奖征文</a>
+                <a id="fenxiao"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin-top: -3px;"/>推广返佣50%</a>
+                <div id="qrcode" style="display: none;
+                                text-align: center;
+                                color: #9c6521;
+                                position: absolute;
+                                padding: 6px;
+                                background-color: #fff;
+                                border-radius: 6px;
+                                border: 1px solid #ddd;">分销商招募计划<br/><img src="/static/images/fenxiao.jpg" style="width:180px;height:180px;"/></div>
+                <script type="text/javascript">
+                document.getElementById("fenxiao").addEventListener("mouseenter", function() {
+                document.getElementById("qrcode").style.display = "block";
+                });
+                
+                document.getElementById("fenxiao").addEventListener("mouseleave", function() {
+                document.getElementById("qrcode").style.display = "none";
+                });
+            </script>
             </span>
             &nbsp;&nbsp;&nbsp;
+            <!--<span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank">有奖征文</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;-->
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/?f=login#AppEntry" target="_blank"><i class="mdi mdi-school-outline" style="font-size: 15px;"></i> 手把手入门教程</a>
             </span>
