@@ -117,6 +117,7 @@ public class TopToolbar extends Composite {
   private static final String WIDGET_NAME_IMPORTTEMPLATE = "ImportTemplate";
   private static final String WIDGET_NAME_EXPORTALLPROJECTS = "ExportAllProjects";
   private static final String WIDGET_NAME_EXPORTPROJECT = "ExportProject";
+  private static final String WIDGET_NAME_MERGEPROJECT = "MergeProject";
 
   private static final String WIDGET_NAME_ADMIN = "Admin";
   private static final String WIDGET_NAME_USER_ADMIN = "UserAdmin";
@@ -285,6 +286,8 @@ public class TopToolbar extends Composite {
         new ExportProjectAction()));
     fileItems.add(new DropDownItem(WIDGET_NAME_EXPORTALLPROJECTS, MESSAGES.exportAllProjectsMenuItem(),
         new ExportAllProjectsAction()));
+    fileItems.add(new DropDownItem(WIDGET_NAME_MERGEPROJECT, MESSAGES.mergeProjectMenuItem(),
+        new WindowOpenAction("https://www.fun123.cn/reference/creative/AI2MergerTool.html?f=menu")));
     fileItems.add(null);
     if (!isReadOnly) {
       fileItems.add(new DropDownItem(WIDGET_NAME_UPLOAD_KEYSTORE, MESSAGES.uploadKeystoreMenuItem(),
@@ -1493,9 +1496,9 @@ public class TopToolbar extends Composite {
               showVip(null);
               return;
             }
-            // Add by 中文网：保险起见，每次删除项目不得超过3个，防止非预期的CPU过高及偶发服务崩溃
-            if (deletedProjects.size() > 3) {
-              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过3个！！");
+            // Add by 中文网：保险起见，每次删除项目不得超过1个，防止非预期的CPU过高及偶发服务崩溃
+            if (deletedProjects.size() > 1) {
+              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过1个！！");
               return;
             }
 
