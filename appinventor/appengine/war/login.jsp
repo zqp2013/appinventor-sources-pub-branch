@@ -219,9 +219,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <img src="/static/images/gzh.jpg" loading="lazy">
                                         <div>公众号 </div>
                                     </div>
-                                    <div class="service_info">
+                                    <div class="service_info" title="官方QQ群：483928335">
                                         <img src="/static/images/qqq.jpg" loading="lazy">
-                                        <div>技术交流QQ群</div> 
+                                        <div>官方QQ群</div> 
                                     </div>
 
                                 </div>
