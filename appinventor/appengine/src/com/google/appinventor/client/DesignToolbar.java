@@ -10,8 +10,9 @@ import com.google.appinventor.client.editor.FileEditor;
 import com.google.appinventor.client.editor.ProjectEditor;
 import com.google.appinventor.client.editor.youngandroid.BlocklyPanel;
 import com.google.appinventor.client.editor.youngandroid.YaBlocksEditor;
-
+import com.google.appinventor.client.TopToolbar;
 import com.google.appinventor.client.explorer.commands.AddFormCommand;
+import com.google.appinventor.client.explorer.commands.CopyFormCommand;
 import com.google.appinventor.client.explorer.commands.ChainableCommand;
 import com.google.appinventor.client.explorer.commands.DeleteFileCommand;
 
@@ -119,6 +120,7 @@ public class DesignToolbar extends Toolbar {
 
   private static final String WIDGET_NAME_TUTORIAL_TOGGLE = "TutorialToggle";
   private static final String WIDGET_NAME_ADDFORM = "AddForm";
+  private static final String WIDGET_NAME_COPYFORM = "CopyForm";
   private static final String WIDGET_NAME_REMOVEFORM = "RemoveForm";
   private static final String WIDGET_NAME_SCREENS_DROPDOWN = "ScreensDropdown";
   private static final String WIDGET_NAME_SWITCH_TO_BLOCKS_EDITOR = "SwitchToBlocksEditor";
@@ -188,6 +190,8 @@ public class DesignToolbar extends Toolbar {
     if (AppInventorFeatures.allowMultiScreenApplications() && !isReadOnly) {
       addButton(new ToolbarItem(WIDGET_NAME_ADDFORM, MESSAGES.addFormButton(),
           new AddFormAction()));
+      addButton(new ToolbarItem(WIDGET_NAME_COPYFORM, MESSAGES.copyFormButton(),
+          new CopyFormAction()));
       addButton(new ToolbarItem(WIDGET_NAME_REMOVEFORM, MESSAGES.removeFormButton(),
           new RemoveFormAction()));
     }
@@ -245,6 +249,28 @@ public class DesignToolbar extends Toolbar {
         } else {
           doSwitch.run();
         }
+      }
+    }
+  }
+  
+  private class CopyFormAction implements Command {
+    @Override
+    public void execute() {
+
+      // 试用账户不给权限
+      if (Ode.getInstance().getUser().getUserEmail() == "test@fun123.cn" && !Ode.getInstance().isReadOnly()) {
+        TopToolbar.showVip(null);
+        return;
+      }
+
+      Ode ode = Ode.getInstance();
+      if (ode.screensLocked()) {
+        return;                 // Don't permit this if we are locked out (saving files)
+      }
+      ProjectRootNode projectRootNode = ode.getCurrentYoungAndroidProjectRootNode();
+      if (projectRootNode != null) {
+        ChainableCommand cmd = new CopyFormCommand();
+        cmd.startExecuteChain(Tracking.PROJECT_ACTION_COPYFORM_YA, projectRootNode);
       }
     }
   }

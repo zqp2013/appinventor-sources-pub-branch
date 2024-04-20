@@ -188,6 +188,12 @@ public interface ProjectServiceAsync {
    * @see ProjectService#addFile(long, String)
    */
   void addFile(long projectId, String fileId, AsyncCallback<Long> callback);
+  
+  /**
+   * @see ProjectService#copyScreen(long, String)
+   */
+  void copyScreen(long projectId, String targetFormFileId, String fileId, AsyncCallback<Long> callback);
+  
 
   /**
    * @see ProjectService#importMedia(String, long, String, boolean)
