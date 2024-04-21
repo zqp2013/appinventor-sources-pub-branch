@@ -169,7 +169,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 无
 
 
-## ![icon](images/clock.png) 计时器  {#Clock}
+## ![icon](images/clock.png) 计时器&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/Clock.html)    {#Clock}
 
 不可见组件，使用手机内部时钟提供实时时间。可以设置时间间隔以定期触发计时器，并执行时间计算、操作、和转换。
 
