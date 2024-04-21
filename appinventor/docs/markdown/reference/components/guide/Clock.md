@@ -31,14 +31,15 @@ description: 详解App Inventor 2 计时器（Clock）的用法示例。和时�
 
 ## 24小时格式怎么写？
 
-![clock](images/Clock6.webp)
+![clock](images/Clock6.webp){:.vip}
 
 ## 如何定时一小时？
 
 代码如下：
 
-![clock](images/Clock7.webp)
+![clock](images/Clock7.webp){:.vip}
 
 ## 如何定点执行，比如到20:23分执行？
 
+{:.vip}
 计时器计时间隔1000ms（即1秒），计时事件中取当前时间，格式化成指定格式的文本，然后用逻辑判断代码块，和你要想到的时间点文本进行比较，如果相等，则到了你预定的时间点，做你预想的事情。
