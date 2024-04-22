@@ -139,14 +139,14 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
 
                                                 <input class="form-control form-input top js-username-field"
                                                     autofocus="autofocus" autocapitalize="off" autocorrect="off"
-                                                    required="required" title="该字段是必填字段。" type="text" name="email" id="email">
+                                                    required="required" title="该字段是必填字段。" type="text" name="email" id="email" maxlength="30">
                                                 <p class="field-error hidden">该字段是必填字段。</p>
                                             </div>
                                             <div class="form-group px-5">
                                                 <label class="label-bold mb-1" for="user_password">密码：</label>
                                                 <input class="form-control form-input bottom"
                                                     autocomplete="current-password" required="required"
-                                                    title="该字段是必填字段。" type="password" name="password" id="password">
+                                                    title="该字段是必填字段。" type="password" name="password" id="password" maxlength="30">
                                                 <p class="field-error hidden">该字段是必填字段。</p>
                                             </div>
                                             
