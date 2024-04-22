@@ -427,7 +427,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:id="Serial.WriteSerial" class="method"} <i/> 写入串口(*data*{:.text})
 : 将给定数据写入串口。
 
-## ![icon](images/web.png)  Web客户端  {#Web}
+## ![icon](images/web.png)  Web客户端&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/Web.html)    {#Web}
 
 为 HTTP GET、POST、PUT 和 DELETE 请求提供功能的非可视组件。
 
