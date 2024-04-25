@@ -40,7 +40,7 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
-            <span class="gl-button-text">
+            <!--<span class="gl-button-text">
                 <a id="fenxiao"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin-top: -3px;"/>推广返佣50%</a>
                 <div id="qrcode" style="display: none;
                                 text-align: center;
@@ -60,11 +60,11 @@
                 });
             </script>
             </span>
-            &nbsp;&nbsp;&nbsp;
-            <!--<span class="gl-button-text">
-                <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank">有奖征文</a>
-            </span>
             &nbsp;&nbsp;&nbsp;-->
+            <span class="gl-button-text">
+                <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin:-3px 3px 0 0;"/>有奖征文</a>
+            </span>
+            &nbsp;&nbsp;&nbsp;
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/?f=login#AppEntry" target="_blank"><i class="mdi mdi-school-outline" style="font-size: 15px;"></i> 手把手入门教程</a>
             </span>
@@ -77,10 +77,52 @@
                 <a href="https://www.fun123.cn/reference/info/guide.pdf?f=login" target="_blank">新手必读！</a>
             </span>
             &nbsp;
-            <img src="/static/images/vip.png" width="14" height="14" style="margin-top: -4px;" />
+            <span class="nav-vip-title" style="font-weight: 600;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none" style="margin-right: 5px; vertical-align: top;margin-top:4px;">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.82386 0.389956C7.76894 0.41651 7.72074 0.455136 7.68287 0.502944L4.34927 4.71193C4.29413 4.78157 4.21758 4.83111 4.13145 4.85293C4.04533 4.87474 3.95442 4.86761 3.87275 4.83262L0.622686 3.44054C0.554706 3.41143 0.48004 3.40149 0.406806 3.41183C0.333573 3.42216 0.264575 3.45236 0.207316 3.49916C0.150057 3.54595 0.106728 3.60753 0.0820398 3.67722C0.0573518 3.7469 0.0522501 3.82202 0.0672893 3.8944L1.86697 12.561C1.94259 12.9251 2.14142 13.2521 2.42998 13.4868C2.71855 13.7215 3.07922 13.8496 3.45125 13.8496H12.5488C12.9208 13.8496 13.2815 13.7215 13.57 13.4868C13.8586 13.2521 14.0574 12.9251 14.133 12.561L15.9327 3.8944C15.9478 3.82199 15.9427 3.74684 15.918 3.67713C15.8933 3.60742 15.8499 3.54581 15.7927 3.49901C15.7354 3.45222 15.6663 3.42202 15.5931 3.41171C15.5198 3.4014 15.4451 3.41137 15.3771 3.44054L12.1273 4.83262C12.0456 4.86761 11.9547 4.87474 11.8686 4.85293C11.7824 4.83111 11.7059 4.78157 11.6507 4.71193L8.31714 0.502944C8.27927 0.455136 8.23107 0.41651 8.17615 0.389956C8.12123 0.363403 8.06101 0.349609 8 0.349609C7.939 0.349609 7.87878 0.363403 7.82386 0.389956ZM5.64736 6.51935C5.32706 6.12651 4.74879 6.06758 4.35576 6.38774C3.96274 6.70789 3.90378 7.28588 4.22409 7.67872L7.38471 11.5551C7.70247 11.9448 8.29787 11.9448 8.61564 11.5551L11.7763 7.67873C12.0966 7.28589 12.0377 6.7079 11.6447 6.38774C11.2516 6.06759 10.6734 6.12651 10.3531 6.51934L8.00018 9.40499L5.64736 6.51935Z" fill="url(#paint0_linear_6256_99744)"></path><defs><linearGradient id="paint0_linear_6256_99744" x1="8.00001" y1="0.349609" x2="8.00001" y2="13.8496" gradientUnits="userSpaceOnUse"><stop stop-color="#DA6600"></stop><stop offset="1" stop-color="#D46300"></stop></linearGradient></defs>
+                </svg>
+                <span class="btn-list-group">
+                    <a href="https://www.fun123.cn/reference/info/vip.html?f=login" target="_blank" style="color:#D46300;font-size: 14px;" title="点击查看VIP特权">账户开通</a>
+                    <span class="btn-list-area">
+                        <a class="menuBtn subMenu" href="https://www.fun123.cn/pay?f=login-vip" target="_blank" title="立即享受优质的编程体验，实用的文档教程，无忧的技术保障！">开通VIP会员</a>
+                        <a class="menuBtn subMenu" href="https://www.fun123.cn/reference/info/tuan.html?f=login-tuan" target="_blank" title="10个及以上账号，5折优惠超划算！">团购更优惠</a>
+                        <a class="menuBtn subMenu" href="https://www.fun123.cn/reference/info/tuan.html?f=login-deploy" target="_blank" title="适合学校、机构等需要大量账号，且账号长期使用的情况！">私有化部署</a>
+                    </span>
+                </span>
+            </span>
+            <style>
+            .btn-list-area {
+                display: none;
+                position: absolute;
+                background: #fff;
+                border-radius: 5px;
+                width: 100px;
+                z-index: 9999;
+                right: 16px;
+                padding:3px 0 5px 0;
+            }
+            .btn-list-group:hover .btn-list-area {
+                display: block
+            }
+            .menuBtn {
+                display: inline-block;
+                padding: 5px;
+                font-size: 14px;
+                font-weight: 400;
+                color: rgba(108, 117, 125, 1);
+                text-align: center;
+                line-height: 1.5;
+                cursor: pointer;
+            }
+            .subMenu {
+                width: 100px;
+            }
+            </style>
+
+            <!--<img src="/static/images/vip.png" width="14" height="14" style="margin-top: -4px;" />
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/vip.html?f=login" target="_blank" style="color:#9c6521;">开通正式账号</a>
-            </span>
+            </span>-->
         </div>
     </div>
 
@@ -219,10 +261,16 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                         <img src="/static/images/gzh.jpg" loading="lazy">
                                         <div>公众号 </div>
                                     </div>
-                                    <div class="service_info" title="官方QQ群：483928335">
+                                    <!--<div class="service_info" title="官方QQ群：483928335">
                                         <img src="/static/images/qqq.jpg" loading="lazy">
                                         <div>官方QQ群</div> 
-                                    </div>
+                                    </div>-->
+                                    <a href="https://bbs.tsingfun.com/forum-147-1.html?f=login" target="_blank">
+                                        <div class="service_info">
+                                            <img src="https://bbs.tsingfun.com/static/image/common/qr_bbs.png" loading="lazy">
+                                            <div>移动中文社区</div> 
+                                        </div>
+                                    </a>
 
                                 </div>
 
