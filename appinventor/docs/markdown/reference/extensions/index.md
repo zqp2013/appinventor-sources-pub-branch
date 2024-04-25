@@ -39,3 +39,6 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【手机管理器】App Inventor 2 TaifunTM拓展：获取本机手机号码](phone_manager.html)
 1. [【AI模型】Personal Image Classifier (PIC) 拓展：自行训练AI图像识别模型，开发图像识别分类App](PersonalImageClassifier.html)
 1. [【MD5、密码安全】Encrypt.Security 安全性扩展：MD5哈希，SHA1和SHA256哈希，AES加密/解密，RSA加密/解密，BASE64编码/解码](https://peterzhong1219.gitee.io/webpages/Security/SecurityExtension_zh.html)
+1. [【数据库】LeanDB 数据库扩展](https://www.kevinkun.cn/leandb)
+1. [【数据库】MySQL + php后端数据库](../pro/mysql.html)
+1. [【数据库】MongoDB + php后端数据库](https://kevinkun.cn/mongodb)
