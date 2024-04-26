@@ -679,11 +679,13 @@ FileTools demo程序下载：
 
 **中文网注：**
 
-MIT官方的功能很单一，目前国内也有免费的网络微数据库，功能上也进行了一定的拓展，详细可以去各自的网站上查看中文文档。网站如下：
+MIT官方的功能很单一，且仅支持英文内容，不支持中文文本存储，中文文本获取出来是乱码。
 
-[https://tinywebdb.cn/](https://tinywebdb.cn/)
+目前国内也有免费的网络微数据库，**支持中文存储和读取**，功能上也进行了一定的拓展，详细可以去各自的网站上查看中文文档。2个网站体验差不多，网站如下：
 
-[https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   *经过测试，单个键值的大小不可超过9000字节，否则可能保存失败。*
+[https://tinywebdb.cn/](https://tinywebdb.cn/)    *经测试，单个键值的容量大小约为 64KB 字节，超过则会保存失败。*
+
+[https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   *经测试，单个键值的容量大小约为 9000 字节（9KB），超过则会保存失败。*
 
 
 ### 属性  {#TinyWebDB-Properties}
