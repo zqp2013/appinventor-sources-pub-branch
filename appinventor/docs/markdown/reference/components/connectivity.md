@@ -410,13 +410,13 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 {:.methods}
 
 {:id="Serial.CloseSerial" class="method returns boolean"} <i/> 关闭串口()
-: 关闭串口连接。关闭时返回 `真`。
+: 关闭串口连接。关闭成功时返回 `真`。
 
 {:id="Serial.InitializeSerial" class="method"} <i/> 初始化串口()
 : 初始化串口连接。
 
 {:id="Serial.OpenSerial" class="method returns boolean"} <i/> 打开串口()
-: 打开串口连接。 打开时返回 `真`。
+: 打开串口连接。 打开成功时返回 `真`。
 
 {:id="Serial.PrintSerial" class="method"} <i/> 打印串口(*data*{:.text})
 : 将给定数据写入串口，并在末尾添加一个新行。
