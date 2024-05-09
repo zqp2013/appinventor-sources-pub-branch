@@ -48,10 +48,13 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【图像】![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
 1. [【图像】SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
 1. [【图像】KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
+1. [【图像】ImageUtil 拓展：图像组件的附加工具，提供图片水印功能](https://bbs.tsingfun.com/thread-1637-1-1.html)
 1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 1. [【OCR】App Inventor 2 OCR 图片文字识别全方案总结](../pro/ocr.html)
 1. [【手机管理器】App Inventor 2 TaifunTM拓展：获取本机手机号码](phone_manager.html)
 1. [【手电筒】TaifunFlashlight 拓展：手电筒/闪光灯](https://bbs.tsingfun.com/thread-1633-1-1.html)
+1. [【专业相机】ProCamera 拓展：专业相机，提供滤镜、降噪、对焦等高级功能](https://bbs.tsingfun.com/thread-1653-1-1.html)
+1. [【二维码】QRCode 扩展：二维码扫描及生成方案都在这里](https://bbs.tsingfun.com/thread-1652-1-1.html)
 
 ### 通信
 
