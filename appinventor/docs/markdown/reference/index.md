@@ -32,7 +32,7 @@ App Inventor 2 参考文档分为以下几大类：内置块参考文档、组�
             <h3><i class="mdi mdi-book-plus-outline"></i> 技术和其他指南</h3>
             <p>官方英文文档翻译，提供更专业、更深入的研究参考文档</p>
         </a>
-        <a href="other/" class="link-box animate grey-background">
+        <a href="creative/" class="link-box animate grey-background">
             <h3><i class="mdi mdi-numeric"></i> App Inventor 2 中文网原创</h3>
             <p>中文网原创的技术文档，作品，技术文章，帖子，问答，技术指导，问题解决思路等</p>
         </a>
@@ -50,7 +50,7 @@ App Inventor 2 参考文档分为以下几大类：内置块参考文档、组�
             <h3><i class="mdi mdi-bluetooth-audio"></i> IoT 参考文档</h3>
             <p>蓝牙(SPP/BLE)，WIFI，物联网，MQTT，ESP32，Ardruino等硬件开发指导</p>
         </a>
-        <a href="iot/" class="link-box animate grey-background">
+        <a href="pro/" class="link-box animate grey-background">
             <h3><i class="mdi mdi-vimeo"></i> App Inventor 2 中文网VIP专享</h3>
             <p>中文网专业技术文档，专业作品源码，专业技术文章，专业技术指导，专业问题解决思路等</p>
         </a>
