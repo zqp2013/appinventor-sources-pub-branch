@@ -20,6 +20,8 @@ description: App Inventor 2 试验组件参考文档：包括ChatBot（OpenAI Ch
 
 ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此版本使用 MIT 运行的代理，该代理又使用 ChatGPT 生成大语言模型。
 
+>来自MIT官方的提醒：人们应该小心聊天机器人。他们经常产生虚假结果。根据我的经验，他们总体上是正确的，但细节可能是错误的。
+
 注：此组件对AI伴侣要求最低版本为v2.67 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
 
 * demo程序下载：
@@ -34,11 +36,15 @@ ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此�
 
   注意：我们不将其作为属性在“界面设计”视图中提供，应在“程序设计”视图中使用代码块设置。最好使用`文本块`中的[`模糊文本`](../blocks/text.html#obfuscatetext)对嵌入在打包应用程序中的密钥提供一些保护（但不是完美的保护）。
 
+  >**如果提供你自己从 OpenAI 获取的 ApiKey，则不受 MIT 施加的限制**。不过，为了方便轻松访问这些组件，如果没有获取ApiKey，那么将会使用MIT获取的ApiKey。由于这需要花钱，因此目前每天的使用次数受到限制。 注意：如果您打包应用程序并分发它，则您应用程序的所有使用都将受到相同的配额限制。 如果您希望分发使用这些服务的应用程序，建议使用MIT的 ApiKey 进行测试，但最终发布时使用你自己的 ApiKey。
+
 {:id="ChatBot.Model" .text} *模型*
-: 设置要使用的模型的名称。请参阅 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解当前支持的模型列表，留空将使用提供商设置的默认模型。
+: 设置要使用的模型的名称。留空将使用提供商设置的默认模型，目前，模型供将来使用，不执行任何操作。
 
 {:id="ChatBot.Provider" .text} *提供商*
-: 设置要使用的提供商的名称，如`chatgpt`。请参阅 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解当前支持的提供商列表。
+: 设置要使用的提供商的名称，默认值是`chatgpt`。请参阅 [https://appinv.us/chatbot](https://appinv.us/chatbot) 了解当前支持的提供商列表。
+
+  >除了ChatGPT，你还可以选择 Google 的 PaLM 大语言模型。要使用 PaLM，请将“提供商”属性设置为“palm”（注意，全部小写）。但是，Google 对谁可以使用 PaLM 有限制，如果你获得自己的 ApiKey 则不受任何限制。
 
 {:id="ChatBot.System" .text} *系统值*
 : 赋予 ChatGPT 的系统值，它用于设定对话的基调，例如：`“你是一个有趣的人。”`

@@ -28,8 +28,18 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 1. [【ASCII编解码】<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA1klEQVR42mP4/5+BJESa6oHS8OMHG4Tx6RMPPg2bNnlPm5Z+7Zp6UtLsvXsd9uxxrKpqWbEidOHC2KlTM75940DXkJw8y8Nj67Fj5rm5Ezs7S0pKOoGCN26oFhd3FRb2fP7MhaLh7l2F8vK2rq6Sjo7SlpbKurr6ZcvCgeS8efETJ+YARb584UTR8PUr1MYvX7hu31b++ZMVyH70SObvX0agl75/Z//3b0jFAyENrxj+32b4/57h/3OG/y8Y/r9k+P8dvwagoksM/x8w/L8B1gkk31HVSQDpTO7uYTqjvQAAAABJRU5ErkJggg==" style="margin:-4px 5px 0 0">AsciiConversion 拓展](AsciiConversion.html)
 1. [【动态创建】<img src="DynamicComponents/icon.png" style="width:16px;margin:-4px 5px 0 0">DynamicComponents 拓展：动态创建AI2组件对象](dynamic_components.html)
-1. [【AI模型】Personal Image Classifier (PIC) 拓展：自行训练AI图像识别模型，开发图像识别分类App](PersonalImageClassifier.html)
 1. [【Hash】文件Hash值拓展：sha256、sha512 哈希](https://bbs.tsingfun.com/thread-1626-1-1.html)
+1. [【向量计算】VectorArithmetic 拓展：计算两个向量相加的结果向量](https://mit-cml.github.io/extensions/)
+
+### AI人工智能
+
+1. [【AI模型】PersonalImageClassifier (PIC) 拓展：自行训练AI图像识别模型，开发图像识别分类App](PersonalImageClassifier.html)
+1. [【AI模型】PersonalAudioClassifier (PAC) 拓展：自行训练AI声音识别模型](https://mit-cml.github.io/extensions/)
+1. [【AI模型】PosenetExtension 拓展：人体姿势识别](https://mit-cml.github.io/extensions/)
+1. [【AI模型】TeachableMachine 拓展：使用设备摄像头训练视觉模型](https://mit-cml.github.io/extensions/)
+1. [【AI模型】FaceMeshExtension 拓展：人脸标记识别](https://mit-cml.github.io/extensions/)
+1. [【AI模型】LookExtension 拓展：使用编译到扩展中的神经网络进行物品识别](https://mit-cml.github.io/extensions/)
+
 
 ### UI界面
 
@@ -49,12 +59,15 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【图像】SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
 1. [【图像】KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
 1. [【图像】ImageUtil 拓展：图像组件的附加工具，提供图片水印功能](https://bbs.tsingfun.com/thread-1637-1-1.html)
+1. [【图像】ImageProcessor 拓展：对两个图像进行加权组合，返回图像的灰度](https://mit-cml.github.io/extensions/)
 1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 1. [【OCR】App Inventor 2 OCR 图片文字识别全方案总结](../pro/ocr.html)
 1. [【手机管理器】App Inventor 2 TaifunTM拓展：获取本机手机号码](phone_manager.html)
 1. [【手电筒】TaifunFlashlight 拓展：手电筒/闪光灯](https://bbs.tsingfun.com/thread-1633-1-1.html)
 1. [【专业相机】ProCamera 拓展：专业相机，提供滤镜、降噪、对焦等高级功能](https://bbs.tsingfun.com/thread-1653-1-1.html)
 1. [【二维码】QRCode 扩展：二维码扫描及生成方案都在这里](https://bbs.tsingfun.com/thread-1652-1-1.html)
+1. [【分贝测量】SoundPressureLevel 拓展：通过麦克风测量声压级别并返回以分贝为单位的数据](https://mit-cml.github.io/extensions/)
+1. [【音调测量】SoundAnalysis 拓展：通过麦克风测量声音的音调高低（单位：Hz）](https://mit-cml.github.io/extensions/)
 
 ### 通信
 
