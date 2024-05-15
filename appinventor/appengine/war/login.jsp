@@ -212,7 +212,7 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                 <button name="button" type="submit" class="button btn btn-block btn-confirm js-sign-in-button">登录</button>
                                                 </form>
 
-                                                <form method=POST action="/login">
+                                                <form method=POST action="https://sy.fun123.cn/login">
 <% if (locale != null && !locale.equals("zh_CN")) {
    %>
 <input type=hidden name=locale value="<%= locale %>">

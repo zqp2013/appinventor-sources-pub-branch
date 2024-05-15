@@ -675,7 +675,7 @@ public class TopToolbar extends Composite {
     db.center();
 
     VerticalPanel DialogBoxContents = new VerticalPanel();
-    String html = "<p style=\"color:red\">" + real_tips + "<p/><br/><a class=\"vip\" href=\"/pay?f=auth\" target=\"_blank\">升级VIP会员</a><br/><br/>";
+    String html = "<p style=\"color:red\">" + real_tips + "<p/><br/><a class=\"vip\" href=\"https://www.fun123.cn/pay?f=auth\" target=\"_blank\">升级VIP会员</a><br/><br/>";
     HTML message = new HTML(html);
 
     SimplePanel holder = new SimplePanel();
@@ -705,7 +705,7 @@ public class TopToolbar extends Composite {
 
     VerticalPanel DialogBoxContents = new VerticalPanel();
     String vipInfo = (leftDays > 0) ? "还有 " + leftDays + " 天到期" : "已到期";
-    String html = "<p>尊敬的VIP会员您好，您的VIP <a style=\"color:red\">" + vipInfo + "！</a>到期后您将不能新建、导出及编译项目，如需导出所有项目请联系客服。为了不影响您的正常使用，请及时续费，感谢您的支持！<p/><br/><a class=\"vip\" href=\"/pay?f=expired\" target=\"_blank\">VIP续期</a><br/><br/>";
+    String html = "<p>尊敬的VIP会员您好，您的VIP <a style=\"color:red\">" + vipInfo + "！</a>到期后您将不能新建、导出及编译项目，如需导出所有项目请联系客服。为了不影响您的正常使用，请及时续费，感谢您的支持！<p/><br/><a class=\"vip\" href=\"https://www.fun123.cn/pay?f=expired\" target=\"_blank\">VIP续期</a><br/><br/>";
     HTML message = new HTML(html);
 
     SimplePanel holder = new SimplePanel();
