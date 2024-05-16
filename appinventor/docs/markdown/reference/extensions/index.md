@@ -76,6 +76,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【蓝牙】<img src="../iot/assets/ble.png" style="width:16px;margin:-4px 5px 0 0">BlueToothLE 拓展：低功耗蓝牙(BLE)](../iot/bluetoothle.html)  [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ext)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](../pro/ftp.html)
 1. [【MD5、密码安全】Encrypt.Security 安全性扩展：MD5哈希，SHA1和SHA256哈希，AES加密/解密，RSA加密/解密，BASE64编码/解码](https://peterzhong1219.gitee.io/webpages/Security/SecurityExtension_zh.html)
+1. [【AES加解密】MareshaAES 拓展：AES加解密算法](https://bbs.tsingfun.com/thread-1664-1-1.html)
 1. [【二进制】UrsAI2ByteArray 字节数组扩展：读写二进制数据](https://bbs.tsingfun.com/thread-1648-1-1.html)
 1. [【数据库】LeanDB 数据库扩展](https://www.kevinkun.cn/leandb)
 1. [【数据库】MySQL + php后端数据库](../pro/mysql.html)
