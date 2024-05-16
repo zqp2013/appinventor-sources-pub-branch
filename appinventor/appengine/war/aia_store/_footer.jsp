@@ -16,15 +16,15 @@
         <a href="javascript:" class="cndns-right-btn">
             <span class="fa fa-wechat"></span>
             <p>
-                在线<br />
-                客服
+                定制<br />
+                开发
             </p>
         </a>
         <div class="cndns-right-box">
             <div class="box-border">
                 <div class="sev-t">
-                    <img src="/static/images/weixin.png" />
-                    <i>扫码添加客服咨询</i>
+                    <img src="/static/images/xcx.jpg" style="width: 180px;height: 180px;" />
+                    <i>扫码咨询专业App定制</i>
                 </div>
                 <span class="arrow-right"></span>
             </div>
