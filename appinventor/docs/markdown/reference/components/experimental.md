@@ -54,6 +54,8 @@ ChatBot 是一个不可见组件，用于与 AI 聊天的聊天机器人。此�
 
   默认情况下，令牌是无法访问MIT代理服务器的，如需有效令牌请参照[《App Inventor 2 使用MIT代理的组件访问令牌的获取方法》](../creative/token.html)。
 
+  ApiKey的申请以及它与访问令牌的关系请参考[《App Inventor 2 如何接入ChatGPT：国内访问OpenAI的最佳方式》](guide/gpt.html)。
+
 ### 事件  {#ChatBot-Events}
 
 {:.events}

@@ -16,7 +16,7 @@ description: Activity启动器（ActivityStarter）如何查看并启动其他Ap
 
 如果要更方便和直观的在手机上查看安装的APP的包名和类名，可以在手机上安装专门的查看应用包名的App，如“**包名查看器**”：
 
-![ActivityStarter_包名查看器](images/ActivityStarter_包名查看器.png)
+![ActivityStarter_包名查看器](images/ActivityStarter_pkg.png)
 
 ## 不同品牌手机可能略有不同
 
@@ -26,6 +26,6 @@ description: Activity启动器（ActivityStarter）如何查看并启动其他Ap
 
 下面代码是利用 Activity启动器启动华为 Mate8 系统的照相机：
 
-![ActivityStarter_启动华为照相机](images/ActivityStarter_启动华为照相机.png)
+![ActivityStarter_启动华为照相机](images/ActivityStarter_huawei.png)
 
 如果在使用Activity启动器启动其它应用的时候，如果出现启动不了或者找不到相应的 Activity 的情况，请检查包名、类名这些信息是否正确。

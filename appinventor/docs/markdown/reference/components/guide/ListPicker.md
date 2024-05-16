@@ -13,7 +13,7 @@ description: 详解App Inventor 2 列表选择器（ListPicker）的用法示例
 
 1. ### 设置固定的列表项，设置“元素字串”属性，多个列表项使用**英文**逗号分隔：
 
-    ![列表选择器_元素字串](images/列表选择器_元素字串.png)
+    ![ListPicker_元素字串](images/ListPicker_yszc.png)
 
     点击效果如下：
 
@@ -22,23 +22,23 @@ description: 详解App Inventor 2 列表选择器（ListPicker）的用法示例
 
 1. ### 选择完成后的事件处理，最终选中的数据通过“选中项”属性获取：
 
-    ![列表选择器_选择完成事件](images/列表选择器_选择完成事件.png)
+    ![ListPicker_选择完成事件](images/ListPicker_finish.png)
 
 
 1. ### 通过代码块动态设置列表选择器的列表项：
     
-    ![列表选择器_动态设置](images/列表选择器_动态设置.gif)
+    ![ListPicker_动态设置](images/ListPicker_dyset.gif)
 
     效果如下：
 
-    ![列表选择器_动态设置效果](images/列表选择器_动态设置效果.gif)
+    ![ListPicker_动态设置效果](images/ListPicker_dysetxg.gif)
     
     
 1. ### 设置“显示搜索框”属性，也可以通过代码设置该属性：
 
-    ![列表选择器_显示搜索框](images/列表选择器_显示搜索框.png)
+    ![ListPicker_显示搜索框](images/ListPicker_showsearch.png)
 
     效果如下：
 
-    ![列表选择器_搜索框](images/列表选择器_搜索框.png)
+    ![ListPicker_搜索框](images/ListPicker_search.png)
     
