@@ -69,6 +69,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 ## 教程分享
 
 1. [【教程】利用 App Inventor 2 开发ChatGPT应用](https://www.tsingfun.com/it/ai2/app_inventor_2_chatgpt.html)
+1. [【原理】App Inventor 2 如何接入ChatGPT：国内访问OpenAI的最佳方式](https://www.fun123.cn/reference/components/guide/gpt.html?f=creative)
 1. [【福利】利用 App Inventor 2 开发AI绘图应用，无门槛免费使用OpenAI绘图](https://www.bilibili.com/video/BV1vu4y1D7W9/)
 1. [【教程】App Inventor 2 语音识别及文本朗读组件的使用](https://bbs.tsingfun.com/thread-1168-1-1.html)
 1. [【教程】App Inventor 2 语音交互机器人Robot，使用讯飞语音识别引擎](https://www.tsingfun.com/it/ai2/ai2_robot.html)   [【视频演示】](https://www.bilibili.com/video/BV1gc411M7en/)

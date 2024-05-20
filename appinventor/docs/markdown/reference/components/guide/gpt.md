@@ -7,7 +7,7 @@ description: 详解App Inventor 2 如何接入ChatGPT，ChatGPT ApiKey的申请�
 * TOC
 {:toc}
 
-[&laquo; 返回首页](../index.html)
+[&laquo; 返回首页](../experimental.html)
 
 本文主要介绍ChatGPT如何自定义接入以及接入原理，具体ChatBot等组件的使用方法看这里：
 

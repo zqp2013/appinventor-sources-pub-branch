@@ -381,7 +381,7 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
 ## ![icon](images/serial.png)  串口通信器  {#Serial}
 
-串口通信组件。
+串口通信组件。手机串口通信案例请参考[《App Inventor 2 串口组件：App使用OTG数据线进行串口通信》](guide/serial.html)。
 
 ### 属性  {#Serial-Properties}
 

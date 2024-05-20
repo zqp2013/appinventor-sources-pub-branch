@@ -86,4 +86,4 @@ if __name__ == '__main__':
 ```
 
 ***
-云服务器推荐：[阿里云特惠主机，2024年3月31日之前开通可享特惠价4年，企业更优惠！](https://www.aliyun.com/product/ecs?userCode=qpd7410l)
+云服务器推荐：[私有云数据库、云图片好搭档 2核2G 3M特惠主机 99元/年](https://www.aliyun.com/product/ecs?userCode=qpd7410l)
