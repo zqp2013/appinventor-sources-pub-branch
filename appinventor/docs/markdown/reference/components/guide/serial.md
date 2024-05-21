@@ -9,6 +9,10 @@ description: 详解App Inventor 2 串口组件：App使用OTG数据线进行串�
 
 [&laquo; 返回串口通信器](../connectivity.html#Serial)
 
+![serial](images/serial_component.png)
+
+通过“串口通信器”组件，App 可以通过手机串口进行通信，不过使用蓝牙/ble 通信可能是目前更主流的方案！（详见[<font style="margin-left:10px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../../iot/?f=serial)）
+
 手机串口通信模型如下：
 
 ![serial](images/serial_app.jpg)

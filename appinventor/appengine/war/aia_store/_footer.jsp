@@ -14,7 +14,7 @@
 <div class="cndns-right">
     <div class="cndns-right-menu menu-common">
         <a href="javascript:" class="cndns-right-btn">
-            <span class="fa fa-wechat"></span>
+            <span class="fa fa-qrcode"></span>
             <p>
                 定制<br />
                 开发
@@ -30,6 +30,24 @@
             </div>
         </div>
     </div>
+    <div class="cndns-right-menu menu-common">
+		<a href="javascript:" class="cndns-right-btn">
+			<span class="fa fa-wechat"></span>
+			<p>
+				在线<br />
+				客服
+			</p>
+		</a>
+		<div class="cndns-right-box">
+			<div class="box-border">
+				<div class="sev-t">
+					<img src="/static/images/weixin.png" />
+					<i>扫码添加客服咨询</i>
+				</div>
+				<span class="arrow-right"></span>
+			</div>
+		</div>
+	</div>
     <div class="cndns-right-menu menu-common">
         <a href="javascript:" class="cndns-right-btn">
             <span class="fa fa-share"></span>
