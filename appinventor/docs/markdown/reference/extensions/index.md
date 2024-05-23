@@ -30,6 +30,8 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【动态创建】<img src="DynamicComponents/icon.png" style="width:16px;margin:-4px 5px 0 0">DynamicComponents 拓展：动态创建AI2组件对象](dynamic_components.html)
 1. [【Hash】文件Hash值拓展：sha256、sha512 哈希](https://bbs.tsingfun.com/thread-1626-1-1.html)
 1. [【向量计算】VectorArithmetic 拓展：计算两个向量相加的结果向量](https://mit-cml.github.io/extensions/)
+1. [【手机管理】App Inventor 2 TaifunTM 拓展：获取本机手机号码](phone_manager.html)
+1. [【电池管理】App Inventor 2 TaifunBattery 拓展：电池管理器，获取设备电量](battery.html)
 
 ### AI人工智能
 
@@ -62,7 +64,6 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【图像】ImageProcessor 拓展：对两个图像进行加权组合，返回图像的灰度](https://mit-cml.github.io/extensions/)
 1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
 1. [【OCR】App Inventor 2 OCR 图片文字识别全方案总结](../pro/ocr.html)
-1. [【手机管理器】App Inventor 2 TaifunTM拓展：获取本机手机号码](phone_manager.html)
 1. [【手电筒】TaifunFlashlight 拓展：手电筒/闪光灯](https://bbs.tsingfun.com/thread-1633-1-1.html)
 1. [【专业相机】ProCamera 拓展：专业相机，提供滤镜、降噪、对焦等高级功能](https://bbs.tsingfun.com/thread-1653-1-1.html)
 1. [【二维码】QRCode 扩展：二维码扫描及生成方案都在这里](https://bbs.tsingfun.com/thread-1652-1-1.html)
