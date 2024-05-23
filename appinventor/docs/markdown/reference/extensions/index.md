@@ -31,7 +31,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【Hash】文件Hash值拓展：sha256、sha512 哈希](https://bbs.tsingfun.com/thread-1626-1-1.html)
 1. [【向量计算】VectorArithmetic 拓展：计算两个向量相加的结果向量](https://mit-cml.github.io/extensions/)
 1. [【手机管理】App Inventor 2 TaifunTM 拓展：获取本机手机号码](phone_manager.html)
-1. [【电池管理】App Inventor 2 TaifunBattery 拓展：电池管理器，获取设备电量](battery.html)
+1. [【电池管理】App Inventor 2 TaifunBattery 拓展：电池管理器，获取电量及电池信息](battery.html)
 
 ### AI人工智能
 

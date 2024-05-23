@@ -1,7 +1,7 @@
 ---
-title: App Inventor 2 TaifunBattery 拓展：电池管理器，获取设备电量
+title: App Inventor 2 TaifunBattery 电池管理器拓展：获取电量、电池健康状态、电池剩余容量等
 layout: documentation
-description: App Inventor 2 TaifunBattery 拓展：电池管理器，获取设备电量，剩余电量，电池温度（摄氏度），电池健康状态等。
+description: App Inventor 2 TaifunBattery 拓展：电池管理器，获取设备电量，剩余电量，电池温度（摄氏度），电池健康状态，电池剩余容量等。
 ---
 
 * TOC
@@ -68,7 +68,7 @@ demo效果图：
 
 ![battery](battery/capacity.jpg)
 
-**剩余电量**，返回剩余电池容量占总容量的整数百分比（无小数部分）。
+电池剩余容量，返回剩余电池容量占总容量的整数百分比（无小数部分）。
 
 需要 API 级别 21、Android 5、Lollipop。
 
