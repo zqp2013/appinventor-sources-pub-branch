@@ -441,7 +441,7 @@ description: 传感器组件参考文档：包括加速度传感器、条码扫�
 无
 
 
-## ![icon](images/locationsensor.png)  位置传感器  {#LocationSensor}
+## ![icon](images/locationsensor.png)  位置传感器&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](../other/locationsensor.html)  {#LocationSensor}
 
 不可见组件，提供位置信息，包括：
   
