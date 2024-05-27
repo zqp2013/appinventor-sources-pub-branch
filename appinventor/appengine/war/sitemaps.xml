@@ -196,6 +196,12 @@
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
 		</url>
+		<url>
+			<loc>https://www.fun123.cn/reference/extensions/Security/SecurityExtension.html</loc>
+			<lastmod>2024-05-27</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
 
 		<url>
 			<loc>https://www.fun123.cn/reference/blocks/</loc>
@@ -429,6 +435,13 @@
 		<url>
 			<loc>https://www.fun123.cn/reference/creative/ai2_starter.html</loc>
 			<lastmod>2023-11-21</lastmod>
+			<changefreq>weekly</changefreq>
+			<priority>0.7</priority>
+		</url>
+
+		<url>
+			<loc>https://www.fun123.cn/reference/creative/debug.html</loc>
+			<lastmod>2024-05-27</lastmod>
 			<changefreq>weekly</changefreq>
 			<priority>0.7</priority>
 		</url>
