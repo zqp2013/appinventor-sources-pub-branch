@@ -7,7 +7,7 @@ description: App Inventor 2 Encrypt.Security 安全性扩展：MD5哈希，SHA1�
 * TOC
 {:toc}
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](../index.html)
 
 ## Encrypt.Security 安全性扩展
 

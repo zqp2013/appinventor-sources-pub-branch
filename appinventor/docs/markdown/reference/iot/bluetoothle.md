@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展
 layout: documentation
-description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函数的中文介绍及使用方法。
+description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函数的中文介绍及使用方法。2种通信方式：扫描和广播的详细接入方式。
 ---
 
 * TOC
@@ -18,6 +18,34 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 
 因此，低功耗蓝牙是与耗电资源有限的物联网设备进行通信的首选。BluetoothLE 扩展需要 Android 5.0 或更高版本。
 
+## 2种通信方式：扫描和广播
+
+### 扫描
+
+![ble](./assets/ble_connection.jpg)
+
+**详细接入步骤：**
+
+{:.vip}
+[开始扫描](#StartScanning) -> [获取BLE设备列表](#DeviceList) -> [连接指定设备](#Connect)（也可[指定MAC地址连接](#ConnectWithAddress)）-> 设备指定服务uuid和特征uuid [发送](#WriteBytes) / [接收](#ReadBytes) 数据。
+
+### 广播
+
+![ble](./assets/ble_broadcast.jpg)
+
+现在常规便宜芯片并无蓝牙协议栈，只能通过人工拼包用最简单的蓝牙广播方式通信，可以做到手机与设备进行简单的交互。
+
+* 无连接的
+* 是单向的，可以向任何人或者接收器发送数据。
+* 使用广播方式通信没有任何安全措施，任何监听设备都能收到，因此它可能不适合于敏感数据，除非在广播数据中采用某种加密方法。
+<!--https://zhuanlan.zhihu.com/p/669108821-->
+
+**详细接入步骤：**
+
+{:.vip}
+[设置广播扫描周期](#AdvertisementScanPeriod) -> [广播扫描](#ScanAdvertisements) -> [获取广播设备列表](#AdvertiserAddresses) -> [获取设备服务uuids列表](#AdvertiserServiceUuids) -> 设备指定服务uuid [发送](#StartAdvertising) / [接收](#AdvertisementData) 广播数据。
+
+更深入的通信原理请参考：[《BLE协议—广播和扫描》](https://bbs.tsingfun.com/thread-1692-1-1.html)。
 
 ## 属性
 
