@@ -327,6 +327,8 @@
       <jvmarg value="-Djava.awt.headless=true" />
       <arg value="--childProcessRamMb" />
       <arg value="3072" />
+      <arg value="--maxSimultaneousBuilds" />
+      <arg value="2" />
       <arg value="--dexCacheDir" />
       <arg value="${public.build.dir}/dexCache" />
       <arg value="--shutdownToken" />
