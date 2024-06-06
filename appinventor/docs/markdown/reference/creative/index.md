@@ -40,6 +40,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 
 ## 技巧分享
 
+1. [【技巧】App Inventor 2 复制屏幕功能，界面设计更便捷，避免误删组件](copy_screen.html)
 1. [【技巧】分享几个App Inventor 2“隐藏”的非常的实用的小技巧](https://bbs.tsingfun.com/thread-1183-1-1.html?f=doc)
 <!--【技巧】代码视图，搜索功能【技巧】iOS界面外观【技巧】过程参数，鼠标悬停时，可直接拖动获取和设置的代码块-->
 1. [【技巧】App Inventor 2在不同的屏幕之间传值](screen_communication.html)
