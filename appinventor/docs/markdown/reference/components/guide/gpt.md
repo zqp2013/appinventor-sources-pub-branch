@@ -54,4 +54,4 @@ ChatGPT ApiKey接入：[https://platform.openai.com/api-keys](https://platform.o
 ![chatgpt](images/gpt_bill.png)
 
 {:.vip}
-据官方社区回复，试用版的ApiKey配额需要再创建账户的3个月之内试用，超过3个月只能绑定信用卡扣费才能正常使用ApiKey进行访问。
+据官方社区回复，试用版的ApiKey配额需要在创建账户的3个月之内试用，超过3个月只能绑定信用卡扣费才能正常使用ApiKey进行访问。

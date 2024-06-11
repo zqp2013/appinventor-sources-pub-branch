@@ -62,10 +62,23 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 
 ## 问题解决
 
-1. [【解决】“请从下拉列表中选择合适项”错误解决方法](https://bbs.tsingfun.com/thread-1098-1-2.html)
-1. [【解决】App Inventor 2连接模拟器一直失败的问题](https://bbs.tsingfun.com/thread-1005-1-1.html)
-1. [【解决】Error 908: The permission RECORD_AUDIO has been denied. Please enable it in the Settings app.](https://bbs.tsingfun.com/thread-1159-1-2.html)
-1. [【解决】App Inventor 2 手机AI伴侣进行测试时，为啥进度条卡在10%就一直不动？](https://bbs.tsingfun.com/thread-1165-1-1.html)
+1. [【已解决】“请从下拉列表中选择合适项”错误解决方法](https://bbs.tsingfun.com/thread-1098-1-2.html)
+1. [【已解决】App Inventor 2连接模拟器一直失败的问题](https://bbs.tsingfun.com/thread-1005-1-1.html)
+1. [【已解决】Error 908: The permission RECORD_AUDIO has been denied. Please enable it in the Settings app.](https://bbs.tsingfun.com/thread-1159-1-2.html)
+1. [【已解决】App Inventor 2 手机AI伴侣进行测试时，为啥进度条卡在10%就一直不动？](https://bbs.tsingfun.com/thread-1165-1-1.html)
+1. [【已解决】Bad arguments to +：The operation + cannot accept the arguments:, [""], [81]](https://bbs.tsingfun.com/thread-1613-1-1.html)
+1. [【已解决】Error 1103: Unable to complete the given request with the text](https://bbs.tsingfun.com/thread-1593-1-1.html)
+1. [【已解决】Your device does not have a scanning application installed.](https://bbs.tsingfun.com/thread-1545-1-1.html)
+1. [【已解决】The operation is list empty? cannot accept the arguments: , [""]](https://bbs.tsingfun.com/thread-1511-1-1.html)
+1. [【已解决】The operation is in list? cannot accept the arguments: , [""], [""]](https://bbs.tsingfun.com/thread-1512-1-1.html)
+1. [【已解决】Error 908: The permission CAMERA has been denied. Please enable it in the Settings app.](https://bbs.tsingfun.com/thread-1457-1-1.html)
+1. [【已解决】AppInventor2 Runtime Error 运行时错误](https://bbs.tsingfun.com/thread-1730-1-1.html)
+1. [【已解决】Run time error "Stack size 8188kb" ](https://bbs.tsingfun.com/thread-1729-1-1.html)
+1. [【已解决】Unable to find component "SpaceView" while loading project " FileEncryptionTest2"](https://bbs.tsingfun.com/thread-1668-1-1.html)
+1. [【已解决】Runtime Error：No virtual method isDeniedPermission(Ljava/lang/String;)](https://bbs.tsingfun.com/thread-1661-1-1.html)
+1. [【已解决】Sorry, cannot package projects larger than 30 MB. Yours is 36.88 MB.](https://bbs.tsingfun.com/thread-1619-1-1.html)
+1. [【已解决】Component "com.google.appinventor.components.runtime.Button" does not specify permissionConstraints](https://bbs.tsingfun.com/thread-1601-1-1.html)
+1. [【已解决】Your build failed due to an error in the AAPT stage, not because of an error in your program](https://bbs.tsingfun.com/thread-1016-1-1.html)
 
 
 ## 教程分享
