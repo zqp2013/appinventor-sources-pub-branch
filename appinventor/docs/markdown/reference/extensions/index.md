@@ -32,6 +32,8 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【向量计算】VectorArithmetic 拓展：计算两个向量相加的结果向量](https://mit-cml.github.io/extensions/)
 1. [【手机管理】App Inventor 2 TaifunTM 拓展：获取本机手机号码](phone_manager.html)
 1. [【电池管理】App Inventor 2 TaifunBattery 拓展：电池管理器，获取电量及电池信息](battery.html)
+1. [【财务计算】财务计算器拓展：复利计算、平均值、中位数、众数、方差计算](https://bbs.tsingfun.com/thread-1716-1-1.html)
+
 
 ### AI人工智能
 
@@ -53,6 +55,10 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【UI】Flubbie 拓展：为App添加魔法动画](https://bbs.tsingfun.com/thread-1630-1-1.html)
 1. [【UI】SideBar 拓展：实现App的侧边栏效果](https://bbs.tsingfun.com/thread-1629-1-1.html)
 1. [【UI】MenuSlide 拓展：滑动菜单效果](https://bbs.tsingfun.com/thread-1628-1-1.html)
+1. [【UI】FlipShare翻转分享拓展：酷炫的分享动画](https://bbs.tsingfun.com/thread-1718-1-1.html)
+1. [【UI】自定义下载器扩展：个性化下载进度展示](https://bbs.tsingfun.com/thread-1717-1-1.html)
+1. [【UI】AppInventor2 图表扩展：仪表盘、柱状图、折线图、饼图](https://bbs.tsingfun.com/thread-1688-1-1.html)
+
 
 ### 多媒体
 
@@ -69,6 +75,9 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【二维码】QRCode 扩展：二维码扫描及生成方案都在这里](https://bbs.tsingfun.com/thread-1652-1-1.html)
 1. [【分贝测量】SoundPressureLevel 拓展：通过麦克风测量声压级别并返回以分贝为单位的数据](https://mit-cml.github.io/extensions/)
 1. [【音调测量】SoundAnalysis 拓展：通过麦克风测量声音的音调高低（单位：Hz）](https://mit-cml.github.io/extensions/)
+1. [【播放器】Plyr视频播放器拓展：全屏、画质、字幕、缩略图、强大的用户界面](https://bbs.tsingfun.com/thread-1719-1-1.html)
+1. [【图片格式】图像转换拓展：用于转换jpg/png/webp（以及更多）等图片格式的扩展](https://bbs.tsingfun.com/thread-1715-1-1.html)
+
 
 ### 通信
 
