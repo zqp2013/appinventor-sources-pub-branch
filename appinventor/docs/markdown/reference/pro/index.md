@@ -14,12 +14,14 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 
 1. [【百度网盘】App Inventor 2 接入百度网盘API](pan.html)
 1. [【文件上传】App Inventor 2 实现上传文件到服务器全方案总结](file_upload.html)
-1. [【云图片】App Inventor 2 图片云端保存及访问的开发思路](web_pics.html)
-1. [【MySQL】App Inventor 2 如何连接MySQL数据库（阿里云数据库）](mysql.html)
+1. [【云存图片】App Inventor 2 图片云端保存及访问的开发思路](web_pics.html)
+1. [【图片下载】App Inventor 2 如何下载/保存网络图片？](down_pics.html)
+<!--1. [【人脸识别】App Inventor 2 人脸识别](ai_face.html)-->
 <!--1. [【云图片】利用网络微数据库实现图片上传至云端及从云端下载]-->
 <!--1. [【AI云识图】利用云API进行AI识图]-->
 1. [【OCR识别】App Inventor 2 OCR 图片文字识别全方案总结](ocr.html)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](ftp.html)
+1. [【MySQL】App Inventor 2 如何连接MySQL数据库（阿里云数据库）](mysql.html)
 1. [【短信平台】App Inventor 2 接入阿里云短信服务，实现短信验证码功能](alisms.html)
 
 

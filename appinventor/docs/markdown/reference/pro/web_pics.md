@@ -60,4 +60,4 @@ description: App Inventor 2 图片云端保存及访问的App开发思路总结�
 
 ### 2、“Web客户端”组件下载图片至本地缓存，使用“图像”组件显示图片
 
-详细步骤参考：[《App Inventor 2 如何下载/保存网络图片？》](https://mp.weixin.qq.com/s?__biz=MzA5NTE5OTg1MA==&mid=2247484215&idx=1&sn=6d331711d07cf23383b007ff20f9815a&chksm=9043b432a7343d248eb99875094b3c965860c8b5f7fb6279ee221790eca18b68d41e224dfe0e&payreadticket=HGUSjGi5YP98Qr_dTmFfamEF6x3K7uWHIHqm9u-oHm7d-pHMS_pkM9FZ7p_eYX-6IMoiytE#rd)
+详细步骤参考：[《App Inventor 2 如何下载/保存网络图片？》](down_pics.html)
