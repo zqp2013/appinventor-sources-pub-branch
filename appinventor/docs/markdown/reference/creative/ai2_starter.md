@@ -50,9 +50,13 @@ Ai2 Starter助手极速下载地址：
 
 #### 3、实在还是失败，可能是浏览器禁止跨域造成的，尝试关闭浏览器相关设置，如下：
 
-![AI2Starter设置1](images/AI2Starter设置1.png)
+Chrome浏览器地址栏输入：`chrome://flags/#block-insecure-private-network-requests`
 
-在搜索栏搜索  Block insecure private network requests   并设置为 Disabled，重新打开浏览器就好了。
+<!--![AI2Starter设置1](images/AI2Starter设置1.png)
+
+在搜索栏搜索  Block insecure private network requests   -->
+
+并设置为 `Disabled`，重新打开浏览器就好了。
 
 ![AI2Starter设置2](images/AI2Starter设置2.png)
 
