@@ -48,7 +48,13 @@ A：步骤如下：
 
 1. 启动后，在模拟器设置中设置为手机模式，选择适合自己的分辨率。
 
-1. 帮助菜单 --> AI伴侣信息，下载AI伴侣apk安装包到电脑，然后模拟器菜单选择安装apk，完成AI伴侣App的安装并启动它。
+    ![mumu](images/mumu1.png)
+
+    ![mumu](images/mumu2.png)
+
+1. 帮助菜单 --> AI伴侣信息，或直接点此[下载AI伴侣apk](https://www.fun123.cn/reference/info/AI2Companion.html?f=connect)安装包到电脑，然后模拟器菜单选择安装apk，完成AI伴侣App的安装并启动它。
+
+    ![mumu](images/mumu3.png)
 
 1. 开始测试：连接 -->  AI伴侣，复制 6 位字符码，粘贴到模拟器中的AI伴侣中，点“使用编码连接”即可。
 
