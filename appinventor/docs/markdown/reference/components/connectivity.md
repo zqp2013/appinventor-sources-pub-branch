@@ -449,6 +449,20 @@ description: 通信连接组件参考文档：包括Activity启动器、蓝牙�
 
   ![请求标头设置](images/请求标头设置.png){:.vip}
 
+  有3种设置方式：
+
+  1、二维列表，非普通单列表：
+  
+  ![请求标头设置](images/请求标头_二维列表.png){:.vip}
+  
+  2、键值对列表，非单个键值对：
+
+  ![请求标头设置](images/请求标头_键值对列表.png){:.vip}
+  
+  3、完整字典，非单个键值对：
+
+  ![请求标头设置](images/请求标头_字典.png){:.vip}
+
 {:id="Web.ResponseFileName" .text} *响应文件名称*
 : 指定保存响应数据的文件的名称，如果 [保存响应信息](#Web.SaveResponse) 为`真` 且 [响应文件名称](#Web.ResponseFileName) 为空，则自动创建一个新文件名。
 
