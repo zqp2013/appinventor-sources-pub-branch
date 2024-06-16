@@ -103,7 +103,7 @@
                 z-index: 9999;
                 right: 16px;
                 padding:3px 0 5px 0;
-                margin-top:-2px;
+                margin-top:-5px;
             }
             .btn-list-group:hover .btn-list-area {
                 display: block
