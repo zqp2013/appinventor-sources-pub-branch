@@ -87,6 +87,7 @@
                         <a class="menuBtn subMenu" href="https://www.fun123.cn/pay?f=login-vip" target="_blank" title="立即享受优质的编程体验，实用的文档教程，无忧的技术保障！">开通VIP会员</a>
                         <a class="menuBtn subMenu" href="https://www.fun123.cn/reference/info/tuan.html?f=login-tuan" target="_blank" title="10个及以上账号，5折优惠超划算！">团购更优惠</a>
                         <a class="menuBtn subMenu" href="https://www.fun123.cn/reference/info/tuan.html?f=login-deploy" target="_blank" title="适合学校、机构等需要大量账号，且账号长期使用的情况！">私有化部署</a>
+                        <a class="menuBtn subMenu" href="https://bbs.tsingfun.com/plugin.php?id=keke_group" target="_blank" title="适合使用其他编程平台，但需要技术支持服务的用户！">社区SVIP</a>
                     </span>
                 </span>
             </span>
