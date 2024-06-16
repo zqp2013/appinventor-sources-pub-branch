@@ -40,8 +40,10 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
-            <!--<span class="gl-button-text">
-                <a id="fenxiao"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin-top: -3px;"/>推广返佣50%</a>
+            <span class="gl-button-text">
+                <a id="dacu"><img src="/static/images/618.png" alt="img" height="20" style="margin-top: -3px; cursor: pointer;"/>
+                                <img src="/static/images/618.gif" alt="img" style="margin-top: -4px; cursor: pointer;" height="30">
+                </a>
                 <div id="qrcode" style="display: none;
                                 text-align: center;
                                 color: #9c6521;
@@ -49,18 +51,18 @@
                                 padding: 6px;
                                 background-color: #fff;
                                 border-radius: 6px;
-                                border: 1px solid #ddd;">分销商招募计划<br/><img src="/static/images/fenxiao.jpg" style="width:180px;height:180px;"/></div>
+                                border: 1px solid #ddd;">咨询锁定5折名额，最后几个！<br/><img src="/static/images/weixin.png" style="width:180px;height:180px;"/></div>
                 <script type="text/javascript">
-                document.getElementById("fenxiao").addEventListener("mouseenter", function() {
+                document.getElementById("dacu").addEventListener("mouseenter", function() {
                 document.getElementById("qrcode").style.display = "block";
                 });
                 
-                document.getElementById("fenxiao").addEventListener("mouseleave", function() {
+                document.getElementById("dacu").addEventListener("mouseleave", function() {
                 document.getElementById("qrcode").style.display = "none";
                 });
             </script>
             </span>
-            &nbsp;&nbsp;&nbsp;-->
+            &nbsp;&nbsp;&nbsp;
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin:-3px 3px 0 0;"/>有奖征文</a>
             </span>
