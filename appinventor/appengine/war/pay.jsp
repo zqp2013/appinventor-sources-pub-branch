@@ -380,12 +380,15 @@ function initCheckbox(chk_id, checked){
 			desc.innerText = this.checked ? "包含" : "不包含";
 
             var yj=$('.card-item.active').attr('prop-price');
+            var yj_del=$('.card-item.active').attr('prop-oprice');
             if (this.checked) {
                 $('#amount').val(yj);
                 $('#amount_label').html(yj);
+                $('#delprc').html(yj_del);
             } else {
                 $('#amount').val((techsupportzk * yj).toFixed(2));
                 $('#amount_label').html((techsupportzk * yj).toFixed(2));
+                $('#delprc').html((techsupportzk * yj_del).toFixed(0));
             }
 		}
 	}
@@ -421,18 +424,21 @@ var _hmt = _hmt || [];
 
       //$('#amount').val($(this).attr('prop-price'));
       //$('#amount_label').html($(this).attr('prop-price'));
+      //$('#delprc').html($(this).attr('prop-oprice'));
       var chked=document.getElementById('chk_techsupport').value;
       var yj=$(this).attr('prop-price');
+      var yj_del=$(this).attr('prop-oprice');
       if (chked=='true') {
         $('#amount').val(yj);
         $('#amount_label').html(yj);
+        $('#delprc').html(yj_del);
       } else {
         $('#amount').val((techsupportzk * yj).toFixed(2));
         $('#amount_label').html((techsupportzk * yj).toFixed(2));
+        $('#delprc').html( (techsupportzk * yj_del).toFixed(0) );
       }
       
       $('#period').val($(this).attr('prop-period'));
-      $('#delprc').html($(this).attr('prop-oprice'));
     });
 
     //滚动信息
