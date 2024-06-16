@@ -265,9 +265,9 @@ public class PayServlet extends HttpServlet {
   }
 
   // PC支付
-  protected void pc_pay(HttpServletRequest req, HttpServletResponse resp, String subject, String phone, int period, String amount) throws IOException {    
+  protected void pc_pay(HttpServletRequest req, HttpServletResponse resp, String subject, String phone, int period, String amount, boolean tech_support) throws IOException {    
 		AlipayTradePagePayModel model = new AlipayTradePagePayModel();
-    model.setOutTradeNo("P" + getOutTradeNo(phone, period));
+    model.setOutTradeNo((tech_support ? "P" : "Q") + getOutTradeNo(phone, period));
     model.setProductCode("FAST_INSTANT_TRADE_PAY");
     //model.setPassbackParams("passback_params"); //自定义参数，url编码
 		model.setSubject(subject);//订单标题
@@ -356,7 +356,16 @@ public class PayServlet extends HttpServlet {
       return;
     }
 
-    pc_pay(req, resp, subject, phone, iperiod, amount);
+    //是否提供技术支持
+    boolean tech_support = true;
+    try {
+      String chk_techsupport = params.get("chk_techsupport");
+      if ("false".equals(chk_techsupport))
+        tech_support = false;
+    } catch (Exception e) {
+    }
+
+    pc_pay(req, resp, subject, phone, iperiod, amount, tech_support);
   }
 
 

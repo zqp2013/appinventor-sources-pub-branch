@@ -143,6 +143,12 @@
     .buyinfo li span {
         color:#b87100;
     }
+
+    .chkcontrol{
+        width:52px;
+        height:33px;
+        cursor:pointer;
+    }
     </style>
 </head>
 
@@ -244,6 +250,17 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             </div>
 
                                             <div class="form-group px-5">
+                                                <label class="label-bold mb-1">技术支持： 
+                                                    <img id="techsupport" class="chkcontrol"/>
+                                                    <input type="hidden" name="chk_techsupport" id="chk_techsupport" value="true" />
+                                                </label>
+
+                                                <div class="float-right" style="margin-top: 6px;">
+                                                    <span><font id="hassupport" style="font-weight: bold;">包含</font> <i>基础版</i>* <a href="https://www.fun123.cn/reference/info/#qa" target="_blank">技术支持服务</a></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group px-5">
                                                 <label class="label-bold mb-1">支付金额： 
                                                     <div>
                                                         <h1 style="float:left;">¥ <span style="color:#fc5531" id="amount_label">89.98</span></h1>
@@ -256,10 +273,6 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                                     </div>
                                                 </label>
                                                 <input type="hidden" id="amount" name="amount" value="89.98">
-
-                                                <div class="float-right">
-                                                    <span>免费赠送 <i>基础版</i>* <a href="https://www.fun123.cn/reference/info/#qa" target="_blank">技术支持服务</a></span>
-                                                </div>
                                             </div>
 
                                             <div class="form-group px-5">
@@ -339,6 +352,45 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
     </div>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script>
+var techsupportzk=0.66;
+var chk_normal = "/static/images/chk_normal.png";
+var chk_press = "/static/images/chk_down.png";
+var chk_up = "/static/images/chk_up.png";
+// Checkbox
+function initCheckbox(chk_id, checked){
+	var chk = document.getElementById(chk_id);
+	chk.checked = checked;
+	if (checked)
+		chk.src = chk_up;
+	else
+		chk.src = chk_normal;
+	
+	chk.onmousedown = function(){
+		this.checked = !this.checked;
+		this.src = chk_press;
+	}
+	chk.onmouseup = function(){
+		if (this.checked)
+			this.src = chk_up;
+		else
+			this.src = chk_normal;
+        document.getElementById('chk_' + chk_id).value = this.checked;
+        if (chk_id == "techsupport"){
+			var desc = document.getElementById('hassupport');
+			desc.innerText = this.checked ? "包含" : "不包含";
+
+            var yj=$('.card-item.active').attr('prop-price');
+            if (this.checked) {
+                $('#amount').val(yj);
+                $('#amount_label').html(yj);
+            } else {
+                $('#amount').val((techsupportzk * yj).toFixed(2));
+                $('#amount_label').html((techsupportzk * yj).toFixed(2));
+            }
+		}
+	}
+}
+
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -367,8 +419,18 @@ var _hmt = _hmt || [];
 	  $('.card-item').not(this).removeClass('active');
       $(this).addClass('active');
 
-      $('#amount').val($(this).attr('prop-price'));
-      $('#amount_label').html($(this).attr('prop-price'));
+      //$('#amount').val($(this).attr('prop-price'));
+      //$('#amount_label').html($(this).attr('prop-price'));
+      var chked=document.getElementById('chk_techsupport').value;
+      var yj=$(this).attr('prop-price');
+      if (chked=='true') {
+        $('#amount').val(yj);
+        $('#amount_label').html(yj);
+      } else {
+        $('#amount').val((techsupportzk * yj).toFixed(2));
+        $('#amount_label').html((techsupportzk * yj).toFixed(2));
+      }
+      
       $('#period').val($(this).attr('prop-period'));
       $('#delprc').html($(this).attr('prop-oprice'));
     });
@@ -394,6 +456,9 @@ var _hmt = _hmt || [];
             play();
         }
     )
+
+    // Checkbox
+	initCheckbox('techsupport', true);
 
 })();
 $(document).bind("contextmenu",function(){return false;});
