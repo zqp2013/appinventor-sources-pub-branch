@@ -108,6 +108,150 @@ public class PayServlet extends HttpServlet {
     }
   }
 
+  private void api_out(HttpServletResponse resp, String msg) {
+    try {
+        PrintWriter writer = resp.getWriter();
+        writer.write(msg);
+        writer.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+  }
+  // 通过api url开通会员
+  private void apiPay(HashMap<String, String> params, HttpServletResponse resp) {
+    String token = params.get("toke");
+    if (token == null || !token.equals("ZqPKTn")) {
+      api_out(resp, "invalid token");
+      return;
+    }
+
+    String orderId = params.get("orderId");
+    if (orderId == null || orderId.equals("")) {
+      api_out(resp, "invalid orderId");
+      return;
+    }
+    String phone = params.get("phone");
+    if (phone == null || phone.equals("") || !IsPhoneNum(phone)) {
+      api_out(resp, "invalid phone");
+      return;
+    }
+    String period = params.get("period");
+    if (period == null || period.equals("")) {
+      api_out(resp, "invalid period");
+      return;
+    }
+    String amount = params.get("amount");
+    if (amount == null || amount.equals("")) {
+      api_out(resp, "invalid amount");
+      return;
+    }
+
+    //---------------check------------
+    int iperiod = 0;
+    try {
+      iperiod = Integer.parseInt(period);
+    } catch (NumberFormatException e) {
+      api_out(resp, "Data Error! Please contact customer service.");
+      return;
+    }
+
+    if (iperiod <= 0 || iperiod > 96) {
+      api_out(resp, "Invalid period!");
+      return;
+    }
+
+    // 简单的金额检查，防止客户端篡改
+    double peramount = 0.0;
+    try {
+      peramount = Double.parseDouble(amount) / iperiod;
+    } catch (NumberFormatException e) {
+      api_out(resp, "Invalid amount!");
+      return;
+    }
+
+    if (peramount < 6) {
+      api_out(resp, "Invalid order !!!");
+      return;
+    }
+
+    if (storageIo.getPayOrder(orderId) != null) {
+      api_out(resp, "Fail: duplicate order:" + orderId);
+      return;
+    }
+    //---------------check------------
+
+
+    // ---------------------开通服务----------------------
+    AdminUser user = storageIo.getAdminUserFromEmail(phone);
+    if (user == null) {
+      user = new AdminUser(null, phone, phone, false, false, null, null, null, null);
+    }
+
+    // 原有的来源，不覆盖
+    if (user.getFrom() == null || user.getFrom().equals(""))
+      user.setFrom("ApiPay");
+
+    // 原密码为空才设置初始密码，否则留空不修改密码
+    if (user.getPassword() == null || user.getPassword().equals(""))
+      user.setPassword(phone.substring(5));
+    else 
+      user.setPassword(null);
+
+    if (user.getRemark() == null || user.getRemark().equals(""))
+      user.setRemark(orderId);
+    else
+      user.setRemark(user.getRemark() + ";" + orderId);
+
+    // 只有上次的日期比当天新，才以新日期为基准
+    Date lastExpiredDate = new Date();
+    try {
+      lastExpiredDate = expiredFormat.parse(expiredFormat.format(new Date()));
+    } catch (Exception e) { 
+    }
+
+    if (user.getExpired() != null && user.getExpired().after(lastExpiredDate))
+      lastExpiredDate = user.getExpired();
+
+    // 基准日期延长几个月
+    lastExpiredDate.setMonth(lastExpiredDate.getMonth() + iperiod);
+    user.setExpired(lastExpiredDate);
+    
+    String password = user.getPassword();
+    //LOG.info("==> password:" + password);
+    String hashedPassword = "";
+    if (password != null && !password.equals("")) {
+      try {
+        hashedPassword = PasswordHash.createHash(password);
+        user.setPassword(hashedPassword);
+        //LOG.info("==> password:" + hashedPassword);
+      } catch (NoSuchAlgorithmException e) {
+        throw new IllegalArgumentException("Error hashing password");
+      } catch (InvalidKeySpecException e) {
+        throw new IllegalArgumentException("Error hashing password");
+      }
+    }
+    try {
+      storageIo.storeUser(user, password);
+    } catch (AdminInterfaceException e) {
+      api_out(resp, "Vip open failed! Please contact customer service." + e.getMessage());
+      return;
+    }
+    // -------------------------------------------
+
+    //==========================生成订单信息===================================
+    PayOrder order = new PayOrder();
+    order.orderId = orderId;
+    order.phone = phone;
+    order.period = iperiod;
+    order.amount = amount;
+    order.status = "支付成功";
+    order.userId = user.getId();
+    order.method = "api";
+    storageIo.storePayOrder(order);   
+    //========================================================================
+    api_out(resp, "succ");
+  }
+
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     resp.setContentType("text/html; charset=utf-8");
 
@@ -220,6 +364,9 @@ public class PayServlet extends HttpServlet {
       //out.flush();
       //out.close();
       pay_succ(req, resp, phone, period);
+    } else if (page.equals("api")) {
+      apiPay(params, resp);
+      return;
     }
 
     OdeAuthFilter.UserInfo userInfo = OdeAuthFilter.getUserInfo(req);
