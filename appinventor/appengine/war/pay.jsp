@@ -229,20 +229,20 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="form-group px-5">
                                                 <input type="hidden" id="period" name="period" value="6"/>
 
-                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98" prop-perday="1.33" prop-zk="0.75">
+                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98" prop-perday="1.33" prop-zk="0.85">
                                                     <p class="t1">VIP月卡</p>
                                                     <p class="t2">¥ <span>1.33</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="69.98" prop-perday="0.77" prop-zk="0.7">
+                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="69.98" prop-perday="0.77" prop-zk="0.8">
                                                     <p class="t1">VIP季卡</p>
                                                     <p class="t2">¥ <span>0.77</span>/天</p>
                                                 </div>
-                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98" prop-perday="0.49" prop-zk="0.66">
+                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98" prop-perday="0.49" prop-zk="0.7">
                                                     <span class="card-tips"><img src="/static/images/fire.png" alt="img" width="16" height="16"/></span>
                                                     <p class="t1">VIP半年卡</p>
                                                     <p class="t2">¥ <span>0.49</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="12" prop-oprice="299" prop-price="169.98" prop-perday="0.46" prop-zk="0.6">
+                                                <div class="card-item" prop-period="12" prop-oprice="299" prop-price="169.98" prop-perday="0.46" prop-zk="0.65">
                                                     <p class="t1">VIP年卡</p>
                                                     <p class="t2">¥ <span>0.46</span>/天</p>
                                                 </div>
