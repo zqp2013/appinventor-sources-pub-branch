@@ -229,20 +229,20 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="form-group px-5">
                                                 <input type="hidden" id="period" name="period" value="6"/>
 
-                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98">
+                                                <div class="card-item" prop-period="1" prop-oprice="49" prop-price="39.98" prop-perday="1.33" prop-zk="0.75">
                                                     <p class="t1">VIP月卡</p>
                                                     <p class="t2">¥ <span>1.33</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="69.98">
+                                                <div class="card-item" prop-period="3" prop-oprice="99" prop-price="69.98" prop-perday="0.77" prop-zk="0.7">
                                                     <p class="t1">VIP季卡</p>
                                                     <p class="t2">¥ <span>0.77</span>/天</p>
                                                 </div>
-                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98">
+                                                <div class="card-item active" prop-period="6" prop-oprice="199" prop-price="89.98" prop-perday="0.49" prop-zk="0.66">
                                                     <span class="card-tips"><img src="/static/images/fire.png" alt="img" width="16" height="16"/></span>
                                                     <p class="t1">VIP半年卡</p>
                                                     <p class="t2">¥ <span>0.49</span>/天</p>
                                                 </div>
-                                                <div class="card-item" prop-period="12" prop-oprice="299" prop-price="169.98">
+                                                <div class="card-item" prop-period="12" prop-oprice="299" prop-price="169.98" prop-perday="0.46" prop-zk="0.6">
                                                     <p class="t1">VIP年卡</p>
                                                     <p class="t2">¥ <span>0.46</span>/天</p>
                                                 </div>
@@ -352,7 +352,6 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
     </div>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script>
-var techsupportzk=0.66;
 var chk_normal = "/static/images/chk_normal.png";
 var chk_press = "/static/images/chk_down.png";
 var chk_up = "/static/images/chk_up.png";
@@ -380,15 +379,24 @@ function initCheckbox(chk_id, checked){
 			desc.innerText = this.checked ? "包含" : "不包含";
 
             var yj=$('.card-item.active').attr('prop-price');
+            var zk=$('.card-item.active').attr('prop-zk');
             var yj_del=$('.card-item.active').attr('prop-oprice');
             if (this.checked) {
                 $('#amount').val(yj);
                 $('#amount_label').html(yj);
                 $('#delprc').html(yj_del);
+                //计算每日价格
+                $('.card-item').each(function(){
+                    $(this).find('.t2 span').html($(this).attr('prop-perday'));
+                });
             } else {
-                $('#amount').val((techsupportzk * yj).toFixed(2));
-                $('#amount_label').html((techsupportzk * yj).toFixed(2));
-                $('#delprc').html((techsupportzk * yj_del).toFixed(0));
+                $('#amount').val((zk * yj).toFixed(2));
+                $('#amount_label').html((zk * yj).toFixed(2));
+                $('#delprc').html((zk * yj_del).toFixed(0));
+                //计算每日价格
+                $('.card-item').each(function(){
+                    $(this).find('.t2 span').html(($(this).attr('prop-zk') * $(this).attr('prop-perday')).toFixed(2));
+                });
             }
 		}
 	}
@@ -427,15 +435,16 @@ var _hmt = _hmt || [];
       //$('#delprc').html($(this).attr('prop-oprice'));
       var chked=document.getElementById('chk_techsupport').value;
       var yj=$(this).attr('prop-price');
+      var zk=$(this).attr('prop-zk');
       var yj_del=$(this).attr('prop-oprice');
       if (chked=='true') {
         $('#amount').val(yj);
         $('#amount_label').html(yj);
         $('#delprc').html(yj_del);
       } else {
-        $('#amount').val((techsupportzk * yj).toFixed(2));
-        $('#amount_label').html((techsupportzk * yj).toFixed(2));
-        $('#delprc').html( (techsupportzk * yj_del).toFixed(0) );
+        $('#amount').val((zk * yj).toFixed(2));
+        $('#amount_label').html((zk * yj).toFixed(2));
+        $('#delprc').html( (zk * yj_del).toFixed(0) );
       }
       
       $('#period').val($(this).attr('prop-period'));
