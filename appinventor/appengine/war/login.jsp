@@ -40,7 +40,7 @@
 
     <div style="position:absolute;width: 100%; top:0;right:0;z-index: 999;">
         <div style="float: right;padding: 15px 30px;">
-            <span class="gl-button-text">
+            <!--<span class="gl-button-text">
                 <a id="dacu"><img src="/static/images/618.png" alt="img" height="20" style="margin-top: -3px; cursor: pointer;"/>
                                 <img src="/static/images/618.gif" alt="img" style="margin-top: -4px; cursor: pointer;" height="30">
                 </a>
@@ -51,7 +51,7 @@
                                 padding: 6px;
                                 background-color: #fff;
                                 border-radius: 6px;
-                                border: 1px solid #ddd;">咨询锁定5折名额，最后几个！<br/><img src="/static/images/weixin.png" style="width:180px;height:180px;"/></div>
+                                border: 1px solid #ddd;">618<br/><img src="/static/images/weixin.png" style="width:180px;height:180px;"/></div>
                 <script type="text/javascript">
                 document.getElementById("dacu").addEventListener("mouseenter", function() {
                 document.getElementById("qrcode").style.display = "block";
@@ -62,7 +62,7 @@
                 });
             </script>
             </span>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;-->
             <span class="gl-button-text">
                 <a href="https://www.fun123.cn/reference/info/paper.html?f=login" target="_blank"><img src="/static/images/fire.png" alt="img" width="16" height="16" style="margin:-3px 3px 0 0;"/>有奖征文</a>
             </span>
@@ -103,7 +103,7 @@
                 z-index: 9999;
                 right: 16px;
                 padding:3px 0 5px 0;
-                margin-top:-5px;
+                margin-top:-2px;
             }
             .btn-list-group:hover .btn-list-area {
                 display: block
