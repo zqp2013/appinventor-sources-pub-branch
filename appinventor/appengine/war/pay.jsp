@@ -286,6 +286,12 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                             <div class="submit-container move-submit-down px-5">
                                                 <button name="button" type="submit" class="button btn btn-block btn-confirm js-sign-in-button" id="paybtn">立即支付</button>
                                             </form>
+
+                                            <div style="text-align: center;
+                                                z-index:999;
+                                                color: #07C160;
+                                                padding: 6px;">微信小程序扫码下单<br/><img src="/static/images/xcx.jpg" style="width:200px;height:200px;"/>
+                                        </div>
                                             <a href="/"><< 返回首页</a>
                                             <div class="float-right">
                                                 <span style="color: #999;">* 不支持7天无理由退货&nbsp;&nbsp;</span>
