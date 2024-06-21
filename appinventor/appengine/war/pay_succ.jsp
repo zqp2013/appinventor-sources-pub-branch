@@ -67,6 +67,8 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                 <div class="login-box tab-pane active" id="login-pane">
                                     <div class="login-body" style="text-align: center;">
                                         <h3 style="color:green;margin-top: 50px;">支付成功，会员已开通/续期，请注意短信通知，感谢您的支持！</h3>
+                                        <br/>
+                                        如您未收到短信通知（可能受通信运营商或手机“免打扰”模式影响），请先使用手机号作为用户名登录，<b>初始密码为手机号后六位</b>。再次感谢您的支持！
                                     </div>
                                     </div>
                                 </div>
@@ -74,9 +76,9 @@ out.println("<center><font color=red><b>" + error + "</b></font></center>");
                                 <br/>
                                 <a href="/"><< 返回首页/登录</a>
 
-                                <div class="float-right">
+                                <!--<div class="float-right">
                                     <a href="javascript:alert('如您未收到短信通知（可能受“免打扰”模式影响），请先使用手机号作为用户名登录，初始密码手机号后六位。感谢您的支持！');">没有收到短信通知？</a>
-                                </div>
+                                </div>-->
                             </div>
                             
                             <div class="omniauth-provider-divider display-flex align-items-center" style="margin-top: 30px;">
