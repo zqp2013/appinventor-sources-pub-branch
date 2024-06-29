@@ -32,3 +32,7 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 1. [【APP启动屏】App Inventor 2 实现商业级APP启动屏幕效果](splash_screen.html)
 1. [【登录系统】App Inventor 2 开发多用户注册登录签到系统](ai2_net_login.html)
 <!--1. [【动画制作】制作一个类游戏闯关成功跳入下一关的动画]-->
+
+
+## 编程技巧
+1. [【函数式编程】App Inventor 2 列表排序，函数式编程轻松实现高级排序算法](advlist.html)

@@ -305,6 +305,8 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 
 [此处](../concepts/pholo.html#sort) 是有关如何使用排序块的教程。
 
+用法案例：[《App Inventor 2 列表排序，函数式编程轻松实现高级排序算法》](../pro/advlist.html)。
+
 ***
 ### 创建带比较器的有序列表  {#sortwithcomparator}
 
@@ -322,6 +324,8 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 
 [此处](../concepts/pholo.html#sortwithcomparator) 是有关如何使用带有比较器块的排序的教程。
 
+用法案例：[《App Inventor 2 列表排序，函数式编程轻松实现高级排序算法》](../pro/advlist.html)。
+
 ***
 ### 创建带键函数的有序列表  {#sortwithkey}
 
@@ -333,6 +337,8 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 
 [此处](../concepts/pholo.html#sortwithkey) 是有关如何使用带键排序块的教程。
 
+用法案例：[《App Inventor 2 列表排序，函数式编程轻松实现高级排序算法》](../pro/advlist.html)。
+
 ***
 ### 列表中的最小值  {#minnumber}
 
@@ -340,12 +346,16 @@ description: 列表代码块参考文档：包括创建空列表、创建列表�
 
 返回输入列表中的最小数字。
 
+用法案例：[《App Inventor 2 列表排序，函数式编程轻松实现高级排序算法》](../pro/advlist.html)。
+
 ***
 ### 列表中的最大值  {#maxnumber}
 
 ![](images/lists/maxnumber.png)
 
 返回输入列表中的最大数字。
+
+用法案例：[《App Inventor 2 列表排序，函数式编程轻松实现高级排序算法》](../pro/advlist.html)。
 
 ***
 ### 去除首个元素的列表  {#butfirst}
