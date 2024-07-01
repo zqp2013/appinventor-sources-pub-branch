@@ -15,3 +15,7 @@ App Inventor 2 IoT 专题：经典蓝牙(SPP)，低功耗蓝牙(BLE)，WIFI，�
 1. [【经典蓝牙】HC-05 经典蓝牙模块开发](https://bbs.tsingfun.com/thread-1376-1-1.html)
 1. [【乱码问题】HC-05/BLE 蓝牙通信数据乱码？接收到的中文乱码？乱码的原理及解决思路](bluetooth_codec.html)
 1. [【物联网·云】App inventor + ESP8266：使用WIFI连接云控制](https://blog.csdn.net/INT_TANG/article/details/128210609)
+1. [【硬件交互】APP INVENTOR硬件交互学习教程01——开发板介绍](https://bbs.tsingfun.com/thread-1754-1-1.html)
+1. [【硬件交互】APP INVENTOR硬件交互学习教程02——资源介绍](https://bbs.tsingfun.com/thread-1767-1-1.html)
+1. [【硬件交互】APP INVENTOR硬件交互学习教程03——巧借arduino nano 配置HC-05](https://bbs.tsingfun.com/thread-1773-1-1.html)
+1. [【硬件交互】APP INVENTOR硬件交互学习教程04——蓝牙控制继电器](https://bbs.tsingfun.com/thread-1784-1-1.html)

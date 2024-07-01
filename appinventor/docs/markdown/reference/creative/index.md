@@ -20,6 +20,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【视频】App Inventor 2基础组件使用](https://www.bilibili.com/video/BV1HY4y127rN/)
 1. [【科普】App Inventor 2 中的“2”是什么意思？](https://bbs.tsingfun.com/thread-1069-1-3.html)
 1. [【科普】App Inventor 2 能编译出苹果iOS版App吗？](https://bbs.tsingfun.com/thread-1067-1-1.html)
+1. [【科普】App Inventor 2 添加超过10个屏幕会怎样？](https://bbs.tsingfun.com/thread-1763-1-1.html)
 1. [【算法】如何计算1加到100的总和？（经典循环的写法）](https://bbs.tsingfun.com/thread-1113-1-2.html)
 1. [【算法】App Inventor 2 算法之二分算法（Binary Search）实现，快速查找定位](https://mp.weixin.qq.com/s?__biz=MzA5NTE5OTg1MA==&mid=2247483756&idx=1&sn=21240e0a86d0f000085491d98b96c9f5&chksm=9043b669a7343f7f06af82dc7251752c390d01b9a3d81e52f64e9828d33dc401793147a380c7&token=270925767&lang=zh_CN#rd)
 
@@ -58,6 +59,7 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【技巧】App Inventor 2 连接网络打印机进行自定义打印的思路及方法](https://bbs.tsingfun.com/thread-1153-1-1.html)
 1. [【技巧】App Inventor 2 开发蓝牙App的思路及方法](../iot/index.html)
 1. [【技巧】照相机定制个性化的文件名](https://bbs.tsingfun.com/thread-1167-1-1.html)
+1. [【技巧】程序设计里代码块较多，有点卡，有没有办法解决？](https://bbs.tsingfun.com/thread-1771-1-1.html)
 
 
 ## 问题解决
@@ -79,6 +81,8 @@ App Inventor 2 中文网原创的技术文档，作品，技术文章，帖子�
 1. [【已解决】Sorry, cannot package projects larger than 30 MB. Yours is 36.88 MB.](https://bbs.tsingfun.com/thread-1619-1-1.html)
 1. [【已解决】Component "com.google.appinventor.components.runtime.Button" does not specify permissionConstraints](https://bbs.tsingfun.com/thread-1601-1-1.html)
 1. [【已解决】Your build failed due to an error in the AAPT stage, not because of an error in your program](https://bbs.tsingfun.com/thread-1016-1-1.html)
+1. [【已解决】appinventor2中求某个值在列表中的索引用什么方法？](https://bbs.tsingfun.com/thread-1761-1-1.html)
+1. [【已解决】在app inventor中如果需要退出应用，需要调用哪句代码？](https://bbs.tsingfun.com/thread-1762-1-1.html)
 
 
 ## 教程分享
