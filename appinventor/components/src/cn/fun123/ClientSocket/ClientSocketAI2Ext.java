@@ -47,8 +47,10 @@ import java.net.SocketException;
  * the help of Alexey Brylevskiy for debugging
  * and the help of Hossein Amerkashi from AppyBuilder for compatibility with AppyBuilder
  */
-@DesignerComponent(version = 4,
-  description = "Non-visible component that provides client socket connectivity.",
+@DesignerComponent(
+  versionName = "1.1",
+  description = "不可见组件，提供套接字(Socket)客户端连接功能。此版本分支由App Inventor 2 中文网（https://www.fun123.cn）维护并升级新特性。",
+  helpUrl = "https://www.fun123.cn/reference/extensions/",
   category = ComponentCategory.EXTENSION,
   nonVisible = true,
   iconName = "aiwebres/small-icon.png")
@@ -91,6 +93,12 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
   }
+
+
+  protected void socketError(String functionName, int errorNumber, Object... messageArgs) {
+    form.dispatchErrorOccurredEvent(this, functionName, errorNumber, messageArgs);
+  }
+
 
   /**
    * Method that returns the server's address.
@@ -227,6 +235,7 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   @SimpleFunction(description = "Tries to connect to the server and launches the thread for receiving data (blocking until connected or failed)")
   public void Connect()
   {
+    String functionName = "Connect";
     if (connectionState == true)
     {
       if (debugMessages == true)
@@ -360,8 +369,9 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
     catch (SocketException e)
     {
       Log.e(LOG_TAG, "ERROR_CONNECT", e);
-      if (debugMessages == true)
-        throw new YailRuntimeError("Connect error" + e.getMessage(), "Error");
+      //if (debugMessages == true)
+      //  throw new YailRuntimeError("Connect error" + e.getMessage(), "Error");
+      socketError(functionName, -1, "Connect error" + e.getMessage());
     }
     catch (Exception e)
     {
