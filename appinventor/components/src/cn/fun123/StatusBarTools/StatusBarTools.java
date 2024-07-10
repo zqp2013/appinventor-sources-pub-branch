@@ -1,4 +1,4 @@
-package cn.fun123.PhoneInfo;
+package cn.fun123.StatusBarTools;
 //https://community.appinventor.mit.edu/t/statusbartools-extension-free-open-source/19568
 
 import android.content.Context;
@@ -26,7 +26,14 @@ import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.common.ComponentConstants;
 import com.google.appinventor.components.common.PropertyTypeConstants;
 
-@DesignerComponent(version = 1, description = "Created by Salman Developer", category = ComponentCategory.EXTENSION, nonVisible = true, iconName = "https://img.icons8.com/fluent/16/000000/source-code.png")
+@DesignerComponent(version = 1, 
+  versionName = "1.0",
+  description = "Created by Salman Developer",
+  helpUrl = "https://www.fun123.cn/reference/extensions/", 
+  category = ComponentCategory.EXTENSION, 
+  nonVisible = true, 
+  iconName = "aiwebres/small-icon.png")
+
 @SimpleObject(external = true)
 public class StatusBarTools extends AndroidNonvisibleComponent {
   private static final String LOG_TAG = "StatusBarTools";

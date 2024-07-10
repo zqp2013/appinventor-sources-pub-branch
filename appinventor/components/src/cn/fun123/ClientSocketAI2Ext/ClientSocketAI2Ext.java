@@ -5,7 +5,7 @@
 // http://www.apache.org/licenses/LICENSE-2.0
 
 //package com.gmail.at.moicjarod;
-package cn.fun123.ClientSocket;
+package cn.fun123.ClientSocketAI2Ext;
 
 import com.google.appinventor.components.runtime.*;
 import com.google.appinventor.components.runtime.util.RuntimeErrorAlert;
@@ -47,7 +47,7 @@ import java.net.SocketException;
  * the help of Alexey Brylevskiy for debugging
  * and the help of Hossein Amerkashi from AppyBuilder for compatibility with AppyBuilder
  */
-@DesignerComponent(
+@DesignerComponent(version = 1, 
   versionName = "1.1",
   description = "不可见组件，提供套接字(Socket)客户端连接功能。此版本分支由App Inventor 2 中文网（https://www.fun123.cn）维护并升级新特性。",
   helpUrl = "https://www.fun123.cn/reference/extensions/",
