@@ -36,7 +36,7 @@
                 <div class="card shadow" style="max-height: 1000px;overflow:auto">
                     <div class="card-body">
                         
-                        <h4 class="card-title"><c:out value="${item.title}" /></h4>
+                        <h4 class="card-title"><a href='/aia-store/<c:out value="${item.asId}" />'><c:out value="${item.title}" /></a></h4>
                         <!--<p class="card-text">
                             <i>
                             </i>

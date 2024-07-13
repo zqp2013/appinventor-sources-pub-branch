@@ -97,10 +97,10 @@ a.tip {
 }
 
 /*详细信息*/
-.card-title {
+.card-title, .card-title a {
     color: #333;
 }
-.card:hover .card-title {
+.card:hover .card-title a {
     color: #153f97;
 }
 .card-text {

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/materialdesignicons.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
     <link rel="stylesheet" type="text/css" href="/static/css/docs.css?1">
-    <link rel="stylesheet" type="text/css" href="/static/css/store.css?6">
+    <link rel="stylesheet" type="text/css" href="/static/css/store.css?7">
     <script src="/static/js/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/popper.min.js" crossorigin="anonymous"></script>
     <script src="/static/js/bootstrap.min.js" crossorigin="anonymous"></script>
