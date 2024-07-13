@@ -16,7 +16,7 @@ App Inventor 2 中文网原创的专业技术文档，专业作品源码，专�
 1. [【文件上传】App Inventor 2 实现上传文件到服务器全方案总结](file_upload.html)
 1. [【云存图片】App Inventor 2 图片云端保存及访问的开发思路](web_pics.html)
 1. [【图片下载】App Inventor 2 如何下载/保存网络图片？](down_pics.html)
-<!--1. [【人脸识别】App Inventor 2 人脸识别](ai_face.html)-->
+1. [【人脸识别】App Inventor 2 人脸识别App开发 - 第三方API接入的通用方法](ai_face.html)
 <!--1. [【云图片】利用网络微数据库实现图片上传至云端及从云端下载]-->
 <!--1. [【AI云识图】利用云API进行AI识图]-->
 1. [【OCR识别】App Inventor 2 OCR 图片文字识别全方案总结](ocr.html)
