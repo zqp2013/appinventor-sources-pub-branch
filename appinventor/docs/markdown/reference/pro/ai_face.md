@@ -72,6 +72,79 @@ App效果图，可以识别人脸，推断出性别及年龄：
 
 ## JSON结果的解析
 
+### 请求成功返回JSON示例
+
+```json
+{
+    "image_id": "Dd2xUw9S/7yjr0oDHHSL/Q==", 
+    "request_id": "1470472868,dacf2ff1-ea45-4842-9c07-6e8418cea78b", 
+    "time_used": 752, 
+    "faces": [
+        {
+            "landmark": {
+                "mouth_upper_lip_left_contour2": {
+                    "y": 185, 
+                    "x": 146
+                }, 
+                "contour_chin": {
+                    "y": 231, 
+                    "x": 137
+                }, 
+               .........省略关键点信息
+                "right_eye_pupil": {
+                    "y": 146, 
+                    "x": 205
+                }, 
+                "mouth_upper_lip_bottom": {
+                    "y": 195, 
+                    "x": 159
+                }
+            }, 
+            "attributes": {
+                "gender": {
+                    "value": "Female"
+                }, 
+                "age": {
+                    "value": 21
+                }, 
+                "glass": {
+                    "value": "None"
+                }, 
+                "headpose": {
+                    "yaw_angle": -26.625063, 
+                    "pitch_angle": 12.921974, 
+                    "roll_angle": 22.814377
+                }, 
+                "smile": {
+                    "threshold": 30.1, 
+                    "value": 2.566890001296997
+                }
+            }, 
+            "face_rectangle": {
+                "width": 140, 
+                "top": 89, 
+                "left": 104, 
+                "height": 141
+            }, 
+            "face_token": "ed319e807e039ae669a4d1af0922a0c8"
+        }
+    ],
+	"face_num":1
+}
+```
+
+### 请求失败返回JSON示例
+
+```json
+{
+    "time_used": 3, 
+    "error_message": "MISSING_ARGUMENTS: image_url, image_file, image_base64", 
+    "request_id": "1470378968,c6f50ec6-49bd-4838-9923-11db04c40f8d"
+}
+```
+
+### JSON解析参考代码
+
 ![](face/blocks2.png){:.vip}
 
 ## aia源码
