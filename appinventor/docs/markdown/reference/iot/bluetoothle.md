@@ -503,12 +503,13 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 
 ![call BluetoothLE1 RegisterForStringsserviceUuidcharacteristicUuidutf16](assets/BluetoothLE.RegisterForStrings.svg)
 
-+ <a name="RequestMTU"></a>`RequestMTU` – Requests a new minimum transmission unit (MUT) for the BluetoothLE connection. This feature
- is only supported when both devices support Bluetooth 4.2 or higher. If the MTU is changed
- successfully, the MTUChanged event will be run. The default MTU is 20.
++ <a name="RequestMTU"></a>`RequestMTU` – 为 BluetoothLE 连接请求新的最大传输单元 (MTU)。此功能仅在两个设备都支持蓝牙 4.2 或更高版本时才受支持。如果 MTU 更改成功，则 [MTUChanged](#MTUChanged) 事件将被触发。默认 MTU 为 20。
 
- This block is intended for advanced apps that need to change the size of the messages sent
- between the BLE devices. Most developers will not need to adjust this value.
+此块适用于需要更改 BLE 设备之间发送的消息大小的高级应用。大多数开发人员不需要调整此值。
+
+  * MTU: 最大传输单元（MAXIMUM TRANSMISSION UNIT） ， 指在一个PDU （Protocol Data Unit： 协议数据单元，在一个传输单元中的有效传输数据）能够传输的最大数据量（多少字节可以一次性传输到对方）。
+  * MTU 交换是为了在主从双方设置一个PDU中最大能够交换的数据量，通过MTU的交换和双方确认（注意这个MTU是不可以协商的，只是通知对方，双方在知道对方的极限后会选择一个较小的值作为以后的MTU，比如说，主设备发出一个150个字节的MTU请求，但是从设备回应MTU是23字节，那么今后双方要以较小的值23字节作为以后的MTU），主从双方约定每次在做数据传输时不超过这个最大数据单元。
+  * 更多MTU技术内幕请参考[《一分钟读懂低功耗蓝牙(BLE) MTU交换数据包》](https://bbs.tsingfun.com/thread-1837-1-1.html)。
 
  __Parameters__:
 
