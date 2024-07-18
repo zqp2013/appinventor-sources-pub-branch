@@ -10,13 +10,17 @@ description: Platform BBC micro:bit。
 
 The micro:bit is a computing platform from the BBC. It is an open platform for developing all manner of projects and is programmable by many different editors, including a <a href="https://pxt.microbit.org" target="_blank" rel="nofollow">blocks editor</a> provided by Microsoft. Learn more about the micro:bit at the <a rel="nofollow" href="http://microbit.org/about/" target="_blank">Micro:bit Educational Foundation's website</a>.
 
-<a href="/assets/resources/com.bbc.microbit.profile.aix">Download the BBC micro:bit extension</a> (version 20200518)
+<a href="assets/com.bbc.microbit.profile.aix">Download the BBC micro:bit extension</a> (version 20200518)
 
 <div style="text-align: center; font-size: 75%; margin: 16pt 0;">
-![micro:bit Front Image](./images/microbit-front.png)
-![micro:bit Back Image](./images/microbit-back.png)
+
+![micro:bit Front Image](assets/microbit-front.png)
+![micro:bit Back Image](assets/microbit-back.png)
+
 <br>
+
 Image source: [About | micro:bit](http://microbit.org/about/)
+
 </div>
 
 MIT App Inventor has built a set of extensions to allow apps created with MIT App Inventor to interact with a micro:bit. The micro:bit extensions are listed below, with links to documentation for each:

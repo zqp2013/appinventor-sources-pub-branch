@@ -10,12 +10,16 @@ description: Platform Arduino 101。
 
 The Arduino 101 is a version of the popular Arduino platform based on the Intel&reg; Curie&trade; chipset. It has the same form factor as many other Arduino but supports built-in Bluetooth&reg; low energy.
 
-<a href="/assets/resources/edu.mit.appinventor.iot.arduino101.aix">Download the Arduino 101 extension</a>
+<a href="assets/edu.mit.appinventor.iot.arduino101.aix">Download the Arduino 101 extension</a>
 
 <div style="text-align: center; font-size: 75%; margin: 16pt 0;">
-![Image of the Arduino/Genuino 101 board. Source: arduino.cc](/images/AG101.jpg)
+
+![Image of the Arduino/Genuino 101 board. Source: arduino.cc](assets/AG101.jpg)
+
 <br>
+
 Image source: <a href="https://www.arduino.cc/en/Main/ArduinoBoard101" target="_blank">Arduino 101 page on Arduino.cc</a>
+
 </div>
 
 MIT App Inventor provides a sketch for the Arduino 101 and extensions to interact with the sketch. Please follow [these instructions](/assets/tutorials/MIT_App_Inventor_IoT_Setup.pdf) to program your Arduino 101 with the [App Inventor sketch](/assets/resources/AIM-for-Things-Arduino101.zip).
