@@ -11,6 +11,8 @@ App Inventor 2 IoT 专题：经典蓝牙(SPP)，低功耗蓝牙(BLE)，WIFI，�
 
 ## 中文文档
 1. [<img src="assets/ble.png" style="width:16px;margin:-4px 5px 0 0">【BlueToothLE】App Inventor 2 低功耗蓝牙 BlueToothLE 拓展](bluetoothle.html)
+1. [<img src="microbit/assets/microbit.png" style="width:16px;margin:-4px 5px 0 0">【Microbit】App Inventor 2 Microbit 拓展 - 使用BLE与 Microbit 设备通信](microbit/MicroBitIntro.html)
+1. [<img src="arduino/assets/arduino.png" style="width:16px;margin:-4px 5px 0 0">【Arduino101】App Inventor 2 Arduino101 拓展 - 使用BLE与 Arduino 101 设备交互](arduino/Arduino101Intro.html)
 1. [<img src="mqtt/icon.png" style="width:16px;margin:-4px 5px 0 0">【MQTT】App Inventor 2 UrsPahoMqttClient 拓展 - 物联网轻量级MQTT协议](MQTT.html)
 
 ## 中文教程
