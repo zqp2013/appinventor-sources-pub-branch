@@ -1,4 +1,15 @@
-# Arduino101Gyroscope
+---
+title: Arduino101 陀螺仪
+layout: documentation
+description: Arduino101 陀螺仪。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101 陀螺仪
 
 The Arduino101Gyroscope component lets users configure the Arduino 101's on-board gyroscope and receive one or more gyroscope samples via the appropriate methods.<br>
 

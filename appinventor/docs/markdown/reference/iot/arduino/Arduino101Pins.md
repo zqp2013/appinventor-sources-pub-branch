@@ -1,4 +1,15 @@
-# Arduino101Pins
+---
+title: Arduino101 引脚
+layout: documentation
+description: Arduino101 引脚。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101Pins 引脚
 
 The Arduino101Pins extension provides a general purpose interface to any hardware connected to the Arduino's digital or analog I/O pins.
 

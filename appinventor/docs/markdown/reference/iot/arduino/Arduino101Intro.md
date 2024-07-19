@@ -1,41 +1,43 @@
 ---
-title: Platform Arduino 101
+title: Arduino 101 平台
 layout: documentation
-description: Platform Arduino 101。
+description: Arduino 101 平台。Arduino 101 是基于 Intel® Curie™ 芯片组的流行 Arduino 平台的一个版本。它具有与许多其他 Arduino 相同的外形尺寸，但支持内置蓝牙® 低功耗。
 ---
 
-# Platform: Arduino 101
+[&laquo; 返回首页](../index.html)
 
-<h3>Please note: The tutorials in this section all depend on an Arduino model no longer sold, the Arduino 101. We plan to provide revised tutorials for current Arduino models. For specific technical questions, search or post on our [community discussion forum](https://community.appinventor.mit.edu/). -- The App Inventor Team 3/31/22</h3>
+# 平台: Arduino 101
 
-The Arduino 101 is a version of the popular Arduino platform based on the Intel&reg; Curie&trade; chipset. It has the same form factor as many other Arduino but supports built-in Bluetooth&reg; low energy.
+Arduino 101 是基于 Intel® Curie™ 芯片组的流行 Arduino 平台的一个版本。它具有与许多其他 Arduino 相同的外形尺寸，但支持内置蓝牙® 低功耗。
 
-<a href="assets/edu.mit.appinventor.iot.arduino101.aix">Download the Arduino 101 extension</a>
+最新 Arduino 101 AppInventor2 拓展下载：
 
-<div style="text-align: center; font-size: 75%; margin: 16pt 0;">
+{:.vip}
+[edu.mit.appinventor.iot.arduino101.aix](assets/edu.mit.appinventor.iot.arduino101.aix)
 
+{:.figure}
 ![Image of the Arduino/Genuino 101 board. Source: arduino.cc](assets/AG101.jpg)
 
-<br>
+{:.caption}
+图片来源: 
+[Arduino.cc 上的 Arduino 101 页面](https://www.arduino.cc/en/Main/ArduinoBoard101)
 
-Image source: <a href="https://www.arduino.cc/en/Main/ArduinoBoard101" target="_blank">Arduino 101 page on Arduino.cc</a>
+<br/>
 
-</div>
+App Inventor 为 Arduino 101 提供了框架，并提供了与框架交互的扩展。请按照[这些说明](/assets/tutorials/MIT_App_Inventor_IoT_Setup.pdf) 使用 [App Inventor 框架](/assets/resources/AIM-for-Things-Arduino101.zip) 为您的 Arduino 101 编程。
 
-MIT App Inventor provides a sketch for the Arduino 101 and extensions to interact with the sketch. Please follow [these instructions](/assets/tutorials/MIT_App_Inventor_IoT_Setup.pdf) to program your Arduino 101 with the [App Inventor sketch](/assets/resources/AIM-for-Things-Arduino101.zip).
+以下扩展可与配套框架一起使用，作为 [Arduino 101 扩展包](assets/edu.mit.appinventor.iot.arduino101.aix) 的一部分：
 
-The following extensions are available for use with the companion sketch as part of the [Arduino 101 Extension Bundle](/assets/resources/edu.mit.appinventor.iot.arduino101.aix):
-
-* [Arduino 101 Accelerometer](#/arduino101/arduinoaccelerometer) &mdash; Access the onboard digital 3-axis accelerometer on the Curie's inertial measurement unit (IMU) chip.
-* [Arduino 101 Button](#/arduino101/arduinobutton) &mdash; Attach buttons or switches to the Arduino 101 to receive input from the device.
-* [Arduino 101 Gyroscope](#/arduino101/arduinogyroscope) &mdash; Access the onboard gyroscope on the Curie's inertialmeasurement unit (IMU) chip.
-* [Arduino 101 Humidity & Temperature](#/arduino101/arduinohumidity) &mdash; Connect up a <a href="http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/" target="_blank">Grove digital humidity and temperature (DHT) sensor</a> to collect data about the device's environment.
-* [Arduino 101 LED](#/arduino101/arduinoled) &mdash; Connect up one or more light emitting diodes (LEDs) to the Arduino.
-* [Arduino 101 Light Sensor](#/arduino101/arduinolightsensor) &mdash; Connect up a photoresistor to get readings about ambient or direct lighting.
-* [Arduino 101 Moisture](#/arduino101/arduinomoisture) &mdash; Add a moisture sensor to your project.
-* [Arduino 101 Pins](#/arduino101/arduinopins) &mdash; Add general purpose access to the digital I/O and analog input pins for a greater variety of projects.
-* [Arduino 101 Proximity Sensor](#/arduino101/arduinoproximitysensor) &mdash; Add a proximity sensor to detect distance to external objects.
-* [Arduino 101 Pulse-Width Modulation](#/arduino101/arduinopwm) &mdash; Add general purpose access to devices connected to pins supporting pulse-width modulation (PWM).
-* [Arduino 101 RGB LCD](#/arduino101/arduinorgblcd) &mdash; Add a liquid crystal display with optional backlighting to display information about your project to passerbys.
-* [Arduino 101 Servo](#/arduino101/arduinoservo) &mdash; Drive servos attached to your Arduino.
-* [Arduino 101 Sound Recorder](#/arduino101/arduinosoundrecorder) &mdash; Trigger remote recording and playback of audio clips using an attached <a href="http://wiki.seeed.cc/Grove-Recorder_v3.0/" target="_blank">Grove Recorder v3</a>.
+* [Arduino 101 Accelerometer：加速度传感器](Arduino101Accelerometer.html) - 访问 Curie 惯性测量单元 (IMU) 芯片上的板载数字 3 轴加速度传感器。
+* [Arduino 101 Button：按钮](Arduino101Button.html) &mdash; 将按钮或开关连接到 Arduino 101 以接收来自设备的输入。
+* [Arduino 101 Gyroscope：陀螺仪](Arduino101Gyroscope.html) &mdash; 访问 Curie 惯性测量单元 (IMU) 芯片上的板载陀螺仪。
+* [Arduino 101 Humidity & Temperature：湿度和温度](Arduino101Humidity.html) &mdash; 连接 <a href="http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/" target="_blank">Grove 数字湿度和温度 (DHT) 传感器</a> 以收集有关设备环境的数据。
+* [Arduino 101 LED](Arduino101Led.html) &mdash;将一个或多个发光二极管 (LED) 连接到 Arduino。
+* [Arduino 101 Light Sensor：光线传感器](Arduino101LightSensor.html) - 连接光敏电阻以获取有关环境光或直接照明的读数。
+* [Arduino 101 Moisture：湿度传感器](Arduino101Moisture.html) - 向您的项目添加湿度传感器。
+* [Arduino 101 Pins：引脚](Arduino101Pins.html) - 为更多种类的项目添加对数字 I/O 和模拟输入引脚的通用访问。
+* [Arduino 101 Proximity Sensor：近距离传感器](Arduino101ProximitySensor.html) - 添加近距离传感器以检测与外部物体的距离。
+* [Arduino 101 Pulse-Width Modulation：脉冲宽度调制](Arduino101PWMMotor.html) &mdash; 添加对连接到支持脉冲宽度调制 (PWM) 的引脚的设备的通用访问。
+* [Arduino 101 RGB LCD](Arduino101RgbLcd.html) &mdash; 添加带有可选背光的液晶显示屏，向路人显示有关您的项目的信息。
+* [Arduino 101 Servo：伺服](Arduino101Servo.html) &mdash; 驱动连接到您的 Arduino 的伺服器。
+* [Arduino 101 Sound Recorder：录音机](Arduino101SoundRecorder.html) &mdash;使用附加的 <a href="http://wiki.seeed.cc/Grove-Recorder_v3.0/" target="_blank">Grove Recorder v3</a> 触发远程录制和播放音频片段。

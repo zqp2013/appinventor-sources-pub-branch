@@ -1,4 +1,15 @@
-# Microbit\_Magnetometer
+---
+title: Microbit 航向/方位信息
+layout: documentation
+description: Microbit 航向/方位信息。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Magnetometer：航向/方位信息
 
 The <code>Microbit_Magnetometer</code> provides the ability to configure the BBC micro:bit's on-board magnetometer and receive one or more magnetometer samples via the appropriate methods.
 

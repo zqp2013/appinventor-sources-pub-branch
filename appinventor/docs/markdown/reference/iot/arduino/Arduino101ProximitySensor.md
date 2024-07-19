@@ -1,4 +1,15 @@
-# Arduino101ProximitySensor
+---
+title: Arduino101 近距离传感器
+layout: documentation
+description: Arduino101 近距离传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101ProximitySensor 近距离传感器
 
 The Arduino 101 Proximity Sensor lets users receive data from a infrared proximity sensor. Note that the signal wire on the Grove header may be off by one pin. If you are not receiving any reading from the sensor, you may need to increase the pin number by one (A0 becomes A1) to read the correct pin. The Arduino sketch transforms the raw reading from the sensor into a distance in centimeters based on the spec sheet published by Sharp.<br><img src='/assets/sensors/Grove-InfraredProxSensor.jpg' width='50%'><br>
 

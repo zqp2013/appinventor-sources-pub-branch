@@ -1,4 +1,15 @@
-# Arduino101PWMMotor
+---
+title: Arduino101 脉冲宽度调制
+layout: documentation
+description: Arduino101 脉冲宽度调制。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101PWMMotor 脉冲宽度调制
 
 The Arduino 101 PWM Motor extension lets users control external devices that respond to pulse width modulation, such as continuous motors or lights. On the Arduino 101, digital pins 3, 5, 6, and 9 support pulse width modulation.<br>
 

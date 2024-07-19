@@ -1,4 +1,15 @@
-# Arduino101LightSensor
+---
+title: Arduino101 光线传感器
+layout: documentation
+description: Arduino101 光线传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101LightSensor 光线传感器
 
 The Arduino 101 Light Sensor component lets users receive data from a light sensor attached to the Arduino, however it can be used for any similar device that provides a linear analog signal based on some external phenomenon.<br>
 

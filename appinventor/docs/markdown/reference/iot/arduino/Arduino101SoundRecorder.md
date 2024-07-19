@@ -1,4 +1,15 @@
-# Arduino101SoundRecorder
+---
+title: Arduino101 录音机
+layout: documentation
+description: Arduino101 录音机。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101SoundRecorder 录音机
 
 The Arduino 101 Sound Recorder extension lets users control a sound recorder and playback device connected to a Grove Shield.<br>
 

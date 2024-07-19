@@ -1,4 +1,15 @@
-# Arduino101Humidity
+---
+title: Arduino101 湿度和温度
+layout: documentation
+description: Arduino101 湿度和温度。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101Humidity 湿度和温度
 
 The Arduino101Humidity component lets users gather humidity and temperature data from a <a href='http://wiki.seeed.cc/Grove-TemperatureAndHumidity_Sensor/' target='_blank'>Grove DHT11 sensor</a>. Temperature data are reported in degrees Celsius and the relative humidity is reported in percent.<br><img class='centered' alt='Image of a Grove temperature and humidity sensor'src='/assets/sensors/Grove-TempAndHumiSensor.jpg'><br>
 

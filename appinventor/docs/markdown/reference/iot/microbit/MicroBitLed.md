@@ -1,4 +1,15 @@
-# Microbit\_Led
+---
+title: Microbit LED 矩阵
+layout: documentation
+description: Microbit LED 矩阵。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit LED 矩阵
 
 The <code>Microbit_LED</code> extension provides App Inventor users with the ability to programmatically change the BBC micro:bit's 5x5 LED matrix, either by coding custom patterns or writing text strings. The scrolling speed of the display may also be customized.<br>
 

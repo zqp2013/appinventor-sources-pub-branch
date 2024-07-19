@@ -1,4 +1,15 @@
-# Microbit\_Uart
+---
+title: Microbit 串行端口 (UART) 接口
+layout: documentation
+description: Microbit 串行端口 (UART) 接口。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit 串行端口 (UART) 接口
 
 The <code>Microbit_Uart</code> sensor provides the ability to read from and write strings to the BBC micro:bit's serial UART port.
 

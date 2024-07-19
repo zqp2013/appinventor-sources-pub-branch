@@ -1,4 +1,15 @@
-# Microbit\_Event
+---
+title: Microbit 事件
+layout: documentation
+description: Microbit 事件。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit 事件
 
 Component for Microbit_Event
 

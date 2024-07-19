@@ -1,4 +1,15 @@
-# Microbit\_Generic\_Access
+---
+title: Microbit Generic Access
+layout: documentation
+description: Microbit Generic Access。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Generic Access
 
 Component for Microbit_Generic_Access
 

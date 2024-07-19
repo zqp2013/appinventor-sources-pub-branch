@@ -1,4 +1,15 @@
-# Arduino101Button
+---
+title: Arduino101 按钮
+layout: documentation
+description: Arduino101 按钮。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101 按钮
 
 The Arduino101Button component lets users listen to events triggered by a button connected to a digital pin on the Arduino. The extension responds to voltage changes on the specified digital <code>Pin</code> and so can be used to respond to any hardware component that signals high/low based on some external phenomenon, such as a motion detector.<br>
 

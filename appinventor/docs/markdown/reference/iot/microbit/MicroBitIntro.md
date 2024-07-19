@@ -1,35 +1,37 @@
 ---
-title: Platform BBC micro:bit
+title: BBC micro:bit 平台
 layout: documentation
-description: Platform BBC micro:bit。
+description: BBC micro:bit 平台。micro:bit 是 BBC 的一个计算平台。它是一个用于开发各种项目的开放平台，可由许多不同的平台进行编程。App Inventor 构建了一组扩展集合，允许使用 App Inventor 创建App与 micro:bit 进行交互。
 ---
 
-# Platform: BBC micro:bit
+[&laquo; 返回首页](../index.html)
 
-<h3>Please note: Some of the tutorials in the Microbit may be outdated, resulting in non-functioning apps. We are currently creating new Internet of Things components and tutorials for Microbit. For specific technical questions, search or post on our [community discussion forum](https://community.appinventor.mit.edu/). -- The App Inventor Team 3/31/22</h3>
+# 平台: BBC micro:bit
 
-The micro:bit is a computing platform from the BBC. It is an open platform for developing all manner of projects and is programmable by many different editors, including a <a href="https://pxt.microbit.org" target="_blank" rel="nofollow">blocks editor</a> provided by Microsoft. Learn more about the micro:bit at the <a rel="nofollow" href="http://microbit.org/about/" target="_blank">Micro:bit Educational Foundation's website</a>.
+micro:bit 是 BBC 的一个计算平台。它是一个用于开发各种项目的开放平台，可由许多不同的平台进行编程。
 
-<a href="assets/com.bbc.microbit.profile.aix">Download the BBC micro:bit extension</a> (version 20200518)
+最新 BBC micro:bit AppInventor2 拓展下载：
 
-<div style="text-align: center; font-size: 75%; margin: 16pt 0;">
+{:.vip}
+[com.bbc.microbit.profile.aix](assets/com.bbc.microbit.profile.aix) (version 20200518)
 
+{:.figure}
 ![micro:bit Front Image](assets/microbit-front.png)
 ![micro:bit Back Image](assets/microbit-back.png)
 
-<br>
+{:.caption}
+图片来源: 
+[关于 | micro:bit](http://microbit.org/about/)
 
-Image source: [About | micro:bit](http://microbit.org/about/)
+<br/>
 
-</div>
+App Inventor 构建了一组扩展集合，允许使用 App Inventor 创建App与 micro:bit 进行交互。micro:bit 扩展如下，每个扩展均有文档链接：
 
-MIT App Inventor has built a set of extensions to allow apps created with MIT App Inventor to interact with a micro:bit. The micro:bit extensions are listed below, with links to documentation for each:
-
-* [Microbit_Accelerometer](#/microbit/microbitaccelerometer) - access the micro:bit's onboard accelerometer.
-* [Microbit_Button](#/microbit/microbitbutton) - receive messages when the micro:bit's buttons are pressed.
-* [Microbit_Io\_Pin](#/microbit/microbitiopin) - configure the onboard pins of the micro:bit and read analog and digital values from the pins and write both analog and digital values to the pins.
-* [Microbit_Io\_Pin\_Simple](#/microbit/microbitiopinsimple) - a simpler interface to interact with the micro:bit's onboard pins.
-* [Microbit_Led](#/microbit/microbitled) - print strings and custom images to the micro:bit's LED matrix.
-* [Microbit_Magnetometer](#/microbit/microbitmagnetometer) - get heading/bearing information from the micro:bit.
-* [Microbit_Temperature](#/microbit/microbittemperature) - get external temperature readings (in degrees Celsius) from the micro:bit.
-* [Microbit_Uart\_Simple](#/microbit/microbituart) - send and receive messages using the software serial port (UART) interface for the micro:bit. This can be used to send messages to custom software installed on the micro:bit.
+* [Microbit_Accelerometer](MicroBitAccelerometer.html) - 访问 micro:bit 的板载加速度传感器。
+* [Microbit_Button](MicroBitButton.html) - 按下 micro:bit 的按钮时接收消息。
+* [Microbit_Io\_Pin](MicroBitIoPin.html) - 配置 micro:bit 的板载引脚，从引脚读取模拟值和数字值，并将模拟值和数字值写入引脚。
+* [Microbit_Io\_Pin\_Simple](MicroBitIoPinSimple.html) - 与 micro:bit 板载引脚交互的更简单的接口。
+* [Microbit_Led](MicroBitLed.html) - 将字符串和自定义图像打印到 micro:bit 的 LED 矩阵。
+* [Microbit_Magnetometer](MicroBitMagnetometer.html) - 从 micro:bit 获取航向/方位信息。
+* [Microbit_Temperature](MicroBitTemperature.html) - 从 micro:bit 获取外部温度读数（以摄氏度为单位）。
+* [Microbit_Uart\_Simple](MicroBitUart.html) - 使用 micro:bit 的软件串行端口 (UART) 接口发送和接收消息。这可用于将消息发送到 micro:bit 上安装的自定义软件。

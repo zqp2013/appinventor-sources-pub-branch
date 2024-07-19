@@ -1,4 +1,15 @@
-# Microbit\_Accelerometer
+---
+title: Microbit 加速度传感器
+layout: documentation
+description: Microbit 加速度传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit 加速度传感器
 
 The <code>Microbit_Accelerometer</code> component lets users configure the BBC micro:bit's on-board accelerometer and receive one or more accelerometer samples via the appropriate methods.<br>
 

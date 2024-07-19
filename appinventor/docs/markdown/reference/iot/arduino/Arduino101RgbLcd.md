@@ -1,3 +1,14 @@
+---
+title: Arduino101 RGB LCD
+layout: documentation
+description: Arduino101 RGB LCD。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
 # Arduino101RgbLcd
 
 The Arduino 101 RGB LCD lets users communicate information on a liquid crystal display (LCD) with optional RGB LED backlight.<br><img src='/assets/sensors/Grove-RGBLCD.jpg' width='50%'><br><strong>Note:</strong> The RGB LCD display requires 5V power rather than 3.3V. If you areconnecting it with the Grove Shield, you will need to make sure the voltage switch is in the 5V position otherwise the display may not function correctly.<br>

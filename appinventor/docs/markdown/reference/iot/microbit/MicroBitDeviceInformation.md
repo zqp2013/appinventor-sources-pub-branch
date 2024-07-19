@@ -1,4 +1,15 @@
-# Microbit\_Device\_Information
+---
+title: Microbit 设备信息
+layout: documentation
+description: Microbit 设备信息。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Device Information：设备信息
 
 The <code>Microbit_Device_Information</code> extension provides App Inventor with information about Microbit, including Firmware version, Manufacturer name and serial number, etc.
 

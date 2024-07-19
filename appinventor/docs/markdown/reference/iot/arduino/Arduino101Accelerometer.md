@@ -1,4 +1,15 @@
-# Arduino101Accelerometer
+---
+title: Arduino101 加速度传感器
+layout: documentation
+description: Arduino101 加速度传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101 加速度传感器
 
 The Arduino101Accelerometer component lets users configure the Arduino 101's on-board accelerometer and receive one or more accelerometer samples via the appropriate methods.<br>
 

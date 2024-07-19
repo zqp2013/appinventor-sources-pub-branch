@@ -1,3 +1,14 @@
+---
+title: Arduino101 LED
+layout: documentation
+description: Arduino101 LED。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
 # Arduino101Led
 
 The Arduino LED component lets users control light-emitting diodes (LEDs) from their App Inventor projects. If the LED is plugged into a pin supporting pulse width modulation (PWM), then the LED's brightness can be controlled by varying the Intensity property. TurnOn and TurnOff methods are used to control the power state of the LED.<br>

@@ -1,4 +1,15 @@
-# Arduino101Moisture
+---
+title: Arduino101 湿度传感器
+layout: documentation
+description: Arduino101 湿度传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101Moisture 湿度传感器
 
 The Arduino 101 Moisture Sensor lets users receive data from a moisture sensor attached to the Arduino, however it can be used for any similar device that provides a linear analog signal based on some external phenomenon.<br>
 

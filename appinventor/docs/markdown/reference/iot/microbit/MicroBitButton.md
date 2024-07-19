@@ -1,4 +1,15 @@
-# Microbit\_Button
+---
+title: Microbit 按钮
+layout: documentation
+description: Microbit 按钮。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit 按钮
 
 The <code>Microbit_Button</code> extension provides App Inventor with information about the state of the BBC micro:bit's buttons. Developers can use this extension to request updates for when a user presses a button or read the current state of the buttons. The buttons have three states:<br>
 <ul><li>0 - up</li><li>1 - down</li><li>2 - long pressed</li></ul>

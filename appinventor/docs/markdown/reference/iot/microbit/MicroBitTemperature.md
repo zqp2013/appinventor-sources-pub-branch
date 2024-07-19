@@ -1,4 +1,15 @@
-# Microbit\_Temperature
+---
+title: Microbit 温度传感器
+layout: documentation
+description: Microbit 温度传感器。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Temperature：温度传感器
 
 The <code>Microbit_Temperature</code> sensor provides App Inventor users with the ability to configure the BBC micro:bit's on-board temperature sensor and receive one or more temperature samples via the appropriate methods.<br>
 

@@ -1,4 +1,15 @@
-# Microbit\_Io\_Pin\_Simple
+---
+title: Microbit 板载引脚交互的更简单的接口
+layout: documentation
+description: Microbit 板载引脚交互的更简单的接口。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Io Pin Simple：板载引脚交互的更简单的接口
 
 The <code>Microbit_Io_Pin</code> component lets users configure the BBC micro:bit's analog pins for input and output, and to read, write, and request notifications for the I/O pin states.
 

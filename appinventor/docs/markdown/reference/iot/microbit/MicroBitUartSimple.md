@@ -1,4 +1,15 @@
-# Microbit\_Uart\_Simple
+---
+title: Microbit Uart Simple
+layout: documentation
+description: Microbit Uart Simple。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Uart Simple
 
 The <code>Microbit_Uart_Simple</code> sensor provides the ability to read from and write strings to the BBC micro:bit's serial UART port.
 

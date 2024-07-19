@@ -1,4 +1,15 @@
-# Arduino101Servo
+---
+title: Arduino101 伺服
+layout: documentation
+description: Arduino101 伺服。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](Arduino101Intro.html)
+
+# Arduino101Servo 伺服
 
 The Arduino 101 Servo extension lets users remotely control servos connected toan Arduino 101.<br>
 

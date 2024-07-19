@@ -1,4 +1,15 @@
-# Microbit\_Io\_Pin
+---
+title: Microbit 板载引脚
+layout: documentation
+description: Microbit 板载引脚。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Io Pin：板载引脚
 
 The <code>Microbit_Io_Pin</code> component lets users configure the BBC micro:bit's analog pins for input and output, and to read, write, and request notifications for the I/O pin states.
 

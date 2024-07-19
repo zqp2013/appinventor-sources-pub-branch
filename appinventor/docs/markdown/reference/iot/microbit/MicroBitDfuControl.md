@@ -1,4 +1,15 @@
-# Microbit\_Dfu\_Control
+---
+title: Microbit Dfu Control
+layout: documentation
+description: Microbit Dfu Control。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Dfu Control
 
 Component for Microbit_Dfu_Control
 

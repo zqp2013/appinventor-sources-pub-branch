@@ -1,4 +1,15 @@
-# Microbit\_Generic\_Attribute
+---
+title: Microbit Generic Attribute
+layout: documentation
+description: Microbit Generic Attribute。
+---
+
+* TOC
+{:toc}
+
+[&laquo; 返回首页](MicroBitIntro.html)
+
+# Microbit Generic Attribute
 
 Component for Microbit_Generic_Attribute
 
