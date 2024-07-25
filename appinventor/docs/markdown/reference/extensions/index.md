@@ -47,7 +47,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 
 ### UI界面
 
-1. [【UI】NotificatioStyle 拓展：个性化通知栏样式](https://github.com/jarlisson2/NotificationStyleAIX)
+1. [【UI】<img src="NotificationStyle/icon.png" style="width:16px;margin:-4px 5px 0 0">NotificationStyle 拓展：个性化通知栏样式](NotificationStyle.html)
 1. [【UI】<img src="WordCloud/icon.png" style="width:16px;margin:-4px 5px 0 0">WordCloud 拓展：免费且酷炫的词云效果](word_cloud.html)
 1. [【UI】<img src="navbar/BubbleTabBar.png" style="width:16px;margin:-4px 5px 0 0">BubbleTabBar 拓展：打造个性化酷炫的底部导航条](navbar.html)
 1. [【UI】ScrollArrangementHandler 滚动布局管理器拓展：同一屏幕内页面切换效果](https://bbs.tsingfun.com/thread-1632-1-1.html)
