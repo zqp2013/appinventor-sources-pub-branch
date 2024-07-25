@@ -14,6 +14,7 @@ description: App Inventor 2 NotificationStyle 拓展：个性化通知栏样式�
 
 通知栏样式各种效果展示：
 
+<iframe width="360" height="720" src="//player.bilibili.com/player.html?bvid=BV1vi421h7Gq&high_quality=1&autoplay=0" frameborder="no" allowfullscreen="true"></iframe>
 
 apk 体验包下载：
 
