@@ -246,234 +246,191 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
   __参数__:
 
   * <code>address</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       目标设备的 MAC 地址，格式为`12:34:56:78:90:ab`。
+       目标设备的 MAC 地址，格式为`12:34:56:78:90:ab`
 
 + <a name="Disconnect"></a>`Disconnect` – 如果BLE设备已连接，则断开当前的设备连接。
 
   ![call BluetoothLE1 Disconnect](assets/BluetoothLE.Disconnect.svg)
 
-+ <a name="DisconnectWithAddress"></a>`DisconnectWithAddress` – Disconnects from a connected BluetoothLE device with the given address.
++ <a name="DisconnectWithAddress"></a>`DisconnectWithAddress` – 断开指定MAC地址的已连接的BLE设备。
 
   ![call BluetoothLE1 DisconnectWithAddressaddress](assets/BluetoothLE.DisconnectWithAddress.svg)
 
   __参数__:
 
   * <code>address</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The Media Access Control (MAC) address of the device to disconnect, of the form "12:34:56:78:90:ab"
+       要断开连接的设备MAC地址，格式为`12:34:56:78:90:ab`
 
-+ <a name="FoundDeviceAddress"></a>`FoundDeviceAddress` – Gets the Media Access Control (MAC) address of the found device at the given index in the
- device list. Index specifies the position in the BluetoothLE device list, starting from 1.
++ <a name="FoundDeviceAddress"></a>`FoundDeviceAddress` – 获取设备列表中指定索引处设备的MAC地址。索引为BLE设备列表中的位置，从 1 开始。
 
   ![call BluetoothLE1 FoundDeviceAddressindex](assets/BluetoothLE.FoundDeviceAddress.svg)
 
   __参数__:
 
   * <code>index</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
-       The index of the desired device, which must be between 1 and the length of the device list.
+       已发现设备索引，必须介于 1 和设备列表的长度之间。
 
-+ <a name="FoundDeviceName"></a>`FoundDeviceName` – Gets the name of the found device at the given index in the device list.
++ <a name="FoundDeviceName"></a>`FoundDeviceName` – 获取设备列表中指定索引处设备的名称。
 
   ![call BluetoothLE1 FoundDeviceNameindex](assets/BluetoothLE.FoundDeviceName.svg)
 
   __参数__:
 
   * <code>index</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
-       The index of the desired device, which must be between 1 and the length of the device list.
+       已发现设备索引，必须介于 1 和设备列表的长度之间。
 
-+ <a name="FoundDeviceRssi"></a>`FoundDeviceRssi` – Gets the Received Signal Strength Indicator (RSSI) of the found device at the given index.
- The returned value will be between -100 and 0 indicating the strength of the connection.
++ <a name="FoundDeviceRssi"></a>`FoundDeviceRssi` –获取设备列表中指定索引处设备的接收信号强度指示 (RSSI)。返回值将介于 -100 和 0 之间，表示连接强度。
 
   ![call BluetoothLE1 FoundDeviceRssiindex](assets/BluetoothLE.FoundDeviceRssi.svg)
 
   __参数__:
 
   * <code>index</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
-       The index of the desired device, which must be between 1 and the length of the device list.
+       已发现设备索引，必须介于 1 和设备列表的长度之间。
 
-+ <a name="GetCharacteristicsForService"></a>`GetCharacteristicsForService` – Returns the list of supported characteristics for the given service. The list will contain
- (UUID, name) pairs for each characteristic provided by the service UUID.
++ <a name="GetCharacteristicsForService"></a>`GetCharacteristicsForService` – 返回指定服务所支持的特征列表。该列表包含服务UUID 提供的每个特征的 (UUID, 名称) 键值对。
 
   ![call BluetoothLE1 GetCharacteristicsForServiceserviceUuid](assets/BluetoothLE.GetCharacteristicsForService.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
 
-+ <a name="ReadBytes"></a>`ReadBytes` – Reads one or more 8-bit integer values from a connected BluetoothLE device. Service Unique ID
- and Characteristic UniqueID are required. The <code>signed</code> parameter indicates whether
- the bytes should be interpreted as signed values or not when being converted into App Inventor
- numbers. After the bytes are read, the <a href="#BytesReceived"><code>BytesReceived</code></a>
- event will be run.
++ <a name="ReadBytes"></a>`ReadBytes` – 从连接的BLE设备中读取一个或多个 8-bit （1 字节）整型值。服务UUID和特征UUID是必需的。<code>signed</code> 参数指示在转换为 App Inventor数字 时是否应将字节解释为有符号值。读取字节后，将触发 <a href="#BytesReceived"><code>BytesReceived</code></a> 事件。
 
   ![call BluetoothLE1 ReadBytesserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.ReadBytes.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the bytes as signed (true) or unsigned (false).
+       将字节解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="ReadConnectedRssi"></a>`ReadConnectedRssi` – Initiates a read of the connected device's Received Signal Strength Indicator (RSSI). The
- resulting value will be reported via the RssiChanged event.
++ <a name="ReadConnectedRssi"></a>`ReadConnectedRssi` – 启动对已连接设备的接收信号强度指示 (RSSI) 的读取。结果值将通过 <a href="#RssiChanged"><code>RssiChanged</code></a> 事件中参数给出。
 
   ![call BluetoothLE1 ReadConnectedRssi](assets/BluetoothLE.ReadConnectedRssi.svg)
 
-+ <a name="ReadFloats"></a>`ReadFloats` – Reads one or more IEEE 754 floating point numbers from a connected BluetoothLE device. Service Unique ID
- and Characteristic UniqueID are required. The <code>shortFloat</code> parameter indicates whether
- the floats are either 16-bit half-precision floating point or 32-bit single precision floating point
- numbers. After the floats are read, the <a href="#FloatsReceived"><code>FloatsReceived</code></a>
- event will be run.
++ <a name="ReadFloats"></a>`ReadFloats` – 从连接的BLE设备读取一个或多个 IEEE 754 浮点数。服务UUID和特征UUID是必需的。<code>shortFloat</code> 参数指示浮点数是 16 位半精度浮点数还是 32 位单精度浮点数。读取浮点数后，将触发 <a href="#FloatsReceived"><code>FloatsReceived</code></a> 事件。
 
   ![call BluetoothLE1 ReadFloatsserviceUuidcharacteristicUuidshortFloat](assets/BluetoothLE.ReadFloats.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>shortFloat</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the floats as 16-bit half-precision (true) or 32-bit single-precision (false).
+       将浮点数解释为 16 位半精度（`真`）或 32 位单精度（`假`）。
 
-+ <a name="ReadIntegers"></a>`ReadIntegers` – Reads one or more 32-bit integer values from a connected BluetoothLE device. Service Unique ID
- and Characteristic UniqueID are required. The <code>signed</code> parameter indicates whether
- the integers should be interpreted as signed values or not when being converted into App Inventor
- numbers. After the integers are read, the
- <a href="#IntegersReceived"><code>IntegersReceived</code></a> event will be run.
++ <a name="ReadIntegers"></a>`ReadIntegers` – 从连接的BLE设备读取一个或多个 32-bit （4 字节）整型值。服务UUID和特征UUID是必需的。<code>signed</code> 参数指示在转换为 App Inventor数字 时是否应将整数解释为有符号值。读取整数后，将触发 <a href="#IntegersReceived"><code>IntegersReceived</code></a> 事件。
 
   ![call BluetoothLE1 ReadIntegersserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.ReadIntegers.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the integers as signed (true) or unsigned (false).
+       将整型值解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="ReadShorts"></a>`ReadShorts` – Reads one or more 16-bit integer values from a connected BluetoothLE device. Service Unique ID
- and Characteristic UniqueID are required. The <code>signed</code> parameter indicates whether
- the shorts should be interpreted as signed values or not when being converted into App Inventor
- numbers. After the shorts are read, the <a href="#ShortsReceived"><code>ShortsReceived</code></a>
- event will be run.
++ <a name="ReadShorts"></a>`ReadShorts` – 从连接的BLE设备读取一个或多个 16-bit （2 字节）短整型值。服务UUID和特征UUID是必需的。<code>signed</code> 参数指示在转换为 App Inventor数字 时是否应将 short短整型值 解释为有符号值。读取 short短整型值 后，将触发 <a href="#ShortsReceived"><code>ShortsReceived</code></a>
+事件。
 
   ![call BluetoothLE1 ReadShortsserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.ReadShorts.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the shorts as signed (true) or unsigned (false).
+       将短整型值解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="ReadStrings"></a>`ReadStrings` – Reads one or more null-terminated strings from a connected BluetoothLE device. Service Unique ID
- and Characteristic Unique ID are required. The <code>utf16</code> parameter indicates whether
- the content should be decoded as UTF-16 (true) or UTF-8 (false) code points when converting to
- App Inventor strings. After the strings are read, the
- <a href="#StringsReceived"><code>StringsReceived</code></a> event will be run.
++ <a name="ReadStrings"></a>`ReadStrings` – 从连接的BLE设备读取一个或多个 以`\0`空字节结尾的字符串。服务UUID和特征UUID是必需的。<code>utf16</code> 参数指示在转换为 App Inventor字符串 时是否应将内容解码为 UTF-16（`真`）或 UTF-8（`假`）编码格式。读取字符串后，将触发 <a href="#StringsReceived"><code>StringsReceived</code></a> 事件。
 
   ![call BluetoothLE1 ReadStringsserviceUuidcharacteristicUuidutf16](assets/BluetoothLE.ReadStrings.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>utf16</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the string content as UTF-16 (true) or UTF-8 (false) code points.
+       将字符串内容解释为 UTF-16（`真`）或 UTF-8（`假`）编码格式。
 
-+ <a name="RegisterForBytes"></a>`RegisterForBytes` – Registers to receive updates when one or more 8-bit integer values from a connected BluetoothLE
- device are changed. Service Unique ID and Characteristic Unique ID are required. The
- <code>signed</code> parameter indicates whether the bytes should be interpreted as signed
- values or not when being converted into App Inventor numbers. Whenever a change is received,
- the <a href="#BytesReceived"><code>BytesReceived</code></a> event will be run.
++ <a name="RegisterForBytes"></a>`RegisterForBytes` – 注册用以在已连接BLE设备的一个或多个 8-bit（单字节）整型值发生变化时接收更新。服务UID 和特性UUID 是必需的。<code>signed</code> 参数指示在转换为 App Inventor数字 时是否应将字节解释为有符号值。每当收到更改时，将触发 <a href="#BytesReceived"><code>BytesReceived</code></a> 事件。
 
   ![call BluetoothLE1 RegisterForBytesserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.RegisterForBytes.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the bytes as signed (true) or unsigned (false).
+       将字节解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="RegisterForFloats"></a>`RegisterForFloats` – Registers to receive updates when one or more IEEE 754 floating point numbers from a connected
- BluetoothLE device are changed. Service Unique ID and Characteristic Unique ID are required. The
- <code>shortFloat</code> parameter indicates whether the floats are either 16-bit half-precision
- floating point or 32-bit single precision floating point numbers. Whenever a change is received,
- the <a href="#FloatsReceived"><code>FloatsReceived</code></a> event will be run.
++ <a name="RegisterForFloats"></a>`RegisterForFloats` – 注册用以在已连接BLE设备的一个或多个 IEEE 754 浮点数发生变化时接收更新。服务UID 和特性UUID 是必需的。<code>shortFloat</code> 参数指示浮点数是 16 位半精度浮点数还是 32 位单精度浮点数。每当收到更改时，就会触发 <a href="#FloatsReceived"><code>FloatsReceived</code></a> 事件。
 
   ![call BluetoothLE1 RegisterForFloatsserviceUuidcharacteristicUuidshortFloat](assets/BluetoothLE.RegisterForFloats.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>shortFloat</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the floats as 16-bit half-precision (true) or 32-bit single-precision (false).
+       将浮点数解释为 16 位半精度（`真`）或 32 位单精度（`假`）。
 
-+ <a name="RegisterForIntegers"></a>`RegisterForIntegers` – Registers to receive updates when one or more 32-bit integer values from a connected BluetoothLE
- device are changed. Service Unique ID and Characteristic Unique ID are required. The
- <code>signed</code> parameter indicates whether the integers should be interpreted as signed
- values or not when being converted into App Inventor numbers. Whenever a change is received,
- the <a href="#IntegersReceived"><code>IntegersReceived</code></a> event will be run.
++ <a name="RegisterForIntegers"></a>`RegisterForIntegers` – 注册用以在已连接BLE设备的一个或多个 32-bit （4 字节）整型值发生变化时接收更新。服务UID 和特性UUID 是必需的。<code>signed</code> 参数指示在将整数转换为 App Inventor数字 时是否应将其解释为有符号值。每当收到更改时，都会触发 <a href="#IntegersReceived"><code>IntegersReceived</code></a> 事件。
 
   ![call BluetoothLE1 RegisterForIntegersserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.RegisterForIntegers.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the integers as signed (true) or unsigned (false).
+       将整型值解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="RegisterForShorts"></a>`RegisterForShorts` – Registers to receive updates when one or more 16-bit integer values from a connected BluetoothLE
- device are changed. Service Unique ID and Characteristic Unique ID are required. The
- <code>signed</code> parameter indicates whether the shorts should be interpreted as signed
- values or not when being converted into App Inventor numbers. Whenever a change is received,
- the <a href="#ShortsReceived"><code>ShortsReceived</code></a> event will be run.
++ <a name="RegisterForShorts"></a>`RegisterForShorts` – 注册用以在已连接BLE设备的一个或多个 16-bit （2 字节）短整型值发生变化时接收更新。服务UID 和特性UUID 是必需的。<code>signed</code> 参数指示在转换为 App Inventor数字 时是否应将 short短整型值 解释为有符号值。每当收到更改时，就会触发 <a href="#ShortsReceived"><code>ShortsReceived</code></a> 事件。
 
   ![call BluetoothLE1 RegisterForShortsserviceUuidcharacteristicUuidsigned](assets/BluetoothLE.RegisterForShorts.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the shorts as signed (true) or unsigned (false).
+       将短整型值解释为有符号（`真`）或无符号（`假`）。
 
-+ <a name="RegisterForStrings"></a>`RegisterForStrings` – Registers to receive updates when one or more null-terminated strings from a connected
- BluetoothLE device are changed. Service Unique ID and Characteristic Unique ID are required. The
- <code>utf16</code> parameter indicates whether the content should be decoded as UTF-16 (true)
- or UTF-8 (false) code points when converting to App Inventor strings. Whenever a change is
- received, the <a href="#StringsReceived"><code>StringsReceived</code></a> event will be run.
++ <a name="RegisterForStrings"></a>`RegisterForStrings` – 注册用以在已连接BLE设备的一个或多个 以`\0`空字节结尾的字符串 发生更改时接收更新。服务UID 和特性UUID 是必需的。<code>utf16</code> 参数指示在转换为 App Inventor字符串 时是否应将内容解码为 UTF-16（`真`）或 UTF-8（`假`）编码格式。每当收到更改时，都会触发 <a href="#StringsReceived"><code>StringsReceived</code></a> 事件。
 
   ![call BluetoothLE1 RegisterForStringsserviceUuidcharacteristicUuidutf16](assets/BluetoothLE.RegisterForStrings.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>utf16</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the string content as UTF-16 (true) or UTF-8 (false) code points.
+       将字符串内容解释为 UTF-16（`真`）或 UTF-8（`假`）编码格式。
 
 + <a name="RequestMTU"></a>`RequestMTU` – 为 BluetoothLE 连接请求新的最大传输单元 (MTU)。此功能仅在两个设备都支持蓝牙 4.2 或更高版本时才受支持。如果 MTU 更改成功，则 [MTUChanged](#MTUChanged) 事件将被触发。默认 MTU 为 20。
 
@@ -487,512 +444,406 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 
   __参数__:
 
-  * <code>bytes</code> (<a href="">_number_</a>) &mdash;
+  * <code>bytes</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
      期望的 MTU 大小（单位：字节）。
 
-+ <a name="ScanAdvertisements"></a>`ScanAdvertisements` – Scans for advertising Bluetooth low energy devices.
++ <a name="ScanAdvertisements"></a>`ScanAdvertisements` – 扫描广播BLE设备。
 
   ![call BluetoothLE1 ScanAdvertisementsscanPeriod](assets/BluetoothLE.ScanAdvertisements.svg)
 
   __参数__:
 
   * <code>scanPeriod</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
-       The amount of time to spend scanning, in milliseconds.
+       扫描所需的时间（单位：毫秒 ms）。
 
-+ <a name="ScanForDevice"></a>`ScanForDevice` – Scans for a particular type of device. The device component must implement
- the BLEDevice interface in order for this method to work.
++ <a name="ScanForDevice"></a>`ScanForDevice` – 扫描特定类型的设备。设备组件必须实现 BLEDevice 接口才能使此方法正常工作。
 
   ![call BluetoothLE1 ScanForDevicedevice](assets/BluetoothLE.ScanForDevice.svg)
 
   __参数__:
 
   * <code>param</code> (<a href="">_component_</a>) &mdash;
-     A component block that expects a particular service.
+     需要特定服务的组件块。
 
-+ <a name="ScanForService"></a>`ScanForService` – Scans for devices advertising a particular Bluetooth low energy service
- by UUID.
++ <a name="ScanForService"></a>`ScanForService` – 通过服务UUID扫描 广播特定BLE服务 的设备。
 
   ![call BluetoothLE1 ScanForServiceserviceUuid](assets/BluetoothLE.ScanForService.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-     The unique identifier of the service being broadcast by the device(s)
-     of interest.
+     目标BLE设备的广播服务UUID。
 
-+ <a name="ServiceByIndex"></a>`ServiceByIndex` – Returns the Unique ID of the service at the given index in the service list.
++ <a name="ServiceByIndex"></a>`ServiceByIndex` – 返回服务列表中给定索引处的服务UUID。
 
   ![call BluetoothLE1 ServiceByIndexindex](assets/BluetoothLE.ServiceByIndex.svg)
 
   __参数__:
 
   * <code>index</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
-       The index of the desired service, which must be between 1 and the length of the service list.
+       所需服务的索引，必须介于 1 和服务列表的长度之间。
 
-+ <a name="StartAdvertising"></a>`StartAdvertising` – Creates and publishes a Bluetooth low energy advertisement.
++ <a name="StartAdvertising"></a>`StartAdvertising` – 创建并发布蓝牙低功耗广播。
 
   ![call BluetoothLE1 StartAdvertisinginDataserviceUuid](assets/BluetoothLE.StartAdvertising.svg)
 
   __参数__:
 
   * <code>inData</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The data to be included in the service advertisement.
+       要包含在服务广播中的数据。
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
 
-+ <a name="StartScanning"></a>`StartScanning` – Starts scanning for Bluetooth low energy devices.
-
-  ![call BluetoothLE1 StartScanning](assets/BluetoothLE.StartScanning.svg)
-
-+ <a name="StopAdvertising"></a>`StopAdvertising` – Stops Bluetooth low energy advertisement from a previous call to
- <a href="#StartAdvertising"><code>StartAdvertising</code></a>.
++ <a name="StopAdvertising"></a>`StopAdvertising` – 停止蓝牙低功耗广播（之前调用 <a href="#StartAdvertising"><code>StartAdvertising</code></a> 的广播）。
 
   ![call BluetoothLE1 StopAdvertising](assets/BluetoothLE.StopAdvertising.svg)
 
-+ <a name="StopScanning"></a>`StopScanning` – Stops scanning for Bluetooth low energy devices.
++ <a name="StartScanning"></a>`StartScanning` – 开始扫描蓝牙低功耗设备。
+
+  ![call BluetoothLE1 StartScanning](assets/BluetoothLE.StartScanning.svg)
+
++ <a name="StopScanning"></a>`StopScanning` – 停止扫描蓝牙低功耗设备。
 
   ![call BluetoothLE1 StopScanning](assets/BluetoothLE.StopScanning.svg)
 
-+ <a name="StopScanningAdvertisements"></a>`StopScanningAdvertisements` – Stops scanning for Bluetooth low energy advertisements.
++ <a name="StopScanningAdvertisements"></a>`StopScanningAdvertisements` – 停止扫描蓝牙低功耗广播。
 
   ![call BluetoothLE1 StopScanningAdvertisements](assets/BluetoothLE.StopScanningAdvertisements.svg)
 
-+ <a name="SupportedCharacteristics"></a>`SupportedCharacteristics` – Returns a list of supported characteristic for the connected device as a string.
++ <a name="SupportedCharacteristics"></a>`SupportedCharacteristics` – 以字符串形式返回所连接设备支持的特征列表。
 
   ![call BluetoothLE1 SupportedCharacteristics](assets/BluetoothLE.SupportedCharacteristics.svg)
 
-+ <a name="SupportedServices"></a>`SupportedServices` – Returns the list of supported service for the connected device as a string.
++ <a name="SupportedServices"></a>`SupportedServices` – 以字符串形式返回所连接设备支持的服务列表。
 
   ![call BluetoothLE1 SupportedServices](assets/BluetoothLE.SupportedServices.svg)
 
-+ <a name="UnregisterForValues"></a>`UnregisterForValues` – Unregisters for updates from the given service and characteristic.
++ <a name="UnregisterForValues"></a>`UnregisterForValues` – 取消注册指定的服务和特征的更新。
 
   ![call BluetoothLE1 UnregisterForValuesservice_uuidcharacteristic_uuid](assets/BluetoothLE.UnregisterForValues.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
 
-+ <a name="WriteBytes"></a>`WriteBytes` – Writes one or more 8-bit integer values to a connected BluetoothLE device. Service Unique ID
- and Characteristic Unique ID are required. The values parameter can either be a single numeric
- value or a list of values. If <code>signed</code> is true, the acceptable values are
- between -128 and 127. If <code>signed</code> is false, the acceptable values are
- between 0 and 255.
++ <a name="WriteBytes"></a>`WriteBytes` – 将一个或多个 8-bit 整数值写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -128 和 127 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 255 之间。
 
   ![call BluetoothLE1 WriteBytesserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteBytes.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the bytes as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将字节解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteBytesWithResponse"></a>`WriteBytesWithResponse` – Writes one or more 8-bit integer values to a connected BluetoothLE device and waits for an
- acknowledgement via the <a href="#BytesWritten"><code>BytesWritten</code></a> event.
- Service Unique ID and Characteristic Unique ID are required. The values parameter can either
- be a single numeric value or a list of values. If <code>signed</code> is true, the acceptable
- values are between -128 and 127. If <code>signed</code> is false, the acceptable values are
- between 0 and 255.
++ <a name="WriteBytesWithResponse"></a>`WriteBytesWithResponse` – 将一个或多个 8-bit 整数值写入已连接的BLE设备，并等待通过 <a href="#BytesWritten"><code>BytesWritten</code></a> 事件确认。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -128 和 127 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 255 之间。
 
   ![call BluetoothLE1 WriteBytesWithResponseserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteBytesWithResponse.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the bytes as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将字节解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteFloats"></a>`WriteFloats` – Writes one or more IEEE 754 floating point numbers to a connected BluetoothLE device. Service Unique ID
- and Characteristic Unique ID are required. The values parameter can either be a single numeric
- value or a list of values. If <code>shortFloat</code> is true, then each numeric value will be
- compressed to fit into a 16-bit half-precision floating point value. If <code>shortFloat</code>
- is false, then each numeric value will be sent as a 32-bit single precision floating point value.
++ <a name="WriteFloats"></a>`WriteFloats` – 将一个或多个 IEEE 754 浮点数写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个浮点值 或 浮点值列表。如果 <code>shortFloat</code> 为`真`，则每个数值将被压缩以适合 16 位半精度浮点值。如果 <code>shortFloat</code> 为`假`，则每个数值将作为 32 位单精度浮点值发送。
 
   ![call BluetoothLE1 WriteFloatsserviceUuidcharacteristicUuidshortFloatvalues](assets/BluetoothLE.WriteFloats.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>shortFloat</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the floats as 16-bit half-precision (true) or 32-bit single-precision (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将浮点数解释为 16 位半精度（`真`）或 32 位单精度（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteFloatsWithResponse"></a>`WriteFloatsWithResponse` – Writes one or more IEEE 754 floating point values to a connected BluetoothLE device and waits for an
- acknowledgement via the <a href="#FloatsWritten"><code>FloatsWritten</code></a> event.
- Service Unique ID and Characteristic Unique ID are required. The values parameter can either
- be a single numeric value or a list of values. If <code>shortFloat</code> is false,
- then each numeric value will be sent as a 32-bit single precision floating point value.
++ <a name="WriteFloatsWithResponse"></a>`WriteFloatsWithResponse` – 将一个或多个 IEEE 754 浮点值写入已连接的BLE设备，并等待通过 <a href="#FloatsWritten"><code>FloatsWritten</code></a> 事件确认。服务UID 和特性UUID 是必需的。参数可以是 单个浮点值 或 浮点值列表。如果 <code>shortFloat</code> 为`假`，则每个数值将作为 32 位单精度浮点值发送。
 
   ![call BluetoothLE1 WriteFloatsWithResponseserviceUuidcharacteristicUuidshortFloatvalues](assets/BluetoothLE.WriteFloatsWithResponse.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>shortFloat</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the floats as 16-bit half-precision (true) or 32-bit single-precision (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将浮点数解释为 16 位半精度（`真`）或 32 位单精度（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteIntegers"></a>`WriteIntegers` – Writes one or more 32-bit integer values to a connected BluetoothLE device. Service Unique ID
- and Characteristic Unique ID are required. The values parameter can either be a single numeric
- value or a list of values. If <code>signed</code> is true, the acceptable values are
- between -2147483648 and 2147483647. If <code>signed</code> is false, the acceptable values are
- between 0 and 4294967295.
++ <a name="WriteIntegers"></a>`WriteIntegers` – 将一个或多个 32 位整型值写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -2147483648 和 2147483647 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 4294967295 之间。
 
   ![call BluetoothLE1 WriteIntegersserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteIntegers.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the integers as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将整型值解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteIntegersWithResponse"></a>`WriteIntegersWithResponse` – Writes one or more 32-bit integer values to a connected BluetoothLE device and waits for an
- acknowledgement via the <a href="#IntegersWritten"><code>IntegersWritten</code></a> event.
- Service Unique ID and Characteristic Unique ID are required. The values parameter can either
- be a single numeric value or a list of values. If <code>signed</code> is true, the acceptable
- values are between -2147483648 and 2147483647. If <code>signed</code> is false, the acceptable
- values are between 0 and 4294967295.
++ <a name="WriteIntegersWithResponse"></a>`WriteIntegersWithResponse` – 将一个或多个 32 位整型值写入连接的BLE设备，并等待通过 <a href="#IntegersWritten"><code>IntegersWritten</code></a> 事件确认。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -2147483648 和 2147483647 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 4294967295 之间。
 
   ![call BluetoothLE1 WriteIntegersWithResponseserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteIntegersWithResponse.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the integers as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将整型值解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteShorts"></a>`WriteShorts` – Writes one or more 16-bit integer values to a connected BluetoothLE device. Service Unique ID
- and Characteristic Unique ID are required. The values parameter can either be a single numeric
- value or a list of values. If <code>signed</code> is true, the acceptable values are
- between -32768 and 32767. If <code>signed</code> is false, the acceptable values are
- between 0 and 65535.
-
++ <a name="WriteShorts"></a>`WriteShorts` – 将一个或多个 16 位短整型值写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -32768 和 32767 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 65535 之间。
   ![call BluetoothLE1 WriteShortsserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteShorts.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the shorts as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将短整型值解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteShortsWithResponse"></a>`WriteShortsWithResponse` – Writes one or more 16-bit integer values to a connected BluetoothLE device and waits for an
- acknowledgement via the <a href="#ShortsWritten"><code>ShortsWritten</code></a> event.
- Service Unique ID and Characteristic Unique ID are required. The values parameter can either
- be a single numeric value or a list of values. If <code>signed</code> is true, the acceptable
- values are between -32768 and 32767. If <code>signed</code> is false, the acceptable values
- are between 0 and 65535.
++ <a name="WriteShortsWithResponse"></a>`WriteShortsWithResponse` – 将一个或多个 16 位短整型值写入连接的BLE设备，并等待通过 <a href="#ShortsWritten"><code>ShortsWritten</code></a> 事件确认。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -32768 和 32767 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 65535 之间。
 
   ![call BluetoothLE1 WriteShortsWithResponseserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteShortsWithResponse.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>signed</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Interpret the shorts as signed (true) or unsigned (false).
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       将短整型值解释为有符号（`真`）或无符号（`假`）。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteStrings"></a>`WriteStrings` – Writes one or more strings to a connected BluetoothLE device. Service Unique ID and
- Characteristic Unique ID are required. The values parameter can either be a single string or a
- list of strings. If <code>utf16</code> is true, the string(s) will be sent using UTF-16 little
- endian encoding. If <code>utf16</code> is false, the string(s) will be sent using UTF-8
- encoding.
++ <a name="WriteStrings"></a>`WriteStrings` – 将一个或多个字符串写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个字符串 或 字符串列表。如果 <code>utf16</code> 为`真`，则将使用 UTF-16 小端序（little endian）编码发送字符串。如果 <code>utf16</code> 为`假`，则将使用 UTF-8 编码发送字符串。
 
   ![call BluetoothLE1 WriteStringsserviceUuidcharacteristicUuidutf16values](assets/BluetoothLE.WriteStrings.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>utf16</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Send the string encoded as UTF-16 little endian (true) or UTF-8 (false) code points.
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       发送以 UTF-16 小端序 (`真`) 或 UTF-8 (`假`) 编码的字符串。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
-+ <a name="WriteStringsWithResponse"></a>`WriteStringsWithResponse` – Writes one or more strings to a connected BluetoothLE device and waits for an acknowledgement
- via the <a href="#StringsWritten"><code>StringsWritten</code></a> event. Service Unique ID and
- Characteristic Unique ID are required. The values parameter can either be a single string or a
- list of values. If <code>utf16</code> is true, the string(s) will be sent using UTF-16 little
- endian encoding. If <code>utf16</code> is false, the string(s) will be sent using UTF-8
- encoding.
++ <a name="WriteStringsWithResponse"></a>`WriteStringsWithResponse` – 将一个或多个字符串写入已连接的BLE设备，并等待通过 <a href="#StringsWritten"><code>StringsWritten</code></a> 事件确认。服务UID 和特性UUID 是必需的。参数可以是 单个字符串 或 字符串列表。如果 <code>utf16</code> 为`真`，则将使用 UTF-16 小端序（little endian）编码发送字符串。如果 <code>utf16</code> 为`假`，则将使用 UTF-8 编码发送字符串。
 
   ![call BluetoothLE1 WriteStringsWithResponseserviceUuidcharacteristicUuidutf16values](assets/BluetoothLE.WriteStringsWithResponse.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>utf16</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
-       Send the string encoded as UTF-16 little endian (true) or UTF-8 (false) code points.
-  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values to write to the device.
+       发送以 UTF-16 小端序 (`真`) 或 UTF-8 (`假`) 编码的字符串。
+  * <code>values</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       要写入设备的值列表。
 
 ## 事件
 
-+ <a name="BytesReceived"></a>`BytesReceived` – The <code>BytesReceived</code> event is run when one or more byte values are received from a
- connected Bluetooth device. Depending on the <code>sign</code> parameter of the last call to
- <a href="#ReadBytes"><code>ReadBytes</code></a> or
- <a href="#RegisterForBytes"><code>RegisterForBytes</code></a> for the given
- <code>serviceUuid</code> and <code>characteristicUuid</code>, the <code>byteValues</code> list
- will contain numbers ranging from -128 to 127 (<code>signed = true</code>)
- or 0 to 255 (<code>signed = false</code>).
++ <a name="BytesReceived"></a>`BytesReceived` – 当从连接的蓝牙BLE设备接收到一个或多个字节值时，将触发该事件。根据上次调用 <a href="#ReadBytes"><code>ReadBytes</code></a> 或 <a href="#RegisterForBytes"><code>RegisterForBytes</code></a> 时给定的 <code>serviceUuid</code> 和 <code>characteristicUuid</code> 的 <code>sign</code> 参数，<code>byteValues</code> 列表将包含从 -128 到 127 (<code>signed = true</code>) 或 0 到 255 (<code>signed = false</code>) 的数字。
 
   ![when BluetoothLE1 BytesReceived serviceUuid characteristicUuid byteValues do](assets/BluetoothLE.BytesReceived.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
+       读取或注册调用中特征UUID。
   * <code>byteValues</code> (<a href="https://www.fun123.cn/reference/blocks/listsU.html#makealist">_list_</a>) &mdash;
-       A list of values read from the device. The range of each value will depend on the <code>sign</code> flag previously specified in the call to read or register.
+       从设备读取的值列表。每个值的范围取决于先前在读取或注册调用中指定的 <code>sign</code> 标志。
 
-+ <a name="BytesWritten"></a>`BytesWritten` – The <code>BytesWritten</code> event is run when one or more byte values are written to a
- connected Bluetooth device. <code>byteValues</code> will be a list of values actually written
- to the device. This may be different if the original input was too long to fit into a single
- transmission unit (typically 23 bytes).
++ <a name="BytesWritten"></a>`BytesWritten` – 当将一个或多个字节值写入连接的蓝牙设备时，将触发该事件。<code>byteValues</code> 将是实际写入设备的值列表。如果原始输入太长而无法放入单个传输单元（通常为 23 个字节），则情况可能会有所不同。
 
   ![when BluetoothLE1 BytesWritten serviceUuid characteristicUuid byteValues do](assets/BluetoothLE.BytesWritten.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>byteValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values written to the device.
+       读取或注册调用中特征UUID。
+  * <code>byteValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       写入设备的值列表。
 
-+ <a name="Connected"></a>`Connected` – The <code>Connected</code> event is run after the application successfully connects to a
- Bluetooth low energy device. This can be the result of a call to
- <a href='#Connect'><code>Connect</code></a> or
- <a href='#ConnectWithAddress'><code>ConnectWithAddress</code></a>, or as a result of an
- automatic reconnect if the <a href='#AutoReconnect'><code>AutoReconnect</code></a> property
- was true at the time a connection was requested.
++ <a name="Connected"></a>`Connected` – App成功连接到BLE设备后，将触发该事件。这可能是调用 <a href='#Connect'><code>Connect</code></a> 或 <a href='#ConnectWithAddress'><code>ConnectWithAddress</code></a> 的结果，或者如果在请求连接时 <a href='#AutoReconnect'><code>AutoReconnect</code></a> 属性为 `真`，则可能是自动重新连接的结果。
 
   ![when BluetoothLE1 Connecteddo](assets/BluetoothLE.Connected.svg)
 
-+ <a name="ConnectionFailed"></a>`ConnectionFailed` – The <code>ConnectionFailed</code> event is run when an attempt to connect to a device does not
- succeed. If a reason is provided by the Bluetooth low energy stack it will be reported via the
- <code>reason</code> parameter.
++ <a name="ConnectionFailed"></a>`ConnectionFailed` – 当尝试连接设备失败时，将触发该事件。如果提供了具体的失败原因，则会通过 <code>reason</code> 参数给出。
 
   ![when BluetoothLE1 ConnectionFailed reason do](assets/BluetoothLE.ConnectionFailed.svg)
 
   __参数__:
 
   * <code>reason</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The reason the connection failed, if known.
+       连接失败的原因（如果有）。
 
-+ <a name="DeviceFound"></a>`DeviceFound` – The <code>DeviceFound</code> event is run when a new Bluetooth low energy device is found.
++ <a name="DeviceFound"></a>`DeviceFound` – 当发现新的BLE设备时，将触发该事件。
 
   ![when BluetoothLE1 DeviceFounddo](assets/BluetoothLE.DeviceFound.svg)
 
-+ <a name="Disconnected"></a>`Disconnected` – The <code>Disconnected</code> event is run when a Bluetooth low energy device is disconnected.
- This can be caused by a call to <a href="#Disconnect"><code>Disconnect</code></a> or
- <a href="#DisconnectWithAddress"><code>DisconnectWithAddress</code></a>, or after a device
- is moved away or reset such that a loss of connection occurs.
++ <a name="Disconnected"></a>`Disconnected` – 当BLE设备断开连接时，将触发该事件。这可能是由于调用 <a href="#Disconnect"><code>Disconnect</code></a> 或 <a href="#DisconnectWithAddress"><code>DisconnectWithAddress</code></a> 引起的，或者在设备移开或重置以致发生连接丢失后引起的。
 
   ![when BluetoothLE1 Disconnecteddo](assets/BluetoothLE.Disconnected.svg)
 
-+ <a name="FloatsReceived"></a>`FloatsReceived` – The <code>FloatsReceived</code> event is run when one or more IEEE 754 floating point values are received from a
- connected Bluetooth device. Depending on the <code>shortFloat</code> parameter of the last call to
- <a href="#ReadFloats"><code>ReadFloats</code></a> or
- <a href="#RegisterForFloats"><code>RegisterForFloats</code></a> for the given
- <code>serviceUuid</code> and <code>characteristicUuid</code>, the <code>floatValues</code> list
- will contain numbers ranging from -65504.0 to 65504.0 (<code>shortFloat = true</code>)
- or -3.402823466E38 to 3.402823466E38 (<code>shortFloat = false</code>).
++ <a name="FloatsReceived"></a>`FloatsReceived` – 当从连接的蓝牙设备接收到一个或多个 IEEE 754 浮点值时，将触发该事件。根据上次调用 <a href="#ReadFloats"><code>ReadFloats</code></a> 或 <a href="#RegisterForFloats"><code>RegisterForFloats</code></a> 的 <code>shortFloat</code> 参数（对于给定的 <code>serviceUuid</code> 和 <code>characteristicUuid</code>），<code>floatValues</code> 列表
+将包含从 -65504.0 到 65504.0（<code>shortFloat = true</code>）或 -3.402823466E38 到 3.402823466E38（<code>shortFloat = false</code>）的数字。
 
   ![when BluetoothLE1 FloatsReceived serviceUuid characteristicUuid floatValues do](assets/BluetoothLE.FloatsReceived.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>floatValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values read from the device. The range of each value will depend on the <code>sign</code> flag previously specified in the call to read or register.
+       读取或注册调用中特征UUID。
+  * <code>floatValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       从设备读取的值列表。每个值的范围取决于先前在读取或注册调用中指定的 <code>sign</code> 标志。
 
-+ <a name="FloatsWritten"></a>`FloatsWritten` – The <code>FloatsWritten</code> event is run when one or more IEEE 754 floating point values are written to a
- connected Bluetooth device. <code>floatValues</code> will be a list of values actually written
- to the device. This may be different if the original input was too long to fit into a single
- transmission unit (typically 11 short floats or 5 regular floats).
++ <a name="FloatsWritten"></a>`FloatsWritten` – 当将一个或多个 IEEE 754 浮点值写入连接的蓝牙设备时，将触发该事件。<code>floatValues</code> 将是实际写入设备的值列表。如果原始输入太长而无法放入单个传输单元（通常为 11 个短浮点数或 5 个常规浮点数），则情况可能会有所不同。
 
   ![when BluetoothLE1 FloatsWritten serviceUuid characteristicUuid floatValues do](assets/BluetoothLE.FloatsWritten.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>floatValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values written to the device.
+       读取或注册调用中特征UUID。
+  * <code>floatValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       写入设备的值列表。
 
-+ <a name="IntegersReceived"></a>`IntegersReceived` – The <code>IntegersReceived</code> event is run when one or more 32-bit integer values are received from a
- connected Bluetooth device. Depending on the <code>sign</code> parameter of the last call to
- <a href="#ReadIntegers"><code>ReadIntegers</code></a> or
- <a href="#RegisterForIntegers"><code>RegisterForIntegers</code></a> for the given
- <code>serviceUuid</code> and <code>characteristicUuid</code>, the <code>intValues</code> list
- will contain numbers ranging from -2147483648 to 2147483647 (<code>signed = true</code>)
- or 0 to 4294967296 (<code>signed = false</code>).
++ <a name="IntegersReceived"></a>`IntegersReceived` – 当从连接的蓝牙设备接收到一个或多个 32-bit 整型数值时，将触发该事件。根据上次调用 <a href="#ReadIntegers"><code>ReadIntegers</code></a> 或 <a href="#RegisterForIntegers"><code>RegisterForIntegers</code></a> 时给定 <code>serviceUuid</code> 和 <code>characteristicUuid</code> 的 <code>sign</code> 参数，<code>intValues</code> 列表将包含从 -2147483648 到 2147483647 (<code>signed = true</code>) 或 0 到 4294967296 (<code>signed = false</code>) 的数字。
 
   ![when BluetoothLE1 IntegersReceived serviceUuid characteristicUuid intValues do](assets/BluetoothLE.IntegersReceived.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>intValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values read from the device. The range of each value will depend on the <code>sign</code> flag previously specified in the call to read or register.
+       读取或注册调用中特征UUID。
+  * <code>intValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       从设备读取的值列表。每个值的范围取决于先前在读取或注册调用中指定的 <code>sign</code> 标志。
 
-+ <a name="IntegersWritten"></a>`IntegersWritten` – The <code>IntegersWritten</code> event is run when one or more 32-bit integers values are written to a
- connected Bluetooth device. <code>intValues</code> will be a list of values actually written
- to the device. This may be different if the original input was too long to fit into a single
- transmission unit (typically 5 integers).
++ <a name="IntegersWritten"></a>`IntegersWritten` – 当将一个或多个 32-bit 整型数值写入连接的蓝牙设备时，将触发该事件。<code>intValues</code> 将是实际写入设备的值列表。如果原始输入太长而无法放入单个传输单元（通常为 5 个整数），则情况可能会有所不同。
 
   ![when BluetoothLE1 IntegersWritten serviceUuid characteristicUuid intValues do](assets/BluetoothLE.IntegersWritten.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>intValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values written to the device.
+       读取或注册调用中特征UUID。
+  * <code>intValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       写入设备的值列表。
 
-+ <a name="MTUChanged"></a>`MTUChanged` – The MTUChanged event is run when the two BluetoothLE devices have successfully changed their
- maximum transmission unit (MTU) to a different value. This event will only run in response
- to a call to the method block RequestMTU.
++ <a name="MTUChanged"></a>`MTUChanged` – 当BLE设备将其最大传输单元 (MTU) 成功更改为不同的值时，将触发该事件。此事件为 <code>RequestMTU</code> 方法块调用时的响应。
 
   ![when BluetoothLE1 MTUChanged bytes do](assets/BluetoothLE.MTUChanged.svg)
 
   __参数__:
 
-  * <code>bytes</code> (<a href="">_number_</a>) &mdash;
-     The new size, in bytes, of the new MTU.
+  * <code>bytes</code> (<a href="https://www.fun123.cn/reference/blocks/math.html#number" target="_blank">_number_</a>) &mdash;
+     新的 MTU 的大小（以字节为单位）。
 
-+ <a name="RssiChanged"></a>`RssiChanged` – Trigger event when RSSI (Received Signal Strength Indicator) of found BluetoothLE device changes
++ <a name="RssiChanged"></a>`RssiChanged` – 当发现BLE设备的 RSSI（接收信号强度指示）发生变化时触发该事件。
 
   ![when BluetoothLE1 RssiChanged rssi do](assets/BluetoothLE.RssiChanged.svg)
 
-+ <a name="ShortsReceived"></a>`ShortsReceived` – The <code>ShortsReceived</code> event is run when one or more short integer values are received from a
- connected Bluetooth device. Depending on the <code>sign</code> parameter of the last call to
- <a href="#ReadShorts"><code>ReadShorts</code></a> or
- <a href="#RegisterForShorts"><code>RegisterForShorts</code></a> for the given
- <code>serviceUuid</code> and <code>characteristicUuid</code>, the <code>shortValues</code> list
- will contain numbers ranging from -32768 to 32767 (<code>signed = true</code>)
- or 0 to 65535 (<code>signed = false</code>).
++ <a name="ShortsReceived"></a>`ShortsReceived` – 当从连接的蓝牙设备接收到一个或多个短整型值时，将触发该事件。根据上次调用 <a href="#ReadShorts"><code>ReadShorts</code></a> 或 <a href="#RegisterForShorts"><code>RegisterForShorts</code></a> 时给定的 <code>serviceUuid</code> 和 <code>characteristicUuid</code> 的 <code>sign</code> 参数，<code>shortValues</code> 列表将包含从 -32768 到 32767 (<code>signed = true</code>) 或 0 到 65535 (<code>signed = false</code>) 的数字。
 
   ![when BluetoothLE1 ShortsReceived serviceUuid characteristicUuid shortValues do](assets/BluetoothLE.ShortsReceived.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>shortValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values read from the device. The range of each value will depend on the <code>sign</code> flag previously specified in the call to read or register.
+       读取或注册调用中特征UUID。
+  * <code>shortValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       从设备读取的值列表。每个值的范围取决于先前在读取或注册调用中指定的 <code>sign</code> 标志。
 
-+ <a name="ShortsWritten"></a>`ShortsWritten` – The <code>ShortsWritten</code> event is run when one or more short integers values are written to a
- connected Bluetooth device. <code>shortValues</code> will be a list of values actually written
- to the device. This may be different if the original input was too long to fit into a single
- transmission unit (typically 11 shorts).
++ <a name="ShortsWritten"></a>`ShortsWritten` – 当将一个或多个短整数值写入连接的蓝牙设备时，将触发该事件。<code>shortValues</code> 将是实际写入设备的值列表。如果原始输入太长而无法放入单个传输单元（通常为 11 个短整数），则情况可能会有所不同。
 
   ![when BluetoothLE1 ShortsWritten serviceUuid characteristicUuid shortValues do](assets/BluetoothLE.ShortsWritten.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>shortValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values written to the device.
+       读取或注册调用中特征UUID。
+  * <code>shortValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       写入设备的值列表。
 
-+ <a name="StringsReceived"></a>`StringsReceived` – The <code>StringsReceived</code> event is run when one or more strings are received from a
- connected Bluetooth device. Depending on the <code>utf16</code> parameter of the last call to
- <a href="#ReadStrings"><code>ReadStrings</code></a> or
- <a href="#RegisterForStrings"><code>RegisterForStrings</code></a> for the given
- <code>serviceUuid</code> and <code>characteristicUuid</code>, the <code>stringValues</code> list
- will contain either a UTF-16 little endian decoded (<code>utf16 = true</code>) or UTF-8
- decoded (<code>utf16 = false</code>) strings. The string length is limited by the maximum
- transmission unit (MTU) of the Bluetooth device, which is typically 23 bytes.
++ <a name="StringsReceived"></a>`StringsReceived` – 当从连接的蓝牙设备接收到一个或多个字符串时，将触发该事件。根据上次调用 <a href="#ReadStrings"><code>ReadStrings</code></a> 或 <a href="#RegisterForStrings"><code>RegisterForStrings</code></a> 时给定的 <code>serviceUuid</code> 和 <code>characteristicUuid</code> 的 <code>utf16</code> 参数，<code>stringValues</code> 列表将包含 UTF-16 小端序 (<code>utf16 = true</code>) 或 UTF-8 解码 (<code>utf16 = false</code>) 字符串。字符串长度受蓝牙设备的最大传输单元 (MTU) 限制，通常为 23 个字节。
 
   ![when BluetoothLE1 StringsReceived serviceUuid characteristicUuid stringValues do](assets/BluetoothLE.StringsReceived.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>stringValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values read from the device. The strings will be decoded as UTF-16 or UTF-8 based on the <code>utf16</code> flag previously specified in the call to read or register.
+       读取或注册调用中特征UUID。
+  * <code>stringValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       从设备读取的值列表。根据先前在读取或注册调用中指定的 <code>utf16</code> 标志，字符串将解码为 UTF-16 或 UTF-8。
 
-+ <a name="StringsWritten"></a>`StringsWritten` – The <code>StringsWritten</code> event is run when one or more strings are written to a
- connected Bluetooth device. <code>stringValues</code> will be a list of values actually written
- to the device. This may be different if the original input was too long to fit into a single
- transmission unit (typically 22 bytes).
++ <a name="StringsWritten"></a>`StringsWritten` – 当将一个或多个字符串写入连接的蓝牙设备时，将触发该事件。<code>stringValues</code> 将是实际写入设备的值列表。如果原始输入太长而无法放入单个传输单元（通常为 22 个字节），则情况可能会有所不同。
 
   ![when BluetoothLE1 StringsWritten serviceUuid characteristicUuid stringValues do](assets/BluetoothLE.StringsWritten.svg)
 
   __参数__:
 
   * <code>serviceUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the service passed in the read or register call.
+       在读取或注册调用中传递的服务UUID。
   * <code>characteristicUuid</code> (<a href="https://www.fun123.cn/reference/blocks/text.html#string" target="_blank">_text_</a>) &mdash;
-       The unique identifier of the characteristic in the read or register call.
-  * <code>stringValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist">_list_</a>) &mdash;
-       A list of values written to the device.
+       读取或注册调用中特征UUID。
+  * <code>stringValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
+       写入设备的值列表。
 
 
 ***
