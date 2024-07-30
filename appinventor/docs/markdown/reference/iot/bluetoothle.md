@@ -620,6 +620,7 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
        要写入设备的值列表。
 
 + <a name="WriteShorts"></a>`WriteShorts` – 将一个或多个 16 位短整型值写入已连接的BLE设备。服务UID 和特性UUID 是必需的。参数可以是 单个数值 或 数值列表。如果 <code>signed</code> 为`真`，则可接受的值介于 -32768 和 32767 之间。如果 <code>signed</code> 为`假`，则可接受的值介于 0 和 65535 之间。
+  
   ![call BluetoothLE1 WriteShortsserviceUuidcharacteristicUuidsignedvalues](assets/BluetoothLE.WriteShorts.svg)
 
   __参数__:
