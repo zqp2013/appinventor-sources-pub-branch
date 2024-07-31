@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 打造个性化酷炫的底部导航条
 layout: documentation
-description: 虽说 App Inventor 2 是简单的积木式开发手机 App，但是通过众多拓展它也能实现很多酷炫的功能，比如本文介绍的一款酷炫导航条，函数代码块用法超级简单，效果不错。当然还有更复杂更个性化的导航条拓展。
+description: 虽说 App Inventor 2 是简单的积木式开发手机 App，但是通过众多拓展它也能实现很多酷炫的功能，比如本文介绍的2款酷炫导航条，函数代码块用法超级简单，效果不错。当然还有更复杂更个性化的导航条拓展。
 ---
 
 * TOC
@@ -42,3 +42,36 @@ demo 下载：
 
 {:.vip}
 [tabui_demo.aia](navbar/tabui_demo.aia)
+
+
+## <img src="navbar/ButtonBar.png" style="width:16px;margin:-4px 5px 0 0">ButtonBar 【功能更强大，定制方法更多，效果更酷】  {#ButtonBar}
+
+### 导航条效果
+
+![导航条效果](navbar/ButtonBar.gif)
+
+### 从零开始完整的视频教程
+
+<iframe width="800" height="500" src="//player.bilibili.com/player.html?bvid=BV1kU421Z7TM&high_quality=1&autoplay=0" frameborder="no" allowfullscreen="true"></iframe>
+
+### 步骤总结如下
+
+1. 导入并添加拓展，添加一个水平布局，宽度充满，屏幕底部对齐
+
+1. 代码块：**和上面BubbleTabBar刚好相反，先创建TabBar对象，再添加按钮及图标**，id从1开始。
+
+1. 可以在事件中指定某个Tab选中
+
+1. 可在属性中设置facetype，定制字体
+
+## 源码下载
+
+.aix 拓展下载：
+
+{:.vip}
+[com.dreamers.bottombar.aix](navbar/com.dreamers.bottombar.aix)
+
+demo 下载：
+
+{:.vip}
+[安卓导航条.aia](navbar/安卓导航条.aia)

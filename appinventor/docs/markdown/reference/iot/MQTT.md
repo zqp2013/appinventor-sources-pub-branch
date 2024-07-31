@@ -165,6 +165,7 @@ MQTT 发明于 1999 年，为物联网设计的轻量级协议，基于`TCP`协�
 
 `Connect` 方法有两种变体，不带后缀 (`Connect`) 和带“Last Will” (`ConnectWithLastWill`)。
 
+{:.vip}
 | ![mqtt](mqtt/connect.png)  |  建立连接，不做其他操作。<br/>**boolean CleanSession** 表示是否链接到先前中止的会话。  |
 | ![mqtt](mqtt/connectwithlastwill.png)   | 建立连接，当连接建立成功后将发送一次消息。<br/>**boolean CleanSession** 表示是否链接到先前中止的会话。WillTopic、WillQoS、WillRetain 和 WillMessage 与 Publish 方法中描述的相同（请参阅发送消息）。  |
 
@@ -182,6 +183,7 @@ MQTT 发明于 1999 年，为物联网设计的轻量级协议，基于`TCP`协�
 
 可能的状态有：
 
+{:.vip}
 |   代码     | 状态	  | 含义  |  允许调用方法  |
 |---------|---------|---------|---------|
 |   0    | `Disconnected`	  | 客户端未连接到服务器。  |  `Connect`  |
