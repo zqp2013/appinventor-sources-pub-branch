@@ -23,6 +23,7 @@ App Inventor 2 IoT 专题：经典蓝牙(SPP)，低功耗蓝牙(BLE)，WIFI，�
 1. [【乱码问题】HC-05/BLE 蓝牙通信数据乱码？接收到的中文乱码？乱码的原理及解决思路](bluetooth_codec.html)
 1. [【物联网·云】App inventor + ESP8266：使用WIFI连接云控制](https://blog.csdn.net/INT_TANG/article/details/128210609)
 1. [【蓝牙弹窗】App Inventor 2 实现蓝牙未开启时弹窗提醒用户开启蓝牙](bluetooth_request.html)
+1. [【MQTT】App Inventor 2 MQTT拓展入门（保姆级教程）<img src="https://www.fun123.cn/static/images/fire.png" style="width:16px;margin:-4px 0 0 5px">](MQTTGuide.html)
 
 ## Ardruino
 1. [【硬件交互】APP INVENTOR硬件交互学习教程01——开发板介绍](https://bbs.tsingfun.com/thread-1754-1-1.html)

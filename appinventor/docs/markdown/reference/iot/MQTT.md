@@ -9,9 +9,10 @@ description: App Inventor 2 UrsPahoMqttClient 拓展，MQTT协议，物联网设
 
 [&laquo; 返回首页](index.html)
 
+[《App Inventor 2 MQTT拓展入门（保姆级教程）》](MQTTGuide.html)
+
 最新版拓展下载：
 
-{:.vip}
 [de.ullisroboterseite.ursai2pahomqtt.aix](mqtt/de.ullisroboterseite.ursai2pahomqtt.aix)
 
 <!--https://ullisroboterseite.de/android-AI2-PahoMQTT-en.html-->
@@ -266,6 +267,7 @@ MQTT 消息的消息内容是字节字段。这些字节字段以通过 Payload 
 
 发布消息有三种方法。
 
+{:.vip}
 | ![mqtt](mqtt/publishex.png)  |  <u>默认发布方式</u><br/><br/>**Topic**: 消息主题。<br/>**Message**: 消息字符串。<br/>**RetainFlag**: 消息是否为保留消息。<br/>**QoS**: 发布消息的服务质量。  |
 | ![mqtt](mqtt/publish.png)   | <u>简单发布</u><br/><br/>**Topic**: 消息主题。<br/>**Message**: 消息字符串。<br/>**RetainFlag**: 在内部设置为 false，QoS 为 0。  |
 | ![mqtt](mqtt/publishbin.png)  | <u>发布二进制消息</u><br/><br/>**Topic**: 消息主题。<br/>**BinaryMessage**: 编码为字符串的二进制值。<br/>**RetainFlag**: 消息是否为保留消息。<br/>**QoS**: 发布消息的服务质量。  |
@@ -351,6 +353,7 @@ FromDictionary 允许将来自 Dictionary 的数据加载到 MQTT 客户端对�
 
 重要提示：提到的属性仅包含可能的错误事件的指示。许多操作是异步执行的。对于这些，错误跟踪并不总是可能的。1..32203 是 Paho-Clients 的故障编号。
 
+{:.vip}
 |   代码     | 含义	  | 文本  |
 |---------|---------|---------|---------|
 |   0    |    |    |
