@@ -1,7 +1,7 @@
 ---
 title: App Inventor 2 MQTT拓展入门（保姆级教程）
 layout: documentation
-description: App Inventor 2 MQTT拓展入门（保姆级教程）
+description: App Inventor 2 MQTT拓展入门（保姆级教程）。阿里云、华为云、中国移动OneNET平台等都提供物联网云平台。
 ---
 
 * TOC
@@ -21,7 +21,7 @@ description: App Inventor 2 MQTT拓展入门（保姆级教程）
 
 * MQTT测试平台：
 
-  * 中文平台推荐：[bemfa.com](https://www.bemfa.com)   界面简洁，对入门者友好。当然也可以选择稍复杂的，大厂平台如：阿里云、华为云等都提供物联网云平台。
+  * 中文平台推荐：[bemfa.com](https://www.bemfa.com)   界面简洁，对入门者友好。当然也可以选择稍复杂的，大厂平台如：阿里云、华为云、中国移动`OneNET`平台等都提供物联网云平台。
   * 英文平台推荐：HiveMQ([https://www.mqtt-dashboard.com/](https://www.mqtt-dashboard.com/))、EMQX([broker.emqx.io](https://broker.emqx.io)) 等。有一定基础的可以考虑用英文平台。
 
     其实，使用哪个平台都可以，甚至自己搭建MQTT服务器，使用自己的平台。不过初学者还是建议用国内中文平台进行测试，熟悉之后可以研究一下其他的或者自己搭建。
@@ -89,6 +89,10 @@ description: App Inventor 2 MQTT拓展入门（保姆级教程）
 （1）添加标识，比如添加客户端前缀，再根据前缀进行过滤。
 
 （2）订阅两个主题，一个专门用于接收，一个专门用于发布。 
+
+### IoT物联网
+
+以上演示的是App和一个测试客户端进行消息交互的案例，实际应用中，我们的测试客户端可以看着是任意的、支持MQTT协议的硬件，通过订阅及发布消息，联网硬件与我们的App进行**双向**数据通信，以实现**万物互联的智能控制**效果。
 
 ## .aia 源码下载
 
