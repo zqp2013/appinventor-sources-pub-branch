@@ -76,7 +76,7 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   // same behavior is used when receiving data
   private boolean hexaStringMode = false;
   // boolean to enable debug messages "YailRuntimeError" (true by default to ensure same behavior as before)
-  private boolean debugMessages = true;
+  //private boolean debugMessages = true;
 
   InputStream inputStream = null;
 
@@ -95,8 +95,8 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   }
 
 
-  protected void socketError(String functionName, int errorNumber, Object... messageArgs) {
-    form.dispatchErrorOccurredEvent(this, functionName, errorNumber, messageArgs);
+  protected void socketError(String functionName, int errorNumber, String message) {
+    form.dispatchErrorOccurredEvent(this, functionName, ErrorMessages.ERROR_EXTENSION_ERROR, errorNumber, "ClientSocketAI2Ext", message);
   }
 
 
@@ -210,24 +210,24 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
     hexaStringMode = mode;
   }
 
-  /**
-   * Method that returns the display of debug messages
-   */
-  @SimpleProperty(category = PropertyCategory.BEHAVIOR, description = "The display of debug messages.")
-  public boolean DebugMessages()
-  {
-    return debugMessages;
-  }
+  // /**
+  //  * Method that returns the display of debug messages
+  //  */
+  // @SimpleProperty(category = PropertyCategory.BEHAVIOR, description = "The display of debug messages.")
+  // public boolean DebugMessages()
+  // {
+  //   return debugMessages;
+  // }
 
-  /**
-   * Method to specify the display of debug messages
-   */
-  @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_BOOLEAN, defaultValue="True")
-  @SimpleProperty
-  public void DebugMessages(boolean displayDebugMessages)
-  {
-    debugMessages = displayDebugMessages;
-  }
+  // /**
+  //  * Method to specify the display of debug messages
+  //  */
+  // @DesignerProperty(editorType = PropertyTypeConstants.PROPERTY_TYPE_BOOLEAN, defaultValue="True")
+  // @SimpleProperty
+  // public void DebugMessages(boolean displayDebugMessages)
+  // {
+  //   debugMessages = displayDebugMessages;
+  // }
 
   /**
    * Creates the socket, connect to the server and launches the thread to receive data from server
@@ -235,11 +235,12 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   @SimpleFunction(description = "Tries to connect to the server and launches the thread for receiving data (blocking until connected or failed)")
   public void Connect()
   {
-    String functionName = "Connect";
+    final String functionName = "Connect";
     if (connectionState == true)
     {
-      if (debugMessages == true)
-        throw new YailRuntimeError("Connect error, socket connected yet, please disconnect before reconnect !", "Error");
+      //if (debugMessages == true)
+      //  throw new YailRuntimeError("Connect error, socket connected yet, please disconnect before reconnect !", "Error");
+      socketError(functionName, -3, "Connect error, socket connected yet, please disconnect before reconnect !");
     }
     try
     {
@@ -347,21 +348,24 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
           catch (SocketException e)
           {
             Log.e(LOG_TAG, "ERROR_READ", e);
-            if (debugMessages == true)
-              throw new YailRuntimeError("Connect error (read)" + e.getMessage(), "Error");
+            //if (debugMessages == true)
+            //  throw new YailRuntimeError("Connect error (read)" + e.getMessage(), "Error");
+            socketError(functionName, -4, "Connect error (read)" + e.getMessage());
           }
           catch (IOException e)
           {
             Log.e(LOG_TAG, "ERROR_READ", e);
-            if (debugMessages == true)
-              throw new YailRuntimeError("Connect error (read)", "Error");
+            //if (debugMessages == true)
+            //  throw new YailRuntimeError("Connect error (read)", "Error");
+            socketError(functionName, -5, "Connect error (read)");
           }
           catch (Exception e)
           {
             connectionState = false;
             Log.e(LOG_TAG, "ERROR_READ", e);
-            if (debugMessages == true)
-              throw new YailRuntimeError("Connect error (read)" + e.getMessage(), "Error");
+            //if (debugMessages == true)
+            //  throw new YailRuntimeError("Connect error (read)" + e.getMessage(), "Error");
+            socketError(functionName, -6, "Connect error (read)" + e.getMessage());
           }
         }
       } );
@@ -377,8 +381,10 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
     {
       connectionState = false;
       Log.e(LOG_TAG, "ERROR_CONNECT", e);
-      if (debugMessages == true)
-        throw new YailRuntimeError("Connect error (Socket Creation, please check Ip or hostname -> )" + e.getMessage(), "Error");
+      //if (debugMessages == true)
+      //  throw new YailRuntimeError("Connect error (Socket Creation, please check Ip or hostname -> )" + e.getMessage(), "Error");
+
+      socketError(functionName, -2, "Connect error (Socket Creation, please check Ip or hostname -> )" + e.getMessage());
     }
   }
 
@@ -388,10 +394,12 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   @SimpleFunction(description = "Send data to the server")
   public void SendData(final String data)
   {
+    final String functionName = "SendData";
     if (connectionState == false)
     {
-      if (debugMessages == true)
-        throw new YailRuntimeError("Send error, socket not connected.", "Error");
+      //if (debugMessages == true)
+      //  throw new YailRuntimeError("Send error, socket not connected.", "Error");
+      socketError(functionName, -7, "Send error, socket not connected.");
     }
     final byte [] dataToSend;
     byte [] dataCopy = data.getBytes();
@@ -409,14 +417,16 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
       for (i = 0; i < data.length(); i++)
       {
         if (((dataCopy[i] < 0x30) || (dataCopy[i] > 0x39)) && ((dataCopy[i] < 0x41) || (dataCopy[i] > 0x46)) && ((dataCopy[i] < 0x61) || (dataCopy[i] > 0x66)))
-          if (debugMessages == true)
-            throw new YailRuntimeError("Send data : hexaStringMode is selected and non hexa symbol found in send String.", "Error");
+          //if (debugMessages == true)
+          //  throw new YailRuntimeError("Send data : hexaStringMode is selected and non hexa symbol found in send String.", "Error");
+          socketError(functionName, -8, "Send data : hexaStringMode is selected and non hexa symbol found in send String.");
       }
       // verify that the number of symbols is even
       if ((data.length() %2) == 1)
       {
-        if (debugMessages == true)
-          throw new YailRuntimeError("Send data : hexaStringMode is selected and send String length is odd. Even number of characters needed.", "Error");
+        //if (debugMessages == true)
+        //  throw new YailRuntimeError("Send data : hexaStringMode is selected and send String length is odd. Even number of characters needed.", "Error");
+        socketError(functionName, -9, "Send data : hexaStringMode is selected and send String length is odd. Even number of characters needed.");
       }
       // if all tests pass, we transcode the data :
       dataToSend=new byte[data.length()/2+1];
@@ -447,14 +457,16 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
         catch (SocketException e)
         {
           Log.e(LOG_TAG, "ERROR_SEND", e);
-          if (debugMessages == true)
-            throw new YailRuntimeError("Send data" + e.getMessage(), "Error");
+          //if (debugMessages == true)
+          //  throw new YailRuntimeError("Send data" + e.getMessage(), "Error");
+          socketError(functionName, -10, "Send data" + e.getMessage());
         }
         catch (Exception e)
         {
           Log.e(LOG_TAG, "ERROR_UNABLE_TO_SEND_DATA", e);
-          if (debugMessages == true)
-            throw new YailRuntimeError("Send Data", "Error");
+          //if (debugMessages == true)
+          //  throw new YailRuntimeError("Send Data", "Error");
+          socketError(functionName, -11, "Send data");
         }
       }
     } );
@@ -466,6 +478,7 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
   @SimpleFunction(description = "Disconnect to the server")
   public void Disconnect()
   {
+    final String functionName = "Disconnect";
     if (connectionState == true)
     {
       connectionState = false;
@@ -482,22 +495,25 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
         if(e.getMessage().indexOf("ENOTCONN") == -1)
         {
           Log.e(LOG_TAG, "ERROR_CONNECT", e);
-          if (debugMessages == true)
-            throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+          //if (debugMessages == true)
+          //  throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+          socketError(functionName, -12, "Disconnect" + e.getMessage());
          }
          // if not connected, then just ignore the exception
       }
       catch (IOException e)
       {
         Log.e(LOG_TAG, "ERROR_CONNECT", e);
-        if (debugMessages == true)
-          throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+        //if (debugMessages == true)
+        //  throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+        socketError(functionName, -13, "Disconnect" + e.getMessage());
       }
       catch (Exception e)
       {
         Log.e(LOG_TAG, "ERROR_CONNECT", e);
-        if (debugMessages == true)
-          throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+        //if (debugMessages == true)
+        //  throw new YailRuntimeError("Disconnect" + e.getMessage(), "Error");
+        socketError(functionName, -14, "Disconnect" + e.getMessage());
       }
       finally
       {
@@ -506,8 +522,9 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
 
     }
     else
-      if (debugMessages == true)
-        throw new YailRuntimeError("Socket not connected, can't disconnect.", "Error");
+      //if (debugMessages == true)
+      //  throw new YailRuntimeError("Socket not connected, can't disconnect.", "Error");
+      socketError(functionName, -15, "Socket not connected, can't disconnect.");
   }
 
   /**
