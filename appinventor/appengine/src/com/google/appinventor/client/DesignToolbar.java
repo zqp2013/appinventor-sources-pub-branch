@@ -355,7 +355,7 @@ public class DesignToolbar extends Toolbar {
   }
 
   // Add by 中文网：刷新当前项目名称
-  public void ReloadCurrentProjectName() {
+  public void ReloadCurrentProjectName(final String newProjectName) {
     final Ode ode = Ode.getInstance();
     Boolean reload = false;
     if (reload) {
@@ -369,7 +369,9 @@ public class DesignToolbar extends Toolbar {
 
     } else {
 
-      Ode.getInstance().getProjectService().getProject(
+      projectNameLabel.setText(newProjectName);
+
+      /*Ode.getInstance().getProjectService().getProject(
         ode.getCurrentYoungAndroidProjectId(),
         new OdeAsyncCallback<ProjectRootNode>(
             // failure message
@@ -385,7 +387,7 @@ public class DesignToolbar extends Toolbar {
           public void onFailure(Throwable caught) {
             super.onFailure(caught);
           }
-      });
+      });*/
 
       //没效果
       // Project project = ode.getProjectManager().getProject(ode.getCurrentYoungAndroidProjectId());

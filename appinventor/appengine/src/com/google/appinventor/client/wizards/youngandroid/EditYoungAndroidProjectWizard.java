@@ -107,11 +107,12 @@ public class EditYoungAndroidProjectWizard extends NewProjectWizard {
               == TextValidators.ProjectNameStatus.SUCCESS) {
 
           final Ode ode = Ode.getInstance();
+          final String latestProjectName = projectName;
           final OdeAsyncCallback<Void> renameCallback = new OdeAsyncCallback<Void>(MESSAGES.renameProjectError()) {
             @Override
             public void onSuccess(Void result) {
               //Window.Location.reload();
-              ode.getDesignToolbar().ReloadCurrentProjectName();
+              ode.getDesignToolbar().ReloadCurrentProjectName(latestProjectName);
             }
           };
 
