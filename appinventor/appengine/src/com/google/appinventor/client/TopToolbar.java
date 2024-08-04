@@ -776,9 +776,10 @@ public class TopToolbar extends Composite {
       ProjectRootNode projectRootNode = Ode.getInstance().getCurrentYoungAndroidProjectRootNode();
       if (projectRootNode != null) {
 
+        //String latestProjectName currentProject = Ode.getInstance().getDesignToolbar().projectNameLabel.getText();
         // Add by 中文网：检查待编译的项目中：暂时不能有中文
         if (!TextValidators.isValidIdentifier_EN(projectRootNode.getName())) {
-          Window.alert("编译时不能是中文项目名，请另存项目更名后重试！\n项目更名后不影响“应用名称”属性，设置中文最终安装后App名称将是中文。中文项目名仅可用于展示及AI伴侣测试。");
+          Window.alert("编译时不能是中文项目名，请另存项目或更名刷新后重试！\n项目更名后不影响“应用名称”属性，设置中文最终安装后App名称将是中文。中文项目名仅可用于展示及AI伴侣测试。");
           return;
         }
 

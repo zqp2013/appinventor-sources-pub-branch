@@ -19,9 +19,9 @@ import com.google.appinventor.client.wizards.youngandroid.EditYoungAndroidProjec
 import com.google.appinventor.client.output.OdeLog;
 import com.google.appinventor.client.explorer.project.Project;
 import com.google.appinventor.client.tracking.Tracking;
-
+import com.google.appinventor.client.boxes.ProjectListBox;
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
-
+import com.google.appinventor.client.explorer.project.ProjectChangeAdapter;
 import com.google.appinventor.client.widgets.Toolbar;
 
 import com.google.appinventor.common.version.AppInventorFeatures;
@@ -192,8 +192,8 @@ public class DesignToolbar extends Toolbar {
         }
 
         long projectId = ode.getCurrentYoungAndroidProjectId();
-        Project currentProject = ode.getProjectManager().getProject(projectId);
-        new EditYoungAndroidProjectWizard(projectId, currentProject.getProjectName()).center();
+        //Project currentProject = ode.getProjectManager().getProject(projectId);
+        new EditYoungAndroidProjectWizard(projectId, projectNameLabel.getText()/*currentProject.getProjectName()*/).center();
       }
     });
 
@@ -351,6 +351,53 @@ public class DesignToolbar extends Toolbar {
       } else {
         doSwitchScreen(projectId, name, currentView);
       }
+    }
+  }
+
+  // Add by 中文网：刷新当前项目名称
+  public void ReloadCurrentProjectName() {
+    final Ode ode = Ode.getInstance();
+    Boolean reload = false;
+    if (reload) {
+      Window.Location.reload(); //暂时先刷新页面，异步更新name，projectlist name，编译name等等地方后面有空再研究。
+
+      //打开新改名的项目，这样虽然刷新，但体验相对还好些   也没有效果
+      // Project project = ode.getProjectManager().getProject(ode.getCurrentYoungAndroidProjectId());
+      // if (project != null) {
+      //   Ode.getInstance().openYoungAndroidProjectInDesigner(project);
+      // }
+
+    } else {
+
+      Ode.getInstance().getProjectService().getProject(
+        ode.getCurrentYoungAndroidProjectId(),
+        new OdeAsyncCallback<ProjectRootNode>(
+            // failure message
+            MESSAGES.projectLoadError()) {
+          @Override
+          public void onSuccess(ProjectRootNode result) {
+            projectNameLabel.setText(result.getName());
+            //ProjectListBox.getProjectListBox().getProjectList().refresh(); //没有效果
+            //ode.getProjectManager().loadProjects(); //刷新项目列表，不过项目重复了~~
+          }
+
+          @Override
+          public void onFailure(Throwable caught) {
+            super.onFailure(caught);
+          }
+      });
+
+      //没效果
+      // Project project = ode.getProjectManager().getProject(ode.getCurrentYoungAndroidProjectId());
+      // project.addProjectChangeListener(new ProjectChangeAdapter() {
+      //   @Override
+      //   public void onProjectLoaded(Project newProject) {
+      //     project.removeProjectChangeListener(this);
+      //     projectNameLabel.setText(newProject.getProjectName());
+      //     ProjectListBox.getProjectListBox().getProjectList().refresh();
+      //   }
+      // });
+      // project.loadProjectNodes();
     }
   }
 

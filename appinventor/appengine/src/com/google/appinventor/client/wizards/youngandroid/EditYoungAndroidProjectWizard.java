@@ -110,7 +110,8 @@ public class EditYoungAndroidProjectWizard extends NewProjectWizard {
           final OdeAsyncCallback<Void> renameCallback = new OdeAsyncCallback<Void>(MESSAGES.renameProjectError()) {
             @Override
             public void onSuccess(Void result) {
-              Window.Location.reload();
+              //Window.Location.reload();
+              ode.getDesignToolbar().ReloadCurrentProjectName();
             }
           };
 
