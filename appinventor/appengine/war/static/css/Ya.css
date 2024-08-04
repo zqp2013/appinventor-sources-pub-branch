@@ -3077,3 +3077,16 @@ div.dropdiv p {
 .ode-PropertyHelpWidget:hover{
   opacity: 1;
 }
+
+/*修改项目名称图标*/
+.setProjectName {
+  color: white;
+  padding-top: 12px;
+  padding-left: 7px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+.setProjectName:hover{
+  opacity: 1;
+}
+

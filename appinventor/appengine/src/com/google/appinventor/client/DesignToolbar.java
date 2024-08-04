@@ -15,9 +15,9 @@ import com.google.appinventor.client.explorer.commands.AddFormCommand;
 import com.google.appinventor.client.explorer.commands.CopyFormCommand;
 import com.google.appinventor.client.explorer.commands.ChainableCommand;
 import com.google.appinventor.client.explorer.commands.DeleteFileCommand;
-
+import com.google.appinventor.client.wizards.youngandroid.EditYoungAndroidProjectWizard;
 import com.google.appinventor.client.output.OdeLog;
-
+import com.google.appinventor.client.explorer.project.Project;
 import com.google.appinventor.client.tracking.Tracking;
 
 import com.google.appinventor.client.widgets.DropDownButton.DropDownItem;
@@ -39,6 +39,9 @@ import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.ClickListener;
+import com.google.gwt.user.client.ui.Widget;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -121,6 +124,7 @@ public class DesignToolbar extends Toolbar {
   private static final String WIDGET_NAME_TUTORIAL_TOGGLE = "TutorialToggle";
   private static final String WIDGET_NAME_ADDFORM = "AddForm";
   private static final String WIDGET_NAME_COPYFORM = "CopyForm";
+  private static final String WIDGET_NAME_SETPROJECTNAME = "SetProjectName";
   private static final String WIDGET_NAME_REMOVEFORM = "RemoveForm";
   private static final String WIDGET_NAME_SCREENS_DROPDOWN = "ScreensDropdown";
   private static final String WIDGET_NAME_SWITCH_TO_BLOCKS_EDITOR = "SwitchToBlocksEditor";
@@ -175,11 +179,33 @@ public class DesignToolbar extends Toolbar {
     projectNameLabel = new Label();
     projectNameLabel.setStyleName("ya-ProjectName");
     HorizontalPanel toolbar = (HorizontalPanel) getWidget();
-    toolbar.insert(projectNameLabel, 0);
 
+    // Add by 中文网：修改项目名称图标按钮
+    HTML setProjectName = new HTML();
+    setProjectName.addStyleName("setProjectName");
+    setProjectName.setHTML("<i class=\"mdi mdi-pencil\" style=\"font-size:14px\" title=\"修改项目名称\"/></i>");
+    setProjectName.addClickListener(new ClickListener() {
+      public void onClick(Widget sender) {
+        Ode ode = Ode.getInstance();
+        if (ode.screensLocked()) {
+          return; // Don't permit this if we are locked out (saving files)
+        }
+
+        long projectId = ode.getCurrentYoungAndroidProjectId();
+        Project currentProject = ode.getProjectManager().getProject(projectId);
+        new EditYoungAndroidProjectWizard(projectId, currentProject.getProjectName()).center();
+      }
+    });
+
+    HorizontalPanel namePanel = new HorizontalPanel();
+    namePanel.add(projectNameLabel);
+    namePanel.add(setProjectName);
+
+    toolbar.insert(namePanel, 0);
     // width of palette minus cellspacing/border of buttons
-    toolbar.setCellWidth(projectNameLabel, "245px");
+    toolbar.setCellWidth(namePanel, "245px");
 
+    
     addButton(new ToolbarItem(WIDGET_NAME_TUTORIAL_TOGGLE,
         MESSAGES.toggleTutorialButton(), new ToogleTutorialAction()));
     setButtonVisible(WIDGET_NAME_TUTORIAL_TOGGLE, false); // Don't show unless needed
