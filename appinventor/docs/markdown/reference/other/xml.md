@@ -4,20 +4,22 @@ layout: documentation
 description: App Inventor 2 使用 XML 和 Web 服务
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ## 使用 XML 和 Web 服务
 
-The Web.XMLTextDecode takes a given XML text string and decodes it to produce a list.   If the text is not well-formed XML, it will signal an error and return the empty list.
+[`Web.XMLTextDecode`](../components/connectivity.html#Web.XMLTextDecode) 接受给定的 XML 文本字符串并将其解码以生成列表。如果文本不是格式正确的 XML，它将发出错误信号并返回空列表。
 
-
-The list returned by XMLTextDecode contains one pair for each top-level tag-delimited structure in the input string.   For example, decoding
+XMLTextDecode 返回的列表包含输入字符串中每个顶级标签分隔结构的键值对。例如，解码
 
 ```xml
 <hello>123</hello>
 ```
 
-returns the list of one pair (hello, 123) and decoding
+返回键值对 (hello, 123) 的列表并解码
 
 ```xml
 <hello>123</hello>
@@ -25,31 +27,29 @@ returns the list of one pair (hello, 123) and decoding
 <goodbye>456</goodbye>
 ```
 
-returns the list of two pairs (hello, 123) and (goodbye, 456).
+返回键值对 (hello, 123) 和 键值对(goodbye, 456) 的列表。
+
+对于每对，第一个元素是标签，第二个元素是标签分隔的字符串的解码。以下是一些示例：
 
 
-For each pair, the first element is the tag, and the second element is the decoding of the string delimited by the tag.  Here are some examples:
-
-
-Decoding
+解码
 
 ```xml
 <hello>everybody</hello>
 ```
 
-produces the pair (hello, everybody).
+生成键值对 (hello, everybody).
 
 
-Decoding
+解码
 
 ```xml
 <hello>everybody out there</hello>
 ```
 
-produces the pair (hello, everybody out there), where the second item in the pair is a string “everybody out there” that contains spaces .
+生成对 (hello, everyone out there)，其中对中的第二项是包含空格的字符串“everybody out there”。
 
-
-Decoding
+解码
 
 ```xml
 <greet>
@@ -61,11 +61,9 @@ Decoding
 </greet>
 ```
 
-produces the pair (greet, data) where data is a list containing the pair (goodbye, nobody) and the pair (hello, everybody).   The pairs in a decoding are listed in alphabetical order by tag, regardless of their order in the original input sequence.  Each pair consists of the tag, together with the decoding of the data delimited by that tag.   As this example shows, if the items delimited by the tag are themselves XML-delimited text, then the data items for the pairs in the decoding will themselves be lists of pairs.
+生成键值对 (greet, data)，其中 data 是包含键值对 (goodbye, nobody) 和键值对 (hello, everyone) 的列表。解码中的对按标签的字母顺序列出，而不管它们在原始输入序列中的顺序如何。每对都由标签以及由该标签分隔的数据的解码组成。如本例所示，如果由标签分隔的项目本身是 XML 分隔的文本，则解码中对的数据项本身将是成对的列表。
 
-
-
-If the XML string contains both delimited and non-delimited items, then the non-delimited items will all be extracted processed as if they had been a sequence of items delimited by the tag “content”.  For example, decoding
+如果 XML 字符串同时包含分隔项和非分隔项，则非分隔项将全部被提取处理，就好像它们是由标签“content”分隔的项目序列一样。例如，解码
 
 ```xml
 <greet>
@@ -81,41 +79,35 @@ If the XML string contains both delimited and non-delimited items, then the non-
 </greet>
 ```
 
-will produce a pair just as in the last example above, except that the list of pairs will now include an additional pair (content, (happy sad)) where the second item in the additional pair is the list of strings “happy” and “sad”.
+将产生一个与上面最后一个例子一样的对，不同之处在于对列表现在将包含一个附加对 (content, (happy sad))，其中附加对中的第二项是字符串“happy”和“sad”的列表。
 
-
-It is also possible that the XML contains elements with attributes, for example:
+XML 还可能包含具有属性的元素，例如：
 
 ```xml
         <person firstname="John" lastname="Doe"></person>
 ```
 
-Decoded, this will look like ((person ((firstname ”John”) (lastname ”Doe”)))).
+解码后，它将看起来像 ((person ((firstname ”John”) (lastname ”Doe”))))。
 
-### XML and Web services
+### XML及Web服务
 
-Many Web services have APIs that return information in XML format.  To process these with App Inventor, you can decode the result with XMLTextDecode.  Then extract the desired items from the resulting list, using the list operation block  lookup in pairs.  Here’s an example.
+许多 Web 服务都有返回 XML 格式信息的 API。要使用 App Inventor 处理这些信息，您可以使用 XMLTextDecode 解码结果。然后使用列表操作块成对查找，从结果列表中提取所需的项目。下面是一个例子。
 
+不幸的是，下面的例子不再适用，因为 Underground Weather 已停止使用。作为替代方案，可以使用 Openweathermap：https://openweathermap.org/。
 
-Unfortunately, the example below does not work anymore, because Underground Weather is discontinued. As an alternative, Openweathermap could be used: https://openweathermap.org/.
-
-
-Weather Underground’s Weather API is a free service that you can query for weather information at specified locations.   We can use this service use this together with the App Inventor Web component to retrieve the Fahrenheit temperature in San Francisco.   We start by getting the complete weather for San Francisco, by doing an HTTP Get with the URL:
-
+Weather Underground 的 Weather API 是一项免费服务，您可以查询指定位置的天气信息。我们可以使用此服务将其与 App Inventor Web 组件一起使用，以检索旧金山的华氏温度。我们首先通过使用以下 URL 执行 HTTP Get 来获取旧金山的完整天气：
 
 http://api.wunderground.com/api/YOUR KEY/conditions/q/CA/San_Francisco.xml
 
+您需要将字符串 YOUR KEY 替换为实际密钥，您可以通过注册 Weather Underground Weather API 服务来获取该密钥。有关如何执行此操作的信息，请参阅 Weather API 文档。
 
-You’ll need to replace the string YOUR KEY by an actual key that you can get by registering with the Weather Underground Weather API service.  See the Weather API documentation for information on how to do this.
+注意：Weather API 还可以以 JSON 而不是 XML 形式返回信息，App Inventor 可以使用 Web.JsonTextDecode 块对其进行操作，从而得到一个类似于此处描述的示例，但使用 JSON 完成。
 
-Note: The Weather API can also return information on in JSON rather than XML, which App Inventor can manipulate using the Web.JsonTextDecode block, leading to an example similar to the one described here, but done using JSON.
-
-
-Here are the blocks that perform this GET when a button (GetWeatherButton) is pressed.   When the result is returned, we set the text of the label SFTemp to the temperature.
+以下是按下按钮 (GetWeatherButton) 时执行此 GET 的块。返回结果后，我们将标签 SFTemp 的文本设置为温度。
 
 ![](images/xml-image1.png)
 
-The main work is done by the procedure extractTemperature.  It processes the response from the Web service to extract the Temperature.   The Web service response is a complex XML structure like this:
+主要工作由过程 extractTemperature （自定义过程，使用[`Web.XMLTextDecode`](../components/connectivity.html#Web.XMLTextDecode)解析XML）完成。它处理来自 Web 服务的响应以提取温度。Web 服务响应是一个复杂的 XML 结构，如下所示：
 
 ```xml
 <response>
@@ -145,10 +137,9 @@ The main work is done by the procedure extractTemperature.  It processes the res
 </response>
 ```
 
-(There’s a lot more in the structure that is not shown here, as indicated by the ... .)
+（结构中还有更多未在此处显示的内容，如 ... 所示。）
 
-
-Decoding this with XMLTextDecode produces a list, where the sublists correspond to the delimited XML substrings.  Observe that the order of the sublists does not match the order in the XML text: it is now alphabetical by tag (case-sensitive order):
+使用 XMLTextDecode 解码此内容会生成一个列表，其中子列表对应于分隔的 XML 子字符串。请注意，子列表的顺序与 XML 文本中的顺序不匹配：它现在按标签字母顺序排列（区分大小写）：
 
 ```xml
 ((response
@@ -174,17 +165,17 @@ Decoding this with XMLTextDecode produces a list, where the sublists correspond 
     (version 0.1)))
 ```
 
-We can extract the temperature in the following steps:
+我们可以按照以下步骤提取温度：
 
-* begin with the list above, which is a list of pairs (with only one pair)
-* extract the data that is tagged with “response” to get the list of pairs ((current_observation) ...)
-* from the result, extract the data that is tagged with “current_observation” to obtain another list of pairs ((UV 1) ... (temp_c 20.1) (temp_f 68.2) ...)
-* from that result, extract the data that is tagged with “temp_f”
-* the final result is the temperature
+* 从上面的列表开始，这是一个成对的列表（只有一对）
+* 提取标记为“response”的数据以获取成对的列表 ((current_observation) ...)
+* 从结果中提取标记为“current_observation”的数据以获取另一个成对的列表 ((UV 1) ... (temp_c 20.1) (temp_f 68.2) ...)
+* 从该结果中提取标记为“temp_f”的数据
+* 最终结果就是温度
 
 ![](images/xml-image2.png)
 
 
-Notice how this procedure is structured with successive calls to lookup in pairs, each lookup operating on the result of the previous lookup.  The procedure is written in the way it is, with successive assignments to the local variable answer, to make it convenient in App Inventor  to build up the procedure step by step, starting with the [do ...] block empty, add the next
+请注意，此过程的结构是成对连续调用查找，每个查找都针对前一个查找的结果进行操作。此过程的编写方式是，对局部变量 answer 进行连续赋值，以便于在 App Inventor 中逐步构建过程，从空的 [do ...] 块开始，在每个步骤中添加下一个
 
- [set answer ...]  block at each step, while checking the result at each step.  Constructing procedures step by step, while checking intermediate results, is a good idea when extracting data from complex XML structures, where there might be many steps and it’s hard to get a procedure correct on the first try.
+[set answer ...] 块，同时检查每个步骤的结果。在从复杂的 XML 结构中提取数据时，逐步构建过程并检查中间结果是一个好主意，因为可能有许多步骤，很难在第一次尝试时就使过程正确。

@@ -46,4 +46,4 @@ description: 其他参考资料：包括编辑你的应用、使用Activity Star
 1. [使用位置传感器](locationsensor.html)
 1. [将App Inventor项目连接到外部传感器](external-sensor.html)
 1. [将Genymotion模拟器与App Inventor一起使用](genymotion.html)
-1. [使用虚拟现实和App Inventor进行实验](vr.html)
+1. [使用虚拟现实（VR）和App Inventor进行实验](vr.html)

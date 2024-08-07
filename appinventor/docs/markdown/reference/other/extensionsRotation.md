@@ -4,6 +4,9 @@ layout: documentation
 description: 使用App Inventor扩展实现多点触控：Rotation Detector
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 Using App Inventor extensions to implement multitouch:  Rotation Detector

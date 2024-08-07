@@ -13,6 +13,7 @@ description: App Inventor 2 UrsPahoMqttClient 拓展，MQTT协议，物联网设
 
 最新版拓展下载：
 
+{:.vip}
 [de.ullisroboterseite.ursai2pahomqtt.aix](mqtt/de.ullisroboterseite.ursai2pahomqtt.aix)
 
 <!--https://ullisroboterseite.de/android-AI2-PahoMQTT-en.html-->

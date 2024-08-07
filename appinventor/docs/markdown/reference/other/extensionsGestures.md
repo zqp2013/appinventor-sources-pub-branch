@@ -4,6 +4,9 @@ layout: documentation
 description: 扩展App Inventor：具有多点触控和手势检测功能
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ## 扩展App Inventor：具有多点触控和手势检测功能

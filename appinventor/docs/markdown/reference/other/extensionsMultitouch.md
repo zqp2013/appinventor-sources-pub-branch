@@ -4,10 +4,13 @@ layout: documentation
 description: 使用App Inventor扩展实现多点触控：Scale Detector
 ---
 
+* TOC
+{:toc}
+
 [&laquo; 返回首页](index.html)
 
 ***
-草稿（9 月 13 日）：构建扩展需要 App Inventor Extensions 功能，该功能尚未合并到 App Inventor 版本中。 但是你可以使用我们的扩展测试服务器尝试下面描述的一些步骤：
+构建扩展需要 App Inventor Extensions 功能，该功能尚未合并到 App Inventor 版本中。 但是你可以使用我们的扩展测试服务器尝试下面描述的一些步骤：
 
 1. 演示打包的应用程序 ScaleGestureDemo.apk 可以像任何 apk 文件一样加载和运行。
 1. 你可以按照下面的第 1 部分加载提供的源文件 ScaleGestureDemo.aia 来构建演示源应用程序。 要构建应用程序，你需要使用位于 [http://extension-test.appinventor.mit.edu](http://extension-test.appinventor.mit.edu) 的 App Inventor 测试服务器。 你还需要使用与该实例对应的 AI Companion。 连接到服务器后，查看“帮助”->“伴侣信息”以下载该伴侣。 当你切换回普通的AI2服务器时，你需要重新安装普通的伴侣。
