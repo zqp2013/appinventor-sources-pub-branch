@@ -415,6 +415,7 @@ FromDictionary 允许将来自 Dictionary 的数据加载到 MQTT 客户端对�
   * 方式1：发送空消息体的保留消息；
   * 方式2：发送最新的保留消息覆盖之前的（推荐）；
 
-
+<!--
 ***
 官方英文原版文档[点此](https://ullisroboterseite.de/android-AI2-PahoMQTT-en.html)。
+-->

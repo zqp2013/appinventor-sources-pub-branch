@@ -432,6 +432,7 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
   * <code>utf16</code> (<a href="https://www.fun123.cn/reference/blocks/logic.html#true" target="_blank">_boolean_</a>)
        将字符串内容解释为 UTF-16（`真`）或 UTF-8（`假`）编码格式。
 
+{:.vip}
 + <a name="RequestMTU"></a>`RequestMTU` – 为 BluetoothLE 连接请求新的最大传输单元 (MTU)。此功能仅在两个设备都支持蓝牙 4.2 或更高版本时才受支持。如果 MTU 更改成功，则 [MTUChanged](#MTUChanged) 事件将被触发。默认 MTU 为 20。
 
   ![call BluetoothLE1 RequestMTUbytes](assets/BluetoothLE.RequestMTU.svg)
@@ -846,6 +847,7 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
   * <code>stringValues</code> (<a href="https://www.fun123.cn/reference/blocks/lists.html#makealist" target="_blank">_list_</a>) &mdash;
        写入设备的值列表。
 
-
+<!--
 ***
 官方英文原版文档[点此](https://iot.appinventor.mit.edu/#/bluetoothle/bluetoothleintro)。
+-->
