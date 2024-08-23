@@ -27,6 +27,18 @@
     <ant inheritAll="false" useNativeBasedir="true" dir="appengine" target="MakeAuthKey"/>
   </target>
 
+  <target name="android">
+    <ant inheritAll="false" useNativeBasedir="true" dir="common"/>
+    <ant inheritAll="false" useNativeBasedir="true" dir="components"/>
+    <ant inheritAll="false" useNativeBasedir="true" dir="buildserver"/>
+    <ant inheritAll="false" useNativeBasedir="true" dir="buildserver" target="PlayApp"/>
+  </target>
+
+  <target name="webapp">
+    <ant inheritAll="false" useNativeBasedir="true" dir="blocklyeditor"/>
+    <ant inheritAll="false" useNativeBasedir="true" dir="appengine"/>
+  </target>
+
   <target name="comps">
     <ant inheritAll="false" useNativeBasedir="true" dir="components"/>
     <ant inheritAll="false" useNativeBasedir="true" dir="buildserver" target="installplay"/>

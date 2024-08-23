@@ -52,6 +52,9 @@ public class MockChartLayout extends MockLayout {
       // DataFile should be attached to this Mock Chart container.
       ((MockChart) container).addDataFile((MockDataFile) source);
       return true;
+    } else if (source instanceof MockTrendline) {
+      container.addComponent(source);
+      return true;
     }
 
     return false;

@@ -45,6 +45,10 @@ public final class MockChart extends MockContainer {
     ResourcesType.setClientBundle(EmbeddedResources.INSTANCE);
   }
 
+  public interface MockChartClient {
+    void addToChart(MockChart chart);
+  }
+
   private MockChartView<?, ?, ?> chartView;
 
   // Legal values for type are defined in
@@ -277,7 +281,7 @@ public final class MockChart extends MockContainer {
     // are set after the Data components are attached to
     // the Chart, and thus they need to be re-attached.
     for (MockComponent child : children) {
-      ((MockChartData) child).addToChart(this);
+      ((MockChartClient) child).addToChart(this);
     }
   }
 
@@ -377,6 +381,7 @@ public final class MockChart extends MockContainer {
     MockComponent component = getComponentFromDragSource(source);
 
     return (component instanceof MockChartData2D)
+        || (component instanceof MockTrendline)
         || (isComponentAcceptableDataFileSource(component));
   }
 

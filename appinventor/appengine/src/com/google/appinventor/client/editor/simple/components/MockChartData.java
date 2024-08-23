@@ -26,7 +26,7 @@ import java.util.Set;
  * to be a NonVisibleComponent so that it would appear in the Chart hierarchy
  * instead of the non-visible component bar.
  */
-public abstract class MockChartData extends MockVisibleComponent implements DataFileChangeListener {
+public abstract class MockChartData extends MockVisibleComponent implements DataFileChangeListener, MockChart.MockChartClient {
   private static final String PROPERTY_COLOR = "Color";
   private static final String PROPERTY_LABEL = "Label";
   private static final String PROPERTY_POINT_SHAPE = "PointShape";

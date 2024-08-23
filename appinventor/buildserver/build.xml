@@ -13,6 +13,10 @@
     App Inventor build server
   </description>
 
+  <condition property="ecj.version" value="4.5.1" else="3.23.0">
+    <matches pattern="1.\d+" string="${java.specification.version}" />
+  </condition>
+
   <!-- Project Libraries -->
 
   <target name="all"
@@ -79,6 +83,7 @@
     <copy toFile="${classes.tools.dir}/apksigner.jar" file="${lib.dir}/android/tools/apksigner.jar" />
     <copy toFile="${classes.tools.dir}/bundletool.jar" file="${lib.dir}/android/tools/bundletool-all-1.7.1.jar" />
     <copy toFile="${classes.tools.dir}/dx.jar" file="${lib.dir}/android/tools/dx.jar" />
+    <copy toFile="${classes.tools.dir}/d8.jar" file="${lib.dir}/android/tools/d8.jar" />
     <copy todir="${classes.tools.dir}">
       <fileset dir="${lib.dir}/android/tools" includes="*/aapt" />
       <fileset dir="${lib.dir}/android/tools" includes="*/aapt2" />
@@ -117,7 +122,7 @@
       <fileset dir="${lib.dir}" includes="android/tools/builder-model-1.3.0.jar"/>
       <fileset dir="${lib.dir}" includes="android/tools/sdk-common-24.3.0.jar"/>
       <fileset dir="${lib.dir}" includes="android/tools/layoutlib-api-24.3.0.jar"/>
-      <fileset dir="${lib.dir}" includes="ecj/ecj-4.5.1.jar"/>
+      <fileset dir="${lib.dir}" includes="ecj/ecj-${ecj.version}.jar"/>
       <fileset dir="${lib.dir}" includes="guava/guava-14.0.1.jar"/>
       <fileset dir="${lib.dir}" includes="commons-io/commons-io-2.0.1.jar"/>
       <fileset dir="${lib.dir}" includes="args4j/args4j-2.0.18.jar"/>
