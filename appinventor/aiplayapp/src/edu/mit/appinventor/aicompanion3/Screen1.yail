@@ -374,6 +374,13 @@ $Source $Yail
 
 )
 
+;;; sdkver
+
+(add-component HorizontalArrangement3 com.google.appinventor.components.runtime.Label sdkver 
+(set-and-coerce-property! 'sdkver 'Text "(SDK 34, Android 14)" 'text)
+
+)
+
 ;;; CheckBox1
 
 (add-component MainPanel com.google.appinventor.components.runtime.CheckBox CheckBox1 

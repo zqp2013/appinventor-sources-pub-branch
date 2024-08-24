@@ -15,11 +15,13 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 1. ![icon](images/Screen.png)  [屏幕（Screen）](#Screen)
 1. ![icon](images/Button.png)  [按钮（Button）](#Button)
 1. ![icon](images/CheckBoxIcon.png)  [复选框（CheckBox）](#CheckBox)
+1. ![icon](images/CircularProgress.png)  [圆形进度条（CircularProgress）](#CircularProgress)
 1. ![icon](images/DatePicker.png)   [日期选择框（DatePicker）](#DatePicker)
 1. ![icon](images/ImageIcon.png)  [图像（Image）](#Image)
   * [TaifunImage *拓展：图像高级处理*](../extensions/TaifunImage.html)
   * [SimpleBase64 *拓展：图像Base64编解码*](connectivity.html#SimpleBase64)
 1. ![icon](images/Label.png)  [标签（Label）](#Label)
+1. ![icon](images/LinearProgress.png)  [线性进度条（LinearProgress）](#LinearProgress)
 1. ![icon](images/ListPicker.png)  [列表选择器（ListPicker）](#ListPicker)
 1. ![icon](images/ListView.png)  [列表显示框（ListView）](#ListView)
 1. ![icon](images/Notifier.png)  [对话框（Notifier）](#Notifier)
@@ -408,6 +410,45 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 无
 
 
+## ![icon](images/CircularProgress.png)  圆形进度条  {#CircularProgress}
+
+圆形进度条组件，动画展示进度，但不可设置具体的进度比例，只能控制其显示（如：处理中）和隐藏（如：处理完成）。设置具体进度比例请使用[`线性进度条`](#LinearProgress)。
+
+注：此组件对AI伴侣要求最低版本为v2.70 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
+
+### 属性  {#CircularProgress-Properties}
+
+{:.properties}
+
+{:id="CircularProgress.Color" .color} *颜色*
+: 设置圆形进度条的展示颜色。
+
+{:id="CircularProgress.Height" .number .bo} *高度*
+: 设置`圆形进度条`的垂直高度，以像素px为单位。
+
+{:id="CircularProgress.HeightPercent" .number .wo .bo} *高度百分比*
+: 设置`圆形进度条`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+
+{:id="CircularProgress.Visible" .boolean} *可见性*
+: 设置`圆形进度条`是否显示在屏幕上，值是`真`{:.logic.block}则`圆形进度条`显示，`假`{:.logic.block}则隐藏。
+
+{:id="CircularProgress.Width" .number .bo} *宽度*
+: 设置`圆形进度条`的水平宽度，以像素px为单位。
+
+{:id="CircularProgress.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`圆形进度条`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#CircularProgress-Events}
+
+{:.events}
+无
+
+
+### 方法  {#CircularProgress-Methods}
+
+{:.methods}
+无
+
 
 ## ![icon](images/DatePicker.png)  日期选择框  {#DatePicker}
 
@@ -691,6 +732,57 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:.methods}
 无
 
+
+## ![icon](images/LinearProgress.png)  线性进度条  {#LinearProgress}
+
+线性进度条组件，它有两种模式：**不确定模式**（只展示加载动画，不显示具体进度比例）和**进度模式**（展示具体进度比例）。
+
+注：此组件对AI伴侣要求最低版本为v2.70 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
+
+### 属性  {#LinearProgress-Properties}
+
+{:.properties}
+
+{:id="LinearProgress.Indeterminate" .boolean} *不确定性*
+: 指示此进度条是否处于不确定模式。
+
+{:id="LinearProgress.IndeterminateColor" .color} *不确定性颜色*
+: 设置不确定模式下的进度条颜色。
+
+{:id="LinearProgress.Maximum" .number} *最大值*
+: [`不确定性`](#LinearProgress.Indeterminate) 为 `假` 时，设置进度条的范围最大值，默认值 `100`。
+
+{:id="LinearProgress.Minimum" .number} *最小值*
+: [`不确定性`](#LinearProgress.Indeterminate) 为 `假` 时，设置进度条的范围最小值，默认值 `0`。
+
+{:id="LinearProgress.Progress" .number .bo} *进度*
+: [`不确定性`](#LinearProgress.Indeterminate) 为 `假` 时，获取进度条的当前进度值。
+
+{:id="LinearProgress.ProgressColor" .color} *进度颜色*
+: [`不确定性`](#LinearProgress.Indeterminate) 为 `假` 时，设置进度条的颜色。
+
+{:id="LinearProgress.Visible" .boolean} *可见性*
+: 设置`线性进度条`是否显示在屏幕上，值是`真`{:.logic.block}则`线性进度条`显示，`假`{:.logic.block}则隐藏。
+
+{:id="LinearProgress.Width" .number .bo} *宽度*
+: 设置`线性进度条`的水平宽度，以像素px为单位。
+
+{:id="LinearProgress.WidthPercent" .number .wo .bo} *宽度百分比*
+: 设置`线性进度条`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+
+### 事件  {#LinearProgress-Events}
+
+{:.events}
+
+{:id="LinearProgress.ProgressChanged"} 进度改变(*progress*{:.number})
+: 指示进度条进度已更改的事件。返回当前进度值。如果 [`不确定性`](#LinearProgress.Indeterminate) 设置为 `真`，则返回 `0`。
+
+### 方法  {#LinearProgress-Methods}
+
+{:.methods}
+
+{:id="LinearProgress.IncrementProgressBy" class="method"} <i/> 增加进度(*值*{:.number})
+: 将进度条的进度增加指定的量。
 
 
 ## ![icon](images/ListPicker.png)  列表选择器&nbsp;&nbsp;[<i class="mdi mdi-cursor-default-click-outline"></i>示例](guide/ListPicker.html)  {#ListPicker}
@@ -1089,6 +1181,9 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="PasswordTextBox.Hint" .text} *提示*
 : 设置`密码输入框`的提示信息，如果 [`文本`](#PasswordTextBox.Text) 为空，则该提示信息在框中显示为浅淡色文本。
 
+{:id="PasswordTextBox.HintColor" .color} *提示颜色*
+: 设置`密码输入框`提示信息的颜色。
+
 {:id="PasswordTextBox.NumbersOnly" .boolean} *仅限数字*
 : 如果为 `真`，则此`密码输入框`仅接受数字作为键盘输入。
 
@@ -1133,9 +1228,21 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="PasswordTextBox.LostFocus"} 失去焦点()
 : 当不再选择`密码输入框`进行输入时引发事件，例如用户触摸其他的输入框。
 
+{:id="PasswordTextBox.TextChanged"} 文本改变()
+: 当`密码输入框`中的文本被用户或程序改变时触发该事件。s
+
 ### 方法  {#PasswordTextBox-Methods}
 
 {:.methods}
+
+{:id="PasswordTextBox.MoveCursorTo" class="method"} <i/> 移动光标到(*位置*{:.number})
+: 将`密码输入框`的光标重新定位到指定的位置索引（从1开始）处的字符之前。如果给定的位置大于`密码输入框`中文本的长度，则光标将移动到文本的末尾；如果给定的位置小于或等于 1，则光标将移动到开头。
+
+{:id="PasswordTextBox.MoveCursorToEnd" class="method"} <i/> 移动光标到末尾()
+: 将光标重新定位到`密码输入框`中文本的末尾。
+
+{:id="PasswordTextBox.MoveCursorToStart" class="method"} <i/> 移动光标到开始()
+: 将光标重新定位到`密码输入框`中文本的开头。
 
 {:id="PasswordTextBox.RequestFocus" class="method"} <i/> 焦点请求()
 : 请求焦点到当前的`密码输入框`。
@@ -1399,6 +1506,9 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="TextBox.Hint" .text} *提示*
 : 设置`文本输入框`的提示信息，如果 [`文本`](#TextBox.Text) 为空，则该提示信息在框中显示为浅淡色文本。
 
+{:id="TextBox.HintColor" .color} *提示颜色*
+: 设置`文本输入框`提示信息的颜色。
+
 {:id="TextBox.MultiLine" .boolean} *允许多行*
 : 如果为 `真`，则此`文本输入框`接受多行输入（使用换行键）。
 
@@ -1450,12 +1560,24 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="TextBox.LostFocus"} 失去焦点()
 : 当不再选择`文本输入框`进行输入时引发事件，例如用户触摸其他的输入框。
 
+{:id="TextBox.TextChanged"} 文本改变()
+: 当`文本输入框`中的文本被用户或程序改变时触发该事件。
+
 ### 方法  {#TextBox-Methods}
 
 {:.methods}
 
 {:id="TextBox.HideKeyboard" class="method"} <i/> 隐藏键盘()
 : 隐藏键盘。只有**多行文本框**需要用到这个方法；当用户按下“完成”键时，单行文本框会自动关闭键盘。
+
+{:id="TextBox.MoveCursorTo" class="method"} <i/> 移动光标到(*位置*{:.number})
+: 将`文本输入框`的光标重新定位到指定的位置索引（从1开始）处的字符之前。如果给定的位置大于`文本输入框`中文本的长度，则光标将移动到文本的末尾；如果给定的位置小于或等于 1，则光标将移动到开头。
+
+{:id="TextBox.MoveCursorToEnd" class="method"} <i/> 移动光标到末尾()
+: 将光标重新定位到`文本输入框`中文本的末尾。
+
+{:id="TextBox.MoveCursorToStart" class="method"} <i/> 移动光标到开始()
+: 将光标重新定位到`文本输入框`中文本的开头。
 
 {:id="TextBox.RequestFocus" class="method"} <i/> 焦点请求()
 : 请求焦点到当前的`文本输入框`。

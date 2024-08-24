@@ -14,6 +14,7 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 
 1. ![icon](images/chat.png)  [图表](#Chart)
 1. ![icon](images/chatdata2d.png)  [二维图表数据](#ChartData2D)
+1. ![icon](images/Trendline.png)  [趋势线](#Trendline)
 
 ## ![icon](images/chat.png)  图表  {#Chart}
 
@@ -273,3 +274,97 @@ description: 图表组件参考文档：包括图表、二维图表数据。
 : 从图表数据组件中删除当前附加的数据源。
   
   这样做将导致不再发送来自数据源的更新，但是，当前数据不会被删除。
+
+
+## ![icon](images/Trendline.png)  趋势线  {#Trendline}
+
+`趋势线`组件可用于可视化由 [`二维图表数据`](#ChartData2D) 组件表示的数据系列的趋势。必须将其添加到 [`图表`](#Chart) 组件。要关联 [`二维图表数据`](#ChartData2D) 实例，请在应用程序的设计视图中设置 [`图表数据`](#Trendline.ChartData) 属性，或使用设置代码块。如果关联的 [`二维图表数据`](#ChartData2D) 发生变化，`趋势线`将自动更新。
+
+`趋势线`有四种模型：线性、二次、对数和指数。根据您使用的模型，`趋势线`组件的某些属性将提供相关值。
+
+* 线性：y = m*x + b，其中 m 为线性系数，b 为 Y 截距
+* 二次：y = a\*x<sup>2</sup> + b*x + c，其中 a 为二次系数，b 为线性系数，c 为 Y 截距
+* 对数：y = a + b*ln(x)，其中 a 为对数常数，b 为对数系数
+* 指数：y = a*b<sup>x</sup>，其中 a 为指数系数，b 为指数基数
+
+对于所有模型，r<sup>2</sup> 相关性将通过 [`拟合系数`](#Trendline.RSquared) 属性块报告。
+
+注：此组件对AI伴侣要求最低版本为v2.70 (旧版本请扫码升级：帮助 -> AI伴侣信息)，编译为apk则不受限制安装后可正常运行。
+
+### 属性  {#Trendline-Properties}
+
+{:.properties}
+
+{:id="Trendline.ChartData" .component .wo} *图表数据*
+: 要计算最佳拟合线的数据系列。
+
+{:id="Trendline.Color" .color} *颜色*
+: 最佳拟合线的颜色。
+
+{:id="Trendline.CorrelationCoefficient" .number .ro .bo} *相关系数*
+: 趋势线与数据的相关系数。
+
+{:id="Trendline.ExponentialBase" .number .ro .bo} *指数项底数*
+: 方程 y = a*b^x 中指数项的底数。
+
+{:id="Trendline.ExponentialCoefficient" .number .ro .bo} *指数项系数*
+: 方程 y = a*b^x 中指数项的系数。
+
+{:id="Trendline.Extend" .boolean} *拓展*
+: 是否将最佳拟合线延伸至数据之外。
+
+{:id="Trendline.LinearCoefficient" .number .ro .bo} *线性系数*
+: 趋势线中线性项的系数。
+
+{:id="Trendline.LogarithmCoefficient" .number .ro .bo} *对数系数*
+: 方程 y = a + b*ln(x) 中对数项的系数。
+
+{:id="Trendline.LogarithmConstant" .number .ro .bo} *对数常数*
+: 对数方程 y = a + b*ln(x) 中的常数项。
+
+{:id="Trendline.Model" .com.google.appinventor.components.common.BestFitModelEnum} *模型*
+: 用于最佳拟合线的模型。
+
+{:id="Trendline.Predictions" .list .ro .bo} *预测*
+: 对趋势线的预测。
+
+{:id="Trendline.QuadraticCoefficient" .number .ro .bo} *二次系数*
+: 趋势线中二次项的系数（如果有）。
+
+{:id="Trendline.RSquared" .number .ro .bo} *拟合系数*
+: 趋势线的拟合系数R平方。
+
+{:id="Trendline.Results" .dictionary .ro .bo} *结果*
+: 获取最佳拟合线计算的最新值的副本。
+
+{:id="Trendline.StrokeStyle" .com.google.appinventor.components.common.StrokeStyleEnum} *线条样式*
+: 最佳拟合线的线的样式。
+
+{:id="Trendline.StrokeWidth" .number} *线条宽度*
+: 最佳拟合线的线的宽度。
+
+{:id="Trendline.Visible" .boolean} *可见性*
+: 最佳拟合线是否可见。
+
+{:id="Trendline.XIntercepts" .any .ro .bo} *X轴交点*
+: 趋势线与X轴的交点（若有）。可能的值有NaN（不相交时），单个数值（只有一个交点）或者多个值的列表。
+
+{:id="Trendline.YIntercept" .number .ro .bo} *Y轴交点*
+: 趋势线的Y轴交点（常数项）。
+
+### 事件  {#Trendline-Events}
+
+{:.events}
+
+{:id="Trendline.Updated"} 已更新(*结果*{:.dictionary})
+: 表示最佳拟合线已更新的事件。
+
+### 方法  {#Trendline-Methods}
+
+{:.methods}
+
+{:id="Trendline.DisconnectFromChartData" class="method"} <i/> 断开数据集()
+: 断开与趋势线关联的数据集。
+
+{:id="Trendline.GetResultValue" class="method returns any"} <i/> 获取结果值(*值*{:.text})
+: 获取最佳拟合线的计算值，该值根据使用的模型不同而变化。例如，线型模型会有斜率和Y交点，而平方模型有x^2，斜率和交点。

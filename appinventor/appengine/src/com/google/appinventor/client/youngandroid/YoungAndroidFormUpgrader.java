@@ -134,6 +134,11 @@ public final class YoungAndroidFormUpgrader {
       componentProperties.put("$Type", new ClientJsonString("Spreadsheet"));
     }
 
+    if (srcYaVersion < 228 && "LineOfBestFit".equals(componentType)) {
+      componentType = "Trendline";
+      componentProperties.put("$Type", new ClientJsonString("Trendline"));
+    }
+
     // Get the source component version from the componentProperties.
     int srcCompVersion = 0;
     if (componentProperties.containsKey("$Version")) {
@@ -237,6 +242,9 @@ public final class YoungAndroidFormUpgrader {
 
       } else if (componentType.equals("ActivityStarter")) {
         srcCompVersion = upgradeActivityStarterProperties(componentProperties, srcCompVersion);
+
+      } else if (componentType.equals("AnomalyDetection")) {
+        srcCompVersion = upgradeAnomalyDetectionProperties(componentProperties, srcCompVersion);
 
       } else if (componentType.equals("Ball")) {
         srcCompVersion = upgradeBallProperties(componentProperties, srcCompVersion);
@@ -554,6 +562,16 @@ public final class YoungAndroidFormUpgrader {
     return srcCompVersion;
   }
 
+  private static int upgradeAnomalyDetectionProperties(Map<String, JSONValue> componentProperties,
+      int srcCompVersion) {
+    if (srcCompVersion < 2) {
+      // The AnomalyDetection.DetectAnomaliesInChartData method was added.
+      // No properties need to be modified to upgrade to version 2.
+      srcCompVersion = 2;
+    }
+    return srcCompVersion;
+  }
+
   private static int upgradeBallProperties(Map<String, JSONValue> componentProperties,
       int srcCompVersion) {
     if (srcCompVersion < 2) {
@@ -842,6 +860,10 @@ public final class YoungAndroidFormUpgrader {
       // The XFromZero and YFromZero properties were added.
       srcCompVersion = 2;
     }
+    if (srcCompVersion < 3) {
+      // The ExtendDomainToInclude and ExtendRangeToInclude methods were added.
+      srcCompVersion = 3;
+    }
     return srcCompVersion;
   }
 
@@ -850,6 +872,10 @@ public final class YoungAndroidFormUpgrader {
     if (srcCompVersion < 2) {
       // The ApiKey property was made visible in the designer.
       srcCompVersion = 2;
+    }
+    if (srcCompVersion < 3) {
+      // The ConverseWithImage block was added
+      srcCompVersion = 3;
     }
     return srcCompVersion;
   }
@@ -939,6 +965,10 @@ public final class YoungAndroidFormUpgrader {
     if (srcCompVersion < 3) {
       // RequestFocus function was added (via TextBoxBase)
       srcCompVersion = 3;
+    }
+    if (srcCompVersion < 7) {
+      // TextChanged event, HintColor property, MoveCursorTo, MoveCursorToEnd and MoveCursorToStart methods were added.
+      srcCompVersion = 7;
     }
     return srcCompVersion;
   }
@@ -1354,6 +1384,43 @@ public final class YoungAndroidFormUpgrader {
       // Assets helper block was added.
       srcCompVersion = 8;
     }
+    if (srcCompVersion < 9) {
+      // The MarkOrigin, OriginX, and OriginY properties were added.
+      srcCompVersion = 9;
+    }
+    if (srcCompVersion < 10) {
+      JSONValue value = componentProperties.get("MarkOrigin");
+      if (value != null) {
+        String origin = value.asString().getString();
+        if (origin.startsWith("(") && origin.endsWith(")")) {
+          String[] parts = origin.substring(1, origin.length() - 1).split(", ");
+          double x = Double.parseDouble(parts[0]);
+          double y = Double.parseDouble(parts[1]);
+          if (x == 0.0 && y == 0.0) {
+            // Clean up the default value
+            componentProperties.remove("MarkOrigin");
+          }
+        }
+      }
+      value = componentProperties.get("OriginX");
+      if (value != null) {
+        double x = Double.parseDouble(value.asString().getString());
+        if (x == 0.0) {
+          // Clean up the default value
+          componentProperties.remove("OriginX");
+        }
+      }
+      // I haven't seen this in the wild but just in case...
+      value = componentProperties.get("OriginY");
+      if (value != null) {
+        double y = Double.parseDouble(value.asString().getString());
+        if (y == 0.0) {
+          // Clean up the default value
+          componentProperties.remove("OriginY");
+        }
+      }
+      srcCompVersion = 10;
+    }
     return srcCompVersion;
   }
 
@@ -1492,6 +1559,10 @@ public final class YoungAndroidFormUpgrader {
     if (srcCompVersion < 5) {
       // Added NumbersOnly property
       srcCompVersion = 5;
+    }
+    if (srcCompVersion < 7) {
+      // TextChanged event, HintColor property, MoveCursorTo, MoveCursorToEnd and MoveCursorToStart methods were added.
+      srcCompVersion = 7;
     }
     return srcCompVersion;
   }
@@ -1850,6 +1921,10 @@ public final class YoungAndroidFormUpgrader {
     if (srcCompVersion < 6) {
       // ReadOnly property was added
       srcCompVersion = 6;
+    }
+    if (srcCompVersion < 14) {
+      // TextChanged event, HintColor property, MoveCursorTo, MoveCursorToEnd and MoveCursorToStart methods were added.
+      srcCompVersion = 14;
     }
     return srcCompVersion;
   }

@@ -333,6 +333,17 @@ description: 绘画动画组件参考文档：包括球形精灵、画布、图�
 {:id="ImageSprite.Interval" .number} *间隔*
 : 更新`图像精灵`位置的时间间隔（以毫秒为单位）。例如，如果`间隔` 为 50，[`速度`](#ImageSprite.Speed) 为 10，则`图像精灵`将每50毫秒移动10个像素。
 
+{:id="ImageSprite.MarkOrigin" .text .wo} *标记原点*
+: 使用可拖动的标记来标记图像精灵的原点。标记操作之前需要先设置[`图片`](ImageSprite.Picture)属性。
+
+{:id="ImageSprite.OriginX" .number} *原点X坐标*
+: 原点相对于左边缘的水平单位坐标。允许值在 [0, 1] 之间。
+  - 值 0.0 表示原点位于左边缘，0.5 表示原点位于中间，而 1.0 表示原点位于右边缘。
+
+{:id="ImageSprite.OriginY" .number} *原点Y坐标*
+: 原点相对于顶部边缘的垂直单位坐标。允许值在 [0, 1] 之间。
+  - 值 0.0 表示原点位于顶部边缘，0.5 表示原点位于中间，1.0 表示原点位于底部边缘。
+
 {:id="ImageSprite.Picture" .text} *图片*
 : 指定精灵图片的路径。
 
