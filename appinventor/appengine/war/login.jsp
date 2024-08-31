@@ -318,6 +318,25 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-</body>
 
+<!--AI助理-->
+<script>
+window.difyChatbotConfig = {
+    token: 'xHV026xryabhSDSI',
+    baseUrl: 'https://ai.fun123.cn'
+}
+</script>
+<script
+src="https://ai.fun123.cn/embed.min.js"
+id="xHV026xryabhSDSI"
+defer>
+</script>
+<style>
+#dify-chatbot-bubble-button {
+    background-color: #B6D38E !important;
+    bottom: 40px !important;
+}
+</style>
+
+</body>
 </html>
