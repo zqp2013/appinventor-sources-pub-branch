@@ -338,6 +338,7 @@ defer>
     height: 42px !important;
     width: 42px !important;
     opacity: .75;
+    margin-right: -16px;
 }
 #dify-chatbot-bubble-button:hover {opacity: 1;}
 
