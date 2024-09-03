@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: 用户界面（UI）组件
-description: 用户界面（UI）组件参考文档：包括按钮、复选框、日期选择框、图像、标签、列表选择器、列表显示框、对话框（通知器）、密码输入框、屏幕、滑动条、下拉框、切换开关、文本输入框、时间选择框、Web浏览框。
+description: 用户界面（UI）组件参考文档：包括按钮、复选框、圆形进度条、日期选择框、图像、标签、线性进度条、列表选择器、列表显示框、对话框（通知器）、密码输入框、屏幕、滑动条、下拉框、开关、文本输入框、时间选择框、Web浏览框。
 ---
 
 * TOC
@@ -28,7 +28,7 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 1. ![icon](images/PasswordTextBoxIcon.png)  [密码输入框（PasswordTextBox）](#PasswordTextBox)
 1. ![icon](images/slider.png)  [滑动条（Slider）](#Slider)
 1. ![icon](images/Spinner.png)  [下拉框（Spinner）](#Spinner)
-1. ![icon](images/Switch.png)  [切换开关（Switch）](#Switch)
+1. ![icon](images/Switch.png)  [开关（Switch）](#Switch)
 1. ![icon](images/TextBoxIcon.png)  [文本输入框（TextBox）](#TextBox)
 1. ![icon](images/TimePicker.png)  [时间选择框（TimePicker）](#TimePicker)
 1. ![icon](images/WebViewer.png)  [Web浏览框（WebViewer）](#WebViewer)
@@ -1370,71 +1370,71 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Spinner.DisplayDropdown" class="method"} <i/> 显示列表()
 : 显示下拉列表供用户选择，与用户单击下拉框的操作相同。
 
-## ![icon](images/Switch.png)  切换开关（Switch）   {#Switch}
+## ![icon](images/Switch.png)  开关（Switch）   {#Switch}
 
-`切换开关`组件可以检测用户点击，并可以更改其布尔状态作为响应。除了外观之外，它与 [`复选框`](#CheckBox) 相同。
+`开关`组件可以检测用户点击，并可以更改其布尔状态作为响应。除了外观之外，它与 [`复选框`](#CheckBox) 相同。
 
-  开关具有打开（真）状态和关闭（假）状态。当用户点击`切换开关`组件在状态之间切换时，它会触发[状态被改变](#Switch.Changed)事件。
+  开关具有打开（真）状态和关闭（假）状态。当用户点击`开关`组件在状态之间切换时，它会触发[状态被改变](#Switch.Changed)事件。
 
 ### 属性  {#Switch-Properties}
 
 {:.properties}
 
 {:id="Switch.BackgroundColor" .color} *背景颜色*
-: 设置`切换开关`的背景颜色，使用RGBA数值表示。
+: 设置`开关`的背景颜色，使用RGBA数值表示。
 
 {:id="Switch.Enabled" .boolean} *启用*
-: 设置`切换开关`是否可以被激活和点击。
+: 设置`开关`是否可以被激活和点击。
 
 {:id="Switch.FontBold" .boolean .do} *粗体*
-: 设置`切换开关`的显示字体是否是粗体。（注：有些字体不支持粗体）。
+: 设置`开关`的显示字体是否是粗体。（注：有些字体不支持粗体）。
 
 {:id="Switch.FontItalic" .boolean .do} *斜体*
-: 设置`切换开关`的显示字体是否是斜体。（注：有些字体不支持斜体）。
+: 设置`开关`的显示字体是否是斜体。（注：有些字体不支持斜体）。
 
 {:id="Switch.FontSize" .number} *字体大小*
-: 设置`切换开关`的字体大小，以像素px为单位。
+: 设置`开关`的字体大小，以像素px为单位。
 
 {:id="Switch.FontTypeface" .number .do} *字体*
-: 设置`切换开关`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
+: 设置`开关`的字体，目前支持的字体有：default,  serif,  sans serif,  和 monospace。
 
   要使用自定义字体，请将 **.ttf** 字体文件上传并选中它。
 
 {:id="Switch.Height" .number .bo} *高度*
-: 设置`切换开关`的垂直高度，以像素px为单位。
+: 设置`开关`的垂直高度，以像素px为单位。
 
 {:id="Switch.HeightPercent" .number .wo .bo} *高度百分比*
-: 设置`切换开关`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
+: 设置`开关`的垂直高度相对于整个[`屏幕高度`](userinterface.html#Screen.Height)的百分比。
 
 {:id="Switch.On" .boolean} *已打开*
 : 如果开关处于打开状态，则为 真，否则为 假。
 
 {:id="Switch.Text" .text} *文本*
-: 设置`切换开关`的显示文本。
+: 设置`开关`的显示文本。
 
 {:id="Switch.TextColor" .color} *文本颜色*
-: 设置`切换开关`的文本颜色，使用RGBA数值表示。
+: 设置`开关`的文本颜色，使用RGBA数值表示。
 
 {:id="Switch.ThumbColorActive" .color} *打开时滑块颜色*
-: 指定`切换开关`处于打开状态时开关滑块的颜色。
+: 指定`开关`处于打开状态时开关滑块的颜色。
 
 {:id="Switch.ThumbColorInactive" .color} *关闭时滑块颜色*
-: 指定`切换开关`处于关闭状态时开关滑块的颜色。
+: 指定`开关`处于关闭状态时开关滑块的颜色。
 
 {:id="Switch.TrackColorActive" .color} *打开时轨道颜色*
-: 指定`切换开关`处于打开状态时的轨道颜色。
+: 指定`开关`处于打开状态时的轨道颜色。
 
 {:id="Switch.TrackColorInactive" .color} *关闭时轨道颜色*
-: 指定`切换开关`处于关闭状态时的轨道颜色。
+: 指定`开关`处于关闭状态时的轨道颜色。
 
 {:id="Switch.Visible" .boolean} *可见性*
-: 设置`切换开关`是否显示在屏幕上，值是`真`{:.logic.block}则`切换开关`显示，`假`{:.logic.block}则隐藏。
+: 设置`开关`是否显示在屏幕上，值是`真`{:.logic.block}则`开关`显示，`假`{:.logic.block}则隐藏。
 
 {:id="Switch.Width" .number .bo} *宽度*
-: 设置`切换开关`的水平宽度，以像素px为单位。
+: 设置`开关`的水平宽度，以像素px为单位。
 
 {:id="Switch.WidthPercent" .number .wo .bo} *宽度百分比*
-: 设置`切换开关`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
+: 设置`开关`的水平宽度相对于[`屏幕宽度`](userinterface.html#Screen.Width)的百分比。
 
 ### 事件  {#Switch-Events}
 
@@ -1444,10 +1444,10 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 : 用户将“开关”的状态从 “开”更改为“关” 或 “关”更改为“开” 时触发该事件。
 
 {:id="Switch.GotFocus"} 获得焦点()
-: `切换开关`成为焦点组件时触发该事件。
+: `开关`成为焦点组件时触发该事件。
 
 {:id="Switch.LostFocus"} 失去焦点()
-: `切换开关`不再是焦点组件时触发该事件。
+: `开关`不再是焦点组件时触发该事件。
 
 ### 方法  {#Switch-Methods}
 
