@@ -197,14 +197,13 @@ public class SubsetJSONPropertyEditor  extends PropertyEditor
           file.click();
         }
       });
-      */
       Button saveButton = new Button(MESSAGES.saveAsButton());
       saveButton.addClickHandler(new ClickHandler() {
         @Override
         public void onClick(ClickEvent event) {
           saveFile();
         }
-      });
+      }); del by 中文网*/
       Button clearButton = new Button(MESSAGES.clearButton());
       Button initializeButton = new Button(MESSAGES.matchProjectButton());
       clearButton.addClickHandler(new ClickHandler() {
@@ -221,8 +220,8 @@ public class SubsetJSONPropertyEditor  extends PropertyEditor
       });
       Button cancelButton = new Button(MESSAGES.cancelButton());
       Button okButton = new Button(MESSAGES.okButton());
-      buttonPanel.add(saveButton);
-/*      buttonPanel.add(loadButton); */
+/*      buttonPanel.add(saveButton);
+      buttonPanel.add(loadButton); */
       buttonPanel.add(clearButton);
       buttonPanel.add(initializeButton);
       cancelButton.addClickHandler(new ClickHandler() {
@@ -373,7 +372,7 @@ public class SubsetJSONPropertyEditor  extends PropertyEditor
           for (int j = 0; j < componentCatItem.getChildCount(); ++j) {
             TreeItem componentItem = componentCatItem.getChild(j);
             CheckBox componentCb = (CheckBox) componentItem.getWidget();
-            if (jsonComponentHash.get(componentCb.getName()) != null) {
+            if (jsonComponentHash.get(componentCb.getName()) != null && shownComponentBlocks.containsKey(componentCb.getName())) { // Add by 中文网，前端崩溃保护一下
               componentCb.setValue(true, false);
               JSONArray jsonComponentBlockProps = shownComponentBlocks.get(componentCb.getName()).isArray();
               HashMap<String, String> componentPropHash = new HashMap<String, String>();
