@@ -216,6 +216,23 @@ public class ProjectServiceImpl extends OdeRemoteServiceServlet implements Proje
   }
 
   /**
+   * Add by 中文网
+   */
+  @Override
+  public UserProject copyAndDeleteOldProject(long oldProjectId, String newName) {
+    final String userId = userInfoProvider.getUserId();
+    long projectId = getProjectRpcImpl(userId, oldProjectId).
+        copyAndDeleteOldProject(userId, oldProjectId, newName);
+    return makeUserProject(userId, projectId);
+  }
+
+  @Override
+  public void updateQualifiedNmae(long projectId, String qualifiedName) {
+    final String userId = userInfoProvider.getUserId();
+    getProjectRpcImpl(userId, projectId).updateQualifiedNmae(userId, projectId, qualifiedName);
+  }
+
+  /**
    * Renames several projects.
    *
    * @param userId the user id

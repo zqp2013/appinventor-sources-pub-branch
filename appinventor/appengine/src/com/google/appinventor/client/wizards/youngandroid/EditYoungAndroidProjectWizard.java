@@ -32,6 +32,7 @@ import com.google.gwt.user.client.DeferredCommand;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.Window;
 import com.google.appinventor.client.OdeAsyncCallback;
+import com.google.appinventor.shared.rpc.project.UserProject;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -106,7 +107,7 @@ public class EditYoungAndroidProjectWizard extends NewProjectWizard {
         if (TextValidators.checkNewProjectName(projectName) 
               == TextValidators.ProjectNameStatus.SUCCESS) {
 
-          final Ode ode = Ode.getInstance();
+          /*final Ode ode = Ode.getInstance();
           final String latestProjectName = projectName;
           final OdeAsyncCallback<Void> renameCallback = new OdeAsyncCallback<Void>(MESSAGES.renameProjectError()) {
             @Override
@@ -122,6 +123,24 @@ public class EditYoungAndroidProjectWizard extends NewProjectWizard {
           projectNames.add(projectName);
           
           ode.getProjectService().renameProjects(projectIds, projectNames, renameCallback);
+          */
+          final Ode ode = Ode.getInstance();
+
+          OdeAsyncCallback<UserProject> callback = new OdeAsyncCallback<UserProject>(
+              // failure message
+              MESSAGES.copyProjectError()) {
+            @Override
+            public void onSuccess(UserProject newProjectInfo) {
+              // Update project list
+              ode.getProjectManager().removeDeletedProject(projectId);
+              Project newProject = ode.getProjectManager().addProject(newProjectInfo);
+              ode.openYoungAndroidProjectInDesigner(newProject);
+            }
+          };
+    
+          // 拷贝删除方案
+          ode.getProjectService().copyAndDeleteOldProject(projectId, projectName, callback);
+
         } else {
           show();
           center();

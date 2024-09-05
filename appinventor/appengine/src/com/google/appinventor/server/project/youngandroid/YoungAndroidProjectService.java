@@ -310,6 +310,29 @@ public final class YoungAndroidProjectService extends CommonProjectService {
   }
 
   @Override
+  public long copyAndDeleteOldProject(String userId, long oldProjectId, String newName) {
+    long newProjectId = copyProject(userId, oldProjectId, newName);
+    storageIo.deleteProject(userId, oldProjectId);
+    return newProjectId;
+  }
+
+  @Override
+  public void updateQualifiedNmae(String userId, long projectId, String qualifiedName) {
+    // Add by 中文网
+    String projectProperties = storageIo.downloadFile(userId, projectId, PROJECT_PROPERTIES_FILE_NAME, StorageUtil.DEFAULT_CHARSET);
+    Properties properties = new Properties();
+    try {
+      properties.load(new StringReader(projectProperties));
+    } catch (IOException e) {
+      // Since we are reading from a String, I don't think this exception can actually happen.
+      e.printStackTrace();
+      return;
+    }
+    YoungAndroidSettingsBuilder builder = new YoungAndroidSettingsBuilder(properties).setQualifiedFormName(qualifiedName);
+    storageIo.uploadFileForce(projectId, PROJECT_PROPERTIES_FILE_NAME, userId, builder.toProperties(), StorageUtil.DEFAULT_CHARSET);
+  }
+
+  @Override
   public ProjectRootNode getRootNode(String userId, long projectId) {
     // Create root, assets, and source nodes (they are mocked nodes as they don't really
     // have to exist like this on the file system)
@@ -516,7 +539,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
 	@Override
   public void renameProjects(String userId, List<Long> projectIds, List<String> projectNames) {
     for (int i = 0; i < projectIds.size(); ++i) {
-      storageIo.setProjectName(userId, projectIds.get(i), projectNames.get(i));
+      storageIo.setProjectName(userId, projectIds.get(i), projectNames.get(i)); //仅改了数据库中存储的项目名，不影响源码中任何东西
     }
   }
 

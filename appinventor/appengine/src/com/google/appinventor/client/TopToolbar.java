@@ -765,8 +765,8 @@ public class TopToolbar extends Composite {
 
         Date now = new Date();
         int interval_minutes = (int)((now.getTime() - last.getTime()) / (60 * 1000));
-        // 默认冷却时间20分钟，todo:qpzhou 待配置化
-        int left_minutes = 20 - interval_minutes;
+        // 默认冷却时间10分钟，todo:qpzhou 待配置化
+        int left_minutes = 10 - interval_minutes;
         if (left_minutes > 0) {
           Window.alert("您需要在 " + left_minutes + " 分钟后才能再次执行编译操作！（请优先使用AI伴侣进行常规测试，编译仅作为最终发布验证）");
           return;
@@ -779,7 +779,7 @@ public class TopToolbar extends Composite {
         //String latestProjectName currentProject = Ode.getInstance().getDesignToolbar().projectNameLabel.getText();
         // Add by 中文网：检查待编译的项目中：暂时不能有中文
         if (!TextValidators.isValidIdentifier_EN(projectRootNode.getName())) {
-          Window.alert("编译时不能是中文项目名，请另存项目或更名刷新后重试！\n项目更名后不影响“应用名称”属性，设置中文最终安装后App名称将是中文。中文项目名仅可用于展示及AI伴侣测试。");
+          Window.alert("编译时不能是中文项目名，请另存项目或更名后重试！\n项目更名后不影响“应用名称”属性，设置中文最终安装后App名称将是中文。中文项目名仅可用于展示及AI伴侣测试。");
           return;
         }
 
@@ -1497,9 +1497,9 @@ public class TopToolbar extends Composite {
               showVip(null);
               return;
             }
-            // Add by 中文网：保险起见，每次删除项目不得超过1个，防止非预期的CPU过高及偶发服务崩溃
-            if (deletedProjects.size() > 1) {
-              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过1个！！");
+            // Add by 中文网：保险起见，每次删除项目不得超过几个，防止非预期的CPU过高及偶发服务崩溃
+            if (deletedProjects.size() > 3) {
+              Window.alert("警告：您正在进行项目彻底删除操作，项目删除后将无法恢复。\n为了谨慎起见，一次删除的项目不得超过3个！！");
               return;
             }
 

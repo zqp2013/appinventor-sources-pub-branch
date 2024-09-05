@@ -435,7 +435,7 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
     } else {
       title = ComponentsTranslation.getCategoryName(category.getName());
     }
-    stackPalette.setStackText(insert_index, title);
+    stackPalette.setStackText(insert_index, title, true); //最后一个参数为true表示HTML格式，add by 中文网
     categoryOrder.add(insert_index, category.ordinal());
     // When the categories are loaded, we want the first one open, which will almost always be User Interface
     stackPalette.showStack(0);
