@@ -74,7 +74,8 @@ public abstract class CommonProjectService {
 
   // Add by 中文网
   public abstract long copyAndDeleteOldProject(String userId, long oldProjectId, String newName);
-  public abstract void updateQualifiedNmae(String userId, long projectId, String qualifiedName);
+  public abstract void updateQualifiedName(String userId, long projectId, String qualifiedName);
+  public abstract String getQualifiedName(String userId, long projectId);
 
   /**
    * Deletes a project.

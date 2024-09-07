@@ -57,6 +57,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.appinventor.shared.settings.SettingsConstants;
 import com.google.appinventor.client.youngandroid.TextValidators;
+import com.google.appinventor.client.wizards.youngandroid.YoungAndroidSettingsWizard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +85,7 @@ public class TopToolbar extends Composite {
   private static final String WIDGET_NAME_BUILD_ANDROID_AAB = "BuildAab";
   private static final String WIDGET_NAME_BUILD_ANDROID_APK2 = "BuildApk2";
   private static final String WIDGET_NAME_BUILD_ANDROID_AAB2 = "BuildAab2";
+  private static final String WIDGET_NAME_BUILD_SETTINGS = "BuildSettings";
   private static final String WIDGET_NAME_BUILD_YAIL = "Yail";
   private static final String WIDGET_NAME_CONNECT_TO = "ConnectTo";
   private static final String WIDGET_NAME_WIRELESS_BUTTON = "Wireless";
@@ -355,6 +357,13 @@ public class TopToolbar extends Composite {
           new BarcodeAction(true, false)));
       buildItems.add(new DropDownItem(WIDGET_NAME_BUILD_ANDROID_AAB2, MESSAGES.showExportAndroidAab2(),
           new BarcodeAction(true, true)));
+    }
+
+    //Add by 中文网：编译时重要参数设置，包括类名等。暂时只对管理员开放，后续测试充分后上线
+    if (Ode.getInstance().getUser().getIsAdmin()) {
+      buildItems.add(null);
+      buildItems.add(new DropDownItem(WIDGET_NAME_BUILD_SETTINGS, MESSAGES.showAndroidSettings(),
+            new ShowAndroidSettingsAction()));
     }
 
     if (AppInventorFeatures.hasYailGenerationOption() && Ode.getInstance().getUser().getIsAdmin()) {
@@ -1033,6 +1042,20 @@ public class TopToolbar extends Composite {
     }
   }
 
+  // Add by 中文网
+  private class ShowAndroidSettingsAction implements Command {
+    @Override
+    public void execute() {
+      Ode ode = Ode.getInstance();
+      if (ode.screensLocked()) {
+        return; // Don't permit this if we are locked out (saving files)
+      }
+
+      long projectId = ode.getCurrentYoungAndroidProjectId();
+      new YoungAndroidSettingsWizard(projectId).center();
+    }
+  }
+
   /**
    *  Made changes to the now Projects menu made name changes to the menu items
    * Implements the action to generate the ".yail" file for each screen in the current project.
@@ -1356,6 +1379,7 @@ public class TopToolbar extends Composite {
       fileDropDown.setItemEnabled(MESSAGES.checkpointMenuItem(), false);
       buildDropDown.setItemEnabled(MESSAGES.showExportAndroidApk(), false);
       buildDropDown.setItemEnabled(MESSAGES.showExportAndroidAab(), false);
+      buildDropDown.setItemEnabled(MESSAGES.showAndroidSettings(), false);
       if (Ode.getInstance().hasSecondBuildserver()) {
         buildDropDown.setItemEnabled(MESSAGES.showExportAndroidApk2(), false);
         buildDropDown.setItemEnabled(MESSAGES.showExportAndroidAab2(), false);
@@ -1371,6 +1395,7 @@ public class TopToolbar extends Composite {
       fileDropDown.setItemEnabled(MESSAGES.checkpointMenuItem(), true);
       buildDropDown.setItemEnabled(MESSAGES.showExportAndroidApk(), true);
       buildDropDown.setItemEnabled(MESSAGES.showExportAndroidAab(), true);
+      buildDropDown.setItemEnabled(MESSAGES.showAndroidSettings(), true);
       if (Ode.getInstance().hasSecondBuildserver()) {
         buildDropDown.setItemEnabled(MESSAGES.showExportAndroidApk2(), true);
         buildDropDown.setItemEnabled(MESSAGES.showExportAndroidAab2(), true);

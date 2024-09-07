@@ -47,7 +47,8 @@ public interface ProjectServiceAsync {
 
   // Add by 中文网
   void copyAndDeleteOldProject(long oldProjectId, String newName, AsyncCallback<UserProject> callback);
-  void updateQualifiedNmae(long projectId, String qualifiedName, AsyncCallback<Void> callback);
+  void updateQualifiedName(long projectId, String qualifiedName, AsyncCallback<Void> callback);
+  void getQualifiedName(long projectId, AsyncCallback<String> callback);
 
   /**
    * @see ProjectService#moveToTrash(long)

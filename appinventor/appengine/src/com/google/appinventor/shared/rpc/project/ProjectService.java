@@ -75,7 +75,8 @@ public interface ProjectService extends RemoteService {
 
   // Add by 中文网
   UserProject copyAndDeleteOldProject(long oldProjectId, String newName);
-  void updateQualifiedNmae(long projectId, String qualifiedName);
+  void updateQualifiedName(long projectId, String qualifiedName);
+  String getQualifiedName(long projectId);
   
   /**
    * Deletes a project.

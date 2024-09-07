@@ -185,6 +185,12 @@ public final class TextValidators {
     return text.matches("^[a-zA-Z0-9_]*$");
   }
 
+  public static boolean isValidClassName(String text) {
+  if ("".equals(text))
+      return false;
+    return text.matches("^[a-zA-Z0-9_.]*$");
+  }
+
   /**
    * Checks whether the argument is a word reserved by YAIL or JAVA.
    *

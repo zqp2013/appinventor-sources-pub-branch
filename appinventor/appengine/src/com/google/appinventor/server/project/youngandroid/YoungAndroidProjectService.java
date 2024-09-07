@@ -140,6 +140,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
 
   private static final String galleryLocation = Flag.createFlag("gallery.location", "http://gallery.fun123.cn:9001").get();
   private static final String galleryId = Flag.createFlag("gallery.id", "").get();
+  private static final Flag<String> buildCallbackHost = Flag.createFlag("build.callback.host", "fun123.cn");
 
   public YoungAndroidProjectService(StorageIo storageIo) {
     super(YoungAndroidProjectNode.YOUNG_ANDROID_PROJECT_TYPE, storageIo);
@@ -317,7 +318,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
   }
 
   @Override
-  public void updateQualifiedNmae(String userId, long projectId, String qualifiedName) {
+  public void updateQualifiedName(String userId, long projectId, String qualifiedName) {
     // Add by 中文网
     String projectProperties = storageIo.downloadFile(userId, projectId, PROJECT_PROPERTIES_FILE_NAME, StorageUtil.DEFAULT_CHARSET);
     Properties properties = new Properties();
@@ -330,6 +331,20 @@ public final class YoungAndroidProjectService extends CommonProjectService {
     }
     YoungAndroidSettingsBuilder builder = new YoungAndroidSettingsBuilder(properties).setQualifiedFormName(qualifiedName);
     storageIo.uploadFileForce(projectId, PROJECT_PROPERTIES_FILE_NAME, userId, builder.toProperties(), StorageUtil.DEFAULT_CHARSET);
+  }
+  @Override
+  public String getQualifiedName(String userId, long projectId) {
+    // Add by 中文网
+    String projectProperties = storageIo.downloadFile(userId, projectId, PROJECT_PROPERTIES_FILE_NAME, StorageUtil.DEFAULT_CHARSET);
+    Properties properties = new Properties();
+    try {
+      properties.load(new StringReader(projectProperties));
+    } catch (IOException e) {
+      // Since we are reading from a String, I don't think this exception can actually happen.
+      e.printStackTrace();
+      return "";
+    }
+    return properties.getProperty("main", "");
   }
 
   @Override
@@ -869,7 +884,7 @@ public final class YoungAndroidProjectService extends CommonProjectService {
       }
     } else {
       // TODO(user): Figure out how to make this more generic
-      return "fun123.cn";
+      return buildCallbackHost.get();
     }
   }
 

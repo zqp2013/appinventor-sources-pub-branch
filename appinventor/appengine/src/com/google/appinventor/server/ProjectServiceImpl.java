@@ -227,11 +227,16 @@ public class ProjectServiceImpl extends OdeRemoteServiceServlet implements Proje
   }
 
   @Override
-  public void updateQualifiedNmae(long projectId, String qualifiedName) {
+  public void updateQualifiedName(long projectId, String qualifiedName) {
     final String userId = userInfoProvider.getUserId();
-    getProjectRpcImpl(userId, projectId).updateQualifiedNmae(userId, projectId, qualifiedName);
+    getProjectRpcImpl(userId, projectId).updateQualifiedName(userId, projectId, qualifiedName);
   }
-
+  @Override
+  public String getQualifiedName(long projectId) {
+    final String userId = userInfoProvider.getUserId();
+    return getProjectRpcImpl(userId, projectId).getQualifiedName(userId, projectId);
+  }
+  
   /**
    * Renames several projects.
    *
