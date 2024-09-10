@@ -14,6 +14,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![拓展](images/拓展.png)
 
 1. [【实用小技巧】从.aia项目文件中提取.aix拓展包](extract_aix_from_aia.html)
+1. [【开发拓展】为AppInventor2开发拓展(Extension) <img src="https://www.fun123.cn/static/images/fire.png" style="width:16px;margin:-4px 0 0 5px">](aix_dev.html)
 
 ## 中文网拓展
 
