@@ -240,3 +240,13 @@ table td {
 .store:hover {
   background-color: #01875F;
 }
+
+/*Anchor*/
+.anchor-link {
+  color:#666 !important;
+  margin-left: 3px;
+  visibility:hidden;
+}
+h2:hover .anchor-link, h3:hover .anchor-link, h4:hover .anchor-link, h5:hover .anchor-link, h6:hover .anchor-link {
+  visibility:visible;
+}

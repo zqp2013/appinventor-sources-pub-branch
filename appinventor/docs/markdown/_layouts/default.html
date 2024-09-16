@@ -11,7 +11,7 @@
 	        <h1 class="font-weight-bold text-center offset-xl-2 col-xl-8">{{ page.title }}</h1>
             </div>
             <div class="container-fluid">
-                {{ content }}
+                {% include anchor_headings.html html=content anchorBody="<i class='mdi mdi-link-variant'></i>" anchorClass="anchor-link" %}
             </div>
             {% if page.node %}
             <!-- node: {{ page.node }}
