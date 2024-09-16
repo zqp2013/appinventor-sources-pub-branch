@@ -67,6 +67,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 1. [【图像】![logo](TaifunImage/logo.png)TaifunImage 拓展：图片压缩剪裁处理](TaifunImage.html)
 1. [【图像】SimpleBase64 拓展：图像Base64编解码传输](../components/connectivity.html#SimpleBase64)
 1. [【图像】KIO4_Base64 拓展：更强大的图像Base64编解码工具，解码后的图像可写入到文件](KIO4_Base64.html)
+1. [【图像】KIO4_AnimatedGif：Gif 动画扩展，可点击，可设置透明背景](https://bbs.tsingfun.com/thread-1943-1-1.html)
 1. [【图像】ImageUtil 拓展：图像组件的附加工具，提供图片水印功能](https://bbs.tsingfun.com/thread-1637-1-1.html)
 1. [【图像】ImageProcessor 拓展：对两个图像进行加权组合，返回图像的灰度](https://mit-cml.github.io/extensions/)
 1. [【连接】<img src="images/mqtt_icon.png" style="width:16px;margin:-4px 5px 0 0">MqttClient 拓展：轻量级物联网传输协议](../components/connectivity.html#Mqtt)
