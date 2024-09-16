@@ -687,6 +687,8 @@ MIT官方的功能很单一，且仅支持英文内容，不支持中文文本�
 
 [https://tinywebdb.appinventor.space/](https://tinywebdb.appinventor.space/)   *经测试，单个键值的容量大小约为 9000 字节（9KB），超过则会保存失败。*
 
+更多请参考[《App Inventor 2 网络微数据库你用对了吗？》](https://bbs.tsingfun.com/thread-1617-1-1.html)。
+
 
 ### 属性  {#TinyWebDB-Properties}
 
