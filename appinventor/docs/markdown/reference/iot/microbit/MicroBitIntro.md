@@ -4,7 +4,7 @@ layout: documentation
 description: BBC micro:bit 平台。micro:bit 是 BBC 的一个计算平台。它是一个用于开发各种项目的开放平台，可由许多不同的平台进行编程。App Inventor 构建了一组扩展集合，允许使用 App Inventor 创建App与 micro:bit 进行交互。
 ---
 
-[&laquo; 返回首页](../index.html)
+[&laquo; 返回首页](../index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../../iot/?f=microbit)
 
 # 平台: BBC micro:bit
 

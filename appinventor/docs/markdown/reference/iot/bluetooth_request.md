@@ -4,7 +4,7 @@ layout: documentation
 description: App Inventor 2 实现蓝牙未开启时弹窗提醒用户开启蓝牙，蓝牙弹窗，蓝牙权限请求。
 ---
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=bluetooth_request)
 
 有时用户手机没有开启蓝牙权限的情况下，蓝牙连接会失败，需要用户手动开启蓝牙，给用户带来一定的麻烦及学习成本（可能需要研究一下如何开启等），这时我们可以通过代码块实现弹窗提醒，用户同意后自动开启蓝牙功能。
 

@@ -7,7 +7,7 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 * TOC
 {:toc}
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=bluetoothle)
 
 最新版拓展下载：
 

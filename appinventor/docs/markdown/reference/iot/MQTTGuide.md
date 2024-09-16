@@ -7,7 +7,7 @@ description: App Inventor 2 MQTT拓展入门（保姆级教程）。阿里云、
 * TOC
 {:toc}
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=MQTTGuide)
 
 [《App Inventor 2 UrsPahoMqttClient 拓展中文文档（完整版）》](MQTT.html)
 

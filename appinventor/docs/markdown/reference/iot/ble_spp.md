@@ -4,7 +4,7 @@ layout: documentation
 description: BLE(Bluetooth Low Energy)，低功耗蓝牙(BLE) 和 经典蓝牙(SPP) 的区别，以及App Inventor 2 与它们之间通信的方法及差别。
 ---
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ble_spp)
 
 ![BlueTooth](assets/bluetooth.svg)
 

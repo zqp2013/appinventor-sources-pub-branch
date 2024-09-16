@@ -7,7 +7,7 @@ description: App Inventor 2 低功耗蓝牙(BLE)的硬件接入、数据通信�
 * TOC
 {:toc}
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ble)
 
 ![ble5](ble/ble5.jpg)
 

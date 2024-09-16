@@ -7,7 +7,7 @@ description: HC-05/BLE 蓝牙通信数据乱码？接收到的中文乱码？乱
 * TOC
 {:toc}
 
-[&laquo; 返回首页](index.html)
+[&laquo; 返回首页](index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=bluetooth_codec)
 
 ## 蓝牙通信过程中，数据出现乱码？
 

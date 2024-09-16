@@ -4,7 +4,7 @@ layout: documentation
 description: Arduino 101 平台。Arduino 101 是基于 Intel® Curie™ 芯片组的流行 Arduino 平台的一个版本。它具有与许多其他 Arduino 相同的外形尺寸，但支持内置蓝牙® 低功耗。
 ---
 
-[&laquo; 返回首页](../index.html)
+[&laquo; 返回首页](../index.html)   [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../../iot/?f=arduino)
 
 # 平台: Arduino 101
 
