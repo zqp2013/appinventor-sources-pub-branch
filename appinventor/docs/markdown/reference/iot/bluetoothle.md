@@ -12,7 +12,7 @@ description: App Inventor 2 低功耗蓝牙 BlueToothLE 拓展中文文档，函
 最新版拓展下载：
 
 {:.vip}
-[edu.mit.appinventor.ble-20230728.aix](assets/edu.mit.appinventor.ble-20230728.aix)
+[edu.mit.appinventor.ble-20240822.aix](assets/edu.mit.appinventor.ble-20240822.aix)
 
 低功耗蓝牙，也称为蓝牙LE 或简称 BLE，是一种类似于经典蓝牙的新通信协议，不同之处在于它旨在消耗更少的功耗和成本，同时保持同等的功能。
 
