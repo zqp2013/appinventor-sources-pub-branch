@@ -51,3 +51,14 @@ description: 详解App Inventor 2 计时器（Clock）的用法示例。和时�
 demo如下：
 
 ![clock](images/Clock8.png){:.vip}
+
+## 关闭屏幕时，如何让计时器继续工作？
+
+通过[“一直计时”](../sensors.html#Clock.TimerAlwaysFires)属性控制App后台运行/屏幕关闭时，计时器是否继续工作的。默认是`真`（勾选的）：
+
+![clock](images/Clock9.png)
+
+经测试，开启了“一直计时”，即使App转到后台或者手机屏幕关闭了，也会一直触发计时事件。
+
+关闭“一直计时”，只有App在活动期间才会触发计时事件，后台和关屏都不再触发计时事件了。
+
