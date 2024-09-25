@@ -94,6 +94,10 @@ description: 用户界面（UI）组件参考文档：包括按钮、复选框�
 {:id="Screen.BackgroundImage" .text} *背景图像*
 : 设置`屏幕`背景图像的路径，如果同时设置了 `背景图像` 和 `背景颜色`，则只有 `背景图像` 可见。
 
+  <mark>中文网注：</mark>
+
+  还可以直接将**在线视频流URL**设置到 `屏幕.背景图像` 属性中，定时每隔一段时间设置一下，就可以做到类似实时视频作为屏幕背景的效果，详细参见[社区](https://bbs.tsingfun.com/thread-1960-1-1.html)。
+
 {:id="Screen.BigDefaultText" .boolean} *文本变大*
 : 选中（或设置`真`）后，所有默认大小的文本都会增加大小。
 
