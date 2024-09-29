@@ -84,7 +84,7 @@ description: 拓展参考文档：包括如何从.aia项目文件中提取.aix�
 ### 通信
 
 1. [【连接】ClientSocket 拓展：TCP/IP传输协议](../components/connectivity.html#Socket)
-1. [【WIFI】TaifunWiFi 拓展：手机WiFi连接管理](https://puravidaapps.com/wifi.php)
+1. [【WIFI】TaifunWiFi 拓展：手机WiFi连接管理](wifi.html)
 1. [【蓝牙】<img src="../iot/assets/ble.png" style="width:16px;margin:-4px 5px 0 0">BlueToothLE 拓展：低功耗蓝牙(BLE)](../iot/bluetoothle.html)  [<font style="margin-left:20px;color:#F88D34;font-weight:bold;"><i class="mdi mdi-bluetooth-audio" style="font-size: 18px;"/> Iot 专题</font>](../iot/?f=ext)
 1. [【FTP】App Inventor 2 FTP 上传下载全方案总结](../pro/ftp.html)
 1. [【MD5、密码安全】Encrypt.Security 安全性扩展：MD5哈希，SHA1和SHA256哈希，AES加密/解密，RSA加密/解密，BASE64编码/解码](Security/SecurityExtension.html)
