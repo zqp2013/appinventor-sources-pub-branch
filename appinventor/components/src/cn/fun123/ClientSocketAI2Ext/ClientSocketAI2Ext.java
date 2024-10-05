@@ -39,6 +39,7 @@ import java.io.InputStream;
 import java.net.Socket;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
+import java.util.List;
 
 /**
  * Simple Client Socket
@@ -471,6 +472,72 @@ public class ClientSocketAI2Ext extends AndroidNonvisibleComponent implements Co
       }
     } );
   }
+
+  
+  /**
+   * 参考AI2ByteArray拓展源码:https://ullisroboterseite.de/android-AI2-ByteArray-en.html
+   * public List<Byte> bytes = new ArrayList<>();
+   * func(int Byte)  --->  bytes.add((byte) Byte);
+   * 
+   */
+  // @SimpleFunction(description = "Send byte array to the server")
+  // public void SendByteArray(byte[] byteArray)
+  // {
+  //   public byte[] toByteArray() {
+  //     byte[] data = new byte[bytes.size()];
+  //     for (int i = 0; i < bytes.size(); i++)
+  //         data[i] = bytes.get(i);
+  //     return data;
+  //   }
+  // }
+
+  /**
+   * 参考原版BLE源码中的字节列表参数
+   */
+  @SimpleFunction(description = "向服务端发送二进制数据（字节列表）")
+  public void SendBytes(final Object values)
+  {
+    final String functionName = "SendBytes";
+
+    final byte [] dataToSend;
+    if (values instanceof List) {
+      List<?> list = (List<?>) values;
+      dataToSend = new byte[list.size()];
+      for (int i = 0; i < list.size(); i++) {
+        dataToSend[i] = (byte)list.get(i);
+      }
+    } else {
+      dataToSend = null;
+      socketError(functionName, -100, "参数格式不正确，请检查！");
+      return;
+    }
+
+    // we then send asynchonously the bytes
+    AsynchUtil.runAsynchronously(new Runnable()
+    {
+      @Override
+      public void run()
+      {
+        try
+        {
+          OutputStream out;
+          out = clientSocket.getOutputStream();
+          out.write(dataToSend);
+        }
+        catch (SocketException e)
+        {
+          Log.e(LOG_TAG, "ERROR_SEND_BYTES", e);
+          socketError(functionName, -101, "Send bytes" + e.getMessage());
+        }
+        catch (Exception e)
+        {
+          Log.e(LOG_TAG, "ERROR_UNABLE_TO_SEND_BYTES", e);
+          socketError(functionName, -102, "Send bytes");
+        }
+      }
+    } );
+  }
+
 
   /**
    * Close the socket
